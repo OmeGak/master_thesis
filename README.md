@@ -1,5 +1,7 @@
 # Monte_Carlo_Radiation_Transfer
 
+Ths repository contains the computer code for my master thesis.
+
 4_written_text
 - contains all summaries and results up to now:
   - intro_exercises
