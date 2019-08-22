@@ -1,0 +1,96 @@
+\documentclass[a4paper,10pt,twoside]{article}
+\usepackage{subfiles}
+\usepackage{blindtext}
+\usepackage{import}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{graphicx,caption}
+\usepackage{tabu}
+\usepackage{fullpage}
+\usepackage[shortlabels]{enumitem}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[makeroom]{cancel}
+\usepackage{tabu}
+\usepackage[table]{xcolor}
+\usepackage{fullpage}
+\usepackage{calc}
+\usepackage{tcolorbox}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{placeins}
+\usepackage[english]{babel}
+\usepackage{comment}
+
+\usepackage[
+backend=biber,
+style=alphabetic,
+%style=annotate,
+]{biblatex}
+
+\addbibresource{../sample.bib} %Imports bibliography file
+\addbibresource{../mendeley.bib} %Imports bibliography file
+
+%%% COMMANDS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\tabHead}[1]{\parbox{0.14\textwidth}{\medskip\textbf{#1}\medskip}}
+\newcommand{\tabBody}[1]{\parbox{0.81\textwidth}{\medskip        #1 \medskip}}
+\newcommand{\changelocaltocdepth}[1]{%
+  \addtocontents{toc}{\protect\setcounter{tocdepth}{#1}}%
+  \setcounter{tocdepth}{#1}%
+}
+
+\let\Oldsection\section
+\renewcommand{\section}{\FloatBarrier\Oldsection}
+
+\let\Oldsubsection\subsection
+\renewcommand{\subsection}{\FloatBarrier\Oldsubsection}
+
+\let\Oldsubsubsection\subsubsection
+\renewcommand{\subsubsection}{\FloatBarrier\Oldsubsubsection}
+
+\let\Oldparagraph\paragraph
+\renewcommand{\paragraph}{\FloatBarrier\Oldparagraph}
+
+\everymath{\displaystyle}
+
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
+
+\newlength\myindent
+\setlength\myindent{2em}
+\newcommand\bindent{%
+  \begingroup
+  \setlength{\itemindent}{\myindent}
+  \addtolength{\algorithmicindent}{\myindent}
+}
+\newcommand\eindent{\endgroup}
+
+\setcounter{tocdepth}{2}
+
+% DOCUMENT NAMES
+\title{Master thesis}
+\author{Ignace Bossuyt}
+\date{2019-2020}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\cleardoublepage
+\section{General equations}
+\subfile{../preliminary_overview/preliminary_overview}
+
+\cleardoublepage
+\section{Literature study}
+\subfile{../literature_study/litstud}
+
+\medskip
+
+\newpage
+\printbibliography
+\end{document}

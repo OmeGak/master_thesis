@@ -1,0 +1,29 @@
+;Compute the area of circle
+;with radius 1 using Monte-Carlo
+;integration, i.e. x^=y^2=1
+
+;how many random numbers?
+  nmc = 1000000
+
+  ;randomu is built in function
+  ;for generating random numbers
+  ;in interval 0...1 with eq. prob
+  ;(uniform between 0-1) 
+  xrn = randomu(seed,nmc)
+  yrn = randomu(seed,nmc)
+  x = 4.*xrn -2.
+  y = 4.*yrn -2.
+  area_sq = 16.
+  r = 1.2 
+  
+  hit = 0.0
+  for i=0L,nmc-1 do begin
+     if (x(i)^2.+y(i)^2. le r^2.) then hit=hit+1.
+  endfor
+
+  area = hit/nmc * area_sq 
+  print,'mc area=',area
+  print,'theoretical=',!pi*r^2.
+   
+  
+END

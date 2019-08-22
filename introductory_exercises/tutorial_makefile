@@ -1,0 +1,15 @@
+#VARIABLES = definition
+F90 = gfortran
+TARGET=myProg
+
+#definitions for compiling
+
+#compile any .f90 file into a .o file
+.f90.o:
+	$(F90) -c $<
+
+# rules
+# making $(TARGET) depends on obj{1,2,3}
+# Execute recipe after generating those files
+$(TARGET):  obj1.o obj2.o obj3.o
+	$(F90) -o $(TARGET) obj1.o obj2.o obj3.o
