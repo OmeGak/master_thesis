@@ -1,4 +1,4 @@
-Ths repository contains the computer code for my master thesis.
+Ths repository contains the computer code for my master thesis 'Monte Carlo Radiation Transport Simulations for Astrophysical Applications'.
 
 4_written_text
 - contains all summaries and results up to now:
