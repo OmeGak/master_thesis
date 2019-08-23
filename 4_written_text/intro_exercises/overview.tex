@@ -1,31 +1,4 @@
-\documentclass[10pt,a4paper]{article}
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{fullpage}
-\usepackage{tabu}
-\usepackage{comment}
-\usepackage{tikz}
-\usepackage{colortbl}
-\usetikzlibrary{shapes,arrows}
-\usepackage{algorithm}
-\usepackage{placeins}
-\usepackage[noend]{algpseudocode}
-\everymath{\displaystyle}
-
-
-%%% COMMANDS %%%%%%%%%%%%
-\newcommand{\tabHead}[1]{\parbox{0.14\textwidth}{\medskip\textbf{#1}\medskip}}
-\newcommand{\tabBody}[1]{\parbox{0.81\textwidth}{\medskip        #1 \medskip}}
-\newcommand{\changelocaltocdepth}[1]{%
-  \addtocontents{toc}{\protect\setcounter{tocdepth}{#1}}%
-  \setcounter{tocdepth}{#1}%
-}
-
-
-\tikzstyle{int}=[draw, minimum size=4em]
-\tikzstyle{init} = [pin edge={to-,thin,black}]
+\documentclass[../main/main.tex]{subfiles}
 
 \begin{document}
 
@@ -50,7 +23,6 @@
 
 \end{itemize}
 
-
 \begin{center}
 \centering
 {\tabulinesep=1.5mm
@@ -65,9 +37,6 @@ iets & iets \\ \hline
 \item pcyg.f90: what is the paramter $p$?
 \item what is Sobo-distribution?
 \item what is meant by Eddington limb-darkening?
-\begin{comment}
-\item error in formula for $n_x$ on p. 10 of the lecture notes
-\end{comment}
 \item Sundqvist+2009: slice: what is the geometry?
 \end{itemize}
 

@@ -26,22 +26,32 @@
 \usepackage[english]{babel}
 \usepackage{comment}
 
-\usepackage[
-backend=biber,
-style=alphabetic,
-%style=annotate,
-]{biblatex}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fullpage}
+\usepackage{tabu}
+\usepackage{comment}
+\usepackage{tikz}
+\usepackage{colortbl}
+\usetikzlibrary{shapes,arrows}
+\usepackage{algorithm}
+\usepackage{placeins}
+\usepackage[noend]{algpseudocode}
+\everymath{\displaystyle}
 
-\addbibresource{../sample.bib} %Imports bibliography file
-\addbibresource{../mendeley.bib} %Imports bibliography file
 
-%%% COMMANDS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% COMMANDS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newcommand{\tabHead}[1]{\parbox{0.14\textwidth}{\medskip\textbf{#1}\medskip}}
 \newcommand{\tabBody}[1]{\parbox{0.81\textwidth}{\medskip        #1 \medskip}}
 \newcommand{\changelocaltocdepth}[1]{%
   \addtocontents{toc}{\protect\setcounter{tocdepth}{#1}}%
   \setcounter{tocdepth}{#1}%
 }
+
+\tikzstyle{int}=[draw, minimum size=4em]
+\tikzstyle{init} = [pin edge={to-,thin,black}]
 
 \let\Oldsection\section
 \renewcommand{\section}{\FloatBarrier\Oldsection}
@@ -77,9 +87,24 @@ style=alphabetic,
 \author{Ignace Bossuyt}
 \date{2019-2020}
 
+%%%%%% BIBLIOGRAPHY
+\usepackage[
+backend=biber,
+style=alphabetic,
+%style=annotate,
+]{biblatex}
+
+\addbibresource{../sample.bib} %Imports bibliography file
+\addbibresource{../mendeley.bib} %Imports bibliography file
+
+
 \begin{document}
 \maketitle
 \tableofcontents
+
+\cleardoublepage
+\subfile{../intro_exercises/overview}
+
 
 \cleardoublepage
 \section{General equations}
