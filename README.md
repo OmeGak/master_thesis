@@ -1,10 +1,10 @@
-Ths repository contains the computer code for my master thesis 'Monte Carlo Radiation Transport Simulations for Astrophysical Applications'. It contains the following folders:
+Ths repository contains the computer code for my master thesis 'Monte Carlo Radiation Transport Simulations for Astrophysical Applications'. 
 
-*4_written_text* contains all summaries and results up to now:
-  - *intro_exercises* summarizes the results of the exercises
-  - *main* gives an overview of what I have learned up to now
+*topic.pdf* contains a description of the master thesis
+*overview.pdf* containsthe results of the introductory exercises
+*main.pdf* contains wider background and keeps track of what I have learned up to now
 
-*introductory_exercises* contains computer code for the introductory exercises
+
 
 
 
