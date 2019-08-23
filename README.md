@@ -4,7 +4,7 @@
 
 *main.pdf* contains wider background and keeps track of what I have learned up to now. It also contains the results of the introductory exercises
 
-This repository contains also the computer code for my master thesis 'Monte Carlo Radiation Transport Simulations for Astrophysical Applications'. 
+This repository also contains the computer code for my master thesis. 
 
 
 
