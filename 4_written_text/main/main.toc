@@ -1,136 +1,166 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {english}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1}overview}{3}
+\contentsline {part}{I\hspace {1em}Questions}{3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2}questions}{3}
+\contentsline {section}{\numberline {1}Questions for professor Sundqvist}{3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Solved questions}{3}
+\contentsline {section}{\numberline {2}Vragen aan professor Samaey}{4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}pcyg.f90}{4}
+\contentsline {section}{\numberline {3}Solved questions}{4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1}Overview of variables}{4}
+\contentsline {part}{II\hspace {1em}Monte Carlo Radiative Transfer}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2}Exercises}{5}
+\contentsline {section}{\numberline {4}Glossary}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.1}Original code}{5}
+\contentsline {section}{\numberline {5}General equations - preliminary overview}{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.2}First adaption: what if all photons are released radially from photosphere?}{5}
+\contentsline {subsection}{\numberline {5.1}Hydrodynamics}{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.3}Second adaption: isotropic scattering}{5}
+\contentsline {subsection}{\numberline {5.2}Radiation}{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.4}Third adaption: introduction of Eddington limb-darkening}{6}
+\contentsline {subsection}{\numberline {5.3}Radiation-Hydrodynamics}{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Eddington limb darkening}{6}
+\contentsline {subsection}{\numberline {5.4}Challenges}{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.5}Fourth adaptaion: photospheric line-profile }{6}
+\contentsline {section}{\numberline {6}Very broad introduction: Radiation Hydrodynamics}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Glossary}{7}
+\contentsline {paragraph}{Heat flux}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Very broad introduction: Radiation Hydrodynamics}{8}
+\contentsline {paragraph}{Specific intensity and its angular moments}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Heat flux}{8}
+\contentsline {paragraph}{RHD equations}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Specific intensity and its angular moments}{8}
+\contentsline {paragraph}{Eddington factor}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{RHD equations}{8}
+\contentsline {paragraph}{Radiation transport equations, diffusion, equilibrium}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Eddington factor}{8}
+\contentsline {paragraph}{Radiative Diffusion Approximation}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Radiation transport equations, diffusion, equilibrium}{8}
+\contentsline {subsection}{\numberline {6.1}Examples of radiation (diffusion equation)}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Radiative Diffusion Approximation}{9}
+\contentsline {subsection}{\numberline {6.2}Applications and approximations for radiative forces}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1}Examples of radiation (diffusion equation)}{9}
+\contentsline {subsection}{\numberline {6.3}Recap}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2}Applications and approximations for radiative forces}{9}
+\contentsline {section}{\numberline {7}Introduction: course material from CMPAA (Sundqvist)}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Introduction: course material from CMPAA (Sundqvist)}{10}
+\contentsline {subsection}{\numberline {7.1}EXERCISES: Introduction to numerical methods for radiation in astrophysics}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1}EXERCISES: Introduction to numerical methods for radiation in astrophysics}{10}
+\contentsline {subsection}{\numberline {7.2}Implicit 1D solver (20-11-2018)}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.2}Implicit 1D solver (20-11-2018)}{12}
+\contentsline {subsection}{\numberline {7.3}ADI 2D Solver}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.3}ADI 2D Solver}{12}
+\contentsline {subsection}{\numberline {7.4}Area of a circle}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.4}Area of a circle}{12}
+\contentsline {subsection}{\numberline {7.5}Limb Darkening}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.5}Limb Darkening}{12}
+\contentsline {section}{\numberline {8}Computational Methods in Astrophysics: MC and RT (Puls)}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}Computational Methods in Astrophysics: MC and RT (Puls)}{13}
+\contentsline {subsection}{\numberline {8.1}basic definitions and facts}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.1}basic definitions and facts}{13}
+\contentsline {subsection}{\numberline {8.2}about random numbers}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2}about random numbers}{13}
+\contentsline {subsection}{\numberline {8.3}MC integration}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.3}MC integration}{13}
+\contentsline {subsection}{\numberline {8.4}MC simulation}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.4}MC simulation}{13}
+\contentsline {paragraph}{Radiative transfer in stellar atmospheres}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Radiative transfer in stellar atmospheres}{13}
+\contentsline {subsection}{\numberline {8.5}Exercise 1: RNG}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.5}Exercise 1: RNG}{14}
+\contentsline {subsection}{\numberline {8.6}Exercise 2: Planck-function}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.6}Exercise 2: Planck-function}{14}
+\contentsline {subsection}{\numberline {8.7}limb darkening}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.7}limb darkening}{14}
+\contentsline {section}{\numberline {9}Splitting methods}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}Monte Carlo Radiation Transport}{15}
+\contentsline {subsection}{\numberline {9.1}Exercises}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.1}Limb Darkening}{15}
+\contentsline {subsubsection}{\numberline {9.1.1}Exercise 1}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {9.1.1}1D Code}{15}
+\contentsline {section}{\numberline {10}Monte Carlo Radiation Transport}{15}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {10.1}Limb Darkening}{15}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {10.1.1}1D Code}{15}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Goal}{15}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Variables and Algorithm}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {9.1.2}3D Code}{15}
+\contentsline {subsubsection}{\numberline {10.1.2}3D Code}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.2}Introduction to Monte Carlo Radiation Transfer}{16}
+\contentsline {subsection}{\numberline {10.2}Introduction to Monte Carlo Radiation Transfer}{16}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {9.2.1}Elementary principles}{16}
+\contentsline {subsubsection}{\numberline {10.2.1}Elementary principles}{16}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {9.2.2}Eddington factors}{16}
+\contentsline {subsubsection}{\numberline {10.2.2}Eddington factors}{16}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {9.2.3}Example: plane parallel atmosphere}{16}
+\contentsline {subsubsection}{\numberline {10.2.3}Example: plane parallel atmosphere}{16}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{A Plane Parallel, Isotropic Scattering Monte Carlo Code}{17}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.3}Monte Carlo Radiative Transfer}{18}
+\contentsline {subsection}{\numberline {10.3}Monte Carlo Radiative Transfer}{18}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.4}P Cygni profile for beta-velocity law and given opacity Monte Carlo simulation}{19}
+\contentsline {subsection}{\numberline {10.4}P Cygni profile for beta-velocity law and given opacity Monte Carlo simulation}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {9.4.1}Structure of the code}{19}
+\contentsline {subsubsection}{\numberline {10.4.1}Structure of the code}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10}Mass loss from inhomogeneous hot star winds (Sundqvist)}{20}
+\contentsline {section}{\numberline {11}The mathematics of Radiative Transfer}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {11}The mathematics of Radiative Transfer}{21}
+\contentsline {subsection}{\numberline {11.1}Auxiliary mathematics}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {11.1}Auxiliary mathematics}{21}
+\contentsline {subsection}{\numberline {11.2}The H-functions}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {11.2}The H-functions}{21}
+\contentsline {section}{\numberline {12}Overview of symmetry assumptions}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {12}Overview of symmetry assumptions}{22}
+\contentsline {section}{\numberline {13}Challenges in Radiative Transfer (Ivan Milic)}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {13}Equation meetings}{23}
+\contentsline {subsection}{\numberline {13.1}Overview of the problem}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {14}Challenges in Radiative Transfer (Ivan Milic)}{24}
+\contentsline {subsection}{\numberline {13.2}Challenging domains of application}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {14.1}Overview of the problem}{24}
+\contentsline {part}{III\hspace {1em}Practical work and Exercises}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {14.2}Challenging domains of application}{24}
+\contentsline {section}{\numberline {14}Overview of exercises}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {15}Vragen aan professor Samaey}{25}
+\contentsline {section}{\numberline {15}Limb darkening}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {16}General equations}{27}
+\contentsline {subsection}{\numberline {15.1}2D case}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {16.1}Hydrodynamics}{27}
+\contentsline {subsection}{\numberline {15.2}3D case}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {16.2}Radiation}{27}
+\contentsline {section}{\numberline {16}Investigation of program: pcyg.f90}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {16.3}Radiation-Hydrodynamics}{27}
+\contentsline {subsection}{\numberline {16.1}Overview of variables}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {16.4}Challenges}{27}
+\contentsline {subsection}{\numberline {16.2}Exercises (at top of program)}{26}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {17}Literature study}{29}
+\contentsline {subsubsection}{\numberline {16.2.1}First adaption: what if all photons are released radially from photosphere?}{27}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {16.2.2}Second adaption: isotropic scattering}{28}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {16.2.3}Third adaption: introduction of Eddington limb-darkening}{29}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{General discussion: Eddington limb darkening}{29}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Application to exercise}{29}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {16.2.4}Fourth adaptaion: photospheric line-profile }{30}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {17}Mass loss from inhomogeneous hot star winds (Sundqvist)}{31}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {18}Asymptotic preserving Monte Carlo methods for radiative transfer equation in diffusion limit (Dimarco+ 2018)}{32}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {18.1}Goldstein-Taylor}{32}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {18.2}Radiative transfer}{32}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{IV\hspace {1em}Equation meetings}{33}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {19}10 April 2019}{33}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {20}17 April 2019}{33}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {21}14 August 2019}{33}

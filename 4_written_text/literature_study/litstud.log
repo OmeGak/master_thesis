@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.20)  10 AUG 2019 21:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.20)  4 SEP 2019 15:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**litstud
+**litstud.tex
 (./litstud.tex
 LaTeX2e <2018-04-01> patch level 5
 (/usr/share/texlive/texmf-dist/tex/latex/subfiles/subfiles.cls
@@ -621,7 +621,140 @@ File: babel.def 2018/06/05 3.22 Babel common definitions
 \CommentStream=\write6
 
 Excluding comment 'comment')
-(/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen184
+\pgffor@skip=\dimen185
+\pgffor@stack=\toks42
+\pgffor@toks=\toks43
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+.code.tex
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
+\pgf@plot@mark@count=\count165
+\pgfplotmarksize=\dimen186
+)
+\tikz@lastx=\dimen187
+\tikz@lasty=\dimen188
+\tikz@lastxsaved=\dimen189
+\tikz@lastysaved=\dimen190
+\tikzleveldistance=\dimen191
+\tikzsiblingdistance=\dimen192
+\tikz@figbox=\box79
+\tikz@figbox@bg=\box80
+\tikz@tempbox=\box81
+\tikz@tempbox@bg=\box82
+\tikztreelevel=\count166
+\tikznumberofchildren=\count167
+\tikznumberofcurrentchild=\count168
+\tikz@fig@count=\count169
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
+\pgfmatrixcurrentrow=\count170
+\pgfmatrixcurrentcolumn=\count171
+\pgf@matrix@numberofcolumns=\count172
+)
+\tikz@expandcount=\count173
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2008/06/26 v3.0.1a (rcs-revision 1.1)
+
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2013/07/18 v3.0.1a (rcs-revision 1.5)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2013/09/11 v3.0.1a (rcs-revision 1.6)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2008/06/26 v3.0.1a (rcs-revision 1.1)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.callouts.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.callouts.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.1a (rcs-revision 1.2)
+
+\pgfnodepartlowerbox=\box83
+\pgfnodeparttwobox=\box84
+\pgfnodepartthreebox=\box85
+\pgfnodepartfourbox=\box86
+\pgfnodeparttwentybox=\box87
+\pgfnodepartnineteenbox=\box88
+\pgfnodeparteighteenbox=\box89
+\pgfnodepartseventeenbox=\box90
+\pgfnodepartsixteenbox=\box91
+\pgfnodepartfifteenbox=\box92
+\pgfnodepartfourteenbox=\box93
+\pgfnodepartthirteenbox=\box94
+\pgfnodeparttwelvebox=\box95
+\pgfnodepartelevenbox=\box96
+\pgfnodeparttenbox=\box97
+\pgfnodepartninebox=\box98
+\pgfnodeparteightbox=\box99
+\pgfnodepartsevenbox=\box100
+\pgfnodepartsixbox=\box101
+\pgfnodepartfivebox=\box102
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.
+tex
+File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
+\arrowsize=\dimen193
+))
+\myindent=\skip60
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2018/03/04 v3.11 programmable bibliographies (PK/MW)
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
@@ -657,7 +790,7 @@ Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 )))
 (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count165
+\lrq@indent=\count174
 
 (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
@@ -669,62 +802,62 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
 \@xs@message=\write7
-\integerpart=\count166
-\decimalpart=\count167
+\integerpart=\count175
+\decimalpart=\count176
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
-\c@tabx@nest=\count168
-\c@listtotal=\count169
-\c@listcount=\count170
-\c@liststart=\count171
-\c@liststop=\count172
-\c@citecount=\count173
-\c@citetotal=\count174
-\c@multicitecount=\count175
-\c@multicitetotal=\count176
-\c@instcount=\count177
-\c@maxnames=\count178
-\c@minnames=\count179
-\c@maxitems=\count180
-\c@minitems=\count181
-\c@citecounter=\count182
-\c@savedcitecounter=\count183
-\c@uniquelist=\count184
-\c@uniquename=\count185
-\c@refsection=\count186
-\c@refsegment=\count187
-\c@maxextratitle=\count188
-\c@maxextratitleyear=\count189
-\c@maxextradate=\count190
-\c@maxextraalpha=\count191
-\c@abbrvpenalty=\count192
-\c@highnamepenalty=\count193
-\c@lownamepenalty=\count194
-\c@maxparens=\count195
-\c@parenlevel=\count196
-\blx@tempcnta=\count197
-\blx@tempcntb=\count198
-\blx@tempcntc=\count199
-\blx@maxsection=\count266
-\blx@maxsegment@0=\count267
-\blx@notetype=\count268
-\blx@parenlevel@text=\count269
-\blx@parenlevel@foot=\count270
-\blx@sectionciteorder@0=\count271
-\labelnumberwidth=\skip60
-\labelalphawidth=\skip61
-\biblabelsep=\skip62
-\bibitemsep=\skip63
-\bibnamesep=\skip64
-\bibinitsep=\skip65
-\bibparsep=\skip66
-\bibhang=\skip67
+\c@tabx@nest=\count177
+\c@listtotal=\count178
+\c@listcount=\count179
+\c@liststart=\count180
+\c@liststop=\count181
+\c@citecount=\count182
+\c@citetotal=\count183
+\c@multicitecount=\count184
+\c@multicitetotal=\count185
+\c@instcount=\count186
+\c@maxnames=\count187
+\c@minnames=\count188
+\c@maxitems=\count189
+\c@minitems=\count190
+\c@citecounter=\count191
+\c@savedcitecounter=\count192
+\c@uniquelist=\count193
+\c@uniquename=\count194
+\c@refsection=\count195
+\c@refsegment=\count196
+\c@maxextratitle=\count197
+\c@maxextratitleyear=\count198
+\c@maxextradate=\count199
+\c@maxextraalpha=\count266
+\c@abbrvpenalty=\count267
+\c@highnamepenalty=\count268
+\c@lownamepenalty=\count269
+\c@maxparens=\count270
+\c@parenlevel=\count271
+\blx@tempcnta=\count272
+\blx@tempcntb=\count273
+\blx@tempcntc=\count274
+\blx@maxsection=\count275
+\blx@maxsegment@0=\count276
+\blx@notetype=\count277
+\blx@parenlevel@text=\count278
+\blx@parenlevel@foot=\count279
+\blx@sectionciteorder@0=\count280
+\labelnumberwidth=\skip61
+\labelalphawidth=\skip62
+\biblabelsep=\skip63
+\bibitemsep=\skip64
+\bibnamesep=\skip65
+\bibinitsep=\skip66
+\bibparsep=\skip67
+\bibhang=\skip68
 \blx@bcfin=\read3
 \blx@bcfout=\write8
-\c@mincomprange=\count272
-\c@maxcomprange=\count273
-\c@mincompwidth=\count274
+\c@mincomprange=\count281
+\c@maxcomprange=\count282
+\c@mincompwidth=\count283
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -735,88 +868,88 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'alphabetic.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count275
-\c@savedafterword=\count276
-\c@annotator=\count277
-\c@savedannotator=\count278
-\c@author=\count279
-\c@savedauthor=\count280
-\c@bookauthor=\count281
-\c@savedbookauthor=\count282
-\c@commentator=\count283
-\c@savedcommentator=\count284
-\c@editor=\count285
-\c@savededitor=\count286
-\c@editora=\count287
-\c@savededitora=\count288
-\c@editorb=\count289
-\c@savededitorb=\count290
-\c@editorc=\count291
-\c@savededitorc=\count292
-\c@foreword=\count293
-\c@savedforeword=\count294
-\c@holder=\count295
-\c@savedholder=\count296
-\c@introduction=\count297
-\c@savedintroduction=\count298
-\c@namea=\count299
-\c@savednamea=\count300
-\c@nameb=\count301
-\c@savednameb=\count302
-\c@namec=\count303
-\c@savednamec=\count304
-\c@translator=\count305
-\c@savedtranslator=\count306
-\c@shortauthor=\count307
-\c@savedshortauthor=\count308
-\c@shorteditor=\count309
-\c@savedshorteditor=\count310
-\c@labelname=\count311
-\c@savedlabelname=\count312
-\c@institution=\count313
-\c@savedinstitution=\count314
-\c@lista=\count315
-\c@savedlista=\count316
-\c@listb=\count317
-\c@savedlistb=\count318
-\c@listc=\count319
-\c@savedlistc=\count320
-\c@listd=\count321
-\c@savedlistd=\count322
-\c@liste=\count323
-\c@savedliste=\count324
-\c@listf=\count325
-\c@savedlistf=\count326
-\c@location=\count327
-\c@savedlocation=\count328
-\c@organization=\count329
-\c@savedorganization=\count330
-\c@origlocation=\count331
-\c@savedoriglocation=\count332
-\c@origpublisher=\count333
-\c@savedorigpublisher=\count334
-\c@publisher=\count335
-\c@savedpublisher=\count336
-\c@language=\count337
-\c@savedlanguage=\count338
-\c@origlanguage=\count339
-\c@savedoriglanguage=\count340
-\c@pageref=\count341
-\c@savedpageref=\count342
-\shorthandwidth=\skip68
-\shortjournalwidth=\skip69
-\shortserieswidth=\skip70
-\shorttitlewidth=\skip71
-\shortauthorwidth=\skip72
-\shorteditorwidth=\skip73
-\locallabelnumberwidth=\skip74
-\locallabelalphawidth=\skip75
-\localshorthandwidth=\skip76
-\localshortjournalwidth=\skip77
-\localshortserieswidth=\skip78
-\localshorttitlewidth=\skip79
-\localshortauthorwidth=\skip80
-\localshorteditorwidth=\skip81
+\c@afterword=\count284
+\c@savedafterword=\count285
+\c@annotator=\count286
+\c@savedannotator=\count287
+\c@author=\count288
+\c@savedauthor=\count289
+\c@bookauthor=\count290
+\c@savedbookauthor=\count291
+\c@commentator=\count292
+\c@savedcommentator=\count293
+\c@editor=\count294
+\c@savededitor=\count295
+\c@editora=\count296
+\c@savededitora=\count297
+\c@editorb=\count298
+\c@savededitorb=\count299
+\c@editorc=\count300
+\c@savededitorc=\count301
+\c@foreword=\count302
+\c@savedforeword=\count303
+\c@holder=\count304
+\c@savedholder=\count305
+\c@introduction=\count306
+\c@savedintroduction=\count307
+\c@namea=\count308
+\c@savednamea=\count309
+\c@nameb=\count310
+\c@savednameb=\count311
+\c@namec=\count312
+\c@savednamec=\count313
+\c@translator=\count314
+\c@savedtranslator=\count315
+\c@shortauthor=\count316
+\c@savedshortauthor=\count317
+\c@shorteditor=\count318
+\c@savedshorteditor=\count319
+\c@labelname=\count320
+\c@savedlabelname=\count321
+\c@institution=\count322
+\c@savedinstitution=\count323
+\c@lista=\count324
+\c@savedlista=\count325
+\c@listb=\count326
+\c@savedlistb=\count327
+\c@listc=\count328
+\c@savedlistc=\count329
+\c@listd=\count330
+\c@savedlistd=\count331
+\c@liste=\count332
+\c@savedliste=\count333
+\c@listf=\count334
+\c@savedlistf=\count335
+\c@location=\count336
+\c@savedlocation=\count337
+\c@organization=\count338
+\c@savedorganization=\count339
+\c@origlocation=\count340
+\c@savedoriglocation=\count341
+\c@origpublisher=\count342
+\c@savedorigpublisher=\count343
+\c@publisher=\count344
+\c@savedpublisher=\count345
+\c@language=\count346
+\c@savedlanguage=\count347
+\c@origlanguage=\count348
+\c@savedoriglanguage=\count349
+\c@pageref=\count350
+\c@savedpageref=\count351
+\shorthandwidth=\skip69
+\shortjournalwidth=\skip70
+\shortserieswidth=\skip71
+\shorttitlewidth=\skip72
+\shortauthorwidth=\skip73
+\shorteditorwidth=\skip74
+\locallabelnumberwidth=\skip75
+\locallabelalphawidth=\skip76
+\localshorthandwidth=\skip77
+\localshortjournalwidth=\skip78
+\localshortserieswidth=\skip79
+\localshorttitlewidth=\skip80
+\localshortauthorwidth=\skip81
+\localshorteditorwidth=\skip82
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
@@ -828,13 +961,13 @@ Package biblatex Info: ... file 'biblatex.def' found.
 
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2018/03/04 v3.11 biblatex compatibility (PK/MW)
-\c@textcitecount=\count343
-\c@textcitetotal=\count344
-\c@textcitemaxnames=\count345
-\c@biburlnumpenalty=\count346
-\c@biburlucpenalty=\count347
-\c@biburllcpenalty=\count348
-\c@smartand=\count349
+\c@textcitecount=\count352
+\c@textcitetotal=\count353
+\c@textcitemaxnames=\count354
+\c@biburlnumpenalty=\count355
+\c@biburlucpenalty=\count356
+\c@biburllcpenalty=\count357
+\c@smartand=\count358
 )
 Package biblatex Info: Trying to load bibliography style 'alphabetic'...
 Package biblatex Info: ... file 'alphabetic.bbx' found.
@@ -846,8 +979,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2018/03/04 v3.11 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count350
-\c@bbx:relatedtotal=\count351
+\c@bbx:relatedcount=\count359
+\c@bbx:relatedtotal=\count360
 ))
 Package biblatex Info: Trying to load citation style 'alphabetic'...
 Package biblatex Info: ... file 'alphabetic.cbx' found.
@@ -871,7 +1004,6 @@ Package biblatex Info: ... file 'biblatex.cfg' found.
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
 ))
-\myindent=\skip82
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
@@ -882,8 +1014,8 @@ File: english.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count352
-\@quotereset=\count353
+\@quotelevel=\count361
+\@quotereset=\count362
 )) (./litstud.aux)
 \openout1 = `litstud.aux'.
 
@@ -902,17 +1034,17 @@ LaTeX Font Info:    ... okay on input line 3.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count354
-\scratchdimen=\dimen184
-\scratchbox=\box79
-\nofMPsegments=\count355
-\nofMParguments=\count356
-\everyMPshowfont=\toks42
-\MPscratchCnt=\count357
-\MPscratchDim=\dimen185
-\MPnumerator=\count358
-\makeMPintoPDFobject=\count359
-\everyMPtoPDFconversion=\toks43
+\scratchcounter=\count363
+\scratchdimen=\dimen194
+\scratchbox=\box103
+\nofMPsegments=\count364
+\nofMParguments=\count365
+\everyMPshowfont=\toks44
+\MPscratchCnt=\count366
+\MPscratchDim=\dimen195
+\MPnumerator=\count367
+\makeMPintoPDFobject=\count368
+\everyMPtoPDFconversion=\toks45
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -949,34 +1081,18 @@ Package biblatex Info: ... file 'litstud.bbl' not found.
 No file litstud.bbl.
 Package biblatex Info: Reference section=0 on input line 3.
 Package biblatex Info: Reference segment=0 on input line 3.
-LaTeX Font Info:    Try loading font information for U+msa on input line 11.
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 11.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 37.
-
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 6.
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 37.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 6.
 
 
-LaTeX Warning: Citation 'latexcompanion' on page 1 undefined on input line 68.
+LaTeX Warning: Citation 'Wilson2014' on page 1 undefined on input line 6.
 
 
-LaTeX Warning: Citation 'einstein' on page 1 undefined on input line 68.
-
-
-LaTeX Warning: Citation 'dirac' on page 1 undefined on input line 68.
-
-
-LaTeX Warning: Citation 'latexcompanion' on page 1 undefined on input line 68.
+LaTeX Warning: Citation 'Dimarco2018' on page 1 undefined on input line 10.
 
 [1
 
@@ -994,26 +1110,20 @@ Package logreq Info: Writing requests to 'litstud.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 21819 strings out of 492641
- 408812 string characters out of 6131786
- 820993 words of memory out of 5000000
- 25339 multiletter control sequences out of 15000+600000
- 6947 words of font info for 27 fonts, out of 8000000 for 9000
+ 26493 strings out of 492641
+ 532738 string characters out of 6131786
+ 957815 words of memory out of 5000000
+ 29947 multiletter control sequences out of 15000+600000
+ 3948 words of font info for 15 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,12n,75p,760b,1582s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,5n,75p,764b,1582s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmti7.pfb>
-Output written on litstud.pdf (1 page, 99148 bytes).
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on litstud.pdf (1 page, 37697 bytes).
 PDF statistics:
- 47 PDF objects out of 1000 (max. 8388607)
- 34 compressed objects within 1 object stream
+ 23 PDF objects out of 1000 (max. 8388607)
+ 16 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

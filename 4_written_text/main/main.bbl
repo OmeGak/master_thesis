@@ -19,103 +19,52 @@
 
 \refsection{0}
   \datalist[entry]{anyt/global//global/global}
-    \entry{dirac}{book}{}
-      \name{author}{1}{}{%
-        {{hash=5e5b4eea58876a9b4b5ded8bb7aee131}{%
-           family={Dirac},
+    \entry{Dimarco2018}{article}{}
+      \name{author}{3}{}{%
+        {{hash=1e317563d711acca4c9870dade04f7b8}{%
+           family={Dimarco},
            familyi={D\bibinitperiod},
-           given={Paul\bibnamedelimb Adrien\bibnamedelima Maurice},
-           giveni={P\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=1b0bd7a299ae402e003a67abf3833b0a}{%
+           family={Pareschi},
+           familyi={P\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=c1f2487dbcf5ec6b78a733597d9bfe6d}{%
+           family={Samaey},
+           familyi={S\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
       }
-      \list{publisher}{1}{%
-        {Clarendon Press}%
+      \list{language}{1}{%
+        {eng}%
       }
-      \strng{namehash}{5e5b4eea58876a9b4b5ded8bb7aee131}
-      \strng{fullhash}{5e5b4eea58876a9b4b5ded8bb7aee131}
-      \strng{bibnamehash}{5e5b4eea58876a9b4b5ded8bb7aee131}
-      \strng{authorbibnamehash}{5e5b4eea58876a9b4b5ded8bb7aee131}
-      \strng{authornamehash}{5e5b4eea58876a9b4b5ded8bb7aee131}
-      \strng{authorfullhash}{5e5b4eea58876a9b4b5ded8bb7aee131}
-      \field{labelalpha}{Dir81}
+      \list{publisher}{2}{%
+        {Society for Industrial}%
+        {Applied Mathematics}%
+      }
+      \strng{namehash}{c6dfaab5af5a37787b059c4b6c24ce7f}
+      \strng{fullhash}{c6dfaab5af5a37787b059c4b6c24ce7f}
+      \strng{bibnamehash}{c6dfaab5af5a37787b059c4b6c24ce7f}
+      \strng{authorbibnamehash}{c6dfaab5af5a37787b059c4b6c24ce7f}
+      \strng{authornamehash}{c6dfaab5af5a37787b059c4b6c24ce7f}
+      \strng{authorfullhash}{c6dfaab5af5a37787b059c4b6c24ce7f}
+      \field{labelalpha}{DPS18}
       \field{sortinit}{D}
       \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{isbn}{9780198520115}
-      \field{series}{International series of monographs on physics}
-      \field{title}{The Principles of Quantum Mechanics}
-      \field{year}{1981}
-      \keyw{physics}
-    \endentry
-    \entry{einstein}{article}{}
-      \name{author}{1}{}{%
-        {{hash=3ebf53e52a3ce84f0ffb8553200a6a63}{%
-           family={Einstein},
-           familyi={E\bibinitperiod},
-           given={Albert},
-           giveni={A\bibinitperiod}}}%
-      }
-      \strng{namehash}{3ebf53e52a3ce84f0ffb8553200a6a63}
-      \strng{fullhash}{3ebf53e52a3ce84f0ffb8553200a6a63}
-      \strng{bibnamehash}{3ebf53e52a3ce84f0ffb8553200a6a63}
-      \strng{authorbibnamehash}{3ebf53e52a3ce84f0ffb8553200a6a63}
-      \strng{authornamehash}{3ebf53e52a3ce84f0ffb8553200a6a63}
-      \strng{authorfullhash}{3ebf53e52a3ce84f0ffb8553200a6a63}
-      \field{labelalpha}{Ein05}
-      \field{sortinit}{E}
-      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Annalen der Physik}
-      \field{number}{10}
-      \field{title}{{Zur Elektrodynamik bewegter K{ö}rper}. ({German}) [{On} the electrodynamics of moving bodies]}
-      \field{volume}{322}
-      \field{year}{1905}
-      \field{pages}{891\bibrangedash 921}
-      \range{pages}{31}
-      \verb{doi}
-      \verb http://dx.doi.org/10.1002/andp.19053221004
-      \endverb
-      \keyw{physics}
-    \endentry
-    \entry{latexcompanion}{book}{}
-      \name{author}{3}{}{%
-        {{hash=0743efb276e9219ee664a9b3dbd60619}{%
-           family={Goossens},
-           familyi={G\bibinitperiod},
-           given={Michel},
-           giveni={M\bibinitperiod}}}%
-        {{hash=9355edd511e3f6fdd880ee98722a53fb}{%
-           family={Mittelbach},
-           familyi={M\bibinitperiod},
-           given={Frank},
-           giveni={F\bibinitperiod}}}%
-        {{hash=e341c89f7bb5be4f5a050618c0b63942}{%
-           family={Samarin},
-           familyi={S\bibinitperiod},
-           given={Alexander},
-           giveni={A\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Reading, Massachusetts}%
-      }
-      \list{publisher}{1}{%
-        {Addison-Wesley}%
-      }
-      \strng{namehash}{369a4e878eb8157d94588ee72e0b486b}
-      \strng{fullhash}{369a4e878eb8157d94588ee72e0b486b}
-      \strng{bibnamehash}{369a4e878eb8157d94588ee72e0b486b}
-      \strng{authorbibnamehash}{369a4e878eb8157d94588ee72e0b486b}
-      \strng{authornamehash}{369a4e878eb8157d94588ee72e0b486b}
-      \strng{authorfullhash}{369a4e878eb8157d94588ee72e0b486b}
-      \field{labelalpha}{GMS93}
-      \field{sortinit}{G}
-      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{The \LaTeX{} Companion}
-      \field{year}{1993}
-      \keyw{latex}
+      \field{abstract}{We develop a new Monte Carlo method that solves hyperbolic transport equations with stiff terms, characterized by a (small) scaling parameter. In particular, we focus on systems which lead to a reduced problem of parabolic type in the limit when the scaling parameter tends to zero. Classical Monte Carlo methods suffer severe time step limitations in these situations, due to the fact that the characteristic speeds go to infinity in the diffusion limit. This makes the problem a real challenge, since the scaling parameter may differ by several orders of magnitude in the domain. To circumvent these time step limitations, we construct a new, asymptotic-preserving Monte Carlo method that is stable independently of the scaling parameter and degenerates to a standard probabilistic approach for solving the limiting equation in the diffusion limit. The method uses an implicit time discretization to formulate a modified equation in which the characteristic speeds do not grow indefinitely when the scaling factor tends to zero. The resulting modified equation can readily be discretized by a Monte Carlo scheme, in which the particles combine a finite propagation speed with a time step dependent diffusion term. We show the performance of the method by comparing it with standard (deterministic) approaches in the literature.}
+      \field{issn}{1064-8275}
+      \field{journaltitle}{SIAM Journal on Scientific Computing}
+      \field{number}{1}
+      \field{title}{Asymptotic-Preserving Monte Carlo Methods for Transport Equations in the Diffusive Limit}
+      \field{volume}{40}
+      \field{year}{2018}
+      \field{pages}{504\bibrangedash 528}
+      \range{pages}{25}
+      \keyw{Transport Equations ; Diffusion Limit ; Monte Carlo Methods ; Asymptotic-Preserving Schemes ; 65c05 ; 35b25 ; 65m75 ; 76r50 ; 82c70}
     \endentry
     \entry{Wilson2014}{article}{}
       \name{author}{13}{}{%

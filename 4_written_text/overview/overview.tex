@@ -1,145 +1,78 @@
 \documentclass[../main/main.tex]{subfiles}
 
 \begin{document}
-
-\section{overview}
-
-\begin{itemize}
-\item limb-darkening scattering exercise we did during the course. 
-— You can look into your notes from that, and I attach here also a sample program which you can use a base. 
-
-\item After you have familiarised yourself with this, you can start to think bout how you would go about to extend this to a 3D setting (assuming isotropic scattering). 
-
-\item (As prep for Monte-Carlo school) here is a script computing a UV resonance P-Cygni line in spherically symmetric wind with v beta-law. At top of routine, a few exercises are given, where you can modify and play around with code. Monte-Carlo program which computes a UV resonance spectral line from a fast outflowing spherically symmetric stellar wind (if you were not cc’d on that email, let me know so that I can send you the files as well). At the top of that little script, there are a few suggestions for exercises (additions) you could do to that program, in order to learn a bit more about the general workings of Monte-Carlo radiative transfer in this context.  
-— So that might be a good idea for you to do as well !   (And you can also ask the others in the group for some tips etc. then.) 
-
-\item Some background reading: 
-\begin{itemize}
-\item Attached mc manual by Puls. 
-\item Paper by Sundqvist+ 2010 (Appendix, I think). 
-\end{itemize}
-
-\item organise meeting
-
-\end{itemize}
-
-\section{questions}
-\begin{itemize}
-\item pcyg.f90: what is the paramter $p$?
-\item what is Sobo-distribution?
-\item what is meant by Eddington limb-darkening?
-\item Sundqvist+2009: slice: what is the geometry?
-\end{itemize}
-
-\section{Solved questions}
-\begin{itemize}
-\item Sundqvist + 2009: what is thermal velocity (see Wikipedia)
-\item what is line force, appears in Sundqvist + 2009 (see explanation Dylan)
-\item what is a flux limiter? (see course notes)
-\item what is cross section of scattering (see Wikipedia)
-\item Puls: p.26: how does the Milne equation appear? (see library book)
-\end{itemize}
-
-\newpage
-\section{pcyg.f90}
-\subsection{Overview of variables}
-\begin{center}
-\centering
-{\tabulinesep=1.5mm
-\begin{tabu}{|c|c|c|}
-\hline 
-name & explanation & scope \\ \hline \hline
-
-\multicolumn{3}{|c|}{\cellcolor{orange} paramaters} \\ \hline
-xk0 & \\ \hline
-alpha & \\ \hline
-beta & \\ \hline \hline
-
-\multicolumn{3}{|c|}{\cellcolor{orange} start frequency of the photon} \\ \hline
-xstart & start frequency & \\ \hline
-vmin & & \\ \hline
-vmax  & & \\ \hline
-
-\multicolumn{3}{|c|}{\cellcolor{orange}angle of the photon} \\ \hline
-xmuestart & start angle \\ \hline
-xmuein & incident angle \\ \hline
-xmueou & outward angle \\ \hline
-\cellcolor{yellow} pstart & impact parameter \\ \hline
-xnew & new photon frequency \\ \hline \hline
-
-\multicolumn{3}{|c|}{\cellcolor{orange} optical depth} \\ \hline
-tau & optical depth \\ \hline
-
-\multicolumn{3}{|c|}{\cellcolor{orange} number of photons admin} \\ \hline
-nphot & number of photons \\ \hline
-nin & photons scattered back into core & \\ \hline
-nout & photons escaped & \\ \hline \hline
-
-\multicolumn{3}{|c|}{\cellcolor{orange} functions} \\ \hline
-func & velocity profile \\ 
-	& r & distance from center of star \\ \hline
-	
-xmueout & sign of outwards angle & \\ 
-& xk0 & \\ 
-& alpha & \\ 
-& r & \\ 
-& v & \\ 
-& sigma & \\ \hline
-\end{tabu}}
-\end{center}
-Finally the plot contains flux(i)-freq(i)
-
-\newpage
-\subsection{Exercises}
-\subsubsection{Original code}
-In original version of the code, all photons are released radially from photosphere, thus $\texttt{xmuestart} = 1$
-
-\begin{figure}[!htp]
-\centering
-\includegraphics[width=0.5\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha0beta1test0.png}
-\caption{Original version of the code}
-\end{figure}
-
-\subsubsection{First adaption: what if all photons are released radially from photosphere?}
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=0.5\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha0beta1test1.png}
-\caption{First adaption}
-\end{figure}
-
-\subsubsection{Second adaption: isotropic scattering}
-\begin{figure}[!htp]
-\centering
-\includegraphics[width=0.5\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha0beta1test2.png}
-\caption{Second adaption}
-\end{figure}
-
-\newpage
-\subsubsection{Third adaption: introduction of Eddington limb-darkening}
-\paragraph{Eddington limb darkening}
-\begin{itemize}
-\item the source function $S= <I> = a + b\tau_{\nu}$ with $a= \frac{\sigma}{2 \pi}T_{eff}^4$ and $b = \frac{3 \sigma}{4 \pi}T_{eff}^4$
-\item solve the equation
-\item this yields $\frac{I(\theta)}{I(0)} = \frac{a+b\cos(\theta)}{a+b} = \frac{2}{5} + \frac{3}{5}\cos(\theta)$
-\end{itemize}
-\begin{figure}[!htp]
-\centering
-\includegraphics[width=0.7\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_limb_darkening.png}
-\caption{Second adaption}
-\end{figure}
-
-\subsubsection{Fourth adaptaion: photospheric line-profile }
-.
-
-\newpage
 \section{Glossary}
 \begin{itemize}
-\item (spectral) line-force: 
+\item SED: \hfill spectral energy distribution
 
-\item SED (spectral energy distribution)
-
+\item (spectral) line-force: \hfill force on material in stellar atmosphere
 \end{itemize}
 
+\newpage
+\section{General equations -  preliminary overview}
+
+\subsection{Hydrodynamics}
+Euler equations, together with closing relation (e.g. ideal gas law).
+
+\begin{center}
+	\centering
+	{\tabulinesep=1.5mm
+		\begin{tabu}{|c|c|c|c|} 
+			\hline
+			\multicolumn{4}{|c|}{primitive variables} \\ \hline
+			mass density & velocity & gas energy density & gas pressure \\ 
+			$\rho$ & $v$ & $e$ & $p$ \\ \hline
+	\end{tabu}}
+\end{center}
+
+\subsection{Radiation}
+Radiative transfer equation: intensity along a ray while interagating with medium. Photons are massless.
+\begin{equation}
+	\left[ \frac{1}{c}\partial_t + \vec{n}.\vec{\nabla} \right] I_{\nu} =  \eta_{\nu} - \chi_{\nu}I_{\nu}
+\end{equation}
+
+\begin{center}
+	\centering
+	{\tabulinesep=1.5mm
+		\begin{tabu}{|c|c|c|c|} 
+\hline
+frequency & intensity & emissivity & total absorbption  \\
+$\,u$ & $I_{\nu}$ & $\eta_{\nu}$ & $\chi_{\nu}$ \\ \hline
+	\end{tabu}}
+\end{center}
+
+These deliver two equations
+\begin{itemize}
+	\item the radiative energy equation (diffusion flux $\vec{F}$
+	\begin{eqnarray}
+	\frac{\partial E}{\partial t} + \vec{\nabla} . \vec{F} = \iint ... d\nu d \Omega
+	\end{eqnarray}
+	\item radiative momentum equation
+	\begin{equation}
+		\frac{d\vec{F}}{\partial t} = \iint ... \vec{n} d\nu d\Omega
+		\end{equation}
+\end{itemize}
+(after \textbf{integrating over all frequencies}). Depending on the geometry simplifcations, one can e.g. integrate over all solid angles.
+
+
+\subsection{Radiation-Hydrodynamics}
+Combination delivers integral-diffusion equation
+
+\begin{eqnarray}
+\begin{aligned}
+\frac{dI}{d\tau} &=  S - I \\
+	&= \int I d\Omega - I
+\end{aligned}
+\end{eqnarray}
+
+\subsection{Challenges}
+\begin{itemize}
+	\item combination with hydrodynamics
+	\item current analysis: simplified geometries (symmetry). E.g. in 2D, an ADI method is used and now also a multigrid method. 
+	\item complex geometry difficult to show in ray-tracing scheme
+	\item steady-state vs. time dependent
+	\item focus on radiation equations
+\end{itemize}
 
 \newpage
 \section{Very broad introduction: Radiation Hydrodynamics}
@@ -261,7 +194,6 @@ optical depth & optical depth along ray \\ \hline
 & $\tau_{\mu,\nu} = \int_z^{z_{max}} \frac{\alpha_{nu}(z')}{\mu}dz' = \frac{\tau_{\nu}(z)}{\mu}$ \\ \hline
 \end{tabu}}
 \end{center}
-
 
 \newpage
 \section{Introduction: course material from CMPAA (Sundqvist)}
@@ -530,6 +462,11 @@ See Section \ref{limb_darkening_discussion}.
 \subsection{limb darkening}
 See section \ref{limb_darkening_discussion}.
 
+\newpage
+\section{Splitting methods}
+From notes by professor Frank.
+\subsection{Exercises}
+\subsubsection{Exercise 1}
 
 \newpage
 \section{Monte Carlo Radiation Transport}
@@ -740,62 +677,6 @@ d\epsilon = I d \nu dt d\Omega dA.n
 \end{itemize}
 
 \newpage
-\section{Mass loss from inhomogeneous hot star winds (Sundqvist)}
-\begin{itemize}
-\item GOAL: synthesis of UV resonance lines from inhomogeneous 2D winds
-\begin{itemize}
-\item clumped in density
-\item clumped in velocity
-\item effects of non-void inter-clump medium
-\end{itemize}
-
-\item WIND MODELS
-\begin{itemize}
-\item symmetry assumptions
-\begin{itemize}
-\item 1D: spherical symmetry
-\item 2D: symmetry in $\Phi$
-\end{itemize}
-
-\item models
-\begin{enumerate}
-
-\item time-dependent radiation-hydrodynamic from Puls and Owocki (POF)
-\begin{itemize}
-\item 1D
-\item isothermal flow
-\item perturbations triggered by photospheric sound waves
-\end{itemize}
-
-\item time-dependent radiation-hydrodynamic from Feldmeier (FPP)
-\begin{itemize}
-\item 1D
-\item treatment of energy equation
-\item perturbations triggered by photospeheric sound waves or Langevin perturbagions (photospheric turbulence)
-\end{itemize}
-
-\item stochastic model, clumped in density
-\begin{itemize}
-\item smooth winds with $v_{\beta} = (1-b/r)^{\beta}$ with $\beta = 1$
-\item clumping factor $f_{cl}$
-\end{itemize}
-
-\item stochastic model, clumped in density and in velocity (non-monotonic velocity field)
-\begin{itemize}
-\item smooth winds with $v_{\beta} = (1-b/r)^{\beta}$ with $\beta = 1$
-\item clumping factor $f_{cl}$
-\end{itemize}
-\end{enumerate}
-
-\end{itemize}
-
-\item RADIATIVE TRANSFER (MC-2D)
-
-\end{itemize}
-
-
-
-\newpage
 \section{The mathematics of Radiative Transfer}
 \subsection{Auxiliary mathematics}
 
@@ -830,7 +711,6 @@ B_1(\tau) + \frac{\omega_0(\tau)}{2} \int_0^{\tau_1} \mathcal{S} (t) E_1(|t-\tau
 \end{itemize}
 
 
-
 \newpage
 \section{Overview of symmetry assumptions}
 \begin{center}
@@ -843,16 +723,6 @@ plane-parallel & 1D atmosphere & \\
 
 \end{tabu}}
 \end{center}
-
-
-
-\newpage
-\section{Equation meetings}
-\begin{itemize}
-\item 10 April 2019
-\item 17 April 2019
-\item 14 August 2019
-\end{itemize}
 
 \newpage
 \section{Challenges in Radiative Transfer (Ivan Milic)}
@@ -926,9 +796,5 @@ Via least-squares approximation
 \end{itemize}
 
 \newpage
-\section{Vragen aan professor Samaey}
-\begin{itemize}
-\item what is the difference between Monte Carlo and equation-free computing?
-\end{itemize}
 
 \end{document}

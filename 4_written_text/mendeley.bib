@@ -350,3 +350,17 @@ year = {2013}
 @article{Zhang2019,
 abstract = {Abstract A multiscale simulation framework for polycondensation and other types of polymerization mechanisms, which is used to study the hyperbranched polymerization of AB2 type monomer 4,4-bis-(4'-hydroxyphenyl)pentanoic acid is presented. The reaction framework is established by combining the coarse-grained molecular dynamics and the reactive Monte Carlo method, in which the coarse-grained molecular dynamics handles the diffusion of particles and the reactive Monte Carlo method determines the bond formation. The influence of parameters in the simulation model on the quality of the simulation results is explicitly evaluated. Specific guidelines on how to choose proper values for the simulation model parameters are given here. It is shown that i) the reaction interval should be chosen from the ballistic region of the diffusion profile; and ii) the first valley of the radial distribution function of reactants is a good value for the reaction capture radius for polycondensation in terms of accuracy of the calculations. Moreover, a recipe to determine the rate constant from the kinetic equation is explicitly proposed. Using the guidelines, excellent agreement between simulation results and the experimental data is obtained.},
 }
+@article{Dimarco2018,
+issn = {1064-8275},
+abstract = {We develop a new Monte Carlo method that solves hyperbolic transport equations with stiff terms, characterized by a (small) scaling parameter. In particular, we focus on systems which lead to a reduced problem of parabolic type in the limit when the scaling parameter tends to zero. Classical Monte Carlo methods suffer severe time step limitations in these situations, due to the fact that the characteristic speeds go to infinity in the diffusion limit. This makes the problem a real challenge, since the scaling parameter may differ by several orders of magnitude in the domain. To circumvent these time step limitations, we construct a new, asymptotic-preserving Monte Carlo method that is stable independently of the scaling parameter and degenerates to a standard probabilistic approach for solving the limiting equation in the diffusion limit. The method uses an implicit time discretization to formulate a modified equation in which the characteristic speeds do not grow indefinitely when the scaling factor tends to zero. The resulting modified equation can readily be discretized by a Monte Carlo scheme, in which the particles combine a finite propagation speed with a time step dependent diffusion term. We show the performance of the method by comparing it with standard (deterministic) approaches in the literature.},
+journal = {SIAM Journal on Scientific Computing},
+pages = {504--528},
+volume = {40},
+publisher = {Society for Industrial and Applied Mathematics},
+number = {1},
+year = {2018},
+title = {Asymptotic-Preserving Monte Carlo Methods for Transport Equations in the Diffusive Limit},
+language = {eng},
+author = {Dimarco, G. and Pareschi, L. and Samaey, G.},
+keywords = {Transport Equations ; Diffusion Limit ; Monte Carlo Methods ; Asymptotic-Preserving Schemes ; 65c05 ; 35b25 ; 65m75 ; 76r50 ; 82c70},
+}

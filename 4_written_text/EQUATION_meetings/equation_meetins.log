@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.20)  23 AUG 2019 15:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.20)  4 SEP 2019 15:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**overview.tex
-(./overview.tex
+**equation_meetins.tex
+(./equation_meetins.tex
 LaTeX2e <2018-04-01> patch level 5
 (/usr/share/texlive/texmf-dist/tex/latex/subfiles/subfiles.cls
 Document Class: subfiles 2018/07/31 Federico Garcia, Gernot Salzer
@@ -1016,12 +1016,8 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 \@quotelevel=\count361
 \@quotereset=\count362
-)) (./overview.aux
-
-LaTeX Warning: Label `limb_darkening' multiply defined.
-
-)
-\openout1 = `overview.aux'.
+)) (./equation_meetins.aux)
+\openout1 = `equation_meetins.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
@@ -1035,7 +1031,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
- (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count363
 \scratchdimen=\dimen194
@@ -1076,112 +1073,35 @@ ABD: EveryShipout initializing macros
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout8 = `overview.bcf'.
+\openout8 = `equation_meetins.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'overview.bbl' not found.
+Package biblatex Info: ... file 'equation_meetins.bbl' not found.
 
-No file overview.bbl.
+No file equation_meetins.bbl.
 Package biblatex Info: Reference section=0 on input line 3.
 Package biblatex Info: Reference segment=0 on input line 3.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 8.
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 8.
-LaTeX Font Info:    Try loading font information for U+msa on input line 28.
+[1
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 28.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-<../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha0bet
-a1test0.png, id=17, 429.2838pt x 310.761pt>
-File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alph
-a0beta1test0.png Graphic file (type png)
-<use ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha
-0beta1test0.png>
-Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/npot6xk0100alpha0beta1test0.png  used on input line 99.
-(pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
-<../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha0bet
-a1test1.png, id=18, 429.2838pt x 310.761pt>
-File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alph
-a0beta1test1.png Graphic file (type png)
-<use ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha
-0beta1test1.png>
-Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/npot6xk0100alpha0beta1test1.png  used on input line 106.
-(pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
-<../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha0bet
-a1test2.png, id=19, 429.2838pt x 310.761pt>
-File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alph
-a0beta1test2.png Graphic file (type png)
-<use ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha
-0beta1test2.png>
-Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/npot6xk0100alpha0beta1test2.png  used on input line 113.
-(pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
- [3 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha
-0beta1test0.png (PNG copy)> <../../introductory_exercises/P_Cygni_profile_UV_re
-sonance/npot6xk0100alpha0beta1test1.png (PNG copy)>]
-<../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_limb_darke
-ning.png, id=24, 429.2838pt x 310.761pt>
-File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_limb_
-darkening.png Graphic file (type png)
-<use ../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_limb_d
-arkening.png>
-Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/Eddington_limb_darkening.png  used on input line 127.
-(pdftex.def)             Requested size: 317.07614pt x 229.53278pt.
- [4 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha
-0beta1test2.png (PNG copy)> <../../introductory_exercises/P_Cygni_profile_UV_re
-sonance/Eddington_limb_darkening.png (PNG copy)>] [5] [6] [7]
-[8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21]
-Overfull \hbox (10.13332pt too wide) in paragraph at lines 896--901
-[] 
- []
-
-[22] [23] (./overview.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package logreq Info: Writing requests to 'overview.run.xml'.
-\openout1 = `overview.run.xml'.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./equation_meetins.aux)
+Package logreq Info: Writing requests to 'equation_meetins.run.xml'.
+\openout1 = `equation_meetins.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26552 strings out of 492641
- 534407 string characters out of 6131786
- 968766 words of memory out of 5000000
- 29982 multiletter control sequences out of 15000+600000
- 7707 words of font info for 31 fonts, out of 8000000 for 9000
+ 26299 strings out of 492641
+ 529065 string characters out of 6131786
+ 956699 words of memory out of 5000000
+ 29755 multiletter control sequences out of 15000+600000
+ 4245 words of font info for 16 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,17n,75p,765b,1598s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on overview.pdf (23 pages, 317163 bytes).
+ 63i,5n,75p,773b,1579s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on equation_meetins.pdf (1 page, 18105 bytes).
 PDF statistics:
- 141 PDF objects out of 1000 (max. 8388607)
- 97 compressed objects within 1 object stream
+ 19 PDF objects out of 1000 (max. 8388607)
+ 13 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
