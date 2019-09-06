@@ -29,7 +29,7 @@ end module my_inter
 !1) What wpuld happen with line-profile, if you assumed all photons
 !were released radially from photopshere ?
 
-!2) --What would happen to line-profile, is you assumed scattering
+!2) What would happen to line-profile, is you assumed scattering
 !was isotropic (i.e., NOT following Sobo-distrobution)
 
 !3) Put Eddington limb-darkening in. What happens? 
@@ -128,7 +128,7 @@ program pcyg
 		xmuestart=sqrt(xmuestart)
 
 		if (test_number .eq. 1) then
-			xmuestart = 1.1
+			xmuestart = 1.0
 		endif
 
 		pstart=sqrt(1.-xmuestart**2)  			!according p-ray

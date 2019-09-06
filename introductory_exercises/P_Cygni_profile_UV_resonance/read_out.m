@@ -1,3 +1,4 @@
+% reads the output from the Fortran computations
 close all
 
 fileID = fopen('out','r')
@@ -16,7 +17,7 @@ nphot = 10^6
 xk0 = 100
 alpha = 0
 beta = 1
-test_case = 0
+test_case = 1
 
 if test_case == 0
     name = ['npot',num2str(log(nphot)/log(10)),'xk0',num2str(xk0),'alpha',num2str(alpha),'beta',num2str(beta),'test0.png']

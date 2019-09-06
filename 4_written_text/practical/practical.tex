@@ -22,7 +22,67 @@
 \newpage
 \section{Limb darkening}
 
-\subsection{2D case}
+\label{limb_darkening_discussion}
+
+\subsubsection{2D Case}
+We again have $\mu = \cos(\theta)$. The solution of the radiative transfer equation in \underline{plane-parallel syummetry} with frequency-independent absorption and emission, is 
+\begin{equation}
+I(\mu) = I_1 (0.4 + 0.6\mu)
+\end{equation}
+In the Monte Carlo code, the photons are sorted according to the direction that they leave the atmosphere.
+
+\paragraph{Goal}
+Calculates the angular dependence of photon's emitted from a plane-parallel, grey atmosphere of radial optical depth \texttt{taumax}. The value of \texttt{tau} determines the position of the photon
+
+\paragraph{Variables and Algorithm}
+\begin{itemize}
+\item \texttt{muarray} contains emergent photons
+\item \texttt{na} number of channels
+\item \texttt{dmu} = 1/\texttt{na} width of channels
+\item \texttt{nphot} number of photons
+\item \texttt{taumax} maximum optical depth
+\end{itemize}
+
+\begin{algorithm}
+\caption{Limb darkening: compute quantitiy of photons}\label{limb_darkening}
+\begin{algorithmic}
+\State initialization \\
+\quad radial optical depth $\tau$ \\
+\quad direction $\mu$
+
+\For{all photons} 
+
+\State $\boxed{\tau = \tau_{max}}$
+	\While{\texttt{tau} $\geq 0$} 
+	
+	\State compute scattering angle \texttt{mu}
+	\If{tau $\geq$ taumax} $\boxed{mu = sqrt(x)}$ (initial distribution)
+	\Else{ $\boxed{mu = 2*x = 1}$} (isotropic scattering)
+	\EndIf
+	
+	\State tau\_i = -log(x2) 
+	\State tau = tau - tau\_i*mu	
+		
+	\EndWhile
+	\State \textbf{end while}
+
+	\State now we know that the photon has left the photosphere	
+	\State compute the distribution of all angles \texttt{mu} at which the photon left the photosphere
+	
+\EndFor
+\State \textbf{end for}
+
+\State visualisation: 
+	\begin{itemize}
+	\item plot photon numbers from $\mu d\mu$ against \texttt{mu}
+	\item plot specific intensity from $d\mu$ against \texttt{mu} against 
+	\end{itemize}
+
+
+\end{algorithmic}
+\end{algorithm}
+
+
 \begin{figure}[!htp]
 \centering
 \includegraphics[width=0.7\textwidth]{../../introductory_exercises/limb_darkening/number_channels20number_photons100000max_opt_depth10.png}
@@ -31,7 +91,14 @@
 \end{figure}
 Figure \ref{2D_mu} is according to what is expected $I = I_0(0.4+0.6\mu)$
 
-\subsection{3D case}
+\newpage
+\subsubsection{3D Code}
+What changes is this: 
+\begin{itemize}
+\item introduction of a new angle $\phi$
+\item the optical depth has to be updated according to $\phi$ also
+\end{itemize}
+
 \begin{figure}[!htp]
 \centering
 \begin{minipage}{.5\textwidth}
@@ -99,7 +166,7 @@ xmueout & sign of outwards angle & \\
 
 \newpage
 \subsection{Exercises (at top of program)}
-\subsubsection*{Investigation of original code}
+\subsubsection{Investigation of original code}
 In original version of the code, all photons are released radially from photosphere, thus $\texttt{xmuestart} = 1$
 
 \begin{figure}[!htp]
@@ -109,26 +176,41 @@ In original version of the code, all photons are released radially from photosph
 \end{figure}
 
 \newpage
-\subsubsection{First adaption: what if all photons are released radially from photosphere?}
+\subsubsection{First adaptation: what if all photons are released radially from photosphere?}
+What would happen with line-profile, if you assumed all photons
+!were released radially from photopshere?
+\begin{itemize}
+\item test case number 1
+\item The code sets $mu = 1$. Results in Figure \ref{PCyg_mu=1}.
+\end{itemize}
 
-The code sets $mu = 1$. Results in Figure \ref{PCyg_mu=1}.
+
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.5\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha0beta1test1.png}
-\caption{First adaption}
+\caption{First adaptation}
 \label{PCyg_mu=1}
 \end{figure}
 
 \newpage
-\subsubsection{Second adaption: isotropic scattering}
+\subsubsection{Second adaptation: isotropic scattering}
+What would happen to line-profile, is you assumed scattering
+!was isotropic (i.e., NOT following Sobo-distrobution)
+\begin{itemize}
+\item test case number 2
+\end{itemize}
+
 \begin{figure}[!htp]
 \centering
 \includegraphics[width=0.5\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha0beta1test2.png}
-\caption{Second adaption}
+\caption{Second adaptation}
 \end{figure}
 
+The \textit{grosso modo} form has not changed, although the scaling has changed.
+
 \newpage
-\subsubsection{Third adaption: introduction of Eddington limb-darkening}
+\subsubsection{Third adaptation: introduction of Eddington limb-darkening}
+Put Eddington limb-darkening in. What happens? 
 
 \paragraph{General discussion: Eddington limb darkening}
 The data are taken from Christensen, 2015.
@@ -140,13 +222,28 @@ The data are taken from Christensen, 2015.
 \begin{figure}[!htp]
 \centering
 \includegraphics[width=0.7\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_limb_darkening.png}
-\caption{Second adaption}
+\caption{Eddington limb darkening (two times the same plot with $\mu =  \cos(\theta)$ }
 \end{figure}
 
+\noindent\fbox{
+  \parbox{\textwidth}{
+for which star are the exerpimental data and what assumptions are used in the theory?
+}}
+
 \paragraph{Application to exercise}
+\begin{itemize}
+\item test case number 3 (not yet implemented)
+\end{itemize}
 
 \newpage
-\subsubsection{Fourth adaptaion: photospheric line-profile }
+\subsubsection{Fourth adaptaion: photospheric line-profile}
+Challening: Put photospheric line-profile (simple Gaussian) in
+!What happens? Test on xk0=0 (opacity =0) case.
+
+\begin{itemize}
+\item test case number 4 (not yet implemented)
+\end{itemize}
+
 
 \newpage
 \section{Mass loss from inhomogeneous hot star winds (Sundqvist)}

@@ -1,7 +1,7 @@
 close all
 save = 1
 
-% data from Christensen, 2015 
+% experimental data from Christensen, 2015 
 data = [ 0, 1, 
      .45103, .944; 
      .64350, .898; 
@@ -17,16 +17,17 @@ figure()
 subplot(1,2,1)
 plot(data(:,1),data(:,2))
  
+% theoretical computation
 theta = linspace(0,pi/2,10)
 I = 2/5+3/5*cos(theta)
 hold on, plot(theta,I)
- 
+
+% figure tuning
 legend('experimental','theory')
 
 xlabel('\theta')
 ylabel('I(\theta)/I(0)','Rotation',0) 
- 
- 
+  
 subplot(1,2,2)
 plot(cos(data(:,1)),data(:,2))
 

@@ -8,71 +8,6 @@
 \item (spectral) line-force: \hfill force on material in stellar atmosphere
 \end{itemize}
 
-\newpage
-\section{General equations -  preliminary overview}
-
-\subsection{Hydrodynamics}
-Euler equations, together with closing relation (e.g. ideal gas law).
-
-\begin{center}
-	\centering
-	{\tabulinesep=1.5mm
-		\begin{tabu}{|c|c|c|c|} 
-			\hline
-			\multicolumn{4}{|c|}{primitive variables} \\ \hline
-			mass density & velocity & gas energy density & gas pressure \\ 
-			$\rho$ & $v$ & $e$ & $p$ \\ \hline
-	\end{tabu}}
-\end{center}
-
-\subsection{Radiation}
-Radiative transfer equation: intensity along a ray while interagating with medium. Photons are massless.
-\begin{equation}
-	\left[ \frac{1}{c}\partial_t + \vec{n}.\vec{\nabla} \right] I_{\nu} =  \eta_{\nu} - \chi_{\nu}I_{\nu}
-\end{equation}
-
-\begin{center}
-	\centering
-	{\tabulinesep=1.5mm
-		\begin{tabu}{|c|c|c|c|} 
-\hline
-frequency & intensity & emissivity & total absorbption  \\
-$\,u$ & $I_{\nu}$ & $\eta_{\nu}$ & $\chi_{\nu}$ \\ \hline
-	\end{tabu}}
-\end{center}
-
-These deliver two equations
-\begin{itemize}
-	\item the radiative energy equation (diffusion flux $\vec{F}$
-	\begin{eqnarray}
-	\frac{\partial E}{\partial t} + \vec{\nabla} . \vec{F} = \iint ... d\nu d \Omega
-	\end{eqnarray}
-	\item radiative momentum equation
-	\begin{equation}
-		\frac{d\vec{F}}{\partial t} = \iint ... \vec{n} d\nu d\Omega
-		\end{equation}
-\end{itemize}
-(after \textbf{integrating over all frequencies}). Depending on the geometry simplifcations, one can e.g. integrate over all solid angles.
-
-
-\subsection{Radiation-Hydrodynamics}
-Combination delivers integral-diffusion equation
-
-\begin{eqnarray}
-\begin{aligned}
-\frac{dI}{d\tau} &=  S - I \\
-	&= \int I d\Omega - I
-\end{aligned}
-\end{eqnarray}
-
-\subsection{Challenges}
-\begin{itemize}
-	\item combination with hydrodynamics
-	\item current analysis: simplified geometries (symmetry). E.g. in 2D, an ADI method is used and now also a multigrid method. 
-	\item complex geometry difficult to show in ray-tracing scheme
-	\item steady-state vs. time dependent
-	\item focus on radiation equations
-\end{itemize}
 
 \newpage
 \section{Very broad introduction: Radiation Hydrodynamics}
@@ -188,15 +123,107 @@ I_{\nu} = B_{\nu} - \mu \frac{dB_{\nu}}{k_{\nu}dz}
 \begin{center}
 \centering
 {\tabulinesep=1.5mm
-\begin{tabu}{|c|c|}
+\begin{tabu}{|c|c|c|c|}
 \hline 
-optical depth & optical depth along ray \\ \hline
-& $\tau_{\mu,\nu} = \int_z^{z_{max}} \frac{\alpha_{nu}(z')}{\mu}dz' = \frac{\tau_{\nu}(z)}{\mu}$ \\ \hline
+optical depth 
+	& optical depth along ray 
+	& line optical depth 
+	& Sobolev optical depth \\ \hline
+$d\tau = k_{\nu}ds = \sigma_{nu}n ds = \kappa \rho ds$ 
+	& $\tau_{\mu,\nu} = \int_z^{z_{max}} \frac{\alpha_{nu}(z')}{\mu}dz' = \frac{\tau_{\nu}(z)}{\mu}$ 
+	& $\tau_{\nu} = \int k_L \phi_{\nu} dl = \int \kappa \rho ds$ \\ 
+$\tau_{\nu} = \int k_{\nu}ds = \int \sigma_{\nu} n ds$ & \\ \hline
+\end{tabu}}
+\end{center}
+with \begin{itemize}
+\item $\sigma$ cross-section
+\item $n$ number density
+\item $\kappa$ mass absorption density
+\item $\rho$ mass density
+\item $k_{\nu}$ extinction coefficient
+\end{itemize}
+
+\section{Overview of symmetry assumptions}
+\begin{center}
+\centering
+{\tabulinesep=1.5mm
+\begin{tabu}{|c|c|c|}
+\hline 
+plane-parallel & 1D atmosphere & \\ 
+& bounded by horizontal surfaces & \\ \hline
 \end{tabu}}
 \end{center}
 
+
+\subsection{General equations - first year overview}
+
+\subsubsection{Hydrodynamics}
+Euler equations, together with closing relation (e.g. ideal gas law).
+
+\begin{center}
+	\centering
+	{\tabulinesep=1.5mm
+		\begin{tabu}{|c|c|c|c|} 
+			\hline
+			\multicolumn{4}{|c|}{primitive variables} \\ \hline
+			mass density & velocity & gas energy density & gas pressure \\ 
+			$\rho$ & $v$ & $e$ & $p$ \\ \hline
+	\end{tabu}}
+\end{center}
+
+\subsubsection{Radiation}
+Radiative transfer equation: intensity along a ray while interacting with medium. Photons are massless.
+\begin{equation}
+	\left[ \frac{1}{c}\partial_t + \vec{n}.\vec{\nabla} \right] I_{\nu} =  \eta_{\nu} - \chi_{\nu}I_{\nu}
+\end{equation}
+
+\begin{center}
+	\centering
+	{\tabulinesep=1.5mm
+		\begin{tabu}{|c|c|c|c|} 
+\hline
+frequency & intensity & emissivity & total absorption  \\
+$\nu$ & $I_{\nu}$ & $\eta_{\nu}$ & $\chi_{\nu}$ \\ \hline
+	\end{tabu}}
+\end{center}
+
+These deliver two equations
+\begin{itemize}
+	\item the radiative energy equation (diffusion flux $\vec{F}$
+	\begin{eqnarray}
+	\frac{\partial E}{\partial t} + \vec{\nabla} . \vec{F} = \iint ... d\nu d \Omega
+	\end{eqnarray}
+	\item radiative momentum equation
+	\begin{equation}
+		\frac{d\vec{F}}{\partial t} = \iint ... \vec{n} d\nu d\Omega
+		\end{equation}
+\end{itemize}
+(after \textbf{integrating over all frequencies}). Depending on the geometry simplifcations, one can e.g. integrate over all solid angles.
+
+
+\subsubsection{Radiation-Hydrodynamics}
+Combination delivers integral-diffusion equation
+
+\begin{eqnarray}
+\begin{aligned}
+\frac{dI}{d\tau} &=  S - I \\
+	&= \int I d\Omega - I
+\end{aligned}
+\end{eqnarray}
+
+\subsubsection{Challenges}
+\begin{itemize}
+	\item combination with hydrodynamics
+	\item current analysis: simplified geometries (symmetry). E.g. in 2D, an ADI method is used and now also a multigrid method. 
+	\item complex geometry difficult to show in ray-tracing scheme
+	\item steady-state vs. time dependent
+	\item focus on radiation equations
+\end{itemize}
+
+
+
 \newpage
-\section{Introduction: course material from CMPAA (Sundqvist)}
+\section{Introduction: course material (Sundqvist - CMPAA course)}
 
 \subsection{EXERCISES: Introduction to numerical methods for radiation in astrophysics}
 \begin{enumerate}
@@ -404,13 +431,52 @@ $l = \frac{1}{\kappa \rho} = \frac{V_o}{\kappa M_o} [cm]$
 \end{enumerate}
 
 \subsection{Implicit 1D solver (20-11-2018)}
+See computer code
 \subsection{ADI 2D Solver}
+See computer code
 \subsection{Area of a circle}
+See computer code
 \subsection{Limb Darkening}
 See Section \ref{limb_darkening_discussion}.
 
+
 \newpage
-\section{Computational Methods in Astrophysics: MC and RT (Puls)}
+\section{The mathematics of Radiative Transfer}
+The material in this section is based on the book ...
+
+\subsection{Auxiliary mathematics}
+
+\begin{itemize}
+\item $\cos(\Theta) = cos(\theta)\cos(\theta') + \sin(\theta)\sin(\theta') \cos(\phi-\phi')$
+
+\item phase function $\boxed{p(\mu,\phi,\mu',\phi',\tau) = \sum_{n=0}^N \omega_n P_n(\cos(\Theta))}$
+\begin{itemize}
+
+\item isotropic scattering $p(\tau) = \omega_0(\tau)$
+\end{itemize}
+
+\item equation of transfer $\boxed{\mu \frac{\partial I(\tau,\mu,\phi)}{\partial \tau} = I(\tau,\mu,\phi) - \mathcal{S}(\tau,\mu,\phi)}$ 
+\\ with $\mathcal{S}(\tau,\mu,\phi) = B_1(\tau) + \frac{1}{4 \pi} \int_{-1}^{1} d\mu' \int_0^{2\pi} I(\tau,\mu',\phi') p(\mu,\phi,\mu',\phi') d\phi'$
+\begin{itemize}
+\item axially symmetric with isotropic scattering \\
+$\mathcal{S}(\tau) = \frac{\omega_0(\tau)}{2} \int_{-1}^{1} I(\tau,\mu') d\mu' = 
+B_1(\tau) + \frac{\omega_0(\tau)}{2} \int_0^{\tau_1} \mathcal{S} (t) E_1(|t-\tau|)dt $
+\item the Milne equation of the problem $(1-\omega_0 \bar{\Lambda})\{ \\mahtcal{S}(t)\} = B(\tau)$
+\begin{itemize}
+\item solve for $\mathcal{S}(t)$
+\item then find $I(\tau,\mu)$
+\end{itemize}
+
+\end{itemize}
+\end{itemize}
+
+\subsection{The H-functions}
+\begin{itemize}
+\item characteristic equation
+\end{itemize}
+
+\newpage
+\section{Monte Carlo and Radiative Transfer (Puls)}
 \subsection{basic definitions and facts}
 \subsection{about random numbers}
 \subsection{MC integration}
@@ -452,7 +518,6 @@ See Section \ref{limb_darkening_discussion}.
 \end{algorithmic}
 \end{algorithm}
 
-\newpage
 \subsection{Exercise 1: RNG}
 \subsection{Exercise 2: Planck-function}
 \begin{enumerate}
@@ -463,93 +528,16 @@ See Section \ref{limb_darkening_discussion}.
 See section \ref{limb_darkening_discussion}.
 
 \newpage
-\section{Splitting methods}
-From notes by professor Frank.
-\subsection{Exercises}
-\subsubsection{Exercise 1}
 
 \newpage
-\section{Monte Carlo Radiation Transport}
-\subsection{Limb Darkening}
-\label{limb_darkening_discussion}
-
-\subsubsection{1D Code}
-We again have $\mu = \cos(\theta)$. The solution of the radiative transfer equation in \underline{plane-parallel syummetry} with frequency-independent absorption and emission, is 
-\begin{equation}
-I(\mu) = I_1 (0.4 + 0.6\mu)
-\end{equation}
-In the Monte Carlo code, the photons are sorted according to the direction that they leave the atmosphere.
-
-\paragraph{Goal}
-Calculates the angular dependence of photon's emitted from a plane-parallel, grey atmosphere of radial optical depth \texttt{taumax}. The value of \texttt{tau} determines the position of the photon
-
-\paragraph{Variables and Algorithm}
-\begin{itemize}
-\item \texttt{muarray} contains emergent photons
-\item \texttt{na} number of channels
-\item \texttt{dmu} = 1/\texttt{na} width of channels
-\item \texttt{nphot} number of photons
-\item \texttt{taumax} maximum optical depth
-\end{itemize}
-
-\begin{algorithm}
-\caption{Limb darkening: compute quantitiy of photons}\label{limb_darkening}
-\begin{algorithmic}
-\State initialization \\
-\quad radial optical depth $\tau$ \\
-\quad direction $\mu$
-
-\For{all photons} 
-
-\State $\boxed{\tau = \tau_{max}}$
-	\While{\texttt{tau} $\geq 0$} 
-	
-	\State compute scattering angle \texttt{mu}
-	\If{tau $\geq$ taumax} $\boxed{mu = sqrt(x)}$ (initial distribution)
-	\Else{ $\boxed{mu = 2*x = 1}$} (isotropic scattering)
-	\EndIf
-	
-	\State tau\_i = -log(x2) 
-	\State tau = tau - tau\_i*mu	
-		
-	\EndWhile
-	\State \textbf{end while}
-
-	\State now we know that the photon has left the photosphere	
-	\State compute the distribution of all angles \texttt{mu} at which the photon left the photosphere
-	
-\EndFor
-\State \textbf{end for}
-
-\State visualisation: 
-	\begin{itemize}
-	\item plot photon numbers from $\mu d\mu$ against \texttt{mu}
-	\item plot specific intensity from $d\mu$ against \texttt{mu} against 
-	\end{itemize}
-
-
-\end{algorithmic}
-\end{algorithm}
-
-
-\subsubsection{3D Code}
-What changes is this: 
-\begin{itemize}
-\item introduction of a new angle $\phi$
-\item the optical depth has to be updated according to $\phi$ also
-\end{itemize}
-
-
-\newpage
-\subsection{Introduction to Monte Carlo Radiation Transfer}
-
-
+\section{Introduction to Monte Carlo Radiation Transfer (Wood+)}
+The material is taken from
 \begin{itemize}
 \item (Wood, Wittney, Bjorkman, Wolff - 2001)
 \item (Wood, Wittney, Bjorkman, Wolff - 2013)
 \end{itemize}
 
-\subsubsection{Elementary principles}
+\subsection{Elementary principles}
 
 \begin{center}
 \centering
@@ -596,9 +584,9 @@ rejection method & \\ \hline
 \end{tabu}}
 \end{center}
 
-\subsubsection{Eddington factors}
+\subsection{Eddington factors}
 
-\subsubsection{Example: plane parallel atmosphere}
+\subsection{Example: plane parallel atmosphere}
 \begin{enumerate}
 
 \item emission of photons: select two angles (3D space). In isotropic scattering
@@ -677,54 +665,6 @@ d\epsilon = I d \nu dt d\Omega dA.n
 \end{itemize}
 
 \newpage
-\section{The mathematics of Radiative Transfer}
-\subsection{Auxiliary mathematics}
-
-\begin{itemize}
-
-\item $\cos(\Theta) = cos(\theta)\cos(\theta') + \sin(\theta)\sin(\theta') \cos(\phi-\phi')$
-
-\item phase function $\boxed{p(\mu,\phi,\mu',\phi',\tau) = \sum_{n=0}^N \omega_n P_n(\cos(\Theta))}$
-\begin{itemize}
-
-\item isotropic scattering $p(\tau) = \omega_0(\tau)$
-\end{itemize}
-
-\item equation of transfer $\boxed{\mu \frac{\partial I(\tau,\mu,\phi)}{\partial \tau} = I(\tau,\mu,\phi) - \mathcal{S}(\tau,\mu,\phi)}$ 
-\\ with $\mathcal{S}(\tau,\mu,\phi) = B_1(\tau) + \frac{1}{4 \pi} \int_{-1}^{1} d\mu' \int_0^{2\pi} I(\tau,\mu',\phi') p(\mu,\phi,\mu',\phi') d\phi'$
-\begin{itemize}
-\item axially symmetric with isotropic scattering \\
-$\mathcal{S}(\tau) = \frac{\omega_0(\tau)}{2} \int_{-1}^{1} I(\tau,\mu') d\mu' = 
-B_1(\tau) + \frac{\omega_0(\tau)}{2} \int_0^{\tau_1} \mathcal{S} (t) E_1(|t-\tau|)dt $
-\item the Milne equation of the problem $(1-\omega_0 \bar{\Lambda})\{ \\mahtcal{S}(t)\} = B(\tau)$
-\begin{itemize}
-\item solve for $\mathcal{S}(t)$
-\item then find $I(\tau,\mu)$
-\end{itemize}
-
-\end{itemize}
-\end{itemize}
-
-\subsection{The H-functions}
-\begin{itemize}
-\item characteristic equation
-\end{itemize}
-
-
-\newpage
-\section{Overview of symmetry assumptions}
-\begin{center}
-\centering
-{\tabulinesep=1.5mm
-\begin{tabu}{|c|c|c|}
-\hline 
-plane-parallel & 1D atmosphere & \\ 
-& bounded by horizontal surfaces & \\ \hline
-
-\end{tabu}}
-\end{center}
-
-\newpage
 \section{Challenges in Radiative Transfer (Ivan Milic)}
 \subsection{Overview of the problem}
 \begin{center}
@@ -795,6 +735,11 @@ Via least-squares approximation
 \item athmospheres
 \end{itemize}
 
-\newpage
+\section{Asymptotic Preserving Monte Carlo methods for transport equations in the diffusive limit (Dimarco+2018)}
+
+\section{Splitting methods}
+From notes by professor Frank.
+\subsection{Exercises}
+\subsubsection{Exercise 1}
 
 \end{document}

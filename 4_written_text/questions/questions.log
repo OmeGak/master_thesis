@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.20)  5 SEP 2019 22:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.20)  5 SEP 2019 20:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**practical.tex
-(./practical.tex
+**questions.tex
+(./questions.tex
 LaTeX2e <2018-04-01> patch level 5
 (/usr/share/texlive/texmf-dist/tex/latex/subfiles/subfiles.cls
 Document Class: subfiles 2018/07/31 Federico Garcia, Gernot Salzer
@@ -1016,8 +1016,8 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 \@quotelevel=\count361
 \@quotereset=\count362
-)) (./practical.aux)
-\openout1 = `practical.aux'.
+)) (./questions.aux)
+\openout1 = `questions.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
@@ -1073,137 +1073,55 @@ ABD: EveryShipout initializing macros
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout8 = `practical.bcf'.
+\openout8 = `questions.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'practical.bbl' not found.
+Package biblatex Info: ... file 'questions.bbl' not found.
 
-No file practical.bbl.
+No file questions.bbl.
 Package biblatex Info: Reference section=0 on input line 3.
 Package biblatex Info: Reference segment=0 on input line 3.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 16.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 6.
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 16.
- [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for U+msa on input line 28.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 6.
+LaTeX Font Info:    Try loading font information for U+msa on input line 6.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 28.
+LaTeX Font Info:    Try loading font information for U+msb on input line 6.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-<../../introductory_exercises/limb_darkening/number_channels20number_photons100
-000max_opt_depth10.png, id=12, 429.2838pt x 310.761pt>
-File: ../../introductory_exercises/limb_darkening/number_channels20number_photo
-ns100000max_opt_depth10.png Graphic file (type png)
-<use ../../introductory_exercises/limb_darkening/number_channels20number_photon
-s100000max_opt_depth10.png>
-Package pdftex.def Info: ../../introductory_exercises/limb_darkening/number_cha
-nnels20number_photons100000max_opt_depth10.png  used on input line 88.
-(pdftex.def)             Requested size: 317.07614pt x 229.53278pt.
- [2]
-File: ../../introductory_exercises/limb_darkening/number_channels20number_photo
-ns100000max_opt_depth10.png Graphic file (type png)
-<use ../../introductory_exercises/limb_darkening/number_channels20number_photon
-s100000max_opt_depth10.png>
-Package pdftex.def Info: ../../introductory_exercises/limb_darkening/number_cha
-nnels20number_photons100000max_opt_depth10.png  used on input line 105.
-(pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
-<../../introductory_exercises/limb_darkening/PHI_number_channels20number_photon
-s100000max_opt_depth10.png, id=21, 429.2838pt x 310.761pt>
-File: ../../introductory_exercises/limb_darkening/PHI_number_channels20number_p
-hotons100000max_opt_depth10.png Graphic file (type png)
-<use ../../introductory_exercises/limb_darkening/PHI_number_channels20number_ph
-otons100000max_opt_depth10.png>
-Package pdftex.def Info: ../../introductory_exercises/limb_darkening/PHI_number
-_channels20number_photons100000max_opt_depth10.png  used on input line 110.
-(pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
- [3 <../../introductory_exercises/limb_darkening/number_channels20number_photon
-s100000max_opt_depth10.png (PNG copy)> <../../introductory_exercises/limb_darke
-ning/PHI_number_channels20number_photons100000max_opt_depth10.png (PNG copy)>] 
-[4]
-<../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha0bet
-a1test0.png, id=28, 429.2838pt x 310.761pt>
-File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alph
-a0beta1test0.png Graphic file (type png)
-<use ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha
-0beta1test0.png>
-Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/npot6xk0100alpha0beta1test0.png  used on input line 174.
-(pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
- [5 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha
-0beta1test0.png (PNG copy)>]
-<../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha0bet
-a1test1.png, id=32, 421.575pt x 316.0608pt>
-File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alph
-a0beta1test1.png Graphic file (type png)
-<use ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha
-0beta1test1.png>
-Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/npot6xk0100alpha0beta1test1.png  used on input line 190.
-(pdftex.def)             Requested size: 226.48395pt x 169.8022pt.
- [6 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha
-0beta1test1.png (PNG copy)>]
-<../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha0bet
-a1test2.png, id=36, 429.2838pt x 310.761pt>
-File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alph
-a0beta1test2.png Graphic file (type png)
-<use ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha
-0beta1test2.png>
-Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/npot6xk0100alpha0beta1test2.png  used on input line 205.
-(pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
- [7 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha
-0beta1test2.png (PNG copy)>]
-<../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_limb_darke
-ning.png, id=42, 421.575pt x 316.0608pt>
-File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_limb_
-darkening.png Graphic file (type png)
-<use ../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_limb_d
-arkening.png>
-Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/Eddington_limb_darkening.png  used on input line 224.
-(pdftex.def)             Requested size: 317.07614pt x 237.72018pt.
+) [1
 
-Overfull \hbox (10.13332pt too wide) in paragraph at lines 228--232
-[] 
- []
-
-[8 <../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_limb_da
-rkening.png (PNG copy)>] [9] [10] [11] (./practical.aux)
-Package logreq Info: Writing requests to 'practical.run.xml'.
-\openout1 = `practical.run.xml'.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] (./questions.aux)
+Package logreq Info: Writing requests to 'questions.run.xml'.
+\openout1 = `questions.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26493 strings out of 492641
- 533842 string characters out of 6131786
- 962740 words of memory out of 5000000
- 29920 multiletter control sequences out of 15000+600000
- 7707 words of font info for 31 fonts, out of 8000000 for 9000
+ 26346 strings out of 492641
+ 529779 string characters out of 6131786
+ 957692 words of memory out of 5000000
+ 29785 multiletter control sequences out of 15000+600000
+ 6290 words of font info for 25 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,10n,75p,766b,1593s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmtt10.pfb>
-Output written on practical.pdf (11 pages, 255143 bytes).
+ 63i,5n,75p,766b,1579s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmti10.pfb>
+Output written on questions.pdf (3 pages, 72055 bytes).
 PDF statistics:
- 85 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
+ 45 PDF objects out of 1000 (max. 8388607)
+ 32 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 43 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

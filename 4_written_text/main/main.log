@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.20)  4 SEP 2019 22:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.20)  6 SEP 2019 11:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -749,9 +749,32 @@ File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
 tex
 File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
 \arrowsize=\dimen193
+)) (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlayer-scrpage.sty
+Package: scrlayer-scrpage 2018/03/30 v3.25 KOMA-Script package (end user interf
+ace for scrlayer)
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlayer.sty
+Package: scrlayer 2018/03/30 v3.25 KOMA-Script package (defining layers and pag
+e styles)
+
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrkbase.sty
+Package: scrkbase 2018/03/30 v3.25 KOMA-Script package (KOMA-Script-dependent b
+asics and keyval usage)
+
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2018/03/30 v3.25 KOMA-Script package (KOMA-Script-independent 
+basics and keyval usage)
+
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2018/03/30 v3.25 KOMA-Script package (loading files)
+)))
+\footheight=\skip60
+Package scrlayer Info: patching LaTeX kernel macro \pagestyle on input line 199
+7.
 ))
-\myindent=\skip60
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package scrlayer-scrpage Info: auto-selection of `pagestyleset=standard'.
+\myindent=\skip61
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2018/03/04 v3.11 programmable bibliographies (PK/MW)
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
@@ -842,14 +865,14 @@ Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 \blx@parenlevel@text=\count278
 \blx@parenlevel@foot=\count279
 \blx@sectionciteorder@0=\count280
-\labelnumberwidth=\skip61
-\labelalphawidth=\skip62
-\biblabelsep=\skip63
-\bibitemsep=\skip64
-\bibnamesep=\skip65
-\bibinitsep=\skip66
-\bibparsep=\skip67
-\bibhang=\skip68
+\labelnumberwidth=\skip62
+\labelalphawidth=\skip63
+\biblabelsep=\skip64
+\bibitemsep=\skip65
+\bibnamesep=\skip66
+\bibinitsep=\skip67
+\bibparsep=\skip68
+\bibhang=\skip69
 \blx@bcfin=\read3
 \blx@bcfout=\write8
 \c@mincomprange=\count281
@@ -933,20 +956,20 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \c@savedoriglanguage=\count349
 \c@pageref=\count350
 \c@savedpageref=\count351
-\shorthandwidth=\skip69
-\shortjournalwidth=\skip70
-\shortserieswidth=\skip71
-\shorttitlewidth=\skip72
-\shortauthorwidth=\skip73
-\shorteditorwidth=\skip74
-\locallabelnumberwidth=\skip75
-\locallabelalphawidth=\skip76
-\localshorthandwidth=\skip77
-\localshortjournalwidth=\skip78
-\localshortserieswidth=\skip79
-\localshorttitlewidth=\skip80
-\localshortauthorwidth=\skip81
-\localshorteditorwidth=\skip82
+\shorthandwidth=\skip70
+\shortjournalwidth=\skip71
+\shortserieswidth=\skip72
+\shorttitlewidth=\skip73
+\shortauthorwidth=\skip74
+\shorteditorwidth=\skip75
+\locallabelnumberwidth=\skip76
+\locallabelalphawidth=\skip77
+\localshorthandwidth=\skip78
+\localshortjournalwidth=\skip79
+\localshortserieswidth=\skip80
+\localshorttitlewidth=\skip81
+\localshortauthorwidth=\skip82
+\localshorteditorwidth=\skip83
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
@@ -1020,18 +1043,18 @@ LaTeX Warning: Label `limb_darkening' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count363
@@ -1070,6 +1093,19 @@ Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 ABD: EveryShipout initializing macros
+Package scrlayer Info: Setting magic \footheight to \baselineskip while
+(scrlayer)             \begin{document} on input line 102.
+
+
+Package scrlayer-scrpage Warning: Very small head height detected!
+(scrlayer-scrpage)                Using scrlayer-scrpage the head height
+(scrlayer-scrpage)                should be at least \baselineskip, which is
+(scrlayer-scrpage)                12.0pt currently.
+(scrlayer-scrpage)                But head height is currently 0.0pt only.
+(scrlayer-scrpage)                You may use
+(scrlayer-scrpage)                \setlength{\headheight}{12.0pt}
+(scrlayer-scrpage)                \relax to avoid this warning.
+
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
@@ -1077,19 +1113,34 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 100.
-Package biblatex Info: Reference segment=0 on input line 100.
-LaTeX Font Info:    Try loading font information for U+msa on input line 101.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+(./main.bbl)
+Package biblatex Info: Reference section=0 on input line 102.
+Package biblatex Info: Reference segment=0 on input line 102.
+LaTeX Font Info:    Try loading font information for U+msa on input line 103.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 101.
+LaTeX Font Info:    Try loading font information for U+msb on input line 103.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./main.toc [1
+) (./main.toc
+
+Package scrlayer-scrpage Warning: \headheight to low.
+(scrlayer-scrpage)                At least 12.0pt needed,
+(scrlayer-scrpage)                but only 0.0pt found.
+(scrlayer-scrpage)                I'll enlarge \headheight, for further
+(scrlayer-scrpage)                processing, but you should do this yourself,
+(scrlayer-scrpage)                e.g., using
+(scrlayer-scrpage)                  \setlength{\headheight}{12.0pt}
+(scrlayer-scrpage)                in your preamble.
+(scrlayer-scrpage)                I'll also decrease \topmargin on input line 9
+4.
+
+
+Overfull \vbox (12.0pt too high) has occurred while \output is active []
+
+ [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
 \tf@toc=\write9
@@ -1097,6 +1148,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
  [2] (../questions/questions.tex
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 6.
+
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
@@ -1104,16 +1156,20 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 6.
  [3
 
-]) [4]
-(../overview/overview.tex [5
+] [4]) [5] [6
 
-] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15]
-[16] [17] [18] [19] [20] [21]
-Overfull \hbox (10.13332pt too wide) in paragraph at lines 766--771
+]
+(../overview/overview.tex [7] [8]
+Overfull \hbox (72.16862pt too wide) in paragraph at lines 126--137
+ [] 
+ []
+
+[9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20]
+Overfull \hbox (10.13332pt too wide) in paragraph at lines 706--711
 [] 
  []
 
-[22]) (../practical/practical.tex [23
+[21]) [22] (../practical/practical.tex [23
 
 ]
 <../../introductory_exercises/limb_darkening/number_channels20number_photons100
@@ -1123,79 +1179,84 @@ ns100000max_opt_depth10.png Graphic file (type png)
 <use ../../introductory_exercises/limb_darkening/number_channels20number_photon
 s100000max_opt_depth10.png>
 Package pdftex.def Info: ../../introductory_exercises/limb_darkening/number_cha
-nnels20number_photons100000max_opt_depth10.png  used on input line 28.
+nnels20number_photons100000max_opt_depth10.png  used on input line 88.
 (pdftex.def)             Requested size: 317.07614pt x 229.53278pt.
+ [24]
 File: ../../introductory_exercises/limb_darkening/number_channels20number_photo
 ns100000max_opt_depth10.png Graphic file (type png)
 <use ../../introductory_exercises/limb_darkening/number_channels20number_photon
 s100000max_opt_depth10.png>
 Package pdftex.def Info: ../../introductory_exercises/limb_darkening/number_cha
-nnels20number_photons100000max_opt_depth10.png  used on input line 38.
+nnels20number_photons100000max_opt_depth10.png  used on input line 105.
 (pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
 <../../introductory_exercises/limb_darkening/PHI_number_channels20number_photon
-s100000max_opt_depth10.png, id=95, 429.2838pt x 310.761pt>
+s100000max_opt_depth10.png, id=99, 429.2838pt x 310.761pt>
 File: ../../introductory_exercises/limb_darkening/PHI_number_channels20number_p
 hotons100000max_opt_depth10.png Graphic file (type png)
 <use ../../introductory_exercises/limb_darkening/PHI_number_channels20number_ph
 otons100000max_opt_depth10.png>
 Package pdftex.def Info: ../../introductory_exercises/limb_darkening/PHI_number
-_channels20number_photons100000max_opt_depth10.png  used on input line 43.
+_channels20number_photons100000max_opt_depth10.png  used on input line 110.
 (pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
- [24 <../../introductory_exercises/limb_darkening/number_channels20number_photo
+ [25 <../../introductory_exercises/limb_darkening/number_channels20number_photo
 ns100000max_opt_depth10.png (PNG copy)> <../../introductory_exercises/limb_dark
 ening/PHI_number_channels20number_photons100000max_opt_depth10.png (PNG copy)>]
- [25]
+ [26]
 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha0bet
-a1test0.png, id=103, 429.2838pt x 310.761pt>
+a1test0.png, id=107, 429.2838pt x 310.761pt>
 File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alph
 a0beta1test0.png Graphic file (type png)
 <use ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha
 0beta1test0.png>
 Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/npot6xk0100alpha0beta1test0.png  used on input line 107.
+nce/npot6xk0100alpha0beta1test0.png  used on input line 174.
 (pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
- [26 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alph
+ [27 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alph
 a0beta1test0.png (PNG copy)>]
 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha0bet
-a1test1.png, id=107, 429.2838pt x 310.761pt>
+a1test1.png, id=111, 421.575pt x 316.0608pt>
 File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alph
 a0beta1test1.png Graphic file (type png)
 <use ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha
 0beta1test1.png>
 Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/npot6xk0100alpha0beta1test1.png  used on input line 117.
-(pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
-
-[27 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha
-0beta1test1.png (PNG copy)>]
+nce/npot6xk0100alpha0beta1test1.png  used on input line 190.
+(pdftex.def)             Requested size: 226.48395pt x 169.8022pt.
+ [28 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alph
+a0beta1test1.png (PNG copy)>]
 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha0bet
-a1test2.png, id=111, 429.2838pt x 310.761pt>
+a1test2.png, id=115, 429.2838pt x 310.761pt>
 File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alph
 a0beta1test2.png Graphic file (type png)
 <use ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha
 0beta1test2.png>
 Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/npot6xk0100alpha0beta1test2.png  used on input line 126.
+nce/npot6xk0100alpha0beta1test2.png  used on input line 205.
 (pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
- [28 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alph
+ [29 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alph
 a0beta1test2.png (PNG copy)>]
 <../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_limb_darke
-ning.png, id=115, 429.2838pt x 310.761pt>
+ning.png, id=119, 421.575pt x 316.0608pt>
 File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_limb_
 darkening.png Graphic file (type png)
 <use ../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_limb_d
 arkening.png>
 Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/Eddington_limb_darkening.png  used on input line 142.
-(pdftex.def)             Requested size: 317.07614pt x 229.53278pt.
- [29 <../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_limb_
-darkening.png (PNG copy)>] [30] [31]) [32] (../EQUATION_meetings/equation_meeti
-ngs.tex) [33
+nce/Eddington_limb_darkening.png  used on input line 224.
+(pdftex.def)             Requested size: 317.07614pt x 237.72018pt.
 
-] [34
+Overfull \hbox (10.13332pt too wide) in paragraph at lines 228--232
+[] 
+ []
+
+[30 <../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_limb_d
+arkening.png (PNG copy)>] [31] [32]) [33] [34
 
 ]
-(../literature_study/litstud.tex) [35] [36] (./main.aux)
+(../EQUATION_meetings/equation_meetings.tex) [35] [36
+
+]
+(../literature_study/litstud.tex) [37] [38] (./main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1204,13 +1265,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26818 strings out of 492641
- 540213 string characters out of 6131786
- 968821 words of memory out of 5000000
- 30214 multiletter control sequences out of 15000+600000
- 13260 words of font info for 52 fonts, out of 8000000 for 9000
+ 28730 strings out of 492641
+ 600210 string characters out of 6131786
+ 1060545 words of memory out of 5000000
+ 32109 multiletter control sequences out of 15000+600000
+ 13613 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 54i,17n,73p,1431b,1724s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 54i,20n,75p,1431b,2034s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
@@ -1223,14 +1284,15 @@ public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 r5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (36 pages, 393609 bytes).
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on main.pdf (38 pages, 392589 bytes).
 PDF statistics:
- 197 PDF objects out of 1000 (max. 8388607)
- 134 compressed objects within 2 object streams
+ 210 PDF objects out of 1000 (max. 8388607)
+ 144 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
