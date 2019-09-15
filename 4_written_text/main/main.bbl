@@ -19,6 +19,35 @@
 
 \refsection{0}
   \datalist[entry]{anyt/global//global/global}
+    \entry{Busbridge}{book}{}
+      \name{author}{1}{}{%
+        {{hash=893ca26c9ee6698f7420077a1212960a}{%
+           family={Busbridge},
+           familyi={B\bibinitperiod},
+           given={I.\bibnamedelimi W},
+           giveni={I\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University press}%
+      }
+      \strng{namehash}{893ca26c9ee6698f7420077a1212960a}
+      \strng{fullhash}{893ca26c9ee6698f7420077a1212960a}
+      \strng{bibnamehash}{893ca26c9ee6698f7420077a1212960a}
+      \strng{authorbibnamehash}{893ca26c9ee6698f7420077a1212960a}
+      \strng{authornamehash}{893ca26c9ee6698f7420077a1212960a}
+      \strng{authorfullhash}{893ca26c9ee6698f7420077a1212960a}
+      \field{labelalpha}{Bus60}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Cambridge tracts in mathematics and mathematical physics 50}
+      \field{title}{The mathematics of radiative transfer}
+      \field{year}{1960}
+    \endentry
     \entry{Dimarco2018}{article}{}
       \name{author}{3}{}{%
         {{hash=1e317563d711acca4c9870dade04f7b8}{%
@@ -65,6 +94,62 @@
       \field{pages}{504\bibrangedash 528}
       \range{pages}{25}
       \keyw{Transport Equations ; Diffusion Limit ; Monte Carlo Methods ; Asymptotic-Preserving Schemes ; 65c05 ; 35b25 ; 65m75 ; 76r50 ; 82c70}
+    \endentry
+    \entry{MoensNicolas}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=c43aa81eb5dc4ac8a9d5d77e6c2468e1}{%
+           family={Moens},
+           familyi={M\bibinitperiod},
+           given={Nicolas},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Leuven}%
+      }
+      \list{publisher}{1}{%
+        {KU Leuven. Faculteit Wetenschappen}%
+      }
+      \strng{namehash}{c43aa81eb5dc4ac8a9d5d77e6c2468e1}
+      \strng{fullhash}{c43aa81eb5dc4ac8a9d5d77e6c2468e1}
+      \strng{bibnamehash}{c43aa81eb5dc4ac8a9d5d77e6c2468e1}
+      \strng{authorbibnamehash}{c43aa81eb5dc4ac8a9d5d77e6c2468e1}
+      \strng{authornamehash}{c43aa81eb5dc4ac8a9d5d77e6c2468e1}
+      \strng{authorfullhash}{c43aa81eb5dc4ac8a9d5d77e6c2468e1}
+      \field{labelalpha}{Moe18}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In many astrophysical situations, radiation plays an important role in the dynamics of the system. Hot massive stars, for example, have powerful radiation-driven stellar winds with mass loss rates that can exceed 10^{-6} solar masses per year. In this thesis, a hydrodynamics code MPI-AMRVAC is modified and used to simulate radiation effects using two different formalisms: First, the focus is on highly accelerating media that are optically thick to continuum radiation. A spectral line driving formalism is introduced and used to simulate the winds of hot, massive stars. Second, a more general approach is developed by solving the complete radiation hydrodynamics equations. The line driving formalism, called CAK-theory, has analytical solutions which are compared to our simulations with good agreement. Having implemented and benchmarked such a CAK-routine in MPI-AMRVAC, future work will focus on simulating the interaction of a hot massive star wind with a compact object by means of accretion. The second approach in this thesis uses the flux limited diffusion approximation. We start with working out some test cases to check on the implementation of the code. Afterwards, we try our hand at 2D simulations of a radiation-dominated massive-star atmosphere, comparing results to theoretical predictions from perturbation theory. Here, future work will focus on further investigation of radiation-instabilities occurring in such atmospheres for stars near the stellar upper mass limit.}
+      \field{title}{Radiation-Hydrodynamics with MPI-AMRVAC: Massive-Star Atmospheres and Winds}
+      \field{year}{2018}
+    \endentry
+    \entry{WikiHeat}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=dbaddbc54def56810e1e242366054cb0}{%
+           family={{Wikipedia contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{dbaddbc54def56810e1e242366054cb0}
+      \strng{fullhash}{dbaddbc54def56810e1e242366054cb0}
+      \strng{bibnamehash}{dbaddbc54def56810e1e242366054cb0}
+      \strng{authorbibnamehash}{dbaddbc54def56810e1e242366054cb0}
+      \strng{authornamehash}{dbaddbc54def56810e1e242366054cb0}
+      \strng{authorfullhash}{dbaddbc54def56810e1e242366054cb0}
+      \field{labelalpha}{Wik18}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{[Online; accessed 14-September-2019]}
+      \field{title}{Heat flux --- {Wikipedia}{,} The Free Encyclopedia}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/w/index.php?title=Heat_flux&oldid=863233807
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/w/index.php?title=Heat_flux&oldid=863233807
+      \endverb
     \endentry
     \entry{Wilson2014}{article}{}
       \name{author}{13}{}{%

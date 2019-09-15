@@ -6,15 +6,25 @@
 \item SED: \hfill spectral energy distribution
 
 \item (spectral) line-force: \hfill force on material in stellar atmosphere
+
+\item LASER: \hfill Light Amplification by Stimulated Emission of Radiation
 \end{itemize}
 
 
 \newpage
 \section{Very broad introduction: Radiation Hydrodynamics}
-The material here originates from the master thesis of Nicolas Moens and the course notes \textit{Introduction to numerical methods for radiation in astrophsyics} from professor Sundqvist. 
+The material here originates from the master thesis of Nicolas Moens \cite{MoensNicolas} and from the course notes \textit{Introduction to numerical methods for radiation in astrophsyics} from professor Sundqvist. 
+
+\subsection{Definitions and equations}
+\subsubsection{RHD equations}
+The full RHD equations consist of 
+\begin{itemize}
+\item five partial differential equations
+\item one HD closure equation, e.g. (i) variable Eddington tensor method or (ii) flux limited diffusion
+\end{itemize}
 
 \paragraph{Heat flux}
-diffusion equation $u_t = u_{xx}$. The flux  
+The heat flow rate density $\vec{\phi}$ satisfies the Fourier law $\vec{\phi} = - k\nabla T$. More information can be found for instance on \cite{WikiHeat}.
 
 \paragraph{Specific intensity and its angular moments}
 
@@ -33,15 +43,6 @@ Eddington's K & $K_{\nu} = \frac{c}{4 \pi}P_{\nu}$ \\ \hline
 \end{tabu}}
 \end{center}
 
-
-
-\paragraph{RHD equations}
-The full RHD equations consist of 
-\begin{itemize}
-\item five partial differential equations
-\item one HD closure equation, e.g. (i) variable Eddington tensor method or (ii) flux limited diffusion
-\end{itemize}
-
 \paragraph{Eddington factor}
 In general, the Eddington factor is a tensor, for 1D systems it is reduced to a scalar.
 \begin{equation}
@@ -52,9 +53,9 @@ f_{\nu} = \frac{K_{\nu}}{J_{\nu}} = \frac{P_{\nu}}{E_{\nu}}
 \item radiation field stronly peaked in radial (i.e. vertical in cartesian) direction
 \end{itemize}
 
-\paragraph{Radiation transport equations, diffusion, equilibrium}
+\subsubsection{Radiation transport equations, diffusion, equilibrium}
 \begin{itemize}
-\item black body radiation (Planck function $I_{\nu} = J_{\nu} = B_{\nu}$
+\item black body radiation (Planck function $I_{\nu} = J_{\nu} = B_{\nu}$)
 \item in general, extinction(absorption,scattering) and emission
 \begin{equation}
 \frac{dI_{\nu}}{ds} = j_{\nu} - k_{\nu}I_{\nu}
@@ -85,25 +86,19 @@ Dividing by $k_{\nu}$, this yields
 \item first multiply Equation (\ref{radiation_transfer_equation}) with $\frac{n}{c}$ and then do integration
 \end{itemize}
 
-\paragraph{Radiative Diffusion Approximation}
-\begin{enumerate}
-\item Black-body radiation in perfect equilibrium
-\item Radiative transfer equation in the \textit{near-surface} limit.
-\end{enumerate}
-\underline{The approximation is the following}: replace $\boxed{I = B}$ or $I_{\nu} = B_{\nu}$, once but not twice.
+\subsubsection{Radiative Diffusion Approximation} The radiative diffusion approximation bridges two regimes: regimes with ... 
+\begin{itemize}
+\item on one hand, large optical depth $\tau \gg 1$: diffusion equation: temperature structure in a static stellar atmosphere
+\item on the other hand, where radiative \textit{transport} is important
+\end{itemize}
+The diffusive approximation is the following: replace $\boxed{I = B}$ or $I_{\nu} = B_{\nu}$.
 \begin{equation}
 I_{\nu} = B_{\nu} - \mu \frac{dB_{\nu}}{k_{\nu}dz}
 \end{equation}
+This equation can be derived as a random walk of photons!
 
-\underline{Derive this equation as a random walk of photons!}
 
-\subsection{Examples of radiation (diffusion equation)}
-\begin{enumerate}
-\item Temperature structure in a static stellar atmosphere
-\item 
-\end{enumerate}
-
-\subsection{Applications and approximations for radiative forces}
+\subsubsection{Applications and approximations for radiative forces}
 \begin{itemize}
 \item definition of general radiative acceleration vector $g = \frac{1}{\rho c}\int \int n k_{\nu} I_{\nu} d\Omega d\nu$
 \begin{itemize}
@@ -119,8 +114,13 @@ I_{\nu} = B_{\nu} - \mu \frac{dB_{\nu}}{k_{\nu}dz}
 \item CAK theory
 \end{itemize}
 
-\subsection{Recap}
+\newpage
+\subsubsection{Optical depth (recap)}
+\paragraph{Optical depth: physical understanding}
+Optical depth is the ratio of incident radiant power to transmitted radiant power (\cite{WikiOpticalDepth}).
+
 \begin{center}
+\hspace*{-2cm}
 \centering
 {\tabulinesep=1.5mm
 \begin{tabu}{|c|c|c|c|}
@@ -143,7 +143,7 @@ with \begin{itemize}
 \item $k_{\nu}$ extinction coefficient
 \end{itemize}
 
-\section{Overview of symmetry assumptions}
+\subsection{Overview of symmetry assumptions}
 \begin{center}
 \centering
 {\tabulinesep=1.5mm
@@ -154,8 +154,8 @@ plane-parallel & 1D atmosphere & \\
 \end{tabu}}
 \end{center}
 
-
-\subsection{General equations - first year overview}
+\newpage
+\section{General equations - first year overview}
 
 \subsubsection{Hydrodynamics}
 Euler equations, together with closing relation (e.g. ideal gas law).
@@ -442,7 +442,7 @@ See Section \ref{limb_darkening_discussion}.
 
 \newpage
 \section{The mathematics of Radiative Transfer}
-The material in this section is based on the book ...
+The material in this section is based on the book \cite{Busbridge}.
 
 \subsection{Auxiliary mathematics}
 

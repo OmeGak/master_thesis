@@ -1,0 +1,58 @@
+\BOOKMARK [0][-]{part.1}{I Questions}{}% 1
+\BOOKMARK [1][-]{section.1}{Questions for professor Sundqvist}{part.1}% 2
+\BOOKMARK [1][-]{section.2}{Questions for professor Samaey}{part.1}% 3
+\BOOKMARK [1][-]{section.3}{Solved questions}{part.1}% 4
+\BOOKMARK [1][-]{section.4}{Interesting problems}{part.1}% 5
+\BOOKMARK [0][-]{part.2}{II Monte Carlo Radiative Transfer}{}% 6
+\BOOKMARK [1][-]{section.5}{Glossary}{part.2}% 7
+\BOOKMARK [1][-]{section.6}{Very broad introduction: Radiation Hydrodynamics}{part.2}% 8
+\BOOKMARK [2][-]{subsection.6.1}{Definitions and equations}{section.6}% 9
+\BOOKMARK [2][-]{subsection.6.2}{Overview of symmetry assumptions}{section.6}% 10
+\BOOKMARK [1][-]{section.7}{General equations - first year overview}{part.2}% 11
+\BOOKMARK [1][-]{section.8}{Introduction: course material \(Sundqvist - CMPAA course\)}{part.2}% 12
+\BOOKMARK [2][-]{subsection.8.1}{EXERCISES: Introduction to numerical methods for radiation in astrophysics}{section.8}% 13
+\BOOKMARK [2][-]{subsection.8.2}{Implicit 1D solver \(20-11-2018\)}{section.8}% 14
+\BOOKMARK [2][-]{subsection.8.3}{ADI 2D Solver}{section.8}% 15
+\BOOKMARK [2][-]{subsection.8.4}{Area of a circle}{section.8}% 16
+\BOOKMARK [2][-]{subsection.8.5}{Limb Darkening}{section.8}% 17
+\BOOKMARK [1][-]{section.9}{The mathematics of Radiative Transfer}{part.2}% 18
+\BOOKMARK [2][-]{subsection.9.1}{Auxiliary mathematics}{section.9}% 19
+\BOOKMARK [2][-]{subsection.9.2}{The H-functions}{section.9}% 20
+\BOOKMARK [1][-]{section.10}{Monte Carlo and Radiative Transfer \(Puls\)}{part.2}% 21
+\BOOKMARK [2][-]{subsection.10.1}{basic definitions and facts}{section.10}% 22
+\BOOKMARK [2][-]{subsection.10.2}{about random numbers}{section.10}% 23
+\BOOKMARK [2][-]{subsection.10.3}{MC integration}{section.10}% 24
+\BOOKMARK [2][-]{subsection.10.4}{MC simulation}{section.10}% 25
+\BOOKMARK [2][-]{subsection.10.5}{Exercise 1: RNG}{section.10}% 26
+\BOOKMARK [2][-]{subsection.10.6}{Exercise 2: Planck-function}{section.10}% 27
+\BOOKMARK [2][-]{subsection.10.7}{limb darkening}{section.10}% 28
+\BOOKMARK [1][-]{section.11}{Introduction to Monte Carlo Radiation Transfer \(Wood+\)}{part.2}% 29
+\BOOKMARK [2][-]{subsection.11.1}{Elementary principles}{section.11}% 30
+\BOOKMARK [2][-]{subsection.11.2}{Eddington factors}{section.11}% 31
+\BOOKMARK [2][-]{subsection.11.3}{Example: plane parallel atmosphere}{section.11}% 32
+\BOOKMARK [2][-]{subsection.11.4}{Monte Carlo Radiative Transfer}{section.11}% 33
+\BOOKMARK [2][-]{subsection.11.5}{P Cygni profile for beta-velocity law and given opacity Monte Carlo simulation}{section.11}% 34
+\BOOKMARK [1][-]{section.12}{Challenges in Radiative Transfer \(Ivan Milic\)}{part.2}% 35
+\BOOKMARK [2][-]{subsection.12.1}{Overview of the problem}{section.12}% 36
+\BOOKMARK [2][-]{subsection.12.2}{Challenging domains of application}{section.12}% 37
+\BOOKMARK [1][-]{section.13}{Asymptotic Preserving Monte Carlo methods for transport equations in the diffusive limit \(Dimarco+2018\)}{part.2}% 38
+\BOOKMARK [1][-]{section.14}{Splitting methods}{part.2}% 39
+\BOOKMARK [2][-]{subsection.14.1}{Exercises}{section.14}% 40
+\BOOKMARK [0][-]{part.3}{III Practical work and Exercises}{}% 41
+\BOOKMARK [1][-]{section.15}{Overview of exercises \(PART I\)}{part.3}% 42
+\BOOKMARK [1][-]{section.16}{Overview of exercises \(PART II\)}{part.3}% 43
+\BOOKMARK [1][-]{section.17}{Limb darkening}{part.3}% 44
+\BOOKMARK [1][-]{section.18}{Investigation of program: pcyg.f90}{part.3}% 45
+\BOOKMARK [2][-]{subsection.18.1}{Overview of variables}{section.18}% 46
+\BOOKMARK [2][-]{subsection.18.2}{Mathematical things that are noteworthy}{section.18}% 47
+\BOOKMARK [2][-]{subsection.18.3}{Exercises}{section.18}% 48
+\BOOKMARK [1][-]{section.19}{Mass loss from inhomogeneous hot star winds \(Sundqvist\)}{part.3}% 49
+\BOOKMARK [1][-]{section.20}{Asymptotic preserving Monte Carlo methods for radiative transfer equation in diffusion limit \(Dimarco+ 2018\)}{part.3}% 50
+\BOOKMARK [2][-]{subsection.20.1}{Goldstein-Taylor}{section.20}% 51
+\BOOKMARK [2][-]{subsection.20.2}{Radiative transfer}{section.20}% 52
+\BOOKMARK [0][-]{part.4}{IV Equation meetings}{}% 53
+\BOOKMARK [1][-]{section.21}{Meeting of 10 April 2019}{part.4}% 54
+\BOOKMARK [1][-]{section.22}{Meeting of 17 April 2019}{part.4}% 55
+\BOOKMARK [1][-]{section.23}{Meeting of 14 August 2019}{part.4}% 56
+\BOOKMARK [0][-]{part.5}{V Thesis meetings}{}% 57
+\BOOKMARK [1][-]{section.24}{Meeting on 6 September 2019}{part.5}% 58

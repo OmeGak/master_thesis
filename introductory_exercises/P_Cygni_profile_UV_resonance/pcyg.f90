@@ -67,6 +67,7 @@ program pcyg
 	real :: r,v,dvdr, sigma, tau
 
 	integer:: i, nphot, nin,nout, ichan, test_number
+	character(len = 9) :: file_name
 
 	call random_seed !(put=seed)
 
@@ -80,6 +81,10 @@ program pcyg
 
 	print*,' Give in test number'
 	read*,test_number
+	print*	
+
+	print*,' Give in file name'
+	read*,file_name
 	print*	
 
 	xmax=1.1
@@ -104,12 +109,12 @@ program pcyg
 	photons: do nphot=1,nphoton
 
 		call random_number(xstart)
-		xstart=xmax*xstart
+		xstart = xmax*xstart
 
 		call random_number(xrnd)
 		if(xrnd.ge..5) then
-		xstart=-xstart        				!continuum red wing
-		xnew=xstart
+		xstart = -xstart        				!continuum red wing
+		xnew = xstart
 		goto 5
 		endif  
 
@@ -125,15 +130,19 @@ program pcyg
 		endif  
 
 		call random_number(xmuestart)   		!start angle between 0 and 1, no limb darkening
-		xmuestart=sqrt(xmuestart)
+		xmuestart = sqrt(xmuestart)
 
 		if (test_number .eq. 1) then
 			xmuestart = 1.0
 		endif
 
-		pstart=sqrt(1.-xmuestart**2)  			!according p-ray
+		if (test_number .eq. 3) then
+			xmuestart = 1.0
+		endif
 
-		r=rtbis(func,1.,rmax,1.e-5)   			!calculate interaction zone from x=mue*v
+		pstart = sqrt(1.-xmuestart**2)  		!according p-ray
+
+		r = rtbis(func,1.,rmax,1.e-5)   		!calculate interaction zone from x=mue*v
 		      
 		xmuein=sqrt(1.-(pstart/r)**2)   		!calculate incident angle
 
@@ -178,7 +187,7 @@ program pcyg
 
 	xnorm=float(nphoton)/float(nchan) 			!normalization
 
-	open(1,file='out', status='unknown')
+	open(1,file=file_name, status='unknown')
 	do i=1,nchan
 	   flux(i)=flux(i)/xnorm
 	   print*,i,freq(i),flux(i)
@@ -194,7 +203,7 @@ function func(r)						! VELOCITY PROFILE
 	implicit none
 	real, intent(in) :: r
 	real :: FUNC
-	func=sqrt(1.-(p/r)**2)*(1.-b/r)**beta-x
+	func = sqrt(1.-(p/r)**2)*(1.-b/r)**beta-x
 	return
 end
 

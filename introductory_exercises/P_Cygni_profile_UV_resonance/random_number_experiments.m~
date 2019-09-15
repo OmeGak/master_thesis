@@ -1,0 +1,8 @@
+clc, clear all, close all
+
+number_photons = 100
+
+for n=1:number_photons
+    mu(1, = mu_isotropic_flux()
+    I = 1/mu
+end

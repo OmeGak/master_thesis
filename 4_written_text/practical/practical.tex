@@ -2,7 +2,7 @@
 
 \begin{document}
 
-\section{Overview of exercises}
+\section{Overview of exercises (PART I)}
 
 \begin{enumerate}
 \item limb-darkening scattering exercise we did during the course. 
@@ -16,8 +16,16 @@
 \item Attached mc manual by Puls. 
 \item Paper by Sundqvist+ 2010 (Appendix, I think). 
 \end{itemize}
-
 \end{enumerate}
+
+
+\section{Overview of exercises (PART II)}
+\begin{enumerate}
+\item calculate the probability distribution to sample from in the case of Eddington limb darkening for the initial distribution (see \ref{Eddington limb darkening adaptation}).
+\item calculate analytical solution for simplified problem in \ref{PCYG FIRST adaptation} in the case that \texttt{mu = 1}.
+\item perform convergence analysis
+\end{enumerate}
+
 
 \newpage
 \section{Limb darkening}
@@ -165,9 +173,37 @@ xmueout & sign of outwards angle & \\
 \end{center}
 
 \newpage
-\subsection{Exercises (at top of program)}
+\subsection{Mathematical things that are noteworthy}
+
+\paragraph{General working}
+\begin{center}
+\begin{tikzpicture}
+[node distance=2.5cm,auto,>=latex']
+    \node [int] (a) {\texttt{pcyg.f90}};
+    \node (b) [left of=a,node distance=4cm, coordinate] {a};
+    \node (c) [right of=a,node distance=4cm, coordinate] {a};
+    \path[->] (b) edge node {\texttt{xstart}} (a);
+    \path[->] (a) edge node {\texttt{xnew}} (c);
+\end{tikzpicture}
+\end{center}
+The photons are sorted according to \texttt{xnew}.
+
+\paragraph{Practical formula}
+\begin{itemize}
+\item emission angle $\mu = \cos(\theta)$
+\item according p-ray $p = \sqrt{1-\mu^2} = \sin(\theta)$
+\item incident angle $xmuin = \sqrt{1-\left(\frac{pstart}{r}\right)^2}$
+\end{itemize}
+
+\paragraph{Geometry \& Symmetry assumptions}
+\begin{itemize}
+\item spherical geometry
+\end{itemize}
+
+\newpage
+\subsection{Exercises}
 \subsubsection{Investigation of original code}
-In original version of the code, all photons are released radially from photosphere, thus $\texttt{xmuestart} = 1$
+In original version of the code, all photons are released isotropially from the photosphere.
 
 \begin{figure}[!htp]
 \centering
@@ -177,13 +213,14 @@ In original version of the code, all photons are released radially from photosph
 
 \newpage
 \subsubsection{First adaptation: what if all photons are released radially from photosphere?}
+\label{PCYG FIRST adaptation}
+\paragraph{Release photons radially: experiments}
 What would happen with line-profile, if you assumed all photons
-!were released radially from photopshere?
+were released radially from photopshere?
 \begin{itemize}
-\item test case number 1
-\item The code sets $mu = 1$. Results in Figure \ref{PCyg_mu=1}.
+\item In other words $\texttt{xmuestart} = 1$. Results in Figure \ref{PCyg_mu=1}.
+\item This is implemented under the test case \texttt{test\_number=1}.
 \end{itemize}
-
 
 \begin{figure}[!htbp]
 \centering
@@ -192,10 +229,53 @@ What would happen with line-profile, if you assumed all photons
 \label{PCyg_mu=1}
 \end{figure}
 
+\paragraph{Derive analytic expression} See also slide Sundqvist 26/49. 
+
+\begin{itemize}
+\item since \texttt{mu = 1} we have for the velocity profile that $v = v_{\infty}(1-b/r)^{\beta}$
+\item a scaled version of the above yields 
+\begin{equation}
+u = \frac{v(r)}{v_{\infty}} = \left(1 - \frac{r_{\infty}}{r} \right)^{\beta} \in [0..1] 
+\label{u_profile}
+\end{equation}
+\item Doppler shift: $x_{CMF} = x_{REF} - \mu u$
+\item condition for resonance from Sobolov approximation (to be studied later): $x_{CMF}= 0$ thus 
+\begin{equation}
+x_{RF} = \mu u
+\label{analytic_profile}
+\end{equation}
+or thus $u_{int} = x_{REF}$ and than solve Equation \ref{u_profile} for $r_{int}$
+\item Equation \ref{analytic_profile} can be solved for the frequency, namely 
+\begin{equation}
+x = \left(1 - \frac{r_{\infty}}{r} \right)^{\beta}
+\end{equation}
+\item thus 
+\begin{equation*}
+x^{-\beta} = 1 - \frac{r_{\infty}}{r}
+\end{equation*}
+\begin{equation*}
+r(1-x^{-\beta}) = r_{\infty}
+\end{equation*}
+thus \begin{equation}
+r = \frac{r_{\infty}}{1-x^{-\beta}}
+\end{equation}
+\item then the calculation of the optical depth proceeds as follows:
+\begin{equation}
+\tau = \frac{\texttt{xkO}}{rv^{2-\alpha}(1+\texttt{muein}^2 \sigma)}
+\end{equation}
+where
+\begin{itemize}
+\item $v = \left(1 - \frac{b}{r} \right)^{\beta} $
+\item $\frac{dv}{dr} = \beta \frac{b}{r^2}\left( 1 - \frac{b}{r} \right)^{\beta - 1}$
+\item $\sigma = \frac{dv}{dr}\frac{r}{v}-1$
+\end{itemize}
+\end{itemize}
+
 \newpage
 \subsubsection{Second adaptation: isotropic scattering}
+\label{isotropic_scattering}
 What would happen to line-profile, is you assumed scattering
-!was isotropic (i.e., NOT following Sobo-distrobution)
+!was isotropic (i.e., NOT following Sobolev-distrobution)
 \begin{itemize}
 \item test case number 2
 \end{itemize}
@@ -210,6 +290,7 @@ The \textit{grosso modo} form has not changed, although the scaling has changed.
 
 \newpage
 \subsubsection{Third adaptation: introduction of Eddington limb-darkening}
+\label{Eddington limb darkening adaptation}
 Put Eddington limb-darkening in. What happens? 
 
 \paragraph{General discussion: Eddington limb darkening}
@@ -228,11 +309,39 @@ The data are taken from Christensen, 2015.
 \noindent\fbox{
   \parbox{\textwidth}{
 for which star are the exerpimental data and what assumptions are used in the theory?
-}}
-
-\paragraph{Application to exercise}
+}} \\
+\\
+Let us thus first review the emmission case where the flux in each directino is isotropic (paragraph \ref{isotropic_scattering}) $I(\theta) = I$
 \begin{itemize}
-\item test case number 3 (not yet implemented)
+\item the specific intensity $I_{\nu}(\mu) = \frac{dE_{\nu}}{\cos(\theta) dA dt d\nu d\Omega} = \frac{dE_{\nu}}{\mu dA dt d\nu d\Omega}$ 
+\item the flux $F_{\nu} = \int_{\Omega} I_{\nu} \cos(\theta) d\Omega$ is in this case isotropic thus
+\begin{equation}
+\xi = \int_0^{\mu} F_{\nu} d\mu = \int_0^{\mu} \int_{\Omega} I_{\nu} \cos(\theta) d\Omega d\mu = A \int_0^{\mu} \mu d\mu   
+\end{equation}
+with the condition that $\mu$ satisfies a probability distribution: 
+\begin{equation}
+1 = \int_{-1}^{1} F_{\nu} d\mu = \int_{-1}^{1} \int_{\Omega} I_{\nu} \cos(\theta) d\Omega d\mu = \frac{A}{2}
+\label{isotropic_flux_isotropic_intensity_prob_dist}
+\end{equation}
+thus $A=2$.
+\end{itemize}
+
+\newpage
+\paragraph{Application to exercise}
+Now we look at a new case where the photons need to be emitted following a distrubution that corresponds to $I(\theta) = I(0)(0.4+0.6\cos(\theta))$. In the code this corresponds to \texttt{test\_number = 3}. 
+\begin{itemize}
+\item in this case the flux $F_{\nu} = \int_{\Omega} I_{\nu} \cos(\theta) d\Omega$ is also isotropic but satisfies
+\begin{equation}
+F_{\nu} = \int_{\Omega} I_{\nu}(0)[0.4+0.6\cos(\theta)] \cos(\theta) d\Omega
+\end{equation} 
+\begin{equation}
+\xi = \int_0^{\mu} F_{\nu} d\mu = A \int_0^{\mu} (0.4+0.6\mu) \mu d\mu   
+\end{equation}
+subject to the condition -very similar to Equation \ref{isotropic_flux_isotropic_intensity_prob_dist} - that
+\begin{equation}
+1 = \int_{-1}^{1} F_{\nu} d\mu = \frac{2A}{5} + \frac{A}{3} = \frac{11A}{15}
+\end{equation}
+thus $A = \frac{15}{11}$
 \end{itemize}
 
 \newpage
@@ -243,6 +352,10 @@ Challening: Put photospheric line-profile (simple Gaussian) in
 \begin{itemize}
 \item test case number 4 (not yet implemented)
 \end{itemize}
+
+
+\newpage
+\subsubsection{Convergence analysis}
 
 
 \newpage

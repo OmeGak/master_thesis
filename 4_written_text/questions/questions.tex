@@ -3,13 +3,7 @@
 \begin{document}
 \section{Questions for professor Sundqvist}
 \begin{itemize}
-\item pcyg.f90: what is the paramter $p$?
-\item pcyg.f90: what is meant by Eddington limb-darkening?
-\item Sundqvist+ 2009: what is the geometry of a \textit{slice}?
-\item CMFAA course notes p.13 (the example) what is understood by plane-parallel geometry and is it 1D or 2D?
-\item CMFAA course notes p.15: why is this called diffusion $F=T^3 \frac{dT}{dx}$ (flux proportional to local gradient in temperature)?
-\item unclassified: what is the terminal velocity $v_{\infty}$?
-\item unclassified: what is Sobo-distribution?
+\item pcyg.f90: for \texttt{test\_number $= 2$}, why do we call it isotropic since isotropy of \texttt{mu} does not imply isotropy of \texttt{theta}?
 \end{itemize}
 
 \newpage
@@ -26,6 +20,46 @@
 \item unclassified: what is a flux limiter? (see course notes)
 \item unclassified: what is cross section of scattering (see Wikipedia)
 \item Puls manual: p.26: how does the Milne equation appear? (see library book)
+
+\item pcyg.f90: what are p-rays? (see anwser professor Sundqvist)
+\begin{itemize}
+\item parallel rays leaving the atmosphere (of, e.g. a star)
+\begin{center}
+\begin{tikzpicture}
+\begin{scope}
+	\def \radij{2}	
+	\def \dist{3}
+  	\draw (0,0) circle (\radij);
+	\draw[->] (\radij,0) -- (\radij+\dist,0);
+	\draw[->] ({\radij*cos(30)},{\radij*sin(30)}) -- ({\radij*cos(30)+\dist},{\radij*sin(30)});
+	\draw[->] ({\radij*cos(-30)},{\radij*sin(-30)}) -- ({\radij*cos(-30)+\dist},{\radij*sin(-30)});
+\end{scope}
+\end{tikzpicture}
+\end{center}
+\end{itemize}  
+
+\item pcyg.f90: what is meant by Eddington limb-darkening? (see answer professor Sundqvist)
+\begin{itemize}
+\item standard limb darkening
+\end{itemize}
+\item Sundqvist+ 2009: what is the geometry of a \textit{slice}?
+
+\item CMFAA course notes p.13 (the example) what is understood by plane-parallel geometry and is it 1D or 2D? (see answer professor Sundqvist)
+\begin{itemize}
+\item 
+\end{itemize}
+
+\item CMFAA course notes p.15: why is this called diffusion $F=T^3 \frac{dT}{dx}$ (flux proportional to local gradient in temperature)?
+
+\item unclassified: what is the terminal velocity $v_{\infty}$?
+
+\item unclassified: what is Sobo-distribution?
+\end{itemize}
+
+\newpage
+\section{Interesting problems}
+\begin{itemize}
+\item inverse radiative transfer problem
 \end{itemize}
 
 \end{document}
