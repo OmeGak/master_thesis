@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.20)  17 SEP 2019 16:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.20)  17 SEP 2019 21:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1125,9 +1125,6 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 LaTeX Warning: Label `limb_darkening' multiply defined.
 
-
-LaTeX Warning: Label `PCyg_mu_eq_1' multiply defined.
-
 )
 \openout1 = `main.aux'.
 
@@ -1338,14 +1335,6 @@ nce/npot6xk0100alpha0beta1test0.png  used on input line 226.
 (pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
  [32 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alph
 a0beta1test0.png (PNG copy)>]
-
-Package caption Warning: \label without proper reference on input line 356.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `PCyg_mu_eq_1' on page 33 undefined on input line 238.
-
-
 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alpha0bet
 a1test1.png, id=562, 421.575pt x 316.0608pt>
 File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alph
@@ -1364,64 +1353,65 @@ a0beta1test10.png Graphic file (type png)
 Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
 nce/npot5xk0100alpha0beta1test10.png  used on input line 249.
 (pdftex.def)             Requested size: 226.48395pt x 169.8022pt.
-[33 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alpha
-0beta1test1.png (PNG copy)> <../../introductory_exercises/P_Cygni_profile_UV_re
-sonance/npot5xk0100alpha0beta1test10.png (PNG copy)>] [34]
+ [33 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alph
+a0beta1test1.png (PNG copy)> <../../introductory_exercises/P_Cygni_profile_UV_r
+esonance/npot5xk0100alpha0beta1test10.png (PNG copy)>]
+Overfull \hbox (10.13332pt too wide) in paragraph at lines 343--345
+[] 
+ []
+
+[34]
 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alpha0bet
-a1test2.png, id=592, 429.2838pt x 310.761pt>
+a1test2.png, id=593, 429.2838pt x 310.761pt>
 File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alph
 a0beta1test2.png Graphic file (type png)
 <use ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alpha
 0beta1test2.png>
 Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/npot5xk0100alpha0beta1test2.png  used on input line 349.
+nce/npot5xk0100alpha0beta1test2.png  used on input line 366.
 (pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alpha0bet
-a1test20.png, id=593, 421.575pt x 316.0608pt>
+a1test20.png, id=594, 421.575pt x 316.0608pt>
 File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alph
 a0beta1test20.png Graphic file (type png)
 <use ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alpha
 0beta1test20.png>
 Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/npot5xk0100alpha0beta1test20.png  used on input line 353.
+nce/npot5xk0100alpha0beta1test20.png  used on input line 370.
 (pdftex.def)             Requested size: 226.48395pt x 169.8022pt.
  [35 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alph
 a0beta1test2.png (PNG copy)> <../../introductory_exercises/P_Cygni_profile_UV_r
 esonance/npot5xk0100alpha0beta1test20.png (PNG copy)>]
 <../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_limb_darke
-ning.png, id=599, 421.575pt x 316.0608pt>
+ning.png, id=602, 421.575pt x 316.0608pt>
 File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_limb_
 darkening.png Graphic file (type png)
 <use ../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_limb_d
 arkening.png>
 Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/Eddington_limb_darkening.png  used on input line 377.
+nce/Eddington_limb_darkening.png  used on input line 396.
 (pdftex.def)             Requested size: 317.07614pt x 237.72018pt.
  [36 <../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_limb_
 darkening.png (PNG copy)>]
-
-LaTeX Warning: Reference `prob_dist_Eddington' on page 37 undefined on input li
-ne 424.
-
 <../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_accept_rej
-ect.png, id=612, 429.2838pt x 310.761pt>
+ect.png, id=616, 429.2838pt x 310.761pt>
 File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_accep
 t_reject.png Graphic file (type png)
 <use ../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_accept
 _reject.png>
 Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/Eddington_accept_reject.png  used on input line 428.
+nce/Eddington_accept_reject.png  used on input line 447.
 (pdftex.def)             Requested size: 317.07614pt x 229.53278pt.
-[37 <../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_accept
-_reject.png (PNG copy)>] [38]
+ [37 <../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_accep
+t_reject.png (PNG copy)>] [38]
 <../../introductory_exercises/P_Cygni_profile_UV_resonance/test0_convergence.pn
-g, id=630, 429.2838pt x 310.761pt>
+g, id=635, 429.2838pt x 310.761pt>
 File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/test0_convergen
 ce.png Graphic file (type png)
 <use ../../introductory_exercises/P_Cygni_profile_UV_resonance/test0_convergenc
 e.png>
 Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/test0_convergence.png  used on input line 453.
+nce/test0_convergence.png  used on input line 489.
 (pdftex.def)             Requested size: 294.42636pt x 213.13554pt.
  [39 <../../introductory_exercises/P_Cygni_profile_UV_resonance/test0_convergen
 ce.png (PNG copy)>] [40] [41]) [42]
@@ -1458,10 +1448,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32665 strings out of 492641
- 661692 string characters out of 6131786
- 1142669 words of memory out of 5000000
- 35786 multiletter control sequences out of 15000+600000
+ 32668 strings out of 492641
+ 661763 string characters out of 6131786
+ 1142966 words of memory out of 5000000
+ 35789 multiletter control sequences out of 15000+600000
  13912 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  54i,20n,75p,1597b,2070s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1483,10 +1473,10 @@ live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (48 pages, 569271 bytes).
+Output written on main.pdf (48 pages, 570761 bytes).
 PDF statistics:
- 808 PDF objects out of 1000 (max. 8388607)
- 721 compressed objects within 8 object streams
+ 813 PDF objects out of 1000 (max. 8388607)
+ 726 compressed objects within 8 object streams
  230 named destinations out of 1000 (max. 500000)
  543 words of extra memory for PDF output out of 10000 (max. 10000000)
 

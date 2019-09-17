@@ -249,8 +249,8 @@ were released radially from photopshere?
 \includegraphics[width=1\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alpha0beta1test10.png}
 \caption{Same plot (together with output of initial version)}
 \end{subfigure}
-\label{PCyg_mu_eq_1}
 \caption{The number of photons equals $10^{5}$}
+\label{PCyg_mu_eq_1}
 \end{figure}
 
 
@@ -261,7 +261,7 @@ were released radially from photopshere?
 v = v_{\infty}(1-b/r)^{\beta}
 \label{velocity_profile}
 \end{equation}
-A scaled version of the Equation (\ref{velocity_profile}) yields 
+A scaled version of Equation (\ref{velocity_profile}) yields 
 \begin{equation}
 u = \frac{v(r)}{v_{\infty}} = \left(1 - \frac{r_{\infty}}{r} \right)^{\beta} 
 \label{u_profile}
@@ -313,6 +313,8 @@ where $\boxed{v(x) = \left(1 - \frac{b}{r} \right)^{\beta}}$
 and $\sigma(x) = \frac{dv}{dr}\frac{r}{v}-1$ 
 thus $\boxed{\sigma(x) = \frac{\beta b}{r}\left( 1-\frac{b}{r}\right)^{-1}}$
 
+\item Assuming that $\beta = 1$ then $\boxed{v(x) = 1 - \frac{b}{r}}$ and $\frac{dv}{dr} = \frac{\beta b}{r^2}$ and $\boxed{\sigma(x) = \frac{\beta b}{r}}$.
+
 \item Conclusion: $\tau(x)$ is only dependent on $x$ and not on \texttt{xmuestart} or \texttt{xmuein}.
 
 \item \texttt{xmueou} follows the distribution as given by the function \texttt{xmueout}, namely
@@ -327,9 +329,21 @@ with $\tau = \frac{\texttt{tau0}}{1+\texttt{X}^2 \sigma}$ where $\texttt{X}$ is 
 \item Finally one can combine these results to get the distribution of the photons according to the frequency $x$ via the relation 
 \begin{equation}
 \texttt{xnew = xstart + v(xmueou-xmuein) = xstart + v(xmueou -1)}
+\label{pcyg_mu_1_final_eq}
 \end{equation}
+
+In words, we initially have an isotropic distribution for \texttt{xstart}. The number of photons that are leaving the atmosphere at different frequencies is however not isotropic through complex interactions that are incorporated into $p(x)$.
+One must also take into account that not all of the photons that are released actually escape from the atmosphere and also that sometimes no resonance is possible, and then Equation (\ref{pcyg_mu_1_final_eq}) is not applicable.
+
+
 \end{itemize}
 
+
+
+\noindent\fbox{
+  \parbox{\textwidth}{TO DO: proceed from this to the analytical expression for the flux. Here I am stuck for the moment.}}
+  
+\vspace{1cm}
 \underline{Via this link, you can go back to the exercises overview: Section \ref{Overview_Part_2}.}
 
 
@@ -339,9 +353,12 @@ with $\tau = \frac{\texttt{tau0}}{1+\texttt{X}^2 \sigma}$ where $\texttt{X}$ is 
 What would happen to line-profile, is you assumed scattering
 was isotropic 
 \\(i.e., NOT following Sobolev-distrobution)
+
 \begin{itemize}
-\item test case number 2
+\item in the implementation, \texttt{test\_number = 2}
+\item the results are shown in Figure \ref{Pcyg_isotropic_scattering}.
 \end{itemize}
+
 
 \begin{figure}[!htbp]
 \centering
@@ -353,11 +370,13 @@ was isotropic
 \includegraphics[width=1\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alpha0beta1test20.png}
 \caption{Same plot (together with output of initial version)}
 \end{subfigure}
-\label{PCyg_mu_eq_1}
 \caption{The number of photons equals $10^{5}$}
+\label{Pcyg_isotropic_scattering}
 \end{figure}
 
-The \textit{grosso modo} form has not changed, although the scaling has changed.
+It is clear from Figure \ref{Pcyg_isotropic_scattering} that the peak around $x=0$ is higher and sharper. \\
+\noindent\fbox{
+  \parbox{0.35\textwidth}{Analyse this behaviour more closely}}
 
 \newpage
 \subsubsection{Third adaptation: introduction of Eddington limb-darkening}
@@ -410,11 +429,11 @@ I am not sure about the correctness of the assumption of isotropy of the flux}}
 \end{equation}
 subject to the normalisation condition -very similar to Equation (\ref{isotropic_flux_isotropic_intensity_prob_dist}) - that
 \begin{equation}
-1 = \int_{-1}^{1} F_{\nu} d\mu = \frac{2A}{5} + \frac{A}{3} = \frac{11A}{15}
+1 = \int_{0}^{1} F_{\nu} d\mu = \frac{2A}{5}
 \end{equation}
-thus $A = \frac{15}{11}$. Photons need to be sampled according to
+thus $A = \frac{5}{2}$. Photons need to be sampled according to
 \begin{equation}
-(0.4+0.6\mu)\mu d\mu
+\frac{2}{5}(0.4+0.6\mu)\mu d\mu
 \label{prob_dist_Eddington}
 \end{equation}
 \end{itemize}
@@ -437,21 +456,39 @@ The results of an accept-reject method that samples the probability distribution
 
 \newpage
 \subsubsection{Fourth adaptaion: photospheric line-profile}
-Challening: Put photospheric line-profile (simple Gaussian) in
-!What happens? Test on xk0=0 (opacity =0) case.
+Challening: Put photospheric line-profile (simple Gaussian) in. What happens? Test on \texttt{xk0=0} (opacity = 0) case.
 
 \begin{itemize}
-\item test case number 4 (not yet implemented)
+\item test case number 4 
+\item \noindent\fbox{
+  \parbox{0.5\textwidth}{This is still to be implemented.}}
 \end{itemize}
 
 \newpage
 \subsubsection{Convergence analysis}
 \label{convergence_analysis}
 
+The convergence of the Monte Carlo method is tested with the following input parameters
+
+\begin{center}
+\centering
+{\tabulinesep=1.5mm
+\begin{tabu}{|c|c|c|c|}
+\hline 
+\texttt{kx0} & alpha & beta & \texttt{test\_number} \\
+0 & 0 & 1 & 0 \\ \hline
+\end{tabu}}
+\end{center}
+
+for a varying amount of photons, as shown in Figure \ref{Convergence_Pcyg_kx0_0}. We expect the method to have $\frac{1}{\sqrt{N}}$ convergence, where $N$ is the number of photons. However, the methods strangely seems to have a faster convergence rate. \noindent\fbox{
+  \parbox{0.5\textwidth}{This is still to be analysed.}}
+
+
 \begin{figure}[!htp]
 \centering
 \includegraphics[width=0.65\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/test0_convergence.png}
 \caption{Original version of the code: convergence analysis (xk0=0)}
+\label{Convergence_Pcyg_kx0_0}
 \end{figure}
 
 \underline{Via this link, you can go back to the exercises overview: Section \ref{Overview_Part_2}.}

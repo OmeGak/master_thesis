@@ -2,7 +2,8 @@ clc, clear all, close all
 
 save = 1
 
-func = @(x) (0.4+0.6.*x).*x;
+A = 2.5
+func = @(x) A*(0.4+0.6.*x).*x;
 number_samples = 10^4;
 
 accepted_samples = zeros(1,number_samples);
@@ -22,12 +23,10 @@ efficiency = k/l;
 
 numBins = 50;
 
-A = 2.5
-
 figure()
 h = histogram(accepted_samples,'Normalization','pdf','BinWidth',1/numBins)
 x_array = linspace(0,1,100);
-hold on, plot(x_array,(0.4+0.6.*x_array).*x_array*A)
+hold on, plot(x_array,func(x_array))
 
 xlabel('\mu')
 ylabel('p(\mu)')
