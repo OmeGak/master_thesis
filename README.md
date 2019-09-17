@@ -1,6 +1,6 @@
 # Monte Carlo Radiation Transport Simulations for Astrophysical Applications
 
-### About building a bridge between mathematical engineering and astrophysics
+### About (trying to) building a bridge between mathematical engineering and astrophysics
 
 *topic.pdf* contains a description of the master thesis
 
