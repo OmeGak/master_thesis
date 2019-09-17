@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.20)  14 SEP 2019 12:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.20)  17 SEP 2019 12:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -735,6 +735,11 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip60
 )
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2018/05/01 v1.1-162 Sub-captions (AR)
+\c@subfigure=\count175
+\c@subtable=\count176
+)
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
@@ -756,7 +761,7 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
 .code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count175
+\pgf@plot@mark@count=\count177
 \pgfplotmarksize=\dimen190
 )
 \tikz@lastx=\dimen191
@@ -769,18 +774,18 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \tikz@figbox@bg=\box80
 \tikz@tempbox=\box81
 \tikz@tempbox@bg=\box82
-\tikztreelevel=\count176
-\tikznumberofchildren=\count177
-\tikznumberofcurrentchild=\count178
-\tikz@fig@count=\count179
+\tikztreelevel=\count178
+\tikznumberofchildren=\count179
+\tikznumberofcurrentchild=\count180
+\tikz@fig@count=\count181
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count180
-\pgfmatrixcurrentcolumn=\count181
-\pgf@matrix@numberofcolumns=\count182
+\pgfmatrixcurrentrow=\count182
+\pgfmatrixcurrentcolumn=\count183
+\pgf@matrix@numberofcolumns=\count184
 )
-\tikz@expandcount=\count183
+\tikz@expandcount=\count185
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytopaths.code.tex
@@ -901,7 +906,7 @@ Package: biblatex 2018/03/04 v3.11 programmable bibliographies (PK/MW)
 
 (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count184
+\lrq@indent=\count186
 
 (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
@@ -909,49 +914,49 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
 \@xs@message=\write7
-\integerpart=\count185
-\decimalpart=\count186
+\integerpart=\count187
+\decimalpart=\count188
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
-\c@tabx@nest=\count187
-\c@listtotal=\count188
-\c@listcount=\count189
-\c@liststart=\count190
-\c@liststop=\count191
-\c@citecount=\count192
-\c@citetotal=\count193
-\c@multicitecount=\count194
-\c@multicitetotal=\count195
-\c@instcount=\count196
-\c@maxnames=\count197
-\c@minnames=\count198
-\c@maxitems=\count199
-\c@minitems=\count266
-\c@citecounter=\count267
-\c@savedcitecounter=\count268
-\c@uniquelist=\count269
-\c@uniquename=\count270
-\c@refsection=\count271
-\c@refsegment=\count272
-\c@maxextratitle=\count273
-\c@maxextratitleyear=\count274
-\c@maxextradate=\count275
-\c@maxextraalpha=\count276
-\c@abbrvpenalty=\count277
-\c@highnamepenalty=\count278
-\c@lownamepenalty=\count279
-\c@maxparens=\count280
-\c@parenlevel=\count281
-\blx@tempcnta=\count282
-\blx@tempcntb=\count283
-\blx@tempcntc=\count284
-\blx@maxsection=\count285
-\blx@maxsegment@0=\count286
-\blx@notetype=\count287
-\blx@parenlevel@text=\count288
-\blx@parenlevel@foot=\count289
-\blx@sectionciteorder@0=\count290
+\c@tabx@nest=\count189
+\c@listtotal=\count190
+\c@listcount=\count191
+\c@liststart=\count192
+\c@liststop=\count193
+\c@citecount=\count194
+\c@citetotal=\count195
+\c@multicitecount=\count196
+\c@multicitetotal=\count197
+\c@instcount=\count198
+\c@maxnames=\count199
+\c@minnames=\count266
+\c@maxitems=\count267
+\c@minitems=\count268
+\c@citecounter=\count269
+\c@savedcitecounter=\count270
+\c@uniquelist=\count271
+\c@uniquename=\count272
+\c@refsection=\count273
+\c@refsegment=\count274
+\c@maxextratitle=\count275
+\c@maxextratitleyear=\count276
+\c@maxextradate=\count277
+\c@maxextraalpha=\count278
+\c@abbrvpenalty=\count279
+\c@highnamepenalty=\count280
+\c@lownamepenalty=\count281
+\c@maxparens=\count282
+\c@parenlevel=\count283
+\blx@tempcnta=\count284
+\blx@tempcntb=\count285
+\blx@tempcntc=\count286
+\blx@maxsection=\count287
+\blx@maxsegment@0=\count288
+\blx@notetype=\count289
+\blx@parenlevel@text=\count290
+\blx@parenlevel@foot=\count291
+\blx@sectionciteorder@0=\count292
 \labelnumberwidth=\skip63
 \labelalphawidth=\skip64
 \biblabelsep=\skip65
@@ -962,9 +967,9 @@ Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 \bibhang=\skip70
 \blx@bcfin=\read3
 \blx@bcfout=\write8
-\c@mincomprange=\count291
-\c@maxcomprange=\count292
-\c@mincompwidth=\count293
+\c@mincomprange=\count293
+\c@maxcomprange=\count294
+\c@mincompwidth=\count295
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -975,74 +980,74 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'alphabetic.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count294
-\c@savedafterword=\count295
-\c@annotator=\count296
-\c@savedannotator=\count297
-\c@author=\count298
-\c@savedauthor=\count299
-\c@bookauthor=\count300
-\c@savedbookauthor=\count301
-\c@commentator=\count302
-\c@savedcommentator=\count303
-\c@editor=\count304
-\c@savededitor=\count305
-\c@editora=\count306
-\c@savededitora=\count307
-\c@editorb=\count308
-\c@savededitorb=\count309
-\c@editorc=\count310
-\c@savededitorc=\count311
-\c@foreword=\count312
-\c@savedforeword=\count313
-\c@holder=\count314
-\c@savedholder=\count315
-\c@introduction=\count316
-\c@savedintroduction=\count317
-\c@namea=\count318
-\c@savednamea=\count319
-\c@nameb=\count320
-\c@savednameb=\count321
-\c@namec=\count322
-\c@savednamec=\count323
-\c@translator=\count324
-\c@savedtranslator=\count325
-\c@shortauthor=\count326
-\c@savedshortauthor=\count327
-\c@shorteditor=\count328
-\c@savedshorteditor=\count329
-\c@labelname=\count330
-\c@savedlabelname=\count331
-\c@institution=\count332
-\c@savedinstitution=\count333
-\c@lista=\count334
-\c@savedlista=\count335
-\c@listb=\count336
-\c@savedlistb=\count337
-\c@listc=\count338
-\c@savedlistc=\count339
-\c@listd=\count340
-\c@savedlistd=\count341
-\c@liste=\count342
-\c@savedliste=\count343
-\c@listf=\count344
-\c@savedlistf=\count345
-\c@location=\count346
-\c@savedlocation=\count347
-\c@organization=\count348
-\c@savedorganization=\count349
-\c@origlocation=\count350
-\c@savedoriglocation=\count351
-\c@origpublisher=\count352
-\c@savedorigpublisher=\count353
-\c@publisher=\count354
-\c@savedpublisher=\count355
-\c@language=\count356
-\c@savedlanguage=\count357
-\c@origlanguage=\count358
-\c@savedoriglanguage=\count359
-\c@pageref=\count360
-\c@savedpageref=\count361
+\c@afterword=\count296
+\c@savedafterword=\count297
+\c@annotator=\count298
+\c@savedannotator=\count299
+\c@author=\count300
+\c@savedauthor=\count301
+\c@bookauthor=\count302
+\c@savedbookauthor=\count303
+\c@commentator=\count304
+\c@savedcommentator=\count305
+\c@editor=\count306
+\c@savededitor=\count307
+\c@editora=\count308
+\c@savededitora=\count309
+\c@editorb=\count310
+\c@savededitorb=\count311
+\c@editorc=\count312
+\c@savededitorc=\count313
+\c@foreword=\count314
+\c@savedforeword=\count315
+\c@holder=\count316
+\c@savedholder=\count317
+\c@introduction=\count318
+\c@savedintroduction=\count319
+\c@namea=\count320
+\c@savednamea=\count321
+\c@nameb=\count322
+\c@savednameb=\count323
+\c@namec=\count324
+\c@savednamec=\count325
+\c@translator=\count326
+\c@savedtranslator=\count327
+\c@shortauthor=\count328
+\c@savedshortauthor=\count329
+\c@shorteditor=\count330
+\c@savedshorteditor=\count331
+\c@labelname=\count332
+\c@savedlabelname=\count333
+\c@institution=\count334
+\c@savedinstitution=\count335
+\c@lista=\count336
+\c@savedlista=\count337
+\c@listb=\count338
+\c@savedlistb=\count339
+\c@listc=\count340
+\c@savedlistc=\count341
+\c@listd=\count342
+\c@savedlistd=\count343
+\c@liste=\count344
+\c@savedliste=\count345
+\c@listf=\count346
+\c@savedlistf=\count347
+\c@location=\count348
+\c@savedlocation=\count349
+\c@organization=\count350
+\c@savedorganization=\count351
+\c@origlocation=\count352
+\c@savedoriglocation=\count353
+\c@origpublisher=\count354
+\c@savedorigpublisher=\count355
+\c@publisher=\count356
+\c@savedpublisher=\count357
+\c@language=\count358
+\c@savedlanguage=\count359
+\c@origlanguage=\count360
+\c@savedoriglanguage=\count361
+\c@pageref=\count362
+\c@savedpageref=\count363
 \shorthandwidth=\skip71
 \shortjournalwidth=\skip72
 \shortserieswidth=\skip73
@@ -1068,13 +1073,13 @@ Package biblatex Info: ... file 'biblatex.def' found.
 
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2018/03/04 v3.11 biblatex compatibility (PK/MW)
-\c@textcitecount=\count362
-\c@textcitetotal=\count363
-\c@textcitemaxnames=\count364
-\c@biburlnumpenalty=\count365
-\c@biburlucpenalty=\count366
-\c@biburllcpenalty=\count367
-\c@smartand=\count368
+\c@textcitecount=\count364
+\c@textcitetotal=\count365
+\c@textcitemaxnames=\count366
+\c@biburlnumpenalty=\count367
+\c@biburlucpenalty=\count368
+\c@biburllcpenalty=\count369
+\c@smartand=\count370
 )
 Package biblatex Info: Trying to load bibliography style 'alphabetic'...
 Package biblatex Info: ... file 'alphabetic.bbx' found.
@@ -1086,8 +1091,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2018/03/04 v3.11 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count369
-\c@bbx:relatedtotal=\count370
+\c@bbx:relatedcount=\count371
+\c@bbx:relatedtotal=\count372
 ))
 Package biblatex Info: Trying to load citation style 'alphabetic'...
 Package biblatex Info: ... file 'alphabetic.cbx' found.
@@ -1121,9 +1126,13 @@ File: english.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count371
-\@quotereset=\count372
-)) (./practical.aux)
+\@quotelevel=\count373
+\@quotereset=\count374
+)) (./practical.aux
+
+LaTeX Warning: Label `PCyg_mu_eq_1' multiply defined.
+
+)
 \openout1 = `practical.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
@@ -1140,19 +1149,18 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
-
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count373
+\scratchcounter=\count375
 \scratchdimen=\dimen198
 \scratchbox=\box103
-\nofMPsegments=\count374
-\nofMParguments=\count375
+\nofMPsegments=\count376
+\nofMParguments=\count377
 \everyMPshowfont=\toks44
-\MPscratchCnt=\count376
+\MPscratchCnt=\count378
 \MPscratchDim=\dimen199
-\MPnumerator=\count377
-\makeMPintoPDFobject=\count378
+\MPnumerator=\count379
+\makeMPintoPDFobject=\count380
 \everyMPtoPDFconversion=\toks45
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1186,7 +1194,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count379
+\c@section@level=\count381
 )
 LaTeX Info: Redefining \ref on input line 3.
 LaTeX Info: Redefining \pageref on input line 3.
@@ -1225,12 +1233,12 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 16.
-LaTeX Font Info:    Try loading font information for U+msa on input line 30.
+LaTeX Font Info:    Try loading font information for U+msa on input line 32.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 30.
+LaTeX Font Info:    Try loading font information for U+msb on input line 32.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1245,7 +1253,7 @@ Package scrlayer-scrpage Warning: \headheight to low.
 (scrlayer-scrpage)                  \setlength{\headheight}{12.0pt}
 (scrlayer-scrpage)                in your preamble.
 (scrlayer-scrpage)                I'll also decrease \topmargin on input line 3
-0.
+2.
 
 
 Overfull \vbox (12.0pt too high) has occurred while \output is active []
@@ -1254,15 +1262,15 @@ Overfull \vbox (12.0pt too high) has occurred while \output is active []
 
 ]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 55.
+put line 57.
 <../../introductory_exercises/limb_darkening/number_channels20number_photons100
-000max_opt_depth10.png, id=71, 429.2838pt x 310.761pt>
+000max_opt_depth10.png, id=81, 429.2838pt x 310.761pt>
 File: ../../introductory_exercises/limb_darkening/number_channels20number_photo
 ns100000max_opt_depth10.png Graphic file (type png)
 <use ../../introductory_exercises/limb_darkening/number_channels20number_photon
 s100000max_opt_depth10.png>
 Package pdftex.def Info: ../../introductory_exercises/limb_darkening/number_cha
-nnels20number_photons100000max_opt_depth10.png  used on input line 96.
+nnels20number_photons100000max_opt_depth10.png  used on input line 98.
 (pdftex.def)             Requested size: 317.07614pt x 229.53278pt.
  [2]
 File: ../../introductory_exercises/limb_darkening/number_channels20number_photo
@@ -1270,110 +1278,152 @@ ns100000max_opt_depth10.png Graphic file (type png)
 <use ../../introductory_exercises/limb_darkening/number_channels20number_photon
 s100000max_opt_depth10.png>
 Package pdftex.def Info: ../../introductory_exercises/limb_darkening/number_cha
-nnels20number_photons100000max_opt_depth10.png  used on input line 113.
+nnels20number_photons100000max_opt_depth10.png  used on input line 115.
 (pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
 <../../introductory_exercises/limb_darkening/PHI_number_channels20number_photon
-s100000max_opt_depth10.png, id=87, 429.2838pt x 310.761pt>
+s100000max_opt_depth10.png, id=97, 429.2838pt x 310.761pt>
 File: ../../introductory_exercises/limb_darkening/PHI_number_channels20number_p
 hotons100000max_opt_depth10.png Graphic file (type png)
 <use ../../introductory_exercises/limb_darkening/PHI_number_channels20number_ph
 otons100000max_opt_depth10.png>
 Package pdftex.def Info: ../../introductory_exercises/limb_darkening/PHI_number
-_channels20number_photons100000max_opt_depth10.png  used on input line 118.
+_channels20number_photons100000max_opt_depth10.png  used on input line 120.
 (pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
  [3 <../../introductory_exercises/limb_darkening/number_channels20number_photon
 s100000max_opt_depth10.png (PNG copy)> <../../introductory_exercises/limb_darke
 ning/PHI_number_channels20number_photons100000max_opt_depth10.png (PNG copy)>] 
-[4] [5]
+[4]
+Overfull \hbox (10.13332pt too wide) in paragraph at lines 195--199
+[] 
+ []
+
+[5]
 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha0bet
-a1test0.png, id=108, 429.2838pt x 310.761pt>
+a1test0.png, id=118, 429.2838pt x 310.761pt>
 File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alph
 a0beta1test0.png Graphic file (type png)
 <use ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha
 0beta1test0.png>
 Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/npot6xk0100alpha0beta1test0.png  used on input line 210.
+nce/npot6xk0100alpha0beta1test0.png  used on input line 226.
 (pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
  [6 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha
 0beta1test0.png (PNG copy)>]
-<../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha0bet
-a1test1.png, id=116, 421.575pt x 316.0608pt>
-File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alph
+
+Package caption Warning: \label without proper reference on input line 356.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `PCyg_mu_eq_1' on page 7 undefined on input line 238.
+
+<../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alpha0bet
+a1test1.png, id=126, 421.575pt x 316.0608pt>
+File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alph
 a0beta1test1.png Graphic file (type png)
-<use ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha
+<use ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alpha
 0beta1test1.png>
 Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/npot6xk0100alpha0beta1test1.png  used on input line 227.
+nce/npot5xk0100alpha0beta1test1.png  used on input line 245.
 (pdftex.def)             Requested size: 226.48395pt x 169.8022pt.
- [7 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha
-0beta1test1.png (PNG copy)>] [8]
-<../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha0bet
-a1test2.png, id=137, 429.2838pt x 310.761pt>
-File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alph
+<../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alpha0bet
+a1test10.png, id=127, 421.575pt x 316.0608pt>
+File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alph
+a0beta1test10.png Graphic file (type png)
+<use ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alpha
+0beta1test10.png>
+Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
+nce/npot5xk0100alpha0beta1test10.png  used on input line 249.
+(pdftex.def)             Requested size: 226.48395pt x 169.8022pt.
+[7 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alpha0
+beta1test1.png (PNG copy)> <../../introductory_exercises/P_Cygni_profile_UV_res
+onance/npot5xk0100alpha0beta1test10.png (PNG copy)>] [8]
+<../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alpha0bet
+a1test2.png, id=161, 429.2838pt x 310.761pt>
+File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alph
 a0beta1test2.png Graphic file (type png)
-<use ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha
+<use ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alpha
 0beta1test2.png>
 Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/npot6xk0100alpha0beta1test2.png  used on input line 285.
+nce/npot5xk0100alpha0beta1test2.png  used on input line 349.
 (pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
- [9 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha
-0beta1test2.png (PNG copy)>]
+<../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alpha0bet
+a1test20.png, id=162, 421.575pt x 316.0608pt>
+File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alph
+a0beta1test20.png Graphic file (type png)
+<use ../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alpha
+0beta1test20.png>
+Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
+nce/npot5xk0100alpha0beta1test20.png  used on input line 353.
+(pdftex.def)             Requested size: 226.48395pt x 169.8022pt.
+ [9 <../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alpha
+0beta1test2.png (PNG copy)> <../../introductory_exercises/P_Cygni_profile_UV_re
+sonance/npot5xk0100alpha0beta1test20.png (PNG copy)>]
 <../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_limb_darke
-ning.png, id=145, 421.575pt x 316.0608pt>
+ning.png, id=169, 421.575pt x 316.0608pt>
 File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_limb_
 darkening.png Graphic file (type png)
 <use ../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_limb_d
 arkening.png>
 Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/Eddington_limb_darkening.png  used on input line 305.
+nce/Eddington_limb_darkening.png  used on input line 376.
 (pdftex.def)             Requested size: 317.07614pt x 237.72018pt.
-
-Overfull \hbox (10.13332pt too wide) in paragraph at lines 309--316
-[] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 309--316
-
- []
-
-[10 <../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_limb_d
-arkening.png (PNG copy)>] [11] [12] [13] [14] [15]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 419.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 419.
+ [10 <../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_limb_
+darkening.png (PNG copy)>] [11] [12]
+<../../introductory_exercises/P_Cygni_profile_UV_resonance/test0_convergence.pn
+g, id=196, 429.2838pt x 310.761pt>
+File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/test0_convergen
+ce.png Graphic file (type png)
+<use ../../introductory_exercises/P_Cygni_profile_UV_resonance/test0_convergenc
+e.png>
+Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
+nce/test0_convergence.png  used on input line 439.
+(pdftex.def)             Requested size: 294.42636pt x 213.13554pt.
+ [13 <../../introductory_exercises/P_Cygni_profile_UV_resonance/test0_convergen
+ce.png (PNG copy)>] [14] [15] [16]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 520.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 520.
  (./practical.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 419.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 419.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 520.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 520.
 Package rerunfilecheck Info: File `practical.out' has not changed.
-(rerunfilecheck)             Checksum: FB19656502DAD9FDD6CD4FBF0CF2A06C;840.
+(rerunfilecheck)             Checksum: 598A540A93239B2661D8038BCB70D435;950.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package logreq Info: Writing requests to 'practical.run.xml'.
 \openout1 = `practical.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32054 strings out of 492641
- 650170 string characters out of 6131786
- 1134611 words of memory out of 5000000
- 35375 multiletter control sequences out of 15000+600000
- 8060 words of font info for 32 fonts, out of 8000000 for 9000
+ 32147 strings out of 492641
+ 652567 string characters out of 6131786
+ 1135824 words of memory out of 5000000
+ 35446 multiletter control sequences out of 15000+600000
+ 8359 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,20n,75p,766b,1641s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,20n,75p,766b,1643s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.
-pfb>
-Output written on practical.pdf (15 pages, 287678 bytes).
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on practical.pdf (16 pages, 423732 bytes).
 PDF statistics:
- 245 PDF objects out of 1000 (max. 8388607)
- 207 compressed objects within 3 object streams
- 72 named destinations out of 1000 (max. 500000)
- 131 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 293 PDF objects out of 1000 (max. 8388607)
+ 248 compressed objects within 3 object streams
+ 88 named destinations out of 1000 (max. 500000)
+ 162 words of extra memory for PDF output out of 10000 (max. 10000000)
 

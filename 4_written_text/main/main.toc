@@ -1,186 +1,194 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {english}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{I\hspace {1em}Questions}{3}{part.1}
+\contentsline {paragraph}{Exercises, part II}{3}{section*.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1}Questions for professor Sundqvist}{3}{section.1}
+\contentsline {part}{I\hspace {1em}Questions}{5}{part.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2}Questions for professor Samaey}{4}{section.2}
+\contentsline {section}{\numberline {1}Questions for professor Sundqvist}{5}{section.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Solved questions}{5}{section.3}
+\contentsline {section}{\numberline {2}Questions for professor Samaey}{6}{section.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Interesting problems}{6}{section.4}
+\contentsline {section}{\numberline {3}Solved questions}{7}{section.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{II\hspace {1em}Monte Carlo Radiative Transfer}{7}{part.2}
+\contentsline {section}{\numberline {4}Interesting problems}{8}{section.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Glossary}{7}{section.5}
+\contentsline {part}{II\hspace {1em}Monte Carlo Radiative Transfer}{9}{part.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Very broad introduction: Radiation Hydrodynamics}{8}{section.6}
+\contentsline {section}{\numberline {5}Glossary}{9}{section.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1}Definitions and equations}{8}{subsection.6.1}
+\contentsline {section}{\numberline {6}General equations - first year overview}{10}{section.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {6.1.1}RHD equations}{8}{subsubsection.6.1.1}
+\contentsline {subsubsection}{\numberline {6.0.1}Hydrodynamics}{10}{subsubsection.6.0.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Heat flux}{8}{section*.2}
+\contentsline {subsubsection}{\numberline {6.0.2}Radiation}{10}{subsubsection.6.0.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Specific intensity and its angular moments}{8}{section*.3}
+\contentsline {subsubsection}{\numberline {6.0.3}Radiation-Hydrodynamics}{10}{subsubsection.6.0.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Eddington factor}{8}{section*.4}
+\contentsline {subsubsection}{\numberline {6.0.4}Challenges}{10}{subsubsection.6.0.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {6.1.2}Radiation transport equations, diffusion, equilibrium}{8}{subsubsection.6.1.2}
+\contentsline {section}{\numberline {7}Very broad introduction \& Summary}{11}{section.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {6.1.3}Radiative Diffusion Approximation}{9}{subsubsection.6.1.3}
+\contentsline {subsection}{\numberline {7.1}Definitions and equations}{11}{subsection.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {6.1.4}Applications and approximations for radiative forces}{9}{subsubsection.6.1.4}
+\contentsline {subsubsection}{\numberline {7.1.1}Radiation equations}{11}{subsubsection.7.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {6.1.5}Optical depth (recap)}{10}{subsubsection.6.1.5}
+\contentsline {subsubsection}{\numberline {7.1.2}RHD equations}{11}{subsubsection.7.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Optical depth: physical understanding}{10}{section*.5}
+\contentsline {paragraph}{Heat flux}{11}{section*.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2}Overview of symmetry assumptions}{10}{subsection.6.2}
+\contentsline {paragraph}{Specific intensity and its angular moments}{11}{section*.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}General equations - first year overview}{11}{section.7}
+\contentsline {paragraph}{Eddington factor}{12}{section*.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {7.0.1}Hydrodynamics}{11}{subsubsection.7.0.1}
+\contentsline {subsubsection}{\numberline {7.1.3}Radiation transport equations, diffusion, equilibrium}{12}{subsubsection.7.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {7.0.2}Radiation}{11}{subsubsection.7.0.2}
+\contentsline {subsubsection}{\numberline {7.1.4}Radiative Diffusion Approximation}{12}{subsubsection.7.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {7.0.3}Radiation-Hydrodynamics}{11}{subsubsection.7.0.3}
+\contentsline {subsubsection}{\numberline {7.1.5}Applications and approximations for radiative forces}{13}{subsubsection.7.1.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {7.0.4}Challenges}{11}{subsubsection.7.0.4}
+\contentsline {subsubsection}{\numberline {7.1.6}Optical depth (recap)}{14}{subsubsection.7.1.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}Introduction: course material (Sundqvist - CMPAA course)}{12}{section.8}
+\contentsline {paragraph}{Optical depth: physical understanding}{14}{section*.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.1}EXERCISES: Introduction to numerical methods for radiation in astrophysics}{12}{subsection.8.1}
+\contentsline {subsection}{\numberline {7.2}Overview of symmetry assumptions}{14}{subsection.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2}Implicit 1D solver (20-11-2018)}{14}{subsection.8.2}
+\contentsline {section}{\numberline {8}Introduction: course material (Sundqvist - CMPAA course)}{15}{section.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.3}ADI 2D Solver}{14}{subsection.8.3}
+\contentsline {subsection}{\numberline {8.1}EXERCISES: Introduction to numerical methods for radiation in astrophysics}{15}{subsection.8.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.4}Area of a circle}{14}{subsection.8.4}
+\contentsline {subsection}{\numberline {8.2}Implicit 1D solver (20-11-2018)}{17}{subsection.8.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.5}Limb Darkening}{14}{subsection.8.5}
+\contentsline {subsection}{\numberline {8.3}ADI 2D Solver}{17}{subsection.8.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}The mathematics of Radiative Transfer}{15}{section.9}
+\contentsline {subsection}{\numberline {8.4}Area of a circle}{17}{subsection.8.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.1}Auxiliary mathematics}{15}{subsection.9.1}
+\contentsline {subsection}{\numberline {8.5}Limb Darkening}{17}{subsection.8.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.2}The H-functions}{15}{subsection.9.2}
+\contentsline {section}{\numberline {9}The mathematics of Radiative Transfer}{18}{section.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10}Monte Carlo and Radiative Transfer (Puls)}{16}{section.10}
+\contentsline {subsection}{\numberline {9.1}Auxiliary mathematics}{18}{subsection.9.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {10.1}basic definitions and facts}{16}{subsection.10.1}
+\contentsline {subsection}{\numberline {9.2}The H-functions}{18}{subsection.9.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {10.2}about random numbers}{16}{subsection.10.2}
+\contentsline {section}{\numberline {10}Monte Carlo and Radiative Transfer (Puls)}{19}{section.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {10.3}MC integration}{16}{subsection.10.3}
+\contentsline {subsection}{\numberline {10.1}basic definitions and facts}{19}{subsection.10.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {10.4}MC simulation}{16}{subsection.10.4}
+\contentsline {subsection}{\numberline {10.2}about random numbers}{19}{subsection.10.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Radiative transfer in stellar atmospheres}{16}{section*.6}
+\contentsline {subsection}{\numberline {10.3}MC integration}{19}{subsection.10.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {10.5}Exercise 1: RNG}{16}{subsection.10.5}
+\contentsline {subsection}{\numberline {10.4}MC simulation}{19}{subsection.10.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {10.6}Exercise 2: Planck-function}{16}{subsection.10.6}
+\contentsline {paragraph}{Radiative transfer in stellar atmospheres}{19}{section*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {10.7}limb darkening}{16}{subsection.10.7}
+\contentsline {subsection}{\numberline {10.5}Exercise 1: RNG}{19}{subsection.10.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {11}Introduction to Monte Carlo Radiation Transfer (Wood+)}{17}{section.11}
+\contentsline {subsection}{\numberline {10.6}Exercise 2: Planck-function}{19}{subsection.10.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {11.1}Elementary principles}{17}{subsection.11.1}
+\contentsline {subsection}{\numberline {10.7}limb darkening}{19}{subsection.10.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {11.2}Eddington factors}{17}{subsection.11.2}
+\contentsline {section}{\numberline {11}Introduction to Monte Carlo Radiation Transfer (Wood+)}{20}{section.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {11.3}Example: plane parallel atmosphere}{17}{subsection.11.3}
+\contentsline {subsection}{\numberline {11.1}Elementary principles}{20}{subsection.11.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{A Plane Parallel, Isotropic Scattering Monte Carlo Code}{18}{section*.7}
+\contentsline {subsection}{\numberline {11.2}Eddington factors}{20}{subsection.11.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {11.4}Monte Carlo Radiative Transfer}{19}{subsection.11.4}
+\contentsline {subsection}{\numberline {11.3}Example: plane parallel atmosphere}{20}{subsection.11.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {11.5}P Cygni profile for beta-velocity law and given opacity Monte Carlo simulation}{20}{subsection.11.5}
+\contentsline {paragraph}{A Plane Parallel, Isotropic Scattering Monte Carlo Code}{21}{section*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {11.5.1}Structure of the code}{20}{subsubsection.11.5.1}
+\contentsline {subsection}{\numberline {11.4}Monte Carlo Radiative Transfer}{22}{subsection.11.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {12}Challenges in Radiative Transfer (Ivan Milic)}{21}{section.12}
+\contentsline {subsection}{\numberline {11.5}P Cygni profile for beta-velocity law and given opacity Monte Carlo simulation}{23}{subsection.11.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {12.1}Overview of the problem}{21}{subsection.12.1}
+\contentsline {subsubsection}{\numberline {11.5.1}Structure of the code}{23}{subsubsection.11.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {12.2}Challenging domains of application}{21}{subsection.12.2}
+\contentsline {section}{\numberline {12}Challenges in Radiative Transfer (Ivan Milic)}{24}{section.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {13}Asymptotic Preserving Monte Carlo methods for transport equations in the diffusive limit (Dimarco+2018)}{22}{section.13}
+\contentsline {subsection}{\numberline {12.1}Overview of the problem}{24}{subsection.12.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {14}Splitting methods}{22}{section.14}
+\contentsline {subsection}{\numberline {12.2}Challenging domains of application}{24}{subsection.12.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {14.1}Exercises}{22}{subsection.14.1}
+\contentsline {section}{\numberline {13}Asymptotic Preserving Monte Carlo methods for transport equations in the diffusive limit (Dimarco+2018)}{25}{section.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {14.1.1}Exercise 1}{22}{subsubsection.14.1.1}
+\contentsline {section}{\numberline {14}Splitting methods}{26}{section.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{III\hspace {1em}Practical work and Exercises}{23}{part.3}
+\contentsline {subsection}{\numberline {14.1}Exercises}{26}{subsection.14.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {15}Overview of exercises (PART I)}{23}{section.15}
+\contentsline {subsubsection}{\numberline {14.1.1}Exercise 1}{26}{subsubsection.14.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {16}Overview of exercises (PART II)}{23}{section.16}
+\contentsline {part}{III\hspace {1em}Practical work and Exercises}{27}{part.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {17}Limb darkening}{24}{section.17}
+\contentsline {section}{\numberline {15}Overview of exercises (PART I)}{27}{section.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {17.0.1}2D Case}{24}{subsubsection.17.0.1}
+\contentsline {section}{\numberline {16}Overview of exercises (PART II)}{27}{section.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Goal}{24}{section*.10}
+\contentsline {section}{\numberline {17}Limb darkening}{28}{section.17}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Variables and Algorithm}{24}{section*.11}
+\contentsline {subsubsection}{\numberline {17.0.1}2D Case}{28}{subsubsection.17.0.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {17.0.2}3D Code}{25}{subsubsection.17.0.2}
+\contentsline {paragraph}{Goal}{28}{section*.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {18}Investigation of program: pcyg.f90}{26}{section.18}
+\contentsline {paragraph}{Variables and Algorithm}{28}{section*.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {18.1}Overview of variables}{26}{subsection.18.1}
+\contentsline {subsubsection}{\numberline {17.0.2}3D Code}{29}{subsubsection.17.0.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {18.2}Mathematical things that are noteworthy}{27}{subsection.18.2}
+\contentsline {section}{\numberline {18}Investigation of program: pcyg.f90}{30}{section.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{General working}{27}{section*.14}
+\contentsline {subsection}{\numberline {18.1}Overview of variables}{30}{subsection.18.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Practical formula}{27}{section*.15}
+\contentsline {subsection}{\numberline {18.2}Mathematical things that are noteworthy}{31}{subsection.18.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Geometry \& Symmetry assumptions}{27}{section*.16}
+\contentsline {subsubsection}{\numberline {18.2.1}General working}{31}{subsubsection.18.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {18.3}Exercises}{28}{subsection.18.3}
+\contentsline {subsubsection}{\numberline {18.2.2}Practical formula}{31}{subsubsection.18.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {18.3.1}Investigation of original code}{28}{subsubsection.18.3.1}
+\contentsline {subsubsection}{\numberline {18.2.3}Geometry \& Symmetry assumptions}{31}{subsubsection.18.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {18.3.2}First adaptation: what if all photons are released radially from photosphere?}{29}{subsubsection.18.3.2}
+\contentsline {subsection}{\numberline {18.3}Exercises}{32}{subsection.18.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Release photons radially: experiments}{29}{section*.18}
+\contentsline {subsubsection}{\numberline {18.3.1}Investigation of original code}{32}{subsubsection.18.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Derive analytic expression}{29}{section*.20}
+\contentsline {subsubsection}{\numberline {18.3.2}First adaptation: what if all photons are released radially from photosphere?}{33}{subsubsection.18.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {18.3.3}Second adaptation: isotropic scattering}{31}{subsubsection.18.3.3}
+\contentsline {paragraph}{\relax $\@@underline {\hbox {Release photons radially: numerical MC experiments}}\mathsurround \z@ $\relax }{33}{section*.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {18.3.4}Third adaptation: introduction of Eddington limb-darkening}{32}{subsubsection.18.3.4}
+\contentsline {paragraph}{\relax $\@@underline {\hbox {Derive analytic expression}}\mathsurround \z@ $\relax }{33}{section*.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{General discussion: Eddington limb darkening}{32}{section*.22}
+\contentsline {subsubsection}{\numberline {18.3.3}Second adaptation: isotropic scattering}{35}{subsubsection.18.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Application to exercise}{33}{section*.24}
+\contentsline {subsubsection}{\numberline {18.3.4}Third adaptation: introduction of Eddington limb-darkening}{36}{subsubsection.18.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {18.3.5}Fourth adaptaion: photospheric line-profile}{34}{subsubsection.18.3.5}
+\contentsline {paragraph}{General (introductory) discussion: Eddington limb darkening}{36}{section*.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {18.3.6}Convergence analysis}{35}{subsubsection.18.3.6}
+\contentsline {paragraph}{Construction of probability distribution corresponding to Eddington limb darkening}{36}{section*.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {19}Mass loss from inhomogeneous hot star winds (Sundqvist)}{36}{section.19}
+\contentsline {subsubsection}{\numberline {18.3.5}Fourth adaptaion: photospheric line-profile}{38}{subsubsection.18.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {20}Asymptotic preserving Monte Carlo methods for radiative transfer equation in diffusion limit (Dimarco+ 2018)}{37}{section.20}
+\contentsline {subsubsection}{\numberline {18.3.6}Convergence analysis}{39}{subsubsection.18.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {20.1}Goldstein-Taylor}{37}{subsection.20.1}
+\contentsline {section}{\numberline {19}Milic Exercises}{40}{section.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {20.2}Radiative transfer}{37}{subsection.20.2}
+\contentsline {subsection}{\numberline {19.1}Lecture 7}{40}{subsection.19.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{IV\hspace {1em}Equation meetings}{39}{part.4}
+\contentsline {section}{\numberline {20}Mass loss from inhomogeneous hot star winds (Sundqvist)}{41}{section.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {21}Meeting of 10 April 2019}{39}{section.21}
+\contentsline {section}{\numberline {21}Asymptotic preserving Monte Carlo methods for radiative transfer equation in diffusion limit (Dimarco+ 2018)}{42}{section.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {22}Meeting of 17 April 2019}{39}{section.22}
+\contentsline {subsection}{\numberline {21.1}Goldstein-Taylor}{42}{subsection.21.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {23}Meeting of 14 August 2019}{39}{section.23}
+\contentsline {subsection}{\numberline {21.2}Radiative transfer}{42}{subsection.21.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{V\hspace {1em}Thesis meetings}{41}{part.5}
+\contentsline {part}{IV\hspace {1em}Equation meetings}{43}{part.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {24}Meeting on 6 September 2019}{41}{section.24}
+\contentsline {section}{\numberline {22}Meeting of 10 April 2019}{43}{section.22}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {23}Meeting of 17 April 2019}{43}{section.23}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {24}Meeting of 14 August 2019}{43}{section.24}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{V\hspace {1em}Thesis meetings}{45}{part.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {25}Meeting on 6 September 2019}{45}{section.25}

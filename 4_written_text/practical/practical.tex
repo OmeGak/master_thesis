@@ -20,10 +20,12 @@
 
 
 \section{Overview of exercises (PART II)}
+\label{Overview_Part_2}
+
 \begin{enumerate}
-\item calculate the probability distribution to sample from in the case of Eddington limb darkening for the initial distribution (see \ref{Eddington limb darkening adaptation}).
-\item calculate analytical solution for simplified problem in \ref{PCYG FIRST adaptation} in the case that \texttt{mu = 1}.
-\item perform convergence analysis
+\item Calculate the probability distribution to sample from in the case of Eddington limb darkening for the initial distribution (see \ref{Eddington limb darkening adaptation}).
+\item Calculate analytical solution for simplified problem in \ref{PCYG FIRST adaptation} in the case that \texttt{mu = 1}.
+\item Perform convergence analysis. See Section \ref{convergence_analysis}
 \end{enumerate}
 
 
@@ -132,50 +134,50 @@ Figure \ref{3D_mu} and Figure \ref{3D_phi} are according to what is expected, na
 {\tabulinesep=1.5mm
 \begin{tabu}{|c|c|c|}
 \hline 
-name & explanation & scope \\ \hline \hline
+name & explanation \\ \hline \hline
 
-\multicolumn{3}{|c|}{\cellcolor{orange} paramaters} \\ \hline
+\multicolumn{2}{|c|}{\cellcolor{orange} paramaters} \\ \hline
 xk0 & \\ \hline
-alpha & \\ \hline
-beta & \\ \hline \hline
+alpha & velocity profile parameter \\ \hline
+beta & velocity profile parameter \\ \hline \hline
 
-\multicolumn{3}{|c|}{\cellcolor{orange} start frequency of the photon} \\ \hline
-xstart & start frequency & \\ \hline
-vmin & & \\ \hline
-vmax  & & \\ \hline
+\multicolumn{2}{|c|}{\cellcolor{orange} start frequency of the photon} \\ \hline
+xstart & start frequency \\ \hline
+vmin & \\ \hline
+vmax  & \\ \hline
 
-\multicolumn{3}{|c|}{\cellcolor{orange}angle of the photon} \\ \hline
+\multicolumn{2}{|c|}{\cellcolor{orange}angle of the photon} \\ \hline
 xmuestart & start angle \\ \hline
 xmuein & incident angle \\ \hline
 xmueou & outward angle \\ \hline
 \cellcolor{yellow} pstart & impact parameter \\ \hline
 xnew & new photon frequency \\ \hline \hline
 
-\multicolumn{3}{|c|}{\cellcolor{orange} optical depth} \\ \hline
+\multicolumn{2}{|c|}{\cellcolor{orange} optical depth} \\ \hline
 tau & optical depth \\ \hline
 
-\multicolumn{3}{|c|}{\cellcolor{orange} number of photons admin} \\ \hline
-nphot & number of photons \\ \hline
-nin & photons scattered back into core & \\ \hline
-nout & photons escaped & \\ \hline \hline
+\multicolumn{2}{|c|}{\cellcolor{orange} number of photons admin} \\ \hline
+nphot & number of photons\\ \hline
+nin & photons scattered back into core \\ \hline
+nout & photons escaped \\ \hline \hline
 
-\multicolumn{3}{|c|}{\cellcolor{orange} functions} \\ \hline
+\multicolumn{2}{|c|}{\cellcolor{orange} functions} \\ \hline
 func & velocity profile \\ 
-	& r & distance from center of star \\ \hline
+	& distance from center of star $r$ \\ \hline
 	
-xmueout & sign of outwards angle & \\ 
-& xk0 & \\ 
-& alpha & \\ 
-& r & \\ 
-& v & \\ 
-& sigma & \\ \hline
+xmueout & outwards (scattered) angle \\ 
+& xk0 \\ 
+& alpha \\ 
+& r \\ 
+& v \\ 
+& sigma \\ \hline
 \end{tabu}}
 \end{center}
 
 \newpage
 \subsection{Mathematical things that are noteworthy}
 
-\paragraph{General working}
+\subsubsection{General working}
 \begin{center}
 \begin{tikzpicture}
 [node distance=2.5cm,auto,>=latex']
@@ -187,18 +189,32 @@ xmueout & sign of outwards angle & \\
 \end{tikzpicture}
 \end{center}
 The photons are sorted according to \texttt{xnew}.
+In general, the flux is dependent on $\mu$ and the frequency $x$.
 
-\paragraph{Practical formula}
+
+\noindent\fbox{
+  \parbox{\textwidth}{
+  make formula 
+}}
+
+\begin{itemize}
+\item I think that it satisfies $N(x)dx \sim I(x)xdx$
+\item We are thus interested in $F_{\lambda} = F_{\nu}$
+\end{itemize}
+
+
+\subsubsection{Practical formula}
 \begin{itemize}
 \item emission angle $\mu = \cos(\theta)$
 \item according p-ray $p = \sqrt{1-\mu^2} = \sin(\theta)$
-\item incident angle $xmuin = \sqrt{1-\left(\frac{pstart}{r}\right)^2}$
+\item incident angle $\texttt{xmuein} = \sqrt{1-\left(\frac{pstart}{r}\right)^2}$
 \end{itemize}
 
-\paragraph{Geometry \& Symmetry assumptions}
+\subsubsection{Geometry \& Symmetry assumptions}
 \begin{itemize}
 \item spherical geometry
 \end{itemize}
+
 
 \newpage
 \subsection{Exercises}
@@ -214,76 +230,131 @@ In original version of the code, all photons are released isotropially from the 
 \newpage
 \subsubsection{First adaptation: what if all photons are released radially from photosphere?}
 \label{PCYG FIRST adaptation}
-\paragraph{Release photons radially: experiments}
+
+\paragraph{\underline{Release photons radially: numerical MC experiments}}
 What would happen with line-profile, if you assumed all photons
 were released radially from photopshere?
 \begin{itemize}
-\item In other words $\texttt{xmuestart} = 1$. Results in Figure \ref{PCyg_mu=1}.
+\item In other words $\texttt{xmuestart} = 1$. Results in Figure \ref{PCyg_mu_eq_1}.
 \item This is implemented under the test case \texttt{test\_number=1}.
 \end{itemize}
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.5\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha0beta1test1.png}
+\begin{subfigure}{.5\textwidth}
+\includegraphics[width=1\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alpha0beta1test1.png}
 \caption{First adaptation}
-\label{PCyg_mu=1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+\includegraphics[width=1\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alpha0beta1test10.png}
+\caption{Same plot (together with output of initial version)}
+\end{subfigure}
+\label{PCyg_mu_eq_1}
+\caption{The number of photons equals $10^{5}$}
 \end{figure}
 
-\paragraph{Derive analytic expression} See also slide Sundqvist 26/49. 
 
+\paragraph{\underline{Derive analytic expression}} See also slide  26/49 [Sundqvist course material]. 
 \begin{itemize}
-\item since \texttt{mu = 1} we have for the velocity profile that $v = v_{\infty}(1-b/r)^{\beta}$
-\item a scaled version of the above yields 
+\item since \texttt{xmuein = 1} we have for the velocity profile 
 \begin{equation}
-u = \frac{v(r)}{v_{\infty}} = \left(1 - \frac{r_{\infty}}{r} \right)^{\beta} \in [0..1] 
+v = v_{\infty}(1-b/r)^{\beta}
+\label{velocity_profile}
+\end{equation}
+A scaled version of the Equation (\ref{velocity_profile}) yields 
+\begin{equation}
+u = \frac{v(r)}{v_{\infty}} = \left(1 - \frac{r_{\infty}}{r} \right)^{\beta} 
 \label{u_profile}
 \end{equation}
-\item Doppler shift: $x_{CMF} = x_{REF} - \mu u$
-\item condition for resonance from Sobolov approximation (to be studied later): $x_{CMF}= 0$ thus 
+with $u \in [0..1]$
+
+\item Doppler shift for the frequency of the photons: $x_{CMF} = x_{REF} - \mu u$.
+\item Condition for resonance from Sobolov approximation (to be studied later): $\boxed{x_{CMF}= 0}$ thus 
 \begin{equation}
-x_{RF} = \mu u
+x_{REF} = \mu u
 \label{analytic_profile}
 \end{equation}
-or thus $u_{int} = x_{REF}$ and than solve Equation \ref{u_profile} for $r_{int}$
-\item Equation \ref{analytic_profile} can be solved for the frequency, namely 
+or thus $x_{REF} = \boxed{u_{\text{interaction}}}$ and than solve Equation \ref{u_profile} for $r_{\text{interaction}}$
+
+\item If $\mu = 1$ then 
 \begin{equation}
 x = \left(1 - \frac{r_{\infty}}{r} \right)^{\beta}
 \end{equation}
-\item thus 
 \begin{equation*}
 x^{-\beta} = 1 - \frac{r_{\infty}}{r}
 \end{equation*}
 \begin{equation*}
 r(1-x^{-\beta}) = r_{\infty}
 \end{equation*}
-thus \begin{equation}
-r = \frac{r_{\infty}}{1-x^{-\beta}}
-\end{equation}
-\item then the calculation of the optical depth proceeds as follows:
 \begin{equation}
-\tau = \frac{\texttt{xkO}}{rv^{2-\alpha}(1+\texttt{muein}^2 \sigma)}
+\boxed{r(x) = \frac{r_{\infty}}{1-x^{-\beta}}}
+\end{equation} 
+
+\item From the location of interaction $r$, the incident angle can be calculated
+\begin{equation}
+\texttt{xmuein} = \sqrt{1-\left[\frac{\texttt{pstart}}{r}\right]^2} = \sqrt{1 - \left[ \frac{\sqrt{1-\texttt{xmuestart}^2}}{r} \right]^2}
 \end{equation}
-where
-\begin{itemize}
-\item $v = \left(1 - \frac{b}{r} \right)^{\beta} $
-\item $\frac{dv}{dr} = \beta \frac{b}{r^2}\left( 1 - \frac{b}{r} \right)^{\beta - 1}$
-\item $\sigma = \frac{dv}{dr}\frac{r}{v}-1$
+Now also taking into account that \texttt{xmuestart = 1} then yields
+\begin{equation}
+\texttt{xmuein = 1}
+\end{equation}
+
+\item The calculation of the optical depth goes as follows:
+\begin{equation}
+\tau = \frac{\texttt{xkO}}{rv^{2-\alpha}(1+\texttt{xmuein}^2 \sigma)}
+\end{equation}
+Now also taking into account that \texttt{xmuestart = 1} gives
+\begin{equation}
+\tau = \frac{\texttt{xk0}}{rv^2(1+\sigma)}
+\end{equation}
+
+where $\boxed{v(x) = \left(1 - \frac{b}{r} \right)^{\beta}}$ 
+\quad and $\frac{dv}{dr} = \frac{\beta b}{r^2}\left( 1 - \frac{b}{r} \right)^{\beta - 1}$  \\
+and $\sigma(x) = \frac{dv}{dr}\frac{r}{v}-1$ 
+thus $\boxed{\sigma(x) = \frac{\beta b}{r}\left( 1-\frac{b}{r}\right)^{-1}}$
+
+\item Conclusion: $\tau(x)$ is only dependent on $x$ and not on \texttt{xmuestart} or \texttt{xmuein}.
+
+\item \texttt{xmueou} follows the distribution as given by the function \texttt{xmueout}, namely
+\begin{equation}
+p(x) = \frac{1-e^{-\tau}}{\tau}
+\end{equation}
+with $\tau = \frac{\texttt{tau0}}{1+\texttt{X}^2 \sigma}$ where $\texttt{X}$ is a random number, so actually this comes down to
+\begin{equation}
+\boxed{p(x) = \frac{1-e^{-\frac{\tau_0}{1+x^2\sigma(x)}}}{\frac{\tau_0}{1+x^ 2\sigma(x)}}}
+\end{equation}
+
+\item Finally one can combine these results to get the distribution of the photons according to the frequency $x$ via the relation 
+\begin{equation}
+\texttt{xnew = xstart + v(xmueou-xmuein) = xstart + v(xmueou -1)}
+\end{equation}
 \end{itemize}
-\end{itemize}
+
+\underline{Via this link, you can go back to the exercises overview: Section \ref{Overview_Part_2}.}
+
 
 \newpage
 \subsubsection{Second adaptation: isotropic scattering}
 \label{isotropic_scattering}
 What would happen to line-profile, is you assumed scattering
-!was isotropic (i.e., NOT following Sobolev-distrobution)
+was isotropic 
+\\(i.e., NOT following Sobolev-distrobution)
 \begin{itemize}
 \item test case number 2
 \end{itemize}
 
-\begin{figure}[!htp]
+\begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.5\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha0beta1test2.png}
+\begin{subfigure}{.5\textwidth}
+\includegraphics[width=1\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alpha0beta1test2.png}
 \caption{Second adaptation}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+\includegraphics[width=1\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alpha0beta1test20.png}
+\caption{Same plot (together with output of initial version)}
+\end{subfigure}
+\label{PCyg_mu_eq_1}
+\caption{The number of photons equals $10^{5}$}
 \end{figure}
 
 The \textit{grosso modo} form has not changed, although the scaling has changed.
@@ -293,7 +364,7 @@ The \textit{grosso modo} form has not changed, although the scaling has changed.
 \label{Eddington limb darkening adaptation}
 Put Eddington limb-darkening in. What happens? 
 
-\paragraph{General discussion: Eddington limb darkening}
+\paragraph{General (introductory) discussion: Eddington limb darkening}
 The data are taken from Christensen, 2015.
 \begin{itemize}
 \item the source function $S= <I> = a + b\tau_{\nu}$ with $a= \frac{\sigma}{2 \pi}T_{eff}^4$ and $b = \frac{3 \sigma}{4 \pi}T_{eff}^4$
@@ -306,43 +377,49 @@ The data are taken from Christensen, 2015.
 \caption{Eddington limb darkening (two times the same plot with $\mu =  \cos(\theta)$ }
 \end{figure}
 
-\noindent\fbox{
-  \parbox{\textwidth}{
-for which star are the exerpimental data and what assumptions are used in the theory?
-}} \\
-\\
-Let us thus first review the emmission case where the flux in each directino is isotropic (paragraph \ref{isotropic_scattering}) $I(\theta) = I$
+\paragraph{Construction of probability distribution corresponding to Eddington limb darkening}
+
+\begin{enumerate}
+\item Let us thus first review the emmission case where \underline{the flux in each direction is isotropic} i.e. $I(\theta) = I$ (as experimented in paragraph \ref{isotropic_scattering})
 \begin{itemize}
-\item the specific intensity $I_{\nu}(\mu) = \frac{dE_{\nu}}{\cos(\theta) dA dt d\nu d\Omega} = \frac{dE_{\nu}}{\mu dA dt d\nu d\Omega}$ 
+\item the specific intensity is defined as $I_{\nu}(\mu) = \frac{dE_{\nu}}{\cos(\theta) dA dt d\nu d\Omega} = \frac{dE_{\nu}}{\mu dA dt d\nu d\Omega}$ 
 \item the flux $F_{\nu} = \int_{\Omega} I_{\nu} \cos(\theta) d\Omega$ is in this case isotropic thus
 \begin{equation}
 \xi = \int_0^{\mu} F_{\nu} d\mu = \int_0^{\mu} \int_{\Omega} I_{\nu} \cos(\theta) d\Omega d\mu = A \int_0^{\mu} \mu d\mu   
 \end{equation}
-with the condition that $\mu$ satisfies a probability distribution: 
+together with the condition that $\mu$ satisfies a probability distribution: 
 \begin{equation}
 1 = \int_{-1}^{1} F_{\nu} d\mu = \int_{-1}^{1} \int_{\Omega} I_{\nu} \cos(\theta) d\Omega d\mu = \frac{A}{2}
 \label{isotropic_flux_isotropic_intensity_prob_dist}
 \end{equation}
-thus $A=2$.
+thus $A=2$. Photons need to be sampled according to $\mu d\mu$.
 \end{itemize}
 
-\newpage
-\paragraph{Application to exercise}
-Now we look at a new case where the photons need to be emitted following a distrubution that corresponds to $I(\theta) = I(0)(0.4+0.6\cos(\theta))$. In the code this corresponds to \texttt{test\_number = 3}. 
+\item Now we look at a new case where the photons need to be emitted following a distrubution that corresponds to $I(\theta) = I(0)(0.4+0.6\cos(\theta))$. 
 \begin{itemize}
-\item in this case the flux $F_{\nu} = \int_{\Omega} I_{\nu} \cos(\theta) d\Omega$ is also isotropic but satisfies
+\item in this case the flux $F_{\nu} = \int_{\Omega} I_{\nu} \cos(\theta) d\Omega$ is isotropic but also satisfies
 \begin{equation}
 F_{\nu} = \int_{\Omega} I_{\nu}(0)[0.4+0.6\cos(\theta)] \cos(\theta) d\Omega
 \end{equation} 
+\noindent\fbox{
+  \parbox{0.8\textwidth}{
+I am not sure about the correctness of the assumption of isotropy of the flux}}
 \begin{equation}
 \xi = \int_0^{\mu} F_{\nu} d\mu = A \int_0^{\mu} (0.4+0.6\mu) \mu d\mu   
 \end{equation}
-subject to the condition -very similar to Equation \ref{isotropic_flux_isotropic_intensity_prob_dist} - that
+subject to the normalisation condition -very similar to Equation (\ref{isotropic_flux_isotropic_intensity_prob_dist}) - that
 \begin{equation}
 1 = \int_{-1}^{1} F_{\nu} d\mu = \frac{2A}{5} + \frac{A}{3} = \frac{11A}{15}
 \end{equation}
-thus $A = \frac{15}{11}$
+thus $A = \frac{15}{11}$. Photons need to be sampled according to $(0.4+0.6\mu)\mu d\mu$.
 \end{itemize}
+
+In the code \texttt{pcyg.f90} this corresponds to \texttt{test\_number = 3} (not yet implemented). 
+
+\end{enumerate}
+
+
+\underline{Via this link, you can go back to the exercises overview: Section \ref{Overview_Part_2}.}
 
 \newpage
 \subsubsection{Fourth adaptaion: photospheric line-profile}
@@ -353,9 +430,33 @@ Challening: Put photospheric line-profile (simple Gaussian) in
 \item test case number 4 (not yet implemented)
 \end{itemize}
 
-
 \newpage
 \subsubsection{Convergence analysis}
+\label{convergence_analysis}
+
+\begin{figure}[!htp]
+\centering
+\includegraphics[width=0.65\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/test0_convergence.png}
+\caption{Original version of the code: convergence analysis (xk0=0)}
+\end{figure}
+
+\underline{Via this link, you can go back to the exercises overview: Section \ref{Overview_Part_2}.}
+
+\newpage
+\section{Milic Exercises}
+\subsection{Lecture 7}
+\begin{enumerate}
+\item Derive expressions for the emergent radiation when properties are the following:
+\begin{itemize}
+\item optically thin slab at all wavelengths
+\item wavelength-independent incident radiation
+\end{itemize}
+Solution: see slide 14?
+
+\item Derive ralations between Einstein coefficients.
+
+\item Calculate electron density in atmosphere from FALC model
+\end{enumerate}
 
 
 \newpage

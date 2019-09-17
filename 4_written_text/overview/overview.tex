@@ -10,12 +10,97 @@
 \item LASER: \hfill Light Amplification by Stimulated Emission of Radiation
 \end{itemize}
 
+\newpage
+\section{General equations - first year overview}
+
+\subsubsection{Hydrodynamics}
+Euler equations, together with closing relation (e.g. ideal gas law).
+
+\begin{center}
+	\centering
+	{\tabulinesep=1.5mm
+		\begin{tabu}{|c|c|c|c|} 
+			\hline
+			\multicolumn{4}{|c|}{primitive variables} \\ \hline
+			mass density & velocity & gas energy density & gas pressure \\ 
+			$\rho$ & $v$ & $e$ & $p$ \\ \hline
+	\end{tabu}}
+\end{center}
+
+\subsubsection{Radiation}
+Radiative transfer equation: intensity along a ray while interacting with medium. Photons are massless.
+\begin{equation}
+	\left[ \frac{1}{c}\partial_t + \vec{n}.\vec{\nabla} \right] I_{\nu} =  \eta_{\nu} - \chi_{\nu}I_{\nu}
+\end{equation}
+
+\begin{center}
+	\centering
+	{\tabulinesep=1.5mm
+		\begin{tabu}{|c|c|c|c|} 
+\hline
+frequency & intensity & emissivity & total absorption  \\
+$\nu$ & $I_{\nu}$ & $\eta_{\nu}$ & $\chi_{\nu}$ \\ \hline
+	\end{tabu}}
+\end{center}
+
+These deliver two equations
+\begin{itemize}
+	\item the radiative energy equation (diffusion flux $\vec{F}$
+	\begin{eqnarray}
+	\frac{\partial E}{\partial t} + \vec{\nabla} . \vec{F} = \iint ... d\nu d \Omega
+	\end{eqnarray}
+	\item radiative momentum equation
+	\begin{equation}
+		\frac{d\vec{F}}{\partial t} = \iint ... \vec{n} d\nu d\Omega
+		\end{equation}
+\end{itemize}
+(after \textbf{integrating over all frequencies}). Depending on the geometry simplifcations, one can e.g. integrate over all solid angles.
+
+
+\subsubsection{Radiation-Hydrodynamics}
+Combination delivers integral-diffusion equation
+
+\begin{eqnarray}
+\begin{aligned}
+\frac{dI}{d\tau} &=  S - I \\
+	&= \int I d\Omega - I
+\end{aligned}
+\end{eqnarray}
+
+\subsubsection{Challenges}
+\begin{itemize}
+	\item combination with hydrodynamics
+	\item current analysis: simplified geometries (symmetry). E.g. in 2D, an ADI method is used and now also a multigrid method. 
+	\item complex geometry difficult to show in ray-tracing scheme
+	\item steady-state vs. time dependent
+	\item focus on radiation equations
+\end{itemize}
+
 
 \newpage
-\section{Very broad introduction: Radiation Hydrodynamics}
+\section{Very broad introduction \& Summary}
 The material here originates from the master thesis of Nicolas Moens \cite{MoensNicolas} and from the course notes \textit{Introduction to numerical methods for radiation in astrophsyics} from professor Sundqvist. 
 
 \subsection{Definitions and equations}
+
+\subsubsection{Radiation equations}
+Specific intensity $I(s,\lambda,x,y,t)$ 
+\begin{itemize}
+\item restrict oursevels to time-independent, one-dimensional (1D) case $I(s,\theta,\lambda)$ where $s$ is the direction of the light ray
+%\item defining $I_{\lambda} = \frac{I}{-\chi_{\lambda}}$ 
+\item it satisfies Radiation Transfer Equation (RTE) 
+$\boxed{\frac{dI_{\lambda}}{d\tau_{\lambda}} = S_{\lambda} - I_{\lambda}}$
+\item with 'formal' solution 
+$\boxed{I(\lambda,\tau_{\lambda}) = I_0(\lambda) e^{-\tau_{\lambda}}  \int_0^{\tau_{\lambda}}S(t)e^{-t} dt}$
+\begin{itemize}
+\item no emissivity $S=0$ then $I(\lambda) I_0(\lambda) e^{-\tau_{\lambda}}$
+\item no opacity then $I_0(\lambda) = \int_0^{s} \eta_{\lambda}(s)ds$ 
+\item constant source function $I(\lambda,\tau) = I_0(\lambda) e^{-\tau_{\lambda}} + S(1-e^{-\tau_{\lambda}})$
+\item if $S=a+b\tau$ then $I(\lambda) = a+\frac{b}{k_{\lambda}}$ with $k_{\lambda}$ the opacity. A jump in opacity leads to the jump in intensity of the opposite sign.
+\end{itemize}
+\end{itemize}
+
+
 \subsubsection{RHD equations}
 The full RHD equations consist of 
 \begin{itemize}
@@ -153,73 +238,6 @@ plane-parallel & 1D atmosphere & \\
 & bounded by horizontal surfaces & \\ \hline
 \end{tabu}}
 \end{center}
-
-\newpage
-\section{General equations - first year overview}
-
-\subsubsection{Hydrodynamics}
-Euler equations, together with closing relation (e.g. ideal gas law).
-
-\begin{center}
-	\centering
-	{\tabulinesep=1.5mm
-		\begin{tabu}{|c|c|c|c|} 
-			\hline
-			\multicolumn{4}{|c|}{primitive variables} \\ \hline
-			mass density & velocity & gas energy density & gas pressure \\ 
-			$\rho$ & $v$ & $e$ & $p$ \\ \hline
-	\end{tabu}}
-\end{center}
-
-\subsubsection{Radiation}
-Radiative transfer equation: intensity along a ray while interacting with medium. Photons are massless.
-\begin{equation}
-	\left[ \frac{1}{c}\partial_t + \vec{n}.\vec{\nabla} \right] I_{\nu} =  \eta_{\nu} - \chi_{\nu}I_{\nu}
-\end{equation}
-
-\begin{center}
-	\centering
-	{\tabulinesep=1.5mm
-		\begin{tabu}{|c|c|c|c|} 
-\hline
-frequency & intensity & emissivity & total absorption  \\
-$\nu$ & $I_{\nu}$ & $\eta_{\nu}$ & $\chi_{\nu}$ \\ \hline
-	\end{tabu}}
-\end{center}
-
-These deliver two equations
-\begin{itemize}
-	\item the radiative energy equation (diffusion flux $\vec{F}$
-	\begin{eqnarray}
-	\frac{\partial E}{\partial t} + \vec{\nabla} . \vec{F} = \iint ... d\nu d \Omega
-	\end{eqnarray}
-	\item radiative momentum equation
-	\begin{equation}
-		\frac{d\vec{F}}{\partial t} = \iint ... \vec{n} d\nu d\Omega
-		\end{equation}
-\end{itemize}
-(after \textbf{integrating over all frequencies}). Depending on the geometry simplifcations, one can e.g. integrate over all solid angles.
-
-
-\subsubsection{Radiation-Hydrodynamics}
-Combination delivers integral-diffusion equation
-
-\begin{eqnarray}
-\begin{aligned}
-\frac{dI}{d\tau} &=  S - I \\
-	&= \int I d\Omega - I
-\end{aligned}
-\end{eqnarray}
-
-\subsubsection{Challenges}
-\begin{itemize}
-	\item combination with hydrodynamics
-	\item current analysis: simplified geometries (symmetry). E.g. in 2D, an ADI method is used and now also a multigrid method. 
-	\item complex geometry difficult to show in ray-tracing scheme
-	\item steady-state vs. time dependent
-	\item focus on radiation equations
-\end{itemize}
-
 
 
 \newpage
@@ -735,8 +753,10 @@ Via least-squares approximation
 \item athmospheres
 \end{itemize}
 
+\newpage
 \section{Asymptotic Preserving Monte Carlo methods for transport equations in the diffusive limit (Dimarco+2018)}
 
+\newpage
 \section{Splitting methods}
 From notes by professor Frank.
 \subsection{Exercises}

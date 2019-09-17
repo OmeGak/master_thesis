@@ -5,10 +5,10 @@
 \BOOKMARK [1][-]{section.4}{Interesting problems}{part.1}% 5
 \BOOKMARK [0][-]{part.2}{II Monte Carlo Radiative Transfer}{}% 6
 \BOOKMARK [1][-]{section.5}{Glossary}{part.2}% 7
-\BOOKMARK [1][-]{section.6}{Very broad introduction: Radiation Hydrodynamics}{part.2}% 8
-\BOOKMARK [2][-]{subsection.6.1}{Definitions and equations}{section.6}% 9
-\BOOKMARK [2][-]{subsection.6.2}{Overview of symmetry assumptions}{section.6}% 10
-\BOOKMARK [1][-]{section.7}{General equations - first year overview}{part.2}% 11
+\BOOKMARK [1][-]{section.6}{General equations - first year overview}{part.2}% 8
+\BOOKMARK [1][-]{section.7}{Very broad introduction \046 Summary}{part.2}% 9
+\BOOKMARK [2][-]{subsection.7.1}{Definitions and equations}{section.7}% 10
+\BOOKMARK [2][-]{subsection.7.2}{Overview of symmetry assumptions}{section.7}% 11
 \BOOKMARK [1][-]{section.8}{Introduction: course material \(Sundqvist - CMPAA course\)}{part.2}% 12
 \BOOKMARK [2][-]{subsection.8.1}{EXERCISES: Introduction to numerical methods for radiation in astrophysics}{section.8}% 13
 \BOOKMARK [2][-]{subsection.8.2}{Implicit 1D solver \(20-11-2018\)}{section.8}% 14
@@ -46,13 +46,15 @@
 \BOOKMARK [2][-]{subsection.18.1}{Overview of variables}{section.18}% 46
 \BOOKMARK [2][-]{subsection.18.2}{Mathematical things that are noteworthy}{section.18}% 47
 \BOOKMARK [2][-]{subsection.18.3}{Exercises}{section.18}% 48
-\BOOKMARK [1][-]{section.19}{Mass loss from inhomogeneous hot star winds \(Sundqvist\)}{part.3}% 49
-\BOOKMARK [1][-]{section.20}{Asymptotic preserving Monte Carlo methods for radiative transfer equation in diffusion limit \(Dimarco+ 2018\)}{part.3}% 50
-\BOOKMARK [2][-]{subsection.20.1}{Goldstein-Taylor}{section.20}% 51
-\BOOKMARK [2][-]{subsection.20.2}{Radiative transfer}{section.20}% 52
-\BOOKMARK [0][-]{part.4}{IV Equation meetings}{}% 53
-\BOOKMARK [1][-]{section.21}{Meeting of 10 April 2019}{part.4}% 54
-\BOOKMARK [1][-]{section.22}{Meeting of 17 April 2019}{part.4}% 55
-\BOOKMARK [1][-]{section.23}{Meeting of 14 August 2019}{part.4}% 56
-\BOOKMARK [0][-]{part.5}{V Thesis meetings}{}% 57
-\BOOKMARK [1][-]{section.24}{Meeting on 6 September 2019}{part.5}% 58
+\BOOKMARK [1][-]{section.19}{Milic Exercises}{part.3}% 49
+\BOOKMARK [2][-]{subsection.19.1}{Lecture 7}{section.19}% 50
+\BOOKMARK [1][-]{section.20}{Mass loss from inhomogeneous hot star winds \(Sundqvist\)}{part.3}% 51
+\BOOKMARK [1][-]{section.21}{Asymptotic preserving Monte Carlo methods for radiative transfer equation in diffusion limit \(Dimarco+ 2018\)}{part.3}% 52
+\BOOKMARK [2][-]{subsection.21.1}{Goldstein-Taylor}{section.21}% 53
+\BOOKMARK [2][-]{subsection.21.2}{Radiative transfer}{section.21}% 54
+\BOOKMARK [0][-]{part.4}{IV Equation meetings}{}% 55
+\BOOKMARK [1][-]{section.22}{Meeting of 10 April 2019}{part.4}% 56
+\BOOKMARK [1][-]{section.23}{Meeting of 17 April 2019}{part.4}% 57
+\BOOKMARK [1][-]{section.24}{Meeting of 14 August 2019}{part.4}% 58
+\BOOKMARK [0][-]{part.5}{V Thesis meetings}{}% 59
+\BOOKMARK [1][-]{section.25}{Meeting on 6 September 2019}{part.5}% 60

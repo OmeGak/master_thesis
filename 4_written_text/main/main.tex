@@ -26,6 +26,8 @@
 \usepackage[english]{babel}
 \usepackage{comment}
 \usepackage{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
 
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -104,6 +106,14 @@ style=alphabetic,
 \begin{document}
 \maketitle
 \tableofcontents
+
+\newpage
+
+\noindent\fbox{
+  \parbox{\textwidth}{
+\paragraph{Exercises, part II} 
+\underline{Via this link, you can go back to the exercises overview: Section \ref{Overview_Part_2}.}
+}}
 
 \cleardoublepage
 \part{Questions}
