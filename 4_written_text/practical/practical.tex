@@ -371,6 +371,7 @@ The data are taken from Christensen, 2015.
 \item solve the equation
 \item this yields $\frac{I(\theta)}{I(0)} = \frac{a+b\cos(\theta)}{a+b} = \frac{2}{5} + \frac{3}{5}\cos(\theta)$
 \end{itemize}
+
 \begin{figure}[!htp]
 \centering
 \includegraphics[width=0.7\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_limb_darkening.png}
@@ -411,12 +412,25 @@ subject to the normalisation condition -very similar to Equation (\ref{isotropic
 \begin{equation}
 1 = \int_{-1}^{1} F_{\nu} d\mu = \frac{2A}{5} + \frac{A}{3} = \frac{11A}{15}
 \end{equation}
-thus $A = \frac{15}{11}$. Photons need to be sampled according to $(0.4+0.6\mu)\mu d\mu$.
+thus $A = \frac{15}{11}$. Photons need to be sampled according to
+\begin{equation}
+(0.4+0.6\mu)\mu d\mu
+\label{prob_dist_Eddington}
+\end{equation}
 \end{itemize}
 
 In the code \texttt{pcyg.f90} this corresponds to \texttt{test\_number = 3} (not yet implemented). 
 
+The results of an accept-reject method that samples the probability distribution in Equation (\ref{prob_dist_Eddington}).
+
+\begin{figure}[!htp]
+\centering
+\includegraphics[width=0.7\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_accept_reject.png}
+\caption{Accept-reject method for Eddington limb darkening}
+\end{figure}
+
 \end{enumerate}
+
 
 
 \underline{Via this link, you can go back to the exercises overview: Section \ref{Overview_Part_2}.}
