@@ -41,5 +41,5 @@ xlabel('\mu')
 ylabel('I(\mu)/I(0)','Rotation',0) 
 
 if save == 1
-    saveas(gcf,'Eddington_limb_darkening.png')
+    saveas(gcf,'data/Eddington_limb_darkening.png')
 end

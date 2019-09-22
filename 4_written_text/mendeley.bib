@@ -351,6 +351,8 @@ year = {2013}
 @article{Zhang2019,
 abstract = {Abstract A multiscale simulation framework for polycondensation and other types of polymerization mechanisms, which is used to study the hyperbranched polymerization of AB2 type monomer 4,4-bis-(4'-hydroxyphenyl)pentanoic acid is presented. The reaction framework is established by combining the coarse-grained molecular dynamics and the reactive Monte Carlo method, in which the coarse-grained molecular dynamics handles the diffusion of particles and the reactive Monte Carlo method determines the bond formation. The influence of parameters in the simulation model on the quality of the simulation results is explicitly evaluated. Specific guidelines on how to choose proper values for the simulation model parameters are given here. It is shown that i) the reaction interval should be chosen from the ballistic region of the diffusion profile; and ii) the first valley of the radial distribution function of reactants is a good value for the reaction capture radius for polycondensation in terms of accuracy of the calculations. Moreover, a recipe to determine the rate constant from the kinetic equation is explicitly proposed. Using the guidelines, excellent agreement between simulation results and the experimental data is obtained.},
 }
+
+%THESE ENTRIES ARE ADDED MANUALLY
 @article{Dimarco2018,
 issn = {1064-8275},
 abstract = {We develop a new Monte Carlo method that solves hyperbolic transport equations with stiff terms, characterized by a (small) scaling parameter. In particular, we focus on systems which lead to a reduced problem of parabolic type in the limit when the scaling parameter tends to zero. Classical Monte Carlo methods suffer severe time step limitations in these situations, due to the fact that the characteristic speeds go to infinity in the diffusion limit. This makes the problem a real challenge, since the scaling parameter may differ by several orders of magnitude in the domain. To circumvent these time step limitations, we construct a new, asymptotic-preserving Monte Carlo method that is stable independently of the scaling parameter and degenerates to a standard probabilistic approach for solving the limiting equation in the diffusion limit. The method uses an implicit time discretization to formulate a modified equation in which the characteristic speeds do not grow indefinitely when the scaling factor tends to zero. The resulting modified equation can readily be discretized by a Monte Carlo scheme, in which the particles combine a finite propagation speed with a time step dependent diffusion term. We show the performance of the method by comparing it with standard (deterministic) approaches in the literature.},
@@ -365,6 +367,7 @@ language = {eng},
 author = {Dimarco, G. and Pareschi, L. and Samaey, G.},
 keywords = {Transport Equations ; Diffusion Limit ; Monte Carlo Methods ; Asymptotic-Preserving Schemes ; 65c05 ; 35b25 ; 65m75 ; 76r50 ; 82c70},
 }
+
 @book{Busbridge,
 series = {Cambridge tracts in mathematics and mathematical physics 50},
 publisher = {Cambridge University press},
@@ -373,6 +376,7 @@ title = {The mathematics of radiative transfer},
 address = {Cambridge},
 author = {Busbridge, I. W},
 }
+
 @misc{MoensNicolas,
 abstract = {In many astrophysical situations, radiation plays an important role in the dynamics of the system. Hot massive stars, for example, have powerful radiation-driven stellar winds with mass loss rates that can exceed 10^{-6} solar masses per year. In this thesis, a hydrodynamics code MPI-AMRVAC is modified and used to simulate radiation effects using two different formalisms: First, the focus is on highly accelerating media that are optically thick to continuum radiation. A spectral line driving formalism is introduced and used to simulate the winds of hot, massive stars. Second, a more general approach is developed by solving the complete radiation hydrodynamics equations. The line driving formalism, called CAK-theory, has analytical solutions which are compared to our simulations with good agreement. Having implemented and benchmarked such a CAK-routine in MPI-AMRVAC, future work will focus on simulating the interaction of a hot massive star wind with a compact object by means of accretion. The second approach in this thesis uses the flux limited diffusion approximation. We start with working out some test cases to check on the implementation of the code. Afterwards, we try our hand at 2D simulations of a radiation-dominated massive-star atmosphere, comparing results to theoretical predictions from perturbation theory. Here, future work will focus on further investigation of radiation-instabilities occurring in such atmospheres for stars near the stellar upper mass limit.},
 publisher = {KU Leuven. Faculteit Wetenschappen},
@@ -381,18 +385,154 @@ title = {Radiation-Hydrodynamics with MPI-AMRVAC: Massive-Star Atmospheres and W
 address = {Leuven},
 author = {Moens, Nicolas},
 }
+
 @misc{WikiHeat,
     author = "{Wikipedia contributors}",
     title = "Heat flux --- {Wikipedia}{,} The Free Encyclopedia",
     year = "2018",
     url = "https://en.wikipedia.org/w/index.php?title=Heat_flux&oldid=863233807",
     note = "[Online; accessed 14-September-2019]"
-  }
+}
+
 @misc{WikiOpticalDepth,
     author = "{Wikipedia contributors}",
     title = "Optical depth --- {Wikipedia}{,} The Free Encyclopedia",
     year = "2019",
     url = "https://en.wikipedia.org/w/index.php?title=Optical_depth&oldid=884427147",
     note = "[Online; accessed 14-September-2019]"
-  }
+}
 
+@misc{RADMC3D,
+author = {Cornelis Dullemond},
+title = {RADMC-3D},
+year = {2017},
+url = {http://www.ita.uni-heidelberg.de/~dullemond/software/radmc-3d/},
+urldate = {2019-09-20}
+}
+
+@misc{IACInversionCodes,
+title = {IAC Inversion Codes},
+url = {http://www.iac.es/proyecto/inversion/codes.php},
+urldate = {2019-09-20}
+}
+
+@misc{MULTICode,
+title = {MULTI Version 2.2},
+url = {http://folk.uio.no/matsc/mul22/mul22.html},
+urldate = {2019-09-20}
+}
+
+@article{Harries2019,
+abstract = {We present a review of the TORUS radiation transfer and hydrodynamics code. TORUS uses a 1-D, 2-D or3-D adaptive mesh refinement scheme to store and manipulate the state variables, and solves the equation of radiative transfer using Monte Carlo techniques. A framework of microphysics modules is described, including atomic and molecular line transport in moving media, dust radiative equilibrium, photoionisation equilibrium, and time-dependent radiative transfer. These modules provide a flexible scheme for producing synthetic observations, either from analytical models or as post-processing of hydrodynamical simulations (both grid-based and Lagrangian). A hydrodynamics module is also presented, which maybe used in combination with the radiation-transport modules to perform radiation-hydrodynamics simulations. Benchmarking and validation tests of each major mode of operation are detailed, along with descriptions and performance/scaling tests of the various parallelisation schemes. We give examples of the uses of the code in the literature, including applications to low- and high-mass star formation, cluster feedback, and stellar winds, along with an Appendix listing the refereed papers that have used TORUS.},
+archivePrefix = {arXiv},
+arxivId = {1903.06672},
+author = {Harries, Tim and Haworth, Tom and Acreman, David and Ali, Ahmad and Douglas, Tom},
+eprint = {1903.06672},
+file = {:home/ignace/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Harries et al. - 2019 - The TORUS radiation transfer code.pdf:pdf},
+month = {mar},
+title = {{The TORUS radiation transfer code}},
+url = {http://arxiv.org/abs/1903.06672},
+year = {2019}
+}
+
+@book{TheoryStellarAtmospheres2014,
+author = {Ivan Hubeny, Dimitri Mihalas},
+title = {Theory of stellar atmospheres : an introduction to astrophysical non-equilibrium quantitative spetroscopic analysis},
+year = {2014},
+}
+
+@article{Hubeny2017,
+abstract = {This is the first of three papers that present a detailed guide for working with the codes tlusty synspec to generate model stellar atmospheres or accretion disks, and to produce detailed synthetic spectra. In this paper, we present a very brief manual intended for casual users who intend to use these codes for simple, well defined tasks. This paper does not present any background theory, or a description of the adopted numerical approaches, but instead uses simple examples to explain how to employ these codes. In particular, it shows how to produce a simple model atmosphere from the scratch, or how to improve an existing model by considering more extended model atoms. This paper also presents a brief guide to the spectrum synthesis program synspec.},
+archivePrefix = {arXiv},
+arxivId = {1706.01859},
+author = {Hubeny, Ivan and Lanz, Thierry},
+eprint = {1706.01859},
+file = {:home/ignace/Downloads/1706.01859.pdf:pdf},
+pages = {1--50},
+title = {{A brief introductory guide to TLUSTY and SYNSPEC}},
+url = {http://arxiv.org/abs/1706.01859},
+year = {2017}
+}
+
+@article{Hubeny2017a,
+abstract = {This is the second part of a three-volume guide to TLUSTY and SYNSPEC. It presents a detailed reference manual for TLUSTY, which contains a detailed description of basic physical assumptions and equations used to model an atmosphere, together with an overview of the numerical methods to solve these equations.},
+archivePrefix = {arXiv},
+arxivId = {1706.01935},
+author = {Hubeny, Ivan and Lanz, Thierry},
+eprint = {1706.01935},
+file = {:home/ignace/Downloads/1706.01935.pdf:pdf},
+title = {{TLUSTY User's Guide II: Reference Manual}},
+url = {http://arxiv.org/abs/1706.01935},
+year = {2017}
+}
+
+@article{Hubeny2017b,
+abstract = {This paper presents a detailed operational manual for TLUSTY. It provides a guide for understanding the essential features and the basic modes of operation of the program. To help the user, it is divided into two parts. The first part describes the most important input parameters and available numerical options. The second part covers additional details and a comprehensive description of all physical and numerical options, and a description of all input parameters, many of which needed only in special cases.},
+archivePrefix = {arXiv},
+arxivId = {1706.01937},
+author = {Hubeny, Ivan and Lanz, Thierry},
+eprint = {1706.01937},
+file = {:home/ignace/Downloads/1706.01937.pdf:pdf},
+title = {{TLUSTY User's Guide III: Operational Manual}},
+url = {http://arxiv.org/abs/1706.01937},
+year = {2017}
+}
+
+@article{Camps2015,
+abstract = {We discuss the architecture and design principles that underpin the latest version of SKIRT, a state-of-the-art open source code for simulating continuum radiation transfer in dusty astrophysical systems, such as spiral galaxies and accretion disks. SKIRT employs the Monte Carlo technique to emulate the relevant physical processes including scattering, absorption and emission by the dust. The code features a wealth of built-in geometries, radiation source spectra, dust characterizations, dust grids, and detectors, in addition to various mechanisms for importing snapshots generated by hydrodynamical simulations. The configuration for a particular simulation is defined at run-time through a user-friendly interface suitable for both occasional and power users. These capabilities are enabled by careful C++ code design. The programming interfaces between components are well defined and narrow. Adding a new feature is usually as simple as adding another class; the user interface automatically adjusts to allow configuring the new options. We argue that many scientific codes, like SKIRT, can benefit from careful object-oriented design and from a friendly user interface, even if it is not a graphical user interface.},
+author = {Camps, P. and Baes, M.},
+doi = {10.1016/j.ascom.2014.10.004},
+file = {:home/ignace/Downloads/Camps2015a.pdf:pdf},
+issn = {22131337},
+journal = {Astronomy and Computing},
+keywords = {Abstraction,Dust,Modularity,Numerical methods,Object-oriented design,Radiative transfer},
+pages = {20--33},
+publisher = {Elsevier B.V.},
+title = {{SKIRT: An advanced dust radiative transfer code with a user-friendly architecture}},
+url = {http://dx.doi.org/10.1016/j.ascom.2014.10.004},
+volume = {9},
+year = {2}
+}
+
+@misc{MULTI,
+author = {Mats Carlsson},
+title = {MULTI Version 2.2},
+url = {http://folk.uio.no/matsc/mul22/mul22.html},
+urldate = {2019-09-20}
+}
+
+@misc{Carlsson1986,
+abstract = {A computer program for solving multi-level non-LTE radiative transfer problems is presented. The method used is that developed by Scharmer (1981) and Scharmer & Carlsson (1985a, 1985b). The code can be used to solve non-LTE radiative transfer problems in semi-infinite, plane-parallel one-dimensional atmospheres with a prescribed macroscopic velocity field. The model atom can contain many atomic levels and several ionization stages. The lines are assumed to be formed with complete redistribution over the profile function which is assumed to be a Voigt function. Some aspects of the numerical solution of radiative transfer problems are also discussed; in particular the choice of a starting approximation, instability problems due to the optically thin radiation field and the accuracy of methods for solving the transfer equation with a known source function.},
+author = {Carlsson, M},
+booktitle = {Uppsala Astronomical Observatory Reports},
+file = {:home/ignace/Downloads/report33.pdf:pdf},
+keywords = {Radiative Transfer:Stellar Atmospheres,Stellar Atmospheres:Radiative Transfer},
+title = {{A computer program for solving multi-level non-LTE radiative transferproblems in moving or static atmospheres.}},
+volume = {33},
+year = {1986}
+}
+
+@article{PinteChristophe2015CRT,
+issn = {2100-014X},
+abstract = {<p>Understanding the properties and evolutionary stage of protoplanetary disks requires to be able to derive physical quantities from multi-wavelength and multi-technique observations of these disks. Because of the complexity of the radiative transfer, we must rely on sophisticated numerical codes to do so. In this chapter, we present the radiative transfer problem in dusty media and discuss why this represents a difficult numerical problem to solve. We briefly describe the various methods that can be used to solve the radiative transfer equation and discuss their relative merits and drawbacks.</p>},
+journal = {EPJ Web of Conferences},
+pages = {00006},
+volume = {102},
+publisher = {EDP Sciences},
+isbn = {9782759818754},
+year = {2015},
+title = {Continuum radiative transfer},
+language = {eng},
+author = {Pinte Christophe},
+keywords = {Physics},
+}
+
+@article{NoebauerUlrichM_2019MCRT,
+abstract = {The theory and numerical modelling of radiation processes and radiative transfer play a key role in astrophysics: they provide the link between the physical properties of an object and the radiation it emits. In the modern era of increasingly high-quality observational data and sophisticated physical theories, development and exploitation of a variety of approaches to the modelling of radiative transfer is needed. In this article, we focus on one remarkably versatile approach: Monte Carlo Radiative Transfer (MCRT). We describe the principles behind this approach, and highlight the relative ease with which they can (and have) been implemented for application to a range of astrophysical problems. All MCRT methods have in common a need to consider the adverse consequences of Monte Carlo noise in simulation results. We overview a range of methods used to suppress this noise and comment on their relative merits for a variety of applications. We conclude with a brief review of specific applications for which MCRT methods are currently popular and comment on the prospects for future developments.},
+volume = {5},
+number = {1},
+year = {2019},
+title = {Monte Carlo Radiative Transfer},
+author = {Noebauer, Ulrich M. and Sim, Stuart A.},
+keywords = {Astrophysics - Instrumentation And Methods For Astrophysics},
+}

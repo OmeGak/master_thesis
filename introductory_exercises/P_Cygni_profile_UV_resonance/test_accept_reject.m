@@ -24,4 +24,3 @@ numBins = 100;
 h = histogram(accepted_samples,'Normalization','pdf','BinWidth',1/numBins)
 x_values = linspace(0,1);
 hold on, plot(x_values,func(x_values))
-

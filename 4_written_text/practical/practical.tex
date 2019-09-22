@@ -23,11 +23,40 @@
 \label{Overview_Part_2}
 
 \begin{enumerate}
-\item Calculate the probability distribution to sample from in the case of Eddington limb darkening for the initial distribution (see \ref{Eddington limb darkening adaptation}).
-\item Calculate analytical solution for simplified problem in \ref{PCYG FIRST adaptation} in the case that \texttt{mu = 1}.
-\item Perform convergence analysis. See Section \ref{convergence_analysis}
+\item Calculate the probability distribution to sample from in the case of Eddington limb darkening for the initial distribution (see Section \underline{\ref{Eddington_limb_darkening_adaptation}}).
+\begin{itemize}
+\item finished + Ok
+\end{itemize}
+
+\item Calculate analytical solution for simplified problem in the case that \texttt{mu = 1} (see Section \underline{\ref{PCYG FIRST adaptation}}).
+\begin{itemize}
+\item finished + Ok + can be further studied
+\end{itemize}
+
+\item Perform convergence analysis (see Section \underline{\ref{convergence_analysis}}).
 \end{enumerate}
 
+\section{Overview of exercises (PART III)}
+\label{Overview_Part_3}
+
+\begin{enumerate}
+\item Revisit 3D limb darkening. $\phi$ should be sampled between $0$ and $2\pi$ (see Section \underline{\ref{3D_limb_darkening}}). (OK)
+
+\item Revisit convergence analysis: adapt plot formatting and standard deviation is defined as square root of variance (see Section \underline{\ref{convergence_analysis}}). (OK)
+
+\item Test variance reduction technique (see Section \underline{\ref{variance_reduction_experiment}})  
+
+\item Some general considerations about the definitiion of specific intensity (see Section \underline{\ref{specific_intensity}})
+
+\item For the Monte Carlo approximation of the diffusion equation, why do wo have $N \sim \tau$ for low optical depth $\tau \ll 1$ (see Section \underline{\ref{diffusion_Monte_Carlo_mean_free_path}}).
+
+\item Revisit the radial streaming approximation in \texttt{pcyg.f90} for lower optical depth (e.g. \texttt{xk0=0.5}).
+(see Section \underline{\ref{PCYG FIRST adaptation}}).
+
+\item What happens when you add a line (e.g. \@ $x=0.5=a$)? How would you do that? (see Section \underline{\ref{second_line}}) 
+
+\item Towards a mathematical description of the problem.
+\end{enumerate}
 
 \newpage
 \section{Limb darkening}
@@ -95,39 +124,109 @@ Calculates the angular dependence of photon's emitted from a plane-parallel, gre
 
 \begin{figure}[!htp]
 \centering
-\includegraphics[width=0.7\textwidth]{../../introductory_exercises/limb_darkening/number_channels20number_photons100000max_opt_depth10.png}
+\includegraphics[width=0.7\textwidth]{../../introductory_exercises/limb_darkening/data/number_channels20number_photons100000max_opt_depth10.png}
 \caption{histogram for \texttt{mu}}
 \label{2D_mu}
 \end{figure}
-Figure \ref{2D_mu} is according to what is expected $I = I_0(0.4+0.6\mu)$
+Figure \ref{2D_mu} is according to what is expected $I = I_0(0.4+0.6\mu)$. The input parameters are as follows \texttt{Limb\_Darkening(number\_of\_channels = 20, number\_of\_photons = $10^5$, \\ maximum\_optical\_depth = 10)}.
 
 \newpage
 \subsubsection{3D Code}
+\label{3D_limb_darkening}
+
 What changes is this: 
 \begin{itemize}
 \item introduction of a new angle $\phi$
-\item the optical depth has to be updated according to $\phi$ also
+\item the optical depth is not updated with respect to $\phi$ 
 \end{itemize}
+
 
 \begin{figure}[!htp]
 \centering
 \begin{minipage}{.5\textwidth}
-\includegraphics[width=\textwidth]{../../introductory_exercises/limb_darkening/number_channels20number_photons100000max_opt_depth10.png}
+\includegraphics[width=\textwidth]{../../introductory_exercises/limb_darkening/data/LD_3D_mu_number_channels20number_photons100000max_opt_depth10.png}
 \caption{histogram for \texttt{mu}}
 \label{3D_mu}
 \end{minipage}%
 \begin{minipage}{.5\textwidth}
-\includegraphics[width=\textwidth]{../../introductory_exercises/limb_darkening/PHI_number_channels20number_photons100000max_opt_depth10.png}
+\includegraphics[width=\textwidth]{../../introductory_exercises/limb_darkening/data/LD_3D_phi_number_channels20number_photons100000max_opt_depth10.png}
 \caption{histogram for \texttt{phi}}
 \label{3D_phi}
 \end{minipage}
 \end{figure}
 
-Figure \ref{3D_mu} and Figure \ref{3D_phi} are according to what is expected, namely $I = I_0(0.4+0.6\mu)$ and a uniform distribution for $phi$, which corresponds to a $I \sim \frac{1}{\phi}$
+Figure \ref{3D_mu} and Figure \ref{3D_phi}  are the result of 
+the function \texttt{Limb\_Darkening\_3D} with the following input parameters: \texttt{Limb\_Darkening\_3D(number\_of\_channels = 20, number\_of\_photons = $10^5$, \\ maximum\_optical\_depth = 10)}. The results according to what is expected, namely $I = I_0(0.4+0.6\mu)$ and $\phi$ follows a uniform distribution.
+
+\paragraph{}
+\noindent\fbox{
+  \parbox{\textwidth}{
+\textbf{Extension}: make version where the optical depth is updated with respect to $\phi$ 
+}}
+
+\vspace{0.4cm}
+Via this link, you can go back to the exercises overview: Section \underline{\ref{Overview_Part_3}}.
+
+\newpage
+\subsubsection{Closer look at Monte Carlo simulations}
+\label{diffusion_Monte_Carlo_mean_free_path}
+
+\paragraph{Random walk (diffusion equation)} A more simple experiment that simulates the diffusion equation (1D random walk) is also set up. The results are shown in Figure \ref{random_walk_N_vs_tau}.
+	\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{../../introductory_exercises/limb_darkening/data/diff_N_vs_opacity.png}
+	\caption{Number of interactions (scattering events) versus 	opacity, random walk}
+	\label{random_walk_N_vs_tau}
+	\end{figure}
+We observe that $N \sim \tau^2$, as can also be derived from theory.
+
+\begin{itemize}
+\item When starting from an initial condition $x_0 = 0$,
+\begin{equation}
+x_N = x_{N-1} \pm l
+\end{equation}
+the variance equals $\braket{x_N}^2 = N l^2$ 
+\item If we require a photon to cover a distance $R$ then $N = \frac{R^2}{l^2}$ and
+\begin{itemize}
+\item with the following relation between mean-free path $l$ and opacity $\alpha$ namely $l = \frac{1}{\alpha}$
+\item with $\tau = \int_0^R \alpha ds = \frac{R}{l}$
+\end{itemize}
+we have that $N = \tau^2$. This corresponds with the observations in Figure \ref{random_walk_N_vs_tau}.
+\end{itemize}
+
+
+\newpage
+\paragraph{Limb darkening} We first look at results from the limb darkening program. In Figure \ref{limb_darkening_N_vs_tau}, the number of scattering events is plotted versus the opacity of the medium. 
+	\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{../../introductory_exercises/limb_darkening/data/N_vs_opacity.png}
+	\caption{Number of interactions (scattering events) versus 	opacity, kimb darkening}
+	\label{limb_darkening_N_vs_tau}
+	\end{figure}
+
+\begin{itemize}
+\item For high opacity $\tau \gg 1$ we observe that $N \sim \tau$. \item However, this relationship does not hold for $\tau \ll 1$.
+\end{itemize}
+
+\paragraph{Eddington approximation} 
+\begin{equation}
+\boxed{J(\tau) = 3H \left( \tau + \frac{2}{3} \right)}
+\end{equation}
+Together with the time-independent radiative transfer equation in a gray (frequency-independent) planar medium:
+\begin{equation}
+\mu \frac{\partial I(\tau,\mu)}{\partial \tau} = I(\tau,\mu) - J(\tau,\mu)
+\label{rad_transfer_eq_limb_darkening}
+\end{equation}
+with the emergent intensity $I(0,\mu)$ as solution of  Equation (\ref{rad_transfer_eq_limb_darkening}). Its solution equals 
+\begin{equation}
+I(\tau = 0,\mu) = I_1 \left( \frac{2}{5} + \frac{3 \mu}{5} \right) 
+\end{equation}
 
 
 \newpage
 \section{Investigation of program: pcyg.f90}
+This section is about the study of line formation in an expanding wind.
+
 \subsection{Overview of variables}
 \begin{center}
 \centering
@@ -174,6 +273,9 @@ xmueout & outwards (scattered) angle \\
 \end{tabu}}
 \end{center}
 
+The amout of bins \texttt{nchan = 100}.
+
+
 \newpage
 \subsection{Mathematical things that are noteworthy}
 
@@ -191,11 +293,6 @@ xmueout & outwards (scattered) angle \\
 The photons are sorted according to \texttt{xnew}.
 In general, the flux is dependent on $\mu$ and the frequency $x$.
 
-
-\noindent\fbox{
-  \parbox{\textwidth}{
-  make formula 
-}}
 
 \begin{itemize}
 \item I think that it satisfies $N(x)dx \sim I(x)xdx$
@@ -223,7 +320,7 @@ In original version of the code, all photons are released isotropially from the 
 
 \begin{figure}[!htp]
 \centering
-\includegraphics[width=0.5\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/npot6xk0100alpha0beta1test0.png}
+\includegraphics[width=0.5\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot6xk0100alpha0beta1test0.png}
 \caption{Original version of the code}
 \end{figure}
 
@@ -235,21 +332,22 @@ In original version of the code, all photons are released isotropially from the 
 What would happen with line-profile, if you assumed all photons
 were released radially from photopshere?
 \begin{itemize}
-\item In other words $\texttt{xmuestart} = 1$. Results in Figure \ref{PCyg_mu_eq_1}.
+\item In other words $\texttt{xmuestart} = 1$. 
 \item This is implemented under the test case \texttt{test\_number=1}.
+\item Results in Figure \ref{PCyg_mu_eq_1} for opacity \texttt{xk0 = 100}.
 \end{itemize}
 
 \begin{figure}[!htbp]
 \centering
 \begin{subfigure}{.5\textwidth}
-\includegraphics[width=1\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alpha0beta1test1.png}
+\includegraphics[width=1\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk0100alpha0beta1test1.png}
 \caption{First adaptation}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
-\includegraphics[width=1\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alpha0beta1test10.png}
+\includegraphics[width=1\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk0100alpha0beta1test10.png}
 \caption{Same plot (together with output of initial version)}
 \end{subfigure}
-\caption{The number of photons equals $10^{5}$}
+\caption{The number of photons equals $10^{5}$, \texttt{xk0=100}}
 \label{PCyg_mu_eq_1}
 \end{figure}
 
@@ -335,16 +433,41 @@ with $\tau = \frac{\texttt{tau0}}{1+\texttt{X}^2 \sigma}$ where $\texttt{X}$ is 
 In words, we initially have an isotropic distribution for \texttt{xstart}. The number of photons that are leaving the atmosphere at different frequencies is however not isotropic through complex interactions that are incorporated into $p(x)$.
 One must also take into account that not all of the photons that are released actually escape from the atmosphere and also that sometimes no resonance is possible, and then Equation (\ref{pcyg_mu_1_final_eq}) is not applicable.
 
-
 \end{itemize}
-
-
 
 \noindent\fbox{
   \parbox{\textwidth}{TO DO: proceed from this to the analytical expression for the flux. Here I am stuck for the moment.}}
   
 \vspace{1cm}
-\underline{Via this link, you can go back to the exercises overview: Section \ref{Overview_Part_2}.}
+Via this link, you can go back to the exercises overview: Section \underline{\ref{Overview_Part_2}.}
+
+\newpage
+\paragraph{\underline{Experiments with other opacities}}
+The results for \texttt{xk0=0.5} are shown in Figures \ref{PCyg_mu_eq_1xk0_05} and \ref{PCyg_mu_eq_xk0_05_vs_100}.
+
+
+\begin{figure}[!htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+\includegraphics[width=1\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk05alpha0beta1test1.png}
+\caption{First adaptation}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+\includegraphics[width=1\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk05alpha0beta1test10.png}
+\caption{Same plot (together with output of initial version)}
+\end{subfigure}
+\caption{The number of photons equals $10^{5}$, \texttt{xk0=0.5}}
+\label{PCyg_mu_eq_1xk0_05}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.5\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk05alpha0beta1test11.png}
+\caption{The number of photons equals $10^{5}$, \texttt{xk0=0.5}}
+\label{PCyg_mu_eq_xk0_05_vs_100}
+\end{figure}
+
+Via this link, you can go back to the exercises overview: Section \underline{\ref{Overview_Part_3}}.
 
 
 \newpage
@@ -363,11 +486,11 @@ was isotropic
 \begin{figure}[!htbp]
 \centering
 \begin{subfigure}{.5\textwidth}
-\includegraphics[width=1\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alpha0beta1test2.png}
+\includegraphics[width=1\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk0100alpha0beta1test2.png}
 \caption{Second adaptation}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
-\includegraphics[width=1\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/npot5xk0100alpha0beta1test20.png}
+\includegraphics[width=1\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk0100alpha0beta1test20.png}
 \caption{Same plot (together with output of initial version)}
 \end{subfigure}
 \caption{The number of photons equals $10^{5}$}
@@ -380,20 +503,20 @@ It is clear from Figure \ref{Pcyg_isotropic_scattering} that the peak around $x=
 
 \newpage
 \subsubsection{Third adaptation: introduction of Eddington limb-darkening}
-\label{Eddington limb darkening adaptation}
+\label{Eddington_limb_darkening_adaptation}
 Put Eddington limb-darkening in. What happens? 
 
 \paragraph{General (introductory) discussion: Eddington limb darkening}
 The data are taken from Christensen, 2015.
 \begin{itemize}
-\item the source function $S= <I> = a + b\tau_{\nu}$ with $a= \frac{\sigma}{2 \pi}T_{eff}^4$ and $b = \frac{3 \sigma}{4 \pi}T_{eff}^4$
+\item the source function $S= \braket{I} = a + b\tau_{\nu}$ with $a= \frac{\sigma}{2 \pi}T_{eff}^4$ and $b = \frac{3 \sigma}{4 \pi}T_{eff}^4$
 \item solve the equation
 \item this yields $\frac{I(\theta)}{I(0)} = \frac{a+b\cos(\theta)}{a+b} = \frac{2}{5} + \frac{3}{5}\cos(\theta)$
 \end{itemize}
 
 \begin{figure}[!htp]
 \centering
-\includegraphics[width=0.7\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_limb_darkening.png}
+\includegraphics[width=0.7\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/Eddington_limb_darkening.png}
 \caption{Eddington limb darkening (two times the same plot with $\mu =  \cos(\theta)$ }
 \end{figure}
 
@@ -444,15 +567,13 @@ The results of an accept-reject method that samples the probability distribution
 
 \begin{figure}[!htp]
 \centering
-\includegraphics[width=0.7\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/Eddington_accept_reject.png}
+\includegraphics[width=0.7\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/Eddington_accept_reject.png}
 \caption{Accept-reject method for Eddington limb darkening}
 \end{figure}
 
 \end{enumerate}
 
-
-
-\underline{Via this link, you can go back to the exercises overview: Section \ref{Overview_Part_2}.}
+Via this link, you can go back to the exercises overview: Section \underline{\ref{Overview_Part_2}}.
 
 \newpage
 \subsubsection{Fourth adaptaion: photospheric line-profile}
@@ -480,18 +601,169 @@ The convergence of the Monte Carlo method is tested with the following input par
 \end{tabu}}
 \end{center}
 
-for a varying amount of photons, as shown in Figure \ref{Convergence_Pcyg_kx0_0}. We expect the method to have $\frac{1}{\sqrt{N}}$ convergence, where $N$ is the number of photons. However, the methods strangely seems to have a faster convergence rate. \noindent\fbox{
-  \parbox{0.5\textwidth}{This is still to be analysed.}}
-
+for a varying amount of photons, as shown in Figure \ref{Convergence_Pcyg_kx0_0}. We expect the method to have $\frac{1}{\sqrt{N}}$ convergence, where $N$ is the number of photons. However, the methods strangely seems to have a faster convergence rate. 
 
 \begin{figure}[!htp]
 \centering
-\includegraphics[width=0.65\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/test0_convergence.png}
+\includegraphics[width=0.65\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/test0_convergence.png}
 \caption{Original version of the code: convergence analysis (xk0=0)}
 \label{Convergence_Pcyg_kx0_0}
 \end{figure}
 
-\underline{Via this link, you can go back to the exercises overview: Section \ref{Overview_Part_2}.}
+Via this link, you can go back to the exercises overview: Section \underline{\ref{Overview_Part_2}}.
+
+\newpage
+\subsubsection{Variance reduction experiment}
+\label{variance_reduction_experiment}
+
+We will set up the test as follows
+\begin{itemize}
+\item run the code with \texttt{xk0=100} and number of photons $N=10^7$
+\item run the code again for lower number of photons (e.g. $N=10^3$), both with random sampling and pseudo-random sampling
+\item compute variance w.r.t. \textit{expensive} simulation and compare
+\item \texttt{test\_number = 5}
+\end{itemize}
+
+\begin{figure}[!htp]
+\centering
+\includegraphics[width=0.65\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/variance_reduction_test.png}
+\caption{Original version of the code: convergence analysis (xk0=0)}
+\label{variance_reduction_test}
+\end{figure}
+
+\noindent\fbox{
+  \parbox{\textwidth}{
+Possible improvement: average over different stochastic realizations.}}
+
+\vspace{0.7cm}
+Via this link, you can go back to the exercises overview: Section \underline{\ref{Overview_Part_3}}.
+
+
+\newpage
+\subsubsection{Introduction of second line}
+\label{second_line}
+What happens when you add a line (e.g. \@ $x=0.5=a$)? How would you do that?
+
+
+\paragraph{Single line}
+\begin{center}
+\vspace{-0.45cm}
+\begin{algorithm}[!htp]
+\caption{\texttt{pcyg.f90: one resonance line}}
+\label{pcyg_one_line}
+\begin{algorithmic}
+\For{all photons} 
+
+\begin{enumerate}
+\item Release photon with frequency $x$
+\item Check if interaction is uberhaupt possible.
+\item Solve for distance (radius $r$) of interaction using Sobolev approximation $x_{CMF} = x_{REL} - \mu v(r)$ with $\boxed{x_{CMF} = 0}$ and compute Sobolev optical depth
+\item Check whether the photon is scattered:
+\end{enumerate}
+\If{$\tau_S > -log(\xi)$}
+\State Interaction: the photon is scattered. Update the frequency
+\Else \State No interaction
+\EndIf
+
+\begin{enumerate}
+\setcounter{enumi}{3}
+\item update the frequency according to the scattering event
+\end{enumerate}
+	
+\EndFor
+\State \textbf{end for}
+\State collect photons and perform visualisation
+
+\end{algorithmic}
+\end{algorithm}
+\end{center}
+
+
+\paragraph{Introduction of second line}
+The changes are marked in blue.
+
+\begin{center}
+\vspace{-0.45cm}
+\begin{algorithm}[!htp]
+\caption{\texttt{pcyg.f90: introduction of second resonance line}}
+\label{pcyg_one_line}
+\begin{algorithmic}
+\For{all photons} 
+
+\begin{enumerate}
+\item Release photon with frequency $x$
+\item Check if interaction is uberhaupt possible.
+\item Solve for distance (radius $r$) of interaction using Sobolev approximation $x_{CMF} = x_{REL} - \mu v(r)$ with $\boxed{x_{CMF} = 0}$ and compute Sobolev optical depth 
+\item \textcolor{blue}{solve $x_{REF} = x_{CMF} - \mu v(r)$ with $\boxed{x_{CMF} = a}$ for $r_{\text{interaction}}$}
+\item \textcolor{blue}{Choose the event corresponding with the lowest value of $r_{\text{interaction}}$}
+\item Check whether the photon is scattered:
+\end{enumerate}
+\If{$\tau_S > -log(\xi)$}
+\State Interaction: the photon is scattered. Update the frequency.
+\textcolor{blue}{Is there a second scattering event?
+\begin{enumerate}[leftmargin=0.6in]
+\item Check if interaction is uberhaupt possible.
+\item Solve $x_{REF} = x_{CMF} - \mu v(r)$ with $\boxed{x_{CMF} =b}$ where $b$ is the frequency where no scattering has yet found place
+\item Check whether the photon is scattered:
+\end{enumerate}}
+\If{\textcolor{blue}{$\tau_{S,2} > -log(\xi_2)$}}
+\State \textcolor{blue}{Second interaction: the photon is scattered once again. Update the frequency.}
+\Else \State \textcolor{blue}{No second interaction}
+\EndIf
+
+\Else \State no interaction
+\EndIf	
+\EndFor
+\State \textbf{end for}
+\State collect photons and perform visualisation
+\end{algorithmic}
+\end{algorithm}
+\end{center}
+
+\vspace{0.7cm}
+Via this link, you can go back to the exercises overview: Section \underline{\ref{Overview_Part_3}}.
+
+
+\newpage
+\subsection{Mathematical description of the problem \\
+Looking at literature}
+Have a look at \cite{NoebauerUlrichM_2019MCRT}.
+
+\vspace{0.4cm}
+Via this link, you can go back to the exercises overview: Section \underline{\ref{Overview_Part_3}}.
+
+\newpage
+\section{Definition of specific intensity}
+\label{specific_intensity}
+The definition of the specific intensity is 
+\begin{equation}
+I_{\nu} 
+	= \frac{dE_{\nu}}{\cos(\theta) d\Omega dt d\nu d\theta} 
+	= \frac{dE_{\nu}}{\mu d\Omega dt d\nu d\theta} 
+\end{equation}
+On the other hand, for the total energy of a collection of $N$ photons holds that 
+\begin{equation}
+E_{\nu} = N E_{\nu,\text{photon}} 
+\end{equation}
+
+\paragraph{To the point}
+From this we deduce that (since, in spherical geometry $d\Omega = \sin(\theta) d\theta d\phi = d\mu d\phi$ )
+\begin{equation}
+I_{\nu}(\mu) \mu 
+	= \frac{d E_{\nu}}{d\Omega dt d\nu d\theta} 
+	= \frac{dE_{\nu}}{\sin(\theta) d\theta d\phi dt d\nu d\theta} 
+	= \frac{dE_{\nu}}{d\mu d\phi dt d\nu d\theta}
+	= \frac{N_{\nu}(\mu) dE_{\nu,\text{photon}}}{d\mu d\phi dt d\nu d\theta}
+\end{equation}
+\begin{equation}
+I_{\nu}(\mu) \mu d\mu = \frac{dE_{\nu}}{d\phi dt d\nu d\theta}
+\end{equation}
+
+\noindent\fbox{
+  \parbox{\textwidth}{here is something wrong}}
+
+\vspace{0.4cm}
+Via this link, you can go back to the exercises overview: Section \underline{\ref{Overview_Part_3}}.
 
 \newpage
 \section{Milic Exercises}

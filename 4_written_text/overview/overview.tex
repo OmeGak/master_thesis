@@ -100,6 +100,23 @@ $\boxed{I(\lambda,\tau_{\lambda}) = I_0(\lambda) e^{-\tau_{\lambda}}  \int_0^{\t
 \end{itemize}
 \end{itemize}
 
+\subsubsection{Radiation equations (bis)}
+Material from \cite{TheoryStellarAtmospheres2014}
+\begin{equation}
+\frac{\delta I(q,t)}{\delta s} = \eta (q,t) - \chi(q,t) I(q,t)
+\end{equation}
+In cartesian coordinates (with propagation vector $\vec{n} = \left[ \begin{matrix} n_x \\ n_y \\ n_z \end{matrix}  \right]  = \left[ \begin{matrix} \sin(\theta) \cos(\phi) \\ \sin(\theta) \sin(\phi)  \\ \cos(\theta) \end{matrix}  \right]$):
+\begin{equation}
+\frac{1}{c}\frac{\partial I}{\partial t} + \sin(\theta)\cos(\phi)\frac{\partial I}{\partial x} + \sin(\theta)\sin(\phi)\frac{\partial I}{\partial y} + \cos(\theta) \frac{\partial I}{\partial z} = \eta - \chi I
+\end{equation}
+\begin{itemize}
+\item 1D planar atmosphere: $\frac{\partial I}{\partial x} = \frac{\partial I}{\partial y} = 0$:
+\begin{equation}
+\frac{1}{c} \frac{\partial I}{\partial t} + \mu \frac{\partial I}{\partial z} = \eta - \chi I
+\end{equation}
+
+\item diffusion limit
+\end{itemize}
 
 \subsubsection{RHD equations}
 The full RHD equations consist of 
@@ -228,6 +245,7 @@ with \begin{itemize}
 \item $k_{\nu}$ extinction coefficient
 \end{itemize}
 
+
 \subsection{Overview of symmetry assumptions}
 \begin{center}
 \centering
@@ -239,6 +257,22 @@ plane-parallel & 1D atmosphere & \\
 \end{tabu}}
 \end{center}
 
+
+\subsection{Overview of units}
+\begin{center}
+\centering
+{\tabulinesep=1.5mm
+\begin{tabu}{|c|c|}
+\hline 
+opacity $\alpha = k_{\nu}$ & $\left[ \frac{m^2}{kg} \right] $ \\ \hline
+
+specific intensity $I_{\nu}$ & $\left[ \frac{ergs}{cm^2 . sr . Hz . s} \right] = \left[ \frac{J}{cm^2 . sr . Hz . s} \right] $ \\ \hline
+
+optical depth $\tau$ & \\ 
+& $\boxed{\tau = 0}$ leave atmosphere \\ \hline
+
+\end{tabu}}
+\end{center}
 
 \newpage
 \section{Introduction: course material (Sundqvist - CMPAA course)}
@@ -761,5 +795,30 @@ Via least-squares approximation
 From notes by professor Frank.
 \subsection{Exercises}
 \subsubsection{Exercise 1}
+
+\newpage
+\section{Overview of existing (Monte Carlo) radiative transfer codes}
+
+\subsection{Synthesis codes}
+As is pointed out in \cite{PinteChristophe2015CRT}, there are basically two methods to solve the radiative transfer problem: ray-tracing and Monte Carlo methods.
+
+\begin{itemize}
+\item RADICAL \cite{RADICAL}  (Ray-tracing, 2D, multi-purpose)
+\item MULTI \cite{MULTI} \cite{Carlsson1986} (computer program for solving multi-level non-LTE radiative transfer problems in moving or static atmospheres, very old: Uppsala 1986 - 1995)
+\item SKIRT \cite{Camps2015} (continuum (Monte Carlo) radiation transfer in dusty astrophysical systems, such as spiral galaxies and accretion disks, from Ugent)
+\item TORUS \cite{Harries2019} (Monte Carlo radiation transfer and hydrodynamics code. Adopts 1D, 2D, 3D adaptive mesh refinement. Suitable for radiative equilibrium and creation of synthetic images and SED)
+\item RADMC-3D \cite{RADMC3D} (Monte Carlo code that is especially applicable for dusty molecular clouds, protoplanetary disks, circumstellar envelopes, dusty tori around AGN and models of galaxies. Python interface with Fortran main code)
+\item TLUSTY and SYNSPEC \cite{Hubeny2017}, \cite{Hubeny2017a}, \cite{Hubeny2017b}.
+\end{itemize}
+
+\subsection{Inversion codes}
+\begin{itemize}
+\item VFISV
+\item ASP/HAO
+\item HeLIx+
+\item SNAPI (not publicly available, created by Ivan Milic)
+\item multiple codes available from Instituto de Astrofyiica de Canarias (IAC)
+\item STiC: the Stockholm inve rsion code
+\end{itemize}
 
 \end{document}

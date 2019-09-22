@@ -1976,9 +1976,20 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1">MoensNicolas</bcf:citekey>
-    <bcf:citekey order="2">WikiHeat</bcf:citekey>
-    <bcf:citekey order="3">WikiOpticalDepth</bcf:citekey>
-    <bcf:citekey order="4">Busbridge</bcf:citekey>
+    <bcf:citekey order="2">TheoryStellarAtmospheres2014</bcf:citekey>
+    <bcf:citekey order="3">WikiHeat</bcf:citekey>
+    <bcf:citekey order="4">WikiOpticalDepth</bcf:citekey>
+    <bcf:citekey order="5">Busbridge</bcf:citekey>
+    <bcf:citekey order="6">PinteChristophe2015CRT</bcf:citekey>
+    <bcf:citekey order="7">RADICAL</bcf:citekey>
+    <bcf:citekey order="8">MULTI</bcf:citekey>
+    <bcf:citekey order="9">Carlsson1986</bcf:citekey>
+    <bcf:citekey order="10">Camps2015</bcf:citekey>
+    <bcf:citekey order="11">Harries2019</bcf:citekey>
+    <bcf:citekey order="12">RADMC3D</bcf:citekey>
+    <bcf:citekey order="13">Hubeny2017</bcf:citekey>
+    <bcf:citekey order="14">Hubeny2017a</bcf:citekey>
+    <bcf:citekey order="15">Hubeny2017b</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="anyt">

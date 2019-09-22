@@ -48,6 +48,151 @@
       \field{title}{The mathematics of radiative transfer}
       \field{year}{1960}
     \endentry
+    \entry{MULTI}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=8a164e5b2709103ab88074ca97b6472c}{%
+           family={Carlsson},
+           familyi={C\bibinitperiod},
+           given={Mats},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{8a164e5b2709103ab88074ca97b6472c}
+      \strng{fullhash}{8a164e5b2709103ab88074ca97b6472c}
+      \strng{bibnamehash}{8a164e5b2709103ab88074ca97b6472c}
+      \strng{authorbibnamehash}{8a164e5b2709103ab88074ca97b6472c}
+      \strng{authornamehash}{8a164e5b2709103ab88074ca97b6472c}
+      \strng{authorfullhash}{8a164e5b2709103ab88074ca97b6472c}
+      \field{labelalpha}{Car}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{MULTI Version 2.2}
+      \field{urlday}{20}
+      \field{urlmonth}{9}
+      \field{urlyear}{2019}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb http://folk.uio.no/matsc/mul22/mul22.html
+      \endverb
+      \verb{url}
+      \verb http://folk.uio.no/matsc/mul22/mul22.html
+      \endverb
+    \endentry
+    \entry{Carlsson1986}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=3efcd90e567b48a089ee49e9dc58c454}{%
+           family={Carlsson},
+           familyi={C\bibinitperiod},
+           given={M},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{3efcd90e567b48a089ee49e9dc58c454}
+      \strng{fullhash}{3efcd90e567b48a089ee49e9dc58c454}
+      \strng{bibnamehash}{3efcd90e567b48a089ee49e9dc58c454}
+      \strng{authorbibnamehash}{3efcd90e567b48a089ee49e9dc58c454}
+      \strng{authornamehash}{3efcd90e567b48a089ee49e9dc58c454}
+      \strng{authorfullhash}{3efcd90e567b48a089ee49e9dc58c454}
+      \field{labelalpha}{Car86}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A computer program for solving multi-level non-LTE radiative transfer problems is presented. The method used is that developed by Scharmer (1981) and Scharmer & Carlsson (1985a, 1985b). The code can be used to solve non-LTE radiative transfer problems in semi-infinite, plane-parallel one-dimensional atmospheres with a prescribed macroscopic velocity field. The model atom can contain many atomic levels and several ionization stages. The lines are assumed to be formed with complete redistribution over the profile function which is assumed to be a Voigt function. Some aspects of the numerical solution of radiative transfer problems are also discussed; in particular the choice of a starting approximation, instability problems due to the optically thin radiation field and the accuracy of methods for solving the transfer equation with a known source function.}
+      \field{booktitle}{Uppsala Astronomical Observatory Reports}
+      \field{title}{{A computer program for solving multi-level non-LTE radiative transferproblems in moving or static atmospheres.}}
+      \field{volume}{33}
+      \field{year}{1986}
+      \verb{file}
+      \verb :home/ignace/Downloads/report33.pdf:pdf
+      \endverb
+      \keyw{Radiative Transfer:Stellar Atmospheres,Stellar Atmospheres:Radiative Transfer}
+    \endentry
+    \entry{Camps2015}{article}{}
+      \name{author}{2}{}{%
+        {{hash=ed1a40c3cfa50793f08fb8c4d2e98ff0}{%
+           family={Camps},
+           familyi={C\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=fde2bc433122fe7cde3052bbb77eaeaa}{%
+           family={Baes},
+           familyi={B\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier B.V.}%
+      }
+      \strng{namehash}{e9b42ade75335fc650bee43fe6dcfa42}
+      \strng{fullhash}{e9b42ade75335fc650bee43fe6dcfa42}
+      \strng{bibnamehash}{e9b42ade75335fc650bee43fe6dcfa42}
+      \strng{authorbibnamehash}{e9b42ade75335fc650bee43fe6dcfa42}
+      \strng{authornamehash}{e9b42ade75335fc650bee43fe6dcfa42}
+      \strng{authorfullhash}{e9b42ade75335fc650bee43fe6dcfa42}
+      \field{labelalpha}{CB2}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We discuss the architecture and design principles that underpin the latest version of SKIRT, a state-of-the-art open source code for simulating continuum radiation transfer in dusty astrophysical systems, such as spiral galaxies and accretion disks. SKIRT employs the Monte Carlo technique to emulate the relevant physical processes including scattering, absorption and emission by the dust. The code features a wealth of built-in geometries, radiation source spectra, dust characterizations, dust grids, and detectors, in addition to various mechanisms for importing snapshots generated by hydrodynamical simulations. The configuration for a particular simulation is defined at run-time through a user-friendly interface suitable for both occasional and power users. These capabilities are enabled by careful C++ code design. The programming interfaces between components are well defined and narrow. Adding a new feature is usually as simple as adding another class; the user interface automatically adjusts to allow configuring the new options. We argue that many scientific codes, like SKIRT, can benefit from careful object-oriented design and from a friendly user interface, even if it is not a graphical user interface.}
+      \field{issn}{22131337}
+      \field{journaltitle}{Astronomy and Computing}
+      \field{title}{{SKIRT: An advanced dust radiative transfer code with a user-friendly architecture}}
+      \field{volume}{9}
+      \field{year}{2}
+      \field{pages}{20\bibrangedash 33}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1016/j.ascom.2014.10.004
+      \endverb
+      \verb{file}
+      \verb :home/ignace/Downloads/Camps2015a.pdf:pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1016/j.ascom.2014.10.004
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1016/j.ascom.2014.10.004
+      \endverb
+      \keyw{Abstraction,Dust,Modularity,Numerical methods,Object-oriented design,Radiative transfer}
+    \endentry
+    \entry{PinteChristophe2015CRT}{article}{}
+      \name{author}{1}{}{%
+        {{hash=41658734df65e7c3aa3ba10ec9265c62}{%
+           family={Christophe},
+           familyi={C\bibinitperiod},
+           given={Pinte},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {eng}%
+      }
+      \list{publisher}{1}{%
+        {EDP Sciences}%
+      }
+      \strng{namehash}{41658734df65e7c3aa3ba10ec9265c62}
+      \strng{fullhash}{41658734df65e7c3aa3ba10ec9265c62}
+      \strng{bibnamehash}{41658734df65e7c3aa3ba10ec9265c62}
+      \strng{authorbibnamehash}{41658734df65e7c3aa3ba10ec9265c62}
+      \strng{authornamehash}{41658734df65e7c3aa3ba10ec9265c62}
+      \strng{authorfullhash}{41658734df65e7c3aa3ba10ec9265c62}
+      \field{labelalpha}{Chr15}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{<p>Understanding the properties and evolutionary stage of protoplanetary disks requires to be able to derive physical quantities from multi-wavelength and multi-technique observations of these disks. Because of the complexity of the radiative transfer, we must rely on sophisticated numerical codes to do so. In this chapter, we present the radiative transfer problem in dusty media and discuss why this represents a difficult numerical problem to solve. We briefly describe the various methods that can be used to solve the radiative transfer equation and discuss their relative merits and drawbacks.</p>}
+      \field{isbn}{9782759818754}
+      \field{issn}{2100-014X}
+      \field{journaltitle}{EPJ Web of Conferences}
+      \field{title}{Continuum radiative transfer}
+      \field{volume}{102}
+      \field{year}{2015}
+      \field{pages}{00006}
+      \range{pages}{1}
+      \keyw{Physics}
+    \endentry
     \entry{Dimarco2018}{article}{}
       \name{author}{3}{}{%
         {{hash=1e317563d711acca4c9870dade04f7b8}{%
@@ -95,6 +240,245 @@
       \range{pages}{25}
       \keyw{Transport Equations ; Diffusion Limit ; Monte Carlo Methods ; Asymptotic-Preserving Schemes ; 65c05 ; 35b25 ; 65m75 ; 76r50 ; 82c70}
     \endentry
+    \entry{RADMC3D}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=2557d1b66cd61f0ac2323f3e98b9b353}{%
+           family={Dullemond},
+           familyi={D\bibinitperiod},
+           given={Cornelis},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{2557d1b66cd61f0ac2323f3e98b9b353}
+      \strng{fullhash}{2557d1b66cd61f0ac2323f3e98b9b353}
+      \strng{bibnamehash}{2557d1b66cd61f0ac2323f3e98b9b353}
+      \strng{authorbibnamehash}{2557d1b66cd61f0ac2323f3e98b9b353}
+      \strng{authornamehash}{2557d1b66cd61f0ac2323f3e98b9b353}
+      \strng{authorfullhash}{2557d1b66cd61f0ac2323f3e98b9b353}
+      \field{labelalpha}{Dul17}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{RADMC-3D}
+      \field{urlday}{20}
+      \field{urlmonth}{9}
+      \field{urlyear}{2019}
+      \field{year}{2017}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb http://www.ita.uni-heidelberg.de/~dullemond/software/radmc-3d/
+      \endverb
+      \verb{url}
+      \verb http://www.ita.uni-heidelberg.de/~dullemond/software/radmc-3d/
+      \endverb
+    \endentry
+    \entry{Harries2019}{article}{}
+      \name{author}{5}{}{%
+        {{hash=288012027a4f18a15c6f2926df023750}{%
+           family={Harries},
+           familyi={H\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+        {{hash=6205ab24ff03cd0e198d4c6f280fa5a0}{%
+           family={Haworth},
+           familyi={H\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod}}}%
+        {{hash=0d6f50d05dc3107fa1698c8a895a43fa}{%
+           family={Acreman},
+           familyi={A\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=fa80326f2662c56121d31174d4b531f5}{%
+           family={Ali},
+           familyi={A\bibinitperiod},
+           given={Ahmad},
+           giveni={A\bibinitperiod}}}%
+        {{hash=fa9a5cc03452d2cbdcda3d2376313c11}{%
+           family={Douglas},
+           familyi={D\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{5b1e870daaa837d20690452b6e351181}
+      \strng{fullhash}{8e1d59cd5e479485e78607ac33ebb359}
+      \strng{bibnamehash}{5b1e870daaa837d20690452b6e351181}
+      \strng{authorbibnamehash}{5b1e870daaa837d20690452b6e351181}
+      \strng{authornamehash}{5b1e870daaa837d20690452b6e351181}
+      \strng{authorfullhash}{8e1d59cd5e479485e78607ac33ebb359}
+      \field{labelalpha}{Har+19}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We present a review of the TORUS radiation transfer and hydrodynamics code. TORUS uses a 1-D, 2-D or3-D adaptive mesh refinement scheme to store and manipulate the state variables, and solves the equation of radiative transfer using Monte Carlo techniques. A framework of microphysics modules is described, including atomic and molecular line transport in moving media, dust radiative equilibrium, photoionisation equilibrium, and time-dependent radiative transfer. These modules provide a flexible scheme for producing synthetic observations, either from analytical models or as post-processing of hydrodynamical simulations (both grid-based and Lagrangian). A hydrodynamics module is also presented, which maybe used in combination with the radiation-transport modules to perform radiation-hydrodynamics simulations. Benchmarking and validation tests of each major mode of operation are detailed, along with descriptions and performance/scaling tests of the various parallelisation schemes. We give examples of the uses of the code in the literature, including applications to low- and high-mass star formation, cluster feedback, and stellar winds, along with an Appendix listing the refereed papers that have used TORUS.}
+      \field{eprinttype}{arXiv}
+      \field{month}{3}
+      \field{title}{{The TORUS radiation transfer code}}
+      \field{year}{2019}
+      \verb{eprint}
+      \verb 1903.06672
+      \endverb
+      \verb{file}
+      \verb :home/ignace/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Harries et al. - 2019 - The TORUS radiation transfer code.pdf:pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1903.06672
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1903.06672
+      \endverb
+    \endentry
+    \entry{Hubeny2017}{article}{}
+      \name{author}{2}{}{%
+        {{hash=ffbaba887745f7e03095c8971fab9a53}{%
+           family={Hubeny},
+           familyi={H\bibinitperiod},
+           given={Ivan},
+           giveni={I\bibinitperiod}}}%
+        {{hash=99841f6dc198fda918219c3b3967b23e}{%
+           family={Lanz},
+           familyi={L\bibinitperiod},
+           given={Thierry},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{1f580db491e0a91cc50a7a681b0b4167}
+      \strng{fullhash}{1f580db491e0a91cc50a7a681b0b4167}
+      \strng{bibnamehash}{1f580db491e0a91cc50a7a681b0b4167}
+      \strng{authorbibnamehash}{1f580db491e0a91cc50a7a681b0b4167}
+      \strng{authornamehash}{1f580db491e0a91cc50a7a681b0b4167}
+      \strng{authorfullhash}{1f580db491e0a91cc50a7a681b0b4167}
+      \field{labelalpha}{HL17}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{extraalpha}{1}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This is the first of three papers that present a detailed guide for working with the codes tlusty synspec to generate model stellar atmospheres or accretion disks, and to produce detailed synthetic spectra. In this paper, we present a very brief manual intended for casual users who intend to use these codes for simple, well defined tasks. This paper does not present any background theory, or a description of the adopted numerical approaches, but instead uses simple examples to explain how to employ these codes. In particular, it shows how to produce a simple model atmosphere from the scratch, or how to improve an existing model by considering more extended model atoms. This paper also presents a brief guide to the spectrum synthesis program synspec.}
+      \field{eprinttype}{arXiv}
+      \field{title}{{A brief introductory guide to TLUSTY and SYNSPEC}}
+      \field{year}{2017}
+      \field{pages}{1\bibrangedash 50}
+      \range{pages}{50}
+      \verb{eprint}
+      \verb 1706.01859
+      \endverb
+      \verb{file}
+      \verb :home/ignace/Downloads/1706.01859.pdf:pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1706.01859
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1706.01859
+      \endverb
+    \endentry
+    \entry{Hubeny2017a}{article}{}
+      \name{author}{2}{}{%
+        {{hash=ffbaba887745f7e03095c8971fab9a53}{%
+           family={Hubeny},
+           familyi={H\bibinitperiod},
+           given={Ivan},
+           giveni={I\bibinitperiod}}}%
+        {{hash=99841f6dc198fda918219c3b3967b23e}{%
+           family={Lanz},
+           familyi={L\bibinitperiod},
+           given={Thierry},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{1f580db491e0a91cc50a7a681b0b4167}
+      \strng{fullhash}{1f580db491e0a91cc50a7a681b0b4167}
+      \strng{bibnamehash}{1f580db491e0a91cc50a7a681b0b4167}
+      \strng{authorbibnamehash}{1f580db491e0a91cc50a7a681b0b4167}
+      \strng{authornamehash}{1f580db491e0a91cc50a7a681b0b4167}
+      \strng{authorfullhash}{1f580db491e0a91cc50a7a681b0b4167}
+      \field{labelalpha}{HL17}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{extraalpha}{2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This is the second part of a three-volume guide to TLUSTY and SYNSPEC. It presents a detailed reference manual for TLUSTY, which contains a detailed description of basic physical assumptions and equations used to model an atmosphere, together with an overview of the numerical methods to solve these equations.}
+      \field{eprinttype}{arXiv}
+      \field{title}{{TLUSTY User's Guide II: Reference Manual}}
+      \field{year}{2017}
+      \verb{eprint}
+      \verb 1706.01935
+      \endverb
+      \verb{file}
+      \verb :home/ignace/Downloads/1706.01935.pdf:pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1706.01935
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1706.01935
+      \endverb
+    \endentry
+    \entry{Hubeny2017b}{article}{}
+      \name{author}{2}{}{%
+        {{hash=ffbaba887745f7e03095c8971fab9a53}{%
+           family={Hubeny},
+           familyi={H\bibinitperiod},
+           given={Ivan},
+           giveni={I\bibinitperiod}}}%
+        {{hash=99841f6dc198fda918219c3b3967b23e}{%
+           family={Lanz},
+           familyi={L\bibinitperiod},
+           given={Thierry},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{1f580db491e0a91cc50a7a681b0b4167}
+      \strng{fullhash}{1f580db491e0a91cc50a7a681b0b4167}
+      \strng{bibnamehash}{1f580db491e0a91cc50a7a681b0b4167}
+      \strng{authorbibnamehash}{1f580db491e0a91cc50a7a681b0b4167}
+      \strng{authornamehash}{1f580db491e0a91cc50a7a681b0b4167}
+      \strng{authorfullhash}{1f580db491e0a91cc50a7a681b0b4167}
+      \field{labelalpha}{HL17}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{extraalpha}{3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper presents a detailed operational manual for TLUSTY. It provides a guide for understanding the essential features and the basic modes of operation of the program. To help the user, it is divided into two parts. The first part describes the most important input parameters and available numerical options. The second part covers additional details and a comprehensive description of all physical and numerical options, and a description of all input parameters, many of which needed only in special cases.}
+      \field{eprinttype}{arXiv}
+      \field{title}{{TLUSTY User's Guide III: Operational Manual}}
+      \field{year}{2017}
+      \verb{eprint}
+      \verb 1706.01937
+      \endverb
+      \verb{file}
+      \verb :home/ignace/Downloads/1706.01937.pdf:pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1706.01937
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1706.01937
+      \endverb
+    \endentry
+    \entry{TheoryStellarAtmospheres2014}{book}{}
+      \name{author}{1}{}{%
+        {{hash=daf6061f3d37be1d6dd7ce267b795fbe}{%
+           family={Ivan\bibnamedelima Hubeny},
+           familyi={I\bibinitperiod\bibinitdelim H\bibinitperiod},
+           given={Dimitri\bibnamedelima Mihalas},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{daf6061f3d37be1d6dd7ce267b795fbe}
+      \strng{fullhash}{daf6061f3d37be1d6dd7ce267b795fbe}
+      \strng{bibnamehash}{daf6061f3d37be1d6dd7ce267b795fbe}
+      \strng{authorbibnamehash}{daf6061f3d37be1d6dd7ce267b795fbe}
+      \strng{authornamehash}{daf6061f3d37be1d6dd7ce267b795fbe}
+      \strng{authorfullhash}{daf6061f3d37be1d6dd7ce267b795fbe}
+      \field{labelalpha}{Iva14}
+      \field{sortinit}{I}
+      \field{sortinithash}{320bc8fe8101b9376f9f21cd507de0e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Theory of stellar atmospheres : an introduction to astrophysical non-equilibrium quantitative spetroscopic analysis}
+      \field{year}{2014}
+    \endentry
     \entry{MoensNicolas}{misc}{}
       \name{author}{1}{}{%
         {{hash=c43aa81eb5dc4ac8a9d5d77e6c2468e1}{%
@@ -124,6 +508,37 @@
       \field{title}{Radiation-Hydrodynamics with MPI-AMRVAC: Massive-Star Atmospheres and Winds}
       \field{year}{2018}
     \endentry
+    \entry{NoebauerUlrichM_2019MCRT}{article}{}
+      \name{author}{2}{}{%
+        {{hash=4f1d6d35a1d98dda28910d7eca651d24}{%
+           family={Noebauer},
+           familyi={N\bibinitperiod},
+           given={Ulrich\bibnamedelima M.},
+           giveni={U\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=89a1cf3259bdf23f779b8f759d5a1a55}{%
+           family={Sim},
+           familyi={S\bibinitperiod},
+           given={Stuart\bibnamedelima A.},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{ae4290d57d272063f22980dc2fc535b3}
+      \strng{fullhash}{ae4290d57d272063f22980dc2fc535b3}
+      \strng{bibnamehash}{ae4290d57d272063f22980dc2fc535b3}
+      \strng{authorbibnamehash}{ae4290d57d272063f22980dc2fc535b3}
+      \strng{authornamehash}{ae4290d57d272063f22980dc2fc535b3}
+      \strng{authorfullhash}{ae4290d57d272063f22980dc2fc535b3}
+      \field{labelalpha}{NS19}
+      \field{sortinit}{N}
+      \field{sortinithash}{f7242c3ed3dc50029fca1be76c497c7c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The theory and numerical modelling of radiation processes and radiative transfer play a key role in astrophysics: they provide the link between the physical properties of an object and the radiation it emits. In the modern era of increasingly high-quality observational data and sophisticated physical theories, development and exploitation of a variety of approaches to the modelling of radiative transfer is needed. In this article, we focus on one remarkably versatile approach: Monte Carlo Radiative Transfer (MCRT). We describe the principles behind this approach, and highlight the relative ease with which they can (and have) been implemented for application to a range of astrophysical problems. All MCRT methods have in common a need to consider the adverse consequences of Monte Carlo noise in simulation results. We overview a range of methods used to suppress this noise and comment on their relative merits for a variety of applications. We conclude with a brief review of specific applications for which MCRT methods are currently popular and comment on the prospects for future developments.}
+      \field{number}{1}
+      \field{title}{Monte Carlo Radiative Transfer}
+      \field{volume}{5}
+      \field{year}{2019}
+      \keyw{Astrophysics - Instrumentation And Methods For Astrophysics}
+    \endentry
     \entry{WikiHeat}{misc}{}
       \name{author}{1}{}{%
         {{hash=dbaddbc54def56810e1e242366054cb0}{%
@@ -149,6 +564,33 @@
       \endverb
       \verb{url}
       \verb https://en.wikipedia.org/w/index.php?title=Heat_flux&oldid=863233807
+      \endverb
+    \endentry
+    \entry{WikiOpticalDepth}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=dbaddbc54def56810e1e242366054cb0}{%
+           family={{Wikipedia contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{dbaddbc54def56810e1e242366054cb0}
+      \strng{fullhash}{dbaddbc54def56810e1e242366054cb0}
+      \strng{bibnamehash}{dbaddbc54def56810e1e242366054cb0}
+      \strng{authorbibnamehash}{dbaddbc54def56810e1e242366054cb0}
+      \strng{authornamehash}{dbaddbc54def56810e1e242366054cb0}
+      \strng{authorfullhash}{dbaddbc54def56810e1e242366054cb0}
+      \field{labelalpha}{Wik19}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{[Online; accessed 14-September-2019]}
+      \field{title}{Optical depth --- {Wikipedia}{,} The Free Encyclopedia}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/w/index.php?title=Optical_depth&oldid=884427147
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/w/index.php?title=Optical_depth&oldid=884427147
       \endverb
     \endentry
     \entry{Wilson2014}{article}{}
@@ -248,6 +690,7 @@
       \endverb
     \endentry
   \enddatalist
+  \missing{RADICAL}
 \endrefsection
 \endinput
 

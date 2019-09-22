@@ -1,4 +1,4 @@
-function Limb_Darkening_3D(number_of_channels,number_of_photons,maximum_optical_depth)
+function Limb_Darkening_3D(number_of_channels , number_of_photons , maximum_optical_depth)
 
     % number of channels
     na = number_of_channels;
@@ -12,7 +12,7 @@ function Limb_Darkening_3D(number_of_channels,number_of_photons,maximum_optical_
     muarray = zeros(na);
     phiarray = zeros(na);
     dmu = 1./na;
-    dphi = 1./na;
+    dphi = 2*pi./na;
 
     % loop over all photons
     for l = 1:nphot
@@ -32,12 +32,11 @@ function Limb_Darkening_3D(number_of_channels,number_of_photons,maximum_optical_
 
             if (tau >= taumax)
                 mu = sqrt(x);
-                phi = x3;
                 tau = taumax;
             else
-                mu = 2*x- 1;
-                phi = x3;
+                mu = 2*x- 1; 
             end
+            phi = 2*pi*x3;
 
             tau_i = -log(x2);
             tau = tau - tau_i*mu;
@@ -85,7 +84,7 @@ function Limb_Darkening_3D(number_of_channels,number_of_photons,maximum_optical_
     phidata = [];
     for i = 1:na
         phi = (i-0.5)*dphi;
-        phidist =  phiarray(i)/phi;
+        phidist =  phiarray(i);
         phidata = [phidata; phi, phidist];
     end
 
@@ -99,6 +98,10 @@ function Limb_Darkening_3D(number_of_channels,number_of_photons,maximum_optical_
     stairs(phidata(:,1),phidata(:,2)/phidata(end,2),'-')
     xlabel('angle')
     ylabel('photo-dist','Rotation',0)
+    xlim([0, 2*pi])
+    set(gca,'XTick',0:pi:2*pi) 
+    set(gca,'XTickLabel',{'0','\pi','2\pi'})
+   
 end
     
     

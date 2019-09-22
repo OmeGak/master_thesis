@@ -1,20 +1,22 @@
 [0] Config.pm:302> INFO - This is Biber 2.11
 [0] Config.pm:305> INFO - Logfile is 'main.blg'
-[17] biber:313> INFO - === Sa Sep 14, 2019, 11:27:34
-[31] Biber.pm:371> INFO - Reading 'main.bcf'
-[75] Biber.pm:857> INFO - Found 5 citekeys in bib section 0
-[84] Biber.pm:3976> INFO - Processing section 0
-[91] Biber.pm:4136> INFO - Looking for bibtex format file '../sample.bib' for section 0
-[92] bibtex.pm:1489> INFO - LaTeX decoding ...
-[99] bibtex.pm:1305> INFO - Found BibTeX data source '../sample.bib'
-[100] Biber.pm:4136> INFO - Looking for bibtex format file '../mendeley.bib' for section 0
-[103] bibtex.pm:1489> INFO - LaTeX decoding ...
-[160] bibtex.pm:1305> INFO - Found BibTeX data source '../mendeley.bib'
-[187] Utils.pm:193> WARN - BibTeX subsystem: /tmp/BvR98o0noU/mendeley.bib_18020.utf8, line 212, warning: 332 characters of junk seen at toplevel
-[197] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[197] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[197] Biber.pm:3804> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'en-US'
-[197] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
-[208] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[211] bbl.pm:720> INFO - Output to main.bbl
-[211] Biber.pm:110> INFO - WARNINGS: 1
+[40] biber:313> INFO - === So Sep 22, 2019, 16:03:16
+[70] Biber.pm:371> INFO - Reading 'main.bcf'
+[157] Biber.pm:857> INFO - Found 18 citekeys in bib section 0
+[172] Biber.pm:3976> INFO - Processing section 0
+[184] Biber.pm:4136> INFO - Looking for bibtex format file '../sample.bib' for section 0
+[185] bibtex.pm:1489> INFO - LaTeX decoding ...
+[197] bibtex.pm:1305> INFO - Found BibTeX data source '../sample.bib'
+[199] Biber.pm:4136> INFO - Looking for bibtex format file '../mendeley.bib' for section 0
+[205] bibtex.pm:1489> INFO - LaTeX decoding ...
+[326] bibtex.pm:1305> INFO - Found BibTeX data source '../mendeley.bib'
+[395] Utils.pm:193> WARN - month field 'mar' in entry 'Harries2019' is not an integer - this will probably not sort properly.
+[450] Utils.pm:193> WARN - BibTeX subsystem: /tmp/dhmEYJnlVi/mendeley.bib_8227.utf8, line 212, warning: 332 characters of junk seen at toplevel
+[450] Utils.pm:193> WARN - I didn't find a database entry for 'RADICAL' (section 0)
+[480] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[480] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[481] Biber.pm:3804> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'en-US'
+[481] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[505] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[515] bbl.pm:720> INFO - Output to main.bbl
+[515] Biber.pm:110> INFO - WARNINGS: 3

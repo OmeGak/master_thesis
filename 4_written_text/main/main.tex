@@ -28,6 +28,7 @@
 \usepackage{hyperref}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{braket}
 
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -75,6 +76,16 @@
 \def\BState{\State\hskip-\ALG@thistlm}
 \makeatother
 
+\makeatletter
+\newenvironment{chapquote}[2][2em]
+  {\setlength{\@tempdima}{#1}%
+   \def\chapquote@author{#2}%
+   \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+   \itshape}
+  {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
+\makeatother
+
+
 \newlength\myindent
 \setlength\myindent{2em}
 \newcommand\bindent{%
@@ -111,8 +122,8 @@ style=alphabetic,
 
 \noindent\fbox{
   \parbox{\textwidth}{
-\paragraph{Exercises, part II} 
-\underline{Via this link, you can go back to the exercises overview: Section \ref{Overview_Part_2}.}
+\paragraph{Exercises (part III)} 
+Via this link, you can go back to the exercises overview: see section \underline{\ref{Overview_Part_3}}.
 }}
 
 \cleardoublepage

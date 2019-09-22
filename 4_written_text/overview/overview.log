@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.20)  17 SEP 2019 12:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.20)  22 SEP 2019 21:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -740,6 +740,7 @@ Package: subcaption 2018/05/01 v1.1-162 Sub-captions (AR)
 \c@subfigure=\count175
 \c@subtable=\count176
 )
+(/usr/share/texlive/texmf-dist/tex/latex/braket/braket.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
@@ -1262,48 +1263,84 @@ Overfull \vbox (12.0pt too high) has occurred while \output is active []
 LaTeX Warning: Citation 'MoensNicolas' on page 3 undefined on input line 82.
 
 
-LaTeX Warning: Citation 'WikiHeat' on page 3 undefined on input line 112.
+LaTeX Warning: Citation 'TheoryStellarAtmospheres2014' on page 3 undefined on i
+nput line 104.
+
+
+LaTeX Warning: Citation 'WikiHeat' on page 3 undefined on input line 129.
 
 [3] [4] [5]
 
-LaTeX Warning: Citation 'WikiOpticalDepth' on page 6 undefined on input line 20
-5.
+LaTeX Warning: Citation 'WikiOpticalDepth' on page 6 undefined on input line 22
+2.
 
 
-Overfull \hbox (17.48534pt too wide) in paragraph at lines 208--222
+Overfull \hbox (17.48534pt too wide) in paragraph at lines 225--239
  |  [] 
  []
 
 [6] [7] [8]
 
 LaTeX Warning: Reference `limb_darkening_discussion' on page 9 undefined on inp
-ut line 458.
+ut line 492.
 
 [9]
 
-LaTeX Warning: Citation 'Busbridge' on page 10 undefined on input line 463.
+LaTeX Warning: Citation 'Busbridge' on page 10 undefined on input line 497.
 
 [10]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 525.
+put line 559.
 
 
 LaTeX Warning: Reference `limb_darkening_discussion' on page 11 undefined on in
-put line 546.
+put line 580.
 
 [11] [12] [13] [14] [15]
-Overfull \hbox (10.13332pt too wide) in paragraph at lines 724--729
+Overfull \hbox (10.13332pt too wide) in paragraph at lines 758--763
 [] 
  []
 
 [16] [17] [18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 765.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 765.
+
+LaTeX Warning: Citation 'PinteChristophe2015CRT' on page 19 undefined on input 
+line 803.
+
+
+LaTeX Warning: Citation 'RADICAL' on page 19 undefined on input line 806.
+
+
+LaTeX Warning: Citation 'MULTI' on page 19 undefined on input line 807.
+
+
+LaTeX Warning: Citation 'Carlsson1986' on page 19 undefined on input line 807.
+
+
+LaTeX Warning: Citation 'Camps2015' on page 19 undefined on input line 808.
+
+
+LaTeX Warning: Citation 'Harries2019' on page 19 undefined on input line 809.
+
+
+LaTeX Warning: Citation 'RADMC3D' on page 19 undefined on input line 810.
+
+
+LaTeX Warning: Citation 'Hubeny2017' on page 19 undefined on input line 811.
+
+
+LaTeX Warning: Citation 'Hubeny2017a' on page 19 undefined on input line 811.
+
+
+LaTeX Warning: Citation 'Hubeny2017b' on page 19 undefined on input line 811.
+
+[19]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 824.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 824.
  (./overview.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 765.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 765.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 824.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 824.
 Package rerunfilecheck Info: File `overview.out' has not changed.
-(rerunfilecheck)             Checksum: 99A103D6A695ABF4B749FAC42FFFB3B2;2619.
+(rerunfilecheck)             Checksum: A479CB89937A1B36D938F9806D60CE30;2918.
 
 
 LaTeX Warning: There were undefined references.
@@ -1318,10 +1355,10 @@ Package logreq Info: Writing requests to 'overview.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32239 strings out of 492641
- 651668 string characters out of 6131786
- 1140092 words of memory out of 5000000
- 35536 multiletter control sequences out of 15000+600000
+ 32281 strings out of 492641
+ 652237 string characters out of 6131786
+ 1140663 words of memory out of 5000000
+ 35565 multiletter control sequences out of 15000+600000
  7556 words of font info for 29 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,20n,75p,765b,1641s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1338,10 +1375,10 @@ fonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
 0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on overview.pdf (18 pages, 218112 bytes).
+Output written on overview.pdf (19 pages, 223288 bytes).
 PDF statistics:
- 359 PDF objects out of 1000 (max. 8388607)
- 321 compressed objects within 4 object streams
- 105 named destinations out of 1000 (max. 500000)
- 285 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 386 PDF objects out of 1000 (max. 8388607)
+ 347 compressed objects within 4 object streams
+ 114 named destinations out of 1000 (max. 500000)
+ 317 words of extra memory for PDF output out of 10000 (max. 10000000)
 
