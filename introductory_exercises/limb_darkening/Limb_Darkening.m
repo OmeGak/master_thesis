@@ -1,4 +1,4 @@
-function total_interactions = Limb_Darkening(number_of_channels , number_of_photons , maximum_optical_depth)
+function total_interactions = Limb_Darkening(number_of_channels,number_of_photons,taumax,release_new_photon_option,make_plot)
 
     % number of channels
     na = number_of_channels;
@@ -6,10 +6,7 @@ function total_interactions = Limb_Darkening(number_of_channels , number_of_phot
     % number of photons
     nphot =  number_of_photons;
     
-    % maximum optical depth
-    taumax = maximum_optical_depth;
-
-    muarray = zeros(na);
+    muarray = zeros(1,na);
     dmu = 1./na;
 
     total_interactions = 0;
@@ -28,9 +25,14 @@ function total_interactions = Limb_Darkening(number_of_channels , number_of_phot
             % optical depth
             x2 = rand();
 
-            if (tau >= taumax)
-                mu = sqrt(x);
-                tau = taumax;
+            if release_new_photon_option == 1
+                if (tau >= taumax)
+                    % release a new photon
+                    mu = sqrt(x);
+                    tau = taumax;
+                else
+                    mu = 2*x- 1;
+                end
             else
                 mu = 2*x- 1;
             end
@@ -41,21 +43,21 @@ function total_interactions = Limb_Darkening(number_of_channels , number_of_phot
             number_interactions = number_interactions + 1;
         end
 
+        % tally the photons according to mu
         k = 1;
         dummy = dmu;
         while ((mu - dummy) > 0)
             dummy = dmu*(k+1);
             k = k + 1;
         end
-
-        i = k;
-        muarray(i) = muarray(i) + 1;
+        muarray(k) = muarray(k) + 1;
         
         total_interactions = total_interactions + number_interactions;
     end
     total_interactions = total_interactions/nphot;
     
-    % simple test for one aspect of the correctness of the program
+    % simple test for one aspect of the correctness of the program: are
+    % there photons lost?
     isum = 0;
     for i=1:na
         isum = isum + muarray(i);
@@ -63,17 +65,17 @@ function total_interactions = Limb_Darkening(number_of_channels , number_of_phot
     if ~(isum == nphot)
         display('er is een foton verloren');
     end
-
-    % collect the data
-    data = [];
-    for i = 1:na
-        mu = (i-0.5)*dmu;
-        dist =  muarray(i)/mu;
-        data = [data; mu , dist];
-    end
-
+    
     % make plot
-    stairs(data(:,1),data(:,2)/data(end,2),'-')
-    xlabel('angle')
-    ylabel('photo-dist','Rotation',0)
+    if make_plot == 1
+        data = [];
+        for i = 1:na
+            mu = (i-0.5)*dmu;
+            dist =  muarray(i)/mu;
+            data = [data; mu , dist];
+        end
+        stairs(data(:,1),data(:,2)/data(end,2),'-')
+        xlabel('angle')
+        ylabel('photo-dist','Rotation',0)
+    end
 end

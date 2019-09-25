@@ -744,22 +744,23 @@ Via this link, you can go back to the exercises overview: Section \underline{\re
 We observe that $N \sim \tau^2$, as can also be derived from theory.
 
 \begin{itemize}
-\item When starting from an initial condition $x_0 = 0$,
+\item When starting from an initial condition $x_0 = 0$ and 
 \begin{equation}
 x_N = x_{N-1} \pm l
 \end{equation}
-the variance equals $\braket{x_N}^2 = N l^2$ 
+we have for the variance that $\braket{x_N}^2 = N l^2$ 
 \item If we require a photon to cover a distance $R$ then $N = \frac{R^2}{l^2}$ and
 \begin{itemize}
-\item with the following relation between mean-free path $l$ and opacity $\alpha$ namely $l = \frac{1}{\alpha}$
+\item the relation between mean-free path $l$ and opacity $\alpha$ is $l = \frac{1}{\alpha}$
 \item with $\tau = \int_0^R \alpha ds = \frac{R}{l}$
 \end{itemize}
-we have that $N = \tau^2$. This corresponds with the observations in Figure \ref{random_walk_N_vs_tau}.
+then we have that $N = \tau^2$. This corresponds with the observations in Figure \ref{random_walk_N_vs_tau}.
 \end{itemize}
 
 
 \newpage
 \subsection{Limb darkening} We first look at results from the limb darkening program. In Figure \ref{limb_darkening_N_vs_tau}, the number of scattering events is plotted versus the opacity of the medium. 
+
 	\begin{figure}[!htp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{../../introductory_exercises/limb_darkening/data/N_vs_opacity.png}
@@ -782,10 +783,10 @@ Together with the time-independent radiative transfer equation in a gray (freque
 \end{equation}
 that gives
 \begin{equation}
-\boxed{\mu \frac{\partial I(\tau,\mu)}{\partial \tau} = I(\tau,\mu) - 3H(\frac{2}{3}+\tau)}
+\boxed{\mu \frac{\partial I(\tau,\mu)}{\partial \tau} = I(\tau,\mu) - 3H\left(\frac{2}{3}+\tau \right)}
 \label{rad_transfer_eq_limb_darkening}
 \end{equation}
-with the emergent intensity $I(0,\mu)$ as solution of  Equation (\ref{rad_transfer_eq_limb_darkening}). Its solution equals 
+with the emergent intensity $I(0,\mu)$ as solution of  Equation (\ref{rad_transfer_eq_limb_darkening}). Its solution for $\tau = 0$ equals 
 \begin{equation}
 I(\tau = 0,\mu) = I_1 \left( \frac{2}{5} + \frac{3 \mu}{5} \right) 
 \end{equation}

@@ -127,7 +127,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {14}Fluid and hybrid Fluid-Kinetic models (for neutral particles in plasma edge) (Horsten2019)}{26}{section.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {15}plitting methods}{27}{section.15}
+\contentsline {section}{\numberline {15}Splitting methods}{27}{section.15}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {15.1}Exercises}{27}{subsection.15.1}
 \defcounter {refsection}{0}\relax 
@@ -139,49 +139,51 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {16.2}Inversion codes}{28}{subsection.16.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {17}Master thesis discussions}{29}{section.17}
+\contentsline {section}{\numberline {17}Integral equations}{29}{section.17}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{limb darkening}{29}{section*.13}
+\contentsline {section}{\numberline {18}Master thesis discussions}{30}{section.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{limb darkening}{30}{section*.13}
 \defcounter {refsection}{0}\relax 
 \contentsline {part}{III\hspace {1em}Practical work and Exercises}{31}{part.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {18}Overview of exercises (PART I)}{31}{section.18}
+\contentsline {section}{\numberline {19}Overview of exercises (PART I)}{31}{section.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {19}Overview of exercises (PART II)}{31}{section.19}
+\contentsline {section}{\numberline {20}Overview of exercises (PART II)}{31}{section.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {20}Overview of exercises (PART III)}{31}{section.20}
+\contentsline {section}{\numberline {21}Overview of exercises (PART III)}{31}{section.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {21}Overview of exercises (PART IV)}{32}{section.21}
+\contentsline {section}{\numberline {22}Overview of exercises (PART IV)}{32}{section.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {22}Limb darkening}{33}{section.22}
+\contentsline {section}{\numberline {23}Limb darkening program}{33}{section.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {22.0.1}2D Case}{33}{subsubsection.22.0.1}
+\contentsline {subsubsection}{\numberline {23.0.1}2D Case}{33}{subsubsection.23.0.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Goal}{33}{section*.14}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Variables and Algorithm}{33}{section*.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {22.0.2}3D Code}{34}{subsubsection.22.0.2}
+\contentsline {subsubsection}{\numberline {23.0.2}3D Code}{34}{subsubsection.23.0.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{34}{section*.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {23}Investigation of program: pcyg.f90}{35}{section.23}
+\contentsline {section}{\numberline {24}Spectral line formation: pcyg.f90}{35}{section.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {23.1}Overview of variables}{35}{subsection.23.1}
+\contentsline {subsection}{\numberline {24.1}Overview of variables}{35}{subsection.24.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {23.2}Mathematical things that are noteworthy}{36}{subsection.23.2}
+\contentsline {subsection}{\numberline {24.2}Mathematical things that are noteworthy}{36}{subsection.24.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {23.2.1}General working}{36}{subsubsection.23.2.1}
+\contentsline {subsubsection}{\numberline {24.2.1}General working}{36}{subsubsection.24.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {23.2.2}Practical formula}{36}{subsubsection.23.2.2}
+\contentsline {subsubsection}{\numberline {24.2.2}Practical formula}{36}{subsubsection.24.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {23.2.3}Geometry \& Symmetry assumptions}{36}{subsubsection.23.2.3}
+\contentsline {subsubsection}{\numberline {24.2.3}Geometry \& Symmetry assumptions}{36}{subsubsection.24.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {23.3}Exercises}{37}{subsection.23.3}
+\contentsline {subsection}{\numberline {24.3}Exercises}{37}{subsection.24.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {23.3.1}Investigation of original code}{37}{subsubsection.23.3.1}
+\contentsline {subsubsection}{\numberline {24.3.1}Investigation of original code}{37}{subsubsection.24.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {23.3.2}First adaptation: what if all photons are released radially from photosphere?}{38}{subsubsection.23.3.2}
+\contentsline {subsubsection}{\numberline {24.3.2}First adaptation: what if all photons are released radially from photosphere?}{38}{subsubsection.24.3.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{\relax $\@@underline {\hbox {Release photons radially: numerical MC experiments}}\mathsurround \z@ $\relax }{38}{section*.20}
 \defcounter {refsection}{0}\relax 
@@ -189,64 +191,72 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{\relax $\@@underline {\hbox {Experiments with other opacities}}\mathsurround \z@ $\relax }{40}{section*.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {23.3.3}Second adaptation: isotropic scattering}{41}{subsubsection.23.3.3}
+\contentsline {subsubsection}{\numberline {24.3.3}Second adaptation: isotropic scattering}{41}{subsubsection.24.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {23.3.4}Third adaptation: introduction of Eddington limb-darkening}{42}{subsubsection.23.3.4}
+\contentsline {subsubsection}{\numberline {24.3.4}Third adaptation: introduction of Eddington limb-darkening}{42}{subsubsection.24.3.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{General (introductory) discussion: Eddington limb darkening}{42}{section*.27}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Construction of probability distribution corresponding to Eddington limb darkening}{42}{section*.29}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {23.3.5}Fourth adaptaion: photospheric line-profile}{44}{subsubsection.23.3.5}
+\contentsline {subsubsection}{\numberline {24.3.5}Fourth adaptaion: photospheric line-profile}{44}{subsubsection.24.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {23.3.6}Convergence analysis}{45}{subsubsection.23.3.6}
+\contentsline {subsubsection}{\numberline {24.3.6}Convergence analysis}{45}{subsubsection.24.3.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{\relax $\@@underline {\hbox {Zero opacity}}\mathsurround \z@ $\relax }{45}{section*.31}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{\relax $\@@underline {\hbox {Nonzero opacity}}\mathsurround \z@ $\relax }{45}{section*.33}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {23.3.7}Variance reduction experiment}{46}{subsubsection.23.3.7}
+\contentsline {subsubsection}{\numberline {24.3.7}Variance reduction experiment}{46}{subsubsection.24.3.7}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{\texttt {xk0=100}}{46}{figure.caption.36}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{\texttt {xk0=100}}{46}{section*.37}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {23.3.8}Introduction of second line}{47}{subsubsection.23.3.8}
+\contentsline {subsection}{\numberline {24.4}Mathematical description of the problem \\ Looking at literature}{47}{subsection.24.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Single line}{47}{section*.38}
+\contentsline {subsection}{\numberline {24.5}One more question}{47}{subsection.24.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Introduction of second line}{47}{section*.39}
+\contentsline {section}{\numberline {25}Dual spectral line formation}{48}{section.25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {23.4}Mathematical description of the problem \\ Looking at literature}{49}{subsection.23.4}
+\contentsline {subsubsection}{\numberline {25.0.1}Introduction of second line: theoretical}{48}{subsubsection.25.0.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {23.5}One more question}{49}{subsection.23.5}
+\contentsline {paragraph}{Single line}{48}{section*.38}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {24}Adding resonance line}{50}{section.24}
+\contentsline {paragraph}{Introduction of second line}{48}{section*.39}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {25}Closer look at Monte Carlo simulations}{51}{section.25}
+\contentsline {section}{\numberline {26}Closer look at Monte Carlo simulations}{50}{section.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Random walk (diffusion equation)}{51}{section*.40}
+\contentsline {subsection}{\numberline {26.1}Random walk (diffusion equation)}{50}{subsection.26.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Limb darkening}{52}{section*.42}
+\contentsline {subsection}{\numberline {26.2}Limb darkening}{51}{subsection.26.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Eddington approximation}{52}{section*.44}
+\contentsline {subsubsection}{\numberline {26.2.1}Eddington-Barbier approximation}{51}{subsubsection.26.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {26}Milic Exercises}{53}{section.26}
+\contentsline {subsubsection}{\numberline {26.2.2}Validity of the Eddington-Barbier approximation}{51}{subsubsection.26.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {26.1}Lecture 7}{53}{subsection.26.1}
+\contentsline {subsubsection}{\numberline {26.2.3}Solving the (integro-differential) radiative transfer equation}{51}{subsubsection.26.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {27}Mass loss from inhomogeneous hot star winds (Sundqvist)}{54}{section.27}
+\contentsline {paragraph}{Analytical Solution of Equation (\ref {RTE_limb_darkening})}{52}{section*.42}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {28}Asymptotic preserving Monte Carlo methods for radiative transfer equation in diffusion limit (Dimarco+ 2018)}{55}{section.28}
+\contentsline {paragraph}{Numerical Solution of Equation (\ref {RTE_limb_darkening})}{52}{section*.43}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {28.1}Goldstein-Taylor}{55}{subsection.28.1}
+\contentsline {section}{\numberline {27}Milic Exercises}{53}{section.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {28.2}Radiative transfer}{55}{subsection.28.2}
+\contentsline {subsection}{\numberline {27.1}Lecture 7}{53}{subsection.27.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {29}Do not forget}{56}{section.29}
+\contentsline {section}{\numberline {28}Mass loss from inhomogeneous hot star winds (Sundqvist)}{54}{section.28}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {29}Asymptotic preserving Monte Carlo methods for radiative transfer equation in diffusion limit (Dimarco+ 2018)}{55}{section.29}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {29.1}Goldstein-Taylor}{55}{subsection.29.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {29.2}Radiative transfer}{55}{subsection.29.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {30}Do not forget}{56}{section.30}
 \defcounter {refsection}{0}\relax 
 \contentsline {part}{IV\hspace {1em}Equation meetings}{57}{part.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {part}{V\hspace {1em}Thesis meetings}{59}{part.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {30}Meeting on 6 September 2019}{59}{section.30}
+\contentsline {section}{\numberline {31}Meeting on 6 September 2019}{59}{section.31}

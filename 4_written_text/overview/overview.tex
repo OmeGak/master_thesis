@@ -918,28 +918,4 @@ y = f + \lambda \mathcal{K}y
 \end{equation}
 
 
-\newpage
-\section{Master thesis discussions}
-\paragraph{limb darkening}
-\begin{itemize}
-\item the integro-differential equation describing radiative transfer
-\begin{equation}
-\begin{aligned}
-\frac{dI}{d\tau} &= -I +S  \\ 
-&= -I  + \frac{1}{4\pi} \int I d\Omega
-\end{aligned}
-\end{equation}
-
-\item The difficulty resides in the source function
-
-\item Monte Carlo simulation avoids explicit source function: source function implicit in Monte Carlo simulation
-
-\item in the Monte Carlo program, the physics are simulated \textsc{in between two consecutive scattering events} as follows
-\begin{equation}
-\frac{dI}{dz} = -\alpha I 
-\end{equation}
-thus $\frac{dI}{I} = -\alpha dz = -\delta \tau$ and $I = I_0 e^{-\delta \tau}$ and thus $\tau$ is sampled according to $\tau = - \log(X_{\text{random}})$
-\end{itemize}
-
-
 \end{document}

@@ -1,15 +1,18 @@
+%% 1D case
 clc, clear, close all
 
-%% 1D case
+save = 1;
+make_plot = 1;
+
 number_of_channels = 20
 number_of_photons = 10^5
-maximum_optical_depth = 10
+tau_max = 10
+release_new_photon_option = 1;
 
-Limb_Darkening(number_of_channels,number_of_photons,maximum_optical_depth)
+Limb_Darkening(number_of_channels,number_of_photons,tau_max,release_new_photon_option, make_plot)
 
-save = 1
 if save == 1
-    tit = ['number_channels',num2str(number_of_channels),'number_photons',num2str(number_of_photons),'max_opt_depth',num2str(maximum_optical_depth),'.png']
+    tit = ['data/number_channels',num2str(number_of_channels),'number_photons',num2str(number_of_photons),'max_opt_depth',num2str(tau_max),'.png']
     saveas(gcf,tit)
 end
 
