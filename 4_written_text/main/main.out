@@ -10,55 +10,63 @@
 \BOOKMARK [2][-]{subsection.7.1}{Definitions and equations}{section.7}% 10
 \BOOKMARK [2][-]{subsection.7.2}{Overview of symmetry assumptions}{section.7}% 11
 \BOOKMARK [2][-]{subsection.7.3}{Overview of units}{section.7}% 12
-\BOOKMARK [1][-]{section.8}{Introduction: course material \(Sundqvist - CMPAA course\)}{part.2}% 13
-\BOOKMARK [2][-]{subsection.8.1}{EXERCISES: Introduction to numerical methods for radiation in astrophysics}{section.8}% 14
-\BOOKMARK [2][-]{subsection.8.2}{Implicit 1D solver \(20-11-2018\)}{section.8}% 15
-\BOOKMARK [2][-]{subsection.8.3}{ADI 2D Solver}{section.8}% 16
-\BOOKMARK [2][-]{subsection.8.4}{Area of a circle}{section.8}% 17
-\BOOKMARK [2][-]{subsection.8.5}{Limb Darkening}{section.8}% 18
-\BOOKMARK [1][-]{section.9}{The mathematics of Radiative Transfer}{part.2}% 19
-\BOOKMARK [2][-]{subsection.9.1}{Auxiliary mathematics}{section.9}% 20
-\BOOKMARK [2][-]{subsection.9.2}{The H-functions}{section.9}% 21
-\BOOKMARK [1][-]{section.10}{Monte Carlo and Radiative Transfer \(Puls\)}{part.2}% 22
-\BOOKMARK [2][-]{subsection.10.1}{basic definitions and facts}{section.10}% 23
-\BOOKMARK [2][-]{subsection.10.2}{about random numbers}{section.10}% 24
-\BOOKMARK [2][-]{subsection.10.3}{MC integration}{section.10}% 25
-\BOOKMARK [2][-]{subsection.10.4}{MC simulation}{section.10}% 26
-\BOOKMARK [2][-]{subsection.10.5}{Exercise 1: RNG}{section.10}% 27
-\BOOKMARK [2][-]{subsection.10.6}{Exercise 2: Planck-function}{section.10}% 28
-\BOOKMARK [2][-]{subsection.10.7}{limb darkening}{section.10}% 29
-\BOOKMARK [1][-]{section.11}{Introduction to Monte Carlo Radiation Transfer \(Wood+\)}{part.2}% 30
-\BOOKMARK [2][-]{subsection.11.1}{Elementary principles}{section.11}% 31
-\BOOKMARK [2][-]{subsection.11.2}{Eddington factors}{section.11}% 32
-\BOOKMARK [2][-]{subsection.11.3}{Example: plane parallel atmosphere}{section.11}% 33
-\BOOKMARK [2][-]{subsection.11.4}{Monte Carlo Radiative Transfer}{section.11}% 34
-\BOOKMARK [2][-]{subsection.11.5}{P Cygni profile for beta-velocity law and given opacity Monte Carlo simulation}{section.11}% 35
-\BOOKMARK [1][-]{section.12}{Challenges in Radiative Transfer \(Ivan Milic\)}{part.2}% 36
-\BOOKMARK [2][-]{subsection.12.1}{Overview of the problem}{section.12}% 37
-\BOOKMARK [2][-]{subsection.12.2}{Challenging domains of application}{section.12}% 38
-\BOOKMARK [1][-]{section.13}{Asymptotic Preserving Monte Carlo methods for transport equations in the diffusive limit \(Dimarco+2018\)}{part.2}% 39
-\BOOKMARK [1][-]{section.14}{Splitting methods}{part.2}% 40
-\BOOKMARK [2][-]{subsection.14.1}{Exercises}{section.14}% 41
-\BOOKMARK [1][-]{section.15}{Overview of existing \(Monte Carlo\) radiative transfer codes}{part.2}% 42
-\BOOKMARK [2][-]{subsection.15.1}{Synthesis codes}{section.15}% 43
-\BOOKMARK [2][-]{subsection.15.2}{Inversion codes}{section.15}% 44
-\BOOKMARK [0][-]{part.3}{III Practical work and Exercises}{}% 45
-\BOOKMARK [1][-]{section.16}{Overview of exercises \(PART I\)}{part.3}% 46
-\BOOKMARK [1][-]{section.17}{Overview of exercises \(PART II\)}{part.3}% 47
-\BOOKMARK [1][-]{section.18}{Overview of exercises \(PART III\)}{part.3}% 48
-\BOOKMARK [1][-]{section.19}{Limb darkening}{part.3}% 49
-\BOOKMARK [1][-]{section.20}{Investigation of program: pcyg.f90}{part.3}% 50
-\BOOKMARK [2][-]{subsection.20.1}{Overview of variables}{section.20}% 51
-\BOOKMARK [2][-]{subsection.20.2}{Mathematical things that are noteworthy}{section.20}% 52
-\BOOKMARK [2][-]{subsection.20.3}{Exercises}{section.20}% 53
-\BOOKMARK [2][-]{subsection.20.4}{Mathematical description of the problem \040Looking at literature}{section.20}% 54
-\BOOKMARK [1][-]{section.21}{Definition of specific intensity}{part.3}% 55
-\BOOKMARK [1][-]{section.22}{Milic Exercises}{part.3}% 56
-\BOOKMARK [2][-]{subsection.22.1}{Lecture 7}{section.22}% 57
-\BOOKMARK [1][-]{section.23}{Mass loss from inhomogeneous hot star winds \(Sundqvist\)}{part.3}% 58
-\BOOKMARK [1][-]{section.24}{Asymptotic preserving Monte Carlo methods for radiative transfer equation in diffusion limit \(Dimarco+ 2018\)}{part.3}% 59
-\BOOKMARK [2][-]{subsection.24.1}{Goldstein-Taylor}{section.24}% 60
-\BOOKMARK [2][-]{subsection.24.2}{Radiative transfer}{section.24}% 61
-\BOOKMARK [0][-]{part.4}{IV Equation meetings}{}% 62
-\BOOKMARK [0][-]{part.5}{V Thesis meetings}{}% 63
-\BOOKMARK [1][-]{section.25}{Meeting on 6 September 2019}{part.5}% 64
+\BOOKMARK [2][-]{subsection.7.4}{Things to know}{section.7}% 13
+\BOOKMARK [2][-]{subsection.7.5}{Definition of specific intensity}{section.7}% 14
+\BOOKMARK [1][-]{section.8}{Introduction: course material \(Sundqvist - CMPAA course\)}{part.2}% 15
+\BOOKMARK [2][-]{subsection.8.1}{EXERCISES: Introduction to numerical methods for radiation in astrophysics}{section.8}% 16
+\BOOKMARK [2][-]{subsection.8.2}{Implicit 1D solver \(20-11-2018\)}{section.8}% 17
+\BOOKMARK [2][-]{subsection.8.3}{ADI 2D Solver}{section.8}% 18
+\BOOKMARK [2][-]{subsection.8.4}{Area of a circle}{section.8}% 19
+\BOOKMARK [2][-]{subsection.8.5}{Limb Darkening}{section.8}% 20
+\BOOKMARK [1][-]{section.9}{The mathematics of Radiative Transfer}{part.2}% 21
+\BOOKMARK [2][-]{subsection.9.1}{Auxiliary mathematics}{section.9}% 22
+\BOOKMARK [2][-]{subsection.9.2}{The H-functions}{section.9}% 23
+\BOOKMARK [1][-]{section.10}{Monte Carlo and Radiative Transfer \(Puls\)}{part.2}% 24
+\BOOKMARK [2][-]{subsection.10.1}{basic definitions and facts}{section.10}% 25
+\BOOKMARK [2][-]{subsection.10.2}{about random numbers}{section.10}% 26
+\BOOKMARK [2][-]{subsection.10.3}{MC integration}{section.10}% 27
+\BOOKMARK [2][-]{subsection.10.4}{MC simulation}{section.10}% 28
+\BOOKMARK [2][-]{subsection.10.5}{Exercise 1: RNG}{section.10}% 29
+\BOOKMARK [2][-]{subsection.10.6}{Exercise 2: Planck-function}{section.10}% 30
+\BOOKMARK [2][-]{subsection.10.7}{limb darkening}{section.10}% 31
+\BOOKMARK [1][-]{section.11}{Introduction to Monte Carlo Radiation Transfer \(Wood+\)}{part.2}% 32
+\BOOKMARK [2][-]{subsection.11.1}{Elementary principles}{section.11}% 33
+\BOOKMARK [2][-]{subsection.11.2}{Eddington factors}{section.11}% 34
+\BOOKMARK [2][-]{subsection.11.3}{Example: plane parallel atmosphere}{section.11}% 35
+\BOOKMARK [2][-]{subsection.11.4}{Monte Carlo Radiative Transfer}{section.11}% 36
+\BOOKMARK [2][-]{subsection.11.5}{P Cygni profile for beta-velocity law and given opacity Monte Carlo simulation}{section.11}% 37
+\BOOKMARK [1][-]{section.12}{Challenges in Radiative Transfer \(Ivan Milic\)}{part.2}% 38
+\BOOKMARK [2][-]{subsection.12.1}{Overview of the problem}{section.12}% 39
+\BOOKMARK [2][-]{subsection.12.2}{Challenging domains of application}{section.12}% 40
+\BOOKMARK [1][-]{section.13}{Asymptotic Preserving Monte Carlo methods for transport equations in the diffusive limit \(Dimarco+2018\)}{part.2}% 41
+\BOOKMARK [1][-]{section.14}{Fluid and hybrid Fluid-Kinetic models \(for neutral particles in plasma edge\) \(Horsten2019\)}{part.2}% 42
+\BOOKMARK [1][-]{section.15}{plitting methods}{part.2}% 43
+\BOOKMARK [2][-]{subsection.15.1}{Exercises}{section.15}% 44
+\BOOKMARK [1][-]{section.16}{Overview of existing \(Monte Carlo\) radiative transfer codes}{part.2}% 45
+\BOOKMARK [2][-]{subsection.16.1}{Synthesis codes}{section.16}% 46
+\BOOKMARK [2][-]{subsection.16.2}{Inversion codes}{section.16}% 47
+\BOOKMARK [1][-]{section.17}{Master thesis discussions}{part.2}% 48
+\BOOKMARK [0][-]{part.3}{III Practical work and Exercises}{}% 49
+\BOOKMARK [1][-]{section.18}{Overview of exercises \(PART I\)}{part.3}% 50
+\BOOKMARK [1][-]{section.19}{Overview of exercises \(PART II\)}{part.3}% 51
+\BOOKMARK [1][-]{section.20}{Overview of exercises \(PART III\)}{part.3}% 52
+\BOOKMARK [1][-]{section.21}{Overview of exercises \(PART IV\)}{part.3}% 53
+\BOOKMARK [1][-]{section.22}{Limb darkening}{part.3}% 54
+\BOOKMARK [1][-]{section.23}{Investigation of program: pcyg.f90}{part.3}% 55
+\BOOKMARK [2][-]{subsection.23.1}{Overview of variables}{section.23}% 56
+\BOOKMARK [2][-]{subsection.23.2}{Mathematical things that are noteworthy}{section.23}% 57
+\BOOKMARK [2][-]{subsection.23.3}{Exercises}{section.23}% 58
+\BOOKMARK [2][-]{subsection.23.4}{Mathematical description of the problem \040Looking at literature}{section.23}% 59
+\BOOKMARK [2][-]{subsection.23.5}{One more question}{section.23}% 60
+\BOOKMARK [1][-]{section.24}{Adding resonance line}{part.3}% 61
+\BOOKMARK [1][-]{section.25}{Closer look at Monte Carlo simulations}{part.3}% 62
+\BOOKMARK [1][-]{section.26}{Milic Exercises}{part.3}% 63
+\BOOKMARK [2][-]{subsection.26.1}{Lecture 7}{section.26}% 64
+\BOOKMARK [1][-]{section.27}{Mass loss from inhomogeneous hot star winds \(Sundqvist\)}{part.3}% 65
+\BOOKMARK [1][-]{section.28}{Asymptotic preserving Monte Carlo methods for radiative transfer equation in diffusion limit \(Dimarco+ 2018\)}{part.3}% 66
+\BOOKMARK [2][-]{subsection.28.1}{Goldstein-Taylor}{section.28}% 67
+\BOOKMARK [2][-]{subsection.28.2}{Radiative transfer}{section.28}% 68
+\BOOKMARK [1][-]{section.29}{Do not forget}{part.3}% 69
+\BOOKMARK [0][-]{part.4}{IV Equation meetings}{}% 70
+\BOOKMARK [0][-]{part.5}{V Thesis meetings}{}% 71
+\BOOKMARK [1][-]{section.30}{Meeting on 6 September 2019}{part.5}% 72

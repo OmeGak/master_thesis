@@ -1,0 +1,7 @@
+pcyg_two_lines: pcyg_two_lines.o
+	gfortran -o pcyg_two_lines pcyg_two_lines.o
+
+pcyg_two_lines.o: pcyg_two_lines.f90
+	gfortran -c pcyg_two_lines.f90 -o pcyg_two_lines.o
+
+

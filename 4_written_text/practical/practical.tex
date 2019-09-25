@@ -42,11 +42,11 @@
 \begin{enumerate}
 \item Revisit 3D limb darkening. $\phi$ should be sampled between $0$ and $2\pi$ (see Section \underline{\ref{3D_limb_darkening}}). (OK)
 
-\item Revisit convergence analysis: adapt plot formatting and standard deviation is defined as square root of variance (see Section \underline{\ref{convergence_analysis}}). (OK)
+\item Revisit convergence analysis: adapt plot formatting and standard deviation is defined as square root of variance (see Section \underline{\ref{convergence_analysis}}).
 
-\item Test variance reduction technique (see Section \underline{\ref{variance_reduction_experiment}})  
+\item Test variance reduction technique (see Section \underline{\ref{variance_reduction_experiment}}).   
 
-\item Some general considerations about the definitiion of specific intensity (see Section \underline{\ref{specific_intensity}})
+\item Some general considerations about the definitiion of specific intensity (see Section \underline{\ref{specific_intensity}}). (OK)
 
 \item For the Monte Carlo approximation of the diffusion equation, why do wo have $N \sim \tau$ for low optical depth $\tau \ll 1$ (see Section \underline{\ref{diffusion_Monte_Carlo_mean_free_path}}).
 
@@ -59,7 +59,27 @@
 \end{enumerate}
 
 \newpage
-\section{Limb darkening}
+\section{Overview of exercises (PART IV)}
+\begin{enumerate}
+\item Convergence analysis: also fit a line through the points (see Section \underline{\ref{convergence_analysis}}). Formally, we write $V = CN^x$ and determine both $C$ and $X$ from experimental data. Correspondingly, $\log(V) = \log(C) + x\log(N)$. This is fitted using least-squares.
+
+\item Variance reduction technique
+\begin{itemize}
+\item averaging over different stochastic realizations?
+\item take \texttt{xk0=0.5}
+\item try to also discretize $\mu$
+\end{itemize}
+
+\item Adding a second line: develop computer code in the radial streaming assumption (use analytic formulas) $\mu = 1$ (see Section \underline{\ref{two_resonance_lines}}).
+\begin{itemize}
+\item a following improvement is the use of a grid instead of using the bisection method.
+\end{itemize}
+
+\end{enumerate}
+
+
+\newpage
+\section{Limb darkening program}
 
 \label{limb_darkening_discussion}
 
@@ -168,63 +188,7 @@ the function \texttt{Limb\_Darkening\_3D} with the following input parameters: \
 Via this link, you can go back to the exercises overview: Section \underline{\ref{Overview_Part_3}}.
 
 \newpage
-\subsubsection{Closer look at Monte Carlo simulations}
-\label{diffusion_Monte_Carlo_mean_free_path}
-
-\paragraph{Random walk (diffusion equation)} A more simple experiment that simulates the diffusion equation (1D random walk) is also set up. The results are shown in Figure \ref{random_walk_N_vs_tau}.
-	\begin{figure}[!htp]
-	\centering
-	\includegraphics[width=0.5\textwidth]{../../introductory_exercises/limb_darkening/data/diff_N_vs_opacity.png}
-	\caption{Number of interactions (scattering events) versus 	opacity, random walk}
-	\label{random_walk_N_vs_tau}
-	\end{figure}
-We observe that $N \sim \tau^2$, as can also be derived from theory.
-
-\begin{itemize}
-\item When starting from an initial condition $x_0 = 0$,
-\begin{equation}
-x_N = x_{N-1} \pm l
-\end{equation}
-the variance equals $\braket{x_N}^2 = N l^2$ 
-\item If we require a photon to cover a distance $R$ then $N = \frac{R^2}{l^2}$ and
-\begin{itemize}
-\item with the following relation between mean-free path $l$ and opacity $\alpha$ namely $l = \frac{1}{\alpha}$
-\item with $\tau = \int_0^R \alpha ds = \frac{R}{l}$
-\end{itemize}
-we have that $N = \tau^2$. This corresponds with the observations in Figure \ref{random_walk_N_vs_tau}.
-\end{itemize}
-
-
-\newpage
-\paragraph{Limb darkening} We first look at results from the limb darkening program. In Figure \ref{limb_darkening_N_vs_tau}, the number of scattering events is plotted versus the opacity of the medium. 
-	\begin{figure}[!htp]
-	\centering
-	\includegraphics[width=0.5\textwidth]{../../introductory_exercises/limb_darkening/data/N_vs_opacity.png}
-	\caption{Number of interactions (scattering events) versus 	opacity, kimb darkening}
-	\label{limb_darkening_N_vs_tau}
-	\end{figure}
-
-\begin{itemize}
-\item For high opacity $\tau \gg 1$ we observe that $N \sim \tau$. \item However, this relationship does not hold for $\tau \ll 1$.
-\end{itemize}
-
-\paragraph{Eddington approximation} 
-\begin{equation}
-\boxed{J(\tau) = 3H \left( \tau + \frac{2}{3} \right)}
-\end{equation}
-Together with the time-independent radiative transfer equation in a gray (frequency-independent) planar medium:
-\begin{equation}
-\mu \frac{\partial I(\tau,\mu)}{\partial \tau} = I(\tau,\mu) - J(\tau,\mu)
-\label{rad_transfer_eq_limb_darkening}
-\end{equation}
-with the emergent intensity $I(0,\mu)$ as solution of  Equation (\ref{rad_transfer_eq_limb_darkening}). Its solution equals 
-\begin{equation}
-I(\tau = 0,\mu) = I_1 \left( \frac{2}{5} + \frac{3 \mu}{5} \right) 
-\end{equation}
-
-
-\newpage
-\section{Investigation of program: pcyg.f90}
+\section{Spectral line formation: pcyg.f90}
 This section is about the study of line formation in an expanding wind.
 
 \subsection{Overview of variables}
@@ -374,19 +338,24 @@ x_{REF} = \mu u
 \end{equation}
 or thus $x_{REF} = \boxed{u_{\text{interaction}}}$ and than solve Equation \ref{u_profile} for $r_{\text{interaction}}$
 
+
 \item If $\mu = 1$ then 
 \begin{equation}
 x = \left(1 - \frac{r_{\infty}}{r} \right)^{\beta}
 \end{equation}
 \begin{equation*}
-x^{-\beta} = 1 - \frac{r_{\infty}}{r}
+x^{1/\beta} = 1 - \frac{r_{\infty}}{r}
 \end{equation*}
 \begin{equation*}
-r(1-x^{-\beta}) = r_{\infty}
+r(1-x^{1/\beta}) = r_{\infty}
 \end{equation*}
 \begin{equation}
-\boxed{r(x) = \frac{r_{\infty}}{1-x^{-\beta}}}
-\end{equation} 
+\boxed{r(x) = \frac{r_{\infty}}{1-x^{1/\beta}}}
+\end{equation}
+
+\noindent\fbox{
+  \parbox{0.6\textwidth}{
+  attention, here was something wrong! }} 
 
 \item From the location of interaction $r$, the incident angle can be calculated
 \begin{equation}
@@ -589,6 +558,7 @@ Challening: Put photospheric line-profile (simple Gaussian) in. What happens? Te
 \subsubsection{Convergence analysis}
 \label{convergence_analysis}
 
+\paragraph{\underline{Zero opacity}}
 The convergence of the Monte Carlo method is tested with the following input parameters
 
 \begin{center}
@@ -605,12 +575,24 @@ for a varying amount of photons, as shown in Figure \ref{Convergence_Pcyg_kx0_0}
 
 \begin{figure}[!htp]
 \centering
-\includegraphics[width=0.65\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/test0_convergence.png}
+\includegraphics[width=0.5\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/test0_convergence.png}
 \caption{Original version of the code: convergence analysis (xk0=0)}
 \label{Convergence_Pcyg_kx0_0}
 \end{figure}
 
+\paragraph{\underline{Nonzero opacity}} 
+The convergence test is set up as follows: different Monte Carlo simulations (with increasing number of photons) are compared to an \textit{expensive} simulation with $10^7$ photons. As can be seen in Figure \ref{Convergence_Pcyg_kx0_100}, the spectrum profile behaves according to a $N^{0.5}$ law.
+
+\begin{figure}[!htp]
+\centering
+\includegraphics[width=0.5\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/profile_convergence/test0_convergence.png}
+\caption{Original version of the code: convergence analysis (xk0=100)}
+\label{Convergence_Pcyg_kx0_100}
+\end{figure}
+
+
 Via this link, you can go back to the exercises overview: Section \underline{\ref{Overview_Part_2}}.
+
 
 \newpage
 \subsubsection{Variance reduction experiment}
@@ -624,12 +606,17 @@ We will set up the test as follows
 \item \texttt{test\_number = 5}
 \end{itemize}
 
+
+\paragraph{\texttt{xk0=100}}
 \begin{figure}[!htp]
 \centering
 \includegraphics[width=0.65\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/variance_reduction_test.png}
 \caption{Original version of the code: convergence analysis (xk0=0)}
 \label{variance_reduction_test}
 \end{figure}
+
+\paragraph{\texttt{xk0=100}}
+
 
 \noindent\fbox{
   \parbox{\textwidth}{
@@ -638,9 +625,23 @@ Possible improvement: average over different stochastic realizations.}}
 \vspace{0.7cm}
 Via this link, you can go back to the exercises overview: Section \underline{\ref{Overview_Part_3}}.
 
+\newpage
+\subsection{Mathematical description of the problem \\
+Looking at literature}
+Have a look at \cite{NoebauerUlrichM_2019MCRT}.
+
+\vspace{0.4cm}
+Via this link, you can go back to the exercises overview: Section \underline{\ref{Overview_Part_3}}.
+
+
+\subsection{One more question}
+What does this mean? \texttt{xnew=xstart+(v-sign(0.06,xmueou))*xmueou-v*xmuein}
 
 \newpage
-\subsubsection{Introduction of second line}
+\section{Dual spectral line formation}
+\label{two_resonance_lines}
+
+\subsubsection{Introduction of second line: theoretical}
 \label{second_line}
 What happens when you add a line (e.g. \@ $x=0.5=a$)? How would you do that?
 
@@ -678,7 +679,6 @@ What happens when you add a line (e.g. \@ $x=0.5=a$)? How would you do that?
 \end{algorithm}
 \end{center}
 
-
 \paragraph{Introduction of second line}
 The changes are marked in blue.
 
@@ -703,7 +703,7 @@ The changes are marked in blue.
 \textcolor{blue}{Is there a second scattering event?
 \begin{enumerate}[leftmargin=0.6in]
 \item Check if interaction is uberhaupt possible.
-\item Solve $x_{REF} = x_{CMF} - \mu v(r)$ with $\boxed{x_{CMF} =b}$ where $b$ is the frequency where no scattering has yet found place
+\item Solve $x_{REF} = x_{CMF} - \mu v(r+ r_{\text{interaction}})$ with $\boxed{x_{CMF} =b}$ where $b$ is the frequency where no scattering has yet found place
 \item Check whether the photon is scattered:
 \end{enumerate}}
 \If{\textcolor{blue}{$\tau_{S,2} > -log(\xi_2)$}}
@@ -720,50 +720,129 @@ The changes are marked in blue.
 \end{algorithm}
 \end{center}
 
+\newpage
+pitfalls yet to solve:
+\begin{itemize}
+\item root must be bracketed
+\end{itemize}
+
+
 \vspace{0.7cm}
 Via this link, you can go back to the exercises overview: Section \underline{\ref{Overview_Part_3}}.
 
+\newpage
+\section{Closer look at Monte Carlo simulations}
+\label{diffusion_Monte_Carlo_mean_free_path}
+
+\subsection{Random walk (diffusion equation)} A more simple experiment that simulates the diffusion equation (1D random walk) is also set up. The results are shown in Figure \ref{random_walk_N_vs_tau}.
+	\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{../../introductory_exercises/limb_darkening/data/diff_N_vs_opacity.png}
+	\caption{Number of interactions (scattering events) versus 	opacity, random walk}
+	\label{random_walk_N_vs_tau}
+	\end{figure}
+We observe that $N \sim \tau^2$, as can also be derived from theory.
+
+\begin{itemize}
+\item When starting from an initial condition $x_0 = 0$,
+\begin{equation}
+x_N = x_{N-1} \pm l
+\end{equation}
+the variance equals $\braket{x_N}^2 = N l^2$ 
+\item If we require a photon to cover a distance $R$ then $N = \frac{R^2}{l^2}$ and
+\begin{itemize}
+\item with the following relation between mean-free path $l$ and opacity $\alpha$ namely $l = \frac{1}{\alpha}$
+\item with $\tau = \int_0^R \alpha ds = \frac{R}{l}$
+\end{itemize}
+we have that $N = \tau^2$. This corresponds with the observations in Figure \ref{random_walk_N_vs_tau}.
+\end{itemize}
+
 
 \newpage
-\subsection{Mathematical description of the problem \\
-Looking at literature}
-Have a look at \cite{NoebauerUlrichM_2019MCRT}.
+\subsection{Limb darkening} We first look at results from the limb darkening program. In Figure \ref{limb_darkening_N_vs_tau}, the number of scattering events is plotted versus the opacity of the medium. 
+	\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{../../introductory_exercises/limb_darkening/data/N_vs_opacity.png}
+	\caption{Number of interactions (scattering events) versus 	opacity, kimb darkening}
+	\label{limb_darkening_N_vs_tau}
+	\end{figure}
 
-\vspace{0.4cm}
-Via this link, you can go back to the exercises overview: Section \underline{\ref{Overview_Part_3}}.
+\begin{itemize}
+\item For high opacity $\tau \gg 1$ we observe that $N \sim \tau$. \item However, this relationship does not hold for $\tau \ll 1$.
+\end{itemize}
 
-\newpage
-\section{Definition of specific intensity}
-\label{specific_intensity}
-The definition of the specific intensity is 
+\subsubsection{Eddington-Barbier approximation} 
 \begin{equation}
-I_{\nu} 
-	= \frac{dE_{\nu}}{\cos(\theta) d\Omega dt d\nu d\theta} 
-	= \frac{dE_{\nu}}{\mu d\Omega dt d\nu d\theta} 
+\boxed{J(\tau) = 3H \left( \tau + \frac{2}{3} \right)}
+\label{Eddington_Barbier}
 \end{equation}
-On the other hand, for the total energy of a collection of $N$ photons holds that 
+Together with the time-independent radiative transfer equation in a gray (frequency-independent) planar medium:
 \begin{equation}
-E_{\nu} = N E_{\nu,\text{photon}} 
+\mu \frac{\partial I(\tau,\mu)}{\partial \tau} = I(\tau,\mu) - J(\tau,\mu)
+\end{equation}
+that gives
+\begin{equation}
+\boxed{\mu \frac{\partial I(\tau,\mu)}{\partial \tau} = I(\tau,\mu) - 3H(\frac{2}{3}+\tau)}
+\label{rad_transfer_eq_limb_darkening}
+\end{equation}
+with the emergent intensity $I(0,\mu)$ as solution of  Equation (\ref{rad_transfer_eq_limb_darkening}). Its solution equals 
+\begin{equation}
+I(\tau = 0,\mu) = I_1 \left( \frac{2}{5} + \frac{3 \mu}{5} \right) 
 \end{equation}
 
-\paragraph{To the point}
-From this we deduce that (since, in spherical geometry $d\Omega = \sin(\theta) d\theta d\phi = d\mu d\phi$ )
+\subsubsection{Validity of the Eddington-Barbier approximation}
+If we assume Equuation (\ref{Eddington_Barbier}) then $I = I_1(a+b\mu)$ thus $J = \frac{1}{2} \int(\tau,\mu) d\mu = \frac{1}{2} \int_0^1 (a+b\mu)d\mu $
+
+
+\subsubsection{Solving the (integro-differential) radiative transfer equation}
+\begin{itemize}
+\item the integro-differential equation describing radiative transfer
 \begin{equation}
-I_{\nu}(\mu) \mu 
-	= \frac{d E_{\nu}}{d\Omega dt d\nu d\theta} 
-	= \frac{dE_{\nu}}{\sin(\theta) d\theta d\phi dt d\nu d\theta} 
-	= \frac{dE_{\nu}}{d\mu d\phi dt d\nu d\theta}
-	= \frac{N_{\nu}(\mu) dE_{\nu,\text{photon}}}{d\mu d\phi dt d\nu d\theta}
+\begin{aligned}
+\mu \frac{dI(\tau,\mu)}{d\tau} &= -I(\tau,\mu) + S(\tau)  \\ 
+&= -I(\tau,\mu)  + \frac{1}{4\pi} \int I(\tau,\mu) d\Omega
+\end{aligned}
+\label{RTE_limb_darkening}
 \end{equation}
+where $\boxed{S(\tau) = \frac{1}{4\pi} \int I(\tau,\mu) d\Omega}$
+
+\item The difficulty resides in the source function
+
+\item Monte Carlo simulation avoids explicit source function: source function implicit in Monte Carlo simulation
+
+\item in the Monte Carlo program, the physics are simulated \textsc{in between two consecutive scattering events} as follows
 \begin{equation}
-I_{\nu}(\mu) \mu d\mu = \frac{dE_{\nu}}{d\phi dt d\nu d\theta}
+\frac{dI}{dz} = -\alpha I 
+\end{equation}
+thus $\frac{dI}{I} = -\alpha dz = -\delta \tau$ and $I = I_0 e^{-\delta \tau}$ and thus $\tau$ is sampled according to $\tau = - \log(X_{\text{random}})$
+\end{itemize}
+
+\paragraph{Analytical Solution of Equation (\ref{RTE_limb_darkening})}
+Ik heb de mosterd gehaald op \cite{Dublin_limb_darkening}.
+
+\begin{equation}
+I(0,\mu) = \int_0^{\infty} S(\tau) exp\left( \frac{-\tau}{\mu} \right) d\left( \frac{\tau}{\mu} \right)
+\end{equation}
+
+\paragraph{Numerical Solution of Equation (\ref{RTE_limb_darkening})}
+First rewrite the equation
+\begin{equation}
+\begin{aligned}
+\mu \frac{dI(\tau,\mu)}{d\tau} 
+&= -I(\tau,\mu)  + \frac{1}{4\pi} \int I(\tau,\mu) \sin(\theta) d\theta d\phi 
+\\ &= -I(\tau,\mu)  + \frac{1}{4\pi} \int I(\tau,\mu) d\mu d\phi 
+\\ &= -I(\tau,\mu)  + \frac{1}{2} \int I(\tau,\mu) d\mu 
+\end{aligned}
+\end{equation}
+Discretization scheme:
+\begin{equation}
+???
 \end{equation}
 
 \noindent\fbox{
-  \parbox{\textwidth}{here is something wrong}}
-
-\vspace{0.4cm}
-Via this link, you can go back to the exercises overview: Section \underline{\ref{Overview_Part_3}}.
+  \parbox{\textwidth}{
+  If you assume constant opacity then $\tau = \alpha z$
+  }}
 
 \newpage
 \section{Milic Exercises}
@@ -839,5 +918,11 @@ Solution: see slide 14?
 \section{Asymptotic preserving Monte Carlo methods for radiative transfer equation in diffusion limit (Dimarco+ 2018)}
 \subsection{Goldstein-Taylor}
 \subsection{Radiative transfer}
+
+\newpage
+\section{Do not forget}
+\begin{itemize}
+\item convergence plots
+\end{itemize}
 
 \end{document}

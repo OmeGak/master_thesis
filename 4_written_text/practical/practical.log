@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.20)  22 SEP 2019 22:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.20)  25 SEP 2019 19:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1245,6 +1245,10 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 26.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
+LaTeX Warning: Reference `specific_intensity' on page 1 undefined on input line
+ 49.
+
+
 Package scrlayer-scrpage Warning: \headheight to low.
 (scrlayer-scrpage)                At least 12.0pt needed,
 (scrlayer-scrpage)                but only 0.0pt found.
@@ -1261,231 +1265,248 @@ Overfull \vbox (12.0pt too high) has occurred while \output is active []
 
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-]
+] [2]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 86.
+put line 106.
 <../../introductory_exercises/limb_darkening/data/number_channels20number_photo
-ns100000max_opt_depth10.png, id=113, 421.575pt x 316.0608pt>
+ns100000max_opt_depth10.png, id=146, 421.575pt x 316.0608pt>
 File: ../../introductory_exercises/limb_darkening/data/number_channels20number_
 photons100000max_opt_depth10.png Graphic file (type png)
 <use ../../introductory_exercises/limb_darkening/data/number_channels20number_p
 hotons100000max_opt_depth10.png>
 Package pdftex.def Info: ../../introductory_exercises/limb_darkening/data/numbe
-r_channels20number_photons100000max_opt_depth10.png  used on input line 127.
+r_channels20number_photons100000max_opt_depth10.png  used on input line 147.
 (pdftex.def)             Requested size: 317.07614pt x 237.72018pt.
- [2]
+ [3]
 <../../introductory_exercises/limb_darkening/data/LD_3D_mu_number_channels20num
-ber_photons100000max_opt_depth10.png, id=128, 421.575pt x 316.0608pt>
+ber_photons100000max_opt_depth10.png, id=159, 421.575pt x 316.0608pt>
 File: ../../introductory_exercises/limb_darkening/data/LD_3D_mu_number_channels
 20number_photons100000max_opt_depth10.png Graphic file (type png)
 <use ../../introductory_exercises/limb_darkening/data/LD_3D_mu_number_channels2
 0number_photons100000max_opt_depth10.png>
 Package pdftex.def Info: ../../introductory_exercises/limb_darkening/data/LD_3D
 _mu_number_channels20number_photons100000max_opt_depth10.png  used on input lin
-e 147.
+e 167.
 (pdftex.def)             Requested size: 226.48395pt x 169.8022pt.
 <../../introductory_exercises/limb_darkening/data/LD_3D_phi_number_channels20nu
-mber_photons100000max_opt_depth10.png, id=129, 421.575pt x 316.0608pt>
+mber_photons100000max_opt_depth10.png, id=160, 421.575pt x 316.0608pt>
 File: ../../introductory_exercises/limb_darkening/data/LD_3D_phi_number_channel
 s20number_photons100000max_opt_depth10.png Graphic file (type png)
 <use ../../introductory_exercises/limb_darkening/data/LD_3D_phi_number_channels
 20number_photons100000max_opt_depth10.png>
 Package pdftex.def Info: ../../introductory_exercises/limb_darkening/data/LD_3D
 _phi_number_channels20number_photons100000max_opt_depth10.png  used on input li
-ne 152.
+ne 172.
 (pdftex.def)             Requested size: 226.48395pt x 169.8022pt.
 
-Overfull \hbox (20.13333pt too wide) in paragraph at lines 162--166
+Overfull \hbox (20.13333pt too wide) in paragraph at lines 182--186
  [][] [] 
  []
 
-[3 <../../introductory_exercises/limb_darkening/data/number_channels20number_ph
+[4 <../../introductory_exercises/limb_darkening/data/number_channels20number_ph
 otons100000max_opt_depth10.png (PNG copy)> <../../introductory_exercises/limb_d
 arkening/data/LD_3D_mu_number_channels20number_photons100000max_opt_depth10.png
  (PNG copy)> <../../introductory_exercises/limb_darkening/data/LD_3D_phi_number
-_channels20number_photons100000max_opt_depth10.png (PNG copy)>]
-<../../introductory_exercises/limb_darkening/data/diff_N_vs_opacity.png, id=140
-, 429.2838pt x 310.761pt>
-File: ../../introductory_exercises/limb_darkening/data/diff_N_vs_opacity.png Gr
-aphic file (type png)
-<use ../../introductory_exercises/limb_darkening/data/diff_N_vs_opacity.png>
-Package pdftex.def Info: ../../introductory_exercises/limb_darkening/data/diff_
-N_vs_opacity.png  used on input line 177.
-(pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
- [4 <../../introductory_exercises/limb_darkening/data/diff_N_vs_opacity.png (PN
-G copy)>]
-<../../introductory_exercises/limb_darkening/data/N_vs_opacity.png, id=152, 429
-.2838pt x 310.761pt>
-File: ../../introductory_exercises/limb_darkening/data/N_vs_opacity.png Graphic
- file (type png)
-<use ../../introductory_exercises/limb_darkening/data/N_vs_opacity.png>
-Package pdftex.def Info: ../../introductory_exercises/limb_darkening/data/N_vs_
-opacity.png  used on input line 202.
-(pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
-
-[5 <../../introductory_exercises/limb_darkening/data/N_vs_opacity.png (PNG copy
-)>] [6] [7]
+_channels20number_photons100000max_opt_depth10.png (PNG copy)>] [5] [6]
 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot6xk0100alph
-a0beta1test0.png, id=177, 429.2838pt x 310.761pt>
+a0beta1test0.png, id=183, 429.2838pt x 310.761pt>
 File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot6xk010
 0alpha0beta1test0.png Graphic file (type png)
 <use ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot6xk0100
 alpha0beta1test0.png>
 Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/data/npot6xk0100alpha0beta1test0.png  used on input line 323.
+nce/data/npot6xk0100alpha0beta1test0.png  used on input line 287.
 (pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
- [8 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot6xk0100
-alpha0beta1test0.png (PNG copy)>]
+
+[7 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot6xk0100a
+lpha0beta1test0.png (PNG copy)>]
 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk0100alph
-a0beta1test1.png, id=185, 421.575pt x 316.0608pt>
+a0beta1test1.png, id=192, 421.575pt x 316.0608pt>
 File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk010
 0alpha0beta1test1.png Graphic file (type png)
 <use ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk0100
 alpha0beta1test1.png>
 Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/data/npot5xk0100alpha0beta1test1.png  used on input line 343.
+nce/data/npot5xk0100alpha0beta1test1.png  used on input line 307.
 (pdftex.def)             Requested size: 226.48395pt x 169.8022pt.
 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk0100alph
-a0beta1test10.png, id=186, 421.575pt x 316.0608pt>
+a0beta1test10.png, id=193, 421.575pt x 316.0608pt>
 File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk010
 0alpha0beta1test10.png Graphic file (type png)
 <use ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk0100
 alpha0beta1test10.png>
 Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/data/npot5xk0100alpha0beta1test10.png  used on input line 347.
+nce/data/npot5xk0100alpha0beta1test10.png  used on input line 311.
 (pdftex.def)             Requested size: 226.48395pt x 169.8022pt.
- [9 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk0100
+ [8 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk0100
 alpha0beta1test1.png (PNG copy)> <../../introductory_exercises/P_Cygni_profile_
 UV_resonance/data/npot5xk0100alpha0beta1test10.png (PNG copy)>]
-Overfull \hbox (10.13332pt too wide) in paragraph at lines 438--440
+Overfull \hbox (10.13332pt too wide) in paragraph at lines 407--409
 [] 
  []
 
-[10]
+[9]
 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk05alpha0
-beta1test1.png, id=219, 421.575pt x 316.0608pt>
+beta1test1.png, id=227, 421.575pt x 316.0608pt>
 File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk05a
 lpha0beta1test1.png Graphic file (type png)
 <use ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk05al
 pha0beta1test1.png>
 Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/data/npot5xk05alpha0beta1test1.png  used on input line 452.
+nce/data/npot5xk05alpha0beta1test1.png  used on input line 421.
 (pdftex.def)             Requested size: 226.48395pt x 169.8022pt.
 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk05alpha0
-beta1test10.png, id=220, 429.2838pt x 310.761pt>
+beta1test10.png, id=228, 429.2838pt x 310.761pt>
 File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk05a
 lpha0beta1test10.png Graphic file (type png)
 <use ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk05al
 pha0beta1test10.png>
 Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/data/npot5xk05alpha0beta1test10.png  used on input line 456.
+nce/data/npot5xk05alpha0beta1test10.png  used on input line 425.
 (pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk05alpha0
-beta1test11.png, id=221, 421.575pt x 316.0608pt>
+beta1test11.png, id=229, 421.575pt x 316.0608pt>
 File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk05a
 lpha0beta1test11.png Graphic file (type png)
 <use ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk05al
 pha0beta1test11.png>
 Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/data/npot5xk05alpha0beta1test11.png  used on input line 465.
+nce/data/npot5xk05alpha0beta1test11.png  used on input line 434.
 (pdftex.def)             Requested size: 226.48395pt x 169.8022pt.
- [11 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk05a
+ [10 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk05a
 lpha0beta1test1.png (PNG copy)> <../../introductory_exercises/P_Cygni_profile_U
 V_resonance/data/npot5xk05alpha0beta1test10.png (PNG copy)> <../../introductory
 _exercises/P_Cygni_profile_UV_resonance/data/npot5xk05alpha0beta1test11.png (PN
 G copy)>]
 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk0100alph
-a0beta1test2.png, id=231, 429.2838pt x 310.761pt>
+a0beta1test2.png, id=239, 429.2838pt x 310.761pt>
 File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk010
 0alpha0beta1test2.png Graphic file (type png)
 <use ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk0100
 alpha0beta1test2.png>
 Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/data/npot5xk0100alpha0beta1test2.png  used on input line 489.
+nce/data/npot5xk0100alpha0beta1test2.png  used on input line 458.
 (pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk0100alph
-a0beta1test20.png, id=232, 421.575pt x 316.0608pt>
+a0beta1test20.png, id=240, 421.575pt x 316.0608pt>
 File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk010
 0alpha0beta1test20.png Graphic file (type png)
 <use ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk0100
 alpha0beta1test20.png>
 Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/data/npot5xk0100alpha0beta1test20.png  used on input line 493.
+nce/data/npot5xk0100alpha0beta1test20.png  used on input line 462.
 (pdftex.def)             Requested size: 226.48395pt x 169.8022pt.
- [12 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk010
+ [11 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk010
 0alpha0beta1test2.png (PNG copy)> <../../introductory_exercises/P_Cygni_profile
 _UV_resonance/data/npot5xk0100alpha0beta1test20.png (PNG copy)>]
 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/Eddington_limb_
-darkening.png, id=240, 421.575pt x 316.0608pt>
+darkening.png, id=248, 421.575pt x 316.0608pt>
 File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/Eddington_
 limb_darkening.png Graphic file (type png)
 <use ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/Eddington_l
 imb_darkening.png>
 Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/data/Eddington_limb_darkening.png  used on input line 519.
+nce/data/Eddington_limb_darkening.png  used on input line 488.
 (pdftex.def)             Requested size: 317.07614pt x 237.72018pt.
 
-[13 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/Eddington_l
+[12 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/Eddington_l
 imb_darkening.png (PNG copy)>]
 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/Eddington_accep
-t_reject.png, id=255, 429.2838pt x 310.761pt>
+t_reject.png, id=262, 429.2838pt x 310.761pt>
 File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/Eddington_
 accept_reject.png Graphic file (type png)
 <use ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/Eddington_a
 ccept_reject.png>
 Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/data/Eddington_accept_reject.png  used on input line 570.
+nce/data/Eddington_accept_reject.png  used on input line 539.
 (pdftex.def)             Requested size: 317.07614pt x 229.53278pt.
- [14 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/Eddington_
-accept_reject.png (PNG copy)>] [15]
+ [13 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/Eddington_
+accept_reject.png (PNG copy)>] [14]
 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/test0_convergen
-ce.png, id=273, 429.2838pt x 310.761pt>
+ce.png, id=281, 429.2838pt x 310.761pt>
 File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/test0_conv
 ergence.png Graphic file (type png)
 <use ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/test0_conve
 rgence.png>
 Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/data/test0_convergence.png  used on input line 608.
-(pdftex.def)             Requested size: 294.42636pt x 213.13554pt.
- [16 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/test0_conv
-ergence.png (PNG copy)>]
+nce/data/test0_convergence.png  used on input line 578.
+(pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
+<../../introductory_exercises/P_Cygni_profile_UV_resonance/data/profile_converg
+ence/test0_convergence.png, id=283, 429.2838pt x 310.761pt>
+File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/profile_co
+nvergence/test0_convergence.png Graphic file (type png)
+<use ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/profile_con
+vergence/test0_convergence.png>
+Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
+nce/data/profile_convergence/test0_convergence.png  used on input line 588.
+(pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
+ [15 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/test0_conv
+ergence.png (PNG copy)> <../../introductory_exercises/P_Cygni_profile_UV_resona
+nce/data/profile_convergence/test0_convergence.png (PNG copy)>]
 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/variance_reduct
-ion_test.png, id=280, 421.575pt x 316.0608pt>
+ion_test.png, id=295, 421.575pt x 316.0608pt>
 File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/variance_r
 eduction_test.png Graphic file (type png)
 <use ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/variance_re
 duction_test.png>
 Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/data/variance_reduction_test.png  used on input line 629.
+nce/data/variance_reduction_test.png  used on input line 613.
 (pdftex.def)             Requested size: 294.42636pt x 220.73949pt.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 618.
 
-Overfull \hbox (10.13332pt too wide) in paragraph at lines 634--637
-[] 
+Overfull \hbox (56.88301pt too wide) in paragraph at lines 621--624
+ []\OT1/cmtt/m/n/10 xk0=100[] [] 
  []
 
-[17 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/variance_re
-duction_test.png (PNG copy)>] [18]
+[16 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/variance_re
+duction_test.png (PNG copy)>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\\' on input line 729.
+(hyperref)                removing `\\' on input line 630.
 
 
-LaTeX Warning: Citation 'NoebauerUlrichM_2019MCRT' on page 19 undefined on inpu
-t line 730.
+LaTeX Warning: Citation 'NoebauerUlrichM_2019MCRT' on page 17 undefined on inpu
+t line 631.
 
-[19]
-Overfull \hbox (10.13332pt too wide) in paragraph at lines 762--764
+[17] [18] [19]
+<../../introductory_exercises/limb_darkening/data/diff_N_vs_opacity.png, id=338
+, 429.2838pt x 310.761pt>
+File: ../../introductory_exercises/limb_darkening/data/diff_N_vs_opacity.png Gr
+aphic file (type png)
+<use ../../introductory_exercises/limb_darkening/data/diff_N_vs_opacity.png>
+Package pdftex.def Info: ../../introductory_exercises/limb_darkening/data/diff_
+N_vs_opacity.png  used on input line 740.
+(pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
+ [20 <../../introductory_exercises/limb_darkening/data/diff_N_vs_opacity.png (P
+NG copy)>]
+<../../introductory_exercises/limb_darkening/data/N_vs_opacity.png, id=347, 429
+.2838pt x 310.761pt>
+File: ../../introductory_exercises/limb_darkening/data/N_vs_opacity.png Graphic
+ file (type png)
+<use ../../introductory_exercises/limb_darkening/data/N_vs_opacity.png>
+Package pdftex.def Info: ../../introductory_exercises/limb_darkening/data/N_vs_
+opacity.png  used on input line 765.
+(pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
+ [21 <../../introductory_exercises/limb_darkening/data/N_vs_opacity.png (PNG co
+py)>]
+
+LaTeX Warning: Citation 'Dublin_limb_darkening' on page 22 undefined on input l
+ine 821.
+
+
+Overfull \hbox (10.13332pt too wide) in paragraph at lines 842--846
 [] 
  []
 
-[20] [21] [22] [23]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 843.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 843.
+[22] [23] [24] [25] [26]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 928.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 928.
  (./practical.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 843.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 843.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 928.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 928.
 Package rerunfilecheck Info: File `practical.out' has not changed.
-(rerunfilecheck)             Checksum: FA26257A94263727685158CB6242975F;1203.
+(rerunfilecheck)             Checksum: E8DC33791DFEB4E6F5A03B2AC4D035FA;1620.
 
 
 LaTeX Warning: There were undefined references.
@@ -1503,31 +1524,32 @@ Package logreq Info: Writing requests to 'practical.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32485 strings out of 492641
- 661103 string characters out of 6131786
- 1140415 words of memory out of 5000000
- 35712 multiletter control sequences out of 15000+600000
- 8359 words of font info for 33 fonts, out of 8000000 for 9000
+ 32522 strings out of 492641
+ 662054 string characters out of 6131786
+ 1140726 words of memory out of 5000000
+ 35728 multiletter control sequences out of 15000+600000
+ 8660 words of font info for 34 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,20n,75p,766b,1643s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl1
-0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on practical.pdf (23 pages, 659346 bytes).
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on practical.pdf (26 pages, 704153 bytes).
 PDF statistics:
- 429 PDF objects out of 1000 (max. 8388607)
- 368 compressed objects within 4 object streams
- 148 named destinations out of 1000 (max. 500000)
- 226 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 489 PDF objects out of 1000 (max. 8388607)
+ 422 compressed objects within 5 object streams
+ 167 named destinations out of 1000 (max. 500000)
+ 279 words of extra memory for PDF output out of 10000 (max. 10000000)
 

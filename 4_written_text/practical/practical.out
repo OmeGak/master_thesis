@@ -1,16 +1,22 @@
 \BOOKMARK [1][-]{section.1}{Overview of exercises \(PART I\)}{}% 1
 \BOOKMARK [1][-]{section.2}{Overview of exercises \(PART II\)}{}% 2
 \BOOKMARK [1][-]{section.3}{Overview of exercises \(PART III\)}{}% 3
-\BOOKMARK [1][-]{section.4}{Limb darkening}{}% 4
-\BOOKMARK [1][-]{section.5}{Investigation of program: pcyg.f90}{}% 5
-\BOOKMARK [2][-]{subsection.5.1}{Overview of variables}{section.5}% 6
-\BOOKMARK [2][-]{subsection.5.2}{Mathematical things that are noteworthy}{section.5}% 7
-\BOOKMARK [2][-]{subsection.5.3}{Exercises}{section.5}% 8
-\BOOKMARK [2][-]{subsection.5.4}{Mathematical description of the problem \040Looking at literature}{section.5}% 9
-\BOOKMARK [1][-]{section.6}{Definition of specific intensity}{}% 10
-\BOOKMARK [1][-]{section.7}{Milic Exercises}{}% 11
-\BOOKMARK [2][-]{subsection.7.1}{Lecture 7}{section.7}% 12
-\BOOKMARK [1][-]{section.8}{Mass loss from inhomogeneous hot star winds \(Sundqvist\)}{}% 13
-\BOOKMARK [1][-]{section.9}{Asymptotic preserving Monte Carlo methods for radiative transfer equation in diffusion limit \(Dimarco+ 2018\)}{}% 14
-\BOOKMARK [2][-]{subsection.9.1}{Goldstein-Taylor}{section.9}% 15
-\BOOKMARK [2][-]{subsection.9.2}{Radiative transfer}{section.9}% 16
+\BOOKMARK [1][-]{section.4}{Overview of exercises \(PART IV\)}{}% 4
+\BOOKMARK [1][-]{section.5}{Limb darkening program}{}% 5
+\BOOKMARK [1][-]{section.6}{Spectral line formation: pcyg.f90}{}% 6
+\BOOKMARK [2][-]{subsection.6.1}{Overview of variables}{section.6}% 7
+\BOOKMARK [2][-]{subsection.6.2}{Mathematical things that are noteworthy}{section.6}% 8
+\BOOKMARK [2][-]{subsection.6.3}{Exercises}{section.6}% 9
+\BOOKMARK [2][-]{subsection.6.4}{Mathematical description of the problem \040Looking at literature}{section.6}% 10
+\BOOKMARK [2][-]{subsection.6.5}{One more question}{section.6}% 11
+\BOOKMARK [1][-]{section.7}{Dual spectral line formation}{}% 12
+\BOOKMARK [1][-]{section.8}{Closer look at Monte Carlo simulations}{}% 13
+\BOOKMARK [2][-]{subsection.8.1}{Random walk \(diffusion equation\)}{section.8}% 14
+\BOOKMARK [2][-]{subsection.8.2}{Limb darkening}{section.8}% 15
+\BOOKMARK [1][-]{section.9}{Milic Exercises}{}% 16
+\BOOKMARK [2][-]{subsection.9.1}{Lecture 7}{section.9}% 17
+\BOOKMARK [1][-]{section.10}{Mass loss from inhomogeneous hot star winds \(Sundqvist\)}{}% 18
+\BOOKMARK [1][-]{section.11}{Asymptotic preserving Monte Carlo methods for radiative transfer equation in diffusion limit \(Dimarco+ 2018\)}{}% 19
+\BOOKMARK [2][-]{subsection.11.1}{Goldstein-Taylor}{section.11}% 20
+\BOOKMARK [2][-]{subsection.11.2}{Radiative transfer}{section.11}% 21
+\BOOKMARK [1][-]{section.12}{Do not forget}{}% 22

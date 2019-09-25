@@ -274,6 +274,41 @@ optical depth $\tau$ & \\
 \end{tabu}}
 \end{center}
 
+
+\subsection{Things to know}
+\begin{itemize}
+\item expanding flow: redshift (lower frequency)
+\item compressing flow: blueshift (higher frequency)
+\end{itemize}
+
+\subsection{Definition of specific intensity}
+\label{specific_intensity}
+The definition of the specific intensity is 
+\begin{equation}
+I_{\nu} 
+	= \frac{dE_{\nu}}{\cos(\theta) d\Omega dt d\nu} 
+	= \frac{dE_{\nu}}{\mu d\Omega dt d\nu} 
+\end{equation}
+On the other hand, for the total energy of a collection of $N$ photons holds that 
+\begin{equation}
+E_{\nu} = N E_{\nu,\text{photon}} 
+\end{equation}
+
+\paragraph{To the point}
+From this we deduce that 
+\begin{equation}
+I_{\nu} \mu  = \frac{N(\mu) dE_{\nu,\text{photon}}}{d\Omega dt d\nu}
+\end{equation}
+and thus 
+\begin{equation}
+\boxed{I_{nu} \mu d\mu \sim N(\mu) d\mu}
+\end{equation}
+
+\paragraph{Considering the solid angle}
+In spherical geometry $d\Omega = \sin(\theta) d\theta d\phi = d\mu d\phi$.
+
+
+
 \newpage
 \section{Introduction: course material (Sundqvist - CMPAA course)}
 
@@ -790,6 +825,38 @@ Via least-squares approximation
 \newpage
 \section{Asymptotic Preserving Monte Carlo methods for transport equations in the diffusive limit (Dimarco+2018)}
 
+\section{Fluid and hybrid Fluid-Kinetic models (for neutral particles in plasma edge) (Horsten2019)}
+The material is mainly taken from \cite{HorstenNiels2019}.
+\begin{itemize}
+\item Kinetic Boltzmann equation: neutral velocity distribution $f_n(r,v)$
+\item If you taken into account (e.g. microscopic processes for atomic deuterium) then the kinetic Boltzmann equation becomes 
+\begin{equation}
+v\nabla f_n(r,v) = S_r(r,v) + S_{cx}(r,v) - f_n(r,v)(R_{cx}(r,v)+R_i(r))
+\label{Horsten_kinetic_equation}
+\end{equation}
+
+\item Numerical solution strategies
+\begin{itemize}
+\item finite differences/volumes/elements :computationally infeasible
+\item spectral methods (series expansion of $f_n(r,v)$: not suitable for modelling discontinuties
+\item stochatic approach: the whole velocity distribution is discretized by finite set of particles
+\end{itemize}  
+
+\item from Equation (\ref{Horsten_kinetic_equation}), the fluid model and the hybrid model is derived.
+\begin{itemize}
+\item Fluid model: 3 state equations (continuity -  momentum - energy) with boundary conditions
+\begin{itemize}
+\item pure-pressure equation: maximum error of 10 - 28 \% 
+\item with parallel momentum source: error 10 \%
+\item with ion energy source: error 30 \% 
+\end{itemize} 
+
+\item hybrid model based on micro-macro decomposition
+\end{itemize}
+
+\end{itemize}
+
+
 \newpage
 \section{Splitting methods}
 From notes by professor Frank.
@@ -820,5 +887,59 @@ As is pointed out in \cite{PinteChristophe2015CRT}, there are basically two meth
 \item multiple codes available from Instituto de Astrofyiica de Canarias (IAC)
 \item STiC: the Stockholm inve rsion code
 \end{itemize}
+
+\newpage
+\section{Integral equations}
+Based on the book \cite{Mmfp}.
+\begin{enumerate}
+\item integral equation from differential equation
+\item types of integral equations
+\item operator notation and existence of solutions
+\item closed-form solutions
+\begin{itemize}
+\item separable kernels
+\item integral transform method (Fourier transform)
+\item differentiation
+\end{itemize}
+
+\item Neumann series
+\item Fredholm theory
+\item Schmidt-Hilbert theory
+\end{enumerate}
+
+Fredholm equation first kind
+\begin{equation}
+0 = f + \lambda \mathcal{K}y
+\end{equation}
+
+Fredholm equation second kind
+\begin{equation}
+y = f + \lambda \mathcal{K}y
+\end{equation}
+
+
+\newpage
+\section{Master thesis discussions}
+\paragraph{limb darkening}
+\begin{itemize}
+\item the integro-differential equation describing radiative transfer
+\begin{equation}
+\begin{aligned}
+\frac{dI}{d\tau} &= -I +S  \\ 
+&= -I  + \frac{1}{4\pi} \int I d\Omega
+\end{aligned}
+\end{equation}
+
+\item The difficulty resides in the source function
+
+\item Monte Carlo simulation avoids explicit source function: source function implicit in Monte Carlo simulation
+
+\item in the Monte Carlo program, the physics are simulated \textsc{in between two consecutive scattering events} as follows
+\begin{equation}
+\frac{dI}{dz} = -\alpha I 
+\end{equation}
+thus $\frac{dI}{I} = -\alpha dz = -\delta \tau$ and $I = I_0 e^{-\delta \tau}$ and thus $\tau$ is sampled according to $\tau = - \log(X_{\text{random}})$
+\end{itemize}
+
 
 \end{document}

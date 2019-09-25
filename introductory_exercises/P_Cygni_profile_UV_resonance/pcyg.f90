@@ -47,34 +47,12 @@ program pcyg
 	use my_inter
 	implicit none
 
-	interface
-		function FUNC1(r)
+	  interface
+	  function FUNC(r)
 		  real, intent(in) :: r
-		  real :: FUNC1
-	  	end function FUNC1
-	end interface
-
-	! added this definition
-	interface
-	  	function FUNC2(r)
-		  real, intent(in) :: r
-		  real :: FUNC2
-	  	end function FUNC2
-	end interface
-
-	interface
-		function FUNC1b(r)
-		  real, intent(in) :: r
-		  real :: FUNC1
-	  	end function FUNC1b
-	end interface
-
-	interface
-	  	function FUNC2b(r)
-		  real, intent(in) :: r
-		  real :: FUNC2
-	  	end function FUNC2b
-	end interface
+		  real :: FUNC
+	  end function FUNC
+	  end interface
 
 	integer, parameter :: nchan=100
 	integer            :: nphoton
@@ -85,11 +63,11 @@ program pcyg
 
 	real :: xk0, alpha
 	real :: xmax, vmin, vmax, deltax, rmax, vmin1, vmax1 
-	real :: xrnd, xnew, xmuestart, xmuein, xmueou, pcheck, xnorm, randiso
-	real :: r,v,dvdr, sigma, tau, r1, r2
+	real :: xrnd, xnew, xmuestart, xmuein, xmueou, pcheck, xnorm, randiso, xstartt, dxstartt
+	real :: r,v,dvdr, sigma, tau
 
-	integer:: i, nphot, nin,nout, ichan, test_number, xnumber
-	character(len = 30) :: file_name
+	integer:: i, nphot, nin,nout, ichan, test_number
+	character(len = 50) :: file_name
 
 	call random_seed !(put=seed)
 
@@ -128,20 +106,25 @@ program pcyg
 	nin=0
 	nout=0
 
+	dxstartt = 2./nphoton;
+	xstartt = -1.-dxstartt;
+	
 	photons: do nphot=1,nphoton
 
 		call random_number(xstart)
 		xstart = xmax*xstart
 
+		if(test_number .eq. 5) then
+			xstartt = xstartt + dxstartt;	
+			xstart = xstartt*xmax;
+		endif 
+
 		call random_number(xrnd)
 		if(xrnd.ge..5) then
-		xstart = -xstart        				!continuum red wing
-		xnew = xstart
-		goto 5
-		endif  
-
-		! (positive) start frequency between vmin and vmax
-		! to avoid interaction zone at infinity, correction because of numerical precision     
+			xstart = -xstart        				!continuum red wing
+			xnew = xstart
+			goto 5
+		endif   
 
 		vmax1=vmax*.99
 		vmin1=vmin*1.01
@@ -164,10 +147,7 @@ program pcyg
 
 		pstart = sqrt(1.-xmuestart**2)  		!according p-ray
 
-		r1 = rtbis(func1 , 1.,rmax,1.e-5)   		!calculate interaction zone from x=mue*v
-		r2 = rtbis(func2 , 1.,rmax,1.e-5)   		!calculate interaction zone from x=mue*v
-		r = min(r1,r2);
-		xnumber = 1 + floor((r2-r)/abs(r2-r))
+		r = rtbis(func,1.,rmax,1.e-5)   		!calculate interaction zone from x=mue*v
 		      
 		xmuein=sqrt(1.-(pstart/r)**2)   		!calculate incident angle
 
@@ -179,28 +159,21 @@ program pcyg
 		call random_number(xrnd)
 		if (tau.gt. -log(xrnd)) then  			! calculate whether interaction      
 
-		   xmueou=xmueout(xk0,alpha,r,v,sigma)  	! calculate outwards angle
+		   xmueou=xmueout(xk0,alpha,r,v,sigma)  	!calculate outwards angle
 		   if (test_number .eq. 2) then
 			call random_number(randiso)
 			xmueou = 2.*randiso - 1.
 		   endif
 		   
-		   call random_number(xrnd)     		! calculate sign of outwards angle
-		   if(xrnd.ge..5) then        			! inwards photons
-		      	xmueou=-xmueou
-					      
-			if (xnumber .eq. 2) then
-				r = r2 + rtbis(func1b , 1.,rmax,1.e-5) 
-			elseif (xnumber .eq. 1) then
-				r = r1 + rtbis(func2b , 1.,rmax,1.e-5) 
-			endif
-				
+		   call random_number(xrnd)     		!calculate sign of outwards angle
+		   if(xrnd.ge..5) then        			!inwards photons
+		      xmueou=-xmueou
+		      pcheck=sqrt(r**2*(1.-xmueou**2))  	!check whether photon hits core      
 
-		      	pcheck = sqrt(r**2*(1.-xmueou**2))  	!check whether photon hits core      
-		      	if (pcheck.le.1.) then    
-			  nin = nin+1           		!core hit! forget photon
+		      if (pcheck.le.1.) then    
+			  nin=nin+1           			!core hit! forget photon
 			  cycle
-		      	endif
+		      endif
 		   endif  
 
 		!xnew=xstart+(v-sign(0.06,xmueou))*xmueou-v*xmuein !calculate new photon frequency
@@ -230,43 +203,14 @@ program pcyg
 	print*,float(nin)/float(nphoton)*100.,' % of photons scattered back into core'
 end program pcyg
 
-function func1(r)						! VELOCITY PROFILE
+function func(r)						! VELOCITY PROFILE
 	use common
 	implicit none
 	real, intent(in) :: r
-	real :: FUNC1
-	func1 = sqrt(1.-(p/r)**2)*(1.-b/r)**beta-x
+	real :: FUNC
+	func = sqrt(1.-(p/r)**2)*(1.-b/r)**beta-x
 	return
 end
-
-! added these definitions
-function func2(r)						! VELOCITY PROFILE
-	use common
-	implicit none
-	real, intent(in) :: r
-	real :: FUNC2
-	func2 = sqrt(1.-(p/r)**2)*(1.-b/r)**beta - x + 0.5
-	return
-end
-
-function func1b(r,r0)						! VELOCITY PROFILE
-	use common
-	implicit none
-	real, intent(in) :: r, r0
-	real :: FUNC1b
-	func1b = sqrt(1.-(p/(r+r0))**2)*(1.-b/(r+r0))**beta-x
-	return
-end
-
-function func2b(r,r0)						! VELOCITY PROFILE
-	use common
-	implicit none
-	real, intent(in) :: r, r0
-	real :: FUNC2b
-	func2b = sqrt(1.-(p/(r+r0))**2)*(1.-b/(r+r0))**beta - x + 0.5
-	return
-end
-
 
 function xmueout(xk0,alpha,r,v,sigma)		
 	implicit none
@@ -326,36 +270,3 @@ FUNCTION rtbis(func,x1,x2,xacc)
 	stop 'rtbis: too many bisections'
 END FUNCTION rtbis
 
-FUNCTION rtbisb(func,x1,x2,xacc,r0)
-	IMPLICIT NONE
-	REAL, INTENT(IN) :: x1,x2,xacc,r0
-	REAL :: rtbisb
-	interface
-		function FUNC(r,r0)
-		  real, intent(in) :: r,r0
-		  real :: FUNC
-		end function FUNC
-	end interface
-	INTEGER, PARAMETER :: MAXIT=40
-	INTEGER :: j
-	REAL    :: dx,f,fmid,xmid
-		
-	fmid=func(x2,r0)
-	f=func(x1,r0)
-	if (f*fmid >= 0.0) stop 'rtbis: root must be bracketed'
-	if (f < 0.0) then
-	        rtbisb=x1
-	        dx=x2-x1
-	else
-	        rtbisb=x2
-	        dx=x1-x2
-	end if
-	do j=1,MAXIT
-	        dx=dx*0.5
-	        xmid=rtbisb+dx
-	        fmid=func(xmid,r0)
-	        if (fmid <= 0.0) rtbisb=xmid
-	        if (abs(dx) < xacc .or. fmid == 0.0) RETURN
-	end do
-	stop 'rtbis: too many bisections'
-END FUNCTION rtbisb
