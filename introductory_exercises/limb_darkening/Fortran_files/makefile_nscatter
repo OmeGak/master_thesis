@@ -1,0 +1,7 @@
+nscatter_Dylan: nscatter_Dylan.o
+	gfortran -o nscatter_Dylan nscatter_Dylan.o
+
+nscatter_Dylan.o: nscatter_Dylan.f90
+	gfortran -c nscatter_Dylan.f90 -o nscatter_Dylan.o
+
+

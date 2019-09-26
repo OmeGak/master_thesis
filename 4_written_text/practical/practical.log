@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.20)  25 SEP 2019 21:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.20)  25 SEP 2019 23:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1488,23 +1488,32 @@ File: ../../introductory_exercises/limb_darkening/data/N_vs_opacity.png Graphic
 Package pdftex.def Info: ../../introductory_exercises/limb_darkening/data/N_vs_
 opacity.png  used on input line 766.
 (pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
- [21 <../../introductory_exercises/limb_darkening/data/N_vs_opacity.png (PNG co
-py)>]
+
+
+LaTeX Warning: Citation 'Dimarco2018' on page 21 undefined on input line 776.
+
+
+Overfull \hbox (10.13332pt too wide) in paragraph at lines 800--803
+[] 
+ []
+
+[21 <../../introductory_exercises/limb_darkening/data/N_vs_opacity.png (PNG cop
+y)>]
 
 LaTeX Warning: Citation 'Dublin_limb_darkening' on page 22 undefined on input l
-ine 822.
+ine 829.
 
 
-Overfull \hbox (10.13332pt too wide) in paragraph at lines 843--847
+Overfull \hbox (10.13332pt too wide) in paragraph at lines 850--854
 [] 
  []
 
 [22] [23] [24] [25] [26]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 929.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 929.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 936.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 936.
  (./practical.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 929.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 929.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 936.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 936.
 Package rerunfilecheck Info: File `practical.out' has not changed.
 (rerunfilecheck)             Checksum: E8DC33791DFEB4E6F5A03B2AC4D035FA;1620.
 
@@ -1526,7 +1535,7 @@ Package logreq Info: Writing requests to 'practical.run.xml'.
 Here is how much of TeX's memory you used:
  32522 strings out of 492641
  662054 string characters out of 6131786
- 1140726 words of memory out of 5000000
+ 1140750 words of memory out of 5000000
  35728 multiletter control sequences out of 15000+600000
  8660 words of font info for 34 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1546,7 +1555,7 @@ r9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on practical.pdf (26 pages, 705107 bytes).
+Output written on practical.pdf (26 pages, 705511 bytes).
 PDF statistics:
  489 PDF objects out of 1000 (max. 8388607)
  422 compressed objects within 5 object streams

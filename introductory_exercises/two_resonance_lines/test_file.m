@@ -25,6 +25,22 @@ save = 1
 
 one_radial_line_beta_version(nphot , xk0 , alpha , beta , make_plot , save)
 
+%% test two_radial_lines
+clc, clear all, close all
+
+nphot = 10^4
+xk0 = 100
+alpha = 0
+beta = 1
+
+make_plot = 1
+save = 1
+
+two_lines_RADIAL(nphot , xk0 , alpha , beta , make_plot , save)
+
+
+
+
 %% plot Sobolev approximation function
 
 clc, clear all, close all

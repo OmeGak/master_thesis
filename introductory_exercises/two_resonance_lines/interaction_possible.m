@@ -1,4 +1,4 @@
-function interaction_possibility =  interaction_possible(xstart,vmax,vmin)
+function [goto_end_of_loop , xnew] =  interaction_possible(xstart,vmax,vmin)
     goto_end_of_loop = 0;
     xnew = 0;        
 
@@ -16,6 +16,4 @@ function interaction_possibility =  interaction_possible(xstart,vmax,vmin)
         xnew = xstart;
         goto_end_of_loop = 1;
     end
-    
-    interaction_possibility = [goto_end_of_loop , xnew];
 end

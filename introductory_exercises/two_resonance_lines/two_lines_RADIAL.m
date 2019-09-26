@@ -1,5 +1,4 @@
-function one_radial_line_beta_version(nphot , xk0 , alpha , beta , make_plot , save)   
-
+function two_lines_RADIAL(nphot , xk0 , alpha , beta , make_plot , save)   
     [nchan,vmax,vmin,deltax,freq,flux,b,xmax,rmax,nin,nout] = param_init(nphot,xk0,alpha,beta)
 
     % loop over all photons
@@ -20,6 +19,3 @@ function one_radial_line_beta_version(nphot , xk0 , alpha , beta , make_plot , s
 
     normalise_and_plot(nphot,nchan,nin,flux,make_plot,freq,save)   
 end
-    
-    
-    
