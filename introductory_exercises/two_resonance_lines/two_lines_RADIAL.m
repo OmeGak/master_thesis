@@ -8,7 +8,7 @@ function two_lines_RADIAL(nphot , xk0 , alpha , beta , make_plot , save)
         [goto_end_of_loop,xnew] = interaction_possible(xstart,vmax,vmin)
 
         if (goto_end_of_loop == 0)    
-            [xnew,nin] = make_scattering(xstart,beta,alpha,b,rmax,xk0,nin)    
+            [xnew,nin] = make_scattering_RADIAL(xstart,beta,alpha,b,rmax,xk0,nin)    
         end
 
         % tally the photons
