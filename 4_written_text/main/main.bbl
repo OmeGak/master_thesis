@@ -19,6 +19,47 @@
 
 \refsection{0}
   \datalist[entry]{anyt/global//global/global}
+    \entry{Mmfp}{book}{}
+      \name{author}{3}{}{%
+        {{hash=8e77711ea64d6039c3fff29c189e315e}{%
+           family={Bence},
+           familyi={B\bibinitperiod},
+           given={S.\bibnamedelimi J},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=61465785c79f0dea480c427937b9e85d}{%
+           family={Hobson},
+           familyi={H\bibinitperiod},
+           given={M.\bibnamedelimi P},
+           giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=463987e2d7ceaa78fcc1333ddf7d7958}{%
+           family={Riley},
+           familyi={R\bibinitperiod},
+           given={K.\bibnamedelimi F},
+           giveni={K\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University press}%
+      }
+      \strng{namehash}{c66baa5bda29e848e8296eb6dd5848bd}
+      \strng{fullhash}{c66baa5bda29e848e8296eb6dd5848bd}
+      \strng{bibnamehash}{c66baa5bda29e848e8296eb6dd5848bd}
+      \strng{authorbibnamehash}{c66baa5bda29e848e8296eb6dd5848bd}
+      \strng{authornamehash}{c66baa5bda29e848e8296eb6dd5848bd}
+      \strng{authorfullhash}{c66baa5bda29e848e8296eb6dd5848bd}
+      \field{labelalpha}{BHR02}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2nd ed.}
+      \field{isbn}{0521890675}
+      \field{title}{Mathematical methods for physics and engineering : a comprehensive guide}
+      \field{year}{2002}
+      \keyw{Mathematics--?-74}
+    \endentry
     \entry{Busbridge}{book}{}
       \name{author}{1}{}{%
         {{hash=893ca26c9ee6698f7420077a1212960a}{%
@@ -272,6 +313,34 @@
       \verb http://www.ita.uni-heidelberg.de/~dullemond/software/radmc-3d/
       \endverb
     \endentry
+    \entry{Dublin_limb_darkening}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b525a5a5b3b2138bc401233f491b5cae}{%
+           family={Espey},
+           familyi={E\bibinitperiod},
+           given={Brian},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{b525a5a5b3b2138bc401233f491b5cae}
+      \strng{fullhash}{b525a5a5b3b2138bc401233f491b5cae}
+      \strng{bibnamehash}{b525a5a5b3b2138bc401233f491b5cae}
+      \strng{authorbibnamehash}{b525a5a5b3b2138bc401233f491b5cae}
+      \strng{authornamehash}{b525a5a5b3b2138bc401233f491b5cae}
+      \strng{authorfullhash}{b525a5a5b3b2138bc401233f491b5cae}
+      \field{labelalpha}{Esp}
+      \field{sortinit}{E}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Lecture notes, Astrophysical Spectroscopy}
+      \field{urlyear}{}
+      \verb{urlraw}
+      \verb https://www.tcd.ie/Physics/study/current/undergraduate/lecture-notes/py3a06/PY3A06_plane_parallel_grey_atmosphere_2011_2012.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.tcd.ie/Physics/study/current/undergraduate/lecture-notes/py3a06/PY3A06_plane_parallel_grey_atmosphere_2011_2012.pdf
+      \endverb
+    \endentry
     \entry{Harries2019}{article}{}
       \name{author}{5}{}{%
         {{hash=288012027a4f18a15c6f2926df023750}{%
@@ -457,6 +526,40 @@
       \verb http://arxiv.org/abs/1706.01937
       \endverb
     \endentry
+    \entry{HorstenNiels2019}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=eedc15865fd154c279267a30ddf26481}{%
+           family={Horsten},
+           familyi={H\bibinitperiod},
+           given={Niels},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Leuven}%
+      }
+      \list{publisher}{1}{%
+        {KU Leuven. Faculty of Engineering Science}%
+      }
+      \strng{namehash}{eedc15865fd154c279267a30ddf26481}
+      \strng{fullhash}{eedc15865fd154c279267a30ddf26481}
+      \strng{bibnamehash}{eedc15865fd154c279267a30ddf26481}
+      \strng{authorbibnamehash}{eedc15865fd154c279267a30ddf26481}
+      \strng{authornamehash}{eedc15865fd154c279267a30ddf26481}
+      \strng{authorfullhash}{eedc15865fd154c279267a30ddf26481}
+      \field{labelalpha}{Hor19}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Fluid and Hybrid Fluid-Kinetic Models for the Neutral Particles in the Plasma Edge of Nuclear Fusion Devices}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://lirias.kuleuven.be/handle/123456789/634723
+      \endverb
+      \verb{url}
+      \verb https://lirias.kuleuven.be/handle/123456789/634723
+      \endverb
+    \endentry
     \entry{TheoryStellarAtmospheres2014}{book}{}
       \name{author}{1}{}{%
         {{hash=daf6061f3d37be1d6dd7ce267b795fbe}{%
@@ -504,7 +607,7 @@
       \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{In many astrophysical situations, radiation plays an important role in the dynamics of the system. Hot massive stars, for example, have powerful radiation-driven stellar winds with mass loss rates that can exceed 10^{-6} solar masses per year. In this thesis, a hydrodynamics code MPI-AMRVAC is modified and used to simulate radiation effects using two different formalisms: First, the focus is on highly accelerating media that are optically thick to continuum radiation. A spectral line driving formalism is introduced and used to simulate the winds of hot, massive stars. Second, a more general approach is developed by solving the complete radiation hydrodynamics equations. The line driving formalism, called CAK-theory, has analytical solutions which are compared to our simulations with good agreement. Having implemented and benchmarked such a CAK-routine in MPI-AMRVAC, future work will focus on simulating the interaction of a hot massive star wind with a compact object by means of accretion. The second approach in this thesis uses the flux limited diffusion approximation. We start with working out some test cases to check on the implementation of the code. Afterwards, we try our hand at 2D simulations of a radiation-dominated massive-star atmosphere, comparing results to theoretical predictions from perturbation theory. Here, future work will focus on further investigation of radiation-instabilities occurring in such atmospheres for stars near the stellar upper mass limit.}
+      \field{abstract}{In many astrophysical situations, radiation plays an important role in the dynamics of the system. Hot massive stars, for example, have powerful radiation-driven stellar winds with mass loss rates that can exceed 10^(-6) solar masses per year. In this thesis, a hydrodynamics code MPI-AMRVAC is modified and used to simulate radiation effects using two different formalisms: First, the focus is on highly accelerating media that are optically thick to continuum radiation. A spectral line driving formalism is introduced and used to simulate the winds of hot, massive stars. Second, a more general approach is developed by solving the complete radiation hydrodynamics equations. The line driving formalism, called CAK-theory, has analytical solutions which are compared to our simulations with good agreement. Having implemented and benchmarked such a CAK-routine in MPI-AMRVAC, future work will focus on simulating the interaction of a hot massive star wind with a compact object by means of accretion. The second approach in this thesis uses the flux limited diffusion approximation. We start with working out some test cases to check on the implementation of the code. Afterwards, we try our hand at 2D simulations of a radiation-dominated massive-star atmosphere, comparing results to theoretical predictions from perturbation theory. Here, future work will focus on further investigation of radiation-instabilities occurring in such atmospheres for stars near the stellar upper mass limit.}
       \field{title}{Radiation-Hydrodynamics with MPI-AMRVAC: Massive-Star Atmospheres and Winds}
       \field{year}{2018}
     \endentry
@@ -691,6 +794,7 @@
     \endentry
   \enddatalist
   \missing{RADICAL}
+  \missing{TSAHM}
 \endrefsection
 \endinput
 

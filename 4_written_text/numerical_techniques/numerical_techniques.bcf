@@ -1975,11 +1975,19 @@
     <bcf:datasource type="file" datatype="bibtex">../mendeley.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">MoensNicolas</bcf:citekey>
-    <bcf:citekey order="2">TheoryStellarAtmospheres2014</bcf:citekey>
-    <bcf:citekey order="3">WikiHeat</bcf:citekey>
-    <bcf:citekey order="4">Busbridge</bcf:citekey>
-    <bcf:citekey order="5">Mmfp</bcf:citekey>
+    <bcf:citekey order="1">WWBW2001</bcf:citekey>
+    <bcf:citekey order="2">WWBW2013</bcf:citekey>
+    <bcf:citekey order="3">HorstenNiels2019</bcf:citekey>
+    <bcf:citekey order="4">PinteChristophe2015CRT</bcf:citekey>
+    <bcf:citekey order="5">RADICAL</bcf:citekey>
+    <bcf:citekey order="6">MULTI</bcf:citekey>
+    <bcf:citekey order="7">Carlsson1986</bcf:citekey>
+    <bcf:citekey order="8">Camps2015</bcf:citekey>
+    <bcf:citekey order="9">Harries2019</bcf:citekey>
+    <bcf:citekey order="10">RADMC3D</bcf:citekey>
+    <bcf:citekey order="11">Hubeny2017</bcf:citekey>
+    <bcf:citekey order="12">Hubeny2017a</bcf:citekey>
+    <bcf:citekey order="13">Hubeny2017b</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="anyt">

@@ -1,43 +1,17 @@
-\BOOKMARK [1][-]{section.1}{Glossary}{}% 1
-\BOOKMARK [1][-]{section.2}{General equations - first year overview}{}% 2
-\BOOKMARK [1][-]{section.3}{Very broad introduction \046 Summary}{}% 3
-\BOOKMARK [2][-]{subsection.3.1}{Definitions and equations}{section.3}% 4
-\BOOKMARK [2][-]{subsection.3.2}{Overview of symmetry assumptions}{section.3}% 5
-\BOOKMARK [2][-]{subsection.3.3}{Overview of units}{section.3}% 6
-\BOOKMARK [2][-]{subsection.3.4}{Things to know}{section.3}% 7
-\BOOKMARK [2][-]{subsection.3.5}{Definition of specific intensity}{section.3}% 8
-\BOOKMARK [1][-]{section.4}{Introduction: course material \(Sundqvist - CMPAA course\)}{}% 9
-\BOOKMARK [2][-]{subsection.4.1}{EXERCISES: Introduction to numerical methods for radiation in astrophysics}{section.4}% 10
-\BOOKMARK [2][-]{subsection.4.2}{Implicit 1D solver \(20-11-2018\)}{section.4}% 11
-\BOOKMARK [2][-]{subsection.4.3}{ADI 2D Solver}{section.4}% 12
-\BOOKMARK [2][-]{subsection.4.4}{Area of a circle}{section.4}% 13
-\BOOKMARK [2][-]{subsection.4.5}{Limb Darkening}{section.4}% 14
-\BOOKMARK [1][-]{section.5}{The mathematics of Radiative Transfer}{}% 15
-\BOOKMARK [2][-]{subsection.5.1}{Auxiliary mathematics}{section.5}% 16
-\BOOKMARK [2][-]{subsection.5.2}{The H-functions}{section.5}% 17
-\BOOKMARK [1][-]{section.6}{Monte Carlo and Radiative Transfer \(Puls\)}{}% 18
-\BOOKMARK [2][-]{subsection.6.1}{basic definitions and facts}{section.6}% 19
-\BOOKMARK [2][-]{subsection.6.2}{about random numbers}{section.6}% 20
-\BOOKMARK [2][-]{subsection.6.3}{MC integration}{section.6}% 21
-\BOOKMARK [2][-]{subsection.6.4}{MC simulation}{section.6}% 22
-\BOOKMARK [2][-]{subsection.6.5}{Exercise 1: RNG}{section.6}% 23
-\BOOKMARK [2][-]{subsection.6.6}{Exercise 2: Planck-function}{section.6}% 24
-\BOOKMARK [2][-]{subsection.6.7}{limb darkening}{section.6}% 25
-\BOOKMARK [1][-]{section.7}{Introduction to Monte Carlo Radiation Transfer \(Wood+\)}{}% 26
-\BOOKMARK [2][-]{subsection.7.1}{Elementary principles}{section.7}% 27
-\BOOKMARK [2][-]{subsection.7.2}{Eddington factors}{section.7}% 28
-\BOOKMARK [2][-]{subsection.7.3}{Example: plane parallel atmosphere}{section.7}% 29
-\BOOKMARK [2][-]{subsection.7.4}{Monte Carlo Radiative Transfer}{section.7}% 30
-\BOOKMARK [2][-]{subsection.7.5}{P Cygni profile for beta-velocity law and given opacity Monte Carlo simulation}{section.7}% 31
-\BOOKMARK [1][-]{section.8}{Challenges in Radiative Transfer \(Ivan Milic\)}{}% 32
-\BOOKMARK [2][-]{subsection.8.1}{Overview of the problem}{section.8}% 33
-\BOOKMARK [2][-]{subsection.8.2}{Challenging domains of application}{section.8}% 34
-\BOOKMARK [1][-]{section.9}{Asymptotic Preserving Monte Carlo methods for transport equations in the diffusive limit \(Dimarco+2018\)}{}% 35
-\BOOKMARK [1][-]{section.10}{Fluid and hybrid Fluid-Kinetic models \(for neutral particles in plasma edge\) \(Horsten2019\)}{}% 36
-\BOOKMARK [1][-]{section.11}{plitting methods}{}% 37
-\BOOKMARK [2][-]{subsection.11.1}{Exercises}{section.11}% 38
-\BOOKMARK [1][-]{section.12}{Overview of existing \(Monte Carlo\) radiative transfer codes}{}% 39
-\BOOKMARK [2][-]{subsection.12.1}{Synthesis codes}{section.12}% 40
-\BOOKMARK [2][-]{subsection.12.2}{Inversion codes}{section.12}% 41
-\BOOKMARK [1][-]{section.13}{Integral equations}{}% 42
-\BOOKMARK [1][-]{section.14}{Master thesis discussions}{}% 43
+\BOOKMARK [1][-]{section.1}{General equations - first year overview}{}% 1
+\BOOKMARK [1][-]{section.2}{Very broad introduction \046 Summary}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Definition of specific intensity}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Radiation equations}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Radiative Diffusion Approximation}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Applications and approximations for radiative forces}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.5}{RHD equations}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.6}{Overview of symmetry assumptions}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.7}{Overview of units}{section.2}% 9
+\BOOKMARK [1][-]{section.3}{The mathematics of Radiative Transfer}{}% 10
+\BOOKMARK [2][-]{subsection.3.1}{Auxiliary mathematics}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.2}{The H-functions}{section.3}% 12
+\BOOKMARK [2][-]{subsection.3.3}{Integral equations}{section.3}% 13
+\BOOKMARK [1][-]{section.4}{Challenges in Radiative Transfer}{}% 14
+\BOOKMARK [2][-]{subsection.4.1}{Overview of the problem}{section.4}% 15
+\BOOKMARK [2][-]{subsection.4.2}{Challenging domains of application}{section.4}% 16
+\BOOKMARK [1][-]{section.5}{Glossary}{}% 17

@@ -58,10 +58,13 @@
 \item Towards a mathematical description of the problem.
 \end{enumerate}
 
+
 \newpage
 \section{Overview of exercises (PART IV)}
+\label{Overview_Part_4}
+
 \begin{enumerate}
-\item Convergence analysis: also fit a line through the points (see Section \underline{\ref{convergence_analysis}}). Formally, we write $V = CN^x$ and determine both $C$ and $X$ from experimental data. Correspondingly, $\log(V) = \log(C) + x\log(N)$. This is fitted using least-squares.
+\item Convergence analysis: also fit a line through the points. Formally, we write $V = CN^x$ and determine both $C$ and $X$ from experimental data. Correspondingly, $\log(V) = \log(C) + x\log(N)$. This is fitted using least-squares (see Section \underline{\ref{convergence_analysis}}).
 
 \item Variance reduction technique
 \begin{itemize}
@@ -78,9 +81,267 @@
 \end{enumerate}
 
 
+
+
+\newpage
+\section{Introductory exercises}
+
+\subsection{Analytical exercises}
+From course material from (prof. Sundqvist - CMPAA course).
+
+\begin{enumerate}
+\item introduction
+\item radiation quantities
+\begin{itemize}
+
+\item exercise p.3: 
+\begin{itemize}
+\item on one hand, we know that $\Delta \epsilon \sim C/r^2 $
+\item on the other hand, from the definition we know  that $\Delta \epsilon = I_{\nu} A_1 A_2/r^2 \Delta \nu \Delta t$
+\item combining these equations shows that $I_{\nu}$ is independent from $r$
+\end{itemize}
+
+\item exercise p.4:
+\begin{itemize}
+\item 
+\end{itemize}
+
+\item exercise 1:
+\begin{itemize}
+\item $F_x =  \int_0^{\pi} \left[ I_{\nu}(\theta)\sin^2(\theta) \int_0^{2 \pi}\cos(\phi) \right] d\theta d \phi = 0 $
+\item the same reasoning for $F_y = 0$
+\end{itemize}
+
+\item exercise 2:
+\begin{itemize}
+\item the equation follows from $d\mu = d\cos(\theta) = \sin(\theta) d\theta$
+\end{itemize}
+
+\item exercise 3: 
+\begin{itemize}
+\item isotropic radiation field (i.e. $I(\mu) = I$) then we have $F_{\nu} = 2 \pi  \int_{-1}^{1} I \mu d\mu = 2 \pi I \left. \frac{x^2}{2}\right \rvert_
+{-1}^{1} = 0$
+\end{itemize}
+
+\item exercise 4:
+\begin{itemize}
+\item $F_{\nu} = 2 \pi  \int_{-1}^{1} I(\mu) \mu d\mu 
+	= 2 \pi  \int_{-1}^{0} I_{\nu}^{-} \mu d\mu 
+	+ 2 \pi  \int_{0}^{1} I_{\nu}^{+} \mu d\mu 
+	= 2 \pi I_{\nu}^+ $
+\end{itemize}
+
+\item exercise p.7:
+\begin{itemize}
+
+\item isotropic radiation field:
+\begin{itemize}
+\item although the radiation pressure is a tensor, we will denote it as a scalar $P_{\nu} = \frac{4 \pi I_{\nu}}{c}$
+\item the radiation energy density $E_{\nu} = \frac{12 \pi I_{\nu}}{c} $
+\item thus $f_{\nu} = \frac{1}{3}$
+\end{itemize}
+
+\item very strongly peaked in radial direction (beam): $I_{\nu} = I_0 \delta(\mu- \mu_0)$ with $\mu_0 = 1$
+\begin{itemize}
+\item pressure tensor $P_{nu} = \frac{1}{c} \int I_0 \delta(\mu- \mu_0) nn d \Omega$
+\item energy density $E_{\nu} = \frac{1}{c}\int I_{\nu} d\Omega$
+\item in this case $P_{\nu} = E_{\nu}$ thus $f_{\nu} = 1$
+\end{itemize}
+\end{itemize}
+
+\end{itemize}
+
+\item radiation transport vs. diffusion vs. equilibrium
+\begin{itemize}
+\item exercise p. 12: 1D, Cartesian geometry, plane-parallel, frequency-independent and isotropic emission/extinction
+\begin{itemize}
+
+\item radiation energy equation 
+\begin{itemize}
+\item The equation follows by integrating Equation (\ref{plane_parallel_radiation})
+\item By definition, $E= \frac{1}{c}\iint I_{\nu} d\nu d\Omega$
+\item thus $\frac{dE}{dr} = \int (j-kI) d\nu d\Omega$ thus $\boxed{\frac{dE}{dr} = \frac{(j-kI)4\pi(\nu_1-\nu_0)}{c}}$
+\item work out the integral taking into account frequency-independent and isotropic coefficients: 
+\end{itemize}
+
+\item zeroth momentum equations
+\begin{itemize}
+\item One must also take into account the specific form of the flux vector \\ $F = \iint I_{\nu} n d\nu d\Omega = 2 \pi \int_{-1}^1 I_{\nu}(\mu) \mu d \mu$
+\item thus $\frac{dF}{dr} = \frac{1}{c} \int (j-kI) n d\nu d\Omega$ thus $\boxed{\frac{dF}{dr} = \frac{(j-kI)4\pi(\nu_1-\nu_0)n}{c}}$
+\end{itemize} 
+
+\item first moment equation
+\begin{itemize}
+\item similar reasoning
+\item $\frac{dP}{dr} = \int (j-kI) n.n d\nu d\Omega$ thus $\boxed{\frac{dF}{dr} = \frac{(j-kI)4\pi(\nu_1-\nu_0)n}{c}}$
+\end{itemize}
+\end{itemize}
+
+\item first exercise p. 15
+\begin{itemize}
+\item $P = \frac{1}{c}\iint I_{\nu} \mu^2 d\Omega d\nu = \frac{2 \pi}{c} \int_{\nu} \int_{-1}^{1} I_{\nu} \mu^2 d\mu d\nu = \frac{4 \pi}{3c} \int B_{\nu} d\nu = \frac{a T^4}{3} = \frac{E}{3} $
+\end{itemize}
+
+\item second exercise p.15 
+\begin{itemize}
+\item assuming the diffusion limit, 
+\item flux-weighted mean opacity $\kappa_F = \frac{\int F_{\nu} \kappa_{\nu}d\nu}{\int F_{\nu} d\nu}$
+\item Rosseland mean opacity $\frac{1}{\kappa_R} = \frac{\int_0^{\infty}\frac{1}{\kappa_{\nu}}\frac{dB_{\nu}}{dT}}{\int_0^{\infty} \frac{dB_{\nu}}{dT} d\nu}$. 
+\begin{itemize}
+\item in the diffusion limit, $F_{\nu} = - \frac{4 \pi}{3}\frac{d B_{\nu}}{k_{\nu} dz}$ thus $\frac{dB_{nu}}{dT} =$
+\item  
+\end{itemize}
+\end{itemize}
+
+
+\item third exercise p.15
+
+\end{itemize}
+
+
+
+\item the equations of radiation-hydrodynamics
+\item numerical techniques for the radiative diffusion approximation
+
+\item applications and approximations for a dynamically important radiative force in supersonic flows
+\begin{itemize}
+\item exercise p.27: $L_{SOB} = \Delta r = \frac{v_{th}}{dv/dr} = \frac{10 [km/s]}{1000 [km/s]/R_{*}} = 0.01 R_{*}$
+\end{itemize}
+
+\item Appendix A: properties of equilibrium black-body radiation
+\begin{itemize}
+
+\item exercise p. 29
+\begin{itemize}
+\item this should be satisfied: $B_{\nu} d\nu = -B_{\lambda} d\lambda$ and also $\nu  = \frac{c}{\lambda}$
+\item this is equivalent to saying that $0 = \nu d \lambda + \lambda d \nu$ or $d \lambda = - \frac{\lambda}{\nu} d\nu$ thus $B_{\lambda} = \frac{\nu}{\lambda} B_{\nu}$
+\item $B_{\lambda}(T) = \frac{\nu}{\lambda} \frac{2h \nu^3}{(\lambda \nu)^2} \frac{1}{e^{h c/ \lambda kT} - 1} = \frac{2h \nu^2}{\lambda^3} \frac{1}{e^{h c/ \lambda kT} - 1} = \frac{2hc^2}{\lambda^5} \frac{1}{e^{h c/ \lambda kT} - 1}$ 
+\end{itemize}
+
+\item first exercise p.31
+\begin{itemize}
+\item derive that $\lambda_{max} T = 2897.8 [\mu m K]$
+\item ...
+\end{itemize}
+
+\item second exercise p.31
+\begin{itemize}
+\item this is about the spectra of (unknown) stars
+\end{itemize}
+
+\item first exercise p.32
+\begin{itemize}
+\item see exercise 7
+\end{itemize}
+
+\item second exercise p.32
+\begin{itemize}
+\item BB radiation: $I_{\nu} = \frac{2h \nu^3}{c^2} \frac{1}{e^{h \nu/kt}-1}$
+\item the radiative flux for isotropic BB radiation is zero. See also exercise 3. This dus also holds for BB radiation.
+\end{itemize}
+
+\item exercise p. 33
+\begin{itemize}
+\item \underline{HR-diagram}
+\end{itemize}
+
+\end{itemize}
+
+\item Appendix B: Simple examples to the radiative transfer equation
+\begin{itemize}
+
+\item first exercise p. 34
+\begin{itemize}
+\item start from radiative transport equation $\mu \frac{dI}{ds} = \alpha - \eta I$ in which $\eta = 0$ thus $\boxed{\mu \frac{dI}{ds} = \alpha}$
+\item solving the ODE in the general case that $\alpha(s)$ is not constant: 
+\begin{itemize}
+\item integrate the equation $\mu I = \int_0^D \alpha ds$
+\item ...
+\end{itemize}
+ 
+\item second exercise p. 34
+\begin{itemize}
+\item case $\tau(D) >> 1$: then $I(D) \approx S$ 
+\item case $\tau(D) << 1$: then $I(D) \approx I(0)+S(1-1) = I(0)$
+\end{itemize} 
+ 
+\item first exercise p.35
+\begin{itemize}
+\item is the plane-parallel approximation valid for the solar photosphere?
+\end{itemize} 
+
+\item second exercise p.35
+\begin{itemize}
+\item goal: find a solution to the equation $\mu \frac{dI_{\nu}}{d\tau_{\nu}} = I_{\nu} - S_{\nu}$ where $I(\tau,\mu)$
+\item solution
+\end{itemize}
+ 
+\end{itemize}
+
+\item second exercise p.35
+\end{itemize}
+
+\item Appendix C: connecting random walk of photons with radiative diffusion model
+\begin{itemize}
+\item exercise p. 38. Computing the average photon mean-free path inside the Sun. \\
+$l = \frac{1}{\kappa \rho} = \frac{V_o}{\kappa M_o} [cm]$
+
+\item exercise p.39. Computing the random-walk time (diffusion time) for photons
+
+\end{itemize}
+\end{enumerate}
+
+\subsection{Numerical exercises}
+\subsubsection{Implicit 1D solver}
+Exercise from (20-11-2018).
+\paragraph{Goal} Implement implicit solver for time-dependent diffusion equation
+\begin{equation}
+\partial_t u = \partial_{xx}u
+\end{equation}
+\paragraph{Solution}
+The convergence behaviour of the method is shown in Figure \ref{1D_implicit_diffusion}.
+
+\begin{figure}[!htp]
+\centering
+\includegraphics[width=0.55\textwidth]{../../introductory_exercises/diffusion_implicit_1D_solver/data/convergence.png}
+\caption{Convergence behaviour for 1D implicit solver (diffusion equation)}
+\label{1D_implicit_diffusion}
+\end{figure}
+
+
+\subsubsection{ADI 2D Solver}
+\paragraph{Goal} Implement implicit solver for time-dependent diffusion equation
+\begin{equation}
+\partial_t u(t,x,y) = \partial_{xx}u(t,x,y) + \partial_{yy}u(t,x,y)
+\end{equation}
+\paragraph{Solution}
+There is still an error in the code. 
+
+
+\subsubsection{Area of a circle}
+\paragraph{Goal}
+Develop Monte Carlo code
+\paragraph{Solution}
+
+\subsection{Other Exercises}
+From course material from Ivan Milic.
+\subsubsection{Lecture 7}
+\begin{enumerate}
+\item Derive expressions for the emergent radiation when properties are the following:
+\begin{itemize}
+\item optically thin slab at all wavelengths
+\item wavelength-independent incident radiation
+\end{itemize}
+Solution: see slide 14?
+
+\item Derive ralations between Einstein coefficients.
+
+\item Calculate electron density in atmosphere from FALC model
+\end{enumerate}
+
+
 \newpage
 \section{Limb darkening program}
-
 \label{limb_darkening_discussion}
 
 \subsubsection{2D Case}
@@ -859,23 +1120,6 @@ Discretization scheme:
   }}
 
 \newpage
-\section{Milic Exercises}
-\subsection{Lecture 7}
-\begin{enumerate}
-\item Derive expressions for the emergent radiation when properties are the following:
-\begin{itemize}
-\item optically thin slab at all wavelengths
-\item wavelength-independent incident radiation
-\end{itemize}
-Solution: see slide 14?
-
-\item Derive ralations between Einstein coefficients.
-
-\item Calculate electron density in atmosphere from FALC model
-\end{enumerate}
-
-
-\newpage
 \section{Mass loss from inhomogeneous hot star winds (Sundqvist)}
 \begin{itemize}
 \item GOAL: synthesis of UV resonance lines from inhomogeneous 2D winds
@@ -927,21 +1171,4 @@ Solution: see slide 14?
 
 \item RADIATIVE TRANSFER (MC-2D)
 \end{itemize}
-
-\newpage
-\section{Asymptotic preserving Monte Carlo methods for radiative transfer equation in diffusion limit (Dimarco+ 2018)}
-\subsection{Goldstein-Taylor}
-\subsection{Radiative transfer}
-
-\newpage
-\section{Do not forget}
-\begin{itemize}
-\item convergence plots
-\end{itemize}
-
-\section{Theory of Stellar Atmospheres (I. Hubeny and D. Mihalas)}
-\begin{itemize}
-\item Definition of $J$ in Equation (3.15)
-\end{itemize}
-
 \end{document}

@@ -538,7 +538,6 @@ keywords = {Astrophysics - Instrumentation And Methods For Astrophysics},
 }
 
 @misc{HorstenNiels2019,
-abstract = {Plasma edge simulations are extensively used for the development of operational scenarios of existing and future magnetic confinement based fusion devices and the design of future reactors. One typically solves a set of Navier-Stokes like fluid equations for the plasma, whereas the neutral atoms and molecules are usually treated kinetically with a Monte Carlo simulation. An example of such a kinetic Monte Carlo code is the worldwide used EIRENE code [1].This dissertation deals entirely with the neutral part. The kinetic Monte Carlo simulation becomes computationally costly for high-collisional cases and the statistical noise hampers the convergence assessment when solving the coupled fluid plasma-kinetic neutral equations. This becomes especially problematic for the ITER and DEMO reactors that are intended to operate in the so-called detached regime with a high number of ion-neutral interactions to reduce the divertor target heat loads. An important process are the charge-exchange collisions between hydrogenic ions and atoms.The high number of charge-exchange ion-atom collisions makes that the neutral atom velocity distribution tends to the ion (thermodynamic) equilibrium distribution. Consequently, the neutral atoms reach the fluid limit, at least in some regions of the domain. In the first part of this thesis, we develop fluid models for the deuterium atoms for charge-exchange dominated cases. The fluid equations are properly derived from the underlying kinetic description. This leads to transport coefficient expressions that are consistent with the microscopic cross-sections and rate coefficients. Additionally, the boundary conditions are of crucial importance to get accurate fluid neutral results. We aim to incorporate the microscopic reflection physics by imposing macroscopic boundary fluxes that follow from an estimate of the neutral velocity distribution at the boundaries.We assess three fluid neutral models by comparing the resulting plasma sources to the Monte Carlo solution of the kinetic equation. This is done for a fixed background plasma that is typical for a (partially) detached ITER case. The first fluid model consists of a pure pressure-diffusion equation with the assumption of ion-neutral thermal equilibrium, i.e., equal ion and neutral temperatures. This model gives only accurate results for the particle source with a maximum error of 28% in the first cell adjacent to the target plate and errors smaller than 10% further away from the target. However, this simple model does not provide satisfying results for the parallel momentum and ion energy sources, even not qualitatively. Therefore, we have added a parallel momentum equation for the second model. While keeping the same accuracy for the particle source, also the momentum and energy source become accurate with maximum relative errors of respectively 10% and 30% in the flux tube where the momentum and energy sources peak. Finally, for the third model we no longer assume ion-neutral thermal equilibrium by adding a separate neutral energy equation. This further reduces the maximum errors for the momentum and energy sources to respectively 6% and 14%. The fluid-kinetic discrepancies are significantly reduced compared to state-of-the-art fluid neutral models, mainly due to the newly developed boundary conditions without user-defined fitting parameters. The remaining modeling error is of the same order of magnitude as the discretization error.In the second part of the thesis, we develop a hybrid fluid-kinetic neutral model based on a micro-macro decomposition of the kinetic equation [2]. The three developed fluid neutral models are re-used as macro models with kinetic correction terms to compensate for the errors introduced by the closure approximations. These kinetic corrections are estimated by means of a Monte Carlo simulation of the micro equation. The objective of this hybrid approach is to reduce the statistical error for a given computational time compared to a full kinetic Monte Carlo simulation, with a limited loss of accuracy.For a high recycling slab case with fixed background plasma, the hybrid model with pure pressure-diffusion equation is only able to reduce the particle source statistical error with approximately a factor 1.6. Including a parallel momentum equation gives a statistical error reduction of approximately a factor 1.9 and 3.3 for respectively the particle and parallel momentum source, but there is no decrease of the ion energy source error. Adding an energy equation leads to statistical error reduction factors of approximately 2.3, 5.3 and 4.9 for respectively the particle, momentum and energy source. However, for this latter model the remaining hybrid-kinetic discrepancy is the largest. Finally, it should be noted that the square of these statistical error reduction factors corresponds to the speed-up compared to the full kinetic Monte Carlo simulation for the same statistical error.},
 publisher = {KU Leuven. Faculty of Engineering Science},
 year = {2019},
 title = {Fluid and Hybrid Fluid-Kinetic Models for the Neutral Particles in the Plasma Edge of Nuclear Fusion Devices},
@@ -559,8 +558,27 @@ keywords = {Mathematics--?-74},
 }
 
 @misc{Dublin_limb_darkening,
+title = {Lecture notes, Astrophysical Spectroscopy},
+author = {Brian Espey}, 
 url = {https://www.tcd.ie/Physics/study/current/undergraduate/lecture-notes/py3a06/PY3A06_plane_parallel_grey_atmosphere_2011_2012.pdf},
 urldate = {24/09/2019}
 }
 
+@misc{WWBW2001,
+author = {Kenneth Wood, Barbara Whitney, Jon Bjorkman, Michael Wolff},
+title = {Introduction to Monte Carlo Radiation Transfer},
+year = {2001},
+}
 
+@misc{WWBW2013,
+author = {Kenneth Wood, Barbara Whitney, Jon Bjorkman, Michael Wolff},
+title = {Introduction to Monte Carlo Radiation Transfer},
+year = {2013},
+}
+
+@book{Mmfp,
+publisher = {Princeton University press},
+year = {2015},
+title = {Theory of Stellar Atmospheres: an introduction to astrophysical non-equilibriuim quantitative spectroscopic analysis},
+author = {Ivan Huybeny, Dimitri Mihalas},
+}

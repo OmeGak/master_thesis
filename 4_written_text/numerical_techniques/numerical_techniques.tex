@@ -1,0 +1,125 @@
+\documentclass[../main/main.tex]{subfiles}
+\begin{document}
+
+\paragraph{forewarned is forearmed}
+General guidelines for good practices in scientific computing are found in \cite{Wilson2014}.
+
+\section{Introduction to Monte Carlo Radiation Transfer}
+The material is taken from \cite{WWBW2001} and from \cite{WWBW2013}.
+
+\subsection{Elementary principles}
+
+\begin{center}
+\centering
+{\tabulinesep=1.5mm
+\begin{tabu}{|c|c|}
+\hline 
+specific intensity & $I_{\nu}$ \\ \hline
+radiant energy & $dE_{\nu}$ \\ \hline
+surface area & $dA$ \\ \hline
+angle & $\theta$ \\ \hline
+solid angle & $d \Omega$ \\ \hline
+frequency range & $d \nu$ \\ \hline
+time & $dt$ \\ \hline
+flux & $F_{\nu}$ \\ \hline
+cross section & $\sigma$ \\ \hline
+scattering angle & $\chi$ \\ 
+ & $\mu = \cos(\chi)$ \\ \hline
+mean intensity & $J$ \\ \hline
+flux & $H$ \\ \hline
+radiation pressure & $K$ \\ \hline
+\end{tabu}}
+\end{center}
+
+\subsection{Example: plane parallel atmosphere}
+\begin{enumerate}
+
+\item emission of photons: select two angles (3D space). In isotropic scattering
+\begin{itemize}
+\item $\theta$ met $\mu = \cos(\theta)$
+	\begin{itemize}
+	\item $\mu = 2\xi -1$ (isotropic scattering)
+	\item $\mu = \sqrt{\xi}$ (A slab is heated from below. Then $P(\mu) = \mu$)
+	\end{itemize}
+\item $\phi = 2 \pi \xi$
+\end{itemize}
+
+\item propagation of photons
+\begin{itemize}
+\item sample optical depth from $\tau = -\log(\xi)$
+\item distance travelled $L = \frac{\tau z_{max}}{\tau_{max}}$
+\end{itemize}
+
+\item conclusion of emission and propagation
+\begin{equation}
+\begin{aligned}
+x &= x + L \sin(\theta) \cos(\phi) \\
+y &= y + L \sin(\theta) \sin(\phi) \\
+z &= z + L \cos(\theta)
+\end{aligned}
+\end{equation}
+
+\item Binning: once the photon exists the slab. Produce histograms of the distribution function. Finally, we wish to compute the output flux or the intensity.
+\end{enumerate}
+
+\newpage
+\section{Asymptotic Preserving Monte Carlo methods for transport equations in the diffusive limit}
+A very interesting article about Monte Carlo methods for radiative transfer problems, from a mathematical point of view, is \cite{Dimarco2018}. I am currently trying to reproduce the numerical experiments that are reported in the article. 
+
+\section{Fluid and hybrid Fluid-Kinetic models (for neutral particles in plasma edge) (Horsten2019)}
+The material is mainly taken from \cite{HorstenNiels2019}.
+\begin{itemize}
+\item Kinetic Boltzmann equation: neutral velocity distribution $f_n(r,v)$
+\item If you taken into account (e.g. microscopic processes for atomic deuterium) then the kinetic Boltzmann equation becomes 
+\begin{equation}
+v\nabla f_n(r,v) = S_r(r,v) + S_{cx}(r,v) - f_n(r,v)(R_{cx}(r,v)+R_i(r))
+\label{Horsten_kinetic_equation}
+\end{equation}
+
+\item Numerical solution strategies
+\begin{itemize}
+\item finite differences/volumes/elements :computationally infeasible
+\item spectral methods (series expansion of $f_n(r,v)$: not suitable for modelling discontinuties
+\item stochatic approach: the whole velocity distribution is discretized by finite set of particles
+\end{itemize}  
+
+\item from Equation (\ref{Horsten_kinetic_equation}), the fluid model and the hybrid model is derived.
+\begin{itemize}
+\item Fluid model: 3 state equations (continuity -  momentum - energy) with boundary conditions
+\begin{itemize}
+\item pure-pressure equation: maximum error of 10 - 28 \% 
+\item with parallel momentum source: error 10 \%
+\item with ion energy source: error 30 \% 
+\end{itemize} 
+
+\item hybrid model based on micro-macro decomposition
+\end{itemize}
+\end{itemize}
+
+\newpage
+\section{Overview of existing (Monte Carlo) radiative transfer codes}
+
+\subsection{Synthesis codes}
+As is pointed out in \cite{PinteChristophe2015CRT}, there are basically two methods to solve the radiative transfer problem: ray-tracing and Monte Carlo methods.
+
+\begin{itemize}
+\item RADICAL \cite{RADICAL}  (Ray-tracing, 2D, multi-purpose)
+\item MULTI \cite{MULTI} \cite{Carlsson1986} (computer program for solving multi-level non-LTE radiative transfer problems in moving or static atmospheres, very old: Uppsala 1986 - 1995)
+\item SKIRT \cite{Camps2015} (continuum (Monte Carlo) radiation transfer in dusty astrophysical systems, such as spiral galaxies and accretion disks, from Ugent)
+\item TORUS \cite{Harries2019} (Monte Carlo radiation transfer and hydrodynamics code. Adopts 1D, 2D, 3D adaptive mesh refinement. Suitable for radiative equilibrium and creation of synthetic images and SED)
+\item RADMC-3D \cite{RADMC3D} (Monte Carlo code that is especially applicable for dusty molecular clouds, protoplanetary disks, circumstellar envelopes, dusty tori around AGN and models of galaxies. Python interface with Fortran main code)
+\item TLUSTY and SYNSPEC \cite{Hubeny2017}, \cite{Hubeny2017a}, \cite{Hubeny2017b}.
+\end{itemize}
+
+\subsection{Inversion codes}
+\begin{itemize}
+\item VFISV
+\item ASP/HAO
+\item HeLIx+
+\item SNAPI (not publicly available, created by Ivan Milic)
+\item multiple codes available from Instituto de Astrofyiica de Canarias (IAC)
+\item STiC: the Stockholm inve rsion code
+\end{itemize}
+
+\end{document}
+

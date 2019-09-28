@@ -44,10 +44,10 @@
   <internal package="biblatex" priority="9" active="1">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>litstud.bcf</file>
+      <file>first_year_overview.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>litstud.bbl</file>
+      <file>first_year_overview.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -64,19 +64,19 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>litstud</infile>
+      <infile>first_year_overview</infile>
     </cmdline>
     <input>
-      <file>litstud.bcf</file>
+      <file>first_year_overview.bcf</file>
     </input>
     <output>
-      <file>litstud.bbl</file>
+      <file>first_year_overview.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>litstud.bbl</file>
+      <file>first_year_overview.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>litstud.bcf</file>
+      <file>first_year_overview.bcf</file>
     </requires>
     <requires type="editable">
       <file>../sample.bib</file>

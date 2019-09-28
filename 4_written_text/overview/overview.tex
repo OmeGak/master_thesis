@@ -1,107 +1,39 @@
 \documentclass[../main/main.tex]{subfiles}
-
 \begin{document}
-\section{Glossary}
-\begin{itemize}
-\item SED: \hfill spectral energy distribution
 
-\item (spectral) line-force: \hfill force on material in stellar atmosphere
-
-\item LASER: \hfill Light Amplification by Stimulated Emission of Radiation
-\end{itemize}
-
-\newpage
-\section{General equations - first year overview}
-
-\subsubsection{Hydrodynamics}
-Euler equations, together with closing relation (e.g. ideal gas law).
-
-\begin{center}
-	\centering
-	{\tabulinesep=1.5mm
-		\begin{tabu}{|c|c|c|c|} 
-			\hline
-			\multicolumn{4}{|c|}{primitive variables} \\ \hline
-			mass density & velocity & gas energy density & gas pressure \\ 
-			$\rho$ & $v$ & $e$ & $p$ \\ \hline
-	\end{tabu}}
-\end{center}
-
-\subsubsection{Radiation}
-Radiative transfer equation: intensity along a ray while interacting with medium. Photons are massless.
-\begin{equation}
-	\left[ \frac{1}{c}\partial_t + \vec{n}.\vec{\nabla} \right] I_{\nu} =  \eta_{\nu} - \chi_{\nu}I_{\nu}
-\end{equation}
-
-\begin{center}
-	\centering
-	{\tabulinesep=1.5mm
-		\begin{tabu}{|c|c|c|c|} 
-\hline
-frequency & intensity & emissivity & total absorption  \\
-$\nu$ & $I_{\nu}$ & $\eta_{\nu}$ & $\chi_{\nu}$ \\ \hline
-	\end{tabu}}
-\end{center}
-
-These deliver two equations
-\begin{itemize}
-	\item the radiative energy equation (diffusion flux $\vec{F}$
-	\begin{eqnarray}
-	\frac{\partial E}{\partial t} + \vec{\nabla} . \vec{F} = \iint ... d\nu d \Omega
-	\end{eqnarray}
-	\item radiative momentum equation
-	\begin{equation}
-		\frac{d\vec{F}}{\partial t} = \iint ... \vec{n} d\nu d\Omega
-		\end{equation}
-\end{itemize}
-(after \textbf{integrating over all frequencies}). Depending on the geometry simplifcations, one can e.g. integrate over all solid angles.
-
-
-\subsubsection{Radiation-Hydrodynamics}
-Combination delivers integral-diffusion equation
-
-\begin{eqnarray}
-\begin{aligned}
-\frac{dI}{d\tau} &=  S - I \\
-	&= \int I d\Omega - I
-\end{aligned}
-\end{eqnarray}
-
-\subsubsection{Challenges}
-\begin{itemize}
-	\item combination with hydrodynamics
-	\item current analysis: simplified geometries (symmetry). E.g. in 2D, an ADI method is used and now also a multigrid method. 
-	\item complex geometry difficult to show in ray-tracing scheme
-	\item steady-state vs. time dependent
-	\item focus on radiation equations
-\end{itemize}
-
-
-\newpage
 \section{Very broad introduction \& Summary}
 The material here originates from the master thesis of Nicolas Moens \cite{MoensNicolas} and from the course notes \textit{Introduction to numerical methods for radiation in astrophsyics} from professor Sundqvist. 
 
-\subsection{Definitions and equations}
+\subsection{Definition of specific intensity}
+\label{specific_intensity}
+The definition of the specific intensity is 
+\begin{equation}
+I_{\nu} 
+	= \frac{dE_{\nu}}{\cos(\theta) d\Omega dt d\nu} 
+	= \frac{dE_{\nu}}{\mu d\Omega dt d\nu} 
+\end{equation}
+On the other hand, for the total energy of a collection of $N$ photons holds that 
+\begin{equation}
+E_{\nu} = N E_{\nu,\text{photon}} 
+\end{equation}
 
-\subsubsection{Radiation equations}
-Specific intensity $I(s,\lambda,x,y,t)$ 
-\begin{itemize}
-\item restrict oursevels to time-independent, one-dimensional (1D) case $I(s,\theta,\lambda)$ where $s$ is the direction of the light ray
-%\item defining $I_{\lambda} = \frac{I}{-\chi_{\lambda}}$ 
-\item it satisfies Radiation Transfer Equation (RTE) 
-$\boxed{\frac{dI_{\lambda}}{d\tau_{\lambda}} = S_{\lambda} - I_{\lambda}}$
-\item with 'formal' solution 
-$\boxed{I(\lambda,\tau_{\lambda}) = I_0(\lambda) e^{-\tau_{\lambda}}  \int_0^{\tau_{\lambda}}S(t)e^{-t} dt}$
-\begin{itemize}
-\item no emissivity $S=0$ then $I(\lambda) I_0(\lambda) e^{-\tau_{\lambda}}$
-\item no opacity then $I_0(\lambda) = \int_0^{s} \eta_{\lambda}(s)ds$ 
-\item constant source function $I(\lambda,\tau) = I_0(\lambda) e^{-\tau_{\lambda}} + S(1-e^{-\tau_{\lambda}})$
-\item if $S=a+b\tau$ then $I(\lambda) = a+\frac{b}{k_{\lambda}}$ with $k_{\lambda}$ the opacity. A jump in opacity leads to the jump in intensity of the opposite sign.
-\end{itemize}
-\end{itemize}
+\paragraph{To the point}
+From this we deduce that 
+\begin{equation}
+I_{\nu} \mu  = \frac{N(\mu) dE_{\nu,\text{photon}}}{d\Omega dt d\nu}
+\end{equation}
+and thus 
+\begin{equation}
+\boxed{I_{nu} \mu d\mu \sim N(\mu) d\mu}
+\end{equation}
 
-\subsubsection{Radiation equations (bis)}
+\paragraph{Considering the solid angle}
+In spherical geometry $d\Omega = \sin(\theta) d\theta d\phi = d\mu d\phi$.
+
+\subsection{Radiation equations}
 Material from \cite{TheoryStellarAtmospheres2014}
+
+Specific intensity $I(s,\lambda,x,y,t)$ 
 \begin{equation}
 \frac{\delta I(q,t)}{\delta s} = \eta (q,t) - \chi(q,t) I(q,t)
 \end{equation}
@@ -116,17 +48,24 @@ In cartesian coordinates (with propagation vector $\vec{n} = \left[ \begin{matri
 \end{equation}
 
 \item diffusion limit
+\item Definition of $J$ in Equation (3.15)
 \end{itemize}
 
-\subsubsection{RHD equations}
-The full RHD equations consist of 
+\paragraph{Plane parallel geometry}
 \begin{itemize}
-\item five partial differential equations
-\item one HD closure equation, e.g. (i) variable Eddington tensor method or (ii) flux limited diffusion
+\item restrict oursevels to time-independent, one-dimensional (1D) case $I(s,\theta,\lambda)$ where $s$ is the direction of the light ray
+%\item defining $I_{\lambda} = \frac{I}{-\chi_{\lambda}}$ 
+\item it satisfies Radiation Transfer Equation (RTE) 
+$\boxed{\frac{dI_{\lambda}}{d\tau_{\lambda}} = S_{\lambda} - I_{\lambda}}$
+\item with 'formal' solution 
+$\boxed{I(\lambda,\tau_{\lambda}) = I_0(\lambda) e^{-\tau_{\lambda}}  \int_0^{\tau_{\lambda}}S(t)e^{-t} dt}$
+\begin{itemize}
+\item no emissivity $S=0$ then $I(\lambda) I_0(\lambda) e^{-\tau_{\lambda}}$
+\item no opacity then $I_0(\lambda) = \int_0^{s} \eta_{\lambda}(s)ds$ 
+\item constant source function $I(\lambda,\tau) = I_0(\lambda) e^{-\tau_{\lambda}} + S(1-e^{-\tau_{\lambda}})$
+\item if $S=a+b\tau$ then $I(\lambda) = a+\frac{b}{k_{\lambda}}$ with $k_{\lambda}$ the opacity. A jump in opacity leads to the jump in intensity of the opposite sign.
 \end{itemize}
-
-\paragraph{Heat flux}
-The heat flow rate density $\vec{\phi}$ satisfies the Fourier law $\vec{\phi} = - k\nabla T$. More information can be found for instance on \cite{WikiHeat}.
+\end{itemize}
 
 \paragraph{Specific intensity and its angular moments}
 
@@ -155,40 +94,9 @@ f_{\nu} = \frac{K_{\nu}}{J_{\nu}} = \frac{P_{\nu}}{E_{\nu}}
 \item radiation field stronly peaked in radial (i.e. vertical in cartesian) direction
 \end{itemize}
 
-\subsubsection{Radiation transport equations, diffusion, equilibrium}
-\begin{itemize}
-\item black body radiation (Planck function $I_{\nu} = J_{\nu} = B_{\nu}$)
-\item in general, extinction(absorption,scattering) and emission
-\begin{equation}
-\frac{dI_{\nu}}{ds} = j_{\nu} - k_{\nu}I_{\nu}
-\end{equation}
-\begin{itemize}
-\item Cartesian coordinates: 
-\begin{equation}
-\boxed{\frac{\partial I_{n,\nu}}{\partial t}\frac{1}{c} + n \nabla I_{n,\nu} = j_{\nu} - k_{n,\nu}I_{n,\nu}}
-\label{radiation_transfer_equation}
-\end{equation}
-\item spherical coordinates 
-\item 1D-problem with only variation along z-axis $\mu \frac{dI}{dz}  = j -kI$
-\item spherical symmetry $\mu \frac{\partial I}{\partial r} + \frac{1-\mu^2}{r}\frac{\partial I}{\partial \mu} = j-kI$
-\item plane-parallel approximation 
-\begin{equation}
-\boxed{\mu \frac{d I}{dr} = j - kI} 
-\label{plane_parallel_radiation}
-\end{equation}
-The angle $\mu$ is constant throughout the computational domain.
-Dividing by $k_{\nu}$, this yields 
-\begin{equation}
-\mu \frac{dI}{k_{\nu} dr} =  \mu \frac{dI}{k_{\nu} dz} = S-I
-\end{equation}
 
 
-\end{itemize}
-\item Oth moment equation: integrate Equation (\ref{radiation_transfer_equation}) over $\nu$ and $\Omega$, i.e. $\int d\nu d\Omega$. Conservation of energy
-\item first multiply Equation (\ref{radiation_transfer_equation}) with $\frac{n}{c}$ and then do integration
-\end{itemize}
-
-\subsubsection{Radiative Diffusion Approximation} The radiative diffusion approximation bridges two regimes: regimes with ... 
+\subsection{Radiative Diffusion Approximation} The radiative diffusion approximation bridges two regimes: regimes with ... 
 \begin{itemize}
 \item on one hand, large optical depth $\tau \gg 1$: diffusion equation: temperature structure in a static stellar atmosphere
 \item on the other hand, where radiative \textit{transport} is important
@@ -200,51 +108,20 @@ I_{\nu} = B_{\nu} - \mu \frac{dB_{\nu}}{k_{\nu}dz}
 This equation can be derived as a random walk of photons!
 
 
-\subsubsection{Applications and approximations for radiative forces}
+\subsection{Applications and approximations for radiative forces}
 \begin{itemize}
-\item definition of general radiative acceleration vector $g = \frac{1}{\rho c}\int \int n k_{\nu} I_{\nu} d\Omega d\nu$
+\item definition of general radiative acceleration vector $g_{\text{rad}} = \frac{1}{\rho c}\int \int n k_{\nu} I_{\nu} d\Omega d\nu$
+\end{itemize}
+
+\subsection{RHD equations}
+The full RHD equations consist of 
 \begin{itemize}
-\item continuum Thomson scattering
-\item spectral line with extinction
-\begin{itemize}
-\item furhtermore assume central continuum source
-\item then $g_{line} = \frac{F_{\nu}^0 k_L}{\rho c}$
-\end{itemize}
+\item five partial differential equations
+\item one HD closure equation, e.g. (i) variable Eddington tensor method or (ii) flux limited diffusion
 \end{itemize}
 
-\item Sobolev approximation
-\item CAK theory
-\end{itemize}
-
-\newpage
-\subsubsection{Optical depth (recap)}
-\paragraph{Optical depth: physical understanding}
-Optical depth is the ratio of incident radiant power to transmitted radiant power (\cite{WikiOpticalDepth}).
-
-\begin{center}
-\hspace*{-2cm}
-\centering
-{\tabulinesep=1.5mm
-\begin{tabu}{|c|c|c|c|}
-\hline 
-optical depth 
-	& optical depth along ray 
-	& line optical depth 
-	& Sobolev optical depth \\ \hline
-$d\tau = k_{\nu}ds = \sigma_{nu}n ds = \kappa \rho ds$ 
-	& $\tau_{\mu,\nu} = \int_z^{z_{max}} \frac{\alpha_{nu}(z')}{\mu}dz' = \frac{\tau_{\nu}(z)}{\mu}$ 
-	& $\tau_{\nu} = \int k_L \phi_{\nu} dl = \int \kappa \rho ds$ \\ 
-$\tau_{\nu} = \int k_{\nu}ds = \int \sigma_{\nu} n ds$ & \\ \hline
-\end{tabu}}
-\end{center}
-with \begin{itemize}
-\item $\sigma$ cross-section
-\item $n$ number density
-\item $\kappa$ mass absorption density
-\item $\rho$ mass density
-\item $k_{\nu}$ extinction coefficient
-\end{itemize}
-
+\paragraph{Heat flux}
+The heat flow rate density $\vec{\phi}$ satisfies the Fourier law $\vec{\phi} = - k\nabla T$. More information can be found for instance on \cite{WikiHeat}.
 
 \subsection{Overview of symmetry assumptions}
 \begin{center}
@@ -270,261 +147,14 @@ specific intensity $I_{\nu}$ & $\left[ \frac{ergs}{cm^2 . sr . Hz . s} \right] =
 
 optical depth $\tau$ & \\ 
 & $\boxed{\tau = 0}$ leave atmosphere \\ \hline
-
 \end{tabu}}
 \end{center}
 
-
-\subsection{Things to know}
+\subsubsection{Things to know}
 \begin{itemize}
 \item expanding flow: redshift (lower frequency)
 \item compressing flow: blueshift (higher frequency)
 \end{itemize}
-
-\subsection{Definition of specific intensity}
-\label{specific_intensity}
-The definition of the specific intensity is 
-\begin{equation}
-I_{\nu} 
-	= \frac{dE_{\nu}}{\cos(\theta) d\Omega dt d\nu} 
-	= \frac{dE_{\nu}}{\mu d\Omega dt d\nu} 
-\end{equation}
-On the other hand, for the total energy of a collection of $N$ photons holds that 
-\begin{equation}
-E_{\nu} = N E_{\nu,\text{photon}} 
-\end{equation}
-
-\paragraph{To the point}
-From this we deduce that 
-\begin{equation}
-I_{\nu} \mu  = \frac{N(\mu) dE_{\nu,\text{photon}}}{d\Omega dt d\nu}
-\end{equation}
-and thus 
-\begin{equation}
-\boxed{I_{nu} \mu d\mu \sim N(\mu) d\mu}
-\end{equation}
-
-\paragraph{Considering the solid angle}
-In spherical geometry $d\Omega = \sin(\theta) d\theta d\phi = d\mu d\phi$.
-
-
-
-\newpage
-\section{Introduction: course material (Sundqvist - CMPAA course)}
-
-\subsection{EXERCISES: Introduction to numerical methods for radiation in astrophysics}
-\begin{enumerate}
-\item introduction
-\item radiation quantities
-\begin{itemize}
-
-\item exercise p.3: 
-\begin{itemize}
-\item on one hand, we know that $\Delta \epsilon \sim C/r^2 $
-\item on the other hand, from the definition we know  that $\Delta \epsilon = I_{\nu} A_1 A_2/r^2 \Delta \nu \Delta t$
-\item combining these equations shows that $I_{\nu}$ is independent from $r$
-\end{itemize}
-
-\item exercise p.4:
-\begin{itemize}
-\item 
-\end{itemize}
-
-\item exercise 1:
-\begin{itemize}
-\item $F_x =  \int_0^{\pi} \left[ I_{\nu}(\theta)\sin^2(\theta) \int_0^{2 \pi}\cos(\phi) \right] d\theta d \phi = 0 $
-\item the same reasoning for $F_y = 0$
-\end{itemize}
-
-\item exercise 2:
-\begin{itemize}
-\item the equation follows from $d\mu = d\cos(\theta) = \sin(\theta) d\theta$
-\end{itemize}
-
-\item exercise 3: 
-\begin{itemize}
-\item isotropic radiation field (i.e. $I(\mu) = I$) then we have $F_{\nu} = 2 \pi  \int_{-1}^{1} I \mu d\mu = 2 \pi I \left. \frac{x^2}{2}\right \rvert_
-{-1}^{1} = 0$
-\end{itemize}
-
-\item exercise 4:
-\begin{itemize}
-\item $F_{\nu} = 2 \pi  \int_{-1}^{1} I(\mu) \mu d\mu 
-	= 2 \pi  \int_{-1}^{0} I_{\nu}^{-} \mu d\mu 
-	+ 2 \pi  \int_{0}^{1} I_{\nu}^{+} \mu d\mu 
-	= 2 \pi I_{\nu}^+ $
-\end{itemize}
-
-\item exercise p.7:
-\begin{itemize}
-
-\item isotropic radiation field:
-\begin{itemize}
-\item although the radiation pressure is a tensor, we will denote it as a scalar $P_{\nu} = \frac{4 \pi I_{\nu}}{c}$
-\item the radiation energy density $E_{\nu} = \frac{12 \pi I_{\nu}}{c} $
-\item thus $f_{\nu} = \frac{1}{3}$
-\end{itemize}
-
-\item very strongly peaked in radial direction (beam): $I_{\nu} = I_0 \delta(\mu- \mu_0)$ with $\mu_0 = 1$
-\begin{itemize}
-\item pressure tensor $P_{nu} = \frac{1}{c} \int I_0 \delta(\mu- \mu_0) nn d \Omega$
-\item energy density $E_{\nu} = \frac{1}{c}\int I_{\nu} d\Omega$
-\item in this case $P_{\nu} = E_{\nu}$ thus $f_{\nu} = 1$
-\end{itemize}
-\end{itemize}
-
-\end{itemize}
-
-\item radiation transport vs. diffusion vs. equilibrium
-\begin{itemize}
-\item exercise p. 12: 1D, Cartesian geometry, plane-parallel, frequency-independent and isotropic emission/extinction
-\begin{itemize}
-
-\item radiation energy equation 
-\begin{itemize}
-\item The equation follows by integrating Equation (\ref{plane_parallel_radiation})
-\item By definition, $E= \frac{1}{c}\iint I_{\nu} d\nu d\Omega$
-\item thus $\frac{dE}{dr} = \int (j-kI) d\nu d\Omega$ thus $\boxed{\frac{dE}{dr} = \frac{(j-kI)4\pi(\nu_1-\nu_0)}{c}}$
-\item work out the integral taking into account frequency-independent and isotropic coefficients: 
-\end{itemize}
-
-\item zeroth momentum equations
-\begin{itemize}
-\item One must also take into account the specific form of the flux vector \\ $F = \iint I_{\nu} n d\nu d\Omega = 2 \pi \int_{-1}^1 I_{\nu}(\mu) \mu d \mu$
-\item thus $\frac{dF}{dr} = \frac{1}{c} \int (j-kI) n d\nu d\Omega$ thus $\boxed{\frac{dF}{dr} = \frac{(j-kI)4\pi(\nu_1-\nu_0)n}{c}}$
-\end{itemize} 
-
-\item first moment equation
-\begin{itemize}
-\item similar reasoning
-\item $\frac{dP}{dr} = \int (j-kI) n.n d\nu d\Omega$ thus $\boxed{\frac{dF}{dr} = \frac{(j-kI)4\pi(\nu_1-\nu_0)n}{c}}$
-\end{itemize}
-\end{itemize}
-
-\item first exercise p. 15
-\begin{itemize}
-\item $P = \frac{1}{c}\iint I_{\nu} \mu^2 d\Omega d\nu = \frac{2 \pi}{c} \int_{\nu} \int_{-1}^{1} I_{\nu} \mu^2 d\mu d\nu = \frac{4 \pi}{3c} \int B_{\nu} d\nu = \frac{a T^4}{3} = \frac{E}{3} $
-\end{itemize}
-
-\item second exercise p.15 
-\begin{itemize}
-\item assuming the diffusion limit, 
-\item flux-weighted mean opacity $\kappa_F = \frac{\int F_{\nu} \kappa_{\nu}d\nu}{\int F_{\nu} d\nu}$
-\item Rosseland mean opacity $\frac{1}{\kappa_R} = \frac{\int_0^{\infty}\frac{1}{\kappa_{\nu}}\frac{dB_{\nu}}{dT}}{\int_0^{\infty} \frac{dB_{\nu}}{dT} d\nu}$. 
-\begin{itemize}
-\item in the diffusion limit, $F_{\nu} = - \frac{4 \pi}{3}\frac{d B_{\nu}}{k_{\nu} dz}$ thus $\frac{dB_{nu}}{dT} =$
-\item  
-\end{itemize}
-\end{itemize}
-
-
-\item third exercise p.15
-
-\end{itemize}
-
-
-
-\item the equations of radiation-hydrodynamics
-\item numerical techniques for the radiative diffusion approximation
-
-\item applications and approximations for a dynamically important radiative force in supersonic flows
-\begin{itemize}
-\item exercise p.27: $L_{SOB} = \Delta r = \frac{v_{th}}{dv/dr} = \frac{10 [km/s]}{1000 [km/s]/R_{*}} = 0.01 R_{*}$
-\end{itemize}
-
-\item Appendix A: properties of equilibrium black-body radiation
-\begin{itemize}
-
-\item exercise p. 29
-\begin{itemize}
-\item this should be satisfied: $B_{\nu} d\nu = -B_{\lambda} d\lambda$ and also $\nu  = \frac{c}{\lambda}$
-\item this is equivalent to saying that $0 = \nu d \lambda + \lambda d \nu$ or $d \lambda = - \frac{\lambda}{\nu} d\nu$ thus $B_{\lambda} = \frac{\nu}{\lambda} B_{\nu}$
-\item $B_{\lambda}(T) = \frac{\nu}{\lambda} \frac{2h \nu^3}{(\lambda \nu)^2} \frac{1}{e^{h c/ \lambda kT} - 1} = \frac{2h \nu^2}{\lambda^3} \frac{1}{e^{h c/ \lambda kT} - 1} = \frac{2hc^2}{\lambda^5} \frac{1}{e^{h c/ \lambda kT} - 1}$ 
-\end{itemize}
-
-\item first exercise p.31
-\begin{itemize}
-\item derive that $\lambda_{max} T = 2897.8 [\mu m K]$
-\item ...
-\end{itemize}
-
-\item second exercise p.31
-\begin{itemize}
-\item this is about the spectra of (unknown) stars
-\end{itemize}
-
-\item first exercise p.32
-\begin{itemize}
-\item see exercise 7
-\end{itemize}
-
-\item second exercise p.32
-\begin{itemize}
-\item BB radiation: $I_{\nu} = \frac{2h \nu^3}{c^2} \frac{1}{e^{h \nu/kt}-1}$
-\item the radiative flux for isotropic BB radiation is zero. See also exercise 3. This dus also holds for BB radiation.
-\end{itemize}
-
-\item exercise p. 33
-\begin{itemize}
-\item \underline{HR-diagram}
-\end{itemize}
-
-\end{itemize}
-
-\item Appendix B: Simple examples to the radiative transfer equation
-\begin{itemize}
-
-\item first exercise p. 34
-\begin{itemize}
-\item start from radiative transport equation $\mu \frac{dI}{ds} = \alpha - \eta I$ in which $\eta = 0$ thus $\boxed{\mu \frac{dI}{ds} = \alpha}$
-\item solving the ODE in the general case that $\alpha(s)$ is not constant: 
-\begin{itemize}
-\item integrate the equation $\mu I = \int_0^D \alpha ds$
-\item ...
-\end{itemize}
- 
-\item second exercise p. 34
-\begin{itemize}
-\item case $\tau(D) >> 1$: then $I(D) \approx S$ 
-\item case $\tau(D) << 1$: then $I(D) \approx I(0)+S(1-1) = I(0)$
-\end{itemize} 
- 
-\item first exercise p.35
-\begin{itemize}
-\item is the plane-parallel approximation valid for the solar photosphere?
-\end{itemize} 
-
-\item second exercise p.35
-\begin{itemize}
-\item goal: find a solution to the equation $\mu \frac{dI_{\nu}}{d\tau_{\nu}} = I_{\nu} - S_{\nu}$ where $I(\tau,\mu)$
-\item solution
-\end{itemize}
- 
-\end{itemize}
-
-\item second exercise p.35
-\end{itemize}
-
-\item Appendix C: connecting random walk of photons with radiative diffusion model
-\begin{itemize}
-\item exercise p. 38. Computing the average photon mean-free path inside the Sun. \\
-$l = \frac{1}{\kappa \rho} = \frac{V_o}{\kappa M_o} [cm]$
-
-\item exercise p.39. Computing the random-walk time (diffusion time) for photons
-
-\end{itemize}
-
-
-\end{enumerate}
-
-\subsection{Implicit 1D solver (20-11-2018)}
-See computer code
-\subsection{ADI 2D Solver}
-See computer code
-\subsection{Area of a circle}
-See computer code
-\subsection{Limb Darkening}
-See Section \ref{limb_darkening_discussion}.
 
 
 \newpage
@@ -562,197 +192,37 @@ B_1(\tau) + \frac{\omega_0(\tau)}{2} \int_0^{\tau_1} \mathcal{S} (t) E_1(|t-\tau
 \item characteristic equation
 \end{itemize}
 
-\newpage
-\section{Monte Carlo and Radiative Transfer (Puls)}
-\subsection{basic definitions and facts}
-\subsection{about random numbers}
-\subsection{MC integration}
-\subsection{MC simulation}
-\paragraph{Radiative transfer in stellar atmospheres}
-\begin{itemize}
-\item GOAL: spatial radiation energy density $E(\tau)$ in an atmospheric layer 
-\begin{itemize}
-\item only photon-electron scattering
-\item $\tau$ is the optical depth
-\end{itemize}
-
-\item Milne's integral equation $\boxed{E(\tau) = \frac{1}{2} \int_0^{\infty} E(t) E_1(|t-\tau|) dt}$
-\begin{itemize}
-\item analytical solution $\frac{E(\tau)}{E(0)} = \sqrt{3} (\tau + q(\tau))$
-\item MC simulation
-\begin{itemize}
-\item emission angle
-\item optical depth until next scattering event
-\item scattering angle
-\end{itemize}
-\end{itemize}
-
-\item HOW DOES THIS WORK?
-\end{itemize}
-
-\begin{algorithm}
-\caption{Limb darkening: compute quantitiy of photons}\label{limb_darkening}
-\begin{algorithmic}
-\State create photons
-
-\State probability distribution for emission angle $\mu = \cos(\theta)$: $\boxed{p(\mu) d \mu = \mu d \mu}$
-
-\State optical depth until next scattering event: $\boxed{p(\tau)dt \approx e^{-\tau} d\tau}$
-
-\State isotropic scattering angle at low energies: $\boxed{p(\mu) d\mu \approx d\mu}$
-
-\State follow all photons until they leave the atmosphere or are scattered back into stellar interior
-\end{algorithmic}
-\end{algorithm}
-
-\subsection{Exercise 1: RNG}
-\subsection{Exercise 2: Planck-function}
+\subsection{Integral equations}
+Based on the book \cite{Mmfp}.
 \begin{enumerate}
-\item analytical method
-\item MC method
-\end{enumerate}
-\subsection{limb darkening}
-See section \ref{limb_darkening_discussion}.
-
-\newpage
-
-\newpage
-\section{Introduction to Monte Carlo Radiation Transfer (Wood+)}
-The material is taken from
+\item integral equation from differential equation
+\item types of integral equations
+\item operator notation and existence of solutions
+\item closed-form solutions
 \begin{itemize}
-\item (Wood, Wittney, Bjorkman, Wolff - 2001)
-\item (Wood, Wittney, Bjorkman, Wolff - 2013)
+\item separable kernels
+\item integral transform method (Fourier transform)
+\item differentiation
 \end{itemize}
 
-\subsection{Elementary principles}
-
-\begin{center}
-\centering
-{\tabulinesep=1.5mm
-\begin{tabu}{|c|c|}
-\hline 
-specific intensity & $I_{\nu}$ \\ \hline
-radiant energy & $dE_{\nu}$ \\ \hline
-surface area & $dA$ \\ \hline
-angle & $\theta$ \\ \hline
-solid angle & $d \Omega$ \\ \hline
-frequency range & $d \nu$ \\ \hline
-time & $dt$ \\ \hline
-flux & $F_{\nu}$ \\ \hline
-cross section & $\sigma$ \\ \hline
-scattering angle & $\chi$ \\ 
- & $\mu = \cos(\chi)$ \\ \hline
-mean intensity & $J$ \\ \hline
-flux & $H$ \\ \hline
-radiation pressure & $K$ \\ \hline
-\end{tabu}}
-\end{center}
-
-
-\begin{center}
-\centering
-{\tabulinesep=1.5mm
-\begin{tabu}{|c|c|}
-\hline 
-intensity & $I_{\nu}(l) = I_{\nu}(0)e^{n \sigma l}$ \\ \hline
-angular phase function of the scattering particle & $P(\cos(\chi))$ \\ \hline
-
-\end{tabu}}
-\end{center}
-
-\begin{center}
-\centering
-{\tabulinesep=1.5mm
-\begin{tabu}{|c|c|}
-\hline 
-inverse method & $\xi = \int_0 ^{x_0} P(x) dx $ with $\xi \in \mathcal{U}(0,1)$ \\ \hline
-
-rejection method & \\ \hline
-\end{tabu}}
-\end{center}
-
-\subsection{Eddington factors}
-
-\subsection{Example: plane parallel atmosphere}
-\begin{enumerate}
-
-\item emission of photons: select two angles (3D space). In isotropic scattering
-\begin{itemize}
-\item $\theta$ met $\mu = \cos(\theta)$
-	\begin{itemize}
-	\item $\mu = 2\xi -1$ (isotropic scattering)
-	\item $\mu = \sqrt{\xi}$ (A slab is heated from below. Then $P(\mu) = \mu$)
-	\end{itemize}
-\item $\phi = 2 \pi \xi$
-\end{itemize}
-
-\item propagation of photons
-\begin{itemize}
-\item sample optical depth from $\tau = -\log(\xi)$
-\item distance travelled $L = \frac{\tau z_{max}}{\tau_{max}}$
-\end{itemize}
-
-\item conclusion of emission and propagation
-\begin{equation}
-\begin{aligned}
-x &= x + L \sin(\theta) \cos(\phi) \\
-y &= y + L \sin(\theta) \sin(\phi) \\
-z &= z + L \cos(\theta)
-\end{aligned}
-\end{equation}
-
-\item Binning: once the photon exists the slab. Produce histograms of the distribution function. Finally, we wish to compute the output flux or the intensity.
+\item Neumann series
+\item Fredholm theory
+\item Schmidt-Hilbert theory
 \end{enumerate}
 
-I have seen that a newer version of the paper is available, which was also used in these notes (which contains amongst other up-to-date references to code fragments).
-
-\paragraph{A Plane Parallel, Isotropic Scattering Monte Carlo Code}
-
-\newpage
-\subsection{Monte Carlo Radiative Transfer}
-From a macroscopic perspective, RT calculations rest on the transfer equation
-\begin{itemize}
-\item emissivity $\eta$ (how much energy is added to radiation field due to emission)
-\item opacity $\chi$ (how much energy is removed due to absorption)
-\item the source function $S = \frac{\eta}{\chi}$
-\item optical depth $\tau$ captures the opaqueness of a medium
-\end{itemize}
+Fredholm equation first kind
 \begin{equation}
-\left( \frac{1}{c} \frac{\partial}{\partial t} + \nabla.n \right)I = \eta - \chi I
+0 = f + \lambda \mathcal{K}y
 \end{equation}
+
+Fredholm equation second kind
 \begin{equation}
-d\epsilon = I d \nu dt d\Omega dA.n
+y = f + \lambda \mathcal{K}y
 \end{equation}
 
 \newpage
-\subsection{P Cygni profile for beta-velocity law and given opacity Monte Carlo simulation}
-\subsubsection{Structure of the code}
-\begin{itemize}
-\item module common
-
-\item module my\_inter
-
-\item program pcyg
-\begin{itemize}
-\item INPUT xk0, alpha, beta
-\item OUTPUT 
-\item PROGRAM FLOW: loop over all photons
-\begin{itemize}
-\item get xstart and vstart
-\item 
-\end{itemize}
-\item then do normalisation
-\end{itemize}
-
-\item function func(r)
-
-\item function xmueout(xk0,alpha,r,v,sigma)
-
-\item function rtbis(func,x1,x2,xacc)
-\end{itemize}
-
-\newpage
-\section{Challenges in Radiative Transfer (Ivan Milic)}
+\section{Challenges in Radiative Transfer}
+The material here originates from an oral discussion with Ivan Milic. 
 \subsection{Overview of the problem}
 \begin{center}
 \begin{tikzpicture}
@@ -822,100 +292,15 @@ Via least-squares approximation
 \item athmospheres
 \end{itemize}
 
-\newpage
-\section{Asymptotic Preserving Monte Carlo methods for transport equations in the diffusive limit (Dimarco+2018)}
-
-\section{Fluid and hybrid Fluid-Kinetic models (for neutral particles in plasma edge) (Horsten2019)}
-The material is mainly taken from \cite{HorstenNiels2019}.
-\begin{itemize}
-\item Kinetic Boltzmann equation: neutral velocity distribution $f_n(r,v)$
-\item If you taken into account (e.g. microscopic processes for atomic deuterium) then the kinetic Boltzmann equation becomes 
-\begin{equation}
-v\nabla f_n(r,v) = S_r(r,v) + S_{cx}(r,v) - f_n(r,v)(R_{cx}(r,v)+R_i(r))
-\label{Horsten_kinetic_equation}
-\end{equation}
-
-\item Numerical solution strategies
-\begin{itemize}
-\item finite differences/volumes/elements :computationally infeasible
-\item spectral methods (series expansion of $f_n(r,v)$: not suitable for modelling discontinuties
-\item stochatic approach: the whole velocity distribution is discretized by finite set of particles
-\end{itemize}  
-
-\item from Equation (\ref{Horsten_kinetic_equation}), the fluid model and the hybrid model is derived.
-\begin{itemize}
-\item Fluid model: 3 state equations (continuity -  momentum - energy) with boundary conditions
-\begin{itemize}
-\item pure-pressure equation: maximum error of 10 - 28 \% 
-\item with parallel momentum source: error 10 \%
-\item with ion energy source: error 30 \% 
-\end{itemize} 
-
-\item hybrid model based on micro-macro decomposition
-\end{itemize}
-
-\end{itemize}
-
 
 \newpage
-\section{Splitting methods}
-From notes by professor Frank.
-\subsection{Exercises}
-\subsubsection{Exercise 1}
-
-\newpage
-\section{Overview of existing (Monte Carlo) radiative transfer codes}
-
-\subsection{Synthesis codes}
-As is pointed out in \cite{PinteChristophe2015CRT}, there are basically two methods to solve the radiative transfer problem: ray-tracing and Monte Carlo methods.
-
+\section{Glossary}
 \begin{itemize}
-\item RADICAL \cite{RADICAL}  (Ray-tracing, 2D, multi-purpose)
-\item MULTI \cite{MULTI} \cite{Carlsson1986} (computer program for solving multi-level non-LTE radiative transfer problems in moving or static atmospheres, very old: Uppsala 1986 - 1995)
-\item SKIRT \cite{Camps2015} (continuum (Monte Carlo) radiation transfer in dusty astrophysical systems, such as spiral galaxies and accretion disks, from Ugent)
-\item TORUS \cite{Harries2019} (Monte Carlo radiation transfer and hydrodynamics code. Adopts 1D, 2D, 3D adaptive mesh refinement. Suitable for radiative equilibrium and creation of synthetic images and SED)
-\item RADMC-3D \cite{RADMC3D} (Monte Carlo code that is especially applicable for dusty molecular clouds, protoplanetary disks, circumstellar envelopes, dusty tori around AGN and models of galaxies. Python interface with Fortran main code)
-\item TLUSTY and SYNSPEC \cite{Hubeny2017}, \cite{Hubeny2017a}, \cite{Hubeny2017b}.
+\item SED: \hfill spectral energy distribution
+
+\item (spectral) line-force: \hfill force on material in stellar atmosphere
+
+\item LASER: \hfill Light Amplification by Stimulated Emission of Radiation
 \end{itemize}
-
-\subsection{Inversion codes}
-\begin{itemize}
-\item VFISV
-\item ASP/HAO
-\item HeLIx+
-\item SNAPI (not publicly available, created by Ivan Milic)
-\item multiple codes available from Instituto de Astrofyiica de Canarias (IAC)
-\item STiC: the Stockholm inve rsion code
-\end{itemize}
-
-\newpage
-\section{Integral equations}
-Based on the book \cite{Mmfp}.
-\begin{enumerate}
-\item integral equation from differential equation
-\item types of integral equations
-\item operator notation and existence of solutions
-\item closed-form solutions
-\begin{itemize}
-\item separable kernels
-\item integral transform method (Fourier transform)
-\item differentiation
-\end{itemize}
-
-\item Neumann series
-\item Fredholm theory
-\item Schmidt-Hilbert theory
-\end{enumerate}
-
-Fredholm equation first kind
-\begin{equation}
-0 = f + \lambda \mathcal{K}y
-\end{equation}
-
-Fredholm equation second kind
-\begin{equation}
-y = f + \lambda \mathcal{K}y
-\end{equation}
-
 
 \end{document}
