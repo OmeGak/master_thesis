@@ -1,4 +1,4 @@
-function one_radial_line(nphot , xk0 , alpha , beta , make_plot , save)
+function flux = one_radial_line(nphot , xk0 , alpha , beta , make_plot , save)
     nchan = 100;
 
     xmax = 1.1;
@@ -93,6 +93,11 @@ function one_radial_line(nphot , xk0 , alpha , beta , make_plot , save)
 
     flux = flux/xnorm;
 
+    freq_ = freq;
+    for k = 1:length(freq)
+        freq(k) = freq_(end+1-k);
+    end
+    
     if make_plot == 1
         figure()
         plot(freq,flux)

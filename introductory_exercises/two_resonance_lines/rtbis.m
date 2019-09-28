@@ -13,7 +13,7 @@ function rtbis = rtbis(func,x1,x2,xacc)
         dx = x2-x1;
     else
         rtbis = x2;
-        dx = x1-x2
+        dx = x1-x2;
     end
     
     nit = 0;

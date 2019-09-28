@@ -1,8 +1,10 @@
 function [xnew,nin] =  make_scattering(xstart,beta,alpha,b,rmax,xk0,nin)
         xmuestart = 1;
         pstart = sqrt(1-xmuestart^2);
-        r_anal = b/(1-xstart^(1/beta))
-        r = max(1,min(r_anal,rmax))
+        
+        r_anal = b/(1-xstart^(1/beta));
+        r = max(1,min(r_anal,rmax));
+        
         xmuein = 1;
         v = (1-b/r)^(beta);
         dvdr = b*beta/r^2*(1-b/r)^(beta-1);

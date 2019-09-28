@@ -1,4 +1,4 @@
-function [xnew,r_new,nin,last_scatter] =  make_scattering_RADIAL(xstart,beta,alpha,b,rmax,xk0,nin,resonance_x,r_init)
+function [xnew,r,nin,last_scatter] =  make_scattering_multiple_lines(xstart,beta,alpha,b,rmax,xk0,nin,resonance_x,r_init)
         last_scatter = 0;
 
         xmuestart = 1;
@@ -33,7 +33,7 @@ function [xnew,r_new,nin,last_scatter] =  make_scattering_RADIAL(xstart,beta,alp
             tau = xk0/(r*v^(2-alpha)*(1+xmuein^2*sigma));
 
             if tau >= rand
-                xmueou = xmueout_RADIAL(xk0,alpha,r,v,sigma);
+                xmueou = xmueout(xk0,alpha,r,v,sigma);
 
                 if rand >= 0.5
                     xmueou = -xmueou;
@@ -50,7 +50,5 @@ function [xnew,r_new,nin,last_scatter] =  make_scattering_RADIAL(xstart,beta,alp
                 last_scatter = 1;
             end  
         end
-        
-        r_new = r;
         
 end

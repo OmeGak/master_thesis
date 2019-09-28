@@ -9,10 +9,9 @@ beta = 1
 make_plot = 1
 save = 1
 
-one_radial_line(nphot , xk0 , alpha , beta , make_plot , save)
+flux_one_radial_line = one_radial_line(nphot , xk0 , alpha , beta , make_plot , save)
 
-
-%% test one_radial_line_beta_version.m
+%% test one_RADIAL_line_beta_version.m
 clc, clear all, close all
 
 nphot = 10^4
@@ -21,25 +20,96 @@ alpha = 0
 beta = 1
 
 make_plot = 1
-save = 1
+save_plot = 1
 
-one_radial_line_beta_version(nphot , xk0 , alpha , beta , make_plot , save)
+[freq, flux_one_radial] = one_radial_line_beta_version(nphot , xk0 , alpha , beta , make_plot , save_plot);
+save('flux_one_radial.mat','flux_one_radial')
 
-%% test two_radial_lines
+
+%% test one_RADIAL_line_gamma_version.m
 clc, clear all, close all
 
 nphot = 10^4
 xk0 = 100
 alpha = 0
 beta = 1
+possibility_scattering = 1;
+nbins = 100;
 
 make_plot = 1
-save = 1
+make_save = 1
 
-two_lines_RADIAL(nphot , xk0 , alpha , beta , make_plot , save)
+[freq, flux_one_radial] = one_radial_line_gamma_version(nphot,xk0,alpha,beta,make_plot,make_save,possibility_scattering,nbins);
+if possibility_scattering == 0
+    flux_simple_sink = flux_one_radial
+    save('flux_simple_sink.mat','flux_simple_sink')
+end
+
+%% test two_lines_RADIAL
+clc, clear all, close all
+
+nphot = 10^5
+xk0 = 100
+alpha = 0
+beta = 1
+nbins = 100
+resonance_x = [0]
+
+make_plot = 1
+make_save = 1
+
+flux_two_radial = two_lines_RADIAL(nphot,xk0,alpha,beta,make_plot,resonance_x,make_save,nbins);
+save('flux_two_radial.mat','flux_two_radial')
 
 
+%% make comparision plot
+clc, clear all, close all
 
+flux_one_radial = matfile('flux_one_radial.mat');
+flux_two_radial = matfile('flux_two_radial.mat');
+flux_simple_sink = matfile('flux_simple_sink.mat');
+
+figure()
+plot(flux_one_radial.flux_one_radial)
+hold on, plot(flux_two_radial.flux_two_radial)
+hold on, plot(flux_simple_sink.flux_simple_sink)
+
+legend('one line, radial','two lines (radial)','well')
+
+
+%% test two_lines
+clc, clear all, close all
+
+nphot = 10^5
+xk0 = 100
+alpha = 0
+beta = 1
+nbins = 100;
+possibility_scattering = 1;
+multiple_scatterings = 0;
+resonance_x = [0];
+
+make_plot = 1
+make_save = 1 
+
+flux_two = two_lines(nphot,xk0,alpha,beta,make_plot,resonance_x,make_save,nbins,possibility_scattering,multiple_scatterings);
+save('flux_two.mat','flux_two')
+
+%% make comparision plot
+clc, clear all, close all
+
+flux_one_radial = matfile('flux_one_radial.mat');
+flux_two_radial = matfile('flux_two_radial.mat');
+flux_simple_sink = matfile('flux_simple_sink.mat');
+flux_two = matfile('flux_two.mat');
+
+figure()
+plot(flux_one_radial.flux_one_radial)
+hold on, plot(flux_two_radial.flux_two_radial)
+hold on, plot(flux_simple_sink.flux_simple_sink)
+hold on, plot(flux_two.flux_two)
+
+legend('one line, radial','two lines (radial)','well','two lines')
 
 %% plot Sobolev approximation function
 
@@ -63,3 +133,23 @@ hold on, plot(x,0*x,'--')
 title('Sobolev condition')
 xlabel('r')
 ylabel('func(r)')
+
+%% about uniform random number
+clc, clear all, close all
+
+K = 10^4
+a = rand(1,K)
+a = a.*(-1).^(sign(rand(1,K)-0.5)==1)
+
+nbins = 100
+deltax = 2/nbins;;
+
+xbins = linspace(-1,1,nbins)
+flux = zeros(1,nbins)
+for k = 1:K
+    ichan = floor((1-a(k))/deltax)+1;
+    flux(ichan) = flux(ichan) +1;
+end
+
+figure()
+plot(xbins,flux/nbins,'.','MarkerSize',20)
