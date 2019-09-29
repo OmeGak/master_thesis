@@ -78,6 +78,8 @@
 \item a following improvement is the use of a grid instead of using the bisection method.
 \end{itemize}
 
+\item Limb darkening. Have a look at section \ref{validity_eddington}.
+
 \end{enumerate}
 
 
@@ -341,10 +343,77 @@ Solution: see slide 14?
 
 
 \newpage
-\section{Limb darkening program}
-\label{limb_darkening_discussion}
+\section{Limb darkening}
+\label{limb_darkening_program_discussion}
 
-\subsubsection{2D Case}
+\subsection{Formulation of the problem}
+\begin{itemize}
+\item The radiative transfer equation \ref{GENERAL_RT_EQUATION} in this situtation becomes an integro-differential equation with  $S(\tau) = \frac{1}{4\pi} \int I(\tau,\mu) d\Omega$
+\begin{equation}
+\begin{aligned}
+\mu \frac{dI(\tau,\mu)}{d\tau} &= -I(\tau,\mu) + S(\tau)  \\ 
+&= -I(\tau,\mu)  + \frac{1}{4\pi} \int I(\tau,\mu) d\Omega
+\end{aligned}
+\label{RTE_limb_darkening}
+\end{equation}
+
+\item The difficulty resides in the (evaluation of) the source function. Monte Carlo simulation avoids explicit calculation source function: source function implicit in Monte Carlo simulation. There the physics are simulated \textsc{in between two consecutive scattering events} as follows
+\begin{equation}
+\frac{dI}{dz} = -\alpha I 
+\end{equation}
+thus $I = I_0 e^{-\delta \tau}$ and then $\tau$ is sampled according to $\tau = - \log(X_{\text{random}})$
+\end{itemize}
+
+\subsection{Solving the (integro-differential) radiative transfer equation}
+\paragraph{Analytical Solution of Equation (\ref{RTE_limb_darkening})}
+Ik heb de mosterd gehaald op \cite{Dublin_limb_darkening}.
+
+\begin{equation}
+I(0,\mu) = \int_0^{\infty} S(\tau) exp\left( \frac{-\tau}{\mu} \right) d\left( \frac{\tau}{\mu} \right)
+\end{equation}
+
+\paragraph{Numerical Solution of Equation (\ref{RTE_limb_darkening})}
+First rewrite the equation
+\begin{equation}
+\begin{aligned}
+\mu \frac{dI(\tau,\mu)}{d\tau} 
+&= -I(\tau,\mu)  + \frac{1}{4\pi} \int I(\tau,\mu) \sin(\theta) d\theta d\phi 
+\\ &= -I(\tau,\mu)  + \frac{1}{4\pi} \int I(\tau,\mu) d\mu d\phi 
+\\ &= -I(\tau,\mu)  + \frac{1}{2} \int I(\tau,\mu) d\mu 
+\end{aligned}
+\end{equation}
+Discretization scheme:
+\begin{equation}
+???
+\end{equation}
+
+
+\subsection{Eddington-Barbier approximation} 
+\begin{equation}
+J(\tau) = 3H \left( \tau + \frac{2}{3} \right)
+\label{Eddington_Barbier}
+\end{equation}
+Together with the time-independent radiative transfer equation (\ref{GENERAL_RT_EQUATION}) in a gray (frequency-independent) planar medium gives \begin{equation}
+\mu \frac{\partial I(\tau,\mu)}{\partial \tau} = I(\tau,\mu) - 3H\left(\frac{2}{3}+\tau \right)
+\label{rad_transfer_eq_limb_darkening}
+\end{equation}
+The emergent intensity $I(0,\mu)$ is a solution of Equation (\ref{rad_transfer_eq_limb_darkening}). Its solution for $\tau = 0$ equals 
+\begin{equation}
+I(\tau = 0,\mu) = I_1 \left( \frac{2}{5} + \frac{3 \mu}{5} \right) 
+\end{equation}
+
+with $a= \frac{\sigma}{2 \pi}T_{eff}^4$ and $b = \frac{3 \sigma}{4 \pi}T_{eff}^4$
+
+\subsubsection{Validity of the Eddington-Barbier approximation}
+\label{validity_eddington}
+
+If we assume Equuation (\ref{Eddington_Barbier}) then $I = I_1(a+b\mu)$ thus $J = \frac{1}{2} \int(\tau,\mu) d\mu = \frac{1}{2} \int_0^1 (a+b\mu)d\mu $
+
+\noindent\fbox{
+  \parbox{\textwidth}{
+  dat ziet er hier niet goed uit }}
+
+\subsection{2D Case}
 We again have $\mu = \cos(\theta)$. The solution of the radiative transfer equation in \underline{plane-parallel syummetry} with frequency-independent absorption and emission, is 
 \begin{equation}
 I(\mu) = I_1 (0.4 + 0.6\mu)
@@ -412,7 +481,7 @@ Calculates the angular dependence of photon's emitted from a plane-parallel, gre
 Figure \ref{2D_mu} is according to what is expected $I = I_0(0.4+0.6\mu)$. The input parameters are as follows \texttt{Limb\_Darkening(number\_of\_channels = 20, number\_of\_photons = $10^5$, \\ maximum\_optical\_depth = 10)}.
 
 \newpage
-\subsubsection{3D Code}
+\subsection{3D Case}
 \label{3D_limb_darkening}
 
 What changes is this: 
@@ -448,11 +517,13 @@ the function \texttt{Limb\_Darkening\_3D} with the following input parameters: \
 \vspace{0.4cm}
 Via this link, you can go back to the exercises overview: Section \underline{\ref{Overview_Part_3}}.
 
+
 \newpage
 \section{Spectral line formation: pcyg.f90}
 This section is about the study of line formation in an expanding wind.
 
-\subsection{Overview of variables}
+\subsection*{Background}
+\paragraph{Overview of variables}
 \begin{center}
 \centering
 {\tabulinesep=1.5mm
@@ -494,17 +565,13 @@ xmueout & outwards (scattered) angle \\
 & alpha \\ 
 & r \\ 
 & v \\ 
-& sigma \\ \hline
+& sigma \\ \hline \hline
+
+nchan & amount of bins \\ \hline
 \end{tabu}}
 \end{center}
 
-The amout of bins \texttt{nchan = 100}.
-
-
 \newpage
-\subsection{Mathematical things that are noteworthy}
-
-\subsubsection{General working}
 \begin{center}
 \begin{tikzpicture}
 [node distance=2.5cm,auto,>=latex']
@@ -519,41 +586,32 @@ The photons are sorted according to \texttt{xnew}.
 In general, the flux is dependent on $\mu$ and the frequency $x$.
 
 
-\begin{itemize}
-\item I think that it satisfies $N(x)dx \sim I(x)xdx$
-\item We are thus interested in $F_{\lambda} = F_{\nu}$
-\end{itemize}
-
-
-\subsubsection{Practical formula}
+\paragraph{Practical formula}
 \begin{itemize}
 \item emission angle $\mu = \cos(\theta)$
 \item according p-ray $p = \sqrt{1-\mu^2} = \sin(\theta)$
 \item incident angle $\texttt{xmuein} = \sqrt{1-\left(\frac{pstart}{r}\right)^2}$
 \end{itemize}
 
-\subsubsection{Geometry \& Symmetry assumptions}
+\paragraph{Geometry \& Symmetry assumptions}
 \begin{itemize}
 \item spherical geometry
 \end{itemize}
 
-
-\newpage
-\subsection{Exercises}
-\subsubsection{Investigation of original code}
+\subsubsection{Experimental results}
 In original version of the code, all photons are released isotropially from the photosphere.
 
 \begin{figure}[!htp]
 \centering
 \includegraphics[width=0.5\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot6xk0100alpha0beta1test0.png}
-\caption{Original version of the code}
+\caption{Original version of the code \\ AMOUNT OF PHOTONS?}
 \end{figure}
 
 \newpage
-\subsubsection{First adaptation: what if all photons are released radially from photosphere?}
+\subsection{First adaptation: what if all photons are released radially from photosphere?}
 \label{PCYG FIRST adaptation}
 
-\paragraph{\underline{Release photons radially: numerical MC experiments}}
+\subsubsection{\underline{Release photons radially: numerical MC experiments}}
 What would happen with line-profile, if you assumed all photons
 were released radially from photopshere?
 \begin{itemize}
@@ -577,7 +635,7 @@ were released radially from photopshere?
 \end{figure}
 
 
-\paragraph{\underline{Derive analytic expression}} See also slide  26/49 [Sundqvist course material]. 
+\subsubsection{\underline{Derive analytic expression}} See also slide  26/49 [Sundqvist course material]. 
 \begin{itemize}
 \item since \texttt{xmuein = 1} we have for the velocity profile 
 \begin{equation}
@@ -668,13 +726,9 @@ One must also take into account that not all of the photons that are released ac
 \noindent\fbox{
   \parbox{\textwidth}{TO DO: proceed from this to the analytical expression for the flux. Here I am stuck for the moment.}}
   
-\vspace{1cm}
-Via this link, you can go back to the exercises overview: Section \underline{\ref{Overview_Part_2}.}
-
 \newpage
-\paragraph{\underline{Experiments with other opacities}}
+\subsubsection{\underline{Experiments with other opacities}}
 The results for \texttt{xk0=0.5} are shown in Figures \ref{PCyg_mu_eq_1xk0_05} and \ref{PCyg_mu_eq_xk0_05_vs_100}.
-
 
 \begin{figure}[!htbp]
 \centering
@@ -701,7 +755,7 @@ Via this link, you can go back to the exercises overview: Section \underline{\re
 
 
 \newpage
-\subsubsection{Second adaptation: isotropic scattering}
+\subsection{Second adaptation: isotropic scattering}
 \label{isotropic_scattering}
 What would happen to line-profile, is you assumed scattering
 was isotropic 
@@ -732,25 +786,14 @@ It is clear from Figure \ref{Pcyg_isotropic_scattering} that the peak around $x=
   \parbox{0.35\textwidth}{Analyse this behaviour more closely}}
 
 \newpage
-\subsubsection{Third adaptation: introduction of Eddington limb-darkening}
+\subsection{Third adaptation: introduction of Eddington limb-darkening}
 \label{Eddington_limb_darkening_adaptation}
-Put Eddington limb-darkening in. What happens? 
 
-\paragraph{General (introductory) discussion: Eddington limb darkening}
-The data are taken from Christensen, 2015.
-\begin{itemize}
-\item the source function $S= \braket{I} = a + b\tau_{\nu}$ with $a= \frac{\sigma}{2 \pi}T_{eff}^4$ and $b = \frac{3 \sigma}{4 \pi}T_{eff}^4$
-\item solve the equation
-\item this yields $\frac{I(\theta)}{I(0)} = \frac{a+b\cos(\theta)}{a+b} = \frac{2}{5} + \frac{3}{5}\cos(\theta)$
-\end{itemize}
+\paragraph{Goal} Put Eddington limb-darkening in. What happens? 
 
-\begin{figure}[!htp]
-\centering
-\includegraphics[width=0.7\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/Eddington_limb_darkening.png}
-\caption{Eddington limb darkening (two times the same plot with $\mu =  \cos(\theta)$ }
-\end{figure}
+\subsubsection{Construction of probability distribution corresponding to Eddington limb darkening}
+For a general (introductory) discussion about Eddington limb darkening, please refer to Section \ref{general_limb_darkening}
 
-\paragraph{Construction of probability distribution corresponding to Eddington limb darkening}
 
 \begin{enumerate}
 \item Let us thus first review the emmission case where \underline{the flux in each direction is isotropic} i.e. $I(\theta) = I$ (as experimented in paragraph \ref{isotropic_scattering})
@@ -786,7 +829,7 @@ subject to the normalisation condition -very similar to Equation (\ref{isotropic
 \end{equation}
 thus $A = \frac{5}{2}$. Photons need to be sampled according to
 \begin{equation}
-\frac{2}{5}(0.4+0.6\mu)\mu d\mu
+\frac{5}{2}(0.4+0.6\mu)\mu d\mu
 \label{prob_dist_Eddington}
 \end{equation}
 \end{itemize}
@@ -797,16 +840,15 @@ The results of an accept-reject method that samples the probability distribution
 
 \begin{figure}[!htp]
 \centering
-\includegraphics[width=0.7\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/Eddington_accept_reject.png}
+\includegraphics[width=0.55\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/Eddington_accept_reject.png}
 \caption{Accept-reject method for Eddington limb darkening}
 \end{figure}
-
 \end{enumerate}
 
 Via this link, you can go back to the exercises overview: Section \underline{\ref{Overview_Part_2}}.
 
 \newpage
-\subsubsection{Fourth adaptaion: photospheric line-profile}
+\subsection{Fourth adaptaion: photospheric line-profile}
 Challening: Put photospheric line-profile (simple Gaussian) in. What happens? Test on \texttt{xk0=0} (opacity = 0) case.
 
 \begin{itemize}
@@ -816,7 +858,7 @@ Challening: Put photospheric line-profile (simple Gaussian) in. What happens? Te
 \end{itemize}
 
 \newpage
-\subsubsection{Convergence analysis}
+\subsection{Convergence analysis}
 \label{convergence_analysis}
 
 \paragraph{\underline{Zero opacity}}
@@ -856,7 +898,7 @@ Via this link, you can go back to the exercises overview: Section \underline{\re
 
 
 \newpage
-\subsubsection{Variance reduction experiment}
+\subsection{Variance reduction experiment}
 \label{variance_reduction_experiment}
 
 We will set up the test as follows
@@ -867,8 +909,8 @@ We will set up the test as follows
 \item \texttt{test\_number = 5}
 \end{itemize}
 
-
 \paragraph{\texttt{xk0=100}}
+
 \begin{figure}[!htp]
 \centering
 \includegraphics[width=0.65\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/variance_reduction_test.png}
@@ -876,38 +918,26 @@ We will set up the test as follows
 \label{variance_reduction_test}
 \end{figure}
 
-\paragraph{\texttt{xk0=100}}
-
-
 \noindent\fbox{
-  \parbox{\textwidth}{
+  \parbox{0.7\textwidth}{
 Possible improvement: average over different stochastic realizations.}}
 
 \vspace{0.7cm}
 Via this link, you can go back to the exercises overview: Section \underline{\ref{Overview_Part_3}}.
 
-\newpage
-\subsection{Mathematical description of the problem \\
+\subsection{Mathematical description of the problem \&
 Looking at literature}
-Have a look at \cite{NoebauerUlrichM_2019MCRT}.
-
-\vspace{0.4cm}
-Via this link, you can go back to the exercises overview: Section \underline{\ref{Overview_Part_3}}.
-
-
-\subsection{One more question}
-What does this mean? \texttt{xnew=xstart+(v-sign(0.06,xmueou))*xmueou-v*xmuein}
+Have a look at \cite{NoebauerUlrichM_2019MCRT} (see Appendix).
 
 \newpage
 \section{Dual spectral line formation}
 \label{two_resonance_lines}
 
-\subsubsection{Introduction of second line: theoretical}
+\subsection{Introduction of second line: theoretical}
 \label{second_line}
 What happens when you add a line (e.g. \@ $x=0.5=a$)? How would you do that?
 
-
-\paragraph{Single line}
+\subsubsection{Single line}
 \begin{center}
 \vspace{-0.45cm}
 \begin{algorithm}[!htp]
@@ -940,9 +970,13 @@ What happens when you add a line (e.g. \@ $x=0.5=a$)? How would you do that?
 \end{algorithm}
 \end{center}
 
-\paragraph{Introduction of second line}
-The changes are marked in blue.
+\subsubsection{Introduction of second line}
 
+\noindent\fbox{
+  \parbox{0.7\textwidth}{
+Needs to be updated}}
+
+\begin{comment}
 \begin{center}
 \vspace{-0.45cm}
 \begin{algorithm}[!htp]
@@ -986,16 +1020,39 @@ pitfalls yet to solve:
 \begin{itemize}
 \item root must be bracketed
 \end{itemize}
+\end{comment}
 
 \subsection{Development of computer code}
-\begin{itemize}
-\item function that selects \textit{best} line
-\end{itemize}
+\subsubsection{Implementation in Matlab: user's manual}
+Run the function \texttt{test\_function(test\_number)}.
+\begin{center}
+\centering
+{\tabulinesep=1.5mm
+\begin{tabu}{|c|c|c|}
+\hline
+\texttt{test\_number} & parameter settings \\ \hline \hline
+0 & original version \\ \hline
+1 & first adaptation: radial release \\ \hline
+2 & isotropic scattering -- higher peak \\ \hline
+3 & Eddington limb darkening \\ \hline
+4 & photospheric line-profile  \\ \hline \hline
+
+5 & simple well \\ \hline
+6 & other resonance frequency (thus introducing shift) \\ \hline 
+7 & formation of two lines, only radially streaming photons (thus also radial release \\ \hline
+8 & formation of two lines, with radial release \\ \hline
+9 & formation of two lines, full scattering possibilities \\ \hline
+\end{tabu}}
+\end{center}
 
 
 \vspace{0.7cm}
-Via this link, you can go back to the exercises overview: Section \underline{\ref{Overview_Part_3}}.
+Via this link, you can go back to the exercises overview: Section \underline{\ref{Overview_Part_4}}.
 
+\subsubsection{Dirty tricks}
+\begin{itemize}
+\item when \texttt{xnew > xmax} then set \texttt{xnew} to \texttt{xmax}.
+\end{itemize}
 
 \newpage
 \section{Closer look at Monte Carlo simulations}
@@ -1024,9 +1081,11 @@ we have for the variance that $\braket{x_N}^2 = N l^2$
 then we have that $N = \tau^2$. This corresponds with the observations in Figure \ref{random_walk_N_vs_tau}.
 \end{itemize}
 
+\newpage
+\subsection{Iets}
 
 \newpage
-\subsection{Limb darkening} We first look at results from the limb darkening program. In Figure \ref{limb_darkening_N_vs_tau}, the number of scattering events is plotted versus the opacity of the medium. 
+\subsection{Limb darkening} We first look at results from the limb darkening program, as studied in Section \ref{limb_darkening_program_discussion}. In Figure \ref{limb_darkening_N_vs_tau}, the number of scattering events is plotted versus the opacity of the medium. 
 
 	\begin{figure}[!htp]
 	\centering
@@ -1042,133 +1101,10 @@ then we have that $N = \tau^2$. This corresponds with the observations in Figure
 
 The splitting scheme from \cite{Dimarco2018} can perfectly be applied to the used Monte Carlo code.
 
-\subsubsection{Eddington-Barbier approximation} 
-\begin{equation}
-\boxed{J(\tau) = 3H \left( \tau + \frac{2}{3} \right)}
-\label{Eddington_Barbier}
-\end{equation}
-Together with the time-independent radiative transfer equation in a gray (frequency-independent) planar medium:
-\begin{equation}
-\mu \frac{\partial I(\tau,\mu)}{\partial \tau} = I(\tau,\mu) - J(\tau,\mu)
-\end{equation}
-that gives
-\begin{equation}
-\boxed{\mu \frac{\partial I(\tau,\mu)}{\partial \tau} = I(\tau,\mu) - 3H\left(\frac{2}{3}+\tau \right)}
-\label{rad_transfer_eq_limb_darkening}
-\end{equation}
-with the emergent intensity $I(0,\mu)$ as solution of  Equation (\ref{rad_transfer_eq_limb_darkening}). Its solution for $\tau = 0$ equals 
-\begin{equation}
-I(\tau = 0,\mu) = I_1 \left( \frac{2}{5} + \frac{3 \mu}{5} \right) 
-\end{equation}
-
-\subsubsection{Validity of the Eddington-Barbier approximation}
-If we assume Equuation (\ref{Eddington_Barbier}) then $I = I_1(a+b\mu)$ thus $J = \frac{1}{2} \int(\tau,\mu) d\mu = \frac{1}{2} \int_0^1 (a+b\mu)d\mu $
-
-\noindent\fbox{
-  \parbox{\textwidth}{
-  dat ziet er hier niet goed uit }}
-
-
-\subsubsection{Solving the (integro-differential) radiative transfer equation}
-\begin{itemize}
-\item the integro-differential equation describing radiative transfer
-\begin{equation}
-\begin{aligned}
-\mu \frac{dI(\tau,\mu)}{d\tau} &= -I(\tau,\mu) + S(\tau)  \\ 
-&= -I(\tau,\mu)  + \frac{1}{4\pi} \int I(\tau,\mu) d\Omega
-\end{aligned}
-\label{RTE_limb_darkening}
-\end{equation}
-where $\boxed{S(\tau) = \frac{1}{4\pi} \int I(\tau,\mu) d\Omega}$
-
-\item The difficulty resides in the source function
-
-\item Monte Carlo simulation avoids explicit source function: source function implicit in Monte Carlo simulation
-
-\item in the Monte Carlo program, the physics are simulated \textsc{in between two consecutive scattering events} as follows
-\begin{equation}
-\frac{dI}{dz} = -\alpha I 
-\end{equation}
-thus $\frac{dI}{I} = -\alpha dz = -\delta \tau$ and $I = I_0 e^{-\delta \tau}$ and thus $\tau$ is sampled according to $\tau = - \log(X_{\text{random}})$
-\end{itemize}
-
-\paragraph{Analytical Solution of Equation (\ref{RTE_limb_darkening})}
-Ik heb de mosterd gehaald op \cite{Dublin_limb_darkening}.
-
-\begin{equation}
-I(0,\mu) = \int_0^{\infty} S(\tau) exp\left( \frac{-\tau}{\mu} \right) d\left( \frac{\tau}{\mu} \right)
-\end{equation}
-
-\paragraph{Numerical Solution of Equation (\ref{RTE_limb_darkening})}
-First rewrite the equation
-\begin{equation}
-\begin{aligned}
-\mu \frac{dI(\tau,\mu)}{d\tau} 
-&= -I(\tau,\mu)  + \frac{1}{4\pi} \int I(\tau,\mu) \sin(\theta) d\theta d\phi 
-\\ &= -I(\tau,\mu)  + \frac{1}{4\pi} \int I(\tau,\mu) d\mu d\phi 
-\\ &= -I(\tau,\mu)  + \frac{1}{2} \int I(\tau,\mu) d\mu 
-\end{aligned}
-\end{equation}
-Discretization scheme:
-\begin{equation}
-???
-\end{equation}
 
 \noindent\fbox{
   \parbox{\textwidth}{
   If you assume constant opacity then $\tau = \alpha z$
   }}
 
-\newpage
-\section{Mass loss from inhomogeneous hot star winds (Sundqvist)}
-\begin{itemize}
-\item GOAL: synthesis of UV resonance lines from inhomogeneous 2D winds
-\begin{itemize}
-\item clumped in density
-\item clumped in velocity
-\item effects of non-void inter-clump medium
-\end{itemize}
-
-\item WIND MODELS
-\begin{itemize}
-\item symmetry assumptions
-\begin{itemize}
-\item 1D: spherical symmetry
-\item 2D: symmetry in $\Phi$
-\end{itemize}
-
-\item models
-\begin{enumerate}
-
-\item time-dependent radiation-hydrodynamic from Puls and Owocki (POF)
-\begin{itemize}
-\item 1D
-\item isothermal flow
-\item perturbations triggered by photospheric sound waves
-\end{itemize}
-
-\item time-dependent radiation-hydrodynamic from Feldmeier (FPP)
-\begin{itemize}
-\item 1D
-\item treatment of energy equation
-\item perturbations triggered by photospeheric sound waves or Langevin perturbagions (photospheric turbulence)
-\end{itemize}
-
-\item stochastic model, clumped in density
-\begin{itemize}
-\item smooth winds with $v_{\beta} = (1-b/r)^{\beta}$ with $\beta = 1$
-\item clumping factor $f_{cl}$
-\end{itemize}
-
-\item stochastic model, clumped in density and in velocity (non-monotonic velocity field)
-\begin{itemize}
-\item smooth winds with $v_{\beta} = (1-b/r)^{\beta}$ with $\beta = 1$
-\item clumping factor $f_{cl}$
-\end{itemize}
-\end{enumerate}
-
-\end{itemize}
-
-\item RADIATIVE TRANSFER (MC-2D)
-\end{itemize}
 \end{document}

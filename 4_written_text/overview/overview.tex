@@ -32,10 +32,10 @@ In spherical geometry $d\Omega = \sin(\theta) d\theta d\phi = d\mu d\phi$.
 
 \subsection{Radiation equations}
 Material from \cite{TheoryStellarAtmospheres2014}
-
-Specific intensity $I(s,\lambda,x,y,t)$ 
+Specific intensity $I(s,\lambda,x,y,t)$ satisfies the Radiative Transfer Equation:
 \begin{equation}
-\frac{\delta I(q,t)}{\delta s} = \eta (q,t) - \chi(q,t) I(q,t)
+\boxed{\frac{\delta I(q,t)}{\delta s} = \eta (q,t) - \chi(q,t) I(q,t)}
+\label{GENERAL_RT_EQUATION}
 \end{equation}
 In cartesian coordinates (with propagation vector $\vec{n} = \left[ \begin{matrix} n_x \\ n_y \\ n_z \end{matrix}  \right]  = \left[ \begin{matrix} \sin(\theta) \cos(\phi) \\ \sin(\theta) \sin(\phi)  \\ \cos(\theta) \end{matrix}  \right]$):
 \begin{equation}
@@ -183,14 +183,9 @@ B_1(\tau) + \frac{\omega_0(\tau)}{2} \int_0^{\tau_1} \mathcal{S} (t) E_1(|t-\tau
 \item solve for $\mathcal{S}(t)$
 \item then find $I(\tau,\mu)$
 \end{itemize}
-
 \end{itemize}
 \end{itemize}
 
-\subsection{The H-functions}
-\begin{itemize}
-\item characteristic equation
-\end{itemize}
 
 \subsection{Integral equations}
 Based on the book \cite{Mmfp}.
@@ -293,14 +288,45 @@ Via least-squares approximation
 \end{itemize}
 
 
+\section{Stellar Winds}
+From \cite{introStellarWindsLamersCassinelli1999}
+
+\subsection{Chronology of stellar wind studies}
+\begin{enumerate}
+\item early history: similarties between spectra of nova and luminous stars
+\item diagnostics of structure of oouter atmospheres of the sun and stars
+\item the development of the solar wind theory, further evidence for outflows
+\item rocket and early satellite observations of stellar winds
+\item instabilities and non-speherical effects in winds
+\end{enumerate}
+There are still many things of stellar winds that are uncertain.
+
+\subsection{Observations \& Formation of spectral lines in stellar winds}
+\begin{itemize}
+\item line scattering
+\begin{itemize}
+\item resonance scattering: from ground state of atom
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Pcygni profiles}
+
+
 \newpage
 \section{Glossary}
 \begin{itemize}
-\item SED: \hfill spectral energy distribution
+\item LASER: 
+	\hfill Light Amplification by Stimulated Emission of Radiation
 
-\item (spectral) line-force: \hfill force on material in stellar atmosphere
+\item (spectral) Line-force: 
+	\hfill force on material in stellar atmosphere
 
-\item LASER: \hfill Light Amplification by Stimulated Emission of Radiation
+\item MASER: 
+	\hfill Microwave Amplification by Stimulated Emission of Radiation
+
+
+\item SED: 
+	\hfill spectral energy distribution
 \end{itemize}
 
 \end{document}

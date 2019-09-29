@@ -47,7 +47,8 @@ for k = 1:length(nx_col)
     dt = 0.5*cfl*dx^2/diff;
     
     % solve the equation
-    [sol , exact, err, error_col] = implicit_1D_solver(imp,tend,nx,cfl,make_plot);
+    init_cond_num = 1;
+    [sol , exact, err, error_col] = implicit_1D_solver(imp,tend,nx,cfl,make_plot,init_cond_num);
     
     % collect data
     dt_col(k) = dt;
@@ -55,8 +56,15 @@ for k = 1:length(nx_col)
 end
 
 figure()
-plot(nx_col, log(error)/log(10))
-% set(gca, 'YScale', 'log')
+loglog(nx_col,error,'.--')
+hold on, loglog(nx_col,nx_col.^(-1),'-')
+
 title('convergence')
 ylabel('log_{10}(error)')
 xlabel('number of grid points')
+legend('experimental','N ^{0.5}')
+
+make_save = 1
+if make_save == 1
+    saveas(gcf,'data/convergence.png')
+end

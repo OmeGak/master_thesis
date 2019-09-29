@@ -134,6 +134,7 @@ program pcyg
 		   goto 5
 		endif  
 
+
 		call random_number(xmuestart)   		!start angle between 0 and 1, no limb darkening
 		xmuestart = sqrt(xmuestart)
 

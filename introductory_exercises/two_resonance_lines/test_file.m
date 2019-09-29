@@ -1,155 +1,82 @@
-%% test one_radial_line.m
-clc, clear all, close all
+function [freq, flux_two, number_scatterings,photon_path] = test_file(test_number)
+    clc, close all
 
-nphot = 10^4
-xk0 = 100
-alpha = 0
-beta = 1
+    nphot = 10^5
+    xk0 = 100
+    alpha = 0
+    beta = 1
+    nbins = 100;
 
-make_plot = 1
-save = 1
+    possibility_scattering = 1;
+    
+    resonance_x = [0];
+    multiple_scatterings = 0;
 
-flux_one_radial_line = one_radial_line(nphot , xk0 , alpha , beta , make_plot , save)
+    all_radial = 0;
+    radial_release = 0;
+    
+    isotropic_scattering = 0;
+    Eddington_limb_darkening = 0;
+    
+    if test_number == 0
+        % original version
 
-%% test one_RADIAL_line_beta_version.m
-clc, clear all, close all
+    elseif test_number == 1
+        % first adaptation: radial release
+        radial_release = 1; 
 
-nphot = 10^4
-xk0 = 100
-alpha = 0
-beta = 1
+    elseif test_number == 2
+        % isotropic scattering --> higher peak
+        radial_release = 0;
 
-make_plot = 1
-save_plot = 1
+    elseif test_number == 3    
+        % Eddington limb darkening 
+        Eddington_limb_darkening = 1;
 
-[freq, flux_one_radial] = one_radial_line_beta_version(nphot , xk0 , alpha , beta , make_plot , save_plot);
-save('flux_one_radial.mat','flux_one_radial')
+    elseif test_number == 4
+        % photospheric line-profile 
+        % ???
+    
+    elseif test_number == 5
+        % simple well
+        possibility_scattering = 0;     
+    
+    elseif test_number == 6
+        % simple well
+        resonance_x = [0.5];
+        possibility_scattering = 0; 
+        
+    elseif test_number == 7
+        % formation of two lines, only radially streaming photons (thus also
+        % radial release)
+        all_radial = 1;
+        radial_release = 1;    
 
+    elseif test_number == 8
+        % formation of two lines, with radial release
+        resonance_x = [0,0.5];
+        all_radial = 0;
+        radial_release = 1;    
+        multiple_scatterings = 1;
 
-%% test one_RADIAL_line_gamma_version.m
-clc, clear all, close all
+    elseif test_number == 9
+        % formation of two lines, limited scattering possibilities
+        resonance_x = [0,-0.5];
+        multiple_scatterings = 0;
+        
+    elseif test_number == 9
+        % formation of three lines, full scattering possibilities
+        resonance_x = [0,-0.5];
+        multiple_scatterings = 1;
 
-nphot = 10^4
-xk0 = 100
-alpha = 0
-beta = 1
-possibility_scattering = 1;
-nbins = 100;
+    end
 
-make_plot = 1
-make_save = 1
+    make_plot = 1
+    make_save = 1 
 
-[freq, flux_one_radial] = one_radial_line_gamma_version(nphot,xk0,alpha,beta,make_plot,make_save,possibility_scattering,nbins);
-if possibility_scattering == 0
-    flux_simple_sink = flux_one_radial
-    save('flux_simple_sink.mat','flux_simple_sink')
+    [freq, flux_two,number_scatterings,photon_path] = multiple_lines(nphot,xk0,alpha,beta,...
+        make_plot,resonance_x,make_save,nbins,possibility_scattering,...
+        multiple_scatterings,all_radial,radial_release,isotropic_scattering,...
+        Eddington_limb_darkening);
+    
 end
-
-%% test two_lines_RADIAL
-clc, clear all, close all
-
-nphot = 10^5
-xk0 = 100
-alpha = 0
-beta = 1
-nbins = 100
-resonance_x = [0]
-
-make_plot = 1
-make_save = 1
-
-flux_two_radial = two_lines_RADIAL(nphot,xk0,alpha,beta,make_plot,resonance_x,make_save,nbins);
-save('flux_two_radial.mat','flux_two_radial')
-
-
-%% make comparision plot
-clc, clear all, close all
-
-flux_one_radial = matfile('flux_one_radial.mat');
-flux_two_radial = matfile('flux_two_radial.mat');
-flux_simple_sink = matfile('flux_simple_sink.mat');
-
-figure()
-plot(flux_one_radial.flux_one_radial)
-hold on, plot(flux_two_radial.flux_two_radial)
-hold on, plot(flux_simple_sink.flux_simple_sink)
-
-legend('one line, radial','two lines (radial)','well')
-
-
-%% test two_lines
-clc, clear all, close all
-
-nphot = 10^5
-xk0 = 100
-alpha = 0
-beta = 1
-nbins = 100;
-possibility_scattering = 1;
-multiple_scatterings = 0;
-resonance_x = [0];
-
-make_plot = 1
-make_save = 1 
-
-flux_two = two_lines(nphot,xk0,alpha,beta,make_plot,resonance_x,make_save,nbins,possibility_scattering,multiple_scatterings);
-save('flux_two.mat','flux_two')
-
-%% make comparision plot
-clc, clear all, close all
-
-flux_one_radial = matfile('flux_one_radial.mat');
-flux_two_radial = matfile('flux_two_radial.mat');
-flux_simple_sink = matfile('flux_simple_sink.mat');
-flux_two = matfile('flux_two.mat');
-
-figure()
-plot(flux_one_radial.flux_one_radial)
-hold on, plot(flux_two_radial.flux_two_radial)
-hold on, plot(flux_simple_sink.flux_simple_sink)
-hold on, plot(flux_two.flux_two)
-
-legend('one line, radial','two lines (radial)','well','two lines')
-
-%% plot Sobolev approximation function
-
-clc, clear all, close all
-
-pstart = 0;
-b = 0.99;
-beta = 1;
-xstart = 0.2;
-
-func = @(r) sqrt(1-(pstart./r).^2).*(1-b./r).^beta - xstart;
-root_num = rtbis(func,1,2,10^(-5))
-root_anal = b/(1-xstart^(1/beta))
-root_ana_test = func(b/(1-xstart^(1/beta)))
-
-x= linspace(1,2);
-figure()
-plot(x,func(x))
-hold on, plot(x,0*x,'--')
-
-title('Sobolev condition')
-xlabel('r')
-ylabel('func(r)')
-
-%% about uniform random number
-clc, clear all, close all
-
-K = 10^4
-a = rand(1,K)
-a = a.*(-1).^(sign(rand(1,K)-0.5)==1)
-
-nbins = 100
-deltax = 2/nbins;;
-
-xbins = linspace(-1,1,nbins)
-flux = zeros(1,nbins)
-for k = 1:K
-    ichan = floor((1-a(k))/deltax)+1;
-    flux(ichan) = flux(ichan) +1;
-end
-
-figure()
-plot(xbins,flux/nbins,'.','MarkerSize',20)

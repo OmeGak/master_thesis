@@ -9,50 +9,60 @@
 \BOOKMARK [2][-]{subsection.1.7}{Overview of units}{section.1}% 9
 \BOOKMARK [1][-]{section.2}{The mathematics of Radiative Transfer}{part.1}% 10
 \BOOKMARK [2][-]{subsection.2.1}{Auxiliary mathematics}{section.2}% 11
-\BOOKMARK [2][-]{subsection.2.2}{The H-functions}{section.2}% 12
-\BOOKMARK [2][-]{subsection.2.3}{Integral equations}{section.2}% 13
-\BOOKMARK [1][-]{section.3}{Challenges in Radiative Transfer}{part.1}% 14
-\BOOKMARK [2][-]{subsection.3.1}{Overview of the problem}{section.3}% 15
-\BOOKMARK [2][-]{subsection.3.2}{Challenging domains of application}{section.3}% 16
-\BOOKMARK [1][-]{section.4}{Glossary}{part.1}% 17
-\BOOKMARK [0][-]{part.2}{II Radiative Transfer: numerical techniques}{}% 18
-\BOOKMARK [1][-]{section.5}{Introduction to Monte Carlo Radiation Transfer}{part.2}% 19
-\BOOKMARK [2][-]{subsection.5.1}{Elementary principles}{section.5}% 20
-\BOOKMARK [2][-]{subsection.5.2}{Example: plane parallel atmosphere}{section.5}% 21
-\BOOKMARK [1][-]{section.6}{Asymptotic Preserving Monte Carlo methods for transport equations in the diffusive limit}{part.2}% 22
-\BOOKMARK [1][-]{section.7}{Fluid and hybrid Fluid-Kinetic models \(for neutral particles in plasma edge\) \(Horsten2019\)}{part.2}% 23
-\BOOKMARK [1][-]{section.8}{Overview of existing \(Monte Carlo\) radiative transfer codes}{part.2}% 24
-\BOOKMARK [2][-]{subsection.8.1}{Synthesis codes}{section.8}% 25
-\BOOKMARK [2][-]{subsection.8.2}{Inversion codes}{section.8}% 26
-\BOOKMARK [0][-]{part.3}{III Practical work and Exercises}{}% 27
-\BOOKMARK [1][-]{section.9}{Overview of exercises \(PART I\)}{part.3}% 28
-\BOOKMARK [1][-]{section.10}{Overview of exercises \(PART II\)}{part.3}% 29
-\BOOKMARK [1][-]{section.11}{Overview of exercises \(PART III\)}{part.3}% 30
-\BOOKMARK [1][-]{section.12}{Overview of exercises \(PART IV\)}{part.3}% 31
-\BOOKMARK [1][-]{section.13}{Introductory exercises}{part.3}% 32
-\BOOKMARK [2][-]{subsection.13.1}{Analytical exercises}{section.13}% 33
-\BOOKMARK [2][-]{subsection.13.2}{Numerical exercises}{section.13}% 34
-\BOOKMARK [2][-]{subsection.13.3}{Other Exercises}{section.13}% 35
-\BOOKMARK [1][-]{section.14}{Limb darkening program}{part.3}% 36
-\BOOKMARK [1][-]{section.15}{Spectral line formation: pcyg.f90}{part.3}% 37
-\BOOKMARK [2][-]{subsection.15.1}{Overview of variables}{section.15}% 38
-\BOOKMARK [2][-]{subsection.15.2}{Mathematical things that are noteworthy}{section.15}% 39
-\BOOKMARK [2][-]{subsection.15.3}{Exercises}{section.15}% 40
-\BOOKMARK [2][-]{subsection.15.4}{Mathematical description of the problem \040Looking at literature}{section.15}% 41
-\BOOKMARK [2][-]{subsection.15.5}{One more question}{section.15}% 42
-\BOOKMARK [1][-]{section.16}{Dual spectral line formation}{part.3}% 43
-\BOOKMARK [2][-]{subsection.16.1}{Development of computer code}{section.16}% 44
-\BOOKMARK [1][-]{section.17}{Closer look at Monte Carlo simulations}{part.3}% 45
-\BOOKMARK [2][-]{subsection.17.1}{Random walk \(diffusion equation\)}{section.17}% 46
-\BOOKMARK [2][-]{subsection.17.2}{Limb darkening}{section.17}% 47
-\BOOKMARK [1][-]{section.18}{Mass loss from inhomogeneous hot star winds \(Sundqvist\)}{part.3}% 48
-\BOOKMARK [0][-]{part.4}{IV Questions}{}% 49
-\BOOKMARK [1][-]{section.19}{Questions for professor Sundqvist}{part.4}% 50
-\BOOKMARK [1][-]{section.20}{Questions for professor Samaey}{part.4}% 51
-\BOOKMARK [1][-]{section.21}{Solved questions}{part.4}% 52
-\BOOKMARK [1][-]{section.22}{Interesting problems}{part.4}% 53
-\BOOKMARK [1][-]{section.23}{Do not forget}{part.4}% 54
-\BOOKMARK [0][-]{part.5}{V Equation meetings}{}% 55
-\BOOKMARK [0][-]{part.6}{VI Thesis meetings}{}% 56
-\BOOKMARK [1][-]{section.24}{Meeting on 6 September 2019}{part.6}% 57
-\BOOKMARK [1][-]{section.25}{Meeting on 23 September 2019}{part.6}% 58
+\BOOKMARK [2][-]{subsection.2.2}{Integral equations}{section.2}% 12
+\BOOKMARK [1][-]{section.3}{Challenges in Radiative Transfer}{part.1}% 13
+\BOOKMARK [2][-]{subsection.3.1}{Overview of the problem}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.2}{Challenging domains of application}{section.3}% 15
+\BOOKMARK [1][-]{section.4}{Stellar Winds}{part.1}% 16
+\BOOKMARK [2][-]{subsection.4.1}{Chronology of stellar wind studies}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.2}{Observations \046 Formation of spectral lines in stellar winds}{section.4}% 18
+\BOOKMARK [1][-]{section.5}{Glossary}{part.1}% 19
+\BOOKMARK [0][-]{part.2}{II Radiative Transfer: numerical techniques}{}% 20
+\BOOKMARK [1][-]{section.6}{Introduction to Monte Carlo Radiation Transfer}{part.2}% 21
+\BOOKMARK [2][-]{subsection.6.1}{Elementary principles}{section.6}% 22
+\BOOKMARK [2][-]{subsection.6.2}{Example: plane parallel atmosphere}{section.6}% 23
+\BOOKMARK [1][-]{section.7}{Asymptotic Preserving Monte Carlo methods for transport equations in the diffusive limit}{part.2}% 24
+\BOOKMARK [1][-]{section.8}{Fluid and hybrid Fluid-Kinetic models \(for neutral particles in plasma edge\) \(Horsten2019\)}{part.2}% 25
+\BOOKMARK [1][-]{section.9}{Overview of existing \(Monte Carlo\) radiative transfer codes}{part.2}% 26
+\BOOKMARK [2][-]{subsection.9.1}{Synthesis codes}{section.9}% 27
+\BOOKMARK [2][-]{subsection.9.2}{Inversion codes}{section.9}% 28
+\BOOKMARK [0][-]{part.3}{III Practical work and Exercises}{}% 29
+\BOOKMARK [1][-]{section.10}{Overview of exercises \(PART I\)}{part.3}% 30
+\BOOKMARK [1][-]{section.11}{Overview of exercises \(PART II\)}{part.3}% 31
+\BOOKMARK [1][-]{section.12}{Overview of exercises \(PART III\)}{part.3}% 32
+\BOOKMARK [1][-]{section.13}{Overview of exercises \(PART IV\)}{part.3}% 33
+\BOOKMARK [1][-]{section.14}{Introductory exercises}{part.3}% 34
+\BOOKMARK [2][-]{subsection.14.1}{Analytical exercises}{section.14}% 35
+\BOOKMARK [2][-]{subsection.14.2}{Numerical exercises}{section.14}% 36
+\BOOKMARK [2][-]{subsection.14.3}{Other Exercises}{section.14}% 37
+\BOOKMARK [1][-]{section.15}{Limb darkening}{part.3}% 38
+\BOOKMARK [2][-]{subsection.15.1}{Formulation of the problem}{section.15}% 39
+\BOOKMARK [2][-]{subsection.15.2}{Solving the \(integro-differential\) radiative transfer equation}{section.15}% 40
+\BOOKMARK [2][-]{subsection.15.3}{Eddington-Barbier approximation}{section.15}% 41
+\BOOKMARK [2][-]{subsection.15.4}{2D Case}{section.15}% 42
+\BOOKMARK [2][-]{subsection.15.5}{3D Case}{section.15}% 43
+\BOOKMARK [1][-]{section.16}{Spectral line formation: pcyg.f90}{part.3}% 44
+\BOOKMARK [2][-]{subsection.16.1}{First adaptation: what if all photons are released radially from photosphere?}{section.16}% 45
+\BOOKMARK [2][-]{subsection.16.2}{Second adaptation: isotropic scattering}{section.16}% 46
+\BOOKMARK [2][-]{subsection.16.3}{Third adaptation: introduction of Eddington limb-darkening}{section.16}% 47
+\BOOKMARK [2][-]{subsection.16.4}{Fourth adaptaion: photospheric line-profile}{section.16}% 48
+\BOOKMARK [2][-]{subsection.16.5}{Convergence analysis}{section.16}% 49
+\BOOKMARK [2][-]{subsection.16.6}{Variance reduction experiment}{section.16}% 50
+\BOOKMARK [2][-]{subsection.16.7}{Mathematical description of the problem \046 Looking at literature}{section.16}% 51
+\BOOKMARK [1][-]{section.17}{Dual spectral line formation}{part.3}% 52
+\BOOKMARK [2][-]{subsection.17.1}{Introduction of second line: theoretical}{section.17}% 53
+\BOOKMARK [2][-]{subsection.17.2}{Development of computer code}{section.17}% 54
+\BOOKMARK [1][-]{section.18}{Closer look at Monte Carlo simulations}{part.3}% 55
+\BOOKMARK [2][-]{subsection.18.1}{Random walk \(diffusion equation\)}{section.18}% 56
+\BOOKMARK [2][-]{subsection.18.2}{Iets}{section.18}% 57
+\BOOKMARK [2][-]{subsection.18.3}{Limb darkening}{section.18}% 58
+\BOOKMARK [0][-]{part.4}{IV Questions}{}% 59
+\BOOKMARK [1][-]{section.19}{Questions for professor Sundqvist}{part.4}% 60
+\BOOKMARK [1][-]{section.20}{Questions for professor Samaey}{part.4}% 61
+\BOOKMARK [1][-]{section.21}{Solved questions}{part.4}% 62
+\BOOKMARK [1][-]{section.22}{Interesting problems}{part.4}% 63
+\BOOKMARK [1][-]{section.23}{Do not forget}{part.4}% 64
+\BOOKMARK [0][-]{part.5}{V Thesis meetings}{}% 65
+\BOOKMARK [1][-]{section.24}{Meeting on 6 September 2019}{part.5}% 66
+\BOOKMARK [1][-]{section.25}{Meeting on 23 September 2019}{part.5}% 67
+\BOOKMARK [0][-]{part.6}{VI Equation meetings}{}% 68
