@@ -121,9 +121,9 @@ program pcyg
 
 		call random_number(xrnd)
 		if(xrnd.ge..5) then
-			xstart = -xstart        				!continuum red wing
-			xnew = xstart
-			goto 5
+			xstart = -xstart         				!continuum red wing
+			xnew = xstart 
+			!goto 5 
 		endif   
 
 		vmax1=vmax*.99

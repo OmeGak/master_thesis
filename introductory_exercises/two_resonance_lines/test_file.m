@@ -49,6 +49,9 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
     elseif test_number == 7
         % formation of two lines, only radially streaming photons (thus also
         % radial release)
+        resonance_x = [0,0.5];
+        multiple_scatterings = 1;
+        
         all_radial = 1;
         radial_release = 1;    
 
@@ -78,5 +81,4 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
         make_plot,resonance_x,make_save,nbins,possibility_scattering,...
         multiple_scatterings,all_radial,radial_release,isotropic_scattering,...
         Eddington_limb_darkening);
-    
 end

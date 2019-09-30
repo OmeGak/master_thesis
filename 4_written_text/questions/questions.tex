@@ -5,11 +5,10 @@
 \begin{itemize}
 \item What are the equations governing the processes in \texttt{pcyg.f90} 
 
-\item ordening of array \texttt{freq}
- 
-\item why \texttt{ freq(1) = xmax-5*deltax}?
-
 \item What does this mean? \texttt{xnew=xstart+(v-sign(0.06,xmueou))*xmueou-v*xmuein}
+
+\item Pcygni profiles: Why don't we just take the absorption and the emission and add them together.
+
 \end{itemize}
 
 \section{Questions for professor Samaey}
@@ -66,6 +65,19 @@
 \item (for which star are the exerpimental data and what assumptions are used in the theory?) (see ... and derive some formulas)
 
 \item book \textit{Stellar Atmospheres} [Mihalas] (bought)
+
+\item ordening of array \texttt{freq} (adapted the code, experimented with it)
+\begin{itemize}
+\item why \texttt{ freq(1) = xmax-5*deltax}?   
+\item frequency binning: how are you sure that no lower/higher frequencies can occur?
+\\
+\noindent\fbox{
+  \parbox{0.6\textwidth}{
+  derive this analytically }}
+\end{itemize}
+
+\item \texttt{Pcyg.f90} does it take into account that photons are scattered away from the observer? (via assumption of radial symmetry)
+
 \end{itemize}
 
 \newpage

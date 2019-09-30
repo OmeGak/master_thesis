@@ -1,21 +1,53 @@
 clc, clear all, close all
 
-test_number = 5
-[freq, flux_two, number_scatterings, photon_path] = test_file(test_number);
+test_number = 0
+[freq, flux, number_scatterings, photon_path] = test_file(test_number);
 
 
-%%
-figure()
+%% track path of the photon
+clc, close all
+display('track path of the photons')
 
-subplot(1,2,1)
-plot(photon_path(1,1:100))
-title('xstart')
+figure(), hold on
+for phot = 1:10
+    photon_path(:,phot)
+    phot_loc_x = [0];
+    phot_loc_y = [0];
+    phot_number_scatterings = (length(photon_path(:,phot))-4)/2 + 1
+    for k = 1:2:phot_number_scatterings
+        loc_x = photon_path(3,phot)*photon_path(2,phot);
+        loc_y = photon_path(3,phot)*sign(photon_path(2,phot))*sqrt(1-photon_path(2,phot)^2);
+        phot_loc_x = [phot_loc_x, phot_loc_x(end) + loc_x];
+        phot_loc_y = [phot_loc_y, phot_loc_y(end) + loc_y];
+    end
+    % neem nog een eindstraal van 1
+    loc_x = photon_path(end,phot);
+    loc_y = sign(photon_path(end,phot))*sqrt(1-photon_path(end,phot)^2);
+    phot_loc_x = [phot_loc_x, phot_loc_x(end) + loc_x];
+    phot_loc_y = [phot_loc_y, phot_loc_y(end) + loc_y];
+    plot(phot_loc_x,phot_loc_y,'.-','MarkerSize',20)
+end
 
-subplot(1,2,2)
-plot(photon_path(2,1:100))
-title('xmuestart')
+%% save reference solution
+clc, clear all, close all
 
-%% test properties of the simulation
+test_number = 0
+[freq, flux, number_scatterings, photon_path] = test_file(test_number);
+save('reference_data/freq.mat','freq');
+save('reference_data/flux.mat','flux');
+
+%% inspect reference solution (test_number = 0)
+clc, close all 
+
+freq = matfile('reference_data/freq.mat');
+    freq = freq.freq;
+flux = matfile('reference_data/flux.mat');
+    flux = flux.flux;
+
+figure
+plot(freq,flux)
+
+%% test properties of the simulation (expected scattering ratio)
 clc, clear all, close all
 
 nphot = 10^5;
