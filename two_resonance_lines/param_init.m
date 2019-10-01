@@ -1,9 +1,9 @@
-function [nchan,vmax,vmin,deltax,freq,flux,b,xmax,rmax,nin,nout] = param_init(beta,nbins)   
+function [nchan,vmin,vmax,deltax,freq,flux,b,xmax,rmax,nin,nout] = param_init(beta,nbins)   
     xmax = 1;
-   
-    vmax = 0.8;
-    vmin = 0;
-       
+    
+    vmin = -0.8;
+    vmax = 0;
+    
     b = 1-vmin^(1/beta);
     rmax = b/(1-vmax^(1/beta));
 

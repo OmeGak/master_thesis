@@ -2,8 +2,10 @@ function [freq, flux,total_number_scatterings,photon_path] = multiple_lines(npho
         resonance_x,save,nbins,possibility_scattering,multiple_scatterings,...
         all_radial,radial_release,isotropic_scattering,Eddington_limb_darkening)  
     
-    [nchan,vmax,vmin,deltax,freq,flux,b,xmax,rmax,nin,nout] = param_init(beta,nbins);
-    expected_scattering_ratio = (max(resonance_x + 0.99*vmax)-min(resonance_x + 1.01*vmin))/(2*xmax)
+    [nchan,vmin,vmax,deltax,freq,flux,b,xmax,rmax,nin,nout] = param_init(beta,nbins);
+    display(vmin)
+    display(vmax)
+    expected_scattering_ratio = (max(resonance_x + vmax)-min(resonance_x + vmin))/(2*xmax)
     
     total_number_scatterings = 0;
     rng(10);
@@ -16,6 +18,7 @@ function [freq, flux,total_number_scatterings,photon_path] = multiple_lines(npho
         [goto_end_of_loop,xstart,xnew] = create_well(xmax,vmax,vmin,resonance_x);
         photon_path(1,phot) = xstart;
 
+        goto_end_loop = 1;
         if (goto_end_of_loop == 0) 
             if radial_release == 1
                 xmuestart = 1;
@@ -60,6 +63,6 @@ function [freq, flux,total_number_scatterings,photon_path] = multiple_lines(npho
         flux(ichan) = flux(ichan) +1;        
     end
 
-    flux = normalise_and_plot(nphot,nchan,flux,xmax,make_plot,freq,save,resonance_x);
+    flux = normalise_and_plot(nphot,nchan,flux,xmax,vmin,vmax,make_plot,freq,save,resonance_x);
     total_number_scatterings = total_number_scatterings/nphot 
 end

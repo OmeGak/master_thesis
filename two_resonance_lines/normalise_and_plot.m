@@ -1,4 +1,4 @@
-function flux = normalise_and_plot(nphot,nchan,flux,xmax,make_plot,freq,save,resonance_x) 
+function flux = normalise_and_plot(nphot,nchan,flux,xmax,vmin,vmax,make_plot,freq,save,resonance_x) 
     xnorm = nphot/nchan;
     flux = flux/xnorm;
 
@@ -9,11 +9,11 @@ function flux = normalise_and_plot(nphot,nchan,flux,xmax,make_plot,freq,save,res
         hold on, plot(-xmax*ones(1,10),linspace(min(flux),max(flux),10),'--')
         hold on, plot(xmax*ones(1,10),linspace(min(flux),max(flux),10),'--')
         
-        hold on, plot(max(resonance_x+vmax)*ones(1,10),linspace(min(flux),max(flux),10),'-','MarkerSize',20,'LineWidth',20)
-        hold on, plot(min(resonance_x+vmin)*ones(1,10),linspace(min(flux),max(flux),10),'-','MarkerSize',20,'LineWidth',20)
+        hold on, plot(max(resonance_x+vmax)*ones(1,10),linspace(min(flux),max(flux),10),'-','MarkerSize',20,'LineWidth',2)
+        hold on, plot(min(resonance_x+vmin)*ones(1,10),linspace(min(flux),max(flux),10),'-','MarkerSize',20,'LineWidth',2)
          
         for a = 1:length(resonance_x)
-            hold on, plot(resonance_x(a)*ones(1,10),linspace(min(flux),max(flux),10),'--','LineWidth',50)
+            hold on, plot(resonance_x(a)*ones(1,10),linspace(min(flux),max(flux),10),'--','LineWidth',2)
         end
         
         grid on
