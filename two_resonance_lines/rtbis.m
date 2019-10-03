@@ -1,5 +1,8 @@
 function rtbis = rtbis(func,x1,x2,xacc)
 
+    display('rmax')
+    display(x2);
+
     maxit = 40;
     
     fmid = func(x2);

@@ -1,7 +1,147 @@
+%% HALLO
 clc, clear all, close all
 
-test_number = 0
-[freq, flux, number_scatterings, photon_path] = test_file(test_number);
+test_number = 11
+[freq_a, flux_a, number_scatterings_a, photon_path_a] = test_file(test_number);
+
+test_number = 12
+[freq_b, flux_b, number_scatterings_b, photon_path_b] = test_file(test_number);
+
+%%
+figure()
+histogram(photon_path_a(3,:))
+
+
+%% test scatter
+clc, clear all, close all
+
+K = 10^4;
+all_phot_x = zeros(1,K);
+
+xmuestart = 1;
+beta = 1;
+alpha = 0;
+b = 1;
+rmax = 10;
+xk0 = 100;
+nin = 0;
+resonance_x = 0;
+r_init = 1;
+all_radial = 0;
+isotropic_scattering = 1;
+nsc = 0;
+photon_path = zeros(1,K);
+xstart_coll = zeros(1,K);
+
+
+for k = 1:K
+    phot = k;
+    xstart = -0.8*rand;
+    r = best_line(xmuestart,xstart,resonance_x,r_init,rmax,b,beta);
+    [xnew,xmueou] = scatter(xstart,xmuestart,r,b,xk0,beta,alpha,all_radial,nsc,isotropic_scattering,nin)
+    all_phot_x(k) = xnew;
+    xstart_coll(k) = xstart;
+end
+
+figure()
+subplot(1,2,1)
+histogram(xstart_coll,'NumBins',100) 
+title('xstart')
+
+subplot(1,2,2)
+histogram(all_phot_x,'NumBins',100) 
+title('xnew')
+
+%% plot scattering probability
+% DOES NOT WORK
+
+clc, clear all, close all
+
+x = linspace(-1,1,100);
+r = 1./(1-x);
+p = (1-exp(-1./(1+x.^2./r)))./(1./(1+x.^2./r));
+p_tau = (1-exp(-x))./x;
+
+figure()
+subplot(1,2,1)
+plot(x,p)
+subplot(1,2,2)
+plot(x,p_tau)
+
+
+%% test make_scattering_multiple_lines(xstart,xmuestart,beta,alpha,b,rmax,xk0,nin,resonance_x,r_init,all_radial,isotropic_scattering,nsc,photon_path,phot);       
+clc, clear all, close all
+
+K = 1000;
+all_phot_x = zeros(1,K);
+
+xmuestart = 1;
+beta = 1;
+alpha = 0;
+b = 1;
+rmax = 10;
+xk0 = 100;
+nin = 0;
+resonance_x = 0;
+r_init = 1;
+all_radial = 0;
+isotropic_scattering = 1;
+nsc = 0;
+photon_path = zeros(1,K);
+
+for k = 1:K
+    phot = k;
+    xstart = -1+rand;
+    [xnew,r,nin,last_scatter,xmueou,nsc,photon_path] = make_scattering_multiple_lines(xstart,xmuestart,beta,alpha,b,rmax,xk0,nin,resonance_x,r_init,all_radial,isotropic_scattering,nsc,photon_path,phot);       
+    all_phot_x(k) = xnew;
+end
+
+figure()
+histogram(all_phot_x,'NumBins',100) 
+
+%% test main program (muliple_lines.m)
+% more specifically, test what happens in different circumstances
+clc, clear all, close all
+
+test_number = 11
+[freq_a, flux_a, number_scatterings_a, photon_path_a] = test_file(test_number);
+
+test_number = 12
+[freq_b, flux_b, number_scatterings_b, photon_path_b] = test_file(test_number);
+
+figure()
+subplot(2,2,1)
+histogram(photon_path_a(3,:));
+hold on, histogram(photon_path_a(1,:));
+legend('xnew','xstart')
+
+subplot(2,2,2)
+histogram(photon_path_b(3,:));
+hold on, histogram(photon_path_b(1,:));
+legend('xnew','xstart')
+
+subplot(2,2,3)
+histogram(photon_path_a(4,:))
+
+subplot(2,2,4)
+histogram(photon_path_b(4,:))
+
+%% test best_line(xmuestart,xstart,resonance_x,r_init,rmax,b,beta)
+clc, clear all, close all
+
+xmuestart = 1;
+resonance_x = 0;
+r_init = 1;
+
+beta = 1;
+nbins = 100;
+case_number = 1;
+nphot = 10^4;
+
+[~,~,~,~,~,~,b,xmin,~,rmax,~,~] = param_init(beta,nbins,resonance_x,case_number,nphot);
+
+xstart = 0.9;
+r = best_line(xmuestart,xstart,resonance_x,r_init,rmax,b,beta)
 
 
 %% track path of the photon

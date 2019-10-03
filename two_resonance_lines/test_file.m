@@ -17,6 +17,11 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
     
     isotropic_scattering = 0;
     Eddington_limb_darkening = 0;
+    plot_only_scattering = 0;
+
+    random_number = 10;
+
+    case_number = 1;
     
     if test_number == 0
         % original version
@@ -27,7 +32,7 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
 
     elseif test_number == 2
         % isotropic scattering --> higher peak
-        radial_release = 0;
+        isotropic_scattering = 1;
 
     elseif test_number == 3    
         % Eddington limb darkening 
@@ -43,7 +48,7 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
     
     elseif test_number == 6
         % simple well
-        resonance_x = [0.5];
+        resonance_x = [0,-0.5];
         possibility_scattering = 0; 
         
     elseif test_number == 7
@@ -72,6 +77,29 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
         resonance_x = [0,-0.5];
         multiple_scatterings = 1;
 
+    elseif test_number == 10
+        resonance_x = 0;
+        isotropic_scattering = 1;
+        radial_release = 1;
+        plot_only_scattering = 0;
+        multiple_scatterings = 0;
+
+    elseif test_number == 11
+        resonance_x = 0;
+        isotropic_scattering = 1;
+        radial_release = 1;
+        plot_only_scattering = 1;
+        multiple_scatterings = 0;
+        case_number = 1;
+
+    elseif test_number == 12
+        resonance_x = 0;
+        isotropic_scattering = 1;
+        radial_release = 1;
+        plot_only_scattering = 1;
+        multiple_scatterings = 0;
+        case_number = 2;
+
     end
 
     make_plot = 1
@@ -80,5 +108,5 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
     [freq, flux_two,number_scatterings,photon_path] = multiple_lines(nphot,xk0,alpha,beta,...
         make_plot,resonance_x,make_save,nbins,possibility_scattering,...
         multiple_scatterings,all_radial,radial_release,isotropic_scattering,...
-        Eddington_limb_darkening);
+        Eddington_limb_darkening,plot_only_scattering,random_number,case_number);
 end

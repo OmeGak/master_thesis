@@ -1,4 +1,4 @@
-function flux = normalise_and_plot(nphot,nchan,flux,xmax,vmin,vmax,make_plot,freq,save,resonance_x) 
+function flux = normalise_and_plot(nphot,nchan,flux,xmin,xmax,vmin,vmax,make_plot,freq,save,resonance_x) 
     xnorm = nphot/nchan;
     flux = flux/xnorm;
 
@@ -6,8 +6,8 @@ function flux = normalise_and_plot(nphot,nchan,flux,xmax,vmin,vmax,make_plot,fre
         figure()    
         
         plot(freq,flux,'.-','MarkerSize',20)
-        hold on, plot(-xmax*ones(1,10),linspace(min(flux),max(flux),10),'--')
-        hold on, plot(xmax*ones(1,10),linspace(min(flux),max(flux),10),'--')
+        hold on, plot(vmin*ones(1,10),linspace(min(flux),max(flux),10),'--')
+        hold on, plot(vmax*ones(1,10),linspace(min(flux),max(flux),10),'--')
         
         hold on, plot(max(resonance_x+vmax)*ones(1,10),linspace(min(flux),max(flux),10),'-','MarkerSize',20,'LineWidth',2)
         hold on, plot(min(resonance_x+vmin)*ones(1,10),linspace(min(flux),max(flux),10),'-','MarkerSize',20,'LineWidth',2)

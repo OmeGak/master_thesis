@@ -1,4 +1,4 @@
-function xmuestart = Eddington_limb_darkening_distribution()
+function xmuestart = Eddington()
     % use accept-reject method
     func = @(mu) 5/2.*(2/5+3/5.*mu).*mu;
     number_samples = 1;
