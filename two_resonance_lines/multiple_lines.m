@@ -30,6 +30,8 @@ function [freq, flux,total_number_scatterings,photon_path] = multiple_lines(npho
             end
             photon_path(2,phot) = xmuestart;
             
+            xstart = abs(xstart);
+
             last_scatter = 0;
             [xnew,r_new,nin,last_scatter,xmueou,nsc,photon_path] = ...
                 make_scattering(xstart,xmuestart,beta,alpha,b,rmax,xk0,nin,...

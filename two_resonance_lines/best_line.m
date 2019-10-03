@@ -5,6 +5,7 @@ function [r] = best_line(xmuestart,xstart,resonance_x,r_init,rmax,b,beta)
         r_collection = zeros(1,length(resonance_x));
         for k = 1:length(resonance_x)
             r_anal = b/(1-(xstart + resonance_x(k))^(1/beta));
+            r_anal = min(r_anal,rmax);
 
             func = @(r) sqrt(1-(pstart/r)^2)*(1-b/r)^beta - (xstart + resonance_x(k));
             r_num = rtbis(func , 1 , rmax , 10^(-7));

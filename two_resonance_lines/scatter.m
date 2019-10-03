@@ -26,7 +26,4 @@ function [xnew,xmueou] = scatter(xstart,xmuestart,r,b,xk0,beta,alpha,all_radial,
             last_scatter = 1;
         end
         xnew = xstart + v*(xmueou-xmuein);
-        if case_number == 2
-            xnew = xstart - v*(xmueou-xmuein);
-        end
 end
