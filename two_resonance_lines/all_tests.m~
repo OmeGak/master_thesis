@@ -10,27 +10,11 @@ test_number = 14
 test_number = 15
 [freq, flux, number_scatterings, photon_path] = test_file(test_number);
 
-%%
-close all 
-
-freq_b_augmented = [linspace(-1,-0.5,25),freq_b]
-flux_b_augmented = [ones(1,25),flux_b]
-freq_a_augmented = [freq_a,linspace(1,1.5,25)]
-flux_a_augmented = [flux_a,ones(1,25)]
-freq_super = linspace(-1,1.5,125);
-flux_super = flux_b_augmented + flux_a_augmented
-
+freq_super = [linspace(-1,-0.5,25),freq_b]
 
 figure()
-plot(freq,flux,'LineWidth',2)
-hold on, plot(freq_a_augmented,flux_a_augmented)
-hold on, plot(freq_b_augmented,flux_b_augmented)
-hold on, plot(freq_super,flux_super,'LineWidth',2)
-legend('complex intereactions','a','b','superposition','Location','southeast')
-
-figure()
-plot(freq,flux,'LineWidth',2)
-hold on, plot(freq_super,flux_super,'LineWidth',2)
+plot(freq,flux)
+hold on, plot(freq_b,flux_b)
 legend('complex intereactions','superposition')
 
 %% HALLO

@@ -1,4 +1,4 @@
-function [xnew,xmueou] = scatter(xstart,xmuestart,r,b,xk0,beta,alpha,all_radial,nsc,isotropic_scattering,nin,case_number)
+function [xnew,xmueou] = scatter(xstart,x_selected,xmuestart,r,b,xk0,beta,alpha,all_radial,nsc,isotropic_scattering,nin)        
         pstart = sqrt(1-xmuestart^2);
         xmuein = sqrt(1-(pstart/r)^2);
         v = (1-b/r)^(beta);
@@ -8,13 +8,11 @@ function [xnew,xmueou] = scatter(xstart,xmuestart,r,b,xk0,beta,alpha,all_radial,
 
         if tau >= rand
             nsc = nsc + 1;
-
             xmueou = xmueout(xk0,alpha,r,v,sigma,all_radial);
             if isotropic_scattering == 1
                 xmueou = 2*rand-1;
             end
             
-            % make xmueou symmetric
             if rand >= 0.5
                 xmueou = -xmueou;
                 if sqrt(r^2*(1-xmueou^2)) <= 1
@@ -25,5 +23,5 @@ function [xnew,xmueou] = scatter(xstart,xmuestart,r,b,xk0,beta,alpha,all_radial,
             xmueou = xmuein;
             last_scatter = 1;
         end
-        xnew = xstart + v*(xmueou-xmuein);
+        xnew = -xstart + 2*x_selected + v*(xmueou-xmuein);
 end

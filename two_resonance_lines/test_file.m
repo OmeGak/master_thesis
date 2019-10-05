@@ -13,16 +13,19 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
     multiple_scatterings = 0;
 
     all_radial = 0;
+    % release
     radial_release = 0;
-    
-    isotropic_scattering = 0;
     Eddington_limb_darkening = 0;
+    
+    % scattering
+    isotropic_scattering = 0;
     plot_only_scattering = 0;
 
     random_number = 10;
-
-    case_number = 1;
     
+    make_display = 0;
+
+    % HERE WE GO !!!
     if test_number == 0
         % original version
 
@@ -42,6 +45,7 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
         % photospheric line-profile 
         % ???
     
+        
     elseif test_number == 5
         % simple well
         possibility_scattering = 0;     
@@ -56,7 +60,6 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
         % radial release)
         resonance_x = [0,0.5];
         multiple_scatterings = 1;
-        
         all_radial = 1;
         radial_release = 1;    
 
@@ -66,15 +69,10 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
         all_radial = 0;
         radial_release = 1;    
         multiple_scatterings = 1;
-
-    elseif test_number == 9
-        % formation of two lines, limited scattering possibilities
-        resonance_x = [0,-0.5];
-        multiple_scatterings = 0;
         
     elseif test_number == 9
         % formation of three lines, full scattering possibilities
-        resonance_x = [0,-0.5];
+        resonance_x = [0];
         multiple_scatterings = 1;
 
     elseif test_number == 10
@@ -90,16 +88,27 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
         radial_release = 1;
         plot_only_scattering = 1;
         multiple_scatterings = 0;
-        case_number = 1;
-
+        
     elseif test_number == 12
-        resonance_x = 0;
+        resonance_x = [0];
+        possibility_scattering = 1;
         isotropic_scattering = 1;
-        radial_release = 1;
-        plot_only_scattering = 1;
-        multiple_scatterings = 0;
-        case_number = 2;
 
+    elseif test_number == 13
+        resonance_x = [0];
+        plot_only_scattering = 0;
+        make_display = 1
+
+    elseif test_number == 14
+        resonance_x = [0.5];
+        plot_only_scattering = 0;
+        make_display = 1    
+        
+    elseif test_number == 15
+        resonance_x = [0,0.5];
+        plot_only_scattering = 0;
+        make_display = 1 
+        
     end
 
     make_plot = 1
@@ -108,5 +117,5 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
     [freq, flux_two,number_scatterings,photon_path] = multiple_lines(nphot,xk0,alpha,beta,...
         make_plot,resonance_x,make_save,nbins,possibility_scattering,...
         multiple_scatterings,all_radial,radial_release,isotropic_scattering,...
-        Eddington_limb_darkening,plot_only_scattering,random_number,case_number);
+        Eddington_limb_darkening,plot_only_scattering,random_number,make_display);
 end
