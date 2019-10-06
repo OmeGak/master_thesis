@@ -1,4 +1,4 @@
-function [r,x_selected] = best_line(xmuestart,xstart,resonance_x,r_init,rmax,b,beta)
+function [r,x_selected,tau_selected] = best_line(xmuestart,xstart,resonance_x,resonance_tau,r_init,rmax,b,beta)
         % determine radius of interaction
 
         pstart = sqrt(1-xmuestart^2);
@@ -23,10 +23,12 @@ function [r,x_selected] = best_line(xmuestart,xstart,resonance_x,r_init,rmax,b,b
         if length(r_collection) == 1
             r = r_collection;
             x_selected = resonance_x;
+            tau_selected = resonance_tau;
         else
-            r = min(sign(xmuestart)*(r_collection-r_init)) +r_init;
+            r = min(sign(xmuestart)*(r_collection-r_init)) + r_init;
             index = find(r_collection == r);
             index = index(1);
             x_selected = resonance_x(index);
+            tau_selected = resonance_tau(index);
         end
 end

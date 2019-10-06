@@ -133,28 +133,16 @@ histogram(all_phot_x,'NumBins',100)
 % more specifically, test what happens in different circumstances
 clc, clear all, close all
 
-test_number = 11
-[freq_a, flux_a, number_scatterings_a, photon_path_a] = test_file(test_number);
 
 test_number = 12
-[freq_b, flux_b, number_scatterings_b, photon_path_b] = test_file(test_number);
+[freq, flux, number_scatterings, photon_path] = test_file(test_number);
 
 figure()
-subplot(2,2,1)
-histogram(photon_path_a(3,:));
-hold on, histogram(photon_path_a(1,:));
+histogram(photon_path(3,:));
+hold on, histogram(photon_path(1,:));
 legend('xnew','xstart')
 
-subplot(2,2,2)
-histogram(photon_path_b(3,:));
-hold on, histogram(photon_path_b(1,:));
-legend('xnew','xstart')
 
-subplot(2,2,3)
-histogram(photon_path_a(4,:))
-
-subplot(2,2,4)
-histogram(photon_path_b(4,:))
 
 %% test best_line(xmuestart,xstart,resonance_x,r_init,rmax,b,beta)
 clc, clear all, close all
@@ -175,28 +163,42 @@ r = best_line(xmuestart,xstart,resonance_x,r_init,rmax,b,beta)
 
 
 %% track path of the photon
-clc, close all
+clc, close all, clear all
 display('track path of the photons')
 
+test_number = 0;
+[freq, flux, number_scatterings, photon_path] = test_file(test_number);
+
+Nphot = 20
 figure(), hold on
-for phot = 1:10
-    photon_path(:,phot)
-    phot_loc_x = [0];
-    phot_loc_y = [0];
-    phot_number_scatterings = (length(photon_path(:,phot))-4)/2 + 1
-    for k = 1:2:phot_number_scatterings
-        loc_x = photon_path(3,phot)*photon_path(2,phot);
-        loc_y = photon_path(3,phot)*sign(photon_path(2,phot))*sqrt(1-photon_path(2,phot)^2);
-        phot_loc_x = [phot_loc_x, phot_loc_x(end) + loc_x];
-        phot_loc_y = [phot_loc_y, phot_loc_y(end) + loc_y];
+c_map = jet(Nphot);
+for phot = 1:Nphot
+    % specify a color
+    a = c_map(phot,:);
+    
+    % initial shooting
+    phot_loc_x = [1 , 1+photon_path(3,phot)*photon_path(2,phot)];
+    phot_loc_y = [1 , 1+photon_path(3,phot)*randi([-1,1])*sqrt(1-photon_path(2,phot)^2)];
+    plot(phot_loc_x,phot_loc_y,'.-','MarkerSize',20,'color',a)
+    
+    % other scattering events
+    phot_number_scatterings = (length(photon_path(:,phot))-4)/2 + 1;
+    if phot_number_scatterings >= 2
+        for k = 2:2:phot_number_scatterings
+            phot_loc_x = [phot_loc_x, phot_loc_x(end) + photon_path(3,phot)*photon_path(2,phot)];
+            phot_loc_y = [phot_loc_y, phot_loc_y(end) + photon_path(3,phot)*randi([-1,1])*sqrt(1-photon_path(2,phot)^2)];
+        end
+        plot(phot_loc_x,phot_loc_y,'.-','MarkerSize',20,'color',a)
     end
+
     % neem nog een eindstraal van 1
-    loc_x = photon_path(end,phot);
-    loc_y = sign(photon_path(end,phot))*sqrt(1-photon_path(end,phot)^2);
-    phot_loc_x = [phot_loc_x, phot_loc_x(end) + loc_x];
-    phot_loc_y = [phot_loc_y, phot_loc_y(end) + loc_y];
-    plot(phot_loc_x,phot_loc_y,'.-','MarkerSize',20)
+    phot_loc_x = [phot_loc_x(end), phot_loc_x(end) + photon_path(end,phot)];
+    phot_loc_y = [phot_loc_y(end), phot_loc_y(end) + sign(photon_path(end,phot))*sqrt(1-photon_path(end,phot)^2)];
+    plot(phot_loc_x,phot_loc_y,'--','MarkerSize',20,'color',a)
 end
+x = linspace(-1,1,20);
+hold on, plot(x,1+sqrt(1-x.^2),'color','yellow','LineWidth',4)
+hold on, plot(x,1-sqrt(1-x.^2),'color','yellow','LineWidth',4)
 
 %% save reference solution
 clc, clear all, close all
@@ -216,18 +218,6 @@ flux = matfile('reference_data/flux.mat');
 
 figure
 plot(freq,flux)
-
-%% test properties of the simulation (expected scattering ratio)
-clc, clear all, close all
-
-nphot = 10^5;
-xk0 = 100;
-alpha = 0;
-beta = 1;
-nbins = 110;
-
-[nchan,vmax,vmin,deltax,freq,flux,b,xmax,rmax,nin,nout] = param_init(nphot,xk0,alpha,beta,nbins)
-expected_scattering_ratio = (vmax-vmin)/(2*xmax)
 
 %% make comparison plots
 clc, clear all, close all

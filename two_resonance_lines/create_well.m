@@ -1,4 +1,4 @@
-function [goto_end_of_loop,xstart,photon_path] =  create_well(xmin,xmax,vmin,vmax,resonance_x,photon_path,phot)
+function [goto_end_of_loop,xstart,one_photon_path] =  create_well(xmin,xmax,vmin,vmax,resonance_x)
     % sample uniformely, but not in given intervals
     xstart = xmin + (xmax-xmin)*rand;
 
@@ -12,5 +12,5 @@ function [goto_end_of_loop,xstart,photon_path] =  create_well(xmin,xmax,vmin,vma
         end
     end
     
-    photon_path(1,phot) = xstart;
+    one_photon_path = [xstart];
 end

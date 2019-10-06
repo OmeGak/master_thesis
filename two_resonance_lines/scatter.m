@@ -1,4 +1,6 @@
-function [xnew,xmueou] = scatter(xstart,x_selected,xmuestart,r,b,xk0,beta,alpha,all_radial,nsc,isotropic_scattering,nin)        
+function [xnew,xmueou] = scatter(xstart,x_selected,tau_selected,xmuestart,r,b,xk0,beta,alpha,all_radial,nsc,isotropic_scattering,nin)        
+        xk0 = tau_selected;
+
         pstart = sqrt(1-xmuestart^2);
         xmuein = sqrt(1-(pstart/r)^2);
         v = (1-b/r)^(beta);

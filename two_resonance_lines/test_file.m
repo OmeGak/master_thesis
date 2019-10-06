@@ -10,6 +10,8 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
     possibility_scattering = 1;
     
     resonance_x = [0];
+    resonance_tau = [100];
+        
     multiple_scatterings = 0;
 
     all_radial = 0;
@@ -24,6 +26,7 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
     random_number = 10;
     
     make_display = 0;
+    track_path = 0;
 
     % HERE WE GO !!!
     if test_number == 0
@@ -45,6 +48,7 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
         % photospheric line-profile 
         % ???
     
+        
         
     elseif test_number == 5
         % simple well
@@ -96,6 +100,7 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
 
     elseif test_number == 13
         resonance_x = [0];
+        resonance_tau = 100;
         plot_only_scattering = 0;
         make_display = 1
 
@@ -108,6 +113,24 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
         resonance_x = [0,0.5];
         plot_only_scattering = 0;
         make_display = 1 
+
+    elseif test_number == 16
+        resonance_x = [-2,0];
+        plot_only_scattering = 0;
+        make_display = 1 
+ 
+    elseif test_number == 17
+        resonance_x = [-2,0];
+        plot_only_scattering = 0;
+        make_display = 1         
+        track_path = 1;
+        
+    elseif test_number == 18
+        resonance_x = [-0.5,0];
+        resonance_tau = [100,100];
+        plot_only_scattering = 0;
+        make_display = 1; 
+        track_path = 1;
         
     end
 
@@ -115,7 +138,7 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
     make_save = 1 
 
     [freq, flux_two,number_scatterings,photon_path] = multiple_lines(nphot,xk0,alpha,beta,...
-        make_plot,resonance_x,make_save,nbins,possibility_scattering,...
+        make_plot,resonance_x,resonance_tau,make_save,nbins,possibility_scattering,...
         multiple_scatterings,all_radial,radial_release,isotropic_scattering,...
-        Eddington_limb_darkening,plot_only_scattering,random_number,make_display);
+        Eddington_limb_darkening,plot_only_scattering,random_number,make_display,track_path);
 end

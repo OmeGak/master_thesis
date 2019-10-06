@@ -2,28 +2,30 @@
 \BOOKMARK [1][-]{section.2}{Overview of exercises \(PART II\)}{}% 2
 \BOOKMARK [1][-]{section.3}{Overview of exercises \(PART III\)}{}% 3
 \BOOKMARK [1][-]{section.4}{Overview of exercises \(PART IV\)}{}% 4
-\BOOKMARK [1][-]{section.5}{Introductory exercises}{}% 5
-\BOOKMARK [2][-]{subsection.5.1}{Analytical exercises}{section.5}% 6
-\BOOKMARK [2][-]{subsection.5.2}{Numerical exercises}{section.5}% 7
-\BOOKMARK [2][-]{subsection.5.3}{Other Exercises}{section.5}% 8
-\BOOKMARK [1][-]{section.6}{Limb darkening}{}% 9
-\BOOKMARK [2][-]{subsection.6.1}{Formulation of the problem}{section.6}% 10
-\BOOKMARK [2][-]{subsection.6.2}{Solving the \(integro-differential\) radiative transfer equation}{section.6}% 11
-\BOOKMARK [2][-]{subsection.6.3}{Eddington-Barbier approximation}{section.6}% 12
-\BOOKMARK [2][-]{subsection.6.4}{2D Case}{section.6}% 13
-\BOOKMARK [2][-]{subsection.6.5}{3D Case}{section.6}% 14
-\BOOKMARK [1][-]{section.7}{Spectral line formation: pcyg.f90}{}% 15
-\BOOKMARK [2][-]{subsection.7.1}{First adaptation: what if all photons are released radially from photosphere?}{section.7}% 16
-\BOOKMARK [2][-]{subsection.7.2}{Second adaptation: isotropic scattering}{section.7}% 17
-\BOOKMARK [2][-]{subsection.7.3}{Third adaptation: introduction of Eddington limb-darkening}{section.7}% 18
-\BOOKMARK [2][-]{subsection.7.4}{Fourth adaptaion: photospheric line-profile}{section.7}% 19
-\BOOKMARK [2][-]{subsection.7.5}{Convergence analysis}{section.7}% 20
-\BOOKMARK [2][-]{subsection.7.6}{Variance reduction experiment}{section.7}% 21
-\BOOKMARK [2][-]{subsection.7.7}{Mathematical description of the problem \046 Looking at literature}{section.7}% 22
-\BOOKMARK [1][-]{section.8}{Dual spectral line formation}{}% 23
-\BOOKMARK [2][-]{subsection.8.1}{Introduction of second line: theoretical}{section.8}% 24
-\BOOKMARK [2][-]{subsection.8.2}{Development of computer code}{section.8}% 25
-\BOOKMARK [1][-]{section.9}{Closer look at Monte Carlo simulations}{}% 26
-\BOOKMARK [2][-]{subsection.9.1}{Random walk \(diffusion equation\)}{section.9}% 27
-\BOOKMARK [2][-]{subsection.9.2}{Iets}{section.9}% 28
-\BOOKMARK [2][-]{subsection.9.3}{Limb darkening}{section.9}% 29
+\BOOKMARK [1][-]{section.5}{Multiline transfer}{}% 5
+\BOOKMARK [1][-]{section.6}{Introductory exercises}{}% 6
+\BOOKMARK [2][-]{subsection.6.1}{Analytical exercises}{section.6}% 7
+\BOOKMARK [2][-]{subsection.6.2}{Numerical exercises}{section.6}% 8
+\BOOKMARK [2][-]{subsection.6.3}{Other Exercises}{section.6}% 9
+\BOOKMARK [1][-]{section.7}{Limb darkening}{}% 10
+\BOOKMARK [2][-]{subsection.7.1}{Formulation of the problem}{section.7}% 11
+\BOOKMARK [2][-]{subsection.7.2}{Solving the \(integro-differential\) radiative transfer equation}{section.7}% 12
+\BOOKMARK [2][-]{subsection.7.3}{Eddington-Barbier approximation}{section.7}% 13
+\BOOKMARK [2][-]{subsection.7.4}{2D Case}{section.7}% 14
+\BOOKMARK [2][-]{subsection.7.5}{3D Case}{section.7}% 15
+\BOOKMARK [1][-]{section.8}{Spectral line formation: pcyg.f90}{}% 16
+\BOOKMARK [2][-]{subsection.8.1}{First adaptation: what if all photons are released radially from photosphere?}{section.8}% 17
+\BOOKMARK [2][-]{subsection.8.2}{Second adaptation: isotropic scattering}{section.8}% 18
+\BOOKMARK [2][-]{subsection.8.3}{Third adaptation: introduction of Eddington limb-darkening}{section.8}% 19
+\BOOKMARK [2][-]{subsection.8.4}{Fourth adaptaion: photospheric line-profile}{section.8}% 20
+\BOOKMARK [2][-]{subsection.8.5}{Convergence analysis}{section.8}% 21
+\BOOKMARK [2][-]{subsection.8.6}{Variance reduction experiment}{section.8}% 22
+\BOOKMARK [2][-]{subsection.8.7}{Mathematical description of the problem \046 Looking at literature}{section.8}% 23
+\BOOKMARK [1][-]{section.9}{Dual spectral line formation}{}% 24
+\BOOKMARK [2][-]{subsection.9.1}{Introduction of second line: theoretical}{section.9}% 25
+\BOOKMARK [2][-]{subsection.9.2}{Development of computer code}{section.9}% 26
+\BOOKMARK [2][-]{subsection.9.3}{Experiments and results}{section.9}% 27
+\BOOKMARK [1][-]{section.10}{Closer look at Monte Carlo simulations}{}% 28
+\BOOKMARK [2][-]{subsection.10.1}{Random walk \(diffusion equation\)}{section.10}% 29
+\BOOKMARK [2][-]{subsection.10.2}{Iets}{section.10}% 30
+\BOOKMARK [2][-]{subsection.10.3}{Limb darkening}{section.10}% 31
