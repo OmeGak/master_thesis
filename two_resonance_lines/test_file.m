@@ -1,7 +1,9 @@
 function [freq, flux_two, number_scatterings,photon_path] = test_file(test_number)
     clc, close all
 
-    nphot = 10^5
+    make_save = 0;
+    
+    nphot = 10^3
     xk0 = 100
     alpha = 0
     beta = 1
@@ -27,6 +29,7 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
     
     make_display = 0;
     track_path = 0;
+    number_paths = 10;
 
     % HERE WE GO !!!
     if test_number == 0
@@ -111,6 +114,7 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
         
     elseif test_number == 15
         resonance_x = [0,0.5];
+        resonance_tau = [100,100];
         plot_only_scattering = 0;
         make_display = 1 
 
@@ -131,6 +135,28 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
         plot_only_scattering = 0;
         make_display = 1; 
         track_path = 1;
+       
+    elseif test_number == 19
+        multiple_scatterings = 1;
+        
+    elseif test_number == 20
+        resonance_x = [-0.5,0];
+        resonance_tau = [100,100];
+        make_display = 0; 
+        track_path = 1;
+        multiple_scatterings = 0;
+        radial_release = 1;
+
+    elseif test_number == 21
+        resonance_x = [-0.5,0];
+        resonance_tau = [100,100];
+        make_display = 0; 
+        track_path = 1;
+        multiple_scatterings = 1;
+        radial_release = 1;
+        isotropic_scattering = 1;
+        number_paths = 18;
+        make_save = 1;
         
     end
 
@@ -140,5 +166,5 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
     [freq, flux_two,number_scatterings,photon_path] = multiple_lines(nphot,xk0,alpha,beta,...
         make_plot,resonance_x,resonance_tau,make_save,nbins,possibility_scattering,...
         multiple_scatterings,all_radial,radial_release,isotropic_scattering,...
-        Eddington_limb_darkening,plot_only_scattering,random_number,make_display,track_path);
+        Eddington_limb_darkening,plot_only_scattering,random_number,make_display,track_path,number_paths,make_save);
 end

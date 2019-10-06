@@ -22,13 +22,14 @@ function plot_track_path(photon_path,track_path,b,number_paths,make_save,rmax)
             phot_loc_x = (photon_path(3,phot))*photon_path(2,phot);
             phot_loc_y = (photon_path(3,phot))*sqrt(1-photon_path(2,phot)^2);
             plot([1,phot_loc_x],[0,phot_loc_y] ,'.-','MarkerSize',20,'color',a)
-            new_angle = acos(photon_path(3,phot));
+            angle_x = photon_path(2,phot)
+            angle_y = sign(photon_path(2,phot))*sqrt(1-photon_path(2,phot)^2)
 
             % other scattering events
             phot_number_scatterings = max(0,(max(find(photon_path(:,phot)))-4)/2+1)
             if phot_number_scatterings >= 2
                 for k = 2:2:phot_number_scatterings
-                    new_angle = new_angle + acos(photon_path(k+3,phot))
+                    new_angle = acos(photon_path(k+3,phot)))
                     phot_loc_x = [phot_loc_x(end), cos(new_angle)*photon_path(k+2,phot)];
                     phot_loc_y = [phot_loc_y(end), sin(new_angle)*sqrt(1-photon_path(k+2,phot)^2)];
                     hold on, plot(phot_loc_x,phot_loc_y,'.-','MarkerSize',20,'color',a)

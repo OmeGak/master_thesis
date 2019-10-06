@@ -1,37 +1,10 @@
-%% compare the result with superposition
-clc, clear all, close all
+%% do simple test
 
-test_number = 13
-[freq_a, flux_a, number_scatterings_a, photon_path_a] = test_file(test_number);
+test_number = 21;
+[freq, flux_two, number_scatterings,photon_path] = test_file(test_number);
 
-test_number = 14
-[freq_b, flux_b, number_scatterings_b, photon_path_b] = test_file(test_number);
+a = photon_path(:,1:20)
 
-test_number = 15
-[freq, flux, number_scatterings, photon_path] = test_file(test_number);
-
-%%
-close all 
-
-freq_b_augmented = [linspace(-1,-0.5,25),freq_b]
-flux_b_augmented = [ones(1,25),flux_b]
-freq_a_augmented = [freq_a,linspace(1,1.5,25)]
-flux_a_augmented = [flux_a,ones(1,25)]
-freq_super = linspace(-1,1.5,125);
-flux_super = flux_b_augmented + flux_a_augmented
-
-
-figure()
-plot(freq,flux,'LineWidth',2)
-hold on, plot(freq_a_augmented,flux_a_augmented)
-hold on, plot(freq_b_augmented,flux_b_augmented)
-hold on, plot(freq_super,flux_super,'LineWidth',2)
-legend('complex intereactions','a','b','superposition','Location','southeast')
-
-figure()
-plot(freq,flux,'LineWidth',2)
-hold on, plot(freq_super,flux_super,'LineWidth',2)
-legend('complex intereactions','superposition')
 
 %% HALLO
 clc, clear all, close all
@@ -42,45 +15,6 @@ test_number = 11
 test_number = 12
 [freq_b, flux_b, number_scatterings_b, photon_path_b] = test_file(test_number);
 
-%% test scatter
-clc, clear all, close all
-
-K = 10^4;
-all_phot_x = zeros(1,K);
-
-xmuestart = 1;
-beta = 1;
-alpha = 0;
-b = 1;
-rmax = 10;
-xk0 = 100;
-nin = 0;
-resonance_x = 0;
-r_init = 1;
-all_radial = 0;
-isotropic_scattering = 1;
-nsc = 0;
-photon_path = zeros(1,K);
-xstart_coll = zeros(1,K);
-
-
-for k = 1:K
-    phot = k;
-    xstart = -0.8*rand;
-    r = best_line(xmuestart,xstart,resonance_x,r_init,rmax,b,beta);
-    [xnew,xmueou] = scatter(xstart,xmuestart,r,b,xk0,beta,alpha,all_radial,nsc,isotropic_scattering,nin)
-    all_phot_x(k) = xnew;
-    xstart_coll(k) = xstart;
-end
-
-figure()
-subplot(1,2,1)
-histogram(xstart_coll,'NumBins',100) 
-title('xstart')
-
-subplot(1,2,2)
-histogram(all_phot_x,'NumBins',100) 
-title('xnew')
 
 %% plot scattering probability
 % DOES NOT WORK
