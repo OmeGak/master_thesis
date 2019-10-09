@@ -2,18 +2,114 @@
 
 test_number = 21;
 [freq, flux_two, number_scatterings,photon_path] = test_file(test_number);
+a = photon_path(:,15:20);
 
-a = photon_path(:,1:20)
+%% test xmueout(xk0,alpha,r,v,sigma,all_radial)
+xk0 = 100
+alpha = 0
+r = 1
+v = 1
+sigma = 1
+all_radial = 0
 
+K = 10^4;
+for k = 1:K
+    xmueou(k) = xmueout(xk0,alpha,r,v,sigma,all_radial);
+end
 
-%% HALLO
+figure()
+histogram(xmueou)
+
+%% test scattering distribution
 clc, clear all, close all
 
-test_number = 11
-[freq_a, flux_a, number_scatterings_a, photon_path_a] = test_file(test_number);
+nphot = 10^3;
+xstart_collection = linspace(-0.8,0,nphot);
 
-test_number = 12
-[freq_b, flux_b, number_scatterings_b, photon_path_b] = test_file(test_number);
+resonance_x = 0;
+x_selected = resonance_x;
+tau_selected  = 100;
+
+r = 1;
+xk0 = 100;
+
+xmuestart = 1;
+beta = 1;
+alpha = 0;
+nbins = 100;
+all_radial = 0;
+nsc = 0;
+isotropic_scattering = 0;
+nin = 0;
+
+
+[ ~,~,~,~,~,~,b,~,~,~,~,~,~,~,~,~] = param_init(beta,nbins,resonance_x,nphot); 
+
+xnew_collection = zeros(1,nphot)
+for phot = 1:length(xstart_collection)
+    xstart = xstart_collection(phot)
+    [xnew,xmueou] = scatter(xstart,x_selected,tau_selected,xmuestart,r,b,xk0,beta,alpha,all_radial,nsc,isotropic_scattering,nin);
+    xnew_collection(phot) = xnew;
+end
+
+figure()
+subplot(1,2,1)
+histogram(xstart_collection,'Normalization','pdf')
+subplot(1,2,2)
+histogram(xnew_collection,'Normalization','pdf')
+
+
+%% test influence of xk0
+clc, clear all, close all
+
+save_plot = 1;
+
+test_number_a = 25
+[freq_a, flux_a, number_scatterings_a, photon_path_a] = test_file(test_number_a);
+if save_plot == 1
+    saveas(gcf,['figures/situation_',num2str(test_number_a),'.png'])
+end
+
+test_number_b = 26
+[freq_b, flux_b, number_scatterings_b, photon_path_b] = test_file(test_number_b);
+if save_plot == 1
+    saveas(gcf,['figures/situation_',num2str(test_number_b),'.png'])
+end
+
+% make joint plot
+figure()
+plot(freq_a,flux_a,'.-')
+hold on, plot(freq_b,flux_b,'.-')
+legend('xk0=100','xk0=0.5')
+
+if save_plot == 1
+    saveas(gcf,['figures/situation_',num2str(test_number_a),'_',num2str(test_number_b),'.png'])
+end
+
+
+
+%% test best_line(xmuestart,xstart,resonance_x,r_init,rmax,b,beta)
+    % does it really correspond to the lowes frequency?
+    % for photons streaming in both directions?
+clc, clear all, close all
+
+xmuestart = 1;
+resonance_x = [0,1,2];
+resonance_tau = 100*ones(1,3);
+r_init = 1;
+
+compare_Fortran = 1;
+
+beta = 1;
+nbins = 100;
+case_number = 1;
+nphot = 10^4;
+nsc = 0;
+
+[~,vmin,vmax,~,~,~,b,xmin,~,rmax,~,~,~] = param_init(beta,nbins,resonance_x,nphot,compare_Fortran); 
+
+xstart = 0.5;
+[r,x_selected,tau_selected] = best_line(xmuestart,xstart,resonance_x,resonance_tau,r_init,rmax,b,beta,nsc,vmin,vmax)
 
 
 %% plot scattering probability
@@ -32,75 +128,122 @@ plot(x,p)
 subplot(1,2,2)
 plot(x,p_tau)
 
+%% compare with Fortran
 
-%% test make_scattering_multiple_lines(xstart,xmuestart,beta,alpha,b,rmax,xk0,nin,resonance_x,r_init,all_radial,isotropic_scattering,nsc,photon_path,phot);       
 clc, clear all, close all
 
-K = 1000;
-all_phot_x = zeros(1,K);
+save_fig = 1
 
-xmuestart = 1;
-beta = 1;
-alpha = 0;
-b = 1;
-rmax = 10;
-xk0 = 100;
-nin = 0;
-resonance_x = 0;
-r_init = 1;
-all_radial = 0;
-isotropic_scattering = 1;
-nsc = 0;
-photon_path = zeros(1,K);
+% FORTRAN DATA
+    data_folder = '../introductory_exercises/P_Cygni_profile_UV_resonance/'
 
-for k = 1:K
-    phot = k;
-    xstart = -1+rand;
-    [xnew,r,nin,last_scatter,xmueou,nsc,photon_path] = make_scattering_multiple_lines(xstart,xmuestart,beta,alpha,b,rmax,xk0,nin,resonance_x,r_init,all_radial,isotropic_scattering,nsc,photon_path,phot);       
-    all_phot_x(k) = xnew;
-end
+    % first data
+    file_name = [data_folder,'data/out_8_10_0_100']
 
-figure()
-histogram(all_phot_x,'NumBins',100) 
+    test_case = 0;
 
-%% test main program (muliple_lines.m)
-% more specifically, test what happens in different circumstances
-clc, clear all, close all
+    nphot = 10^5
+    xk0 = 100
+    alpha = 0
+    beta = 1
 
+    legend_1 = 'Sobolev scattering'
 
-test_number = 12
-[freq, flux, number_scatterings, photon_path] = test_file(test_number);
+    % maybe it is desired to add other data
+        other_file_name = [];
+        % other_file_name = [data_folder,'data/out_8_10_2']
+        legend_2 = []
+        % legend_2 = 'isotropic scattering'
+        name = []
+        name = 'data/simple_test.png'
 
-figure()
-histogram(photon_path(3,:));
-hold on, histogram(photon_path(1,:));
-legend('xnew','xstart')
+    [freq_a,flux_a] = read_out(file_name,other_file_name,test_case,nphot,xk0,alpha,beta,legend_1,legend_2,name)
+    
+    iets =  zeros(1,length(freq_a));
+    for k=1:length(freq_a)
+        iets(k) = freq_a(length(freq_a)-k+1);
+    end
+    freq_a = iets;
 
+% MATLAB DATA
+    test_number = 27;
+    [freq_b, flux_b, number_scatterings,photon_path] = test_file(test_number);
+    
+% JOINT PLOT
+    figure()
+    plot(freq_a,flux_a)
+    hold on, plot(freq_b,flux_b)
 
+    legend('Fortran data','Matlab data')
+    xlabel('x')
+    ylabel('I')
 
-%% test best_line(xmuestart,xstart,resonance_x,r_init,rmax,b,beta)
-clc, clear all, close all
+    if save_fig == 1
+        saveas(gcf,'figures/compare_Matlab_Fortran.png')
+    end
 
-xmuestart = 1;
-resonance_x = 0;
-r_init = 1;
+%% compare with Fortran (BIS) but important
+  
+% 1) FORTRAN DATA
+    data_folder = '../introductory_exercises/P_Cygni_profile_UV_resonance/'
 
-beta = 1;
-nbins = 100;
-case_number = 1;
-nphot = 10^4;
+        % get data
+        file_name = [data_folder,'data/out_8_10_0_100']
+        test_case = 0;
 
-[~,~,~,~,~,~,b,xmin,~,rmax,~,~] = param_init(beta,nbins,resonance_x,case_number,nphot);
+        nphot = 10^5
+        xk0 = 100
+        alpha = 0
+        beta = 1
 
-xstart = 0.9;
-r = best_line(xmuestart,xstart,resonance_x,r_init,rmax,b,beta)
+        legend_1 = 'Sobolev scattering'
 
+        % maybe it is desired to add other data
+            other_file_name = [];
+            % other_file_name = [data_folder,'data/out_8_10_2']
+            legend_2 = []
+            % legend_2 = 'isotropic scattering'
+            name = []
+            name = 'data/simple_test.png'
+
+    [freq_a,flux_a] = read_out(file_name,other_file_name,test_case,nphot,xk0,alpha,beta,legend_1,legend_2,name)
+    
+    iets =  zeros(1,length(freq_a));
+    for k=1:length(freq_a)
+        iets(k) = freq_a(length(freq_a)-k+1);
+    end
+    freq_a = iets;
+
+% 2) MATLAB DATA
+    nphot = 10^5
+    xk0 = 100
+    alpha = 0
+    beta = 1
+
+    make_plot = 1;
+    save = 0;
+    all_radial = 0
+
+    [freq_b,flux_b,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plot , save , all_radial);    
+    
+% 3) JOINT PLOT
+    figure()
+    plot(freq_a,flux_a)
+    hold on, plot(freq_b,flux_b)
+
+    legend('Matlab data','Fortran data')
+    xlabel('x')
+    ylabel('I')
+
+    if save_fig == 1
+        saveas(gcf,'figures/compare_Matlab_Fortran.png')
+    end    
 
 %% track path of the photon
 clc, close all, clear all
 display('track path of the photons')
 
-test_number = 0;
+test_number = 21;
 [freq, flux, number_scatterings, photon_path] = test_file(test_number);
 
 Nphot = 20
@@ -133,71 +276,3 @@ end
 x = linspace(-1,1,20);
 hold on, plot(x,1+sqrt(1-x.^2),'color','yellow','LineWidth',4)
 hold on, plot(x,1-sqrt(1-x.^2),'color','yellow','LineWidth',4)
-
-%% save reference solution
-clc, clear all, close all
-
-test_number = 0
-[freq, flux, number_scatterings, photon_path] = test_file(test_number);
-save('reference_data/freq.mat','freq');
-save('reference_data/flux.mat','flux');
-
-%% inspect reference solution (test_number = 0)
-clc, close all 
-
-freq = matfile('reference_data/freq.mat');
-    freq = freq.freq;
-flux = matfile('reference_data/flux.mat');
-    flux = flux.flux;
-
-figure
-plot(freq,flux)
-
-%% make comparison plots
-clc, clear all, close all
-
-yes_old = matfile('data/yes_old.mat');
-yes_old = yes_old.yes;
-
-yes_new = matfile('data/yes_new.mat');
-yes_new = yes_new.yes;
-
-figure()
-subplot(1,2,1)
-plot(yes_old(1,1:100),'.-','MarkerSize',20)
-hold on, plot(yes_new(1,1:100),'.-','MarkerSize',20)
-title('xmuestart')
-
-subplot(1,2,2)
-plot(yes_old(2,1:100),'.-','MarkerSize',20)
-hold on, plot(yes_new(2,1:100),'.-','MarkerSize',20)
-title('xnew')
-
-legend('original','new')
-
-%% test Eddington_limb_darkening_distribution (with accept-reject)
-clc, clear all, close all
-
-make_save = 0;
-
-K = 10^4;
-x = zeros(1,K);
-for k=1:K
-    x(k) = Eddington_limb_darkening_distribution();
-end
-
-numBins = 50;
-
-figure()
-x_array = linspace(0,1,100);
-func = @(x) 5/2.*x.*(2/5+3/5.*x);
-h = histogram(x,'Normalization','pdf','BinWidth',1/numBins);
-hold on, plot(x_array,func(x_array))
-
-xlabel('\mu')
-ylabel('p(\mu)')
-legend('experimental','theoretical')
-
-if make_save == 1
-    saveas(gcf,'data/Eddington_accept_reject_converges_to_desired_dist.png')
-end

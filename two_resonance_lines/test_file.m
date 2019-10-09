@@ -1,10 +1,10 @@
 function [freq, flux_two, number_scatterings,photon_path] = test_file(test_number)
     clc, close all
-
+    
+    % SET ALL PARAMETERS  
     make_save = 0;
     
-    nphot = 10^3
-    xk0 = 100
+    nphot = 10^5
     alpha = 0
     beta = 1
     nbins = 100;
@@ -30,10 +30,17 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
     make_display = 0;
     track_path = 0;
     number_paths = 10;
+    compare_Fortran = 0;
+    deterministic_sampling_x = 0;
 
-    % HERE WE GO !!!
+  
+    
+    
+    
+    % OVERVIEW OF TESTS
     if test_number == 0
         % original version
+        track_path = 1;
 
     elseif test_number == 1
         % first adaptation: radial release
@@ -50,9 +57,10 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
     elseif test_number == 4
         % photospheric line-profile 
         % ???
-    
         
         
+        
+    % OTHER TESTS    
     elseif test_number == 5
         % simple well
         possibility_scattering = 0;     
@@ -77,94 +85,116 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
         radial_release = 1;    
         multiple_scatterings = 1;
         
-    elseif test_number == 9
-        % formation of three lines, full scattering possibilities
-        resonance_x = [0];
-        multiple_scatterings = 1;
-
     elseif test_number == 10
         resonance_x = 0;
         isotropic_scattering = 1;
-        radial_release = 1;
-        plot_only_scattering = 0;
         multiple_scatterings = 0;
-
-    elseif test_number == 11
-        resonance_x = 0;
-        isotropic_scattering = 1;
+        plot_only_scattering = 0;
         radial_release = 1;
-        plot_only_scattering = 1;
-        multiple_scatterings = 0;
+
+    % test radial release    
+        elseif test_number == 11
+            resonance_x = 0;
+            isotropic_scattering = 1;
+            multiple_scatterings = 0;
+            plot_only_scattering = 1;
+            radial_release = 1;        
+
+        elseif test_number == 111
+            resonance_x = 0;
+            isotropic_scattering = 1;
+            multiple_scatterings = 0;  
+            plot_only_scattering = 1;
+            radial_release = 0;      
         
-    elseif test_number == 12
-        resonance_x = [0];
-        possibility_scattering = 1;
-        isotropic_scattering = 1;
-
-    elseif test_number == 13
-        resonance_x = [0];
-        resonance_tau = 100;
-        plot_only_scattering = 0;
-        make_display = 1
-
-    elseif test_number == 14
-        resonance_x = [0.5];
-        plot_only_scattering = 0;
-        make_display = 1    
+    % test multiple_scatterings        
+        elseif test_number == 15
+            resonance_x = [0,0.5];
+            resonance_tau = [100,100];
+            plot_only_scattering = 0;
+            make_display = 1       
+            multiple_scatterings = 0
+            
+        elseif test_number == 16
+            resonance_x = [0,0.5];
+            resonance_tau = [100,100];
+            plot_only_scattering = 0;
+            make_display = 1 
+            multiple_scatterings = 1
         
-    elseif test_number == 15
-        resonance_x = [0,0.5];
-        resonance_tau = [100,100];
-        plot_only_scattering = 0;
-        make_display = 1 
-
-    elseif test_number == 16
-        resonance_x = [-2,0];
-        plot_only_scattering = 0;
-        make_display = 1 
- 
+               
+    % test location of resonance frequencies
     elseif test_number == 17
         resonance_x = [-2,0];
         plot_only_scattering = 0;
-        make_display = 1         
-        track_path = 1;
-        
-    elseif test_number == 18
-        resonance_x = [-0.5,0];
-        resonance_tau = [100,100];
-        plot_only_scattering = 0;
-        make_display = 1; 
-        track_path = 1;
-       
-    elseif test_number == 19
-        multiple_scatterings = 1;
-        
-    elseif test_number == 20
-        resonance_x = [-0.5,0];
-        resonance_tau = [100,100];
-        make_display = 0; 
-        track_path = 1;
-        multiple_scatterings = 0;
-        radial_release = 1;
+        make_display = 1 
+         
+    % test superposition in absence of multiple_scatterings     
+        elseif test_number == 18
+            resonance_x = [-0.5];
+            resonance_tau = [100,100];
+            multiple_scatterings = 0;
 
+        elseif test_number == 19
+            resonance_x = [0];
+            resonance_tau = [100,100];
+            multiple_scatterings = 0;      
+
+        elseif test_number == 20
+            resonance_x = [-0.5,0];
+            resonance_tau = [100,100];
+            multiple_scatterings = 0;        
+
+    % test superposition in absence of multiple_scatterings     
+        elseif test_number == 180
+            resonance_x = [-0.5];
+            resonance_tau = [100,100];
+            multiple_scatterings = 1;
+
+        elseif test_number == 190
+            resonance_x = [0];
+            resonance_tau = [100,100];
+            multiple_scatterings = 1;      
+
+        elseif test_number == 200
+            resonance_x = [-0.5,0];
+            resonance_tau = [100,100];
+            multiple_scatterings = 1; 
+     
+    % test track_path        
     elseif test_number == 21
         resonance_x = [-0.5,0];
         resonance_tau = [100,100];
         make_display = 0; 
         track_path = 1;
-        multiple_scatterings = 1;
+        multiple_scatterings = 0;
         radial_release = 1;
-        isotropic_scattering = 1;
-        number_paths = 18;
-        make_save = 1;
+        number_paths = 25;     
         
+    elseif test_number == 25
+        resonance_tau = 100;
+        
+    elseif test_number == 26
+        resonance_tau = 0.5;
+              
     end
 
     make_plot = 1
-    make_save = 1 
+    make_save = 1
+    compare_Fortran = 1         % this affects the problem parameters
 
-    [freq, flux_two,number_scatterings,photon_path] = multiple_lines(nphot,xk0,alpha,beta,...
+    [freq, flux_two,number_scatterings,photon_path] = multiple_lines(nphot,alpha,beta,...
         make_plot,resonance_x,resonance_tau,make_save,nbins,possibility_scattering,...
         multiple_scatterings,all_radial,radial_release,isotropic_scattering,...
-        Eddington_limb_darkening,plot_only_scattering,random_number,make_display,track_path,number_paths,make_save);
+        Eddington_limb_darkening,plot_only_scattering,random_number,make_display,...
+        track_path,number_paths,make_save,compare_Fortran,deterministic_sampling_x); 
+    
+    if make_save == 1
+        if test_number == 11
+            saveas(gcf,'figures/scattering_distribution_radial_release.png')
+        elseif test_number == 111
+            saveas(gcf,'figures/scattering_distribution_random_release.png')
+        end
+    end
+
 end

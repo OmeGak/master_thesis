@@ -1,0 +1,7 @@
+xmueout_test: xmueout_test.o
+	gfortran -o xmueout_test xmueout_test.o
+
+xmueout_test.o: xmueout_test.f90
+	gfortran -c xmueout_test.f90 -o xmueout_test.o
+
+

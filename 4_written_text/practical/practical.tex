@@ -601,14 +601,6 @@ In general, the flux is dependent on $\mu$ and the frequency $x$.
 \item spherical geometry
 \end{itemize}
 
-\subsubsection{Experimental results}
-In original version of the code, all photons are released isotropially from the photosphere.
-
-\begin{figure}[!htp]
-\centering
-\includegraphics[width=0.5\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot6xk0100alpha0beta1test0.png}
-\caption{Original version of the code \\ AMOUNT OF PHOTONS?}
-\end{figure}
 
 \newpage
 \subsection{First adaptation: what if all photons are released radially from photosphere?}
@@ -625,14 +617,7 @@ were released radially from photopshere?
 
 \begin{figure}[!htbp]
 \centering
-\begin{subfigure}{.5\textwidth}
-\includegraphics[width=1\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk0100alpha0beta1test1.png}
-\caption{First adaptation}
-\end{subfigure}%
-\begin{subfigure}{.5\textwidth}
-\includegraphics[width=1\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk0100alpha0beta1test10.png}
-\caption{Same plot (together with output of initial version)}
-\end{subfigure}
+\includegraphics[width=0.7\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/compare_radial_xk0100.png}
 \caption{The number of photons equals $10^{5}$, \texttt{xk0=100}}
 \label{PCyg_mu_eq_1}
 \end{figure}
@@ -731,25 +716,12 @@ One must also take into account that not all of the photons that are released ac
   
 \newpage
 \subsubsection{\underline{Experiments with other opacities}}
-The results for \texttt{xk0=0.5} are shown in Figures \ref{PCyg_mu_eq_1xk0_05} and \ref{PCyg_mu_eq_xk0_05_vs_100}.
+The results for \texttt{xk0=0.5} are shown in Figure \ref{PCyg_mu_eq_xk0_05_vs_100}.
+
 
 \begin{figure}[!htbp]
 \centering
-\begin{subfigure}{.5\textwidth}
-\includegraphics[width=1\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk05alpha0beta1test1.png}
-\caption{First adaptation}
-\end{subfigure}%
-\begin{subfigure}{.5\textwidth}
-\includegraphics[width=1\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk05alpha0beta1test10.png}
-\caption{Same plot (together with output of initial version)}
-\end{subfigure}
-\caption{The number of photons equals $10^{5}$, \texttt{xk0=0.5}}
-\label{PCyg_mu_eq_1xk0_05}
-\end{figure}
-
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=0.5\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk05alpha0beta1test11.png}
+\includegraphics[width=0.7\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk0100alpha0beta1test0.png}
 \caption{The number of photons equals $10^{5}$, \texttt{xk0=0.5}}
 \label{PCyg_mu_eq_xk0_05_vs_100}
 \end{figure}
@@ -772,14 +744,7 @@ was isotropic
 
 \begin{figure}[!htbp]
 \centering
-\begin{subfigure}{.5\textwidth}
-\includegraphics[width=1\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk0100alpha0beta1test2.png}
-\caption{Second adaptation}
-\end{subfigure}%
-\begin{subfigure}{.5\textwidth}
-\includegraphics[width=1\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk0100alpha0beta1test20.png}
-\caption{Same plot (together with output of initial version)}
-\end{subfigure}
+\includegraphics[width=0.7\textwidth]{../../introductory_exercises/P_Cygni_profile_UV_resonance/data/compare_isotropic_scattering_xk0100.png}
 \caption{The number of photons equals $10^{5}$}
 \label{Pcyg_isotropic_scattering}
 \end{figure}
@@ -933,6 +898,32 @@ Looking at literature}
 Have a look at \cite{NoebauerUlrichM_2019MCRT} (see Appendix).
 
 \newpage
+\section{Transferring the code to Matlab}
+
+\subsection{Limit ariables}
+\begin{center}
+\centering
+{\tabulinesep=1.5mm
+\begin{tabu}{|c|c|c|c|c|}
+\hline 
+& \texttt{xmin} & \texttt{xmax} & \texttt{vmin} & \texttt{vmax} \\ \hline
+Fortran & -1.1 &  1.1 & 0.01 & 0.98   \\ 
+Fortran (reverse order for scattering distribution) & -1.1 &  1.1 & -0.98 & -0.01 \\ \hline
+Matlab (with \texttt{resonance\_x = 0} & -1 & 1 & -0.8 & 0 \\ \hline
+\end{tabu}}
+\end{center}
+
+\subsection{Comparison}
+\begin{figure}[!htp]
+\centering
+\includegraphics[width=0.65\textwidth]{../../two_resonance_lines/figures/compare_Matlab_Fortran.png}
+\caption{Original version of the code: convergence analysis (xk0=0)}
+\label{variance_reduction_test}
+\end{figure}
+
+
+
+\newpage
 \section{Dual spectral line formation}
 \label{two_resonance_lines}
 
@@ -1038,6 +1029,7 @@ pitfalls yet to solve:
 \paragraph{Ranges and limits}
 Assuming $\mu_{start} = 1$. Note that in the code $r_{\infty} = b$
 
+
 \subsection{Development of computer code}
 \subsubsection{Implementation in Matlab: user's manual}
 Run the function \texttt{test\_function(test\_number)}.
@@ -1084,7 +1076,40 @@ Via this link, you can go back to the exercises overview: Section \underline{\re
 \end{itemize}
 
 \newpage
+\subsection{Random things}
+
+\subsubsection{General things}
+\begin{equation}
+\texttt{xnew = xstart + u(xmueou - xmuein)}
+\label{xnew_vx_xstart}
+\end{equation}
+
+\subsubsection{Specific things}
+\paragraph{Case when $\texttt{xmuestart = 1}$}
+\begin{itemize}
+\item \textsc{first scatttering}: from Equation (\ref{xnew_vx_xstart}) we have that \texttt{xstart = u} and then
+\begin{equation}
+\begin{aligned}
+\texttt{xnew} &= \texttt{xstart + u(xmueou- 1)} \\
+&= \texttt{xstart.xmueou}
+\end{aligned}
+\end{equation}
+Thus, since $\texttt{xmueou} \in [-1,1]$ and $\texttt{xmin} \leq \texttt{xstart} \leq \texttt{xmax}$
+\begin{equation}
+\texttt{xmin} \leq \texttt{xnew} \leq \texttt{xmax}
+\end{equation}
+
+See also Section \ref{Experiments_xmuestart_1}.
+
+\end{itemize}
+
+
+\newpage
 \subsection{Experiments and results}
+
+\subsubsection{About the scattering probability distribution}
+
+
 \subsubsection{Visualisation of the photon path}
 
 \begin{figure}[!htp]
@@ -1102,6 +1127,35 @@ From numerical experiments
 \includegraphics[width=0.55\textwidth]{../../two_resonance_lines/figures/superposition_test.png}
 \caption{Convergence behaviour for 1D implicit solver (diffusion equation)}
 \label{1D_implicit_diffusion}
+\end{figure}
+
+
+\subsubsection{Sobolev escape angle from the resonance zone}
+
+\subsubsection{Exerpiments with \texttt{xmuestart = 1}}
+\label{Experiments_xmuestart_1}
+
+\begin{figure}[!htp]
+\centering
+\includegraphics[width=0.55\textwidth]{../../two_resonance_lines/figures/reference_solution_xmuestart.png}
+\caption{Convergence behaviour for 1D implicit solver (diffusion equation)}
+\label{1D_implicit_diffusion}
+\end{figure}
+
+\subsubsection{Scattering distribution}
+
+\begin{figure}[!htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+\includegraphics[width=1\textwidth]{../../two_resonance_lines/figures/scattering_distribution_radial_release.png}
+\caption{Radial release}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+\includegraphics[width=1\textwidth]{../../two_resonance_lines/figures/scattering_distribution_random_release.png}
+\caption{Random release}
+\end{subfigure}
+\caption{Scattering distribution}
+\label{PCyg_mu_eq_1}
 \end{figure}
 
 

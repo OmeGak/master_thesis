@@ -1,13 +1,20 @@
-function [goto_end_of_loop,xstart,one_photon_path] =  create_well(xmin,xmax,vmin,vmax,resonance_x)
+function [goto_end_of_loop,xstart,one_photon_path,deterministic_sampling_x] ...
+    =  create_well(xmin,xmax,vmin,vmax,resonance_x,deterministic_sampling_x,nphot)
     % sample uniformely, but not in given intervals
     xstart = xmin + (xmax-xmin)*rand;
+    
+    if deterministic_sampling_x >= 1 
+        xstart = xmin + deterministic_sampling_x*(xmax-xmin)/nphot;
+        deterministic_sampling_x = deterministic_sampling_x + 1;
+    end
 
     vmin = resonance_x + vmin;
     vmax = resonance_x + vmax;
 
     goto_end_of_loop = 1;
     for k=1:length(vmin)
-        if (xstart >= vmin(k)) & (xstart <= vmax(k))
+        if (xstart >= 0.99*vmin(k)) & (xstart <= 1.01*vmax(k))
+%             display('manneke toch - emission line created')
             goto_end_of_loop = 0;
         end
     end

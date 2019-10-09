@@ -1,0 +1,7 @@
+test_rtbis_with_all: test_rtbis_with_all.o
+	gfortran -o test_rtbis_with_all test_rtbis_with_all.o
+
+test_rtbis_with_all.o: test_rtbis_with_all.f90
+	gfortran -c test_rtbis_with_all.f90 -o test_rtbis_with_all.o
+
+

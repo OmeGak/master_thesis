@@ -53,13 +53,11 @@ function [freq,flux,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plo
             
             pstart = sqrt(1-xmuestart^2);
 
-            r_anal = b/(1-xstart^(1/beta))
-            r_anal = max(1,min(r_anal,rmax))
-            % force r to be between 1 and rmax, otherwise this gives an error
-            % that ichan > nchan
+            r_anal = b/(1-xstart^(1/beta));
+            r_anal = max(1,min(r_anal,rmax));
 
             func = @(r) sqrt(1-(pstart/r)^2)*(1-b/r)^beta - xstart;
-            r = rtbis(func , 1 , rmax , 10^(-5))
+            r = rtbis(func , 1 , rmax , 10^(-5));
 
             xmuein = sqrt(1-(pstart/r)^2);
 

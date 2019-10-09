@@ -149,6 +149,7 @@ program pcyg
 		pstart = sqrt(1.-xmuestart**2)  		!according p-ray
 
 		r = rtbis(func,1.,rmax,1.e-5)   		!calculate interaction zone from x=mue*v
+		print*,r
 		      
 		xmuein=sqrt(1.-(pstart/r)**2)   		!calculate incident angle
 
@@ -202,6 +203,9 @@ program pcyg
 	close(1)
 	      
 	print*,float(nin)/float(nphoton)*100.,' % of photons scattered back into core'
+	print*,rmax
+	print*,b
+
 end program pcyg
 
 function func(r)						! VELOCITY PROFILE

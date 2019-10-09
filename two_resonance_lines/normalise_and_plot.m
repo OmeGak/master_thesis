@@ -1,4 +1,4 @@
-function flux = normalise_and_plot(nphot,nchan,flux,xmin,xmax,vmin,vmax,make_plot,freq,save,resonance_x) 
+function flux = normalise_and_plot(nphot,nchan,flux,xmin,xmax,vmin,vmax,make_plot,freq,save,resonance_x,all_radial,radial_release) 
     xnorm = nphot/nchan;
     flux = flux/xnorm;
 
@@ -16,6 +16,13 @@ function flux = normalise_and_plot(nphot,nchan,flux,xmin,xmax,vmin,vmax,make_plo
         end
         
         grid on
+        
+        if all_radial == 1
+            title('only radially streaming photons')
+        elseif radial_release == 1
+            title('radial release (xmuestart = 1)')
+        end
+        
         
         if save == 1
             saveas(gcf,'data/radial_one_line.png')
