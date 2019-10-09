@@ -187,11 +187,7 @@ save_fig = 1;
 
 close all
 % COMPARE THE DATA
-    display('*****************COMPARE DATA*****************')
-    % yes contains [xstart,xmuestart,xnew]
-    % photon_path contains [xstart,xmuestart,r,...]
-    selection_a = yes(:,1:5)
-    selection_b = photon_path(:,1:5)
+selection
 %% compare with Fortran (LITERALLY TRANSLATED VERSION)
   
 % 1) FORTRAN DATA

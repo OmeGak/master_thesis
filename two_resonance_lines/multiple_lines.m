@@ -1,27 +1,33 @@
 function [freq,flux,total_number_scatterings,photon_path] = multiple_lines(nphot,alpha,beta,make_plot,...
         resonance_x,resonance_tau,save,nbins,possibility_scattering,multiple_scatterings,...
         all_radial,radial_release,isotropic_scattering,Eddington_limb_darkening,plot_only_scattering,...
-        random_number,make_display,track_path,number_paths,make_save,compare_Fortran,deterministic_sampling_x)  
+        random_number,make_display,track_path,number_paths,make_save,compare_Fortran,deterministic_sampling_x,xstart_Fortran)  
+    display('MULTIPLE_LINES______(START)')
     
-    display(deterministic_sampling_x)
-    display(compare_Fortran)
+    rng(random_number);
+%     s = rng;
     
     % set initial problem parameters
     [nchan,vmin,vmax,deltax,freq,flux,b,xmin,xmax,rmax,...
             nin,nout,photon_path,nsc,expected_scattering_ratio,r_init] =  ...
                 param_init(beta,nbins,resonance_x,nphot,compare_Fortran);       
             
-    rng(random_number);
     display('_____________________________________')
      
     % loop over all photons
     for phot = 1:nphot  
         phot_nsc = 0;
-
-        [goto_end_of_loop,xstart,one_photon_path,deterministic_sampling_x] = ...
-            create_well(xmin,xmax,vmin,vmax,resonance_x,deterministic_sampling_x,nphot);
         
-        if (goto_end_of_loop == 1) & (plot_only_scattering == 0)
+        % select xstart
+        [xstart,goto_end_of_loop,deterministic_sampling_x] = ...
+            create_well(xmin,xmax,vmin,vmax,resonance_x,deterministic_sampling_x,nphot,xstart_Fortran);
+        
+        if phot == 1
+            display(xstart)
+        end
+        
+        % go to the end if needed for plotting
+        if (plot_only_scattering == 0) & (goto_end_of_loop == 1)
             [nout,flux] = add_count_photon(xstart,xstart,nout,xmin,deltax,nchan,flux,r_init);
         end
                
@@ -29,7 +35,11 @@ function [freq,flux,total_number_scatterings,photon_path] = multiple_lines(nphot
         if (goto_end_of_loop == 0) & (possibility_scattering == 1)  
             % select angle (economy on photon numbers)
             [xmuestart, one_photon_path] = release_photon(xstart,radial_release,Eddington_limb_darkening);
-                  
+            
+            if phot == 1
+                display(xmuestart)
+            end
+            
             % first scattering event  
 %             display('hallo - - - - - - - - - - - - - - -')
 %             display(vmax), display(0.99*vmax);
@@ -111,4 +121,6 @@ function [freq,flux,total_number_scatterings,photon_path] = multiple_lines(nphot
     plot_track_path(photon_path,track_path,b,number_paths,make_save,rmax);
     total_number_scatterings = nsc/nphot
     total_number_backscatterings = nin/nphot
+    
+    display('MULTIPLE_LINES_______(END)')
 end

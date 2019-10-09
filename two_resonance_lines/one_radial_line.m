@@ -1,4 +1,8 @@
 function [freq,flux,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plot , save,all_radial)
+    % set random number generator
+    rng(10);
+%     s = rng;
+
     nchan = 100;
 
     xmax = 1.1;
@@ -7,8 +11,9 @@ function [freq,flux,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plo
     deltax = 2*xmax/nchan;
     freq = zeros(1,nchan);
     flux = zeros(1,nchan);
-    freq(1) = xmax-5*deltax;
-    for n=1:nchan
+    freq(1) = xmax-.5*deltax;
+        
+    for n=2:nchan
         freq(n) = freq(1)-(n-1)*deltax;
     end
 
@@ -19,22 +24,19 @@ function [freq,flux,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plo
     nin = 0;
     nout = 0;
 
-    rng(10);
     yes = zeros(1,nphot);
     
-    for phot = 1:nphot
-        goto_end_of_loop_1 = 0;
-        goto_end_of_loop_2 = 0;
+    for phot = 1:nphot       
+        goto_end_of_loop = 0;
 
-        xstart = rand;
-        xstart = xmax*xstart;
+        xstart = xmax*rand;
 
         % perform the magic
         xrnd = rand;
         if xrnd >= 0.5
             xstart = -xstart;
             xnew = xstart;
-            goto_end_of_loop_1 = 1;
+            goto_end_of_loop = 1;
         end
 
         vmax1 = vmax*0.99;
@@ -42,19 +44,23 @@ function [freq,flux,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plo
         if (xstart >= vmax1) | (xstart <= vmin1)
             % no resonance possible
             xnew = xstart;
-            goto_end_of_loop_2 = 1;
+            goto_end_of_loop = 1;
         end
 
+        yes(1,phot) = xstart;
+        
+        forget_photon = 0;
         % here the scattering part begins
-        if (goto_end_of_loop_1 == 0) & (goto_end_of_loop_2 == 0)
+        if (goto_end_of_loop == 0)
 
             xmuestart = sqrt(rand);
-            yes(1,phot) = xmuestart;
+            yes(2,phot) = xmuestart;
             
             pstart = sqrt(1-xmuestart^2);
 
-            r_anal = b/(1-xstart^(1/beta));
-            r_anal = max(1,min(r_anal,rmax));
+            % holds only if xmuestart == 1
+%             r_anal = b/(1-xstart^(1/beta));
+%             r_anal = max(1,min(r_anal,rmax));
 
             func = @(r) sqrt(1-(pstart/r)^2)*(1-b/r)^beta - xstart;
             r = rtbis(func , 1 , rmax , 10^(-5));
@@ -74,6 +80,7 @@ function [freq,flux,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plo
                     pcheck = sqrt(r^2*(1-xmueou^2));
                     if pcheck <= 1
                         nin = nin +1;
+                        forget_photon = 1;
                     end
                 end
 
@@ -84,12 +91,15 @@ function [freq,flux,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plo
             end    
         end
 
-        yes(2,phot) = xnew;
+        yes(3,phot) = xnew;
         
         % tally the photons
         nout = nout + 1;
-        ichan = floor((xmax-xnew)/deltax)+1;
-        flux(ichan) = flux(ichan) +1;
+        
+        if forget_photon == 0
+            ichan = floor((xmax-xnew)/deltax)+1;
+            flux(ichan) = flux(ichan) +1;
+        end
 
     end
 
@@ -98,11 +108,13 @@ function [freq,flux,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plo
 
     flux = flux/xnorm;
 
+    % turn the frequency array around itself
     freq_ = freq;
     for k = 1:length(freq)
         freq(k) = freq_(end+1-k);
     end
     
+    % make figure
     if make_plot == 1
         figure()
         plot(freq,flux)

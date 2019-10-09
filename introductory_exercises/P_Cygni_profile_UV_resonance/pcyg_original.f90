@@ -85,6 +85,9 @@ program pcyg
 
 	deltax=2.*xmax/float(nchan)
 	freq(1)=xmax-.5*deltax
+	print*,'deltax',deltax
+	print*,'freq(1)',freq(1)
+
 	flux(1)=0.
 	      
 	do i=2,nchan

@@ -1,0 +1,7 @@
+pcyg_original: pcyg_original.o
+	gfortran -o pcyg_original pcyg_original.o
+
+pcyg_original.o: pcyg_original.f90
+	gfortran -c pcyg_original.f90 -o pcyg_original.o
+
+

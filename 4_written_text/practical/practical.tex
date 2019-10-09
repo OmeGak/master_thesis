@@ -914,12 +914,24 @@ Matlab (with \texttt{resonance\_x = 0} & -1 & 1 & -0.8 & 0 \\ \hline
 \end{center}
 
 \subsection{Comparison}
+
+\subsubsection{Literal Matlab version}
 \begin{figure}[!htp]
 \centering
 \includegraphics[width=0.65\textwidth]{../../two_resonance_lines/figures/compare_Matlab_Fortran.png}
-\caption{Original version of the code: convergence analysis (xk0=0)}
+\caption{Comparison of Fortran code and Matlab code (unchanged version)}
 \label{variance_reduction_test}
 \end{figure}
+
+This sounds good!
+
+
+\subsubsection{More freely translated version}
+\begin{itemize}
+\item changed \texttt{freq(1) = ... -0.5}
+\item made new variable \texttt{forget\_photon}
+\item more efficient implementation for generation of negative random number (not by an addition random number for selecting the sign).
+\end{itemize}
 
 
 

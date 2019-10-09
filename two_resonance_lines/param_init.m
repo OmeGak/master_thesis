@@ -27,7 +27,7 @@ function [nchan,vmin,vmax,deltax,freq,flux,b,xmin,xmax,rmax,...
     deltax = (xmax-xmin)/nchan;
 
     flux = zeros(1,nchan);
-    freq = linspace(xmin,xmax,nchan);
+    freq = linspace(xmin+0.5*deltax,xmax-0.5*deltax,nchan);
 
     nin = 0;
     nout = 0;
