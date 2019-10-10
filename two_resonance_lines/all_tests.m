@@ -162,13 +162,17 @@ clc, clear all, close all
     save = 0;
     all_radial = 0;
 
-    [freq_a,flux_a,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plot , save , all_radial);   
+    [freq_a,flux_a,yes_a] = one_radial_line(nphot , xk0 , alpha , beta , make_plot , save , all_radial);   
 
 % MATLAB DATA
     display('*****************MATLAB DATA*****************')
-    test_number = 0;
-    [freq_b, flux_b, number_scatterings,photon_path] = test_file(test_number);
+    test_number = 100;
+    [freq_b, flux_b, number_scatterings,photon_path,yes_b] = test_file(test_number);
     
+    iets = flux_b;
+    for k =1:length(flux_b)
+        flux_b(k) = iets(length(flux_b)-k+1);
+    end
   
 % JOINT PLOT
 save_fig = 1;  
@@ -185,14 +189,16 @@ save_fig = 1;
         saveas(gcf,'figures/compare_Matlab_Fortran.png')
     end
 
-close all
+% close all
 % COMPARE THE DATA
     display('*****************COMPARE DATA*****************')
-    % yes contains [xstart,xmuestart,xnew]
-    % photon_path contains [xstart,xmuestart,r,...]
-    selection_a = yes(:,1:5)
-    selection_b = photon_path(:,1:5)
-%% compare with Fortran (LITERALLY TRANSLATED VERSION)
+    % yes contains [xstart,xmuestart,rnew,xnew]
+    N = 100
+    selection_a = yes_a(:,N+1:N+10)
+    selection_b = yes_b(:,N+1:N+10)
+
+    
+    %% compare with Fortran (LITERALLY TRANSLATED VERSION)
   
 % 1) FORTRAN DATA
     display('FORTRAN DATA - -  - - - - - - - - - - - - -')

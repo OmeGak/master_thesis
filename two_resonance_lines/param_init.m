@@ -1,6 +1,6 @@
 function [nchan,vmin,vmax,deltax,freq,flux,b,xmin,xmax,rmax,...
         nin,nout,photon_path,nsc,expected_scattering_ratio,r_init] ...
-        = param_init(beta,nbins,resonance_x,nphot,compare_Fortran) 
+        = param_init(beta,nbins,resonance_x,nphot,compare_Fortran,xstart_Fortran) 
     % xmin and xmax are the boundaries of the frequency interval
     % vmin and vmax are the boundaries of the absorption regions
 
@@ -22,7 +22,7 @@ function [nchan,vmin,vmax,deltax,freq,flux,b,xmin,xmax,rmax,...
             b = 1+vmax^(1/beta);
             rmax = b/(1+vmin^(1/beta));    
     end
-
+    
     nchan = nbins;
     deltax = (xmax-xmin)/nchan;
 

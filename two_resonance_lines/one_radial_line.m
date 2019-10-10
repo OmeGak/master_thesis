@@ -24,7 +24,7 @@ function [freq,flux,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plo
     nin = 0;
     nout = 0;
 
-    yes = zeros(1,nphot);
+    yes = zeros(4,nphot);
     
     for phot = 1:nphot       
         goto_end_of_loop = 0;
@@ -49,6 +49,15 @@ function [freq,flux,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plo
 
         yes(1,phot) = xstart;
         
+        
+        if phot == 104
+            display('we are looking at photon number 104')
+            display(goto_end_of_loop)
+            display(vmax1)
+            display(vmin1)
+            display('we are done looking at photon number 104')
+        end
+        
         forget_photon = 0;
         % here the scattering part begins
         if (goto_end_of_loop == 0)
@@ -64,6 +73,8 @@ function [freq,flux,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plo
 
             func = @(r) sqrt(1-(pstart/r)^2)*(1-b/r)^beta - xstart;
             r = rtbis(func , 1 , rmax , 10^(-5));
+            
+            yes(3,phot) = r;
 
             xmuein = sqrt(1-(pstart/r)^2);
 
@@ -91,12 +102,12 @@ function [freq,flux,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plo
             end    
         end
 
-        yes(3,phot) = xnew;
+        yes(4,phot) = xnew;
         
         % tally the photons
         nout = nout + 1;
         
-        if forget_photon == 0
+        if (forget_photon == 0)
             ichan = floor((xmax-xnew)/deltax)+1;
             flux(ichan) = flux(ichan) +1;
         end

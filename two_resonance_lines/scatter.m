@@ -1,4 +1,4 @@
-function [xnew,xmueou,last_scatter] = scatter(xstart,x_selected,tau_selected,xmuestart,r,b,beta,alpha,all_radial,nsc,isotropic_scattering,nin)  
+function [xnew,xmueou,last_scatter,forget_photon] = scatter(xstart,x_selected,tau_selected,xmuestart,r,b,beta,alpha,all_radial,nsc,isotropic_scattering,nin)  
 
         forget_photon = 0;
         last_scatter = 0;
@@ -35,9 +35,4 @@ function [xnew,xmueou,last_scatter] = scatter(xstart,x_selected,tau_selected,xmu
             last_scatter = 1;
         end
         xnew = -xstart + 2*x_selected + v*(xmueou-xmuein);
-        
-        if forget_photon == 1
-            xnew = [];
-            last_scatter = 1;
-        end
 end

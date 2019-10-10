@@ -1,4 +1,5 @@
-function [r,x_selected,tau_selected,last_scatter] = best_line(xmuestart,xstart,resonance_x,resonance_tau,r_init,rmax,b,beta,nsc,vmin,vmax)
+function [r,x_selected,tau_selected,last_scatter]...
+    = best_line(xmuestart,xstart,resonance_x,resonance_tau,r_init,rmax,b,beta,nsc,vmin,vmax,xstart_Fortran)
         % determine radius of interaction
         
         last_scatter = 0;
@@ -83,19 +84,26 @@ function [r,x_selected,tau_selected,last_scatter] = best_line(xmuestart,xstart,r
        vmax_ = 1.01*vmax;
 %        display(vmin_)
 %        display(vmax_)
-       
+
+%         display(b)
+%         display(rmax)
+      
        if ((xstart - x_selected) < vmin_) | ((xstart - x_selected) > vmax_)
            tau_selected = [];
 %            display('this thing is corrupted')
-       end
-       
-       if (length(tau_selected) > 0) 
-           pstart = sqrt(1-xmuestart^2);
-           func = @(r) sqrt(1-(pstart./r).^2).*(1-b./r).^beta - (-xstart + x_selected);
-           r = rtbis(func , 1 , rmax +1, 10^(-5));
-       else
+%            display(vmin_),display(vmax_)
+           display(xstart)
            r = [];
            last_scatter = 1;
+       else
+           pstart = sqrt(1-xmuestart^2);
+           func = @(r) sqrt(1-(pstart./r).^2).*(1-b./r).^beta - (-xstart + x_selected);
+           
+%            if xstart_Fortran == 1
+%                func = @(r) sqrt(1-(pstart./r).^2).*(1-b./r).^beta + (-xstart + x_selected);
+%            end
+           
+           r = rtbis(func , 1 , rmax +1, 10^(-5));
        end
             
 end

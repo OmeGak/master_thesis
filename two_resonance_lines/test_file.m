@@ -1,4 +1,4 @@
-function [freq, flux_two, number_scatterings,photon_path] = test_file(test_number)   
+function [freq, flux_two, number_scatterings,photon_path,yes] = test_file(test_number)   
     % SET ALL PARAMETERS  
     make_save = 0;
     
@@ -31,14 +31,21 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
     compare_Fortran = 0;
     deterministic_sampling_x = 0;
     
-    xstart_Fortran = 1;
-    
+    xstart_Fortran = 0;
     
     
     % OVERVIEW OF TESTS
     if test_number == 0
-        % original version (by default, compare_Fortran = 1)
-
+        % original version 
+            % (by default, compare_Fortran = 1)
+            
+    elseif test_number == 100
+        % original version 
+            % (by default, compare_Fortran = 1)
+            xstart_Fortran = 1;
+            multiple_scatterings = 0;
+            nphot = 10^5;
+            
     elseif test_number == 1
         % first adaptation: radial release
         radial_release = 1; 
@@ -174,7 +181,8 @@ function [freq, flux_two, number_scatterings,photon_path] = test_file(test_numbe
     make_save = 1;
     compare_Fortran = 1         % this affects the problem parameters
 
-    [freq, flux_two,number_scatterings,photon_path] = multiple_lines(nphot,alpha,beta,...
+    [freq, flux_two,number_scatterings,photon_path,yes]...
+        = multiple_lines(nphot,alpha,beta,...
         make_plot,resonance_x,resonance_tau,make_save,nbins,possibility_scattering,...
         multiple_scatterings,all_radial,radial_release,isotropic_scattering,...
         Eddington_limb_darkening,plot_only_scattering,random_number,make_display,...

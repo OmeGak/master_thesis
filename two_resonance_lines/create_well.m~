@@ -31,7 +31,7 @@ function [xstart,goto_end_of_loop,deterministic_sampling_x] ...
     if xstart_Fortran == 1
         goto_end_of_loop = 1;
         for k=1:length(vmin)
-            if (xstart >= -1.01*vmax(k)) & (xstart <= -0.99*vmin(k))
+            if (xstart >= -0.99*vmin(k)) & (xstart <= -1.01*vmin(k))
     %             display('manneke toch - emission line created')
                 goto_end_of_loop = 0;
             end
