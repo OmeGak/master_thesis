@@ -38,21 +38,18 @@ function [freq, flux_two, number_scatterings,photon_path,yes] = test_file(test_n
     if test_number == 0
         % original version 
             % (by default, compare_Fortran = 1)
-            multiple_scatterings = 0;
             nphot = 10^5;
             
     elseif test_number == 100
         % original version 
             % (by default, compare_Fortran = 1)
             xstart_Fortran = 1;
-            multiple_scatterings = 0;
             nphot = 10^5;
             
     elseif test_number == 101
         % original version 
             % (by default, compare_Fortran = 1)
             xstart_Fortran = 1;
-            multiple_scatterings = 0;
             nphot = 10^5;            
    
             
@@ -74,9 +71,16 @@ function [freq, flux_two, number_scatterings,photon_path,yes] = test_file(test_n
         % photospheric line-profile 
         % ???
         
-        
+    
         
     % OTHER TESTS    
+    % test formation of line at another location
+        elseif test_number == 5
+            resonance_x = [-2,0]
+            possibility_scattering = 1;
+%             plot_only_scattering = 1;
+            
+    
     % test creation of well
         elseif test_number == 5
             % simple well
@@ -85,13 +89,15 @@ function [freq, flux_two, number_scatterings,photon_path,yes] = test_file(test_n
         elseif test_number == 6
             % simple well
             resonance_x = [0,-0.5];
-            possibility_scattering = 0; 
-        
+            resonance_tau = [100,100];
+            possibility_scattering = 1; 
+            
+            
     % test formation of two lines        
         elseif test_number == 7
             % only radially streaming photons (thus also radial release)
             resonance_x = [0,0.5];
-            multiple_scatterings = 1;
+            multiple_scatterings = 0;
             all_radial = 1;
             radial_release = 1;    
 
@@ -140,7 +146,7 @@ function [freq, flux_two, number_scatterings,photon_path,yes] = test_file(test_n
          
     % test superposition in absence of multiple_scatterings     
         elseif test_number == 18
-            resonance_x = [-0.5];
+            resonance_x = [-2];
             resonance_tau = [100,100];
             multiple_scatterings = 0;
 
@@ -150,13 +156,13 @@ function [freq, flux_two, number_scatterings,photon_path,yes] = test_file(test_n
             multiple_scatterings = 0;      
 
         elseif test_number == 20
-            resonance_x = [-0.5,0];
+            resonance_x = [-2,0];
             resonance_tau = [100,100];
             multiple_scatterings = 0;        
 
-    % test superposition in absence of multiple_scatterings     
+    % test superposition in with multiple_scatterings     
         elseif test_number == 180
-            resonance_x = [-0.5];
+            resonance_x = [-2];
             resonance_tau = [100,100];
             multiple_scatterings = 1;
 
@@ -166,7 +172,7 @@ function [freq, flux_two, number_scatterings,photon_path,yes] = test_file(test_n
             multiple_scatterings = 1;      
 
         elseif test_number == 200
-            resonance_x = [-0.5,0];
+            resonance_x = [-2,0];
             resonance_tau = [100,100];
             multiple_scatterings = 1; 
      
@@ -185,8 +191,7 @@ function [freq, flux_two, number_scatterings,photon_path,yes] = test_file(test_n
             resonance_tau = 100;
 
         elseif test_number == 26
-            resonance_tau = 0.5;
-              
+            resonance_tau = 0.5;         
     end
 
     make_plot = 1;

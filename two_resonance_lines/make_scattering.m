@@ -16,12 +16,17 @@ function [xnew,r,nin,last_scatter,xmueou,nsc,photon_path,forget_photon,yes] =  m
         yes(3,phot) = r;
     end
         
+%     display(last_scatter)
+    
     if last_scatter == 0
+        xstart = xstart - x_selected;
+%         display(xstart)
+        
         [xnew,xmueou,last_scatter,forget_photon] ...
-            = scatter(xstart,x_selected,tau_selected,xmuestart,r,b,beta,alpha,all_radial,nsc,isotropic_scattering,nin);
+            = scatter(xstart,tau_selected,xmuestart,r,b,beta,alpha,all_radial,nsc,isotropic_scattering,nin);
         nsc = nsc + 1;
         
-        if xstart_Fortran == 0
+        if xstart_Fortran == 1
             xnew = -xnew;
         end
     else

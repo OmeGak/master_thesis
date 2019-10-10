@@ -24,12 +24,13 @@
 \BOOKMARK [1][-]{section.9}{Transferring the code to Matlab}{}% 24
 \BOOKMARK [2][-]{subsection.9.1}{Limit ariables}{section.9}% 25
 \BOOKMARK [2][-]{subsection.9.2}{Comparison}{section.9}% 26
-\BOOKMARK [1][-]{section.10}{Dual spectral line formation}{}% 27
-\BOOKMARK [2][-]{subsection.10.1}{Introduction of second line: theoretical}{section.10}% 28
-\BOOKMARK [2][-]{subsection.10.2}{Development of computer code}{section.10}% 29
-\BOOKMARK [2][-]{subsection.10.3}{Random things}{section.10}% 30
-\BOOKMARK [2][-]{subsection.10.4}{Experiments and results}{section.10}% 31
-\BOOKMARK [1][-]{section.11}{Closer look at Monte Carlo simulations}{}% 32
-\BOOKMARK [2][-]{subsection.11.1}{Random walk \(diffusion equation\)}{section.11}% 33
-\BOOKMARK [2][-]{subsection.11.2}{Iets}{section.11}% 34
-\BOOKMARK [2][-]{subsection.11.3}{Limb darkening}{section.11}% 35
+\BOOKMARK [2][-]{subsection.9.3}{Optimizations}{section.9}% 27
+\BOOKMARK [1][-]{section.10}{Dual spectral line formation}{}% 28
+\BOOKMARK [2][-]{subsection.10.1}{Introduction of second line: theoretical}{section.10}% 29
+\BOOKMARK [2][-]{subsection.10.2}{Development of computer code}{section.10}% 30
+\BOOKMARK [2][-]{subsection.10.3}{Random things}{section.10}% 31
+\BOOKMARK [2][-]{subsection.10.4}{Experiments and results}{section.10}% 32
+\BOOKMARK [1][-]{section.11}{Closer look at Monte Carlo simulations}{}% 33
+\BOOKMARK [2][-]{subsection.11.1}{Random walk \(diffusion equation\)}{section.11}% 34
+\BOOKMARK [2][-]{subsection.11.2}{Iets}{section.11}% 35
+\BOOKMARK [2][-]{subsection.11.3}{Limb darkening}{section.11}% 36

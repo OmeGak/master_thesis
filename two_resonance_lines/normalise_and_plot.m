@@ -13,6 +13,8 @@ function flux = normalise_and_plot(nphot,nchan,flux,xmin,xmax,vmin,vmax,make_plo
             hold on, plot(resonance_x(a)*ones(1,10),linspace(min(flux),max(flux),10),'--','LineWidth',2)
             hold on, plot((resonance_x(a)+vmax)*ones(1,10),linspace(min(flux),max(flux),10),'--','LineWidth',1)
             hold on, plot((resonance_x(a)+vmin)*ones(1,10),linspace(min(flux),max(flux),10),'--','LineWidth',1)
+            patch([resonance_x(a)+vmin , resonance_x(a)+vmax, resonance_x(a)+vmax ,resonance_x(a)+vmin],...
+                [min(flux),min(flux),max(flux),max(flux)],'r','FaceColor','r','FaceAlpha',.2,'EdgeAlpha',.2)
         end
         
         grid on
@@ -22,6 +24,9 @@ function flux = normalise_and_plot(nphot,nchan,flux,xmin,xmax,vmin,vmax,make_plo
         elseif radial_release == 1
             title('radial release (xmuestart = 1)')
         end
+        
+        xlim([min(resonance_x+xmin),max(resonance_x+xmax)])
+        ylim([min(flux),max(flux)])
         
         
         if save == 1

@@ -1,11 +1,11 @@
 function test_superposition(save_figures)
-    test_number = 13
+    test_number = 18
     [freq_a, flux_a, number_scatterings_a, photon_path_a] = test_file(test_number);
 
-    test_number = 14
+    test_number = 19
     [freq_b, flux_b, number_scatterings_b, photon_path_b] = test_file(test_number);
 
-    test_number = 15
+    test_number = 20
     [freq, flux, number_scatterings, photon_path] = test_file(test_number);
 
     close all 

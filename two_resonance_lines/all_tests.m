@@ -189,9 +189,9 @@ save_fig = 1;
 % COMPARE THE DATA
     display('*****************COMPARE DATA*****************')
     % yes contains [xstart,xmuestart,rnew,xnew]
-    N = 100
-    selection_a = yes_a(:,N+1:N+10)
-    selection_b = yes_b(:,N+1:N+10)
+%     N = 100
+%     selection_a = yes_a(:,N+1:N+10)
+%     selection_b = yes_b(:,N+1:N+10)
 
     
     %% compare with Fortran (LITERALLY TRANSLATED VERSION)
