@@ -10,7 +10,7 @@ function [freq,flux,total_number_scatterings,photon_path,yes] = multiple_lines(n
     % set initial problem parameters
     [nchan,vmin,vmax,deltax,freq,flux,b,xmin,xmax,rmax,...
             nin,nout,photon_path,nsc,expected_scattering_ratio,r_init] =  ...
-                param_init(beta,nbins,resonance_x,nphot,compare_Fortran,xstart_Fortran);       
+                param_init(beta,nbins,resonance_x,nphot,compare_Fortran);       
             
     display('_____________________________________')
      
@@ -29,12 +29,7 @@ function [freq,flux,total_number_scatterings,photon_path,yes] = multiple_lines(n
         end
         yes(1,phot) = xstart;
         
-        if phot == 104
-            display('we are looking at photon number 104')
-            display(goto_end_of_loop)
-            display('we are done looking at photon number 104')
-        end
-               
+        
         % ALL SCATTERING EVENTS
         if (goto_end_of_loop == 0) & (possibility_scattering == 1)  
             % select angle (economy on photon numbers)
@@ -48,54 +43,56 @@ function [freq,flux,total_number_scatterings,photon_path,yes] = multiple_lines(n
             one_photon_path = [one_photon_path; r_new; xmueou];
                             
             
-            if length(xnew)>0
+            if length(xnew) > 0
                 yes(4,phot) = xnew;
             end
             
-            % also check if resonance is possible!
-            vmin_ = resonance_x + 0.99*vmin;
-            vmax_ = resonance_x + 1.01*vmax;
-            
-            for k=1:length(vmin)
-                if (xstart >= vmin_(k)) & (xstart <= vmax_(k))
-                    last_scatter = 1;
-                else
-%                     display('SHOOT THE PHOTON')
-                end
-            end
-            if xstart == []
-                last_scatter = 1;
-            end
-            
-            % secundary scattering events
-            while (last_scatter == 0) & (multiple_scatterings == 1)
-%                 display('hallo (2) - - - - - - - - - - - - - - - ')
-%                 display(last_scatter)
-                         
-                [xnew,r_new,nin,last_scatter,xmueou,phot_nsc,photon_path] = ...
-                    make_scattering(xnew,xmueou,r_new,beta,alpha,b,rmax,nin,...
-                        resonance_x,resonance_tau,all_radial,isotropic_scattering,phot_nsc,...
-                        photon_path,phot,last_scatter,vmin,vmax); 
-                if last_scatter == 0
-                    one_photon_path = [one_photon_path; r_new; xmueou];
-                end
-                
-                % also check if resonance is possible!
-                vmin_ = resonance_x + 0.99*vmin;
-                vmax_ = resonance_x + 1.01*vmax;
-
-                for k=1:length(vmin)
-                    if (xstart >= vmin_(k)) & (xstart <= vmax_(k))
-                        last_scatter = 1;
-                    end
-                end        
-                
-                if xstart == []
-                    last_scatter = 1;
-                end
-                
-            end
-            
+%             % ________________________________________________________________________________________
+%             % also check if resonance is possible!
+%             vmin_ = resonance_x + 0.99*vmin;
+%             vmax_ = resonance_x + 1.01*vmax;
+%             
+%             for k=1:length(vmin)
+%                 if (xstart >= vmin_(k)) & (xstart <= vmax_(k))
+%                     last_scatter = 1;
+%                 else
+% %                     display('SHOOT THE PHOTON')
+%                 end
+%             end
+%             if xstart == []
+%                 last_scatter = 1;
+%             end
+%             
+%             % secundary scattering events
+%             while (last_scatter == 0) & (multiple_scatterings == 1)
+% %                 display('hallo (2) - - - - - - - - - - - - - - - ')
+% %                 display(last_scatter)
+%                          
+%                 [xnew,r_new,nin,last_scatter,xmueou,phot_nsc,photon_path] = ...
+%                     make_scattering(xnew,xmueou,r_new,beta,alpha,b,rmax,nin,...
+%                         resonance_x,resonance_tau,all_radial,isotropic_scattering,phot_nsc,...
+%                         photon_path,phot,last_scatter,vmin,vmax,xstart_Fortran,yes); 
+%                 if last_scatter == 0
+%                     one_photon_path = [one_photon_path; r_new; xmueou];
+%                 end
+%                 
+%                 % also check if resonance is possible!
+%                 vmin_ = resonance_x + 0.99*vmin;
+%                 vmax_ = resonance_x + 1.01*vmax;
+% 
+%                 for k=1:length(vmin)
+%                     if (xstart >= vmin_(k)) & (xstart <= vmax_(k))
+%                         last_scatter = 1;
+%                     end
+%                 end        
+%                 
+%                 if xstart == []
+%                     last_scatter = 1;
+%                 end
+%                 
+%             end
+%             % ____________________________________________________________________________________________
+             
             
             if forget_photon == 0
                 [nout,flux] = add_count_photon(xnew,xstart,nout,xmin,deltax,nchan,flux,r_new);
@@ -104,13 +101,13 @@ function [freq,flux,total_number_scatterings,photon_path,yes] = multiple_lines(n
             one_photon_path = [xstart ; zeros(3,1)];
         end
         
-        
-        if length(one_photon_path) < size(photon_path,1)
-            one_photon_path = [one_photon_path; zeros(size(photon_path,1) - length(one_photon_path),1)];
-        elseif length(one_photon_path) > size(photon_path,1)
-            photon_path = [photon_path; zeros(length(one_photon_path) - size(photon_path,1),size(photon_path,2))];
-        end
-        photon_path = [photon_path, one_photon_path]; 
+        % create photon_path
+            if length(one_photon_path) < size(photon_path,1)
+                one_photon_path = [one_photon_path; zeros(size(photon_path,1) - length(one_photon_path),1)];
+            elseif length(one_photon_path) > size(photon_path,1)
+                photon_path = [photon_path; zeros(length(one_photon_path) - size(photon_path,1),size(photon_path,2))];
+            end
+            photon_path = [photon_path, one_photon_path]; 
         
         nsc = nsc + phot_nsc;
     end
@@ -118,6 +115,13 @@ function [freq,flux,total_number_scatterings,photon_path,yes] = multiple_lines(n
     % make plots and figures
     flux = normalise_and_plot(nphot,nchan,flux,xmin,xmax,vmin,vmax,...
         make_plot,freq,save,resonance_x,all_radial,radial_release);
+    
+    if xstart_Fortran == 1
+        iets = flux;
+        for k =1:length(flux)
+            flux(k) = iets(length(flux)-k+1);
+        end
+    end
     
     plot_track_path(photon_path,track_path,b,number_paths,make_save,rmax);
     total_number_scatterings = nsc/nphot

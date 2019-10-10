@@ -11,7 +11,7 @@ function [xnew,r,nin,last_scatter,xmueou,nsc,photon_path,forget_photon,yes] =  m
     end
 
     [r,x_selected,tau_selected,last_scatter] ...
-        = best_line(xmuestart,xstart,resonance_x,resonance_tau,r_init,rmax,b,beta,nsc,vmin,vmax,xstart_Fortran);
+        = best_line(xmuestart,xstart,resonance_x,resonance_tau,r_init,rmax,b,beta,nsc,vmin,vmax);
     if length(r) > 0
         yes(3,phot) = r;
     end
@@ -20,6 +20,10 @@ function [xnew,r,nin,last_scatter,xmueou,nsc,photon_path,forget_photon,yes] =  m
         [xnew,xmueou,last_scatter,forget_photon] ...
             = scatter(xstart,x_selected,tau_selected,xmuestart,r,b,beta,alpha,all_radial,nsc,isotropic_scattering,nin);
         nsc = nsc + 1;
+        
+        if xstart_Fortran == 0
+            xnew = -xnew;
+        end
     else
         xnew = xstart;
         last_scatter = 1;
@@ -28,10 +32,5 @@ function [xnew,r,nin,last_scatter,xmueou,nsc,photon_path,forget_photon,yes] =  m
 
     if length(resonance_x) == 1
         last_scatter = 1;
-    end
-    
-%     if xstart_Fortran == 1
-%         xnew = -xnew;
-%     end
-    
+    end    
 end

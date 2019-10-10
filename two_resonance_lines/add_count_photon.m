@@ -6,9 +6,5 @@ function [nout,flux] = add_count_photon(xnew,xstart,nout,xmin,deltax,nchan,flux,
         
         if (ichan < 1) | (ichan > nchan)
             error('oei oei');
-            display(xstart);
-            display(xnew);
-            display(r);
-            ichan = 2;
         end       
 end

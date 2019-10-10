@@ -119,7 +119,7 @@ function [freq,flux,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plo
 
     flux = flux/xnorm;
 
-    % turn the frequency array around itself
+    % turn the frequency array around itself !!! !!! !!! !!! !!! !!! !!! 
     freq_ = freq;
     for k = 1:length(freq)
         freq(k) = freq_(end+1-k);

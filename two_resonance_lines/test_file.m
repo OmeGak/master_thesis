@@ -38,6 +38,8 @@ function [freq, flux_two, number_scatterings,photon_path,yes] = test_file(test_n
     if test_number == 0
         % original version 
             % (by default, compare_Fortran = 1)
+            multiple_scatterings = 0;
+            nphot = 10^5;
             
     elseif test_number == 100
         % original version 
@@ -46,6 +48,16 @@ function [freq, flux_two, number_scatterings,photon_path,yes] = test_file(test_n
             multiple_scatterings = 0;
             nphot = 10^5;
             
+    elseif test_number == 101
+        % original version 
+            % (by default, compare_Fortran = 1)
+            xstart_Fortran = 1;
+            multiple_scatterings = 0;
+            nphot = 10^5;            
+   
+            
+            
+
     elseif test_number == 1
         % first adaptation: radial release
         radial_release = 1; 

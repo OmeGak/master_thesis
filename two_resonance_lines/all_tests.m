@@ -166,13 +166,9 @@ clc, clear all, close all
 
 % MATLAB DATA
     display('*****************MATLAB DATA*****************')
-    test_number = 100;
+    test_number = 0;
     [freq_b, flux_b, number_scatterings,photon_path,yes_b] = test_file(test_number);
     
-    iets = flux_b;
-    for k =1:length(flux_b)
-        flux_b(k) = iets(length(flux_b)-k+1);
-    end
   
 % JOINT PLOT
 save_fig = 1;  

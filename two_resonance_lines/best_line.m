@@ -1,5 +1,5 @@
 function [r,x_selected,tau_selected,last_scatter]...
-    = best_line(xmuestart,xstart,resonance_x,resonance_tau,r_init,rmax,b,beta,nsc,vmin,vmax,xstart_Fortran)
+    = best_line(xmuestart,xstart,resonance_x,resonance_tau,r_init,rmax,b,beta,nsc,vmin,vmax)
         % determine radius of interaction
         
         last_scatter = 0;

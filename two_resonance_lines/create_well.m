@@ -2,15 +2,15 @@ function [xstart,goto_end_of_loop,deterministic_sampling_x] ...
     =  create_well(xmin,xmax,vmin,vmax,resonance_x,deterministic_sampling_x,nphot,xstart_Fortran,phot)
     % sample uniformely, but not in given intervals (emission/absorption)
     
-    if xstart_Fortran == 1
+%     if xstart_Fortran == 1
         xstart = xmax*rand;
         make_neg = rand;
         if make_neg >= 0.5
             xstart = -xstart;
         end
-    else
-        xstart = xmin + (xmax-xmin)*rand;
-    end
+%     else
+%         xstart = xmin + (xmax-xmin)*rand;
+%     end
     
     if deterministic_sampling_x >= 1 
         xstart = xmin + deterministic_sampling_x*(xmax-xmin)/nphot;
@@ -36,11 +36,5 @@ function [xstart,goto_end_of_loop,deterministic_sampling_x] ...
                 goto_end_of_loop = 0;
             end
         end
-    end
-    
-    if phot == 104
-        display(-0.99*vmax(k))
-        display(-1.01*vmin(k))
-    end
-    
+    end    
 end
