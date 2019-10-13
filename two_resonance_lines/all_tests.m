@@ -1,28 +1,49 @@
-%% test random number generation
-clc, clear all, close all
+%% test how Matlab works with arrays
+clc, clear all, close all 
 
-N = 5;
+N = 21;
+a = linspace(10,30,N);
+b = a;
 
-rng(10)
-random_numbers_a = zeros(1,N);
-for n=1:N
-    random_numbers_a(n) = rand;
-end
+% do modification
+a(10:15) = a(10:15) + 1;
+b(15:10) = b(15:10) + 1;
 
-rng(10)
-random_numbers_b = zeros(1,N);
-for n=1:N
-    random_numbers_b(n) = test_random_number_generation;
-end
+% check if these are the same
+verschil = a - b;
 
-display(random_numbers_a)
-display(random_numbers_b)
+%% do simple test with LUMINOSITY
+clc, clear all, close all 
 
-%% do simple test
+test_photon_path = 0;
+test_luminosity = 1;
 
 test_number = 21;
-[freq, flux_two, number_scatterings,photon_path] = test_file(test_number);
-a = photon_path(:,15:20);
+test_number = 7;
+[freq, flux_two, number_scatterings , photon_path , yes , luminosity , rmax] = test_file(test_number);
+
+if test_photon_path == 1
+    a = photon_path(:,15:20);
+end
+if test_luminosity == 1
+    nrbins = 100;
+    r_array = linspace(1,rmax,nrbins);
+    
+    figure()
+    plot(r_array,luminosity)
+    xlim([1,rmax])
+    xlabel('r')
+    ylabel('L(r)','Rotation',0)
+end
+
+%% derive scattering probabilty
+clc, clear all, close all
+
+beta = 1; nbins = 100; resonance_x = [-0.5,0]; compare_Fortran = 1;
+[~,~,~,~,~,~,~,~,~,~,~,~,~,~,~,expected_ratio] = param_init(beta,nbins,resonance_x,compare_Fortran);    
+
+p = expected_ratio*(1+0.5/2*(1+0.5/2))
+p = expected_ratio*(1+0.5/2*(1+0.5/2*(1+0.5/2*(1+0.5/2))))
 
 %% test xmueout(xk0,alpha,r,v,sigma,all_radial)
 xk0 = 100
@@ -106,6 +127,9 @@ if save_plot == 1
     saveas(gcf,['figures/situation_',num2str(test_number_a),'_',num2str(test_number_b),'.png'])
 end
 
+%% test FIND
+a=[1,2,3,4];
+index=find(a==3)
 
 
 %% test best_line(xmuestart,xstart,resonance_x,r_init,rmax,b,beta)
@@ -147,149 +171,4 @@ subplot(1,2,1)
 plot(x,p)
 subplot(1,2,2)
 plot(x,p_tau)
-
-%% compare with Fortran (FREELY TRANSLATED VERSION)
-clc, clear all, close all
-
-% FORTRAN DATA (generated through MATLAB)
-    display('*****************FORTRAN DATA*****************')
-    nphot = 10^5;
-    xk0 = 100;
-    alpha = 0;
-    beta = 1;
-
-    make_plot = 1;
-    save = 0;
-    all_radial = 0;
-
-    [freq_a,flux_a,yes_a] = one_radial_line(nphot , xk0 , alpha , beta , make_plot , save , all_radial);   
-
-% MATLAB DATA
-    display('*****************MATLAB DATA*****************')
-    test_number = 0;
-    [freq_b, flux_b, number_scatterings,photon_path,yes_b] = test_file(test_number);
     
-  
-% JOINT PLOT
-save_fig = 1;  
-    display('*****************MAKE PLOT*****************')
-    figure()
-    plot(freq_a,flux_a)
-    hold on, plot(freq_b,flux_b)
-
-    legend('Fortran data','Matlab data')
-    xlabel('x')
-    ylabel('I')
-
-    if save_fig == 1
-        saveas(gcf,'figures/compare_Matlab_Fortran.png')
-    end
-
-% close all
-% COMPARE THE DATA
-    display('*****************COMPARE DATA*****************')
-    % yes contains [xstart,xmuestart,rnew,xnew]
-%     N = 100
-%     selection_a = yes_a(:,N+1:N+10)
-%     selection_b = yes_b(:,N+1:N+10)
-
-    
-    %% compare with Fortran (LITERALLY TRANSLATED VERSION)
-  
-% 1) FORTRAN DATA
-    display('FORTRAN DATA - -  - - - - - - - - - - - - -')
-    data_folder = '../introductory_exercises/P_Cygni_profile_UV_resonance/'
-
-        % get data
-            % mamaaaa contains data for xmuestart=sqrt(rand)
-            % generated on 9-10-2019 with (pcyg_original.f90)
-        file_name = [data_folder,'data/mamaaaaa']
-        test_case = 0;
-
-        nphot = 10^5
-        xk0 = 100
-        alpha = 0
-        beta = 1
-
-        legend_1 = 'Sobolev scattering'
-
-        % maybe it is desired to add other data
-            other_file_name = [];
-            % other_file_name = [data_folder,'data/out_8_10_2']
-            legend_2 = []
-            % legend_2 = 'isotropic scattering'
-            name = []
-            name = 'data/simple_test.png'
-
-    [freq_a,flux_a] = read_out(file_name,other_file_name,test_case,nphot,xk0,alpha,beta,legend_1,legend_2,name);
-    
-    iets =  zeros(1,length(freq_a));
-    for k=1:length(freq_a)
-        iets(k) = freq_a(length(freq_a)-k+1);
-    end
-    freq_a = iets;
-
-% 2) MATLAB DATA
-    display('MATLAB DATA - - - - - - - - - - - ')
-
-    nphot = 10^5
-    xk0 = 100
-    alpha = 0
-    beta = 1
-
-    make_plot = 1;
-    save = 0;
-    all_radial = 0
-
-    [freq_b,flux_b,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plot , save , all_radial);    
-    
-% 3) JOINT PLOT
-    figure()
-    plot(freq_a,flux_a)
-    hold on, plot(freq_b,flux_b)
-
-    legend('Fortran data','Matlab data')
-    xlabel('x')
-    ylabel('I')
-
-    if save_fig == 1
-        saveas(gcf,'figures/compare_Matlab_Fortran.png')
-    end    
-
-%% track path of the photon
-clc, close all, clear all
-display('track path of the photons')
-
-test_number = 21;
-[freq, flux, number_scatterings, photon_path] = test_file(test_number);
-
-Nphot = 20
-figure(), hold on
-c_map = jet(Nphot);
-for phot = 1:Nphot
-    % specify a color
-    a = c_map(phot,:);
-    
-    % initial shooting
-    phot_loc_x = [1 , 1+photon_path(3,phot)*photon_path(2,phot)];
-    phot_loc_y = [1 , 1+photon_path(3,phot)*randi([-1,1])*sqrt(1-photon_path(2,phot)^2)];
-    plot(phot_loc_x,phot_loc_y,'.-','MarkerSize',20,'color',a)
-    
-    % other scattering events
-    phot_number_scatterings = (length(photon_path(:,phot))-4)/2 + 1;
-    if phot_number_scatterings >= 2
-        for k = 2:2:phot_number_scatterings
-            phot_loc_x = [phot_loc_x, phot_loc_x(end) + photon_path(3,phot)*photon_path(2,phot)];
-            phot_loc_y = [phot_loc_y, phot_loc_y(end) + photon_path(3,phot)*randi([-1,1])*sqrt(1-photon_path(2,phot)^2)];
-        end
-        plot(phot_loc_x,phot_loc_y,'.-','MarkerSize',20,'color',a)
-    end
-
-    % neem nog een eindstraal van 1
-    phot_loc_x = [phot_loc_x(end), phot_loc_x(end) + photon_path(end,phot)];
-    phot_loc_y = [phot_loc_y(end), phot_loc_y(end) + sign(photon_path(end,phot))*sqrt(1-photon_path(end,phot)^2)];
-    plot(phot_loc_x,phot_loc_y,'--','MarkerSize',20,'color',a)
-end
-x = linspace(-1,1,20);
-hold on, plot(x,1+sqrt(1-x.^2),'color','yellow','LineWidth',4)
-hold on, plot(x,1-sqrt(1-x.^2),'color','yellow','LineWidth',4)

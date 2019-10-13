@@ -2,6 +2,8 @@ function flux = normalise_and_plot(nphot,nchan,flux,xmin,xmax,vmin,vmax,make_plo
     xnorm = nphot/nchan;
     flux = flux/xnorm;
 
+%     display(xmax)
+    
     if make_plot == 1
         figure()    
         
@@ -17,17 +19,18 @@ function flux = normalise_and_plot(nphot,nchan,flux,xmin,xmax,vmin,vmax,make_plo
                 [min(flux),min(flux),max(flux),max(flux)],'r','FaceColor','r','FaceAlpha',.2,'EdgeAlpha',.2)
         end
         
-        grid on
-        
+        grid on        
         if all_radial == 1
             title('only radially streaming photons')
         elseif radial_release == 1
             title('radial release (xmuestart = 1)')
         end
         
-        xlim([min(resonance_x+xmin),max(resonance_x+xmax)])
+        xlim([xmin,xmax])
         ylim([min(flux),max(flux)])
         
+        xlabel('^{v}/_{v_{\infty}}','FontSize',14)
+        ylabel('^{I}/_{I_0}','Rotation',0,'FontSize',14)
         
         if save == 1
             saveas(gcf,'data/radial_one_line.png')

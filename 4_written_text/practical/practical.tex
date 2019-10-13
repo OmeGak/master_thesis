@@ -82,11 +82,20 @@
 
 \end{enumerate}
 
-\section{Multiline transfer}
-\begin{itemize}
+\section{Multiline transfer (PART I)}
+\begin{enumerate}
 \item What happens when you add a line (e.g. \@ $x=0.5=a$)? How would you do that? (see section \underline{\ref{two_resonance_lines}}) 
-\end{itemize}
+\end{enumerate}
 
+\section{Multiline transfer (PART II)}
+\begin{enumerate}
+\item calculate force from one line (see section \underline{\ref{computing_radiation_force}}). 
+\begin{itemize}
+\item discretize in shells
+\item assume $\epsilon_i = cte$
+\end{itemize}
+\item compare to analytic expressions
+\end{enumerate}
 
 \newpage
 \section{Introductory exercises}
@@ -918,21 +927,38 @@ Matlab (with \texttt{resonance\_x = 0} & -1 & 1 & -0.8 & 0 \\ \hline
 \subsubsection{Literal Matlab version}
 \begin{figure}[!htp]
 \centering
-\includegraphics[width=0.65\textwidth]{../../two_resonance_lines/figures/compare_Matlab_Fortran.png}
-\caption{Comparison of Fortran code and Matlab code (unchanged version)}
+\includegraphics[width=0.65\textwidth]{../../two_resonance_lines/figures/compare_Matlab_Fortran_literally_100.png}
+\caption{Comparison of Fortran code and Matlab code (unchanged version - \texttt{xk0 = 100})}
 \label{variance_reduction_test}
 \end{figure}
 
-This sounds good!
+\begin{figure}[!htp]
+\centering
+\includegraphics[width=0.65\textwidth]{../../two_resonance_lines/figures/compare_Matlab_Fortran_literally_0005.png}
+\caption{Comparison of Fortran code and Matlab code (unchanged version - \texttt{xk0 = 0.5})}
+\label{variance_reduction_test}
+\end{figure}
 
 
+
+\newpage
 \subsubsection{More freely translated version}
-\begin{itemize}
-\item changed \texttt{freq(1) = ... -0.5}
-\item made new variable \texttt{forget\_photon}
-\item in \texttt{rtbis} added option no\_solution.
-\end{itemize}
 
+\begin{figure}[!htp]
+\centering
+\includegraphics[width=0.65\textwidth]{../../two_resonance_lines/figures/compare_Matlab_Fortran_more_freely.png}
+\caption{Comparison of Fortran code and Matlab code (freely adapted version)}
+\label{variance_reduction_test}
+\end{figure}
+
+\begin{figure}[!htp]
+\centering
+\includegraphics[width=0.65\textwidth]{../../two_resonance_lines/figures/compare_Matlab_Fortran_more_freely_0005.png}
+\caption{Comparison of Fortran code and Matlab code (unchanged version - \texttt{xk0 = 0.5})}
+\label{variance_reduction_test}
+\end{figure}
+
+\newpage
 \subsection{Optimizations}
 \begin{itemize}
 \item more efficient implementation for generation of negative random number (not by an addition random number for selecting the sign).
@@ -1121,6 +1147,18 @@ See also Section \ref{Experiments_xmuestart_1}.
 
 \newpage
 \subsection{Experiments and results}
+\begin{itemize}
+\item de lijnen moeten dicht genoeg bij elkaar liggen, anders is er gewoonweg geen pumping up mogelijk.
+
+\item resonance ends always at the rightmost frequency because you can indeed have a pumping up, but the leftmost peak is then in the absorption zone of the rightmost, thus it is scattered again! You can indeed see that the joint zone is depleted - and actaully makes the rightmost line stronger.
+
+\item calculate scattering probability for overlapping regions
+\begin{equation}
+\text{see handwritten notes}
+\end{equation}
+
+\end{itemize}
+
 
 \subsubsection{About the scattering probability distribution}
 
@@ -1173,7 +1211,39 @@ From numerical experiments
 \label{PCyg_mu_eq_1}
 \end{figure}
 
+\newpage
+\section{Computing the radiation force \& luminosity $L(r)$}
+\label{computing_radiation_force}
+Material from 
+\begin{itemize}
+\item text provided by professor Sundqvist
+\item phd thesis from Uwe Springmann \cite{UweSpringmannPHD}. Sperically symmetric Wolf-Rayet stars is discussed.
+\end{itemize}
 
+\subsection{Solution strategy}
+Loop over all photons. In that loop, loop over all $r$ values and assign the corresponding angle. Thus we need two additional arrays: \texttt{r\_values} and \texttt{angles}. Update the array at each scattering event.
+
+
+\begin{itemize}
+\item create a grid for $r$
+\item for each $r$ on the grid, look at the 
+\item calculate $L(r)$
+\item then calculate $\frac{dL}{dr}$ numerically on that grid
+\end{itemize}
+
+\begin{enumerate}
+\item formal definition
+\begin{equation}
+g_{\text{radiation}} = - \frac{1}{\dot{M}}\frac{dL}{dr}
+\end{equation}
+\item numerical approximation 
+\begin{equation}
+L(r) = \frac{1}{\Delta t} \sum_i \epsilon_i \text{sign}\mu_i(r)
+\end{equation}
+\end{enumerate}
+
+
+\subsection{Computing the force for one line}
 
 \newpage
 \section{Closer look at Monte Carlo simulations}

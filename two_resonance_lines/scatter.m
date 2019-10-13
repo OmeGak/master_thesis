@@ -1,4 +1,5 @@
-function [xnew,xmueou,last_scatter,forget_photon] = scatter(xstart,tau_selected,xmuestart,r,b,beta,alpha,all_radial,nsc,isotropic_scattering,nin)  
+function [xnew,xmueou,last_scatter,forget_photon,nin] ...
+    = scatter(xstart,tau_selected,xmuestart,r,b,beta,alpha,all_radial,nsc,isotropic_scattering,nin)  
 
         forget_photon = 0;
         last_scatter = 0;
@@ -12,7 +13,7 @@ function [xnew,xmueou,last_scatter,forget_photon] = scatter(xstart,tau_selected,
         sigma = dvdr/(v/r)-1;
         tau = xk0/(r*v^(2-alpha)*(1+xmuein^2*sigma));
 
-        if tau >= rand
+        if tau > -log(rand)
             nsc = nsc + 1;
             
             xmueou = xmueout(xk0,alpha,r,v,sigma,all_radial);
@@ -26,7 +27,6 @@ function [xnew,xmueou,last_scatter,forget_photon] = scatter(xstart,tau_selected,
                 xmueou = -xmueou;
                 if sqrt(r^2*(1-xmueou^2)) <= 1
                     nin = nin +1;
-                    % FORGET PHOTON !!!
                     forget_photon = 1;
                 end
             end

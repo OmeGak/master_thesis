@@ -1,16 +1,18 @@
-function [freq,flux,total_number_scatterings,photon_path,yes] = multiple_lines(nphot,alpha,beta,make_plot,...
-        resonance_x,resonance_tau,save,nbins,possibility_scattering,multiple_scatterings,...
+function [freq,flux,total_number_scatterings,photon_path,yes,luminosity,rmax]...
+    = multiple_lines(nphot,alpha,beta,make_plot,...
+        resonance_x,resonance_tau,save,nbins,nrbins,possibility_scattering,multiple_scatterings,...
         all_radial,radial_release,isotropic_scattering,Eddington_limb_darkening,plot_only_scattering,...
-        random_number,make_display,track_path,number_paths,make_save,compare_Fortran,deterministic_sampling_x,xstart_Fortran)  
-%     display('MULTIPLE_LINES______(START)')
+        random_number,track_path,number_paths,make_save,compare_Fortran,...
+        deterministic_sampling_x,xstart_Fortran)  
     
+    clc
     rng(random_number);
 %     s = rng;
     
     % set initial problem parameters
     [nchan,vmin,vmax,deltax,freq,flux,b,xmin,xmax,rmax,...
-            nin,nout,photon_path,nsc,expected_scattering_ratio,r_init] =  ...
-                param_init(beta,nbins,resonance_x,nphot,compare_Fortran);       
+            nin,nout,photon_path,nsc,r_init,~,luminosity] =  ...
+                param_init(beta,nbins,nrbins,resonance_x,compare_Fortran);               
             
     display('_____________________________________')
      
@@ -27,8 +29,6 @@ function [freq,flux,total_number_scatterings,photon_path,yes] = multiple_lines(n
         if (goto_end_of_loop == 1) & (plot_only_scattering == 0)
             [nout,flux] = add_count_photon(xstart,xstart,nout,xmin,deltax,nchan,flux,r_init);
         end
-        yes(1,phot) = xstart;
-        
         
         % ALL SCATTERING EVENTS
         if (goto_end_of_loop == 0) & (possibility_scattering == 1)
@@ -36,62 +36,47 @@ function [freq,flux,total_number_scatterings,photon_path,yes] = multiple_lines(n
             
             % select angle (economy on photon numbers)
             [xmuestart, one_photon_path] = release_photon(xstart,radial_release,Eddington_limb_darkening);
-            yes(2,phot) = xmuestart;
                     
-            [xnew,r_new,nin,last_scatter,xmueou,phot_nsc,photon_path,forget_photon,yes] = ...
-                make_scattering(xstart,xmuestart,r_init,beta,alpha,b,rmax,nin,...
-                    resonance_x,resonance_tau,all_radial,isotropic_scattering,phot_nsc,...
-                    photon_path,phot,0,vmin,vmax,xstart_Fortran,yes);
+            [xnew,r_new,nin,last_scatter,xmueou,phot_nsc,photon_path,forget_photon,...
+                x_selected,luminosity] = ...
+                    make_scattering(xstart,xmuestart,r_init,beta,alpha,b,rmax,nin,...
+                        resonance_x,resonance_tau,all_radial,isotropic_scattering,phot_nsc,...
+                        photon_path,vmin,vmax,xstart_Fortran,luminosity,nrbins);
             one_photon_path = [one_photon_path; r_new; xmueou];
-                            
-            
-            if length(xnew) > 0
-                yes(4,phot) = xnew;
-            end
-            
+                                                    
             % ________________________________________________________________________________________
-            % also check if resonance is possible!
-            vmin_ = resonance_x + 0.99*vmin;
-            vmax_ = resonance_x + 1.01*vmax;
+            % also check if resonance is possible!            
+            [last_scatter,index] = secundary_resonance_possible(xstart,x_selected,resonance_x,vmin,vmax,last_scatter);
             
-            for k=1:length(vmin)
-                if (xstart >= vmin_(k)) & (xstart <= vmax_(k))
-                    last_scatter = 1;
-                else
-%                     display('SHOOT THE PHOTON')
-                end
-            end
-            if xstart == []
-                last_scatter = 1;
-            end
             
             % secundary scattering events
             while (last_scatter == 0) & (multiple_scatterings == 1)
-%                 display('hallo (2) - - - - - - - - - - - - - - - ')
-%                 display(last_scatter)
-                         
-                [xnew,r_new,nin,last_scatter,xmueou,phot_nsc,photon_path] = ...
-                    make_scattering(xnew,xmueou,r_new,beta,alpha,b,rmax,nin,...
-                        resonance_x,resonance_tau,all_radial,isotropic_scattering,phot_nsc,...
-                        photon_path,phot,last_scatter,vmin,vmax,xstart_Fortran,yes); 
+%                 display('************************* MULTIPLE SCATTERINGS *****************************')
+
+%                 display(xstart)
+%                 display(x_selected)
+%                 display(xnew)
+%                 display(r_new)
+                
+                dummy_resonance_x = [resonance_x(1:index-1),resonance_x(index+1:end)];
+                dummy_resonance_tau = [resonance_tau(1:index-1),resonance_tau(index+1:end)];
+
+                [xnew,r_new,nin,last_scatter,xmueou,phot_nsc,photon_path,forget_photon,...
+                        x_selected,luminosity] = ...
+                            make_scattering(xnew,xmueou,r_new,beta,alpha,b,rmax,nin,...
+                                dummy_resonance_x,dummy_resonance_tau,all_radial,...
+                                isotropic_scattering,phot_nsc,...
+                                photon_path,vmin,vmax,xstart_Fortran,luminosity,nrbins); 
                 if last_scatter == 0
                     one_photon_path = [one_photon_path; r_new; xmueou];
                 end
                 
-                % also check if resonance is possible!
-                vmin_ = resonance_x + 0.99*vmin;
-                vmax_ = resonance_x + 1.01*vmax;
+%                 display(x_selected)
+%                 display(xnew)
+%                 display(r_new)
 
-                for k=1:length(vmin)
-                    if (xstart >= vmin_(k)) & (xstart <= vmax_(k))
-                        last_scatter = 1;
-                    end
-                end        
-                
-                if xstart == []
-                    last_scatter = 1;
-                end
-                
+                [last_scatter,index] = secundary_resonance_possible(xstart,x_selected,resonance_x,vmin,vmax,last_scatter);
+      
             end
             % ____________________________________________________________________________________________
              
@@ -101,6 +86,8 @@ function [freq,flux,total_number_scatterings,photon_path,yes] = multiple_lines(n
             end
         else
             one_photon_path = [xstart ; zeros(3,1)];
+            r_new = r_init;
+            xmuestart = release_photon(xstart,radial_release,Eddington);
         end
         
         
@@ -113,6 +100,18 @@ function [freq,flux,total_number_scatterings,photon_path,yes] = multiple_lines(n
             photon_path = [photon_path, one_photon_path]; 
         
         nsc = nsc + phot_nsc;
+        
+        
+        % update luminosity
+        dr = (rmax-1)/nrbins;
+        if sign(xmuestart) == 1
+            r_index_min = floor((r_new-1)/dr) + 1;
+            r_index_max = floor((rmax-1)/dr);
+        else
+            r_index_max = floor((1-1)/dr) + 1;
+            r_index_min = floor((r_new-1)/dr) + 1;
+        end     
+        luminosity(r_index_min : r_index_max) = luminosity(r_index_min : r_index_max) + sign(xmuestart); 
     end
 
     % make plots and figures
@@ -130,5 +129,4 @@ function [freq,flux,total_number_scatterings,photon_path,yes] = multiple_lines(n
     total_number_scatterings = nsc/nphot
     total_number_backscatterings = nin/nphot
     
-%     display('MULTIPLE_LINES_______(END)')
 end

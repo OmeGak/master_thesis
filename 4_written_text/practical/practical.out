@@ -2,35 +2,39 @@
 \BOOKMARK [1][-]{section.2}{Overview of exercises \(PART II\)}{}% 2
 \BOOKMARK [1][-]{section.3}{Overview of exercises \(PART III\)}{}% 3
 \BOOKMARK [1][-]{section.4}{Overview of exercises \(PART IV\)}{}% 4
-\BOOKMARK [1][-]{section.5}{Multiline transfer}{}% 5
-\BOOKMARK [1][-]{section.6}{Introductory exercises}{}% 6
-\BOOKMARK [2][-]{subsection.6.1}{Analytical exercises}{section.6}% 7
-\BOOKMARK [2][-]{subsection.6.2}{Numerical exercises}{section.6}% 8
-\BOOKMARK [2][-]{subsection.6.3}{Other Exercises}{section.6}% 9
-\BOOKMARK [1][-]{section.7}{Limb darkening}{}% 10
-\BOOKMARK [2][-]{subsection.7.1}{Formulation of the problem}{section.7}% 11
-\BOOKMARK [2][-]{subsection.7.2}{Solving the \(integro-differential\) radiative transfer equation}{section.7}% 12
-\BOOKMARK [2][-]{subsection.7.3}{Eddington-Barbier approximation}{section.7}% 13
-\BOOKMARK [2][-]{subsection.7.4}{2D Case}{section.7}% 14
-\BOOKMARK [2][-]{subsection.7.5}{3D Case}{section.7}% 15
-\BOOKMARK [1][-]{section.8}{Spectral line formation: pcyg.f90}{}% 16
-\BOOKMARK [2][-]{subsection.8.1}{First adaptation: what if all photons are released radially from photosphere?}{section.8}% 17
-\BOOKMARK [2][-]{subsection.8.2}{Second adaptation: isotropic scattering}{section.8}% 18
-\BOOKMARK [2][-]{subsection.8.3}{Third adaptation: introduction of Eddington limb-darkening}{section.8}% 19
-\BOOKMARK [2][-]{subsection.8.4}{Fourth adaptaion: photospheric line-profile}{section.8}% 20
-\BOOKMARK [2][-]{subsection.8.5}{Convergence analysis}{section.8}% 21
-\BOOKMARK [2][-]{subsection.8.6}{Variance reduction experiment}{section.8}% 22
-\BOOKMARK [2][-]{subsection.8.7}{Mathematical description of the problem \046 Looking at literature}{section.8}% 23
-\BOOKMARK [1][-]{section.9}{Transferring the code to Matlab}{}% 24
-\BOOKMARK [2][-]{subsection.9.1}{Limit ariables}{section.9}% 25
-\BOOKMARK [2][-]{subsection.9.2}{Comparison}{section.9}% 26
-\BOOKMARK [2][-]{subsection.9.3}{Optimizations}{section.9}% 27
-\BOOKMARK [1][-]{section.10}{Dual spectral line formation}{}% 28
-\BOOKMARK [2][-]{subsection.10.1}{Introduction of second line: theoretical}{section.10}% 29
-\BOOKMARK [2][-]{subsection.10.2}{Development of computer code}{section.10}% 30
-\BOOKMARK [2][-]{subsection.10.3}{Random things}{section.10}% 31
-\BOOKMARK [2][-]{subsection.10.4}{Experiments and results}{section.10}% 32
-\BOOKMARK [1][-]{section.11}{Closer look at Monte Carlo simulations}{}% 33
-\BOOKMARK [2][-]{subsection.11.1}{Random walk \(diffusion equation\)}{section.11}% 34
-\BOOKMARK [2][-]{subsection.11.2}{Iets}{section.11}% 35
-\BOOKMARK [2][-]{subsection.11.3}{Limb darkening}{section.11}% 36
+\BOOKMARK [1][-]{section.5}{Multiline transfer \(PART I\)}{}% 5
+\BOOKMARK [1][-]{section.6}{Multiline transfer \(PART II\)}{}% 6
+\BOOKMARK [1][-]{section.7}{Introductory exercises}{}% 7
+\BOOKMARK [2][-]{subsection.7.1}{Analytical exercises}{section.7}% 8
+\BOOKMARK [2][-]{subsection.7.2}{Numerical exercises}{section.7}% 9
+\BOOKMARK [2][-]{subsection.7.3}{Other Exercises}{section.7}% 10
+\BOOKMARK [1][-]{section.8}{Limb darkening}{}% 11
+\BOOKMARK [2][-]{subsection.8.1}{Formulation of the problem}{section.8}% 12
+\BOOKMARK [2][-]{subsection.8.2}{Solving the \(integro-differential\) radiative transfer equation}{section.8}% 13
+\BOOKMARK [2][-]{subsection.8.3}{Eddington-Barbier approximation}{section.8}% 14
+\BOOKMARK [2][-]{subsection.8.4}{2D Case}{section.8}% 15
+\BOOKMARK [2][-]{subsection.8.5}{3D Case}{section.8}% 16
+\BOOKMARK [1][-]{section.9}{Spectral line formation: pcyg.f90}{}% 17
+\BOOKMARK [2][-]{subsection.9.1}{First adaptation: what if all photons are released radially from photosphere?}{section.9}% 18
+\BOOKMARK [2][-]{subsection.9.2}{Second adaptation: isotropic scattering}{section.9}% 19
+\BOOKMARK [2][-]{subsection.9.3}{Third adaptation: introduction of Eddington limb-darkening}{section.9}% 20
+\BOOKMARK [2][-]{subsection.9.4}{Fourth adaptaion: photospheric line-profile}{section.9}% 21
+\BOOKMARK [2][-]{subsection.9.5}{Convergence analysis}{section.9}% 22
+\BOOKMARK [2][-]{subsection.9.6}{Variance reduction experiment}{section.9}% 23
+\BOOKMARK [2][-]{subsection.9.7}{Mathematical description of the problem \046 Looking at literature}{section.9}% 24
+\BOOKMARK [1][-]{section.10}{Transferring the code to Matlab}{}% 25
+\BOOKMARK [2][-]{subsection.10.1}{Limit ariables}{section.10}% 26
+\BOOKMARK [2][-]{subsection.10.2}{Comparison}{section.10}% 27
+\BOOKMARK [2][-]{subsection.10.3}{Optimizations}{section.10}% 28
+\BOOKMARK [1][-]{section.11}{Dual spectral line formation}{}% 29
+\BOOKMARK [2][-]{subsection.11.1}{Introduction of second line: theoretical}{section.11}% 30
+\BOOKMARK [2][-]{subsection.11.2}{Development of computer code}{section.11}% 31
+\BOOKMARK [2][-]{subsection.11.3}{Random things}{section.11}% 32
+\BOOKMARK [2][-]{subsection.11.4}{Experiments and results}{section.11}% 33
+\BOOKMARK [1][-]{section.12}{Computing the radiation force \046 luminosity L\(r\)}{}% 34
+\BOOKMARK [2][-]{subsection.12.1}{Solution strategy}{section.12}% 35
+\BOOKMARK [2][-]{subsection.12.2}{Computing the force for one line}{section.12}% 36
+\BOOKMARK [1][-]{section.13}{Closer look at Monte Carlo simulations}{}% 37
+\BOOKMARK [2][-]{subsection.13.1}{Random walk \(diffusion equation\)}{section.13}% 38
+\BOOKMARK [2][-]{subsection.13.2}{Iets}{section.13}% 39
+\BOOKMARK [2][-]{subsection.13.3}{Limb darkening}{section.13}% 40

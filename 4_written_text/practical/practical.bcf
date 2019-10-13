@@ -1977,7 +1977,8 @@
   <bcf:section number="0">
     <bcf:citekey order="1">Dublin_limb_darkening</bcf:citekey>
     <bcf:citekey order="2">NoebauerUlrichM_2019MCRT</bcf:citekey>
-    <bcf:citekey order="3">Dimarco2018</bcf:citekey>
+    <bcf:citekey order="3">UweSpringmannPHD</bcf:citekey>
+    <bcf:citekey order="4">Dimarco2018</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="anyt">

@@ -1,4 +1,7 @@
-function rtbis = rtbis(func,x1,x2,xacc)
+function [rtbis,no_solution] = rtbis(func,x1,x2,xacc)
+
+    no_solution = 0;
+    make_plot_if_no_solution = 0;
 
     maxit = 40;    
     
@@ -7,20 +10,23 @@ function rtbis = rtbis(func,x1,x2,xacc)
     
     if (f*fmid >= 0)
         
-        M = 1.3;
-        r_array = linspace(x1,M*x2,200);
-        f = func(r_array);
-        figure()
-        plot(r_array,f)
-        hold on, plot(x2*ones(1,10),linspace(min(f),max(f),10))
-        grid on
-        xticks([1,x2,M*x2])
-        xlabel('r')
-        ylabel('func')
-        xlim([1,M*x2])
+        if make_plot_if_no_solution == 1
+            M = 1.3;
+            r_array = linspace(x1,M*x2,200);
+            f = func(r_array);
+            figure()
+            plot(r_array,f)
+            hold on, plot(x2*ones(1,10),linspace(min(f),max(f),10))
+            grid on
+            xticks([1,x2,M*x2])
+            xlabel('r')
+            ylabel('func')
+            xlim([1,M*x2])
+        end
         
-        error('ma jungske toch')
-        
+%         error('ma jungske toch')
+
+        no_solution = 1;        
         rtbis = [];
     end
     

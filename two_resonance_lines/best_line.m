@@ -1,5 +1,5 @@
-function [r,x_selected,tau_selected,last_scatter]...
-    = best_line(xmuestart,xstart,resonance_x,resonance_tau,r_init,rmax,b,beta,nsc,vmin,vmax)
+function [r,x_selected,tau_selected,last_scatter,index]...
+    = best_line(xmuestart,xstart,resonance_x,resonance_tau,r_init,rmax,b,beta,vmin,vmax)
         % determine radius of interaction
         
         last_scatter = 0;
@@ -10,6 +10,7 @@ function [r,x_selected,tau_selected,last_scatter]...
         % FIRST METHOD
         pstart = sqrt(1-xmuestart^2);
         r_collection = zeros(1,length(resonance_x));
+        index = 0;
         for k = 1:length(resonance_x)
 
             func = @(r) sqrt(1-(pstart./r).^2).*(1-b./r).^beta - (-xstart + resonance_x(k));
@@ -27,19 +28,18 @@ function [r,x_selected,tau_selected,last_scatter]...
                 display('func(b) = '), display(func(b))
             end
             
-            r_num = rtbis(func , 1 , rmax +1, 10^(-5));
+            [r_num,no_solution] = rtbis(func , 1 , rmax +1, 10^(-5));
 
             r_anal = b/(1-(-xstart + resonance_x(k))^(1/beta));
             r_anal = min(r_anal,rmax);
             
             if ((r_anal-r_num) > 10^(-2)) & (xmuestart == 1)
-                display('____________')
-                display(r_anal)
-                display(r_num)
-                display(xstart)
                 error('the analytic root does not correspond to the radial streaming root')
             end  
-            r_collection(k) = r_num;
+            
+            if no_solution == 0
+                r_collection(k) = r_num;
+            end
         end
         
         if length(r_collection) == 1
@@ -47,28 +47,20 @@ function [r,x_selected,tau_selected,last_scatter]...
             x_selected = resonance_x;
             tau_selected = resonance_tau;
         else
-            if nsc == 0
-%                 display('first scattering')
-                [r,index] = min(r_collection);
+            r = min(r_collection(sign(xmuestart)*(r_collection-r_init)>0));
+
+            if length(r) > 0
+                index = max(find(r_collection == r));
                 x_selected = resonance_x(index);
                 tau_selected = resonance_tau(index);
             else
-                r = min(r_collection(sign(xmuestart)*(r_collection-r_init)>0));
-
-                if length(r) > 0
-                    index = find(r_collection == r);
-                    index = index(1);
-                    x_selected = resonance_x(index);
-                    tau_selected = resonance_tau(index);
-                else
-                    x_selected = [];
-                    tau_selected = [];
-                end
+                x_selected = [];
+                tau_selected = [];
+                last_scatter = 1;
             end
         end
         
-        
-        
+                
         if Lucy_Abbott == 1
             % OTHER METHOD: TAKE LOWEST FREQUENCY!
                 % see [Lucy & Abbott]

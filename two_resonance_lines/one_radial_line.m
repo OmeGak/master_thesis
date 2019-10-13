@@ -1,4 +1,4 @@
-function [freq,flux,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plot , save,all_radial)
+function [freq,flux,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plot , save , all_radial)
     % set random number generator
     rng(10);
 %     s = rng;
@@ -31,7 +31,6 @@ function [freq,flux,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plo
 
         xstart = xmax*rand;
 
-        % perform the magic
         xrnd = rand;
         if xrnd >= 0.5
             xstart = -xstart;
@@ -39,25 +38,17 @@ function [freq,flux,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plo
             goto_end_of_loop = 1;
         end
 
-        vmax1 = vmax*0.99;
-        vmin1 = vmin*1.01;
-        if (xstart >= vmax1) | (xstart <= vmin1)
-            % no resonance possible
-            xnew = xstart;
-            goto_end_of_loop = 1;
+        if (goto_end_of_loop == 0)
+            vmax1 = vmax*0.99;
+            vmin1 = vmin*1.01;
+            if (xstart >= vmax1) | (xstart <= vmin1)
+                % no resonance possible
+                xnew = xstart;
+                goto_end_of_loop = 1;
+            end
+            yes(1,phot) = xstart;
         end
-
-        yes(1,phot) = xstart;
-        
-        
-        if phot == 104
-            display('we are looking at photon number 104')
-            display(goto_end_of_loop)
-            display(vmax1)
-            display(vmin1)
-            display('we are done looking at photon number 104')
-        end
-        
+                
         forget_photon = 0;
         % here the scattering part begins
         if (goto_end_of_loop == 0)
@@ -83,7 +74,7 @@ function [freq,flux,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plo
             sigma = dvdr/(v/r)-1;
             tau = xk0/(r*v^(2-alpha)*(1+xmuein^2*sigma));
 
-            if tau >= rand
+            if tau > -log(rand)
                 xmueou = xmueout(xk0,alpha,r,v,sigma,all_radial);
 
                 if rand >= 0.5

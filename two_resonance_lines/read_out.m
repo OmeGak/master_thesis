@@ -6,7 +6,7 @@ function [freq,flux] = read_out(file_name,other_file_name,test_case,nphot,xk0,al
     % reads the output from the Fortran computations
     close all
 
-    fileID = fopen(file_name,'r')
+    fileID = fopen(file_name,'r');
     formatSpec = '%f %f';
     sizeA = [2 Inf];
     A = fscanf(fileID,formatSpec,sizeA); 
@@ -59,10 +59,9 @@ function [freq,flux] = read_out(file_name,other_file_name,test_case,nphot,xk0,al
         end
     end
     
-    name
     saveas(gcf,name)
     
-    freq = A(1,:)
-    flux = A(2,:)
+    freq = A(1,:);
+    flux = A(2,:);
 end
     
