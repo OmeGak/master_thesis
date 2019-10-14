@@ -1,17 +1,3 @@
-%% test how Matlab works with arrays
-clc, clear all, close all 
-
-N = 21;
-a = linspace(10,30,N);
-b = a;
-
-% do modification
-a(10:15) = a(10:15) + 1;
-b(15:10) = b(15:10) + 1;
-
-% check if these are the same
-verschil = a - b;
-
 %% do simple test with LUMINOSITY
 clc, clear all, close all 
 
@@ -26,14 +12,26 @@ if test_photon_path == 1
     a = photon_path(:,15:20);
 end
 if test_luminosity == 1
+    nphot = 10^5;
     nrbins = 100;
-    r_array = linspace(1,rmax,nrbins);
     
+    r_array = linspace(1,rmax,nrbins);
+     
     figure()
+%     subplot(1,2,1)
     plot(r_array,luminosity)
+    hold on, plot(linspace(min(r_array),max(r_array),10),nphot*ones(1,10),'--')
     xlim([1,rmax])
     xlabel('r')
     ylabel('L(r)','Rotation',0)
+    title('luminosity L(r)')
+    
+%     subplot(1,2,2)
+%     loglog(r_array,luminosity)
+%     xlim([1,rmax])
+%     xlabel('r')
+%     ylabel('L(r)','Rotation',0)
+%     title('loglog representation of the same')
 end
 
 %% derive scattering probabilty
@@ -44,6 +42,21 @@ beta = 1; nbins = 100; resonance_x = [-0.5,0]; compare_Fortran = 1;
 
 p = expected_ratio*(1+0.5/2*(1+0.5/2))
 p = expected_ratio*(1+0.5/2*(1+0.5/2*(1+0.5/2*(1+0.5/2))))
+
+
+%% test how Matlab works with arrays
+clc, clear all, close all 
+
+N = 21;
+a = linspace(10,30,N);
+b = a;
+
+% do modification
+a(10:15) = a(10:15) + 1;
+b(15:10) = b(15:10) + 1;
+
+% check if these are the same
+verschil = a - b;
 
 %% test xmueout(xk0,alpha,r,v,sigma,all_radial)
 xk0 = 100

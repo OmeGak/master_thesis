@@ -25,19 +25,23 @@ function [xnew,r,nin,last_scatter,xmueou,nsc,photon_path,forget_photon,...
         end
         
         xnew = xnew + x_selected;
-        
-        
+          
         % update luminosity
         dr = (rmax-1)/nrbins;
+        rmin = 1;
         
         if sign(xmuestart) == 1
-            r_index_min = floor((r_init-1)/dr) + 1;
-            r_index_max = floor((r-1)/dr) + 1;
+            r_index_min = floor((r_init-rmin)/dr) + 1;
+            r_index_max = floor((r-rmin)/dr) + 1;
         else
-            r_index_min = floor((r-1)/dr) + 1;
-            r_index_max = floor((r_init-1)/dr) + 1;
+            r_index_min = floor((r-rmin)/dr) + 1;
+            r_index_max = floor((r_init-rmin)/dr) + 1;
         end
         
+%         display(r_init)
+%         display(r)
+%         display(r_index_min)
+%         display(r_index_max)
         luminosity(r_index_min : r_index_max) = luminosity(r_index_min : r_index_max) + sign(xmuestart); 
         
     else

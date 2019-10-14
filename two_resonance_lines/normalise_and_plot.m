@@ -1,4 +1,5 @@
-function flux = normalise_and_plot(nphot,nchan,flux,xmin,xmax,vmin,vmax,make_plot,freq,save,resonance_x,all_radial,radial_release) 
+function flux = normalise_and_plot(...
+        nphot,nchan,flux,xmin,xmax,vmin,vmax,make_plot,freq,save,resonance_x,all_radial,radial_release,xstart_Fortran) 
     xnorm = nphot/nchan;
     flux = flux/xnorm;
 
@@ -36,4 +37,12 @@ function flux = normalise_and_plot(nphot,nchan,flux,xmin,xmax,vmin,vmax,make_plo
             saveas(gcf,'data/radial_one_line.png')
         end       
     end
+    
+    if xstart_Fortran == 1
+        iets = flux;
+        for k =1:length(flux)
+            flux(k) = iets(length(flux)-k+1);
+        end
+    end
+    
 end

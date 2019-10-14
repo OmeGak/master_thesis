@@ -6,6 +6,7 @@ function [freq, flux_two, number_scatterings,photon_path,yes,luminosity,rmax] = 
     alpha = 0;
     beta = 1;
     nbins = 100;
+    nrbins = 100;
 
     possibility_scattering = 1;
     
@@ -102,6 +103,8 @@ function [freq, flux_two, number_scatterings,photon_path,yes,luminosity,rmax] = 
             all_radial = 1;
             radial_release = 1; 
             track_path = 1;
+            nphot = 10^5;
+            nrbins = 100;
 
         elseif test_number == 8
             % formation of two lines, with radial release
@@ -205,9 +208,6 @@ function [freq, flux_two, number_scatterings,photon_path,yes,luminosity,rmax] = 
     make_plot = 1;
     make_save = 1;
     compare_Fortran = 1         % this affects the problem parameters
-
-    % determine L(r)
-    nrbins = 100;
     
     [freq, flux_two,number_scatterings,photon_path,yes,luminosity,rmax]...
         = multiple_lines(nphot,alpha,beta,...

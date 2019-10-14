@@ -7,12 +7,13 @@ function [r,x_selected,tau_selected,last_scatter,index]...
         make_display = 0;
         
         
-        % FIRST METHOD
+        % FIRST METHOD - (by default)
         pstart = sqrt(1-xmuestart^2);
-        r_collection = zeros(1,length(resonance_x));
+        r_collection = [];
         index = 0;
+        
         for k = 1:length(resonance_x)
-
+            % numerical root
             func = @(r) sqrt(1-(pstart./r).^2).*(1-b./r).^beta - (-xstart + resonance_x(k));
             
             if make_display == 1
@@ -30,6 +31,7 @@ function [r,x_selected,tau_selected,last_scatter,index]...
             
             [r_num,no_solution] = rtbis(func , 1 , rmax +1, 10^(-5));
 
+            % analytical root
             r_anal = b/(1-(-xstart + resonance_x(k))^(1/beta));
             r_anal = min(r_anal,rmax);
             
@@ -38,7 +40,7 @@ function [r,x_selected,tau_selected,last_scatter,index]...
             end  
             
             if no_solution == 0
-                r_collection(k) = r_num;
+                r_collection = [r_collection, r_num; resonance_x(k)];
             end
         end
         
@@ -47,11 +49,12 @@ function [r,x_selected,tau_selected,last_scatter,index]...
             x_selected = resonance_x;
             tau_selected = resonance_tau;
         else
-            r = min(r_collection(sign(xmuestart)*(r_collection-r_init)>0));
+            r_collection_r = r_collection(1,:);
+            r = min(r_collection_r(sign(xmuestart)*(r_collection_r-r_init)>0));
 
             if length(r) > 0
                 index = max(find(r_collection == r));
-                x_selected = resonance_x(index);
+                x_selected = r_collection(2,index);
                 tau_selected = resonance_tau(index);
             else
                 x_selected = [];
