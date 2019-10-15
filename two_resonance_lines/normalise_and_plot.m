@@ -16,8 +16,8 @@ function flux = normalise_and_plot(...
             hold on, plot(resonance_x(a)*ones(1,10),linspace(min(flux),max(flux),10),'--','LineWidth',2)
             hold on, plot((resonance_x(a)+vmax)*ones(1,10),linspace(min(flux),max(flux),10),'--','LineWidth',1)
             hold on, plot((resonance_x(a)+vmin)*ones(1,10),linspace(min(flux),max(flux),10),'--','LineWidth',1)
-            patch([resonance_x(a)+vmin , resonance_x(a)+vmax, resonance_x(a)+vmax ,resonance_x(a)+vmin],...
-                [min(flux),min(flux),max(flux),max(flux)],'r','FaceColor','r','FaceAlpha',.2,'EdgeAlpha',.2)
+%             patch([resonance_x(a)+vmin , resonance_x(a)+vmax, resonance_x(a)+vmax ,resonance_x(a)+vmin],...
+%                 [min(flux),min(flux),max(flux),max(flux)],'r','FaceColor','r','FaceAlpha',.2,'EdgeAlpha',.2)
         end
         
         grid on        

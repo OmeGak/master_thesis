@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.20)  12 OCT 2019 14:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.20)  15 OCT 2019 18:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1260,24 +1260,24 @@ Overfull \vbox (12.0pt too high) has occurred while \output is active []
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 ] [2] [3] [4] [5] [6] [7] [8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 149.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 149.
-
-(./philosophy_of_technology.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 149.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 149.
+[9] [10]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 202.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 202.
+ (./philosophy_of_technology.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 202.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 202.
 Package rerunfilecheck Info: File `philosophy_of_technology.out' has not change
 d.
-(rerunfilecheck)             Checksum: 3BD458878080941AF3B1D2AD106EF2D9;724.
+(rerunfilecheck)             Checksum: EA4D0A84646FD7C39AA3C4628C150345;861.
 Package logreq Info: Writing requests to 'philosophy_of_technology.run.xml'.
 \openout1 = `philosophy_of_technology.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 31881 strings out of 492641
- 645532 string characters out of 6131786
+ 31894 strings out of 492641
+ 645661 string characters out of 6131786
  1135063 words of memory out of 5000000
- 35243 multiletter control sequences out of 15000+600000
+ 35245 multiletter control sequences out of 15000+600000
  8502 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,20n,75p,781b,1637s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1290,10 +1290,10 @@ st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmtcsc10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmtt10.pfb>
-Output written on philosophy_of_technology.pdf (8 pages, 125874 bytes).
+Output written on philosophy_of_technology.pdf (10 pages, 134901 bytes).
 PDF statistics:
- 148 PDF objects out of 1000 (max. 8388607)
- 127 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 500000)
- 109 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 174 PDF objects out of 1000 (max. 8388607)
+ 151 compressed objects within 2 object streams
+ 42 named destinations out of 1000 (max. 500000)
+ 125 words of extra memory for PDF output out of 10000 (max. 10000000)
 

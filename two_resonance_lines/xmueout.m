@@ -14,12 +14,6 @@ function xmueout = xmueout(xk0,alpha,r,v,sigma,all_radial)
     xmueout = x0;
     
     if all_radial == 1
-        x = rand;
-        if x < 0.5
-            xmueout = -1;
-        else
-            xmueout = 1;
-        end
-%         xmueout = 1;
+        xmueout = 1;
     end
 end

@@ -1,6 +1,7 @@
 function [nchan,vmin,vmax,deltax,freq,flux,b,xmin,xmax,rmax,rmin,...
-        nin,nout,photon_path,nsc,r_init,expected_scattering_ratio,luminosity,forget_photon] ...
-        = param_init(beta,nbins,nrbins,resonance_x,compare_Fortran) 
+        nin,nout,photon_path,nsc,expected_scattering_ratio,luminosity,...
+        count_neg_phot,nphot] ...
+        = param_init(beta,nbins,nrbins,resonance_x,compare_Fortran,nphot) 
     % xmin and xmax are the boundaries of the frequency interval
     % vmin and vmax are the boundaries of the absorption regions
 
@@ -36,7 +37,6 @@ function [nchan,vmin,vmax,deltax,freq,flux,b,xmin,xmax,rmax,rmin,...
     photon_path = [];
     nsc = 0;
     
-    r_init = 1;
     forget_photon = 0;
     
 
@@ -53,5 +53,8 @@ function [nchan,vmin,vmax,deltax,freq,flux,b,xmin,xmax,rmax,rmin,...
     
     r_array = linspace(1,rmax,nrbins);
     luminosity = zeros(1,nrbins);
+    count_neg_phot = 0;
+    
+    nphot = nphot*length(resonance_x);
     
 end

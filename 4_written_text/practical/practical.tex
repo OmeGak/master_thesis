@@ -97,6 +97,14 @@
 \item compare to analytic expressions
 \end{enumerate}
 
+\section{Preparation for Equation meeting on 15 October}
+See Section \underline{\ref{Dual_line_experiments_results}}.
+
+\paragraph{questions}
+\begin{itemize}
+\item also take into account the photons where no scattering takes place?
+\end{itemize}
+
 \newpage
 \section{Introductory exercises}
 
@@ -909,7 +917,7 @@ Have a look at \cite{NoebauerUlrichM_2019MCRT} (see Appendix).
 \newpage
 \section{Transferring the code to Matlab}
 
-\subsection{Limit ariables}
+\subsection{Limit variables}
 \begin{center}
 \centering
 {\tabulinesep=1.5mm
@@ -1070,8 +1078,8 @@ pitfalls yet to solve:
 \paragraph{Ranges and limits}
 Assuming $\mu_{start} = 1$. Note that in the code $r_{\infty} = b$
 
-
-\subsection{Development of computer code}
+\newpage
+\subsection{Development of computer code (in \texttt{Matlab})}
 \subsubsection{Implementation in Matlab: user's manual}
 Run the function \texttt{test\_function(test\_number)}.
 \begin{center}
@@ -1111,11 +1119,6 @@ Via this link, you can go back to the exercises overview: Section \underline{\re
 \right]
 \end{equation}
 
-\subsubsection{Dirty tricks}
-\begin{itemize}
-\item when \texttt{xnew > xmax} then set \texttt{xnew} to \texttt{xmax}.
-\end{itemize}
-
 \newpage
 \subsection{Random things}
 
@@ -1147,63 +1150,17 @@ See also Section \ref{Experiments_xmuestart_1}.
 
 \newpage
 \subsection{Experiments and results}
-\begin{itemize}
-\item de lijnen moeten dicht genoeg bij elkaar liggen, anders is er gewoonweg geen pumping up mogelijk.
-
-\item resonance ends always at the rightmost frequency because you can indeed have a pumping up, but the leftmost peak is then in the absorption zone of the rightmost, thus it is scattered again! You can indeed see that the joint zone is depleted - and actaully makes the rightmost line stronger.
-
-\item calculate scattering probability for overlapping regions
-\begin{equation}
-\text{see handwritten notes}
-\end{equation}
-
-\end{itemize}
-
+\label{Dual_line_experiments_results}
 
 \subsubsection{About the scattering probability distribution}
-
-
-\subsubsection{Visualisation of the photon path}
-
-\begin{figure}[!htp]
-\centering
-\includegraphics[width=0.8\textwidth]{../../two_resonance_lines/figures/photon_path.png}
-\caption{Convergence behaviour for 1D implicit solver (diffusion equation)}
-\label{1D_implicit_diffusion}
-\end{figure}
-
-\subsubsection{Is superposition valid?}
-From numerical experiments
-
-\begin{figure}[!htp]
-\centering
-\includegraphics[width=0.55\textwidth]{../../two_resonance_lines/figures/superposition_test.png}
-\caption{Convergence behaviour for 1D implicit solver (diffusion equation)}
-\label{1D_implicit_diffusion}
-\end{figure}
-
-
-\subsubsection{Sobolev escape angle from the resonance zone}
-
-\subsubsection{Exerpiments with \texttt{xmuestart = 1}}
-\label{Experiments_xmuestart_1}
-
-\begin{figure}[!htp]
-\centering
-\includegraphics[width=0.55\textwidth]{../../two_resonance_lines/figures/reference_solution_xmuestart.png}
-\caption{Convergence behaviour for 1D implicit solver (diffusion equation)}
-\label{1D_implicit_diffusion}
-\end{figure}
-
-\subsubsection{Scattering distribution}
-
 \begin{figure}[!htbp]
+\hspace*{-0.5in}
 \centering
-\begin{subfigure}{.5\textwidth}
+\begin{subfigure}{.6\textwidth}
 \includegraphics[width=1\textwidth]{../../two_resonance_lines/figures/scattering_distribution_radial_release.png}
 \caption{Radial release}
 \end{subfigure}%
-\begin{subfigure}{.5\textwidth}
+\begin{subfigure}{.6\textwidth}
 \includegraphics[width=1\textwidth]{../../two_resonance_lines/figures/scattering_distribution_random_release.png}
 \caption{Random release}
 \end{subfigure}
@@ -1211,14 +1168,146 @@ From numerical experiments
 \label{PCyg_mu_eq_1}
 \end{figure}
 
+\subsubsection{Single resonance line}
+\begin{figure}[!htbp]
+\centering
+\hspace*{-0.5in}
+\begin{subfigure}{.6\textwidth}
+\includegraphics[width=1\textwidth]{../../two_resonance_lines/figures/reference_solution_xmuestart.png}
+\caption{Radial release}
+\end{subfigure}%
+\begin{subfigure}{.6\textwidth}
+\includegraphics[width=1\textwidth]{../../two_resonance_lines/figures/reference_solution_xmuestart.png}
+\caption{Random release}
+\end{subfigure}
+\caption{Result}
+\label{PCyg_mu_eq_1_test}
+\end{figure}
+
+\newpage
+\subsubsection{Multiple line formation}
+\begin{itemize}
+\item \textsc{non-interacting lines}
+	\begin{figure}[H]
+	\centering	
+	\hspace*{-0.5in}
+	\begin{subfigure}{.6\textwidth}
+	\includegraphics[width=1\textwidth]{../../two_resonance_lines/figures/multiple_lines_distant.png}
+	\end{subfigure}%
+	\begin{subfigure}{.6\textwidth}
+	\includegraphics[width=1\textwidth]{../../two_resonance_lines/figures/multiple_lines_photon_path_distant.png}
+	\end{subfigure}
+	\caption{Multiple lines (distant lines, non-interacting)}
+	\label{multiple_lines_1}
+	\end{figure}
+	
+\item \textsc{overlapping lines}
+	\begin{figure}[H]
+	\centering
+	\hspace*{-0.5in}
+	\begin{subfigure}{.6\textwidth}
+	\includegraphics[width=1\textwidth]{../../two_resonance_lines/figures/multiple_lines.png}
+	\end{subfigure}%
+	\begin{subfigure}{.6\textwidth}
+	\includegraphics[width=1\textwidth]{../../two_resonance_lines/figures/multiple_lines_photon_path.png}
+	\end{subfigure}
+	\caption{Multiple lines (distant lines, non-interacting)}
+	\label{multiple_lines_1}
+	\end{figure}
+
+\newpage
+\item \textsc{many-line situation}
+	\begin{figure}[H]
+	\centering
+	\hspace*{-0.5in}
+	\begin{subfigure}{.6\textwidth}
+	\includegraphics[width=1\textwidth]{../../two_resonance_lines/figures/multiple_lines_MANY.png}
+	\end{subfigure}%
+	\begin{subfigure}{.6\textwidth}
+	\includegraphics[width=1\textwidth]{../../two_resonance_lines/figures/multiple_lines_photon_path_MANY.png}
+	\end{subfigure}
+	\caption{Multiple lines (distant lines, non-interacting)}
+	\label{multiple_lines_MANY}
+	\end{figure}
+\end{itemize}
+
+\begin{figure}[!htp]
+\centering
+\includegraphics[width=1\textwidth]{../../two_resonance_lines/figures/multiple_lines_MANY_without_red_box.png}
+\caption{Detailed look @ many line formation}
+\label{test_superposition_1}
+\end{figure}
+
+\newpage
+\subsubsection{Effect of the opacity}
+	\begin{figure}[H]
+	\centering	
+	\hspace*{-0.5in}
+	\begin{subfigure}{.6\textwidth}
+	\includegraphics[width=1\textwidth]{../../two_resonance_lines/figures/multiple_lines_distant_diff_opacity.png}
+	\end{subfigure}%
+	\begin{subfigure}{.6\textwidth}
+	\includegraphics[width=1\textwidth]{../../two_resonance_lines/figures/multiple_lines_photon_path_distant_diff_opacity.png}
+	\end{subfigure}
+	\caption{Multiple lines (left \texttt{xk0 = 100} and right \texttt{xk0 = 0.5})}
+	\label{multiple_lines_1_effect_opacity}
+	\end{figure}
+
+
+\newpage
+\subsubsection{Is superposition valid?}
+From numerical experiments
+
+\begin{figure}[!htp]
+\centering
+\includegraphics[width=0.55\textwidth]{../../two_resonance_lines/figures/superposition_test.png}
+\caption{Test for superposition}
+\label{test_superposition_1}
+\end{figure}
+
+\noindent\fbox{
+  \parbox{0.8\textwidth}{
+  TO BE INVESTIGATED
+}}
+
+\subsubsection{Some theoretical observations}
+\begin{itemize}
+\item The resonance frequencies need to lie close enough to each other, otherwise no resonance is possible.
+
+\begin{itemize}
+\item if the lines are close enough to each other, resonance ends always at the rightmost frequency because you can indeed have a pumping up, but the leftmost peak is then in the absorption zone of the rightmost, thus it is scattered again! You can indeed see that the joint zone is depleted - and actaully makes the rightmost line stronger.
+\end{itemize}
+
+
+\item Calculation of scattering probability for overlapping regions. Define ...
+\begin{itemize}
+\item the 'one-time scattering probability' $p_1$.
+\item probabiltiy of the overlapping region $p_2 = \frac{\text{length of overlapping region}}{\text{union of the length of the 'one-scattering' regions}}$. 
+\end{itemize}
+Then we have
+\begin{equation}
+p_{\text{total}} = p_1(1+2p_2(1+2p_2(1+...)))
+\end{equation}
+
+\end{itemize}
+
 \newpage
 \section{Computing the radiation force \& luminosity $L(r)$}
 \label{computing_radiation_force}
-Material from 
-\begin{itemize}
-\item text provided by professor Sundqvist
-\item phd thesis from Uwe Springmann \cite{UweSpringmannPHD}. Sperically symmetric Wolf-Rayet stars is discussed.
-\end{itemize}
+
+This is based upon material from the text provided by professor Sundqvist, and the Phd thesis from Uwe Springmann \cite{UweSpringmannPHD} where sperically symmetric Wolf-Rayet stars are discussed.
+
+\subsection{Theoretical formulas}
+\begin{enumerate}
+\item formal definition
+\begin{equation}
+g_{\text{radiation}} = - \frac{1}{\dot{M}}\frac{dL}{dr}
+\end{equation}
+\item numerical approximation 
+\begin{equation}
+L(r) = \frac{1}{\Delta t} \sum_i \epsilon_i \text{sign}\mu_i(r)
+\end{equation}
+\end{enumerate}
 
 \subsection{Solution strategy}
 Loop over all photons. In that loop, loop over all $r$ values and assign the corresponding angle. Thus we need two additional arrays: \texttt{r\_values} and \texttt{angles}. Update the array at each scattering event.
@@ -1231,22 +1320,33 @@ Loop over all photons. In that loop, loop over all $r$ values and assign the cor
 \item then calculate $\frac{dL}{dr}$ numerically on that grid
 \end{itemize}
 
-\begin{enumerate}
-\item formal definition
-\begin{equation}
-g_{\text{radiation}} = - \frac{1}{\dot{M}}\frac{dL}{dr}
-\end{equation}
-\item numerical approximation 
-\begin{equation}
-L(r) = \frac{1}{\Delta t} \sum_i \epsilon_i \text{sign}\mu_i(r)
-\end{equation}
-\end{enumerate}
+\subsection{Checking the correctness of the program}
+Enforce algorithmically that all photons stream in one direction (no scattering with \texttt{xmueout < 0}). Comment out the line \texttt{xmueou = -xmueou} in the function \texttt{scatter.m}.
 
+\begin{figure}[!htp]
+\centering
+\includegraphics[width=0.7\textwidth]{../../two_resonance_lines/figures/luminosity_one_resonance_line_one_direction.png}
+\caption{Luminosity $L(r)$ (for one resonance line) - test situation}
+\label{luminosity_one_resonance_line_test}
+\end{figure}
 
+\newpage
 \subsection{Computing the radiation force for one line}
-\begin{itemize}
-\item also track where a photon leaves the sphere with radius $r_{\text{max}}$
-\end{itemize}
+Basic, well-known test situation.
+\begin{figure}[!htp]
+\centering
+\includegraphics[width=0.7\textwidth]{../../two_resonance_lines/figures/luminosity_one_resonance_line.png}
+\caption{Luminosity $L(r)$ (for one resonance line)}
+\label{luminosity_one_resonance_line}
+\end{figure}
+
+\subsection{Multiple lines}
+\begin{figure}[!htp]
+\centering
+\includegraphics[width=0.7\textwidth]{../../two_resonance_lines/figures/luminosity_multiple_resonance_line.png}
+\caption{Luminosity $L(r)$ (for multiple resonance line)}
+\label{luminosity_multiple_resonance_line}
+\end{figure}
 
 
 \newpage
@@ -1275,9 +1375,6 @@ we have for the variance that $\braket{x_N}^2 = N l^2$
 \end{itemize}
 then we have that $N = \tau^2$. This corresponds with the observations in Figure \ref{random_walk_N_vs_tau}.
 \end{itemize}
-
-\newpage
-\subsection{Iets}
 
 \newpage
 \subsection{Limb darkening} We first look at results from the limb darkening program, as studied in Section \ref{limb_darkening_program_discussion}. In Figure \ref{limb_darkening_N_vs_tau}, the number of scattering events is plotted versus the opacity of the medium. 

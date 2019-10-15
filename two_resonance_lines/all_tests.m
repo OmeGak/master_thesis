@@ -1,37 +1,36 @@
-%% do simple test with LUMINOSITY
-clc, clear all, close all 
-
-test_photon_path = 0;
-test_luminosity = 1;
+%% very SIMPLE test
+clc, close all, clear all
 
 test_number = 21;
-test_number = 7;
-[freq, flux_two, number_scatterings , photon_path , yes , luminosity , rmax] = test_file(test_number);
+[freq,flux_two,number_scatterings,photon_path,yes,luminosity,rmax,total_number_backscatterings] = test_file(test_number);
 
-if test_photon_path == 1
-    a = photon_path(:,15:20);
-end
-if test_luminosity == 1
-    nphot = 10^5;
-    nrbins = 100;
-    
-    r_array = linspace(1,rmax,nrbins);
-     
-    figure()
-%     subplot(1,2,1)
-    plot(r_array,luminosity)
-    hold on, plot(linspace(min(r_array),max(r_array),10),nphot*ones(1,10),'--')
-    xlim([1,rmax])
-    xlabel('r')
-    ylabel('L(r)','Rotation',0)
-    title('luminosity L(r)')
-    
-%     subplot(1,2,2)
-%     loglog(r_array,luminosity)
-%     xlim([1,rmax])
-%     xlabel('r')
-%     ylabel('L(r)','Rotation',0)
-%     title('loglog representation of the same')
+photon_path(:,18:25)
+
+%% SIMPLE test
+clc, clear all, close all
+
+make_save = 0;
+
+test_number = 2001;
+[freq,flux_two,number_scatterings,photon_path,yes,luminosity,rmax,total_number_backscatterings] = test_file(test_number);
+
+% make plot and figure
+if make_save == 1
+    if test_number == 2001
+        title1 = 'figures/multiple_lines_distant_diff_opacity.png';
+        title2 = 'figures/multiple_lines_photon_path_distant_diff_opacity.png';
+    elseif test_number == 200
+        title1 = 'figures/multiple_lines_distant.png';
+        title2 = 'figures/multiple_lines_photon_path_distant.png';
+    elseif test_number == 500
+        title1 = 'figures/multiple_lines_MANY.png';
+        title2 = 'figures/multiple_lines_photon_path_MANY.png';        
+    else
+        title1 = 'figures/multiple_lines.png';
+        title2 = 'figures/multiple_lines_photon_path.png';
+    end
+    saveas(figure(1),title1)
+    saveas(figure(2),title2)
 end
 
 %% derive scattering probabilty
@@ -139,10 +138,6 @@ legend('xk0=100','xk0=0.5')
 if save_plot == 1
     saveas(gcf,['figures/situation_',num2str(test_number_a),'_',num2str(test_number_b),'.png'])
 end
-
-%% test FIND
-a=[1,2,3,4];
-index=find(a==3)
 
 
 %% test best_line(xmuestart,xstart,resonance_x,r_init,rmax,b,beta)

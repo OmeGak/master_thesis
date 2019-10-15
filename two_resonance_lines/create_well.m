@@ -1,4 +1,4 @@
-function [xstart,goto_end_of_loop,deterministic_sampling_x] ...
+function [xstart,xnew,goto_end_of_loop,deterministic_sampling_x] ...
     =  create_well(xmin,xmax,vmin,vmax,resonance_x,deterministic_sampling_x,nphot,xstart_Fortran,phot)
     % sample uniformely, but not in given intervals (emission/absorption)
     
@@ -39,5 +39,7 @@ function [xstart,goto_end_of_loop,deterministic_sampling_x] ...
                 goto_end_of_loop = 0;
             end
         end
-    end    
+    end   
+    
+    xnew = xstart;
 end

@@ -1,4 +1,5 @@
-function [freq, flux_two, number_scatterings,photon_path,yes,luminosity,rmax] = test_file(test_number)   
+function [freq, flux_two, number_scatterings,photon_path,yes,luminosity,rmax,total_number_backscatterings,dLdr,g_radiation]...
+    = test_file(test_number)   
     % SET ALL PARAMETERS  
     make_save = 0;
     
@@ -28,7 +29,9 @@ function [freq, flux_two, number_scatterings,photon_path,yes,luminosity,rmax] = 
     
     make_display = 0;
     track_path = 0;
-    number_paths = 10;
+    
+    number_paths = 20;
+    
     compare_Fortran = 0;
     deterministic_sampling_x = 0;
     
@@ -40,6 +43,8 @@ function [freq, flux_two, number_scatterings,photon_path,yes,luminosity,rmax] = 
         % original version 
             % (by default, compare_Fortran = 1)
             nphot = 10^5;
+%             radial_release = 1;
+%             all_radial = 1;
             
     elseif test_number == 100
         % original version 
@@ -100,8 +105,10 @@ function [freq, flux_two, number_scatterings,photon_path,yes,luminosity,rmax] = 
             % only radially streaming photons (thus also radial release)
             resonance_x = [0];
             multiple_scatterings = 0;
+            
             all_radial = 1;
             radial_release = 1; 
+            
             track_path = 1;
             nphot = 10^5;
             nrbins = 100;
@@ -149,7 +156,7 @@ function [freq, flux_two, number_scatterings,photon_path,yes,luminosity,rmax] = 
         plot_only_scattering = 0;
         make_display = 1 
          
-    % test superposition in absence of multiple_scatterings     
+    % test superposition with multiple_scatterings     
         elseif test_number == 18
             resonance_x = [-2];
             resonance_tau = [100];
@@ -165,31 +172,41 @@ function [freq, flux_two, number_scatterings,photon_path,yes,luminosity,rmax] = 
             resonance_tau = [100,100];
             multiple_scatterings = 0;        
 
-    % test superposition in with multiple_scatterings     
+    % test superposition in with multiple_scatterings and different opacities    
         elseif test_number == 180
             resonance_x = [-2];
-            resonance_tau = [100,100];
+            resonance_tau = [100];
             multiple_scatterings = 1;
 
         elseif test_number == 190
             resonance_x = [0];
-            resonance_tau = [100,100];
+            resonance_tau = [0.5];
             multiple_scatterings = 1;      
 
-        elseif test_number == 200
+        elseif test_number == 2001
             resonance_x = [-2,0];
-            resonance_tau = [100,100];
-            multiple_scatterings = 1; 
+            resonance_tau = [100,0.5];
+            multiple_scatterings = 1;
+            
+            track_path = 1;
+            number_paths = 20; 
+            
      
     % test track_path        
         elseif test_number == 21
             resonance_x = [-0.5,0];
             resonance_tau = [100,100];
-            make_display = 0; 
-            track_path = 1;
             multiple_scatterings = 1;
-            radial_release = 1;
-            number_paths = 25;     
+            
+            radial_release = 0;
+            all_radial = 0;    
+            
+            track_path = 1;
+            number_paths = 20; 
+            
+            nbins = 101;
+            nphot = 10^5;
+            
        
     % test multiple opacites   [numbers -- 30]      
         elseif test_number == 30
@@ -201,7 +218,16 @@ function [freq, flux_two, number_scatterings,photon_path,yes,luminosity,rmax] = 
         elseif test_number == 32
             resonance_tau = 0.05;  
             plot_only_scattering = 1; 
+     
             
+    % many (!) lines        
+        elseif test_number == 500
+            resonance_x = [-4,-3.2,-3,-0.5,0,4,6,7,8.2];
+            resonance_tau = 100*ones(1,length(resonance_x));
+            multiple_scatterings = 1;  
+            
+            track_path = 1;
+            number_paths = 25; 
             
     end
 
@@ -209,7 +235,7 @@ function [freq, flux_two, number_scatterings,photon_path,yes,luminosity,rmax] = 
     make_save = 1;
     compare_Fortran = 1         % this affects the problem parameters
     
-    [freq, flux_two,number_scatterings,photon_path,yes,luminosity,rmax]...
+    [freq, flux_two,number_scatterings,photon_path,yes,luminosity,rmax,total_number_backscatterings,dLdr,g_radiation]...
         = multiple_lines(nphot,alpha,beta,...
         make_plot,resonance_x,resonance_tau,make_save,nbins,nrbins,...
         possibility_scattering,multiple_scatterings,all_radial,radial_release,isotropic_scattering,...

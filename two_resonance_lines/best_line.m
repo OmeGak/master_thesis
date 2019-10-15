@@ -40,22 +40,32 @@ function [r,x_selected,tau_selected,last_scatter,index]...
             end  
             
             if no_solution == 0
-                r_collection = [r_collection, r_num; resonance_x(k)];
+                r_collection_add = [r_num ; resonance_x(k); resonance_tau(k)];
+                r_collection = [r_collection, r_collection_add];
             end
         end
         
+        % select best line from r_collection
         if length(r_collection) == 1
             r = r_collection;
             x_selected = resonance_x;
             tau_selected = resonance_tau;
+            
+        elseif length(r_collection) == 0
+            % no scattering
+            r = [];
+            x_selected = [];
+            tau_selected = [];
+            last_scatter = 1;
         else
+%             display(r_collection)
             r_collection_r = r_collection(1,:);
             r = min(r_collection_r(sign(xmuestart)*(r_collection_r-r_init)>0));
 
             if length(r) > 0
-                index = max(find(r_collection == r));
+                index = max(find(r_collection_r == r));
                 x_selected = r_collection(2,index);
-                tau_selected = resonance_tau(index);
+                tau_selected = r_collection(3,index);
             else
                 x_selected = [];
                 tau_selected = [];
