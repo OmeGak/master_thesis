@@ -1,8 +1,7 @@
-function [xnew,xmueou,last_scatter,forget_photon,nin] ...
+function [xnew,xmueou,forget_photon,nin] ...
     = scatter(xstart,tau_selected,xmuestart,r,b,beta,alpha,all_radial,nsc,isotropic_scattering,nin)  
 
         forget_photon = 0;
-        last_scatter = 0;
         
         xk0 = tau_selected;
 
@@ -32,7 +31,6 @@ function [xnew,xmueou,last_scatter,forget_photon,nin] ...
             end
         else        
             xmueou = xmuein;
-            last_scatter = 1;
         end
         xnew = xstart - v*(xmueou-xmuein);
 end

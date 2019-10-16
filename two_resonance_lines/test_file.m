@@ -158,19 +158,19 @@ function [freq, flux_two, number_scatterings,photon_path,yes,luminosity,rmax,tot
          
     % test superposition with multiple_scatterings     
         elseif test_number == 18
-            resonance_x = [-2];
+            resonance_x = [-0.5];
             resonance_tau = [100];
-            multiple_scatterings = 0;
+%             multiple_scatterings = 0;
 
         elseif test_number == 19
             resonance_x = [0];
             resonance_tau = [100];
-            multiple_scatterings = 0;      
+%             multiple_scatterings = 0;      
 
         elseif test_number == 20
-            resonance_x = [-2,0];
+            resonance_x = [-0.5,0];
             resonance_tau = [100,100];
-            multiple_scatterings = 0;        
+%             multiple_scatterings = 0;        
 
     % test superposition in with multiple_scatterings and different opacities    
         elseif test_number == 180
@@ -195,13 +195,13 @@ function [freq, flux_two, number_scatterings,photon_path,yes,luminosity,rmax,tot
     % test track_path        
         elseif test_number == 21
             resonance_x = [-0.5,0];
-            resonance_tau = [100,100];
+            resonance_tau = 0.5*ones(1,2);
             multiple_scatterings = 1;
             
             radial_release = 0;
             all_radial = 0;    
             
-            track_path = 1;
+            track_path = 0;
             number_paths = 20; 
             
             nbins = 101;

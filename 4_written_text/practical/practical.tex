@@ -731,7 +731,6 @@ One must also take into account that not all of the photons that are released ac
 \noindent\fbox{
   \parbox{\textwidth}{TO DO: proceed from this to the analytical expression for the flux. Here I am stuck for the moment.}}
   
-\newpage
 \subsubsection{\underline{Experiments with other opacities}}
 The results for \texttt{xk0=0.5} are shown in Figure \ref{PCyg_mu_eq_xk0_05_vs_100}.
 
@@ -968,19 +967,18 @@ Matlab (with \texttt{resonance\_x = 0} & -1 & 1 & -0.8 & 0 \\ \hline
 
 \newpage
 \subsection{Optimizations}
+
+\subsubsection{Already implemented}
+
+\subsubsection{To be implemented}
+
 \begin{itemize}
 \item more efficient implementation for generation of negative random number (not by an addition random number for selecting the sign).
 \end{itemize}
 
 \newpage
-\section{Dual spectral line formation}
-\label{two_resonance_lines}
+\section{Theoretical background}
 
-\subsection{Introduction of second line: theoretical}
-\label{second_line}
-What happens when you add a line (e.g. \@ $x=0.5=a$)? How would you do that?
-
-\subsubsection{Single line}
 \begin{center}
 \vspace{-0.45cm}
 \begin{algorithm}[!htp]
@@ -1013,72 +1011,137 @@ What happens when you add a line (e.g. \@ $x=0.5=a$)? How would you do that?
 \end{algorithm}
 \end{center}
 
-\subsubsection{Introduction of second line}
-
-\noindent\fbox{
-  \parbox{0.7\textwidth}{
-Needs to be updated}}
-
-\begin{comment}
-\begin{center}
-\vspace{-0.45cm}
-\begin{algorithm}[!htp]
-\caption{\texttt{pcyg.f90: introduction of second resonance line}}
-\label{pcyg_one_line}
-\begin{algorithmic}
-\For{all photons} 
-
-\begin{enumerate}
-\item Release photon with frequency $x$
-\item Check if interaction is uberhaupt possible.
-\item Solve for distance (radius $r$) of interaction using Sobolev approximation $x_{CMF} = x_{REL} - \mu v(r)$ with $\boxed{x_{CMF} = 0}$ and compute Sobolev optical depth 
-\item \textcolor{blue}{solve $x_{REF} = x_{CMF} - \mu v(r)$ with $\boxed{x_{CMF} = a}$ for $r_{\text{interaction}}$}
-\item \textcolor{blue}{Choose the event corresponding with the lowest value of $r_{\text{interaction}}$}
-\item Check whether the photon is scattered:
-\end{enumerate}
-\If{$\tau_S > -log(\xi)$}
-\State Interaction: the photon is scattered. Update the frequency.
-\textcolor{blue}{Is there a second scattering event?
-\begin{enumerate}[leftmargin=0.6in]
-\item Check if interaction is uberhaupt possible.
-\item Solve $x_{REF} = x_{CMF} - \mu v(r+ r_{\text{interaction}})$ with $\boxed{x_{CMF} =b}$ where $b$ is the frequency where no scattering has yet found place
-\item Check whether the photon is scattered:
-\end{enumerate}}
-\If{\textcolor{blue}{$\tau_{S,2} > -log(\xi_2)$}}
-\State \textcolor{blue}{Second interaction: the photon is scattered once again. Update the frequency.}
-\Else \State \textcolor{blue}{No second interaction}
-\EndIf
-
-\Else \State no interaction
-\EndIf	
-\EndFor
-\State \textbf{end for}
-\State collect photons and perform visualisation
-\end{algorithmic}
-\end{algorithm}
-\end{center}
-
-\newpage
-pitfalls yet to solve:
+\subsection{General things}
 \begin{itemize}
-\item root must be bracketed
+\item In fact, the absolute frequency of the photons does not change. However, in an observer's frame, we observe that the photon frequency changes at a scattering event.
+
+\item Sobolev condition for resonance:
+\begin{equation}
+x_{REF} - \mu u = 0
+\end{equation}
+with $u = \frac{v}{v_{\infty}} \in [0,1]$ and $\mu = \cos(\theta) \in [-1,1]$ then 
+\begin{equation}
+x_{REF} \in [0,1]
+\end{equation}
+
+\item After a scattering event, the oberserver's frame frequency is updated as follows:
+\begin{equation}
+\texttt{xnew = xstart + u(xmueou - xmuein)}
+\label{xnew_vx_xstart}
+\end{equation}
+
+\item $\lambda \nu = c$. Mostly stellar spectra are recorded for increasing $\lambda$, thus decreasing $\nu$
+
+\item geometry, scattering at $P$
+\begin{center}
+\begin{tikzpicture}
+% define constants
+\def \radij{2cm}
+\def \dist{3cm}
+	
+% draw circle
+\draw (0,0) coordinate (O) node{$\bullet$} node[left]{$O$};
+\draw (0,0) circle(\radij);
+
+\draw [dotted] (0,0) circle(3cm);
+
+% draw line to X
+\draw[dashed] (0,0)--(\radij + \dist,0) coordinate (X);
+
+\draw[dashed] (0,0)-- node[below] {$R$} (\radij,0);
+
+% draw line to P and further
+\draw[dashed] (0,0) -- node[above] {$r$} ($(0,0)!5cm!(4,3)$) node[midway,above left, blue!50!black]{};
+
+% define coordinates
+\draw ($(\radij,0)$) coordinate (Release) node{$\bullet$} node[above right](Release){};
+
+\draw ($(0,0)!3cm!(4,3)$) coordinate (Interaction) node{$\bullet$} node[above right](Interaction){$P$};
+
+  	% draw angle theta
+  \draw    pic["$\theta$", draw=red,<->, angle eccentricity=1.2, angle radius=0.5cm]
+    {angle=X--Release--Interaction};
+	
+	% draw angle theta_in
+  \draw    pic["$\theta_{in}$", draw=red, ->, angle eccentricity=1.2, angle radius=1cm]
+    {angle=X--O--Interaction};
+    
+  \draw    pic["$\alpha$", draw=red, ->, angle eccentricity=1.0, angle radius=1cm]
+    {angle=O--Interaction--Release};
+    % draw a horizontal line
+    
+    %\draw[dashed] ($(0,0)!3cm!(4,3)$) -- ($(0,0)!3cm!(4,3)+ (\dist,0)$) ;
+
+	% draw the release of the photon
+	\draw[->] ($(\radij,0)$) -- ($(0,0)!3cm!(4,3)$);
+	
+	% draw the oberver's eye
+	\eye{0.5}{5}{4}{-140}
+\end{tikzpicture}
+\end{center}
+We can derive an expression, but first the sum of the angles in a triangle equals $\pi$ which leads to $\alpha = \theta_{in} - \theta$. We then have the sine rule, namely that, with
+\begin{equation}
+\frac{\sin(\alpha)}{R} = \frac{\sin(\pi-\theta)}{r} = \frac{\sin(\theta)}{r}
+\end{equation}
+and thus, with $R=R_{*} = 1$,
+\begin{equation}
+\cos(\alpha) = \sqrt{1 - \left( \frac{\sin(\theta)}{r} \right)^2}
+\end{equation}
+Per definition $\texttt{xmuein} = \cos(\alpha)$ and $\texttt{pstart} = \sin(\theta)$
+
+\item the $\beta$-velocity law
+\begin{itemize}
+\item Minimal velocity. Without angle correction, the minimal velocity is given by $(1-b)^{\beta}$. With angle correction, the minimal velocity is slightly higher.
+
+\item Maximal velocity
+
+\begin{figure}[!htp]
+\centering
+\includegraphics[width=0.65\textwidth]{../../two_resonance_lines/figures/velocity_profile.png}
+\caption{Example of velocity profile (give paramters)}
+\label{example_velocity_profile}
+\end{figure}
+
+\item The radius of interaction, we solve for $v_{photon} = x > 0$, for a specific $\nu_0$
+\begin{equation}
+\sqrt{1-\left(\frac{p}{r}\right)^2} \left( 1- \frac{b}{r} \right)^{\beta} = \frac{\nu - \nu_0}{\nu_0} \frac{c}{v_{\infty}}
+\end{equation}
+Now we are going to invest the effect of 
+\begin{itemize}
+\item increasing $\nu_0 \uparrow$. What then happens is that the RHS decreases, thus $r \downarrow$. 
+\item Inversely, $\nu_0 \downarrow$, then $r \uparrow$
 \end{itemize}
-\end{comment}
+\end{itemize}
 
-\subsubsection{Algorithm}
-\begin{enumerate}
-\item release photon
-\item $x_{CMF} = x_{REL} - mu v$
-\item scattering
-\item interaction?
-\item scattering
-\item collect photons
-\end{enumerate}
+\end{itemize}
 
-\paragraph{Ranges and limits}
-Assuming $\mu_{start} = 1$. Note that in the code $r_{\infty} = b$
+
+
 
 \newpage
+\subsection{Special case: \texttt{xmuestart = 1}}
+\begin{itemize}
+\item \textsc{first scatttering}: from Equation (\ref{xnew_vx_xstart}) we have that \texttt{xstart = u} and then
+\begin{equation}
+\begin{aligned}
+\texttt{xnew} &= \texttt{xstart + u(xmueou- 1)} \\
+&= \texttt{xstart.xmueou}
+\end{aligned}
+\end{equation}
+Thus, since $\texttt{xmueou} \in [-1,1]$ and $\texttt{xmin} \leq \texttt{xstart} \leq \texttt{xmax}$
+\begin{equation}
+\texttt{xmin} \leq \texttt{xnew} \leq \texttt{xmax}
+\end{equation}
+
+\end{itemize}
+
+\newpage
+\section{Extension to higher dimensions}
+
+\newpage
+\section{Dual spectral line formation}
+\label{two_resonance_lines}
+
 \subsection{Development of computer code (in \texttt{Matlab})}
 \subsubsection{Implementation in Matlab: user's manual}
 Run the function \texttt{test\_function(test\_number)}.
@@ -1118,34 +1181,6 @@ Via this link, you can go back to the exercises overview: Section \underline{\re
 \end{matrix}
 \right]
 \end{equation}
-
-\newpage
-\subsection{Random things}
-
-\subsubsection{General things}
-\begin{equation}
-\texttt{xnew = xstart + u(xmueou - xmuein)}
-\label{xnew_vx_xstart}
-\end{equation}
-
-\subsubsection{Specific things}
-\paragraph{Case when $\texttt{xmuestart = 1}$}
-\begin{itemize}
-\item \textsc{first scatttering}: from Equation (\ref{xnew_vx_xstart}) we have that \texttt{xstart = u} and then
-\begin{equation}
-\begin{aligned}
-\texttt{xnew} &= \texttt{xstart + u(xmueou- 1)} \\
-&= \texttt{xstart.xmueou}
-\end{aligned}
-\end{equation}
-Thus, since $\texttt{xmueou} \in [-1,1]$ and $\texttt{xmin} \leq \texttt{xstart} \leq \texttt{xmax}$
-\begin{equation}
-\texttt{xmin} \leq \texttt{xnew} \leq \texttt{xmax}
-\end{equation}
-
-See also Section \ref{Experiments_xmuestart_1}.
-
-\end{itemize}
 
 
 \newpage

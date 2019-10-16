@@ -1,27 +1,31 @@
-function test_superposition(save_figures)
+function test_superposition(save_figures,multiplication,test_number_1,test_number_2,test_number_3,overlap_number)
 
     make_ugly_plot = 1;
-
+    
     % get data
-        test_number = 18
+        test_number = test_number_1
         [freq_a, flux_a, number_scatterings_a, photon_path_a] = test_file(test_number);
 
-        test_number = 19
+        test_number = test_number_2
         [freq_b, flux_b, number_scatterings_b, photon_path_b] = test_file(test_number);
 
-        test_number = 20
+        test_number = test_number_3
         [freq_s, flux_s, number_scatterings_s, photon_path_s] = test_file(test_number);
 
         close all 
 
     % create superposition    
-        N = 25;
-        freq_b_augmented = [linspace(min(freq_a),min([freq_b,max(freq_a)]),N),freq_b]
-        flux_b_augmented = [ones(1,N),flux_b]
-        freq_a_augmented = [freq_a,linspace(max([freq_a,min(freq_b)]),max(freq_b),N)]
-        flux_a_augmented = [flux_a,ones(1,N)]
-        freq_super = linspace(min(freq_a),max(freq_b),125);
-        flux_super = (flux_b_augmented + flux_a_augmented)/2
+        % the number N is a measure of the overlap percentage
+        N = overlap_number;
+        freq_b_augmented = [linspace(min(freq_a),min([freq_b,max(freq_a)]),N) , freq_b];
+        flux_b_augmented = [ones(1,N) , flux_b];
+        freq_a_augmented = [freq_a , linspace(max([freq_a,min(freq_b)]),max(freq_b),N)];
+        flux_a_augmented = [flux_a , ones(1,N)];
+        freq_super = linspace(min(freq_a),max(freq_b),length(freq_a)+overlap_number);
+        flux_super = (flux_b_augmented + flux_a_augmented)/2;
+        if multiplication == 1
+            flux_super = (flux_b_augmented.*flux_a_augmented);
+        end
 
     % make plot    
     if make_ugly_plot == 1

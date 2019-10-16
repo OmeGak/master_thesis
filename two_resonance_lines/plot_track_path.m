@@ -16,7 +16,7 @@ function plot_track_path(photon_path,track_path,b,number_paths,make_save,rmax)
                 a = c_map(phot,:);
 
                 phot_number_scatterings = find(photon_path(1:end-1,phot));
-                phot_number_scatterings = (max(phot_number_scatterings)-2)/3
+                phot_number_scatterings = (max(phot_number_scatterings)-2)/3;
 
 %                 display('----')
 %                 display(phot)

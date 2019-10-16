@@ -16,8 +16,7 @@ function [luminosity,count_neg_phot] = update_luminosity(xmuestart,r_new,rmax,rm
             count_neg_phot = count_neg_phot + 1;
             
         end     
-        
-        
-        luminosity(r_index_min : r_index_max) = luminosity(r_index_min : r_index_max) + sign(xmuestart); 
+
+%         luminosity(r_index_min : r_index_max) = luminosity(r_index_min : r_index_max) + sign(xmuestart); 
                 
 end

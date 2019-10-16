@@ -29,31 +29,17 @@ function [freq,flux,total_number_scatterings,photon_path,yes,luminosity,rmax,tot
         [xmuestart, xmueou, one_photon_path] = release_photon(xstart,radial_release,Eddington_limb_darkening);
                 
         % ALL SCATTERING EVENTS
-        if (goto_end_of_loop == 0) & (possibility_scattering == 1)                    
+        last_scatter = 0;
+        r_init = rmin;
+        while (last_scatter == 0) & (goto_end_of_loop == 0) & (possibility_scattering == 1)                    
             [xnew,r_new,nin,last_scatter,xmueou,phot_nsc,one_photon_path,forget_photon,...
                 x_selected,luminosity] = ...
-                    make_scattering(xstart,xmuestart,rmin,beta,alpha,b,rmax,nin,...
+                    make_scattering(xstart,xmuestart,r_init,beta,alpha,b,rmax,nin,...
                         resonance_x,resonance_tau,all_radial,isotropic_scattering,phot_nsc,...
                         one_photon_path,vmin,vmax,xstart_Fortran,luminosity,nrbins);
             
-            % secundary scattering events
-            while (last_scatter == 0) & (multiple_scatterings == 1)
-%                 display('************************* MULTIPLE SCATTERINGS *****************************')
-                [last_scatter,index] = secundary_resonance_possible(xstart,x_selected,resonance_x,vmin,vmax,last_scatter);
-                
-                if last_scatter == 0
-                    dummy_resonance_x = [resonance_x(1:index-1),resonance_x(index+1:end)];
-                    dummy_resonance_tau = [resonance_tau(1:index-1),resonance_tau(index+1:end)];
-
-                    [xnew,r_new,nin,last_scatter,xmueou,phot_nsc,one_photon_path,forget_photon,...
-                            x_selected,luminosity] = ...
-                                make_scattering(xnew,xmueou,r_new,beta,alpha,b,rmax,nin,...
-                                    dummy_resonance_x,dummy_resonance_tau,all_radial,...
-                                    isotropic_scattering,phot_nsc,...
-                                    one_photon_path,vmin,vmax,xstart_Fortran,luminosity,nrbins); 
-                end
-            end
-            % ____________________________________________________________________________________________
+            last_scatter = secundary_resonance_possible(xnew,resonance_x,vmin,vmax,last_scatter);
+            xstart = xnew; xmuestart = xmueou; r_init = r_new;
         end
         
         [nout,flux] = add_count_photon(xnew,xstart,nout,xmin,deltax,nchan,flux,r_new,plot_only_scattering,forget_photon);

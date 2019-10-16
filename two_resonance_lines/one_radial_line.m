@@ -1,4 +1,4 @@
-function [freq,flux,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plot , save , all_radial)
+function [freq,flux,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plot , save , all_radial , radial_release)
     % set random number generator
     rng(10);
 %     s = rng;
@@ -54,16 +54,23 @@ function [freq,flux,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plo
         if (goto_end_of_loop == 0)
 
             xmuestart = sqrt(rand);
+            if radial_release == 1
+                xmuestart = 1;
+            end
+            
             yes(2,phot) = xmuestart;
             
             pstart = sqrt(1-xmuestart^2);
 
-            % holds only if xmuestart == 1
-%             r_anal = b/(1-xstart^(1/beta));
-%             r_anal = max(1,min(r_anal,rmax));
-
             func = @(r) sqrt(1-(pstart/r)^2)*(1-b/r)^beta - xstart;
-            r = rtbis(func , 1 , rmax , 10^(-5));
+            r = rtbis(func , 1 , rmax , 10^(-5));            
+            if xmuestart == 1
+                r_anal = b/(1-xstart^(1/beta));
+                r_anal = max(1,min(r_anal,rmax));
+                if (abs(r_anal-r) > 10^(-2))
+                    error('wat is me dat hier')
+                end
+            end
             
             yes(3,phot) = r;
 

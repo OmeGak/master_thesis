@@ -46,8 +46,9 @@ function compare_literal_version()
         make_plot = 1;
         save = 0;
         all_radial = 0;
+        radial_release = 0;
 
-        [freq_b,flux_b,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plot , save , all_radial);    
+        [freq_b,flux_b,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plot , save , all_radial , radial_release);    
 
     % 3) JOINT PLOT
         figure()
