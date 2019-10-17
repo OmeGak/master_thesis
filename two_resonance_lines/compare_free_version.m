@@ -2,8 +2,8 @@ function compare_free_version()
     %% compare with Fortran (FREELY TRANSLATED VERSION)
     clc, clear all, close all
 
-    test_number = 31;
-    xk0 = 0.5;
+    test_number = 0;
+    xk0 = 100;
 
     % test_number = 0;
     % xk0 = 100;
@@ -17,8 +17,9 @@ function compare_free_version()
         make_plot = 1;
         save = 0;
         all_radial = 0;
+        radial_release = 0;
 
-        [freq_a,flux_a,yes_a] = one_radial_line(nphot , xk0 , alpha , beta , make_plot , save , all_radial);   
+        [freq_a,flux_a,yes_a] = one_radial_line(nphot , xk0 , alpha , beta , make_plot , save , all_radial , radial_release);   
 
     % MATLAB DATA
         display('*****************MATLAB DATA*****************')

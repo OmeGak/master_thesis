@@ -13,7 +13,6 @@ radial_release = 1;
 
 [freq_b,flux_b,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plot , save , all_radial, radial_release);    
 
-
 %% simple test for line selection
 clc, clear all, close all
 
@@ -21,9 +20,6 @@ xmuestart = 1;
 xstart = -0.9180;
 resonance_x = [-0.5,0];
 resonance_tau = [100,100];
-
-% resonance_x = 0;
-% resonance_tau = 100;
 
 r_init = 1;
 rmax = 100;
@@ -33,9 +29,18 @@ vmax = -0.01;
 b = 1-vmin*(1/beta);
 
 display('hier gaan we dan')
-[r,x_selected,tau_selected,last_scatter]...
-    = best_line(xmuestart,xstart,resonance_x,resonance_tau,r_init,rmax,b,beta,vmin,vmax)
+[r,x_selected,tau_selected,last_scatter] = best_line(xmuestart,xstart,resonance_x,resonance_tau,r_init,rmax,b,beta,vmin,vmax)
 
+% test influence of xk0 on r
+xstart = -0.5;
+
+resonance_x = 0;
+resonance_tau = 100;
+
+[r_a,x_selected,tau_selected,last_scatter] = best_line(xmuestart,xstart,resonance_x,resonance_tau,r_init,rmax,b,beta,vmin,vmax)
+
+resonance_tau = 0.5;
+[r_b,x_selected,tau_selected,last_scatter] = best_line(xmuestart,xstart,resonance_x,resonance_tau,r_init,rmax,b,beta,vmin,vmax)
 
 %% test superposition
 clc, clear all, close all
@@ -45,8 +50,8 @@ multiplication = 1;
 test_number_1 = 18;
 test_number_2 = 19;
 test_number_3 = 20;
-overlap_number = 98;
-test_superposition(save_figures,multiplication,test_number_1,test_number_2,test_number_2,overlap_number);
+overlap_number = 25;
+test_superposition(save_figures,multiplication,test_number_1,test_number_2,test_number_3,overlap_number);
 
 %% very SIMPLE test
 clc, close all, clear all
@@ -54,8 +59,12 @@ clc, close all, clear all
 test_number = 21;
 [freq,flux_two,number_scatterings,photon_path,yes,luminosity,rmax,total_number_backscatterings] = test_file(test_number);
 
-photon_path(:,18:end)
-
+photon_path(:,18:end);
+for k=1:length(photon_path(end,:))
+    if photon_path(end,k) == 0.5
+        display('whow')
+    end
+end
 
 %% testje over root finding (with angle correction)
 clc, clear all, close all

@@ -1,6 +1,6 @@
 function test_superposition(save_figures,multiplication,test_number_1,test_number_2,test_number_3,overlap_number)
 
-    make_ugly_plot = 0;
+    make_ugly_plot = 1;
     
     % get data
         test_number = test_number_1

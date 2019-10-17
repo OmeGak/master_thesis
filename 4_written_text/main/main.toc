@@ -89,142 +89,188 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {13}Overview of exercises (PART IV)}{16}{section.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {14}Introductory exercises}{17}{section.14}
+\contentsline {section}{\numberline {14}Multiline transfer (PART I)}{16}{section.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {14.1}Analytical exercises}{17}{subsection.14.1}
+\contentsline {section}{\numberline {15}Multiline transfer (PART II)}{16}{section.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {14.2}Numerical exercises}{19}{subsection.14.2}
+\contentsline {section}{\numberline {16}Preparation for Equation meeting on 15 October}{16}{section.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {14.2.1}Implicit 1D solver}{19}{subsubsection.14.2.1}
+\contentsline {paragraph}{questions}{16}{section*.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Goal}{19}{section*.13}
+\contentsline {section}{\numberline {17}Introductory exercises}{17}{section.17}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Solution}{19}{section*.14}
+\contentsline {subsection}{\numberline {17.1}Analytical exercises}{17}{subsection.17.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {14.2.2}ADI 2D Solver}{20}{subsubsection.14.2.2}
+\contentsline {subsection}{\numberline {17.2}Numerical exercises}{19}{subsection.17.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Goal}{20}{section*.16}
+\contentsline {subsubsection}{\numberline {17.2.1}Implicit 1D solver}{19}{subsubsection.17.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Solution}{20}{section*.17}
+\contentsline {paragraph}{Goal}{19}{section*.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {14.2.3}Area of a circle}{20}{subsubsection.14.2.3}
+\contentsline {paragraph}{Solution}{19}{section*.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Goal}{20}{section*.18}
+\contentsline {subsubsection}{\numberline {17.2.2}ADI 2D Solver}{20}{subsubsection.17.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Solution}{20}{section*.19}
+\contentsline {paragraph}{Goal}{20}{section*.17}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {14.3}Other Exercises}{20}{subsection.14.3}
+\contentsline {paragraph}{Solution}{20}{section*.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {14.3.1}Lecture 7}{20}{subsubsection.14.3.1}
+\contentsline {subsubsection}{\numberline {17.2.3}Area of a circle}{20}{subsubsection.17.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {15}Limb darkening}{21}{section.15}
+\contentsline {paragraph}{Goal}{20}{section*.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {15.1}Formulation of the problem}{21}{subsection.15.1}
+\contentsline {paragraph}{Solution}{20}{section*.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {15.2}Solving the (integro-differential) radiative transfer equation}{21}{subsection.15.2}
+\contentsline {subsection}{\numberline {17.3}Other Exercises}{20}{subsection.17.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Analytical Solution of Equation (\ref {RTE_limb_darkening})}{21}{section*.20}
+\contentsline {subsubsection}{\numberline {17.3.1}Lecture 7}{20}{subsubsection.17.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Numerical Solution of Equation (\ref {RTE_limb_darkening})}{21}{section*.21}
+\contentsline {section}{\numberline {18}Limb darkening}{21}{section.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {15.3}Eddington-Barbier approximation}{21}{subsection.15.3}
+\contentsline {subsection}{\numberline {18.1}Formulation of the problem}{21}{subsection.18.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {15.3.1}Validity of the Eddington-Barbier approximation}{22}{subsubsection.15.3.1}
+\contentsline {subsection}{\numberline {18.2}Solving the (integro-differential) radiative transfer equation}{21}{subsection.18.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {15.4}2D Case}{22}{subsection.15.4}
+\contentsline {paragraph}{Analytical Solution of Equation (\ref {RTE_limb_darkening})}{21}{section*.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Goal}{22}{section*.22}
+\contentsline {paragraph}{Numerical Solution of Equation (\ref {RTE_limb_darkening})}{21}{section*.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Variables and Algorithm}{22}{section*.23}
+\contentsline {subsection}{\numberline {18.3}Eddington-Barbier approximation}{21}{subsection.18.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {15.5}3D Case}{23}{subsection.15.5}
+\contentsline {subsubsection}{\numberline {18.3.1}Validity of the Eddington-Barbier approximation}{22}{subsubsection.18.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{23}{section*.26}
+\contentsline {subsection}{\numberline {18.4}2D Case}{22}{subsection.18.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {16}Spectral line formation: pcyg.f90}{24}{section.16}
+\contentsline {paragraph}{Goal}{22}{section*.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Overview of variables}{24}{section*.28}
+\contentsline {paragraph}{Variables and Algorithm}{22}{section*.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Practical formula}{25}{section*.29}
+\contentsline {subsection}{\numberline {18.5}3D Case}{23}{subsection.18.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Geometry \& Symmetry assumptions}{25}{section*.30}
+\contentsline {paragraph}{}{23}{section*.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {16.0.1}Experimental results}{25}{subsubsection.16.0.1}
+\contentsline {section}{\numberline {19}Spectral line formation: pcyg.f90}{24}{section.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {16.1}First adaptation: what if all photons are released radially from photosphere?}{26}{subsection.16.1}
+\contentsline {paragraph}{Overview of variables}{24}{section*.29}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {16.1.1}\relax $\@@underline {\hbox {Release photons radially: numerical MC experiments}}\mathsurround \z@ $\relax }{26}{subsubsection.16.1.1}
+\contentsline {paragraph}{Practical formula}{25}{section*.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {16.1.2}\relax $\@@underline {\hbox {Derive analytic expression}}\mathsurround \z@ $\relax }{26}{subsubsection.16.1.2}
+\contentsline {paragraph}{Geometry \& Symmetry assumptions}{25}{section*.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {16.1.3}\relax $\@@underline {\hbox {Experiments with other opacities}}\mathsurround \z@ $\relax }{28}{subsubsection.16.1.3}
+\contentsline {subsection}{\numberline {19.1}First adaptation: what if all photons are released radially from photosphere?}{26}{subsection.19.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {16.2}Second adaptation: isotropic scattering}{29}{subsection.16.2}
+\contentsline {subsubsection}{\numberline {19.1.1}\relax $\@@underline {\hbox {Release photons radially: numerical MC experiments}}\mathsurround \z@ $\relax }{26}{subsubsection.19.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {16.3}Third adaptation: introduction of Eddington limb-darkening}{30}{subsection.16.3}
+\contentsline {subsubsection}{\numberline {19.1.2}\relax $\@@underline {\hbox {Derive analytic expression}}\mathsurround \z@ $\relax }{26}{subsubsection.19.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Goal}{30}{section*.36}
+\contentsline {subsubsection}{\numberline {19.1.3}\relax $\@@underline {\hbox {Experiments with other opacities}}\mathsurround \z@ $\relax }{28}{subsubsection.19.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {16.3.1}Construction of probability distribution corresponding to Eddington limb darkening}{30}{subsubsection.16.3.1}
+\contentsline {subsection}{\numberline {19.2}Second adaptation: isotropic scattering}{29}{subsection.19.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {16.4}Fourth adaptaion: photospheric line-profile}{31}{subsection.16.4}
+\contentsline {subsection}{\numberline {19.3}Third adaptation: introduction of Eddington limb-darkening}{30}{subsection.19.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {16.5}Convergence analysis}{32}{subsection.16.5}
+\contentsline {paragraph}{Goal}{30}{section*.35}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\relax $\@@underline {\hbox {Zero opacity}}\mathsurround \z@ $\relax }{32}{section*.38}
+\contentsline {subsubsection}{\numberline {19.3.1}Construction of probability distribution corresponding to Eddington limb darkening}{30}{subsubsection.19.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\relax $\@@underline {\hbox {Nonzero opacity}}\mathsurround \z@ $\relax }{32}{section*.40}
+\contentsline {subsection}{\numberline {19.4}Fourth adaptaion: photospheric line-profile}{31}{subsection.19.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {16.6}Variance reduction experiment}{33}{subsection.16.6}
+\contentsline {subsection}{\numberline {19.5}Convergence analysis}{32}{subsection.19.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\texttt {xk0=100}}{33}{figure.caption.43}
+\contentsline {paragraph}{\relax $\@@underline {\hbox {Zero opacity}}\mathsurround \z@ $\relax }{32}{section*.37}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {16.7}Mathematical description of the problem \& Looking at literature}{33}{subsection.16.7}
+\contentsline {paragraph}{\relax $\@@underline {\hbox {Nonzero opacity}}\mathsurround \z@ $\relax }{32}{section*.39}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {17}Dual spectral line formation}{34}{section.17}
+\contentsline {subsection}{\numberline {19.6}Variance reduction experiment}{33}{subsection.19.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {17.1}Introduction of second line: theoretical}{34}{subsection.17.1}
+\contentsline {paragraph}{\texttt {xk0=100}}{33}{figure.caption.42}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {17.1.1}Single line}{34}{subsubsection.17.1.1}
+\contentsline {subsection}{\numberline {19.7}Mathematical description of the problem \& Looking at literature}{33}{subsection.19.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {17.1.2}Introduction of second line}{34}{subsubsection.17.1.2}
+\contentsline {section}{\numberline {20}Transferring the code to Matlab}{34}{section.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {17.2}Development of computer code}{34}{subsection.17.2}
+\contentsline {subsection}{\numberline {20.1}Limit variables}{34}{subsection.20.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {17.2.1}Implementation in Matlab: user's manual}{34}{subsubsection.17.2.1}
+\contentsline {subsection}{\numberline {20.2}Comparison}{34}{subsection.20.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {17.2.2}Keeping track of the photon path}{35}{subsubsection.17.2.2}
+\contentsline {subsubsection}{\numberline {20.2.1}Literal Matlab version}{34}{subsubsection.20.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {17.2.3}Dirty tricks}{35}{subsubsection.17.2.3}
+\contentsline {subsubsection}{\numberline {20.2.2}More freely translated version}{35}{subsubsection.20.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {18}Closer look at Monte Carlo simulations}{36}{section.18}
+\contentsline {subsection}{\numberline {20.3}Optimizations}{36}{subsection.20.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {18.1}Random walk (diffusion equation)}{36}{subsection.18.1}
+\contentsline {subsubsection}{\numberline {20.3.1}Already implemented}{36}{subsubsection.20.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {18.2}Iets}{37}{subsection.18.2}
+\contentsline {subsubsection}{\numberline {20.3.2}To be implemented}{36}{subsubsection.20.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {18.3}Limb darkening}{38}{subsection.18.3}
+\contentsline {section}{\numberline {21}Theoretical background}{37}{section.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{IV\hspace {1em}Questions}{39}{part.4}
+\contentsline {subsection}{\numberline {21.1}General things}{37}{subsection.21.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {19}Questions for professor Sundqvist}{39}{section.19}
+\contentsline {subsection}{\numberline {21.2}Special case: \texttt {xmuestart = 1}}{39}{subsection.21.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {20}Questions for professor Samaey}{39}{section.20}
+\contentsline {section}{\numberline {22}Extension to higher dimensions}{40}{section.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {21}Solved questions}{40}{section.21}
+\contentsline {section}{\numberline {23}Dual spectral line formation}{41}{section.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {22}Interesting problems}{41}{section.22}
+\contentsline {subsection}{\numberline {23.1}Development of computer code (in \texttt {Matlab})}{41}{subsection.23.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{might be interesting for looking at}{41}{section*.46}
+\contentsline {subsubsection}{\numberline {23.1.1}Implementation in Matlab: user's manual}{41}{subsubsection.23.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {23}Do not forget}{41}{section.23}
+\contentsline {subsubsection}{\numberline {23.1.2}Keeping track of the photon path}{41}{subsubsection.23.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{V\hspace {1em}Thesis meetings}{43}{part.5}
+\contentsline {subsection}{\numberline {23.2}Experiments and results}{42}{subsection.23.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {24}Meeting on 6 September 2019}{43}{section.24}
+\contentsline {subsubsection}{\numberline {23.2.1}About the scattering probability distribution}{42}{subsubsection.23.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {25}Meeting on 23 September 2019}{43}{section.25}
+\contentsline {subsubsection}{\numberline {23.2.2}Single resonance line}{42}{subsubsection.23.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {26}Meeting on 30 September 2019}{43}{section.26}
+\contentsline {subsubsection}{\numberline {23.2.3}Multiple line formation}{43}{subsubsection.23.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{VI\hspace {1em}Equation meetings}{43}{part.6}
+\contentsline {subsubsection}{\numberline {23.2.4}Effect of the opacity}{45}{subsubsection.23.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {23.2.5}Is superposition valid?}{46}{subsubsection.23.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {23.2.6}Some theoretical observations}{46}{subsubsection.23.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {24}Computing the radiation force \& luminosity $L(r)$}{47}{section.24}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {24.1}Theoretical formulas}{47}{subsection.24.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {24.2}Solution strategy}{47}{subsection.24.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {24.3}Checking the correctness of the program}{47}{subsection.24.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {24.4}Computing the radiation force for one line}{48}{subsection.24.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {24.5}Multiple lines}{48}{subsection.24.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {25}Closer look at Monte Carlo simulations}{49}{section.25}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {25.1}Random walk (diffusion equation)}{49}{subsection.25.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {25.2}Limb darkening}{50}{subsection.25.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{IV\hspace {1em}Questions}{51}{part.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {26}Questions for professor Sundqvist}{51}{section.26}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {27}Questions for professor Samaey}{51}{section.27}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {28}Solved questions}{52}{section.28}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {29}Interesting problems}{53}{section.29}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{might be interesting for looking at}{53}{section*.61}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {30}Do not forget}{53}{section.30}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{V\hspace {1em}Thesis meetings}{55}{part.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {31}Meeting on 6 September 2019}{55}{section.31}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {32}Meeting on 23 September 2019}{55}{section.32}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {33}Meeting on 30 September 2019}{55}{section.33}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{VI\hspace {1em}Equation meetings}{55}{part.6}

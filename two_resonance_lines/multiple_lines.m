@@ -11,7 +11,7 @@ function [freq,flux,total_number_scatterings,photon_path,yes,luminosity,rmax,tot
     
     % set initial problem parameters
     [nchan,vmin,vmax,deltax,freq,flux,b,xmin,xmax,rmax,rmin,...
-            nin,nout,photon_path,nsc,~,luminosity,count_neg_phot,nphot] =  ...
+            nin,nout,photon_path,nsc,~,luminosity,count_neg_phot,nphot,nsc_real] =  ...
                 param_init(beta,nbins,nrbins,resonance_x,compare_Fortran,nphot);               
             
     display('_____________________________________')
@@ -20,6 +20,7 @@ function [freq,flux,total_number_scatterings,photon_path,yes,luminosity,rmax,tot
     % loop over all photons
     for phot = 1:nphot  
         phot_nsc = 0;
+        phot_nsc_real = 0;
         forget_photon = 0;
         r_new = rmin;
         
@@ -32,11 +33,10 @@ function [freq,flux,total_number_scatterings,photon_path,yes,luminosity,rmax,tot
         last_scatter = 0;
         r_init = rmin;
         while (last_scatter == 0) & (goto_end_of_loop == 0) & (possibility_scattering == 1)                    
-            [xnew,r_new,nin,last_scatter,xmueou,phot_nsc,one_photon_path,forget_photon,...
-                x_selected,luminosity] = ...
+            [xnew,r_new,nin,last_scatter,xmueou,phot_nsc,one_photon_path,forget_photon,luminosity,phot_nsc_real] = ...
                     make_scattering(xstart,xmuestart,r_init,beta,alpha,b,rmax,nin,...
                         resonance_x,resonance_tau,all_radial,isotropic_scattering,phot_nsc,...
-                        one_photon_path,vmin,vmax,xstart_Fortran,luminosity,nrbins);
+                        one_photon_path,vmin,vmax,xstart_Fortran,luminosity,nrbins,phot_nsc_real);
             
             last_scatter = secundary_resonance_possible(xnew,resonance_x,vmin,vmax,last_scatter);
             xstart = xnew; xmuestart = xmueou; r_init = r_new;
@@ -44,6 +44,7 @@ function [freq,flux,total_number_scatterings,photon_path,yes,luminosity,rmax,tot
         
         [nout,flux] = add_count_photon(xnew,xstart,nout,xmin,deltax,nchan,flux,r_new,plot_only_scattering,forget_photon);
         nsc = nsc + phot_nsc; 
+        nsc_real = nsc_real + phot_nsc_real;
         photon_path = adjust_one_photon_path(photon_path,one_photon_path);
         
         % update luminosity for photons after their last scattering event
@@ -67,6 +68,7 @@ function [freq,flux,total_number_scatterings,photon_path,yes,luminosity,rmax,tot
     
     % make some statistics
     total_number_scatterings = nsc/nphot
+    total_number_scatterings_real = nsc_real/nphot
     total_number_backscatterings = nin/nphot
     backstreaming_phot = count_neg_phot/nphot
     

@@ -6,8 +6,6 @@ function last_scatter = secundary_resonance_possible(xstart,resonance_x,vmin,vma
         for k=1:length(resonance_x)
             if (xstart >= vmin_(k)) & (xstart <= vmax_(k))
                 scattering_possible = scattering_possible + 1;
-            else
-                index = k;
             end
         end
         if scattering_possible == 0

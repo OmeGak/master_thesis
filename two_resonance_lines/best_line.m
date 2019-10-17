@@ -4,10 +4,9 @@ function [r,x_selected,tau_selected,last_scatter]...
         
         last_scatter = 0;
         Lucy_Abbott = 0;
-        make_display = 0;
         
         % FIRST METHOD - (by default)
-        pstart = sqrt(1-xmuestart^2);
+        pstart = sqrt(1-(xmuestart/r_init)^2);      % ADAPTATION ATTENTION
         r_collection = [];
         index = 0;
         
@@ -24,9 +23,6 @@ function [r,x_selected,tau_selected,last_scatter]...
         
         % select best line from r_collection
         if length(r_collection) == 0
-            r = [];
-            x_selected = [];
-            tau_selected = [];
             last_scatter = 1;
         else
             r_collection_r = r_collection(1,:);
@@ -37,23 +33,27 @@ function [r,x_selected,tau_selected,last_scatter]...
                 x_selected = r_collection(2,index);
                 tau_selected = r_collection(3,index);
                 
-                % extra test condition
+                % extra test
                 vmin_ = 0.99*vmin;
                 vmax_ = 1.01*vmax;
                 if ((xstart - x_selected) < vmin_) | ((xstart - x_selected) > vmax_)
-                    tau_selected = [];
-                    r = [];
                     last_scatter = 1;
-                    x_selected = [];
                 end
                 
             else
-                x_selected = [];
-                tau_selected = [];
                 last_scatter = 1;
             end
         end
         
+%         if (xstart < -0.5*1.1) & (x_selected == 0) & (xmuestart > 0) & (r_init == 1)
+%             display('---------')
+%             display(r_init)
+%             display(xstart)
+%             display(x_selected)
+%             display(xmuestart)
+%             display(r_collection)
+%             error('hoe kan dit?')
+%         end
                 
         if Lucy_Abbott == 1
             % OTHER METHOD: TAKE LOWEST FREQUENCY!

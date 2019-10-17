@@ -1334,14 +1334,16 @@ This is based upon material from the text provided by professor Sundqvist, and t
 
 \subsection{Theoretical formulas}
 \begin{enumerate}
-\item formal definition
+\item Formal definition
 \begin{equation}
-g_{\text{radiation}} = - \frac{1}{\dot{M}}\frac{dL}{dr}
+g_{\text{radiation}} =  \frac{\Delta p}{\Delta t \Delta m} = \frac{\Delta E}{v} \frac{1}{\Delta t} \frac{v}{M \Delta r} = - \frac{1}{\dot{M}}\frac{dL}{dr}
 \end{equation}
-\item numerical approximation 
+
+\item Numerical approximation, we count photons
 \begin{equation}
 L(r) = \frac{1}{\Delta t} \sum_i \epsilon_i \text{sign}\mu_i(r)
 \end{equation}
+where $L(r_*)$ is given and the photon energies $\epsilon_i$ are given by a black-body distribution.
 \end{enumerate}
 
 \subsection{Solution strategy}
