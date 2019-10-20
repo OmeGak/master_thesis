@@ -3,16 +3,7 @@ function [nchan,vmin,vmax,deltax,freq,flux,b,xmin,xmax,rmax,rmin,...
         count_neg_phot,nphot,nsc_real] ...
         = param_init(beta,nbins,nrbins,resonance_x,compare_Fortran,nphot) 
     % xmin and xmax are the boundaries of the frequency interval
-    % vmin and vmax are the boundaries of the absorption regions
-
-    xmin = min(resonance_x - 1);
-    xmax = max(resonance_x + 1);
-    
-    vmin = -0.8;
-    vmax = 0;
-    b = 1+vmax^(1/beta);
-    rmax = b/(1+vmin^(1/beta));
-    rmin = 1;   
+    % vmin and vmax are the boundaries of the absorption regions   
     
     if compare_Fortran == 1
         xmin = min(resonance_x - 1.1);
@@ -23,6 +14,7 @@ function [nchan,vmin,vmax,deltax,freq,flux,b,xmin,xmax,rmax,rmin,...
             
             b = 1+vmax^(1/beta);
             rmax = b/(1+vmin^(1/beta));    
+            rmin = 1; 
     end
     
     nchan = nbins;

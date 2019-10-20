@@ -100,10 +100,16 @@
 \section{Preparation for Equation meeting on 15 October}
 See Section \underline{\ref{Dual_line_experiments_results}}.
 
+\section{Preparation for meeting on 21 October}
+I have been working on Section \underline{\ref{theoretical_background}} and on Section \underline{\ref{Dual_line_experiments_results}}.
+
 \paragraph{questions}
 \begin{itemize}
 \item also take into account the photons where no scattering takes place?
+\item language of master thesis?
+\item analytical expression for $L(r)$?
 \end{itemize}
+
 
 \newpage
 \section{Introductory exercises}
@@ -313,6 +319,7 @@ $l = \frac{1}{\kappa \rho} = \frac{V_o}{\kappa M_o} [cm]$
 \end{itemize}
 \end{enumerate}
 
+\newpage
 \subsection{Numerical exercises}
 \subsubsection{Implicit 1D solver}
 Exercise from (20-11-2018).
@@ -325,7 +332,7 @@ The convergence behaviour of the method is shown in Figure \ref{1D_implicit_diff
 
 \begin{figure}[!htp]
 \centering
-\includegraphics[width=0.55\textwidth]{../../introductory_exercises/diffusion_implicit_1D_solver/data/convergence.png}
+\includegraphics[width=0.5\textwidth]{../../introductory_exercises/diffusion_implicit_1D_solver/data/convergence.png}
 \caption{Convergence behaviour for 1D implicit solver (diffusion equation)}
 \label{1D_implicit_diffusion}
 \end{figure}
@@ -649,7 +656,7 @@ v = v_{\infty}(1-b/r)^{\beta}
 \end{equation}
 A scaled version of Equation (\ref{velocity_profile}) yields 
 \begin{equation}
-u = \frac{v(r)}{v_{\infty}} = \left(1 - \frac{r_{\infty}}{r} \right)^{\beta} 
+u = \frac{v(r)}{v_{\infty}} = \left(1 - \frac{b}{r} \right)^{\beta} 
 \label{u_profile}
 \end{equation}
 with $u \in [0..1]$
@@ -665,27 +672,23 @@ or thus $x_{REF} = \boxed{u_{\text{interaction}}}$ and than solve Equation \ref{
 
 \item If $\mu = 1$ then 
 \begin{equation}
-x = \left(1 - \frac{r_{\infty}}{r} \right)^{\beta}
+x = \left(1 - \frac{b}{r} \right)^{\beta}
 \end{equation}
 \begin{equation*}
-x^{1/\beta} = 1 - \frac{r_{\infty}}{r}
+x^{1/\beta} = 1 - \frac{b}{r}
 \end{equation*}
 \begin{equation*}
-r(1-x^{1/\beta}) = r_{\infty}
+r(1-x^{1/\beta}) = b
 \end{equation*}
 \begin{equation}
-\boxed{r(x) = \frac{r_{\infty}}{1-x^{1/\beta}}}
+\boxed{r(x) = \frac{b}{1-x^{1/\beta}}}
 \end{equation}
-
-\noindent\fbox{
-  \parbox{0.6\textwidth}{
-  attention, here was something wrong! }} 
 
 \item From the location of interaction $r$, the incident angle can be calculated
 \begin{equation}
 \texttt{xmuein} = \sqrt{1-\left[\frac{\texttt{pstart}}{r}\right]^2} = \sqrt{1 - \left[ \frac{\sqrt{1-\texttt{xmuestart}^2}}{r} \right]^2}
 \end{equation}
-Now also taking into account that \texttt{xmuestart = 1} then yields
+Now also taking into account that \texttt{xmuestart = 1} 
 \begin{equation}
 \texttt{xmuein = 1}
 \end{equation}
@@ -705,8 +708,6 @@ and $\sigma(x) = \frac{dv}{dr}\frac{r}{v}-1$
 thus $\boxed{\sigma(x) = \frac{\beta b}{r}\left( 1-\frac{b}{r}\right)^{-1}}$
 
 \item Assuming that $\beta = 1$ then $\boxed{v(x) = 1 - \frac{b}{r}}$ and $\frac{dv}{dr} = \frac{\beta b}{r^2}$ and $\boxed{\sigma(x) = \frac{\beta b}{r}}$.
-
-\item Conclusion: $\tau(x)$ is only dependent on $x$ and not on \texttt{xmuestart} or \texttt{xmuein}.
 
 \item \texttt{xmueou} follows the distribution as given by the function \texttt{xmueout}, namely
 \begin{equation}
@@ -973,11 +974,13 @@ Matlab (with \texttt{resonance\_x = 0} & -1 & 1 & -0.8 & 0 \\ \hline
 \subsubsection{To be implemented}
 
 \begin{itemize}
-\item more efficient implementation for generation of negative random number (not by an addition random number for selecting the sign).
+\item generation of random numbers that undergo no scattering: replace with continuum profile
 \end{itemize}
 
 \newpage
+
 \section{Theoretical background}
+\label{theoretical_background}
 
 \begin{center}
 \vspace{-0.45cm}
@@ -1013,27 +1016,42 @@ Matlab (with \texttt{resonance\_x = 0} & -1 & 1 & -0.8 & 0 \\ \hline
 
 \subsection{General things}
 \begin{itemize}
-\item In fact, the absolute frequency of the photons does not change. However, in an observer's frame, we observe that the photon frequency changes at a scattering event.
-
-\item Sobolev condition for resonance:
-\begin{equation}
-x_{REF} - \mu u = 0
-\end{equation}
-with $u = \frac{v}{v_{\infty}} \in [0,1]$ and $\mu = \cos(\theta) \in [-1,1]$ then 
-\begin{equation}
-x_{REF} \in [0,1]
-\end{equation}
-
-\item After a scattering event, the oberserver's frame frequency is updated as follows:
-\begin{equation}
-\texttt{xnew = xstart + u(xmueou - xmuein)}
-\label{xnew_vx_xstart}
-\end{equation}
-
 \item $\lambda \nu = c$. Mostly stellar spectra are recorded for increasing $\lambda$, thus decreasing $\nu$
 
-\item geometry, scattering at $P$
-\begin{center}
+\item the $\beta$-velocity law
+\begin{equation}
+v = \left( 1-\frac{b}{r} \right)^{\beta}
+\end{equation}
+where we want $v = \in [v_{\text{min}} , v_{\text{max}}]$. Thus on one hand $b = 1-x_{v_{\text{min}}}^{1/\beta} >0$ and then we can compute the radius where $v = v_{\text{max}}$, namely $r_{\text{max}} = b/(1-v_{\text{max}}^{1/\beta})$
+
+\begin{itemize}
+\item Minimal velocity. Without angle correction (see Section \ref{geometry_scattering}), the minimal velocity is given by $(1-b)^{\beta}$. With angle correction,
+\begin{equation}
+v = \cos(\alpha) \left( 1-\frac{b}{r} \right)^{\beta}
+\end{equation}
+then the minimal velocity is slightly higher.
+
+\item Maximal velocity equals $v_{max}$
+
+\begin{figure}[!htp]
+\centering
+\includegraphics[width=0.5\textwidth]{../../two_resonance_lines/figures/velocity_profile.png}
+\caption{Example of velocity profile (give paramters)}
+\label{example_velocity_profile}
+\end{figure}
+
+\end{itemize}
+\end{itemize}
+
+
+
+\newpage
+\subsection{Geometry}
+\label{geometry_scattering}
+
+Spherical symmetry. Scattering at point $P$
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 % define constants
 \def \radij{2cm}
@@ -1043,30 +1061,41 @@ x_{REF} \in [0,1]
 \draw (0,0) coordinate (O) node{$\bullet$} node[left]{$O$};
 \draw (0,0) circle(\radij);
 
+\draw ($(0,0)!3cm!(4,3)$) coordinate (Interaction) node{$\bullet$};
+
 \draw [dotted] (0,0) circle(3cm);
 
 % draw line to X
 \draw[dashed] (0,0)--(\radij + \dist,0) coordinate (X);
-
 \draw[dashed] (0,0)-- node[below] {$R$} (\radij,0);
+
+% draw line from P to the right
+\draw[dashed] ($(0,0)!3cm!(4,3)$) -- ($(0,0)!3cm!(4,3) + (\dist,0)$) coordinate(Pright);
+
+% draw path of scattered photon
+\draw ($(0,0)!3cm!(4,3)$) -- ($(0,0)!3cm!(4,3) + (0,0)!2cm!(3,1)$) coordinate (Scattered_location);
 
 % draw line to P and further
 \draw[dashed] (0,0) -- node[above] {$r$} ($(0,0)!5cm!(4,3)$) node[midway,above left, blue!50!black]{};
 
 % define coordinates
-\draw ($(\radij,0)$) coordinate (Release) node{$\bullet$} node[above right](Release){};
+\draw ($(\radij,0)$) coordinate (Release) node{$\bullet$};
 
-\draw ($(0,0)!3cm!(4,3)$) coordinate (Interaction) node{$\bullet$} node[above right](Interaction){$P$};
+\draw ($(0,0)!3cm!(4,3)$) coordinate (Interaction) node{$\bullet$};
 
   	% draw angle theta
-  \draw    pic["$\theta$", draw=red,<->, angle eccentricity=1.2, angle radius=0.5cm]
+  \draw  pic["$\theta$", draw=red,<->, angle eccentricity=1.2, angle radius=0.5cm]
     {angle=X--Release--Interaction};
 	
 	% draw angle theta_in
-  \draw    pic["$\theta_{in}$", draw=red, ->, angle eccentricity=1.2, angle radius=1cm]
+  \draw  pic["$\theta_{in}$", draw=red, ->, angle eccentricity=1.2, angle radius=1cm]
     {angle=X--O--Interaction};
     
-  \draw    pic["$\alpha$", draw=red, ->, angle eccentricity=1.0, angle radius=1cm]
+    	% draw angle theta_out
+  \draw    pic["$\theta_{out}$", draw=red, ->, angle eccentricity=1.5, angle radius=1cm]
+    {angle=Pright--Interaction--Scattered_location};
+    
+  \draw    pic["$\alpha$", draw=red, ->, angle eccentricity=1.2, angle radius=0.5cm]
     {angle=O--Interaction--Release};
     % draw a horizontal line
     
@@ -1078,7 +1107,11 @@ x_{REF} \in [0,1]
 	% draw the oberver's eye
 	\eye{0.5}{5}{4}{-140}
 \end{tikzpicture}
-\end{center}
+\caption{2D Geometry for scattering}
+\label{1D_Geometry_scattering}
+\end{figure}
+
+
 We can derive an expression, but first the sum of the angles in a triangle equals $\pi$ which leads to $\alpha = \theta_{in} - \theta$. We then have the sine rule, namely that, with
 \begin{equation}
 \frac{\sin(\alpha)}{R} = \frac{\sin(\pi-\theta)}{r} = \frac{\sin(\theta)}{r}
@@ -1086,21 +1119,52 @@ We can derive an expression, but first the sum of the angles in a triangle equal
 and thus, with $R=R_{*} = 1$,
 \begin{equation}
 \cos(\alpha) = \sqrt{1 - \left( \frac{\sin(\theta)}{r} \right)^2}
+\label{xmuein_naive}
 \end{equation}
-Per definition $\texttt{xmuein} = \cos(\alpha)$ and $\texttt{pstart} = \sin(\theta)$
 
-\item the $\beta$-velocity law
+Per definition 
 \begin{itemize}
-\item Minimal velocity. Without angle correction, the minimal velocity is given by $(1-b)^{\beta}$. With angle correction, the minimal velocity is slightly higher.
+\item $\texttt{xmuestart} = \cos(\theta)$
 
-\item Maximal velocity
+\item $\texttt{pstart} = R_* \sin(\theta)$
 
-\begin{figure}[!htp]
-\centering
-\includegraphics[width=0.65\textwidth]{../../two_resonance_lines/figures/velocity_profile.png}
-\caption{Example of velocity profile (give paramters)}
-\label{example_velocity_profile}
-\end{figure}
+\item $\texttt{xmuein} = \cos(\alpha)$ 
+
+\item $\texttt{xmueou} = \cos(\theta_{\text{out}})$
+\end{itemize}
+
+\subsubsection{Condition for hitting the core}
+Check this only for inwards streaming photons!
+\begin{equation}
+\begin{aligned}
+\texttt{pcheck} &= \sqrt{r^2 \left(1- \cos(\theta_{\text{out}})^2 \right)} \\
+&= r\sin(\theta_{\text{out}}) 
+\end{aligned}
+\end{equation}
+
+\subsubsection{Slightly more general version}
+When $R_* \neq 1$, Equation (\ref{xmuein_naive}) is replaced by
+\begin{equation}
+\cos(\alpha) = \sqrt{1 - \left( \frac{R_* \sin(\theta)}{r} \right)^2}
+\end{equation}
+
+\newpage
+\subsection{Sobolev approximation}
+\begin{itemize}
+\item In fact, the absolute frequency of the photons does not change. However, in an observer's frame, we observe that the photon frequency changes at a scattering event. After a scattering event, the oberserver's frame frequency is updated as follows:
+\begin{equation}
+\texttt{xnew = xstart + u(xmueou - xmuein)}
+\label{xnew_vx_xstart}
+\end{equation}
+
+\item Sobolev condition for resonance:
+\begin{equation}
+x_{REF} - \mu u = 0
+\end{equation}
+with $u = \frac{v}{v_{\infty}} \in [0,1]$ and $\mu = \cos(\theta) \in [-1,1]$ then 
+\begin{equation}
+x_{REF} \in [0,1]
+\end{equation}
 
 \item The radius of interaction, we solve for $v_{photon} = x > 0$, for a specific $\nu_0$
 \begin{equation}
@@ -1113,12 +1177,18 @@ Now we are going to invest the effect of
 \end{itemize}
 \end{itemize}
 
+
+\subsection{Can resonance in the same resonance line happen twice?}
+After a first scattering event, the frequency is updated according to Equation (\ref{xnew_vx_xstart}).
+In my opinion, it is possible to have multiple scatterings.
+
+\subsection{Meaning of the parameters}
+\begin{itemize}
+\item \texttt{xk0} is a characteristic scale of opacity $\chi = \frac{\texttt{xk0}}{rv^{2+ \alpha}}$
+\item opacity $\chi  = \frac{\texttt{xk0}}{rv^{2+ \alpha}} \propto \kappa \rho \propto \frac{\kappa}{rv^2}$ 
+\item from this we deduce that $\kappa \propto  \frac{1}{v^{\alpha}}$
 \end{itemize}
 
-
-
-
-\newpage
 \subsection{Special case: \texttt{xmuestart = 1}}
 \begin{itemize}
 \item \textsc{first scatttering}: from Equation (\ref{xnew_vx_xstart}) we have that \texttt{xstart = u} and then
@@ -1136,14 +1206,8 @@ Thus, since $\texttt{xmueou} \in [-1,1]$ and $\texttt{xmin} \leq \texttt{xstart}
 \end{itemize}
 
 \newpage
-\section{Extension to higher dimensions}
-
-\newpage
-\section{Dual spectral line formation}
-\label{two_resonance_lines}
-
-\subsection{Development of computer code (in \texttt{Matlab})}
-\subsubsection{Implementation in Matlab: user's manual}
+\section{Development of computer code (in \texttt{Matlab})}
+\subsection{Implementation in Matlab: user's manual}
 Run the function \texttt{test\_function(test\_number)}.
 \begin{center}
 \centering
@@ -1169,7 +1233,7 @@ Run the function \texttt{test\_function(test\_number)}.
 \vspace{0.7cm}
 Via this link, you can go back to the exercises overview: Section \underline{\ref{Overview_Part_4}}.
 
-\subsubsection{Keeping track of the photon path}
+\subsection{Keeping track of the photon path}
 \begin{equation}
 \left[
 \begin{matrix}
@@ -1208,14 +1272,14 @@ Via this link, you can go back to the exercises overview: Section \underline{\re
 \centering
 \hspace*{-0.5in}
 \begin{subfigure}{.6\textwidth}
-\includegraphics[width=1\textwidth]{../../two_resonance_lines/figures/reference_solution_xmuestart.png}
+\includegraphics[width=1\textwidth]{../../two_resonance_lines/figures/solution_radial_release.png}
 \caption{Radial release}
 \end{subfigure}%
 \begin{subfigure}{.6\textwidth}
-\includegraphics[width=1\textwidth]{../../two_resonance_lines/figures/reference_solution_xmuestart.png}
+\includegraphics[width=1\textwidth]{../../two_resonance_lines/figures/solution_random_release.png}
 \caption{Random release}
 \end{subfigure}
-\caption{Result}
+\caption{Single line formation with Sobolev approximation}
 \label{PCyg_mu_eq_1_test}
 \end{figure}
 
@@ -1266,14 +1330,15 @@ Via this link, you can go back to the exercises overview: Section \underline{\re
 	\end{figure}
 \end{itemize}
 
+\begin{comment}
 \begin{figure}[!htp]
 \centering
 \includegraphics[width=1\textwidth]{../../two_resonance_lines/figures/multiple_lines_MANY_without_red_box.png}
 \caption{Detailed look @ many line formation}
 \label{test_superposition_1}
 \end{figure}
+\end{comment}
 
-\newpage
 \subsubsection{Effect of the opacity}
 	\begin{figure}[H]
 	\centering	
@@ -1288,22 +1353,8 @@ Via this link, you can go back to the exercises overview: Section \underline{\re
 	\label{multiple_lines_1_effect_opacity}
 	\end{figure}
 
-
 \newpage
 \subsubsection{Is superposition valid?}
-From numerical experiments
-
-\begin{figure}[!htp]
-\centering
-\includegraphics[width=0.55\textwidth]{../../two_resonance_lines/figures/superposition_test.png}
-\caption{Test for superposition}
-\label{test_superposition_1}
-\end{figure}
-
-\noindent\fbox{
-  \parbox{0.8\textwidth}{
-  TO BE INVESTIGATED
-}}
 
 \subsubsection{Some theoretical observations}
 \begin{itemize}
@@ -1318,6 +1369,7 @@ From numerical experiments
 \begin{itemize}
 \item the 'one-time scattering probability' $p_1$.
 \item probabiltiy of the overlapping region $p_2 = \frac{\text{length of overlapping region}}{\text{union of the length of the 'one-scattering' regions}}$. 
+\item HOWEVER take also into account that not all scattered photons are scattered.
 \end{itemize}
 Then we have
 \begin{equation}
@@ -1385,6 +1437,10 @@ Basic, well-known test situation.
 \label{luminosity_multiple_resonance_line}
 \end{figure}
 
+
+\newpage
+\section{Extension to higher dimensions}
+TO BE DONE
 
 \newpage
 \section{Closer look at Monte Carlo simulations}

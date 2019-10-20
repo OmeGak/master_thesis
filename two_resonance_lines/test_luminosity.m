@@ -14,6 +14,7 @@ test_number = 0;
     = test_file(test_number);
 
 nphot = 10^5;
+
 nrbins = 100;
 r_array = linspace(1,rmax,nrbins);
 correction_factor = number_scatterings*(1+0.25*(1+0.25))

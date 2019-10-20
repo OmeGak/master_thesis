@@ -1,7 +1,7 @@
-function [xnew,rnew,nin,last_scatter,xmueou,nsc,one_photon_path,forget_photon,luminosity,nsc_real] ...
+function [xnew,rnew,nin,last_scatter,xmueou,nsc,one_photon_path,forget_photon,luminosity,nsc_real,scattering_x,tau_decides_no_scatter_x] ...
             =  make_scattering(xstart,xmuestart,r_init,...
                 beta,alpha,b,rmax,nin,resonance_x,resonance_tau,all_radial,isotropic_scattering,nsc,...
-                one_photon_path,vmin,vmax,xstart_Fortran,luminosity,nrbins,nsc_real)
+                one_photon_path,vmin,vmax,xstart_Fortran,luminosity,nrbins,nsc_real,scattering_x,tau_decides_no_scatter_x,phot)
     
     % initialize parameters        
     forget_photon = 0;
@@ -9,59 +9,59 @@ function [xnew,rnew,nin,last_scatter,xmueou,nsc,one_photon_path,forget_photon,lu
         xstart = -xstart;
     end
 
-    last_scatter = 0;
+    rnew = r_init; 
+    last_scatter = 1;
     
-    % look for best radius of interaction
-    pstart = sqrt(1-(xmuestart)^2);      % ADAPTATION ATTENTION
+    % look for best radius of interaction !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    pstart = sqrt(1-(xmuestart)^2);      
     r_collection = [];
     index = 0;
 
     for k = 1:length(resonance_x)
-        % numerical root
-        func = @(r) sqrt(1-(pstart./r).^2).*(1-b./r).^beta - (-xstart + resonance_x(k));           
-        [r_num,no_solution] = rtbis(func , 1 , rmax, 10^(-5));
+        x_selected = resonance_x(k);
+        
+        vmin_ = x_selected + 0.99*vmin;
+        vmax_ = x_selected + 1.01*vmax;
+        if (xstart >= vmin_) & (xstart <= vmax_) %& (abs(x_selected - tau_decides_no_scatter_x) > 0)
+            
+            % numerical root
+            func = @(r) sqrt(1-(r_init*pstart./r).^2).*(1-b./r).^beta - (-xstart + x_selected);         % ADAPTATION ATTENTION      
+            [r_num,no_solution] = rtbis(func , 1 , rmax, 10^(-5));
 
-        if no_solution == 0
-            r_collection_add = [r_num ; resonance_x(k); resonance_tau(k)];
-            r_collection = [r_collection, r_collection_add];
+            if no_solution == 0
+                r_collection_add = [r_num ; x_selected; resonance_tau(k)];
+                r_collection = [r_collection, r_collection_add];
+            end            
         end
     end
-    if length(r_collection) == 0
-        last_scatter = 1;
-    else
+    
+    if length(r_collection) > 0
         r_collection_r = r_collection(1,:);
         rnew = min(r_collection_r(sign(xmuestart)*(r_collection_r-r_init)>0));
 
         if length(rnew) > 0
-            index = max(find(r_collection_r == rnew));
+            index = find(r_collection_r == rnew);
             x_selected = r_collection(2,index);
             tau_selected = r_collection(3,index);
-
-            % extra test
-            vmin_ = x_selected + 0.99*vmin;
-            vmax_ = x_selected + 1.01*vmax;
-            if (xstart < vmin_) | (xstart > vmax_)
-                last_scatter = 1;
-            end
-
-        else
-            x_selected = [];
-            tau_selected = [];
-            last_scatter = 1;
+            last_scatter = 0;
         end
     end
     
+    if last_scatter == 0
+        scattering_x = [scattering_x, x_selected];
+    end
+    % we have the radius of interaction !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    tau_decides_no_scatter_x = x_selected;
     
-    % make scattering event
+    % perform scattering !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     if last_scatter == 0
         xstart = xstart - x_selected;
-        
-        % perform scattering !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+           
         forget_photon = 0;
         xk0 = tau_selected;
 
-        pstart = sqrt(1-(xmuestart/r_init)^2);          % ADAPTION ATTENTION
-        xmuein = sqrt(1-(r_init*pstart/rnew)^2);        % ADAPTION ATTENTION
+        pstart = sqrt(1-(xmuestart)^2);            
+        xmuein = sqrt(1-(r_init*pstart/rnew)^2);                           % ADAPTION ATTENTION
         v = (1-b/rnew)^(beta);
         dvdr = b*beta/rnew^2*(1-b/rnew)^(beta-1);
         sigma = dvdr/(v/rnew)-1;
@@ -82,13 +82,14 @@ function [xnew,rnew,nin,last_scatter,xmueou,nsc,one_photon_path,forget_photon,lu
                     forget_photon = 1;
                 end
             end
-        else        
+            
+        else
+            tau_decides_no_scatter_x = x_selected;
             xmueou = xmuein;
-%             rnew = r_init;
+            display('xnew = xstart ----------')
         end
         xnew = xstart - v*(xmueou-xmuein);
-        % voila !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        
+        % voila !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!     
         nsc = nsc + 1;
                 
         if xstart_Fortran == 1
@@ -98,26 +99,16 @@ function [xnew,rnew,nin,last_scatter,xmueou,nsc,one_photon_path,forget_photon,lu
         xnew = xnew + x_selected;
         
         if (xnew == xstart)
-%             display('xnew = xstart ----------')
-%             display(r_init)
-%             display(rnew)
-%             error('xnew = xstart -- make_scattering.m')
-        end
-        
-        if (xnew < -0.5) & (xmueou < 0)
-            display('----------')
-            display(r_init)
-            display(rnew)
-            display('het is zover -- make_scattering.m')
+            display('xnew = xstart ----------')
         end
           
-        %luminosity = update_luminosity_scatter(xmuestart,rnew,luminosity,r_init,rmax,nrbins);
+        luminosity = update_luminosity_scatter(xmuestart,rnew,luminosity,r_init,rmax,nrbins);
         one_photon_path = [one_photon_path; rnew; xmueou; xnew; x_selected];    
         
     else
         xnew = xstart;
         xmueou = xmuestart;
-%         rnew = r_init;
+        % UPDATE R?
     end      
     
 end

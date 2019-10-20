@@ -1,8 +1,15 @@
+%% test if multiple scatterings from one line are possible
+clc, close all, clear all
+
+test_number = 0;                                   
+[freq,flux_two,number_scatterings,photon_path,yes,luminosity,rmax,total_number_backscatterings] = test_file(test_number);
+
+
 %% ancient version
 clc, clear all, close all
 
-xk0 = 100
-nphot = 10^6
+xk0 = 0.00005
+nphot = 10^5
 alpha = 0
 beta = 1
 
@@ -56,7 +63,7 @@ test_superposition(save_figures,multiplication,test_number_1,test_number_2,test_
 %% very SIMPLE test
 clc, close all, clear all
 
-test_number = 21;
+test_number = 21;                                   
 [freq,flux_two,number_scatterings,photon_path,yes,luminosity,rmax,total_number_backscatterings] = test_file(test_number);
 
 photon_path(:,18:end);
@@ -64,6 +71,32 @@ for k=1:length(photon_path(end,:))
     if photon_path(end,k) == 0.5
         display('whow')
     end
+end
+
+%% figures for paragraph 'EXPERIMENTS AND RESULTS. (1) AND (2)'
+clc, close all, clear all
+
+test_number = 1
+[freq,flux_two,number_scatterings,photon_path,yes,luminosity,rmax,total_number_backscatterings] = test_file(test_number);
+
+if test_number == -2
+    saveas(gcf,'figures/scattering_distribution_radial_release.png')
+elseif test_number == -1
+    saveas(gcf,'figures/scattering_distribution_random_release.png')
+elseif test_number == 0
+    saveas(gcf,'figures/solution_random_release.png')
+elseif test_number == 1
+    saveas(gcf,'figures/solution_radial_release.png')
+end
+
+%% figures for paragraph 'EXPERIMENTS AND RESULTS. (3)'
+clc, close all, clear all
+
+test_number = 21
+[freq,flux_two,number_scatterings,photon_path,yes,luminosity,rmax,total_number_backscatterings] = test_file(test_number);
+
+if test_number == -2
+    saveas(gcf,'figures/multiple_lines_distant.png')
 end
 
 %% testje over root finding (with angle correction)
@@ -247,18 +280,37 @@ xstart = 0.5;
 
 
 %% plot scattering probability
-% DOES NOT WORK
-
 clc, clear all, close all
 
-x = linspace(-1,1,100);
-r = 1./(1-x);
-p = (1-exp(-1./(1+x.^2./r)))./(1./(1+x.^2./r));
-p_tau = (1-exp(-x))./x;
+beta = 1; nbins = 100; nrbins = 100; resonance_x = 0; nphot = 10^4; compare_Fortran = 1;
+[~,vmin,vmax,~,~,~,b,xmin,~,rmax,~,~,~] = param_init(beta,nbins,nrbins,resonance_x,compare_Fortran,nphot);
 
-figure()
-subplot(1,2,1)
-plot(x,p)
-subplot(1,2,2)
-plot(x,p_tau)
-    
+xmuestart = 1;
+xmuein = 1;
+xk0 = 100;
+alpha = 0;
+
+N = 100
+xstart = linspace(0.01,0.98,N);
+x = linspace(-1,1,N);
+r = b./(1-xstart.^(1/beta));
+
+v = (1-b./r).^(beta);
+dvdr = b*beta./r.^2.*(1-b./r).^(beta-1);
+sigma = dvdr./(v./r)-1;
+tau = xk0./(r.*v.^(2-alpha).*(1+xmuein^2*sigma));
+            
+xmueout = (1-exp(-tau))./tau;
+
+% figure()
+% plot(xstart,xnew)
+% title('radial release')
+
+% figure()
+% histogram(xmueout)
+% % hold on, histogram(xnew)
+
+% simple proposal
+px = 1-log(x)
+plot(x,px)
+

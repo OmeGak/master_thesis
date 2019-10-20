@@ -97,6 +97,7 @@ function [freq,flux,yes] = one_radial_line(nphot , xk0 , alpha , beta , make_plo
 
             else
                 xnew = xstart;
+                display('hallo there is no scattering')
             end    
         end
 

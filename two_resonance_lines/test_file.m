@@ -33,16 +33,22 @@ function [freq, flux_two, number_scatterings,photon_path,yes,luminosity,rmax,tot
     number_paths = 20;
     
     compare_Fortran = 0;
-    deterministic_sampling_x = 0;
-    
+    deterministic_sampling_x = 0;   
     xstart_Fortran = 0;
     
+    % OVERVIEW OF TESTS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    if test_number == -2
+        plot_only_scattering = 1;
+        radial_release = 1;
     
-    % OVERVIEW OF TESTS
-    if test_number == 0
+    elseif test_number == -1
+        plot_only_scattering = 1;  
+        
+    elseif test_number == 0
         % original version 
             % (by default, compare_Fortran = 1)
             nphot = 10^5;
+            xk0 = 0.5;
 %             radial_release = 1;
 %             all_radial = 1;
             
@@ -59,8 +65,6 @@ function [freq, flux_two, number_scatterings,photon_path,yes,luminosity,rmax,tot
             nphot = 10^5;            
    
             
-            
-
     elseif test_number == 1
         % first adaptation: radial release
         radial_release = 1; 
@@ -149,13 +153,7 @@ function [freq, flux_two, number_scatterings,photon_path,yes,luminosity,rmax,tot
             plot_only_scattering = 0;
             make_display = 1 
             multiple_scatterings = 1
-        
-    % test location of resonance frequencies
-    elseif test_number == 17
-        resonance_x = [-2,0];
-        plot_only_scattering = 0;
-        make_display = 1 
-         
+                 
     % test superposition with multiple_scatterings     
         elseif test_number == 18
             resonance_x = [-0.5];
@@ -183,6 +181,14 @@ function [freq, flux_two, number_scatterings,photon_path,yes,luminosity,rmax,tot
             resonance_tau = [0.5];
             multiple_scatterings = 1;      
 
+        elseif test_number == 191
+            resonance_x = [-2,0];
+            resonance_tau = [100,100];
+            multiple_scatterings = 1;
+            
+            track_path = 1;
+            number_paths = 20; 
+            
         elseif test_number == 2001
             resonance_x = [-2,0];
             resonance_tau = [100,0.5];
@@ -195,7 +201,7 @@ function [freq, flux_two, number_scatterings,photon_path,yes,luminosity,rmax,tot
     % test track_path        
         elseif test_number == 21
             resonance_x = [-0.5,0];
-            resonance_tau = 0.5*ones(1,2);
+            resonance_tau = 100*ones(1,2);
             multiple_scatterings = 1;
             
             radial_release = 0;

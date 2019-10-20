@@ -34,52 +34,58 @@
 \BOOKMARK [1][-]{section.14}{Multiline transfer \(PART I\)}{part.3}% 34
 \BOOKMARK [1][-]{section.15}{Multiline transfer \(PART II\)}{part.3}% 35
 \BOOKMARK [1][-]{section.16}{Preparation for Equation meeting on 15 October}{part.3}% 36
-\BOOKMARK [1][-]{section.17}{Introductory exercises}{part.3}% 37
-\BOOKMARK [2][-]{subsection.17.1}{Analytical exercises}{section.17}% 38
-\BOOKMARK [2][-]{subsection.17.2}{Numerical exercises}{section.17}% 39
-\BOOKMARK [2][-]{subsection.17.3}{Other Exercises}{section.17}% 40
-\BOOKMARK [1][-]{section.18}{Limb darkening}{part.3}% 41
-\BOOKMARK [2][-]{subsection.18.1}{Formulation of the problem}{section.18}% 42
-\BOOKMARK [2][-]{subsection.18.2}{Solving the \(integro-differential\) radiative transfer equation}{section.18}% 43
-\BOOKMARK [2][-]{subsection.18.3}{Eddington-Barbier approximation}{section.18}% 44
-\BOOKMARK [2][-]{subsection.18.4}{2D Case}{section.18}% 45
-\BOOKMARK [2][-]{subsection.18.5}{3D Case}{section.18}% 46
-\BOOKMARK [1][-]{section.19}{Spectral line formation: pcyg.f90}{part.3}% 47
-\BOOKMARK [2][-]{subsection.19.1}{First adaptation: what if all photons are released radially from photosphere?}{section.19}% 48
-\BOOKMARK [2][-]{subsection.19.2}{Second adaptation: isotropic scattering}{section.19}% 49
-\BOOKMARK [2][-]{subsection.19.3}{Third adaptation: introduction of Eddington limb-darkening}{section.19}% 50
-\BOOKMARK [2][-]{subsection.19.4}{Fourth adaptaion: photospheric line-profile}{section.19}% 51
-\BOOKMARK [2][-]{subsection.19.5}{Convergence analysis}{section.19}% 52
-\BOOKMARK [2][-]{subsection.19.6}{Variance reduction experiment}{section.19}% 53
-\BOOKMARK [2][-]{subsection.19.7}{Mathematical description of the problem \046 Looking at literature}{section.19}% 54
-\BOOKMARK [1][-]{section.20}{Transferring the code to Matlab}{part.3}% 55
-\BOOKMARK [2][-]{subsection.20.1}{Limit variables}{section.20}% 56
-\BOOKMARK [2][-]{subsection.20.2}{Comparison}{section.20}% 57
-\BOOKMARK [2][-]{subsection.20.3}{Optimizations}{section.20}% 58
-\BOOKMARK [1][-]{section.21}{Theoretical background}{part.3}% 59
-\BOOKMARK [2][-]{subsection.21.1}{General things}{section.21}% 60
-\BOOKMARK [2][-]{subsection.21.2}{Special case: xmuestart = 1}{section.21}% 61
-\BOOKMARK [1][-]{section.22}{Extension to higher dimensions}{part.3}% 62
-\BOOKMARK [1][-]{section.23}{Dual spectral line formation}{part.3}% 63
-\BOOKMARK [2][-]{subsection.23.1}{Development of computer code \(in Matlab\)}{section.23}% 64
-\BOOKMARK [2][-]{subsection.23.2}{Experiments and results}{section.23}% 65
-\BOOKMARK [1][-]{section.24}{Computing the radiation force \046 luminosity L\(r\)}{part.3}% 66
-\BOOKMARK [2][-]{subsection.24.1}{Theoretical formulas}{section.24}% 67
-\BOOKMARK [2][-]{subsection.24.2}{Solution strategy}{section.24}% 68
-\BOOKMARK [2][-]{subsection.24.3}{Checking the correctness of the program}{section.24}% 69
-\BOOKMARK [2][-]{subsection.24.4}{Computing the radiation force for one line}{section.24}% 70
-\BOOKMARK [2][-]{subsection.24.5}{Multiple lines}{section.24}% 71
-\BOOKMARK [1][-]{section.25}{Closer look at Monte Carlo simulations}{part.3}% 72
-\BOOKMARK [2][-]{subsection.25.1}{Random walk \(diffusion equation\)}{section.25}% 73
-\BOOKMARK [2][-]{subsection.25.2}{Limb darkening}{section.25}% 74
-\BOOKMARK [0][-]{part.4}{IV Questions}{}% 75
-\BOOKMARK [1][-]{section.26}{Questions for professor Sundqvist}{part.4}% 76
-\BOOKMARK [1][-]{section.27}{Questions for professor Samaey}{part.4}% 77
-\BOOKMARK [1][-]{section.28}{Solved questions}{part.4}% 78
-\BOOKMARK [1][-]{section.29}{Interesting problems}{part.4}% 79
-\BOOKMARK [1][-]{section.30}{Do not forget}{part.4}% 80
-\BOOKMARK [0][-]{part.5}{V Thesis meetings}{}% 81
-\BOOKMARK [1][-]{section.31}{Meeting on 6 September 2019}{part.5}% 82
-\BOOKMARK [1][-]{section.32}{Meeting on 23 September 2019}{part.5}% 83
-\BOOKMARK [1][-]{section.33}{Meeting on 30 September 2019}{part.5}% 84
-\BOOKMARK [0][-]{part.6}{VI Equation meetings}{}% 85
+\BOOKMARK [1][-]{section.17}{Preparation for meeting on 21 October}{part.3}% 37
+\BOOKMARK [1][-]{section.18}{Introductory exercises}{part.3}% 38
+\BOOKMARK [2][-]{subsection.18.1}{Analytical exercises}{section.18}% 39
+\BOOKMARK [2][-]{subsection.18.2}{Numerical exercises}{section.18}% 40
+\BOOKMARK [2][-]{subsection.18.3}{Other Exercises}{section.18}% 41
+\BOOKMARK [1][-]{section.19}{Limb darkening}{part.3}% 42
+\BOOKMARK [2][-]{subsection.19.1}{Formulation of the problem}{section.19}% 43
+\BOOKMARK [2][-]{subsection.19.2}{Solving the \(integro-differential\) radiative transfer equation}{section.19}% 44
+\BOOKMARK [2][-]{subsection.19.3}{Eddington-Barbier approximation}{section.19}% 45
+\BOOKMARK [2][-]{subsection.19.4}{2D Case}{section.19}% 46
+\BOOKMARK [2][-]{subsection.19.5}{3D Case}{section.19}% 47
+\BOOKMARK [1][-]{section.20}{Spectral line formation: pcyg.f90}{part.3}% 48
+\BOOKMARK [2][-]{subsection.20.1}{First adaptation: what if all photons are released radially from photosphere?}{section.20}% 49
+\BOOKMARK [2][-]{subsection.20.2}{Second adaptation: isotropic scattering}{section.20}% 50
+\BOOKMARK [2][-]{subsection.20.3}{Third adaptation: introduction of Eddington limb-darkening}{section.20}% 51
+\BOOKMARK [2][-]{subsection.20.4}{Fourth adaptaion: photospheric line-profile}{section.20}% 52
+\BOOKMARK [2][-]{subsection.20.5}{Convergence analysis}{section.20}% 53
+\BOOKMARK [2][-]{subsection.20.6}{Variance reduction experiment}{section.20}% 54
+\BOOKMARK [2][-]{subsection.20.7}{Mathematical description of the problem \046 Looking at literature}{section.20}% 55
+\BOOKMARK [1][-]{section.21}{Transferring the code to Matlab}{part.3}% 56
+\BOOKMARK [2][-]{subsection.21.1}{Limit variables}{section.21}% 57
+\BOOKMARK [2][-]{subsection.21.2}{Comparison}{section.21}% 58
+\BOOKMARK [2][-]{subsection.21.3}{Optimizations}{section.21}% 59
+\BOOKMARK [1][-]{section.22}{Theoretical background}{part.3}% 60
+\BOOKMARK [2][-]{subsection.22.1}{General things}{section.22}% 61
+\BOOKMARK [2][-]{subsection.22.2}{Geometry}{section.22}% 62
+\BOOKMARK [2][-]{subsection.22.3}{Sobolev approximation}{section.22}% 63
+\BOOKMARK [2][-]{subsection.22.4}{Can resonance in the same resonance line happen twice?}{section.22}% 64
+\BOOKMARK [2][-]{subsection.22.5}{Meaning of the parameters}{section.22}% 65
+\BOOKMARK [2][-]{subsection.22.6}{Special case: xmuestart = 1}{section.22}% 66
+\BOOKMARK [1][-]{section.23}{Development of computer code \(in Matlab\)}{part.3}% 67
+\BOOKMARK [2][-]{subsection.23.1}{Implementation in Matlab: user's manual}{section.23}% 68
+\BOOKMARK [2][-]{subsection.23.2}{Keeping track of the photon path}{section.23}% 69
+\BOOKMARK [2][-]{subsection.23.3}{Experiments and results}{section.23}% 70
+\BOOKMARK [1][-]{section.24}{Computing the radiation force \046 luminosity L\(r\)}{part.3}% 71
+\BOOKMARK [2][-]{subsection.24.1}{Theoretical formulas}{section.24}% 72
+\BOOKMARK [2][-]{subsection.24.2}{Solution strategy}{section.24}% 73
+\BOOKMARK [2][-]{subsection.24.3}{Checking the correctness of the program}{section.24}% 74
+\BOOKMARK [2][-]{subsection.24.4}{Computing the radiation force for one line}{section.24}% 75
+\BOOKMARK [2][-]{subsection.24.5}{Multiple lines}{section.24}% 76
+\BOOKMARK [1][-]{section.25}{Extension to higher dimensions}{part.3}% 77
+\BOOKMARK [1][-]{section.26}{Closer look at Monte Carlo simulations}{part.3}% 78
+\BOOKMARK [2][-]{subsection.26.1}{Random walk \(diffusion equation\)}{section.26}% 79
+\BOOKMARK [2][-]{subsection.26.2}{Limb darkening}{section.26}% 80
+\BOOKMARK [0][-]{part.4}{IV Questions}{}% 81
+\BOOKMARK [1][-]{section.27}{Questions for professor Sundqvist}{part.4}% 82
+\BOOKMARK [1][-]{section.28}{Questions for professor Samaey}{part.4}% 83
+\BOOKMARK [1][-]{section.29}{Solved questions}{part.4}% 84
+\BOOKMARK [1][-]{section.30}{Interesting problems}{part.4}% 85
+\BOOKMARK [1][-]{section.31}{Do not forget}{part.4}% 86
+\BOOKMARK [0][-]{part.5}{V Thesis meetings}{}% 87
+\BOOKMARK [1][-]{section.32}{Meeting on 6 September 2019}{part.5}% 88
+\BOOKMARK [1][-]{section.33}{Meeting on 23 September 2019}{part.5}% 89
+\BOOKMARK [1][-]{section.34}{Meeting on 30 September 2019}{part.5}% 90
+\BOOKMARK [0][-]{part.6}{VI Equation meetings}{}% 91
