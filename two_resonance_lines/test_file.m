@@ -200,7 +200,7 @@ function [freq, flux_two, number_scatterings,photon_path,yes,luminosity,rmax,tot
      
     % test track_path        
         elseif test_number == 21
-            resonance_x = [-0.5,0];
+            resonance_x = [-1.5,0];
             resonance_tau = 100*ones(1,2);
             multiple_scatterings = 1;
             

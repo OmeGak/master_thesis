@@ -1,9 +1,12 @@
 %% test if multiple scatterings from one line are possible
-clc, close all, clear all
+clc,  clear all
 
 test_number = 0;                                   
 [freq,flux_two,number_scatterings,photon_path,yes,luminosity,rmax,total_number_backscatterings] = test_file(test_number);
 
+
+%%
+plot(luminosity)
 
 %% ancient version
 clc, clear all, close all
@@ -61,7 +64,7 @@ overlap_number = 25;
 test_superposition(save_figures,multiplication,test_number_1,test_number_2,test_number_3,overlap_number);
 
 %% very SIMPLE test
-clc, close all, clear all
+clc, clear all
 
 test_number = 21;                                   
 [freq,flux_two,number_scatterings,photon_path,yes,luminosity,rmax,total_number_backscatterings] = test_file(test_number);

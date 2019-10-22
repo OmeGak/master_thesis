@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.20)  22 OCT 2019 10:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.20)  20 OCT 2019 22:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**practical.tex
-(./practical.tex
+**Einstein.tex
+(./Einstein.tex
 LaTeX2e <2018-04-01> patch level 5
 (/usr/share/texlive/texmf-dist/tex/latex/subfiles/subfiles.cls
 Document Class: subfiles 2018/07/31 Federico Garcia, Gernot Salzer
@@ -1177,27 +1177,9 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 \@quotelevel=\count374
 \@quotereset=\count375
-)) (./practical.aux
-
-LaTeX Warning: Label `variance_reduction_test' multiply defined.
-
-
-LaTeX Warning: Label `variance_reduction_test' multiply defined.
-
-
-LaTeX Warning: Label `variance_reduction_test' multiply defined.
-
-
-LaTeX Warning: Label `variance_reduction_test' multiply defined.
-
-
-LaTeX Warning: Label `PCyg_mu_eq_1' multiply defined.
-
-
-LaTeX Warning: Label `multiple_lines_1' multiply defined.
-
-)
-\openout1 = `practical.aux'.
+))
+No file Einstein.aux.
+\openout1 = `Einstein.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
@@ -1213,7 +1195,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
- (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count376
 \scratchdimen=\dimen258
@@ -1263,10 +1245,8 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 3.
 LaTeX Info: Redefining \pageref on input line 3.
 LaTeX Info: Redefining \nameref on input line 3.
-
-(./practical.out) (./practical.out)
 \@outlinefile=\write9
-\openout9 = `practical.out'.
+\openout9 = `Einstein.out'.
 
 Package scrlayer Info: Setting magic \footheight to \baselineskip while
 (scrlayer)             \begin{document} on input line 3.
@@ -1284,36 +1264,29 @@ Package scrlayer-scrpage Warning: Very small head height detected!
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout8 = `practical.bcf'.
+\openout8 = `Einstein.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'practical.bbl' not found.
-No file practical.bbl.
+Package biblatex Info: ... file 'Einstein.bbl' not found.
+No file Einstein.bbl.
 Package biblatex Info: Reference section=0 on input line 3.
 Package biblatex Info: Reference segment=0 on input line 3.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 16.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 10.
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 16.
-LaTeX Font Info:    Try loading font information for U+msa on input line 26.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 10.
+LaTeX Font Info:    Try loading font information for U+msa on input line 17.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 26.
+LaTeX Font Info:    Try loading font information for U+msb on input line 17.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-
-LaTeX Warning: Reference `specific_intensity' on page 1 undefined on input line
- 49.
-
-
-LaTeX Warning: Reference `second_line' on page 1 undefined on input line 56.
-
 
 Package scrlayer-scrpage Warning: \headheight to low.
 (scrlayer-scrpage)                At least 12.0pt needed,
@@ -1323,8 +1296,8 @@ Package scrlayer-scrpage Warning: \headheight to low.
 (scrlayer-scrpage)                e.g., using
 (scrlayer-scrpage)                  \setlength{\headheight}{12.0pt}
 (scrlayer-scrpage)                in your preamble.
-(scrlayer-scrpage)                I'll also decrease \topmargin on input line 6
-2.
+(scrlayer-scrpage)                I'll also decrease \topmargin on input line 1
+7.
 
 
 Overfull \vbox (12.0pt too high) has occurred while \output is active []
@@ -1332,528 +1305,48 @@ Overfull \vbox (12.0pt too high) has occurred while \output is active []
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-
-LaTeX Warning: Reference `two_resonance_lines' on page 2 undefined on input lin
-e 76.
-
-
-LaTeX Warning: Reference `two_resonance_lines' on page 2 undefined on input lin
-e 87.
-
-[2]
-
-LaTeX Warning: Reference `plane_parallel_radiation' on page 3 undefined on inpu
-t line 189.
-
-[3] [4] [5]
-<../../introductory_exercises/diffusion_implicit_1D_solver/data/convergence.png
-, id=296, 429.2838pt x 310.761pt>
-File: ../../introductory_exercises/diffusion_implicit_1D_solver/data/convergenc
-e.png Graphic file (type png)
-<use ../../introductory_exercises/diffusion_implicit_1D_solver/data/convergence
-.png>
-Package pdftex.def Info: ../../introductory_exercises/diffusion_implicit_1D_sol
-ver/data/convergence.png  used on input line 335.
-(pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
- [6 <../../introductory_exercises/diffusion_implicit_1D_solver/data/convergence
-.png (PNG copy)>]
-
-LaTeX Warning: Reference `GENERAL_RT_EQUATION' on page 7 undefined on input lin
-e 378.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 17.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 17.
+ (./Einstein.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 17.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 17.
 
 
-LaTeX Warning: Citation 'Dublin_limb_darkening' on page 7 undefined on input li
-ne 396.
-
-
-LaTeX Warning: Reference `GENERAL_RT_EQUATION' on page 7 undefined on input lin
-e 423.
-
-
-Overfull \hbox (10.13332pt too wide) in paragraph at lines 439--442
-[] 
- []
-
-[7]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 463.
-<../../introductory_exercises/limb_darkening/data/number_channels20number_photo
-ns100000max_opt_depth10.png, id=338, 421.575pt x 316.0608pt>
-File: ../../introductory_exercises/limb_darkening/data/number_channels20number_
-photons100000max_opt_depth10.png Graphic file (type png)
-<use ../../introductory_exercises/limb_darkening/data/number_channels20number_p
-hotons100000max_opt_depth10.png>
-Package pdftex.def Info: ../../introductory_exercises/limb_darkening/data/numbe
-r_channels20number_photons100000max_opt_depth10.png  used on input line 504.
-(pdftex.def)             Requested size: 317.07614pt x 237.72018pt.
- [8]
-<../../introductory_exercises/limb_darkening/data/LD_3D_mu_number_channels20num
-ber_photons100000max_opt_depth10.png, id=349, 421.575pt x 316.0608pt>
-File: ../../introductory_exercises/limb_darkening/data/LD_3D_mu_number_channels
-20number_photons100000max_opt_depth10.png Graphic file (type png)
-<use ../../introductory_exercises/limb_darkening/data/LD_3D_mu_number_channels2
-0number_photons100000max_opt_depth10.png>
-Package pdftex.def Info: ../../introductory_exercises/limb_darkening/data/LD_3D
-_mu_number_channels20number_photons100000max_opt_depth10.png  used on input lin
-e 524.
-(pdftex.def)             Requested size: 226.48395pt x 169.8022pt.
-<../../introductory_exercises/limb_darkening/data/LD_3D_phi_number_channels20nu
-mber_photons100000max_opt_depth10.png, id=350, 421.575pt x 316.0608pt>
-File: ../../introductory_exercises/limb_darkening/data/LD_3D_phi_number_channel
-s20number_photons100000max_opt_depth10.png Graphic file (type png)
-<use ../../introductory_exercises/limb_darkening/data/LD_3D_phi_number_channels
-20number_photons100000max_opt_depth10.png>
-Package pdftex.def Info: ../../introductory_exercises/limb_darkening/data/LD_3D
-_phi_number_channels20number_photons100000max_opt_depth10.png  used on input li
-ne 529.
-(pdftex.def)             Requested size: 226.48395pt x 169.8022pt.
-
-Overfull \hbox (20.13333pt too wide) in paragraph at lines 539--543
- [][] [] 
- []
-
-[9 <../../introductory_exercises/limb_darkening/data/number_channels20number_ph
-otons100000max_opt_depth10.png (PNG copy)> <../../introductory_exercises/limb_d
-arkening/data/LD_3D_mu_number_channels20number_photons100000max_opt_depth10.png
- (PNG copy)> <../../introductory_exercises/limb_darkening/data/LD_3D_phi_number
-_channels20number_photons100000max_opt_depth10.png (PNG copy)>] [10] [11]
-<../../introductory_exercises/P_Cygni_profile_UV_resonance/data/compare_radial_
-xk0100.png, id=373, 433.62pt x 314.1336pt>
-File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/compare_ra
-dial_xk0100.png Graphic file (type png)
-<use ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/compare_rad
-ial_xk0100.png>
-Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/data/compare_radial_xk0100.png  used on input line 644.
-(pdftex.def)             Requested size: 317.07614pt x 229.71346pt.
-
-[12 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/compare_rad
-ial_xk0100.png (PNG copy)>]
-Overfull \hbox (10.13332pt too wide) in paragraph at lines 732--734
-[] 
- []
-
-<../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk0100alph
-a0beta1test0.png, id=389, 433.62pt x 314.1336pt>
-File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk010
-0alpha0beta1test0.png Graphic file (type png)
-<use ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5xk0100
-alpha0beta1test0.png>
-Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/data/npot5xk0100alpha0beta1test0.png  used on input line 741.
-(pdftex.def)             Requested size: 317.07614pt x 229.71346pt.
-[13] [14 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/npot5x
-k0100alpha0beta1test0.png (PNG copy)>]
-<../../introductory_exercises/P_Cygni_profile_UV_resonance/data/compare_isotrop
-ic_scattering_xk0100.png, id=413, 425.9112pt x 319.4334pt>
-File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/compare_is
-otropic_scattering_xk0100.png Graphic file (type png)
-<use ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/compare_iso
-tropic_scattering_xk0100.png>
-Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/data/compare_isotropic_scattering_xk0100.png  used on input line 764.
-(pdftex.def)             Requested size: 317.07614pt x 237.80513pt.
- [15 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/compare_is
-otropic_scattering_xk0100.png (PNG copy)>]
-
-LaTeX Warning: Reference `general_limb_darkening' on page 16 undefined on input
- line 780.
-
-<../../introductory_exercises/P_Cygni_profile_UV_resonance/data/Eddington_accep
-t_reject.png, id=423, 429.2838pt x 310.761pt>
-File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/Eddington_
-accept_reject.png Graphic file (type png)
-<use ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/Eddington_a
-ccept_reject.png>
-Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/data/Eddington_accept_reject.png  used on input line 828.
-(pdftex.def)             Requested size: 249.13371pt x 180.34583pt.
-[16] [17 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/Edding
-ton_accept_reject.png (PNG copy)>]
-<../../introductory_exercises/P_Cygni_profile_UV_resonance/data/test0_convergen
-ce.png, id=446, 429.2838pt x 310.761pt>
-File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/test0_conv
-ergence.png Graphic file (type png)
-<use ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/test0_conve
-rgence.png>
-Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/data/test0_convergence.png  used on input line 866.
-(pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
-<../../introductory_exercises/P_Cygni_profile_UV_resonance/data/profile_converg
-ence/test0_convergence.png, id=448, 429.2838pt x 310.761pt>
-File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/profile_co
-nvergence/test0_convergence.png Graphic file (type png)
-<use ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/profile_con
-vergence/test0_convergence.png>
-Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/data/profile_convergence/test0_convergence.png  used on input line 876.
-(pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
- [18 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/test0_conv
-ergence.png (PNG copy)> <../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/data/profile_convergence/test0_convergence.png (PNG copy)>]
-<../../introductory_exercises/P_Cygni_profile_UV_resonance/data/variance_reduct
-ion_test.png, id=459, 421.575pt x 316.0608pt>
-File: ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/variance_r
-eduction_test.png Graphic file (type png)
-<use ../../introductory_exercises/P_Cygni_profile_UV_resonance/data/variance_re
-duction_test.png>
-Package pdftex.def Info: ../../introductory_exercises/P_Cygni_profile_UV_resona
-nce/data/variance_reduction_test.png  used on input line 901.
-(pdftex.def)             Requested size: 294.42636pt x 220.73949pt.
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 906.
-
-
-LaTeX Warning: Citation 'NoebauerUlrichM_2019MCRT' on page 19 undefined on inpu
-t line 915.
-
-[19 <../../introductory_exercises/P_Cygni_profile_UV_resonance/data/variance_re
-duction_test.png (PNG copy)>]
-<../../two_resonance_lines/figures/compare_Matlab_Fortran_literally_100.png, id
-=468, 429.2838pt x 310.761pt>
-File: ../../two_resonance_lines/figures/compare_Matlab_Fortran_literally_100.pn
-g Graphic file (type png)
-<use ../../two_resonance_lines/figures/compare_Matlab_Fortran_literally_100.png
->
-Package pdftex.def Info: ../../two_resonance_lines/figures/compare_Matlab_Fortr
-an_literally_100.png  used on input line 938.
-(pdftex.def)             Requested size: 294.42636pt x 213.13554pt.
-<../../two_resonance_lines/figures/compare_Matlab_Fortran_literally_0005.png, i
-d=469, 429.2838pt x 310.761pt>
-File: ../../two_resonance_lines/figures/compare_Matlab_Fortran_literally_0005.p
-ng Graphic file (type png)
-<use ../../two_resonance_lines/figures/compare_Matlab_Fortran_literally_0005.pn
-g>
-Package pdftex.def Info: ../../two_resonance_lines/figures/compare_Matlab_Fortr
-an_literally_0005.png  used on input line 945.
-(pdftex.def)             Requested size: 294.42636pt x 213.13554pt.
- [20 <../../two_resonance_lines/figures/compare_Matlab_Fortran_literally_100.pn
-g (PNG copy)> <../../two_resonance_lines/figures/compare_Matlab_Fortran_literal
-ly_0005.png (PNG copy)>]
-<../../two_resonance_lines/figures/compare_Matlab_Fortran_more_freely.png, id=4
-77, 429.2838pt x 310.761pt>
-File: ../../two_resonance_lines/figures/compare_Matlab_Fortran_more_freely.png 
-Graphic file (type png)
-<use ../../two_resonance_lines/figures/compare_Matlab_Fortran_more_freely.png>
-Package pdftex.def Info: ../../two_resonance_lines/figures/compare_Matlab_Fortr
-an_more_freely.png  used on input line 957.
-(pdftex.def)             Requested size: 294.42636pt x 213.13554pt.
-<../../two_resonance_lines/figures/compare_Matlab_Fortran_more_freely_0005.png,
- id=478, 429.2838pt x 310.761pt>
-File: ../../two_resonance_lines/figures/compare_Matlab_Fortran_more_freely_0005
-.png Graphic file (type png)
-<use ../../two_resonance_lines/figures/compare_Matlab_Fortran_more_freely_0005.
-png>
-Package pdftex.def Info: ../../two_resonance_lines/figures/compare_Matlab_Fortr
-an_more_freely_0005.png  used on input line 964.
-(pdftex.def)             Requested size: 294.42636pt x 213.13554pt.
- [21 <../../two_resonance_lines/figures/compare_Matlab_Fortran_more_freely.png 
-(PNG copy)> <../../two_resonance_lines/figures/compare_Matlab_Fortran_more_free
-ly_0005.png (PNG copy)>]
-[22]
-<../../two_resonance_lines/figures/velocity_profile.png, id=493, 433.62pt x 314
-.1336pt>
-File: ../../two_resonance_lines/figures/velocity_profile.png Graphic file (type
- png)
-<use ../../two_resonance_lines/figures/velocity_profile.png>
-Package pdftex.def Info: ../../two_resonance_lines/figures/velocity_profile.png
-  used on input line 1038.
-(pdftex.def)             Requested size: 226.48395pt x 164.07419pt.
- [23 <../../two_resonance_lines/figures/velocity_profile.png (PNG copy)>]
-[24]
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1194.
-
- [25]
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1211.
-
- [26]
-<../../two_resonance_lines/figures/scattering_distribution_radial_release.png, 
-id=540, 429.2838pt x 310.761pt>
-File: ../../two_resonance_lines/figures/scattering_distribution_radial_release.
-png Graphic file (type png)
-<use ../../two_resonance_lines/figures/scattering_distribution_radial_release.p
-ng>
-Package pdftex.def Info: ../../two_resonance_lines/figures/scattering_distribut
-ion_radial_release.png  used on input line 1261.
-(pdftex.def)             Requested size: 271.7835pt x 196.74306pt.
-<../../two_resonance_lines/figures/scattering_distribution_random_release.png, 
-id=541, 429.2838pt x 310.761pt>
-File: ../../two_resonance_lines/figures/scattering_distribution_random_release.
-png Graphic file (type png)
-<use ../../two_resonance_lines/figures/scattering_distribution_random_release.p
-ng>
-Package pdftex.def Info: ../../two_resonance_lines/figures/scattering_distribut
-ion_random_release.png  used on input line 1265.
-(pdftex.def)             Requested size: 271.7835pt x 196.74306pt.
-
-Overfull \hbox (56.68631pt too wide) in paragraph at lines 1258--1268
- []|  $[]$$[]$ 
- []
-
-<../../two_resonance_lines/figures/solution_radial_release.png, id=542, 429.283
-8pt x 310.761pt>
-File: ../../two_resonance_lines/figures/solution_radial_release.png Graphic fil
-e (type png)
-<use ../../two_resonance_lines/figures/solution_radial_release.png>
-Package pdftex.def Info: ../../two_resonance_lines/figures/solution_radial_rele
-ase.png  used on input line 1277.
-(pdftex.def)             Requested size: 271.7835pt x 196.74306pt.
-<../../two_resonance_lines/figures/solution_random_release.png, id=543, 429.283
-8pt x 310.761pt>
-File: ../../two_resonance_lines/figures/solution_random_release.png Graphic fil
-e (type png)
-<use ../../two_resonance_lines/figures/solution_random_release.png>
-Package pdftex.def Info: ../../two_resonance_lines/figures/solution_random_rele
-ase.png  used on input line 1281.
-(pdftex.def)             Requested size: 271.7835pt x 196.74306pt.
-
-Overfull \hbox (56.68631pt too wide) in paragraph at lines 1275--1284
- []|  $[]$$[]$ 
- []
-
-[27 <../../two_resonance_lines/figures/scattering_distribution_radial_release.p
-ng (PNG copy)> <../../two_resonance_lines/figures/scattering_distribution_rando
-m_release.png (PNG copy)> <../../two_resonance_lines/figures/solution_radial_re
-lease.png (PNG copy)> <../../two_resonance_lines/figures/solution_random_releas
-e.png (PNG copy)>]
-<../../two_resonance_lines/figures/multiple_lines_distant.png, id=552, 429.2838
-pt x 310.761pt>
-File: ../../two_resonance_lines/figures/multiple_lines_distant.png Graphic file
- (type png)
-<use ../../two_resonance_lines/figures/multiple_lines_distant.png>
-Package pdftex.def Info: ../../two_resonance_lines/figures/multiple_lines_dista
-nt.png  used on input line 1296.
-(pdftex.def)             Requested size: 271.7835pt x 196.74306pt.
-<../../two_resonance_lines/figures/multiple_lines_photon_path_distant.png, id=5
-53, 429.2838pt x 310.761pt>
-File: ../../two_resonance_lines/figures/multiple_lines_photon_path_distant.png 
-Graphic file (type png)
-<use ../../two_resonance_lines/figures/multiple_lines_photon_path_distant.png>
-Package pdftex.def Info: ../../two_resonance_lines/figures/multiple_lines_photo
-n_path_distant.png  used on input line 1299.
-(pdftex.def)             Requested size: 271.7835pt x 196.74306pt.
-
-Overfull \hbox (56.68631pt too wide) in paragraph at lines 1294--1301
- []|  $[]$$[]$ 
- []
-
-<../../two_resonance_lines/figures/multiple_lines.png, id=554, 429.2838pt x 310
-.761pt>
-File: ../../two_resonance_lines/figures/multiple_lines.png Graphic file (type p
-ng)
-<use ../../two_resonance_lines/figures/multiple_lines.png>
-Package pdftex.def Info: ../../two_resonance_lines/figures/multiple_lines.png  
-used on input line 1310.
-(pdftex.def)             Requested size: 271.7835pt x 196.74306pt.
-<../../two_resonance_lines/figures/multiple_lines_photon_path.png, id=555, 429.
-2838pt x 310.761pt>
-File: ../../two_resonance_lines/figures/multiple_lines_photon_path.png Graphic 
-file (type png)
-<use ../../two_resonance_lines/figures/multiple_lines_photon_path.png>
-Package pdftex.def Info: ../../two_resonance_lines/figures/multiple_lines_photo
-n_path.png  used on input line 1313.
-(pdftex.def)             Requested size: 271.7835pt x 196.74306pt.
-
-Overfull \hbox (56.68631pt too wide) in paragraph at lines 1308--1315
- []|  $[]$$[]$ 
- []
-
-[28 <../../two_resonance_lines/figures/multiple_lines_distant.png (PNG copy)> <
-../../two_resonance_lines/figures/multiple_lines_photon_path_distant.png (PNG c
-opy)> <../../two_resonance_lines/figures/multiple_lines.png (PNG copy)> <../../
-two_resonance_lines/figures/multiple_lines_photon_path.png (PNG copy)>]
-<../../two_resonance_lines/figures/multiple_lines_MANY.png, id=563, 429.2838pt 
-x 310.761pt>
-File: ../../two_resonance_lines/figures/multiple_lines_MANY.png Graphic file (t
-ype png)
-<use ../../two_resonance_lines/figures/multiple_lines_MANY.png>
-Package pdftex.def Info: ../../two_resonance_lines/figures/multiple_lines_MANY.
-png  used on input line 1325.
-(pdftex.def)             Requested size: 271.7835pt x 196.74306pt.
-<../../two_resonance_lines/figures/multiple_lines_photon_path_MANY.png, id=564,
- 429.2838pt x 310.761pt>
-File: ../../two_resonance_lines/figures/multiple_lines_photon_path_MANY.png Gra
-phic file (type png)
-<use ../../two_resonance_lines/figures/multiple_lines_photon_path_MANY.png>
-Package pdftex.def Info: ../../two_resonance_lines/figures/multiple_lines_photo
-n_path_MANY.png  used on input line 1328.
-(pdftex.def)             Requested size: 271.7835pt x 196.74306pt.
-
-Overfull \hbox (56.68631pt too wide) in paragraph at lines 1323--1330
- []|  $[]$$[]$ 
- []
-
-Excluding 'comment' comment.
-<../../two_resonance_lines/figures/multiple_lines_distant_diff_opacity.png, id=
-565, 429.2838pt x 310.761pt>
-File: ../../two_resonance_lines/figures/multiple_lines_distant_diff_opacity.png
- Graphic file (type png)
-<use ../../two_resonance_lines/figures/multiple_lines_distant_diff_opacity.png>
-
-Package pdftex.def Info: ../../two_resonance_lines/figures/multiple_lines_dista
-nt_diff_opacity.png  used on input line 1349.
-(pdftex.def)             Requested size: 271.7835pt x 196.74306pt.
-<../../two_resonance_lines/figures/multiple_lines_photon_path_distant_diff_opac
-ity.png, id=566, 429.2838pt x 310.761pt>
-File: ../../two_resonance_lines/figures/multiple_lines_photon_path_distant_diff
-_opacity.png Graphic file (type png)
-<use ../../two_resonance_lines/figures/multiple_lines_photon_path_distant_diff_
-opacity.png>
-Package pdftex.def Info: ../../two_resonance_lines/figures/multiple_lines_photo
-n_path_distant_diff_opacity.png  used on input line 1352.
-(pdftex.def)             Requested size: 271.7835pt x 196.74306pt.
-
-Overfull \hbox (56.68631pt too wide) in paragraph at lines 1347--1354
- []|  $[]$$[]$ 
- []
-
-[29 <../../two_resonance_lines/figures/multiple_lines_MANY.png (PNG copy)> <../
-../two_resonance_lines/figures/multiple_lines_photon_path_MANY.png (PNG copy)> 
-<../../two_resonance_lines/figures/multiple_lines_distant_diff_opacity.png (PNG
- copy)> <../../two_resonance_lines/figures/multiple_lines_photon_path_distant_d
-iff_opacity.png (PNG copy)>] [30]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1384.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1384.
-
-
-LaTeX Warning: Citation 'UweSpringmannPHD' on page 31 undefined on input line 1
-387.
-
-<../../two_resonance_lines/figures/luminosity_one_resonance_line_one_direction.
-png, id=581, 429.2838pt x 310.761pt>
-File: ../../two_resonance_lines/figures/luminosity_one_resonance_line_one_direc
-tion.png Graphic file (type png)
-<use ../../two_resonance_lines/figures/luminosity_one_resonance_line_one_direct
-ion.png>
-Package pdftex.def Info: ../../two_resonance_lines/figures/luminosity_one_reson
-ance_line_one_direction.png  used on input line 1419.
-(pdftex.def)             Requested size: 317.07614pt x 229.53278pt.
-[31 <../../two_resonance_lines/figures/luminosity_one_resonance_line_one_direct
-ion.png (PNG copy)>]
-<../../two_resonance_lines/figures/luminosity_one_resonance_line.png, id=594, 4
-21.575pt x 316.0608pt>
-File: ../../two_resonance_lines/figures/luminosity_one_resonance_line.png Graph
-ic file (type png)
-<use ../../two_resonance_lines/figures/luminosity_one_resonance_line.png>
-Package pdftex.def Info: ../../two_resonance_lines/figures/luminosity_one_reson
-ance_line.png  used on input line 1429.
-(pdftex.def)             Requested size: 317.07614pt x 237.72018pt.
-<../../two_resonance_lines/figures/luminosity_multiple_resonance_line.png, id=5
-95, 429.2838pt x 310.761pt>
-File: ../../two_resonance_lines/figures/luminosity_multiple_resonance_line.png 
-Graphic file (type png)
-<use ../../two_resonance_lines/figures/luminosity_multiple_resonance_line.png>
-Package pdftex.def Info: ../../two_resonance_lines/figures/luminosity_multiple_
-resonance_line.png  used on input line 1437.
-(pdftex.def)             Requested size: 317.07614pt x 229.53278pt.
-
-Underfull \vbox (badness 2865) has occurred while \output is active []
-
- [32 <../../two_resonance_lines/figures/luminosity_one_resonance_line.png (PNG 
-copy)> <../../two_resonance_lines/figures/luminosity_multiple_resonance_line.pn
-g (PNG copy)>] [33] [34] [35]
-<../../introductory_exercises/limb_darkening/data/diff_N_vs_opacity.png, id=631
-, 429.2838pt x 310.761pt>
-File: ../../introductory_exercises/limb_darkening/data/diff_N_vs_opacity.png Gr
-aphic file (type png)
-<use ../../introductory_exercises/limb_darkening/data/diff_N_vs_opacity.png>
-Package pdftex.def Info: ../../introductory_exercises/limb_darkening/data/diff_
-N_vs_opacity.png  used on input line 1517.
-(pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
- [36 <../../introductory_exercises/limb_darkening/data/diff_N_vs_opacity.png (P
-NG copy)>]
-<../../introductory_exercises/limb_darkening/data/N_vs_opacity.png, id=643, 429
-.2838pt x 310.761pt>
-File: ../../introductory_exercises/limb_darkening/data/N_vs_opacity.png Graphic
- file (type png)
-<use ../../introductory_exercises/limb_darkening/data/N_vs_opacity.png>
-Package pdftex.def Info: ../../introductory_exercises/limb_darkening/data/N_vs_
-opacity.png  used on input line 1542.
-(pdftex.def)             Requested size: 226.48395pt x 163.95334pt.
-
-
-LaTeX Warning: Citation 'Dimarco2018' on page 37 undefined on input line 1552.
-
-
-Overfull \hbox (10.13332pt too wide) in paragraph at lines 1555--1559
-[] 
- []
-
-[37 <../../introductory_exercises/limb_darkening/data/N_vs_opacity.png (PNG cop
-y)>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1560.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1560.
- (./practical.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1560.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1560.
-
-
-
-Package rerunfilecheck Warning: File `practical.out' has changed.
+Package rerunfilecheck Warning: File `Einstein.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
 
-Package rerunfilecheck Info: Checksums for `practical.out':
-(rerunfilecheck)             Before: 84B5828784351CF980FEFB2C6AB2E8FE;3991
-(rerunfilecheck)             After:  B82B9B04F4521E7695829ABF4A5D7271;4046.
+Package rerunfilecheck Info: Checksums for `Einstein.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  946A83ACA2DB57F27134CC3CD359DC6F;56.
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
-
-
 Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                practical
+(biblatex)                Einstein
 (biblatex)                and rerun LaTeX afterwards.
 
-Package logreq Info: Writing requests to 'practical.run.xml'.
-\openout1 = `practical.run.xml'.
+Package logreq Info: Writing requests to 'Einstein.run.xml'.
+\openout1 = `Einstein.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 34578 strings out of 492641
- 721208 string characters out of 6131786
- 1190199 words of memory out of 5000000
- 37623 multiletter control sequences out of 15000+600000
- 10245 words of font info for 41 fonts, out of 8000000 for 9000
+ 33394 strings out of 492641
+ 691183 string characters out of 6131786
+ 1176330 words of memory out of 5000000
+ 36755 multiletter control sequences out of 15000+600000
+ 6297 words of font info for 25 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 67i,20n,90p,766b,1643s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{subsection.17.2} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.17.1} has been referenced but does not e
-xist, replaced by a fixed one
-
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmtt12.pfb>
-Output written on practical.pdf (37 pages, 1227346 bytes).
+ 67i,20n,90p,765b,1637s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on Einstein.pdf (1 page, 44193 bytes).
 PDF statistics:
- 773 PDF objects out of 1000 (max. 8388607)
- 675 compressed objects within 7 object streams
- 267 named destinations out of 1000 (max. 500000)
- 594 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 33 PDF objects out of 1000 (max. 8388607)
+ 25 compressed objects within 1 object stream
+ 3 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

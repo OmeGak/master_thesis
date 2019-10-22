@@ -1,12 +1,12 @@
 %% do simple test with LUMINOSITY
-clc, clear all, close all 
+clc, clear all
 
 % get the data
 display('*******************************************')
 test_photon_path = 0;
 test_luminosity = 1;
 
-test_number = 21;
+test_number = 0;
 % test_number = 7;
 test_number = 0;
 % test_number = 16;   % two lines
@@ -26,13 +26,21 @@ make_save = 1
 % PLOT LUMINOSITY
     figure()
     %     subplot(1,2,1)
-    plot(r_array,luminosity)
+    loglog(r_array,luminosity)
     %     hold on, plot(linspace(min(r_array),max(r_array),10),nphot*correction_factor*ones(1,10),'--')
     xlim([1,rmax])
     xlabel('r')
     ylabel('L(r)','Rotation',0)
     title('luminosity L(r)')
-
+    
+    figure()
+    loglog(r_array(1:end-1),dLdr)
+    %     hold on, plot(linspace(min(r_array),max(r_array),10),nphot*correction_factor*ones(1,10),'--')
+    xlim([1,rmax])
+    xlabel('r')
+    ylabel('L(r)','Rotation',0)
+    title('dLdr L(r)')
+    
     %     subplot(1,2,2)
     %     loglog(r_array,luminosity)
     %     xlim([1,rmax])

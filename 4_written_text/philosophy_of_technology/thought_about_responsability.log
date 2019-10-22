@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.20)  20 OCT 2019 21:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.20)  20 OCT 2019 22:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1273,11 +1273,11 @@ Package biblatex Info: ... file 'thought_about_responsability.bbl' not found.
 No file thought_about_responsability.bbl.
 Package biblatex Info: Reference section=0 on input line 3.
 Package biblatex Info: Reference segment=0 on input line 3.
-LaTeX Font Info:    Try loading font information for U+msa on input line 28.
+LaTeX Font Info:    Try loading font information for U+msa on input line 30.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 28.
+LaTeX Font Info:    Try loading font information for U+msb on input line 30.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1292,7 +1292,7 @@ Package scrlayer-scrpage Warning: \headheight to low.
 (scrlayer-scrpage)                  \setlength{\headheight}{12.0pt}
 (scrlayer-scrpage)                in your preamble.
 (scrlayer-scrpage)                I'll also decrease \topmargin on input line 3
-1.
+3.
 
 
 Overfull \vbox (12.0pt too high) has occurred while \output is active []
@@ -1300,12 +1300,12 @@ Overfull \vbox (12.0pt too high) has occurred while \output is active []
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 31.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 31.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 33.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 33.
 
 (./thought_about_responsability.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 31.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 31.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 33.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 33.
 Package rerunfilecheck Info: File `thought_about_responsability.out' has not ch
 anged.
 (rerunfilecheck)             Checksum: 92EB2252CAB13BDEB75115CB03D32DB3;281.
@@ -1317,7 +1317,7 @@ Package logreq Info: Writing requests to 'thought_about_responsability.run.xml'
 Here is how much of TeX's memory you used:
  33404 strings out of 492641
  691573 string characters out of 6131786
- 1178614 words of memory out of 5000000
+ 1179614 words of memory out of 5000000
  36752 multiletter control sequences out of 15000+600000
  7416 words of font info for 29 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1327,7 +1327,7 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on thought_about_responsability.pdf (1 page, 71118 bytes).
+Output written on thought_about_responsability.pdf (1 page, 71582 bytes).
 PDF statistics:
  63 PDF objects out of 1000 (max. 8388607)
  54 compressed objects within 1 object stream

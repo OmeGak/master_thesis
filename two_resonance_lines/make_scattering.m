@@ -13,7 +13,7 @@ function [xnew,rnew,nin,last_scatter,xmueou,nsc,one_photon_path,forget_photon,lu
     last_scatter = 1;
     
     % look for best radius of interaction !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    pstart = sqrt(1-(xmuestart)^2);      
+    pstart = r_init*sqrt(1-(xmuestart)^2);      
     r_collection = [];
     index = 0;
 
@@ -25,7 +25,7 @@ function [xnew,rnew,nin,last_scatter,xmueou,nsc,one_photon_path,forget_photon,lu
         if (xstart >= vmin_) & (xstart <= vmax_) %& (abs(x_selected - tau_decides_no_scatter_x) > 0)
             
             % numerical root
-            func = @(r) sqrt(1-(r_init*pstart./r).^2).*(1-b./r).^beta - (-xstart + x_selected);         % ADAPTATION ATTENTION      
+            func = @(r) sqrt(1-(pstart./r).^2).*(1-b./r).^beta - (-xstart + x_selected);         % ADAPTATION ATTENTION      
             [r_num,no_solution] = rtbis(func , 1 , rmax, 10^(-5));
 
             if no_solution == 0
@@ -79,7 +79,7 @@ function [xnew,rnew,nin,last_scatter,xmueou,nsc,one_photon_path,forget_photon,lu
                 xmueou = -xmueou;
                 if sqrt(rnew^2*(1-xmueou^2)) <= 1
                     nin = nin +1;
-                    forget_photon = 1;
+                    forget_photon = 1;                                  % mind L(r)
                 end
             end
             
