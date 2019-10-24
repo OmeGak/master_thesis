@@ -1,4 +1,5 @@
-function [freq, flux_two, number_scatterings,photon_path,yes,luminosity,rmax,total_number_backscatterings,dLdr,g_radiation]...
+function [freq,flux,total_number_scatterings,photon_path,yes,luminosity,rmax,total_number_backscatterings,...
+    dLdr,g_radiation,scattering_x]...
     = test_file(test_number)   
     % SET ALL PARAMETERS  
     make_save = 0;
@@ -200,7 +201,7 @@ function [freq, flux_two, number_scatterings,photon_path,yes,luminosity,rmax,tot
      
     % test track_path        
         elseif test_number == 21
-            resonance_x = [-1.5,0];
+            resonance_x = [-0.5,0];
             resonance_tau = 100*ones(1,2);
             multiple_scatterings = 1;
             
@@ -210,9 +211,7 @@ function [freq, flux_two, number_scatterings,photon_path,yes,luminosity,rmax,tot
             track_path = 0;
             number_paths = 20; 
             
-            nbins = 101;
-            nphot = 10^5;
-            
+            nbins = 101;            
        
     % test multiple opacites   [numbers -- 30]      
         elseif test_number == 30
@@ -241,7 +240,8 @@ function [freq, flux_two, number_scatterings,photon_path,yes,luminosity,rmax,tot
     make_save = 1;
     compare_Fortran = 1         % this affects the problem parameters
     
-    [freq, flux_two,number_scatterings,photon_path,yes,luminosity,rmax,total_number_backscatterings,dLdr,g_radiation]...
+    [freq,flux,total_number_scatterings,photon_path,yes,luminosity,rmax,total_number_backscatterings,...
+    dLdr,g_radiation,scattering_x]...
         = multiple_lines(nphot,alpha,beta,...
         make_plot,resonance_x,resonance_tau,make_save,nbins,nrbins,...
         possibility_scattering,multiple_scatterings,all_radial,radial_release,isotropic_scattering,...

@@ -34,12 +34,15 @@ make_save = 1
     title('luminosity L(r)')
     
     figure()
-    loglog(r_array(1:end-1),dLdr)
+    loglog(r_array(1:end-1),abs(dLdr))
+    r_array_ = r_array(1:end-1)
+    hold on, plot (r_array_,10^5*r_array_.^(-3),'--')
     %     hold on, plot(linspace(min(r_array),max(r_array),10),nphot*correction_factor*ones(1,10),'--')
     xlim([1,rmax])
     xlabel('r')
     ylabel('L(r)','Rotation',0)
-    title('dLdr L(r)')
+    title('dLdr(r)')
+    legend('dLdr(r)','1/r^3')
     
     %     subplot(1,2,2)
     %     loglog(r_array,luminosity)

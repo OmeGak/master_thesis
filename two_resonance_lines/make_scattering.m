@@ -1,7 +1,7 @@
-function [xnew,rnew,nin,last_scatter,xmueou,nsc,one_photon_path,forget_photon,luminosity,nsc_real,scattering_x,tau_decides_no_scatter_x] ...
+function [xnew,rnew,nin,last_scatter,xmueou,nsc,one_photon_path,forget_photon,luminosity,nsc_real,tau_decides_no_scatter_x] ...
             =  make_scattering(xstart,xmuestart,r_init,...
                 beta,alpha,b,rmax,nin,resonance_x,resonance_tau,all_radial,isotropic_scattering,nsc,...
-                one_photon_path,vmin,vmax,xstart_Fortran,luminosity,nrbins,nsc_real,scattering_x,tau_decides_no_scatter_x,phot)
+                one_photon_path,vmin,vmax,xstart_Fortran,luminosity,nrbins,nsc_real,tau_decides_no_scatter_x,phot)
     
     % initialize parameters        
     forget_photon = 0;
@@ -9,7 +9,6 @@ function [xnew,rnew,nin,last_scatter,xmueou,nsc,one_photon_path,forget_photon,lu
         xstart = -xstart;
     end
 
-    rnew = r_init; 
     last_scatter = 1;
     
     % look for best radius of interaction !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -22,7 +21,7 @@ function [xnew,rnew,nin,last_scatter,xmueou,nsc,one_photon_path,forget_photon,lu
         
         vmin_ = x_selected + 0.99*vmin;
         vmax_ = x_selected + 1.01*vmax;
-        if (xstart >= vmin_) & (xstart <= vmax_) %& (abs(x_selected - tau_decides_no_scatter_x) > 0)
+        if (xstart >= vmin_) & (xstart <= vmax_) & (abs(x_selected - tau_decides_no_scatter_x) > 0)
             
             % numerical root
             func = @(r) sqrt(1-(pstart./r).^2).*(1-b./r).^beta - (-xstart + x_selected);         % ADAPTATION ATTENTION      
@@ -31,15 +30,17 @@ function [xnew,rnew,nin,last_scatter,xmueou,nsc,one_photon_path,forget_photon,lu
             if no_solution == 0
                 r_collection_add = [r_num ; x_selected; resonance_tau(k)];
                 r_collection = [r_collection, r_collection_add];
-            end            
+            end    
+        else
+            rnew = r_init;
         end
     end
     
-    if length(r_collection) > 0
+    if isempty(r_collection) == 0
         r_collection_r = r_collection(1,:);
         rnew = min(r_collection_r(sign(xmuestart)*(r_collection_r-r_init)>0));
 
-        if length(rnew) > 0
+        if isempty(rnew) == 0
             index = find(r_collection_r == rnew);
             x_selected = r_collection(2,index);
             tau_selected = r_collection(3,index);
@@ -47,9 +48,10 @@ function [xnew,rnew,nin,last_scatter,xmueou,nsc,one_photon_path,forget_photon,lu
         end
     end
     
-    if last_scatter == 0
-        scattering_x = [scattering_x, x_selected];
+    if phot == 1
+        display(r_collection)
     end
+    
     % we have the radius of interaction !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     tau_decides_no_scatter_x = x_selected;
     
@@ -59,9 +61,8 @@ function [xnew,rnew,nin,last_scatter,xmueou,nsc,one_photon_path,forget_photon,lu
            
         forget_photon = 0;
         xk0 = tau_selected;
-
-        pstart = sqrt(1-(xmuestart)^2);            
-        xmuein = sqrt(1-(r_init*pstart/rnew)^2);                           % ADAPTION ATTENTION
+ 
+        xmuein = sqrt(1-(pstart/rnew)^2);                           
         v = (1-b/rnew)^(beta);
         dvdr = b*beta/rnew^2*(1-b/rnew)^(beta-1);
         sigma = dvdr/(v/rnew)-1;
@@ -76,33 +77,26 @@ function [xnew,rnew,nin,last_scatter,xmueou,nsc,one_photon_path,forget_photon,lu
             end
             
             if rand >= 0.5
-                xmueou = -xmueou;
-                if sqrt(rnew^2*(1-xmueou^2)) <= 1
-                    nin = nin +1;
-                    forget_photon = 1;                                  % mind L(r)
-                end
+%                 xmueou = -xmueou;
+%                 if sqrt(rnew^2*(1-xmueou^2)) <= 1
+%                     nin = nin +1;
+%                     forget_photon = 1;                                     % mind L(r)
+%                 end
             end
             
         else
             tau_decides_no_scatter_x = x_selected;
             xmueou = xmuein;
-            display('xnew = xstart ----------')
         end
-        xnew = xstart - v*(xmueou-xmuein);
-        % voila !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!     
-        nsc = nsc + 1;
-                
+        xnew = xstart - v*(xmueou-xmuein);                
         if xstart_Fortran == 1
             xnew = -xnew;
         end
-        
         xnew = xnew + x_selected;
-        
-        if (xnew == xstart)
-            display('xnew = xstart ----------')
-        end
+        nsc = nsc + 1;
+        % voila !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
           
-        luminosity = update_luminosity_scatter(xmuestart,rnew,luminosity,r_init,rmax,nrbins);
+        luminosity = update_luminosity_scatter(xmuestart,rnew,luminosity,r_init,rmax,nrbins,forget_photon);
         one_photon_path = [one_photon_path; rnew; xmueou; xnew; x_selected];    
         
     else

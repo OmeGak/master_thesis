@@ -42,6 +42,10 @@ function [nchan,vmin,vmax,deltax,freq,flux,b,xmin,xmax,rmax,rmin,...
         end
     end
     expected_scattering_ratio = expected_scattering_ratio/(xmax-xmin)
+    if min(diff(resonance_x)) < 0.98
+        overlap = min(diff(resonance_x))/abs(min(resonance_x-0.98)-max(resonance_x+0.98));
+        expected_scattering_ratio = expected_scattering_ratio*(1+overlap)
+    end
     
     r_array = linspace(1,rmax,nrbins);
     luminosity = zeros(1,nrbins);

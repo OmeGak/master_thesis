@@ -25,23 +25,19 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.3}Radiative Diffusion Approximation}{5}{subsection.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4}Applications and approximations for radiative forces}{6}{subsection.1.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.5}RHD equations}{6}{subsection.1.5}
+\contentsline {subsection}{\numberline {1.4}Radiation Hydrodynamical equations}{6}{subsection.1.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Heat flux}{6}{section*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.6}Overview of symmetry assumptions}{6}{subsection.1.6}
+\contentsline {subsection}{\numberline {1.5}Overview of symmetry assumptions}{6}{subsection.1.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.7}Overview of units}{6}{subsection.1.7}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.7.1}Things to know}{6}{subsubsection.1.7.1}
+\contentsline {subsection}{\numberline {1.6}Overview of units and key variables}{6}{subsection.1.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2}The mathematics of Radiative Transfer}{7}{section.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1}Auxiliary mathematics}{7}{subsection.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2}Integral equations}{7}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.2}Background: integral equations}{7}{subsection.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3}Challenges in Radiative Transfer}{8}{section.3}
 \defcounter {refsection}{0}\relax 
@@ -255,34 +251,44 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {24.5}Multiple lines}{46}{subsection.24.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {25}Extension to higher dimensions}{47}{section.25}
+\contentsline {subsection}{\numberline {24.6}Theoretical considerations}{47}{subsection.24.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {26}Closer look at Monte Carlo simulations}{48}{section.26}
+\contentsline {subsubsection}{\numberline {24.6.1}Analytical quantities}{47}{subsubsection.24.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {26.1}Random walk (diffusion equation)}{48}{subsection.26.1}
+\contentsline {subsubsection}{\numberline {24.6.2}From numerical computations}{47}{subsubsection.24.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {26.2}Limb darkening}{49}{subsection.26.2}
+\contentsline {subsubsection}{\numberline {24.6.3}These quantities should equal}{47}{subsubsection.24.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{IV\hspace {1em}Questions}{51}{part.4}
+\contentsline {section}{\numberline {25}Backup from theory}{48}{section.25}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {27}Questions for professor Sundqvist}{51}{section.27}
+\contentsline {section}{\numberline {26}Extension to higher dimensions}{49}{section.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {28}Questions for professor Samaey}{51}{section.28}
+\contentsline {section}{\numberline {27}Closer look at Monte Carlo simulations}{50}{section.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {29}Solved questions}{52}{section.29}
+\contentsline {subsection}{\numberline {27.1}Random walk (diffusion equation)}{50}{subsection.27.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {30}Interesting problems}{53}{section.30}
+\contentsline {subsection}{\numberline {27.2}Limb darkening}{51}{subsection.27.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{might be interesting for looking at}{53}{section*.60}
+\contentsline {part}{IV\hspace {1em}Questions}{53}{part.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {31}Do not forget}{53}{section.31}
+\contentsline {section}{\numberline {28}Questions for professor Sundqvist}{53}{section.28}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{V\hspace {1em}Thesis meetings}{55}{part.5}
+\contentsline {section}{\numberline {29}Questions for professor Samaey}{53}{section.29}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {32}Meeting on 6 September 2019}{55}{section.32}
+\contentsline {section}{\numberline {30}Solved questions}{54}{section.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {33}Meeting on 23 September 2019}{55}{section.33}
+\contentsline {section}{\numberline {31}Interesting problems}{55}{section.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {34}Meeting on 30 September 2019}{55}{section.34}
+\contentsline {paragraph}{might be interesting for looking at}{55}{section*.60}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{VI\hspace {1em}Equation meetings}{55}{part.6}
+\contentsline {section}{\numberline {32}Do not forget}{55}{section.32}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{V\hspace {1em}Thesis meetings}{57}{part.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {33}Meeting on 6 September 2019}{57}{section.33}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {34}Meeting on 23 September 2019}{57}{section.34}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {35}Meeting on 30 September 2019}{57}{section.35}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{VI\hspace {1em}Equation meetings}{57}{part.6}

@@ -108,12 +108,7 @@ I_{\nu} = B_{\nu} - \mu \frac{dB_{\nu}}{k_{\nu}dz}
 This equation can be derived as a random walk of photons!
 
 
-\subsection{Applications and approximations for radiative forces}
-\begin{itemize}
-\item definition of general radiative acceleration vector $g_{\text{rad}} = \frac{1}{\rho c}\int \int n k_{\nu} I_{\nu} d\Omega d\nu$
-\end{itemize}
-
-\subsection{RHD equations}
+\subsection{Radiation Hydrodynamical equations}
 The full RHD equations consist of 
 \begin{itemize}
 \item five partial differential equations
@@ -127,33 +122,34 @@ The heat flow rate density $\vec{\phi}$ satisfies the Fourier law $\vec{\phi} = 
 \begin{center}
 \centering
 {\tabulinesep=1.5mm
-\begin{tabu}{|c|c|c|}
+\begin{tabu}{|c|c|}
 \hline 
-plane-parallel & 1D atmosphere & \\ 
-& bounded by horizontal surfaces & \\ \hline
+plane-parallel & 1D atmosphere \\ 
+& bounded by horizontal surfaces \\ \hline
+
+spherical symmetry & \\ \hline
 \end{tabu}}
 \end{center}
 
 
-\subsection{Overview of units}
+\subsection{Overview of units and key variables}
 \begin{center}
 \centering
 {\tabulinesep=1.5mm
 \begin{tabu}{|c|c|}
 \hline 
-opacity $\alpha = k_{\nu}$ & $\left[ \frac{m^2}{kg} \right] $ \\ \hline
-
 specific intensity $I_{\nu}$ & $\left[ \frac{ergs}{cm^2 . sr . Hz . s} \right] = \left[ \frac{J}{cm^2 . sr . Hz . s} \right] $ \\ \hline
 
-optical depth $\tau$ & \\ 
+opacity $\alpha = k_{\nu}$ & $\left[ \frac{m^2}{kg} \right] $ \\ \hline
+
+optical depth $\tau = \int_0^l \alpha(s) ds$ & $[/]$ \\ 
 & $\boxed{\tau = 0}$ leave atmosphere \\ \hline
 \end{tabu}}
 \end{center}
 
-\subsubsection{Things to know}
 \begin{itemize}
-\item expanding flow: redshift (lower frequency)
-\item compressing flow: blueshift (higher frequency)
+\item expanding flow: photons are redshifted (lower frequency - higher wavelength)
+\item compressing flow: photons are blueshifted (higher frequency - lower wavelength)
 \end{itemize}
 
 
@@ -187,7 +183,7 @@ B_1(\tau) + \frac{\omega_0(\tau)}{2} \int_0^{\tau_1} \mathcal{S} (t) E_1(|t-\tau
 \end{itemize}
 
 
-\subsection{Integral equations}
+\subsection{Background: integral equations}
 Based on the book \cite{Mmfp}.
 \begin{enumerate}
 \item integral equation from differential equation

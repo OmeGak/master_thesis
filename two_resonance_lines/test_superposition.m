@@ -48,7 +48,11 @@ function test_superposition(save_figures,multiplication,test_number_1,test_numbe
     figure()
     plot(freq_s,flux_s,'LineWidth',2)
     hold on, plot(freq_super,flux_super,'LineWidth',2)
-    legend('complex intereactions','superposition')
+    if multiplication == 1
+        legend('complex intereactions','multiplication','Location','southeast')
+    else
+        legend('complex intereactions','superposition','Location','southeast')
+    end
     xlabel('x')
     ylabel('I')
     if save_figures == 1

@@ -1,4 +1,5 @@
-function [freq,flux,total_number_scatterings,photon_path,yes,luminosity,rmax,total_number_backscatterings,dLdr,g_radiation]...
+function [freq,flux,total_number_scatterings,photon_path,yes,luminosity,rmax,total_number_backscatterings,...
+    dLdr,g_radiation,scattering_x]...
     = multiple_lines(nphot,alpha,beta,make_plot,...
         resonance_x,resonance_tau,save,nbins,nrbins,possibility_scattering,multiple_scatterings,...
         all_radial,radial_release,isotropic_scattering,Eddington_limb_darkening,plot_only_scattering,...
@@ -17,6 +18,7 @@ function [freq,flux,total_number_scatterings,photon_path,yes,luminosity,rmax,tot
     display('_____________________________________')
      
     yes = zeros(4,nphot);
+    scattering_x = [];
     % loop over all photons
     for phot = 1:nphot  
         phot_nsc = 0;
@@ -26,17 +28,17 @@ function [freq,flux,total_number_scatterings,photon_path,yes,luminosity,rmax,tot
         
         % select xstart
         [xstart,xnew,goto_end_of_loop,deterministic_sampling_x] = create_well(xmin,xmax,vmin,vmax,resonance_x,deterministic_sampling_x,nphot,xstart_Fortran,phot);
-        [xmuestart, xmueou, one_photon_path] = release_photon(xstart,radial_release,Eddington_limb_darkening);
-        
-        scattering_x = [];        
+        [xmuestart, xmueou, one_photon_path] = release_photon(xstart,radial_release,Eddington_limb_darkening,goto_end_of_loop);
+         
         last_scatter = 0;
         r_init = rmin;
         tau_decides_no_scatter_x = max(resonance_x) + vmax + 1;
         while (last_scatter == 0) & (goto_end_of_loop == 0) & (possibility_scattering == 1)   
-            [xnew,r_new,nin,last_scatter,xmueou,phot_nsc,one_photon_path,forget_photon,luminosity,phot_nsc_real,scattering_x,tau_decides_no_scatter_x] = ...
+            [xnew,r_new,nin,last_scatter,xmueou,phot_nsc,one_photon_path,forget_photon,luminosity,phot_nsc_real,...
+                tau_decides_no_scatter_x] = ...
                     make_scattering(xstart,xmuestart,r_init,beta,alpha,b,rmax,nin,...
                         resonance_x,resonance_tau,all_radial,isotropic_scattering,phot_nsc,...
-                        one_photon_path,vmin,vmax,xstart_Fortran,luminosity,nrbins,phot_nsc_real,scattering_x,tau_decides_no_scatter_x,phot);
+                        one_photon_path,vmin,vmax,xstart_Fortran,luminosity,nrbins,phot_nsc_real,tau_decides_no_scatter_x,phot);
             
             last_scatter = secundary_resonance_possible(xnew,resonance_x,vmin,vmax,last_scatter);
             xstart = xnew; 
@@ -47,12 +49,12 @@ function [freq,flux,total_number_scatterings,photon_path,yes,luminosity,rmax,tot
         [nout,flux] = add_count_photon(xnew,xstart,nout,xmin,deltax,nchan,flux,r_new,plot_only_scattering,forget_photon,goto_end_of_loop);
         nsc = nsc + phot_nsc; 
         nsc_real = nsc_real + phot_nsc_real;
-        photon_path = adjust_one_photon_path(photon_path,one_photon_path);
+        [photon_path,scattering_x] = adjust_one_photon_path(photon_path,one_photon_path,scattering_x,phot);
         
         % update luminosity for photons after their last scattering event
         [luminosity,count_neg_phot] = update_luminosity(xmueou , r_new , rmax , rmin , nrbins , luminosity , count_neg_phot);
 
-    end
+    end  
     
     % compute finite difference derivative of luminosity
     dr = (rmax-rmin)/nrbins;
@@ -73,5 +75,7 @@ function [freq,flux,total_number_scatterings,photon_path,yes,luminosity,rmax,tot
     total_number_scatterings_real = nsc_real/nphot
     total_number_backscatterings = nin/nphot
     backstreaming_phot = count_neg_phot/nphot
+    
+    display('____________________________________')
     
 end

@@ -63,11 +63,22 @@ test_number_3 = 20;
 overlap_number = 25;
 test_superposition(save_figures,multiplication,test_number_1,test_number_2,test_number_3,overlap_number);
 
+save_fig = 1
+xmueout_only_pos = 1
+if save_fig == 1
+    if xmueout_only_pos == 1
+        saveas(gcf,'figures/multiplication_vs_complex_interactions_xmueout_pos.png')
+    else
+        saveas(gcf,'figures/multiplication_vs_complex_interactions_xmueout_iso.png')
+    end
+end
+
 %% very SIMPLE test
 clc, clear all
 
 test_number = 21;                                   
-[freq,flux_two,number_scatterings,photon_path,yes,luminosity,rmax,total_number_backscatterings] = test_file(test_number);
+[freq,flux,total_number_scatterings,photon_path,yes,luminosity,rmax,total_number_backscatterings,...
+    dLdr,g_radiation,scattering_x] = test_file(test_number);
 
 photon_path(:,18:end);
 for k=1:length(photon_path(end,:))
@@ -75,6 +86,27 @@ for k=1:length(photon_path(end,:))
         display('whow')
     end
 end
+
+photon_path(:,1:10)
+scattering_x(:,1:10)
+
+display('_____________statistics for luminosity_________________')
+photon_path(isnan(photon_path)) = 0;
+count_first_x = 0;
+count_second_x = 0;
+number_scattered_photons = 0;
+for k=1:size(photon_path,2)
+    if isnan(scattering_x(1,k)) == 0
+        if photon_path(max(find(photon_path(:,k))),k) == -0.5
+            count_first_x = count_first_x + 1;
+        else
+            count_second_x = count_second_x + 1;
+        end
+        number_scattered_photons = number_scattered_photons + 1;
+    end
+end
+count_first_x = count_first_x/number_scattered_photons
+count_second_x = count_second_x/number_scattered_photons
 
 %% figures for paragraph 'EXPERIMENTS AND RESULTS. (1) AND (2)'
 clc, close all, clear all
@@ -175,21 +207,6 @@ b(15:10) = b(15:10) + 1;
 % check if these are the same
 verschil = a - b;
 
-%% test xmueout(xk0,alpha,r,v,sigma,all_radial)
-xk0 = 100
-alpha = 0
-r = 1
-v = 1
-sigma = 1
-all_radial = 0
-
-K = 10^4;
-for k = 1:K
-    xmueou(k) = xmueout(xk0,alpha,r,v,sigma,all_radial);
-end
-
-figure()
-histogram(xmueou)
 
 %% test scattering distribution
 clc, clear all, close all
@@ -288,12 +305,13 @@ clc, clear all, close all
 beta = 1; nbins = 100; nrbins = 100; resonance_x = 0; nphot = 10^4; compare_Fortran = 1;
 [~,vmin,vmax,~,~,~,b,xmin,~,rmax,~,~,~] = param_init(beta,nbins,nrbins,resonance_x,compare_Fortran,nphot);
 
-xmuestart = 1;
+N = 100;
+
+xmuestart = rand(1,N);
 xmuein = 1;
 xk0 = 100;
 alpha = 0;
 
-N = 100
 xstart = linspace(0.01,0.98,N);
 x = linspace(-1,1,N);
 r = b./(1-xstart.^(1/beta));
@@ -303,17 +321,38 @@ dvdr = b*beta./r.^2.*(1-b./r).^(beta-1);
 sigma = dvdr./(v./r)-1;
 tau = xk0./(r.*v.^(2-alpha).*(1+xmuein^2*sigma));
             
-xmueout = (1-exp(-tau))./tau;
+xmueou = (1-exp(-tau))/tau
+
+xnew = xstart + v.*(xmueou-xmuein)
 
 % figure()
 % plot(xstart,xnew)
 % title('radial release')
 
-% figure()
-% histogram(xmueout)
-% % hold on, histogram(xnew)
+figure()
+histogram(xnew)
 
-% simple proposal
-px = 1-log(x)
-plot(x,px)
 
+
+% simple (BUT INCORRECT) proposal
+% px = 1-log(x)
+% plot(x,px)
+
+%% test xmueout(xk0,alpha,r,v,sigma,all_radial)
+xk0 = 100
+alpha = 0
+r = 2
+v = 3
+sigma = 1
+all_radial = 0
+
+K = 10^4;
+for k = 1:K
+    xmueou(k) = xmueout(xk0,alpha,r,v,sigma,all_radial);
+    if rand > 0.5
+        xmueou = -xmueou;
+    end
+end
+
+figure()
+histogram(xmueou,'Normalization','pdf')
