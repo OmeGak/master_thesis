@@ -5,6 +5,9 @@ function [xmuestart,xmueou,one_photon_path] = release_photon(xstart,radial_relea
             xmuestart = Eddington();
         else
             xmuestart = sqrt(rand);
+%             if rand < 0.5
+%                 xmuestart = -xmuestart;
+%             end
         end
         one_photon_path = [xstart ; xmuestart ; goto_end_of_loop];
         

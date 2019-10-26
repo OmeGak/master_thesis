@@ -5,13 +5,10 @@ test_number = 0;
 [freq,flux_two,number_scatterings,photon_path,yes,luminosity,rmax,total_number_backscatterings] = test_file(test_number);
 
 
-%%
-plot(luminosity)
-
 %% ancient version
 clc, clear all, close all
 
-xk0 = 0.00005
+xk0 = 100
 nphot = 10^5
 alpha = 0
 beta = 1
@@ -74,21 +71,11 @@ if save_fig == 1
 end
 
 %% very SIMPLE test
-clc, clear all
+clc, clear all, close all
 
 test_number = 21;                                   
 [freq,flux,total_number_scatterings,photon_path,yes,luminosity,rmax,total_number_backscatterings,...
     dLdr,g_radiation,scattering_x] = test_file(test_number);
-
-photon_path(:,18:end);
-for k=1:length(photon_path(end,:))
-    if photon_path(end,k) == 0.5
-        display('whow')
-    end
-end
-
-photon_path(:,1:10)
-scattering_x(:,1:10)
 
 display('_____________statistics for luminosity_________________')
 photon_path(isnan(photon_path)) = 0;
@@ -107,6 +94,15 @@ for k=1:size(photon_path,2)
 end
 count_first_x = count_first_x/number_scattered_photons
 count_second_x = count_second_x/number_scattered_photons
+
+%% test_convergence
+clc, close all, clear all
+
+range_max = 4;
+make_save = 1;
+close_all = 1;
+test_convergence(range_max,make_save,close_all)
+
 
 %% figures for paragraph 'EXPERIMENTS AND RESULTS. (1) AND (2)'
 clc, close all, clear all
@@ -356,3 +352,9 @@ end
 
 figure()
 histogram(xmueou,'Normalization','pdf')
+
+%% test_luminosity
+clc, clear all, close all
+
+test_number = 0;
+[freq, flux_two, number_scatterings , photon_path , ~ , luminosity , ~, ~, dLdr ,~] = test_luminosity(test_number);

@@ -3,6 +3,9 @@ function plot_track_path(photon_path,track_path,b,number_paths,make_save,rmax)
 
     if track_path == 1
         %% A) plot photon path
+        
+        photon_path(isnan(photon_path)) = 0;
+        
         Nphot = number_paths;
         
         figure()
@@ -11,34 +14,38 @@ function plot_track_path(photon_path,track_path,b,number_paths,make_save,rmax)
         rMAX = 5;
         rMIN = -5;
         
-        for phot = 18:Nphot
+        for phot = 1:Nphot
                 % specify a color
                 a = c_map(phot,:);
 
                 phot_number_scatterings = find(photon_path(1:end-1,phot));
-                phot_number_scatterings = (max(phot_number_scatterings)-2)/3;
+                phot_number_scatterings = ceil((max(phot_number_scatterings)-3)/4);
 
-%                 display('----')
-%                 display(phot)
-%                 display(phot_number_scatterings)
-
-                % initial shooting
+                % initial location of photon
                 phot_loc_x = 1;
                 phot_loc_y = 0;
                 old_radius = 1;
 
-                % other scattering events
+                % all scattering events, but not the last
+                amount_scatterings = 0;
                 if phot_number_scatterings >= 1
                     for k = 0:phot_number_scatterings-1
 
-                        new_angle = acos(photon_path(2*k+2,phot));
-                        new_angle_y_sign = sign(photon_path(2*k+2,phot));
-                        new_radius = photon_path(2*k+3,phot);
+                        if amount_scatterings == 0
+                            angle_index = 2;
+                        else
+                            angle_index = 3+4*k+2;
+                        end
+                        radius_index = 3+4*k+1;
+                        
+                        new_angle = acos(photon_path(angle_index , phot));
+                        new_angle_y_sign = sign(photon_path(angle_index , phot));
+                        new_radius = photon_path(radius_index , phot);
 
                         syms phi
                         new_angle = vpasolve(sin(new_angle-phi)/old_radius - sin(pi-new_angle)/new_radius, phi);
                         if length(new_angle) == 0
-                            new_angle = acos(photon_path(2*k+2,phot));
+                            new_angle = acos(photon_path(angle_index, phot));
                         end
 
                         phot_loc_x = [phot_loc_x(end), cos(new_angle)*new_radius];
@@ -49,26 +56,26 @@ function plot_track_path(photon_path,track_path,b,number_paths,make_save,rmax)
 
                         rMAX = max([rMAX,phot_loc_x]);
                         rMIN = min([rMIN,phot_loc_x]);
+                        
+                        amount_scatterings = amount_scatterings + 1;
                     end
                 end
-
                 
-                % neem nog een eindstraal van R
-                last_index = max(find(photon_path(:,phot)));
+                last_angle_index = max(2,(phot_number_scatterings >= 1)*(3+4*(phot_number_scatterings-1)+2));
+                new_angle = acos(photon_path(last_angle_index , phot));
                 
-                if last_index > 1
-                    R = 2;
-                    phot_loc_x = [phot_loc_x(end), phot_loc_x(end) + R*photon_path(last_index,phot)];
-                    phot_loc_y = [phot_loc_y(end), phot_loc_y(end) + R*sign(photon_path(last_index,phot))*sqrt(1-photon_path(last_index,phot)^2)];
-                    hold on, plot(phot_loc_x,phot_loc_y,'--','MarkerSize',20,'color',a)
-                    rMAX = max([rMAX,phot_loc_x]);
-                    rMIN = min([rMIN,phot_loc_x]);
-                end
+                R = 2;
+                phot_loc_x = [phot_loc_x(end), phot_loc_x(end) + R*cos(new_angle)];
+                phot_loc_y = [phot_loc_y(end), phot_loc_y(end) + R*sign(new_angle)*sin(new_angle)];
+                hold on, plot(phot_loc_x,phot_loc_y,'--','MarkerSize',20,'color',a);
+                
+                % for nic plot purposes
+                rMAX = max([rMAX,phot_loc_x]);
+                rMIN = min([rMIN,phot_loc_x]);
                 
         % end the loop over the photons
         end
-        
-        
+
         % make schematical picture of star
         x = linspace(-1,1,40);
         hold on, plot(x,sqrt(1-x.^2),'color','yellow','LineWidth',5)
@@ -79,18 +86,12 @@ function plot_track_path(photon_path,track_path,b,number_paths,make_save,rmax)
         x = linspace(-R,R,60);
         hold on, plot(x,sqrt(R^2-x.^2),'--','color','blue')
         hold on, plot(x,-sqrt(R^2-x.^2),'--','color','blue')
-        
-%         % make picture of outermost radius
-%         R = rmax;
-%         x = linspace(-R,R,600);
-%         hold on, plot(x,sqrt(R^2-x.^2),'--','color','blue')
-%         hold on, plot(x,-sqrt(R^2-x.^2),'--','color','blue')
-        
-        % perform some formatting
+              
+        % perform some nice formatting
         rMIN = double(rMIN);
         rMAX = double(rMAX);
         xlim([rMIN,rMAX])
-        title(['scattering history (',num2str(Nphot-18+1),' photons)'])
+        title(['scattering history (',num2str(Nphot),' photons)'])
             
         %% B) plot velocity profile
         subplot(3,1,3)

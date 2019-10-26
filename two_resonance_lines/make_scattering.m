@@ -1,7 +1,7 @@
 function [xnew,rnew,nin,last_scatter,xmueou,nsc,one_photon_path,forget_photon,luminosity,nsc_real,tau_decides_no_scatter_x] ...
             =  make_scattering(xstart,xmuestart,r_init,...
                 beta,alpha,b,rmax,nin,resonance_x,resonance_tau,all_radial,isotropic_scattering,nsc,...
-                one_photon_path,vmin,vmax,xstart_Fortran,luminosity,nrbins,nsc_real,tau_decides_no_scatter_x,phot)
+                one_photon_path,vmin,vmax,xstart_Fortran,luminosity,nrbins,nsc_real,tau_decides_no_scatter_x,phot,only_positive_xmueou)
     
     % initialize parameters        
     forget_photon = 0;
@@ -76,12 +76,14 @@ function [xnew,rnew,nin,last_scatter,xmueou,nsc,one_photon_path,forget_photon,lu
                 xmueou = 2*rand-1;
             end
             
-            if rand >= 0.5
-%                 xmueou = -xmueou;
-%                 if sqrt(rnew^2*(1-xmueou^2)) <= 1
-%                     nin = nin +1;
-%                     forget_photon = 1;                                     % mind L(r)
-%                 end
+            if only_positive_xmueou == 0
+                if rand >= 0.5
+                    xmueou = -xmueou;
+                    if sqrt(rnew^2*(1-xmueou^2)) <= 1
+                        nin = nin +1;
+                        forget_photon = 1;                                     % mind L(r)
+                    end
+                end
             end
             
         else

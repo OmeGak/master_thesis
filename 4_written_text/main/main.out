@@ -66,27 +66,35 @@
 \BOOKMARK [1][-]{section.23}{Development of computer code \(in Matlab\)}{part.3}% 66
 \BOOKMARK [2][-]{subsection.23.1}{Implementation in Matlab: user's manual}{section.23}% 67
 \BOOKMARK [2][-]{subsection.23.2}{Keeping track of the photon path}{section.23}% 68
-\BOOKMARK [2][-]{subsection.23.3}{Experiments and results}{section.23}% 69
-\BOOKMARK [1][-]{section.24}{Computing the radiation force \046 luminosity L\(r\)}{part.3}% 70
-\BOOKMARK [2][-]{subsection.24.1}{Theoretical formulas}{section.24}% 71
-\BOOKMARK [2][-]{subsection.24.2}{Solution strategy}{section.24}% 72
-\BOOKMARK [2][-]{subsection.24.3}{Checking the correctness of the program}{section.24}% 73
-\BOOKMARK [2][-]{subsection.24.4}{Computing the radiation force for one line}{section.24}% 74
-\BOOKMARK [2][-]{subsection.24.5}{Multiple lines}{section.24}% 75
-\BOOKMARK [2][-]{subsection.24.6}{Theoretical considerations}{section.24}% 76
-\BOOKMARK [1][-]{section.25}{Backup from theory}{part.3}% 77
-\BOOKMARK [1][-]{section.26}{Extension to higher dimensions}{part.3}% 78
-\BOOKMARK [1][-]{section.27}{Closer look at Monte Carlo simulations}{part.3}% 79
-\BOOKMARK [2][-]{subsection.27.1}{Random walk \(diffusion equation\)}{section.27}% 80
-\BOOKMARK [2][-]{subsection.27.2}{Limb darkening}{section.27}% 81
-\BOOKMARK [0][-]{part.4}{IV Questions}{}% 82
-\BOOKMARK [1][-]{section.28}{Questions for professor Sundqvist}{part.4}% 83
-\BOOKMARK [1][-]{section.29}{Questions for professor Samaey}{part.4}% 84
-\BOOKMARK [1][-]{section.30}{Solved questions}{part.4}% 85
-\BOOKMARK [1][-]{section.31}{Interesting problems}{part.4}% 86
-\BOOKMARK [1][-]{section.32}{Do not forget}{part.4}% 87
-\BOOKMARK [0][-]{part.5}{V Thesis meetings}{}% 88
-\BOOKMARK [1][-]{section.33}{Meeting on 6 September 2019}{part.5}% 89
-\BOOKMARK [1][-]{section.34}{Meeting on 23 September 2019}{part.5}% 90
-\BOOKMARK [1][-]{section.35}{Meeting on 30 September 2019}{part.5}% 91
-\BOOKMARK [0][-]{part.6}{VI Equation meetings}{}% 92
+\BOOKMARK [1][-]{section.24}{Experiments and results}{part.3}% 69
+\BOOKMARK [2][-]{subsection.24.1}{About the scattering probability distribution}{section.24}% 70
+\BOOKMARK [2][-]{subsection.24.2}{Single resonance line}{section.24}% 71
+\BOOKMARK [2][-]{subsection.24.3}{Multiple line formation}{section.24}% 72
+\BOOKMARK [2][-]{subsection.24.4}{Effect of the opacity}{section.24}% 73
+\BOOKMARK [2][-]{subsection.24.5}{Observations}{section.24}% 74
+\BOOKMARK [2][-]{subsection.24.6}{Convergence behaviour}{section.24}% 75
+\BOOKMARK [2][-]{subsection.24.7}{Some theoretical observations}{section.24}% 76
+\BOOKMARK [1][-]{section.25}{Computing the radiation force \046 luminosity L\(r\)}{part.3}% 77
+\BOOKMARK [2][-]{subsection.25.1}{Theoretical formulas}{section.25}% 78
+\BOOKMARK [2][-]{subsection.25.2}{Solution strategy}{section.25}% 79
+\BOOKMARK [2][-]{subsection.25.3}{Checking the correctness of the program}{section.25}% 80
+\BOOKMARK [2][-]{subsection.25.4}{Computing the radiation force for one line}{section.25}% 81
+\BOOKMARK [2][-]{subsection.25.5}{Multiple lines}{section.25}% 82
+\BOOKMARK [2][-]{subsection.25.6}{Theoretical considerations}{section.25}% 83
+\BOOKMARK [2][-]{subsection.25.7}{With high xk0}{section.25}% 84
+\BOOKMARK [1][-]{section.26}{Backup from theory}{part.3}% 85
+\BOOKMARK [1][-]{section.27}{Extension to higher dimensions}{part.3}% 86
+\BOOKMARK [1][-]{section.28}{Closer look at Monte Carlo simulations}{part.3}% 87
+\BOOKMARK [2][-]{subsection.28.1}{Random walk \(diffusion equation\)}{section.28}% 88
+\BOOKMARK [2][-]{subsection.28.2}{Limb darkening}{section.28}% 89
+\BOOKMARK [0][-]{part.4}{IV Questions}{}% 90
+\BOOKMARK [1][-]{section.29}{Questions for professor Sundqvist}{part.4}% 91
+\BOOKMARK [1][-]{section.30}{Questions for professor Samaey}{part.4}% 92
+\BOOKMARK [1][-]{section.31}{Solved questions}{part.4}% 93
+\BOOKMARK [1][-]{section.32}{Interesting problems}{part.4}% 94
+\BOOKMARK [1][-]{section.33}{Do not forget}{part.4}% 95
+\BOOKMARK [0][-]{part.5}{V Thesis meetings}{}% 96
+\BOOKMARK [1][-]{section.34}{Meeting on 6 September 2019}{part.5}% 97
+\BOOKMARK [1][-]{section.35}{Meeting on 23 September 2019}{part.5}% 98
+\BOOKMARK [1][-]{section.36}{Meeting on 30 September 2019}{part.5}% 99
+\BOOKMARK [0][-]{part.6}{VI Equation meetings}{}% 100

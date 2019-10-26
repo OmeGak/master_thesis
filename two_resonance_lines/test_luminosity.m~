@@ -1,15 +1,20 @@
-function [freq, flux_two, number_scatterings , photon_path , yes , luminosity , rmax, backscatterings , dLdr ,g_radiation] = ...
-            test_luminosity(test_number)
+function [freq, flux_two, number_scatterings , photon_path , yes , luminosity , rmax, backscatterings , dLdr ,g_radiation]test_luminosity()
     %% do simple test with LUMINOSITY
 
     % get the data
     display('*******************************************')
-    
+    test_photon_path = 0;
+    test_luminosity = 1;
+
+    test_number = 0;
     [freq, flux_two, number_scatterings , photon_path , yes , luminosity , rmax, backscatterings , dLdr ,g_radiation] ...
         = test_file(test_number);
 
-    nphot = 10^5;   
-    luminosity_star_surface = luminosity(1)
+    nphot = 10^5;
+
+    nrbins = 100;
+    r_array = linspace(1,rmax,nrbins);
+    correction_factor = number_scatterings*(1+0.25*(1+0.25))
 
     % second part: make plot
     display('*******************************************')
@@ -17,8 +22,9 @@ function [freq, flux_two, number_scatterings , photon_path , yes , luminosity , 
 
     % PLOT LUMINOSITY
         figure()
-        nrbins = 100; r_array = linspace(1,rmax,nrbins);
+        %     subplot(1,2,1)
         loglog(r_array,luminosity)
+        %     hold on, plot(linspace(min(r_array),max(r_array),10),nphot*correction_factor*ones(1,10),'--')
         xlim([1,rmax])
         xlabel('r')
         ylabel('L(r)','Rotation',0)
@@ -26,9 +32,9 @@ function [freq, flux_two, number_scatterings , photon_path , yes , luminosity , 
 
         figure()
         loglog(r_array(1:end-1),abs(dLdr))
-        
-        r_array_ = r_array(1:end-1);
+        r_array_ = r_array(1:end-1)
         hold on, plot (r_array_,10^5*r_array_.^(-2),'--')
+        %     hold on, plot(linspace(min(r_array),max(r_array),10),nphot*correction_factor*ones(1,10),'--')
         xlim([1,rmax])
         xlabel('r')
         ylabel('L(r)','Rotation',0)

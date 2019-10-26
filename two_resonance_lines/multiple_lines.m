@@ -4,7 +4,7 @@ function [freq,flux,total_number_scatterings,photon_path,yes,luminosity,rmax,tot
         resonance_x,resonance_tau,save,nbins,nrbins,possibility_scattering,multiple_scatterings,...
         all_radial,radial_release,isotropic_scattering,Eddington_limb_darkening,plot_only_scattering,...
         random_number,track_path,number_paths,make_save,compare_Fortran,...
-        deterministic_sampling_x,xstart_Fortran)  
+        deterministic_sampling_x,xstart_Fortran,only_positive_xmueou)  
     
     clc
     rng(random_number);
@@ -33,12 +33,12 @@ function [freq,flux,total_number_scatterings,photon_path,yes,luminosity,rmax,tot
         last_scatter = 0;
         r_init = rmin;
         tau_decides_no_scatter_x = max(resonance_x) + vmax + 1;
-        while (last_scatter == 0) & (goto_end_of_loop == 0) & (possibility_scattering == 1)   
+        while (last_scatter == 0) & (goto_end_of_loop == 0) & (possibility_scattering == 1) & (forget_photon == 0)
             [xnew,r_new,nin,last_scatter,xmueou,phot_nsc,one_photon_path,forget_photon,luminosity,phot_nsc_real,...
                 tau_decides_no_scatter_x] = ...
                     make_scattering(xstart,xmuestart,r_init,beta,alpha,b,rmax,nin,...
                         resonance_x,resonance_tau,all_radial,isotropic_scattering,phot_nsc,...
-                        one_photon_path,vmin,vmax,xstart_Fortran,luminosity,nrbins,phot_nsc_real,tau_decides_no_scatter_x,phot);
+                        one_photon_path,vmin,vmax,xstart_Fortran,luminosity,nrbins,phot_nsc_real,tau_decides_no_scatter_x,phot,only_positive_xmueou);
             
             last_scatter = secundary_resonance_possible(xnew,resonance_x,vmin,vmax,last_scatter);
             xstart = xnew; 

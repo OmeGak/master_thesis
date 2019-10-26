@@ -225,70 +225,74 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {23.2}Keeping track of the photon path}{40}{subsection.23.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {23.3}Experiments and results}{41}{subsection.23.3}
+\contentsline {section}{\numberline {24}Experiments and results}{41}{section.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {23.3.1}About the scattering probability distribution}{41}{subsubsection.23.3.1}
+\contentsline {subsection}{\numberline {24.1}About the scattering probability distribution}{41}{subsection.24.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {23.3.2}Single resonance line}{41}{subsubsection.23.3.2}
+\contentsline {subsection}{\numberline {24.2}Single resonance line}{41}{subsection.24.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {23.3.3}Multiple line formation}{42}{subsubsection.23.3.3}
+\contentsline {subsection}{\numberline {24.3}Multiple line formation}{42}{subsection.24.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {23.3.4}Effect of the opacity}{43}{subsubsection.23.3.4}
+\contentsline {subsection}{\numberline {24.4}Effect of the opacity}{42}{subsection.24.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {23.3.5}Is superposition valid?}{44}{subsubsection.23.3.5}
+\contentsline {subsection}{\numberline {24.5}Observations}{43}{subsection.24.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {23.3.6}Some theoretical observations}{44}{subsubsection.23.3.6}
+\contentsline {subsection}{\numberline {24.6}Convergence behaviour}{44}{subsection.24.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {24}Computing the radiation force \& luminosity $L(r)$}{45}{section.24}
+\contentsline {subsection}{\numberline {24.7}Some theoretical observations}{45}{subsection.24.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {24.1}Theoretical formulas}{45}{subsection.24.1}
+\contentsline {section}{\numberline {25}Computing the radiation force \& luminosity $L(r)$}{46}{section.25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {24.2}Solution strategy}{45}{subsection.24.2}
+\contentsline {subsection}{\numberline {25.1}Theoretical formulas}{46}{subsection.25.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {24.3}Checking the correctness of the program}{45}{subsection.24.3}
+\contentsline {subsection}{\numberline {25.2}Solution strategy}{46}{subsection.25.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {24.4}Computing the radiation force for one line}{46}{subsection.24.4}
+\contentsline {subsection}{\numberline {25.3}Checking the correctness of the program}{46}{subsection.25.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {24.5}Multiple lines}{46}{subsection.24.5}
+\contentsline {subsection}{\numberline {25.4}Computing the radiation force for one line}{47}{subsection.25.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {24.6}Theoretical considerations}{47}{subsection.24.6}
+\contentsline {subsection}{\numberline {25.5}Multiple lines}{47}{subsection.25.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {24.6.1}Analytical quantities}{47}{subsubsection.24.6.1}
+\contentsline {subsection}{\numberline {25.6}Theoretical considerations}{48}{subsection.25.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {24.6.2}From numerical computations}{47}{subsubsection.24.6.2}
+\contentsline {subsubsection}{\numberline {25.6.1}Analytical quantities}{48}{subsubsection.25.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {24.6.3}These quantities should equal}{47}{subsubsection.24.6.3}
+\contentsline {subsubsection}{\numberline {25.6.2}From numerical computations}{48}{subsubsection.25.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {25}Backup from theory}{48}{section.25}
+\contentsline {subsubsection}{\numberline {25.6.3}These quantities should equal}{48}{subsubsection.25.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {26}Extension to higher dimensions}{49}{section.26}
+\contentsline {subsection}{\numberline {25.7}With high \texttt {xk0}}{49}{subsection.25.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {27}Closer look at Monte Carlo simulations}{50}{section.27}
+\contentsline {section}{\numberline {26}Backup from theory}{50}{section.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {27.1}Random walk (diffusion equation)}{50}{subsection.27.1}
+\contentsline {section}{\numberline {27}Extension to higher dimensions}{51}{section.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {27.2}Limb darkening}{51}{subsection.27.2}
+\contentsline {section}{\numberline {28}Closer look at Monte Carlo simulations}{52}{section.28}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{IV\hspace {1em}Questions}{53}{part.4}
+\contentsline {subsection}{\numberline {28.1}Random walk (diffusion equation)}{52}{subsection.28.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {28}Questions for professor Sundqvist}{53}{section.28}
+\contentsline {subsection}{\numberline {28.2}Limb darkening}{53}{subsection.28.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {29}Questions for professor Samaey}{53}{section.29}
+\contentsline {part}{IV\hspace {1em}Questions}{55}{part.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {30}Solved questions}{54}{section.30}
+\contentsline {section}{\numberline {29}Questions for professor Sundqvist}{55}{section.29}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {31}Interesting problems}{55}{section.31}
+\contentsline {section}{\numberline {30}Questions for professor Samaey}{55}{section.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{might be interesting for looking at}{55}{section*.60}
+\contentsline {section}{\numberline {31}Solved questions}{56}{section.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {32}Do not forget}{55}{section.32}
+\contentsline {section}{\numberline {32}Interesting problems}{57}{section.32}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{V\hspace {1em}Thesis meetings}{57}{part.5}
+\contentsline {paragraph}{might be interesting for looking at}{57}{section*.62}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {33}Meeting on 6 September 2019}{57}{section.33}
+\contentsline {section}{\numberline {33}Do not forget}{57}{section.33}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {34}Meeting on 23 September 2019}{57}{section.34}
+\contentsline {part}{V\hspace {1em}Thesis meetings}{59}{part.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {35}Meeting on 30 September 2019}{57}{section.35}
+\contentsline {section}{\numberline {34}Meeting on 6 September 2019}{59}{section.34}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{VI\hspace {1em}Equation meetings}{57}{part.6}
+\contentsline {section}{\numberline {35}Meeting on 23 September 2019}{59}{section.35}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {36}Meeting on 30 September 2019}{59}{section.36}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{VI\hspace {1em}Equation meetings}{59}{part.6}
