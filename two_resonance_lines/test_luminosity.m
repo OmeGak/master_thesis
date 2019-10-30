@@ -12,7 +12,6 @@ function [freq, flux_two, number_scatterings , photon_path , yes , luminosity , 
         rmax, backscatterings , dLdr ,g_radiation,scattering_x,forgotten_photons,luminosity_min] ...
         = test_file(test_number);
 
-    nphot = 10^5;   
     luminosity_star_surface = luminosity(1)
     photon_path;
     forgotten_photons

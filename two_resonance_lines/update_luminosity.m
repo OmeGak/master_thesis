@@ -2,7 +2,7 @@ function [luminosity,count_neg_phot,luminosity_min] = update_luminosity(xmuestar
     goto_end_of_loop , forget_photon , phot,luminosity_min);
     % update luminosity at final time
     
-    if phot == 98
+    if phot > 0
         dr = (rmax-rmin)/nrbins;
         
         if (goto_end_of_loop == 1) | (forget_photon == 1) 
@@ -45,9 +45,9 @@ function [luminosity,count_neg_phot,luminosity_min] = update_luminosity(xmuestar
 
                     % positive contribution
                     if floor(abs(r_nearest_star-r_init)/dr) > 1
-                        r_index_min = floor((r_nearest_star-rmin)/dr) + 2;
+                        r_index_min = floor((r_nearest_star-rmin)/dr) + 1;
                     else
-                        r_index_min = floor((r_init-rmin)/dr) + 2;
+                        r_index_min = floor((r_init-rmin)/dr) + 1;
                     end
                     r_index_max = nrbins;
                     luminosity(r_index_min : r_index_max) = luminosity(r_index_min : r_index_max) + 1;     

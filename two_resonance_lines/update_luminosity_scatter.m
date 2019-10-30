@@ -1,7 +1,7 @@
 function [luminosity,luminosity_min] = update_luminosity_scatter(xmuestart,rnew,luminosity,r_init,rmax,nrbins,forget_photon,phot,luminosity_min)
     % photon flying from r_init to rnew
     
-if phot == 98
+if phot > 0
         dr = (rmax-1)/nrbins;
         rmin = 1;
         

@@ -447,7 +447,6 @@ The thing is that Eddington specifies $S(\tau)$ but not $S(\mu)$ directly. If th
   \parbox{\textwidth}{
   dat ziet er hier niet goed uit }}
 
-\newpage
 \subsection{2D Case}
 We again have $\mu = \cos(\theta)$. The solution of the radiative transfer equation in \underline{plane-parallel syummetry} with frequency-independent absorption and emission, is 
 \begin{equation}
@@ -513,19 +512,28 @@ Calculates the angular dependence of photon's emitted from a plane-parallel, gre
 \end{figure}
 Figure \ref{2D_mu} is according to what is expected $I = I_0(0.4+0.6\mu)$. The input parameters are as follows \texttt{Limb\_Darkening(number\_of\_channels = 20, number\_of\_photons = $10^5$, \\ maximum\_optical\_depth = 10)}.
 
-
-\cleardoublepage
+\newpage
 \subsection{Calculating the moments of intensity: study}
 \label{limb_darkening_moments_intensity}
 
 Limb darkening. Expected results in Equation (\ref{2D_case_Eddington_barbier}). The first angular moment $J(r)$ of the intensity should approximately equal Equation (\ref{Eddington_Barbier}), if the Eddington-Barbier approximation is valid. I am now also interested in computing $J(r)$, numerically. Photons are counted using formula in Table \ref{compu_moments_intensity}.
 
 \begin{figure}[!htp]
+\hspace*{-0.5in}
 \centering
-\includegraphics[width=0.6\textwidth]{../../introductory_exercises/limb_darkening/figures/J_vs_tau_nphot100000.png}
-\caption{$J(\tau)$ as numerically computed with MC limb darkening algorithm}
+\begin{subfigure}{.6\textwidth}
+\includegraphics[width=1\textwidth]{../../introductory_exercises/limb_darkening/figures/J_vs_tau_nphot1000.png}
+\caption{$J(\tau)$ as numerically computed with MC method}
 \label{J(tau)}
+\end{subfigure}%
+\begin{subfigure}{.6\textwidth}
+\includegraphics[width=1\textwidth]{../../introductory_exercises/limb_darkening/figures/H_vs_tau_nphot1000.png}
+\caption{$H(\tau)$ as numerically computed with MC method}
+\label{J(tau)}
+\end{subfigure}
 \end{figure}
+
+One (numerical) problem here is that photons with $\mu_i \rightarrow 0$ would give a very high contribution to $J(r)$. To overcome this, only photons with an angle $\mu > 0.1$ are counted.
 
 \paragraph{Problem} From Figure \ref{J(tau)} (output of Monte Carlo simulation), $J(\tau) \equiv J$ seems to be constant. This is not as predicted in Equation (\ref{Eddington_Barbier}).
 
@@ -538,10 +546,6 @@ One can understand this result as follows: photons are counted according to the 
 \caption{$J(\tau)$}
 \label{J(tau)}
 \end{figure}
-
-\paragraph{Conclusion} ... where do I make an error in my reasoning or coding?
-
-Thank you for looking at this :) Ignace.
 
 \newpage
 \subsection{3D Case}
@@ -582,59 +586,11 @@ Via this link, you can go back to the exercises overview: Section \underline{\re
 
 
 \newpage
-\section{Spectral line formation: pcyg.f90}
+\part{Spectral line formation: pcyg.f90}
+
+\section{Basics}
 This section is about the study of line formation in an expanding wind.
 
-\subsection*{Background}
-\begin{center}
-\centering
-{\tabulinesep=1.5mm
-\begin{tabu}{|c|c|c|}
-\hline 
-name & explanation \\ \hline \hline
-
-\multicolumn{2}{|c|}{\cellcolor{orange} paramaters} \\ \hline
-xk0 & \\ \hline
-alpha & velocity profile parameter \\ \hline
-beta & velocity profile parameter \\ \hline \hline
-
-\multicolumn{2}{|c|}{\cellcolor{orange} start frequency of the photon} \\ \hline
-xstart & start frequency \\ \hline
-vmin & \\ \hline
-vmax  & \\ \hline
-
-\multicolumn{2}{|c|}{\cellcolor{orange}angle of the photon} \\ \hline
-xmuestart & start angle \\ \hline
-xmuein & incident angle \\ \hline
-xmueou & outward angle \\ \hline
-\cellcolor{yellow} pstart & impact parameter \\ \hline
-xnew & new photon frequency \\ \hline \hline
-
-\multicolumn{2}{|c|}{\cellcolor{orange} optical depth} \\ \hline
-tau & optical depth \\ \hline
-
-\multicolumn{2}{|c|}{\cellcolor{orange} number of photons admin} \\ \hline
-nphot & number of photons\\ \hline
-nin & photons scattered back into core \\ \hline
-nout & photons escaped \\ \hline \hline
-
-\multicolumn{2}{|c|}{\cellcolor{orange} functions} \\ \hline
-func & velocity profile \\ 
-	& distance from center of star $r$ \\ \hline
-	
-xmueout & outwards (scattered) angle \\ 
-& xk0 \\ 
-& alpha \\ 
-& r \\ 
-& v \\ 
-& sigma \\ \hline \hline
-
-\multicolumn{2}{|c|}{\cellcolor{orange} photon tallying} \\ \hline
-nchan & amount of bins \\ \hline
-\end{tabu}}
-\end{center}
-
-\newpage
 \begin{center}
 \begin{tikzpicture}
 [node distance=2.5cm,auto,>=latex']
@@ -645,24 +601,12 @@ nchan & amount of bins \\ \hline
     \path[->] (a) edge node {\texttt{xnew}} (c);
 \end{tikzpicture}
 \end{center}
-The photons are sorted according to \texttt{xnew}.
-In general, the flux is dependent on $\mu$ and the frequency $x$.
 
-
-\paragraph{Practical formula}
-\begin{itemize}
-\item emission angle $\mu = \cos(\theta)$
-\item according p-ray $p = \sqrt{1-\mu^2} = \sin(\theta)$
-\item incident angle $\texttt{xmuein} = \sqrt{1-\left(\frac{pstart}{r}\right)^2}$
-\end{itemize}
-
-\paragraph{Geometry \& Symmetry assumptions}
 \begin{itemize}
 \item spherical geometry
 \end{itemize}
 
 
-\newpage
 \subsection{First adaptation: what if all photons are released radially from photosphere?}
 \label{PCYG FIRST adaptation}
 
@@ -1430,16 +1374,11 @@ This is based upon material from the text provided by professor Sundqvist, and t
 g_{\text{radiation}} =  \frac{\Delta p}{\Delta t \Delta m} = \frac{\Delta E}{v} \frac{1}{\Delta t} \frac{v}{M \Delta r} = - \frac{1}{\dot{M}}\frac{dL}{dr}
 \end{equation}
 
-\item Numerical approximation, we count photons
-\begin{equation}
-L(r) = \frac{1}{\Delta t} \sum_i \epsilon_i \text{sign}(\mu_i(r))
-\end{equation}
-where $L(r_*)$ is given and the photon energies $\epsilon_i$ are given by a black-body distribution.
+\item Numerical approximation, we count photons according to formulas in Table \ref{compu_moments_intensity}.
 \end{enumerate}
 
 \subsection{Solution strategy}
 Loop over all photons. In that loop, loop over all $r$ values and assign the corresponding angle. Update the array at each scattering event.
-
 
 \begin{itemize}
 \item create a grid for $r$
@@ -1592,20 +1531,18 @@ g_{\text{radiation}} =
 \frac{4 \pi R_* v_{\infty}^2}{ \dot{M}} 
 r^2 v \left | \frac{dv_l}{dl} \right|  \left( 1- e^{-\tau_S} \right)}
 \end{equation}
-Now since we are assuming spherical symmetry
+Now since we are assuming spherical symmetry then $F_{\nu_0} = \frac{L_{0}}{4 \pi r^2 }$
 \begin{equation}
 \boxed{g_{\text{radiation}} = 
-\frac{F_{\nu_0}}{c \lambda_0} 
+\frac{L_{\nu_0}}{c \lambda_0} 
 \frac{4 \pi R_* v_{\infty}^2} {\dot{M}} 
 v \left | \frac{dv_l}{dl} \right|  \left( 1- e^{-\tau_S} \right)}
 \end{equation}
+\paragraph{Special case $\beta= 1$}
+Averaging over all $\mu$ angles, we have 
 \begin{equation}
-\boxed{g_{\text{radiation}} = 
-\frac{F_{\nu_0} \nu_0}{c^2} 
-\frac{4 \pi R_* v_{\infty}^2} {\dot{M}} 
-v \left | \frac{dv_l}{dl} \right|  \left( 1- e^{-\tau_S} \right)}
+\frac{dv_l}{dl} = \mu^2 \left( \beta(1-b/r)^{\beta-1} \frac{b}{r^2} \right) + (1-\mu^2) (1-b/r)^{\beta} \frac{1}{r}  = \mathcal{O}(r^{-2})
 \end{equation}
-We have that, since for $\beta = 1$ we have $\frac{dv_l}{dl} = \mathcal{O}(r^{-2})$ and $v = \mathcal{O}(r^{-1})$
 \begin{equation}
 \frac{g_{\text{rad}}}{\dot{M}} = \mathcal{O}(r^{-3})
 \end{equation}
@@ -1768,15 +1705,22 @@ Transport step and collision step. There is no absorption.
 {\tabulinesep=1.5mm
 \begin{tabu}{|c|c|c|}
 \hline 
-definition & numerical estimation \\ \hline
-$I_{\nu}$ & tally the number of photons \\ 
- & (spherical symmetry) \\ \hline
+definition 
+& numerical estimation & \\
+& (spherical symmetry) 
+& (plane-parallel) \\  \hline \hline
+$I_{\nu}$ & tally the number of photons & " \\ \hline
 $J_{\nu} = \frac{1}{4 \pi} \int I_{\nu} d\Omega$ 
-	& $J(r) = \frac{1}{16 \pi^2 r^2} \frac{\epsilon_0}{\Delta t} \sum_i \frac{\epsilon_i}{\epsilon_0} \frac{1}{|\mu_i(r)|}$ \\ \hline
+	& $J(r) = \frac{1}{16 \pi^2 r^2} \frac{\epsilon_0}{\Delta t} \sum_i \frac{\epsilon_i}{\epsilon_0} \frac{1}{|\mu_i(r)|}$
+	& $J(\tau) = \frac{\epsilon_0}{\Delta t} \sum_i \frac{\epsilon_i}{\epsilon_0} \frac{1}{|\mu_i(\tau)|}$ \\ \hline
+	
 $H_{\nu} = \frac{1}{4 \pi} \int \mu I_{\nu} d\Omega$ 
-	& $H(r) = \frac{1}{16 \pi^2 r^2} \frac{\epsilon_0}{\Delta t} \sum_i \frac{\epsilon_i}{\epsilon_0} \text{sign}(\mu_i(r))$ \\ \hline
+	& $H(r) = \frac{1}{16 \pi^2 r^2} \frac{\epsilon_0}{\Delta t} \sum_i \frac{\epsilon_i}{\epsilon_0} \text{sign}(\mu_i(r))$ 
+	& $J(\tau) = \frac{\epsilon_0}{\Delta t} \sum_i \frac{\epsilon_i}{\epsilon_0} \text{sign}(|\mu_i(\tau))$ \\ \hline
+	
 $K_{\nu} = \frac{1}{4 \pi} \int \mu^2 I_{\nu} d\Omega$ 
-	& $K(r) = \frac{1}{16 \pi^2 r^2} \frac{\epsilon_0}{\Delta t} \sum_i \frac{\epsilon_i}{\epsilon_0} |\mu_i(r)|$ \\ \hline
+	& $K(r) = \frac{1}{16 \pi^2 r^2} \frac{\epsilon_0}{\Delta t} \sum_i \frac{\epsilon_i}{\epsilon_0} |\mu_i(r)|$ 
+	& $J(\tau) = \frac{\epsilon_0}{\Delta t} \sum_i \frac{\epsilon_i}{\epsilon_0} |\mu_i(\tau)|$ \\ \hline
 \end{tabu}}
 \caption{Moments of intensity}
 \label{compu_moments_intensity}

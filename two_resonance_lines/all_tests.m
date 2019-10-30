@@ -1,10 +1,12 @@
 %% run code with physical line list
 clc, clear all, close all
 
-resonance_lambda  = [100,200];
+resonance_nu  = [100,200];
+reference_nu = 200;
 c = 10^8;
+v_infty = 0.001*c;
 
-
+resonance_x = (resonance_nu - reference_nu)/reference_nu*c/v_infty
 
 %% make stupid plot
 N = 100;

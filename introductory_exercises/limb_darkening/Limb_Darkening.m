@@ -1,4 +1,4 @@
-function [total_interactions,tau_array,J_array,tau_history]...
+function [total_interactions,tau_array,J_array,H_array,K_array,tau_history]...
         = Limb_Darkening(number_of_channels,number_of_photons,taumax,make_plot,compute_J)
 
     % number of channels
@@ -10,11 +10,13 @@ function [total_interactions,tau_array,J_array,tau_history]...
     muarray = zeros(1,na);
     dmu = 1./na;
 
-    nbins = 100;
-    taumin = -1;
-    dtau = (2*taumax-taumin)/nbins;
+    nbins = 201;
+    taumin = 0;
+    dtau = (taumax-taumin)/nbins;
     tau_array = linspace(taumin,2*taumax,nbins);
     J_array = zeros(1,nbins);
+    H_array = zeros(1,nbins);
+    K_array = zeros(1,nbins);
     
     total_interactions = 0;
     new_photon = 0;
@@ -58,19 +60,29 @@ function [total_interactions,tau_array,J_array,tau_history]...
             number_interactions = number_interactions + 1;
             one_photon_tau_history = [one_photon_tau_history; tau];
             
-            % compute J(tau)
+            % compute J,H,K(tau)
 %             display([tau_old,tau,sign(mu)]);
                     
-            index_min = min(floor((tau_old-taumin)/dtau) , floor((tau-taumin)/dtau)) + 1;
-            index_max = max(floor((tau_old-taumin)/dtau) , floor((tau-taumin)/dtau)) + 1;   
+            index_min = min(floor((tau_old-taumin)/dtau) , floor((tau-taumin)/dtau)) + 2;
+            index_max = max(floor((tau_old-taumin)/dtau) , floor((tau-taumin)/dtau)) + 1;  
+            if tau == taumax
+                index_max = nbins;
+            end
             if index_max > nbins
                 index_max = nbins;
             end
+            if index_min < 1
+                index_min = 1;
+            end
             
             if (compute_J == 1)
-                J_array(index_min:index_max) = J_array(index_min:index_max) + sign(mu);
+                if abs(mu) > 10^(-3)
+                    J_array(index_min:index_max) = J_array(index_min:index_max) + 1/abs(mu);
+                end
+                H_array(index_min:index_max) = H_array(index_min:index_max) + sign(mu);
+                K_array(index_min:index_max) = K_array(index_min:index_max) + abs(mu);
             end    
-            % END compute J(tau)
+            % END compute J,H,K(tau)
         end
         
         total_interactions = total_interactions + number_interactions;

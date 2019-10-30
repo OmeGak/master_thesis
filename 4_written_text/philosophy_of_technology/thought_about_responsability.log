@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.20)  30 OCT 2019 01:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2018.11.20)  30 OCT 2019 19:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1325,7 +1325,7 @@ Package logreq Info: Writing requests to 'thought_about_responsability.run.xml'
 Here is how much of TeX's memory you used:
  33438 strings out of 492641
  692073 string characters out of 6131786
- 1180667 words of memory out of 5000000
+ 1180668 words of memory out of 5000000
  36775 multiletter control sequences out of 15000+600000
  7723 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
