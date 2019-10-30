@@ -8,18 +8,37 @@
 \item What does this mean? \texttt{xnew=xstart+(v-sign(0.06,xmueou))*xmueou-v*xmuein}
 
 \item Pcygni profiles: Why don't we just take the absorption and the emission and add them together.
-
-\item why in \texttt{rtbis} we have that $rmin = 1$
-
-\item changed \texttt{xmuestart} from $-1$ to $1$.
-
 \end{itemize}
 
 \section{Questions for professor Samaey}
+\paragraph{Important}
 \begin{itemize}
 \item In \cite{Dimarco2018}, Equation (31) why does it correspond to diffusion (more specifically the second term on the right hand side).
+\item MC voor radiative transfer problem in \cite{Dimarco2018}
+\item taal van masterproef
+\item geen vergelijlijking van het probleem (zie e-mail)
+\end{itemize}
+
+\paragraph{Not important}
+\begin{itemize}
 \item what is the difference between Monte Carlo and equation-free computing?
 \end{itemize}
+
+\newpage
+\section{Questions for Dylan}
+\begin{itemize}
+\item what happens @ limb darkening: why is $J(\tau)$ apparently constant from the numerical results? Section \ref{limb_darkening_moments_intensity}.
+\end{itemize}
+
+Thank you very much ! :)
+
+\newpage
+\section{Questions for Luka}
+\begin{itemize}
+\item question about derivation concerning $\frac{dL}{dr}$ in Section \ref{luminosity_analytical}. Could you please quickly check out the derivation in \ref{luminosity_analytical}. The scaling factors are not such important for me at this moment, what bothers me primarily is the scaling relation between $\frac{dL}{dr}$ and $r$ in Equation \ref{scaling_relation}.
+\end{itemize}
+
+Thank you very much ! :)
 
 \newpage
 \section{Solved questions}
@@ -82,6 +101,7 @@
 
 \item \texttt{Pcyg.f90} does it take into account that photons are scattered away from the observer? (via assumption of radial symmetry)
 
+\item what is the meaning of $I_{\nu}$ versus $I$? ($I = \int I_{\nu} d\nu$)
 \end{itemize}
 
 \newpage

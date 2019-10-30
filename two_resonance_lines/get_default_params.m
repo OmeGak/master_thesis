@@ -8,7 +8,7 @@ function [make_save,nphot,alpha,beta,nbins,nrbins,possibility_scattering,resonan
     alpha = 0;
     beta = 1;
     nbins = 100;
-    nrbins = 100;
+    nrbins = 1000;
 
     possibility_scattering = 1;
     

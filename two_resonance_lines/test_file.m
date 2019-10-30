@@ -1,5 +1,5 @@
 function [freq,flux,total_number_scatterings,photon_path,yes,luminosity,rmax,total_number_backscatterings,...
-    dLdr,g_radiation,scattering_x]...
+    dLdr,g_radiation,scattering_x,forgotten_photons,luminosity_min]...
     = test_file(test_number)   
     % SET ALL PARAMETERS  
     [make_save,nphot,alpha,beta,nbins,nrbins,possibility_scattering,resonance_x,resonance_tau,multiple_scatterings,...
@@ -10,16 +10,17 @@ function [freq,flux,total_number_scatterings,photon_path,yes,luminosity,rmax,tot
     
     % OVERVIEW OF TESTS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!        
     if test_number == 0
-        nphot = 10^5;
+        nphot = 10^2
         xk0 = 100;
-        track_path = 1;
+        track_path = 0;
+        number_paths = min(nphot,100);  
                          
     elseif test_number == 21
         resonance_x = [-0.5,0];
         resonance_tau = 100*ones(1,2); 
 
         track_path = 1;
-        number_paths = 100;             
+        number_paths = 100;          
                    
    
     % EXERCISE TESTS        
@@ -52,7 +53,7 @@ function [freq,flux,total_number_scatterings,photon_path,yes,luminosity,rmax,tot
     end
     
     [freq,flux,total_number_scatterings,photon_path,yes,luminosity,rmax,total_number_backscatterings,...
-    dLdr,g_radiation,scattering_x]...
+    dLdr,g_radiation,scattering_x,forgotten_photons,luminosity_min]...
         = multiple_lines(nphot,alpha,beta,...
         make_plot,resonance_x,resonance_tau,make_save,nbins,nrbins,...
         possibility_scattering,multiple_scatterings,all_radial,radial_release,isotropic_scattering,...

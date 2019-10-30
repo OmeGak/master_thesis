@@ -6,7 +6,7 @@
 
 \begin{enumerate}
 \item limb-darkening scattering exercise we did during the course. 
-— You can look into your notes from that, and I attach here also a sample program which you can use a base. After you have familiarised yourself with this, you can start to think bout how you would go about to extend this to a 3D setting (assuming isotropic scattering). 
+— You can look into your notes from that, and I attach here also a sample program which you can use a base. After you have familiarised yourself with this, you can start to think about how you would go about to extend this to a 3D setting (assuming isotropic scattering). 
 
 \item (As prep for Monte-Carlo school) here is a script computing a UV resonance P-Cygni line in spherically symmetric wind with v beta-law. At top of routine, a few exercises are given, where you can modify and play around with code. Monte-Carlo program which computes a UV resonance spectral line from a fast outflowing spherically symmetric stellar wind (if you were not cc’d on that email, let me know so that I can send you the files as well). At the top of that little script, there are a few suggestions for exercises (additions) you could do to that program, in order to learn a bit more about the general workings of Monte-Carlo radiative transfer in this context.  
 — So that might be a good idea for you to do as well !   (And you can also ask the others in the group for some tips etc. then.) 
@@ -417,16 +417,16 @@ Discretization scheme:
 
 \subsection{Eddington-Barbier approximation} 
 \begin{equation}
-J(\tau) = 3H \left( \tau + \frac{2}{3} \right)
+J(\tau) = S(\tau) = \left( \tau + \frac{2}{3} \right) 3H
 \label{Eddington_Barbier}
 \end{equation}
 Together with the time-independent radiative transfer equation (\ref{GENERAL_RT_EQUATION}) in a gray (frequency-independent) planar medium gives \begin{equation}
-\mu \frac{\partial I(\tau,\mu)}{\partial \tau} = I(\tau,\mu) - 3H\left(\frac{2}{3}+\tau \right)
+\mu \frac{\partial I(\tau,\mu)}{\partial \tau} = I(\tau,\mu) - \left(\frac{2}{3}+\tau \right) 3H
 \label{rad_transfer_eq_limb_darkening}
 \end{equation}
 The emergent intensity $I(0,\mu)$ is a solution of Equation (\ref{rad_transfer_eq_limb_darkening}). Its solution for $\tau = 0$ equals 
 \begin{equation}
-I(\tau = 0,\mu) = I_1 \left( \frac{2}{5} + \frac{3 \mu}{5} \right) 
+\boxed{I(\tau = 0,\mu) = I_1 \left( \frac{2}{5} + \frac{3 \mu}{5} \right)  = a+b\mu }
 \end{equation}
 
 with $a= \frac{\sigma}{2 \pi}T_{eff}^4$ and $b = \frac{3 \sigma}{4 \pi}T_{eff}^4$
@@ -434,16 +434,25 @@ with $a= \frac{\sigma}{2 \pi}T_{eff}^4$ and $b = \frac{3 \sigma}{4 \pi}T_{eff}^4
 \subsubsection{Validity of the Eddington-Barbier approximation}
 \label{validity_eddington}
 
-If we assume Equuation (\ref{Eddington_Barbier}) then $I = I_1(a+b\mu)$ thus $J = \frac{1}{2} \int(\tau,\mu) d\mu = \frac{1}{2} \int_0^1 (a+b\mu)d\mu $
+If we assume Equuation (\ref{Eddington_Barbier}) then $I = I_1(a+b\mu)$ thus 
+
+\begin{equation}
+J = \frac{1}{2} \int I(\tau,\mu) d\mu = \frac{1}{2} \int_0^1 (a+b\mu)d\mu
+\end{equation}
+But we can not really compute this since we only know $I(0,\mu)$.
+
+The thing is that Eddington specifies $S(\tau)$ but not $S(\mu)$ directly. If that expression is used into the expression of a semi-infinite atmosphere (namely that the specific intensity is the Laplace transform of the source function), then we get the desired result \textsc{at the outer edge of the atmosphere}. See also [Mihalas] p. 571.
 
 \noindent\fbox{
   \parbox{\textwidth}{
   dat ziet er hier niet goed uit }}
 
+\newpage
 \subsection{2D Case}
 We again have $\mu = \cos(\theta)$. The solution of the radiative transfer equation in \underline{plane-parallel syummetry} with frequency-independent absorption and emission, is 
 \begin{equation}
 I(\mu) = I_1 (0.4 + 0.6\mu)
+\label{2D_case_Eddington_barbier}
 \end{equation}
 In the Monte Carlo code, the photons are sorted according to the direction that they leave the atmosphere.
 
@@ -493,19 +502,46 @@ Calculates the angular dependence of photon's emitted from a plane-parallel, gre
 	\item plot photon numbers from $\mu d\mu$ against \texttt{mu}
 	\item plot specific intensity from $d\mu$ against \texttt{mu} against 
 	\end{itemize}
-
-
 \end{algorithmic}
 \end{algorithm}
 
-
-\begin{figure}[!htp]
+\begin{figure}
 \centering
 \includegraphics[width=0.7\textwidth]{../../introductory_exercises/limb_darkening/data/number_channels20number_photons100000max_opt_depth10.png}
 \caption{histogram for \texttt{mu}}
 \label{2D_mu}
 \end{figure}
 Figure \ref{2D_mu} is according to what is expected $I = I_0(0.4+0.6\mu)$. The input parameters are as follows \texttt{Limb\_Darkening(number\_of\_channels = 20, number\_of\_photons = $10^5$, \\ maximum\_optical\_depth = 10)}.
+
+
+\cleardoublepage
+\subsection{Calculating the moments of intensity: study}
+\label{limb_darkening_moments_intensity}
+
+Limb darkening. Expected results in Equation (\ref{2D_case_Eddington_barbier}). The first angular moment $J(r)$ of the intensity should approximately equal Equation (\ref{Eddington_Barbier}), if the Eddington-Barbier approximation is valid. I am now also interested in computing $J(r)$, numerically. Photons are counted using formula in Table \ref{compu_moments_intensity}.
+
+\begin{figure}[!htp]
+\centering
+\includegraphics[width=0.6\textwidth]{../../introductory_exercises/limb_darkening/figures/J_vs_tau_nphot100000.png}
+\caption{$J(\tau)$ as numerically computed with MC limb darkening algorithm}
+\label{J(tau)}
+\end{figure}
+
+\paragraph{Problem} From Figure \ref{J(tau)} (output of Monte Carlo simulation), $J(\tau) \equiv J$ seems to be constant. This is not as predicted in Equation (\ref{Eddington_Barbier}).
+
+\paragraph{Explanation}
+One can understand this result as follows: photons are counted according to the sign of their angle. But of course all photons eventually reach the zone where $\tau = 0$ and zones where a photon \textit{goes for a little walk} does not contribute to the moment $J$. 
+
+\begin{figure}[!htp]
+\centering
+\includegraphics[width=0.6\textwidth]{../../introductory_exercises/limb_darkening/figures/photon_path_tau_nphot100000.png}
+\caption{$J(\tau)$}
+\label{J(tau)}
+\end{figure}
+
+\paragraph{Conclusion} ... where do I make an error in my reasoning or coding?
+
+Thank you for looking at this :) Ignace.
 
 \newpage
 \subsection{3D Case}
@@ -550,7 +586,6 @@ Via this link, you can go back to the exercises overview: Section \underline{\re
 This section is about the study of line formation in an expanding wind.
 
 \subsection*{Background}
-\paragraph{Overview of variables}
 \begin{center}
 \centering
 {\tabulinesep=1.5mm
@@ -594,6 +629,7 @@ xmueout & outwards (scattered) angle \\
 & v \\ 
 & sigma \\ \hline \hline
 
+\multicolumn{2}{|c|}{\cellcolor{orange} photon tallying} \\ \hline
 nchan & amount of bins \\ \hline
 \end{tabu}}
 \end{center}
@@ -1396,13 +1432,13 @@ g_{\text{radiation}} =  \frac{\Delta p}{\Delta t \Delta m} = \frac{\Delta E}{v} 
 
 \item Numerical approximation, we count photons
 \begin{equation}
-L(r) = \frac{1}{\Delta t} \sum_i \epsilon_i \text{sign}\mu_i(r)
+L(r) = \frac{1}{\Delta t} \sum_i \epsilon_i \text{sign}(\mu_i(r))
 \end{equation}
 where $L(r_*)$ is given and the photon energies $\epsilon_i$ are given by a black-body distribution.
 \end{enumerate}
 
 \subsection{Solution strategy}
-Loop over all photons. In that loop, loop over all $r$ values and assign the corresponding angle. Thus we need two additional arrays: \texttt{r\_values} and \texttt{angles}. Update the array at each scattering event.
+Loop over all photons. In that loop, loop over all $r$ values and assign the corresponding angle. Update the array at each scattering event.
 
 
 \begin{itemize}
@@ -1412,6 +1448,53 @@ Loop over all photons. In that loop, loop over all $r$ values and assign the cor
 \item then calculate $\frac{dL}{dr}$ numerically on that grid
 \end{itemize}
 
+In the case $\mu_{\text{out}} < 0$ then
+\begin{figure}
+\centering
+\begin{tikzpicture}
+% define constants
+\def \radij{2cm}
+\def \dist{3cm}
+	
+% draw circle
+\draw (0,0) coordinate (O) node{$\bullet$} node[left]{$O$};
+\draw (0,0) circle(\radij);
+
+\draw ($(0,0)!3cm!(3,4)$) coordinate (Interaction) node{$\bullet$};
+
+\draw [dotted] (0,0) circle(3cm);
+\draw [dotted] (0,0) circle(6cm);
+
+\draw[dashed] (0,0) -- node[below] {$r_{\text{init}}$} (\radij + \dist,0);
+
+\draw ($(0,0)!3cm!(3,4)$) -- ($(0,0)!6cm!(-2,4)$) node {$\bullet$} coordinate (Final);
+
+\path (0,0)--  (\radij + 2*\dist,0) coordinate (X);
+
+% draw line to P and further
+\draw[dashed] (0,0) -- node[above] {$r_{\text{nearest}}$} ($(0,0)!3cm!(3,4)$)  node[midway,above left, blue!50!black]{};
+
+% define coordinates
+\draw ($(\radij+\dist,0)$) coordinate (Release) node{$\bullet$};
+
+\draw ($(0,0)!3cm!(3,4)$) coordinate (Interaction) node{$\bullet$};
+
+% draw angle theta
+\draw  pic["$\pi-\theta_{\text{out}}$", draw=red,<->, angle eccentricity=2.7, angle radius=0.5cm]
+    {angle=Interaction--Release--O};
+    
+\draw  pic["$\pi/2$", draw=red,<->, angle eccentricity=1.2, angle radius=0.5cm]
+    {angle=O--Interaction--Release};
+	   
+% draw the release of the photon
+\draw[->] ($(\radij + \dist,0)$) -- ($(0,0)!3cm!(3,4)$);
+	
+\end{tikzpicture}
+\caption{Trick when computin $L(r)$}
+\label{Computing_L}
+\end{figure}
+
+\newpage
 \subsection{Checking the correctness of the program}
 Enforce algorithmically that all photons stream in one direction (no scattering with \texttt{xmueout < 0}). Comment out the line \texttt{xmueou = -xmueou} in the function \texttt{scatter.m}.
 
@@ -1425,12 +1508,23 @@ Enforce algorithmically that all photons stream in one direction (no scattering 
 \newpage
 \subsection{Computing the radiation force for one line}
 Basic, well-known test situation.
-\begin{figure}[!htp]
+
+\begin{figure}[!htbp]
+\hspace*{-0.5in}
 \centering
-\includegraphics[width=0.7\textwidth]{../../two_resonance_lines/figures/luminosity_one_resonance_line.png}
+\begin{subfigure}{.6\textwidth}
+\includegraphics[width=1\textwidth]{../../two_resonance_lines/figures/luminosity_one_resonance_line.png}
 \caption{Luminosity $L(r)$ (for one resonance line)}
 \label{luminosity_one_resonance_line}
+\end{subfigure}%
+\begin{subfigure}{.6\textwidth}
+\includegraphics[width=1\textwidth]{../../two_resonance_lines/figures/luminosity_one_resonance_line.png}
+\caption{$dL/dr$}
+\end{subfigure}
+\caption{Scattering distribution}
+\label{PCyg_mu_eq_1}
 \end{figure}
+
 
 \subsection{Multiple lines}
 \begin{figure}[!htp]
@@ -1442,41 +1536,155 @@ Basic, well-known test situation.
 
 \subsection{Theoretical considerations}
 \subsubsection{Analytical quantities}
+\label{luminosity_analytical}
+
+\paragraph{Theoretical}
 From the course notes on radiative processes
 \begin{equation}
-g_{\text{radiation}} = g_{\text{line}} = g_{\text{line}}^{\text{thin}} \frac{1- e^{-\tau_S}}{\tau_S}
+\boxed{g_{\text{radiation}} = g_{\text{line}} = g_{\text{line}}^{\text{thin}} \frac{1- e^{-\tau_S}}{\tau_S}}
 \end{equation}
-where 
-\begin{equation}
+\begin{itemize}
+\item expression for $g_{\text{thin}}$ \begin{equation}
 g_{\text{thin}} = g_e q = \frac{F_{\nu}^0 k_L}{\rho c}
 \end{equation}
-with the Sobolev optical depth
+
+\item the Sobolev optical depth
 \begin{equation}
-\tau_S = \frac{\kappa_0}{r^2 v \left| \frac{dv}{dr} \right| } = \frac{\kappa_0}{rv^2 (\mu^2 \sigma + 1)}
+\tau_S = \frac{\kappa_0}{r^2 v \left| \frac{dv_l}{dl} \right| } = \frac{\kappa_0}{rv^2 (\mu^2 \sigma + 1)}
 \end{equation}
-and the density - mass loss relation
+\begin{equation}
+\frac{dv_l}{dl} = \mu^2\frac{dv_r}{dr} + (1- \mu^2)\frac{v_r}{r}
+\end{equation}
+
+\item the density - mass loss relation
 \begin{equation}
 \dot{M} = \rho 4 \pi r^2 v
 \end{equation}
+\begin{equation}
+\rho = \frac{\dot{M}}{4 \pi r^2 v}
+\end{equation}
 
+\item expression for the extinction coefficient $k_L$ \\
+\noindent\fbox{
+  \parbox{0.6\textwidth}{
+  @ Luka, do you know where this expression comes from?}}
+\begin{equation}
+k_L = \frac{\kappa_0 \rho 4 \pi R_* v_{\infty}^2}{\dot{M} \lambda_0} = \frac{\kappa_0 R_* v_{\infty}^2}{r^2 v \lambda_0} 
+\label{expression_for_k_L}
+\end{equation}
+\end{itemize}
+
+\paragraph{Conclusion}
 Combining these quantities gives
 \begin{equation}
-g_{\text{radiation}} = \frac{F_{\nu_0}}{c}  \frac{k_L}{\rho }\frac{1- e^{-\tau_S}}{\tau_S}  
+g_{\text{radiation}} = \frac{F_{\nu_0}}{c}  k_L \frac{1}{\rho }\frac{1- e^{-\tau_S}}{\tau_S}  
 \end{equation}
 \begin{equation}
-g_{\text{radiation}} = \frac{F_{\nu_0}}{c} \frac{\kappa_0 v_{\infty}}{\lambda_0 R_* r^2 v} \frac{4 \pi r^2 v}{\dot{M}}  \frac{r^2 v \left | \frac{dv}{dr} \right| }{\kappa_0} \left( 1- e^{-\tau_S} \right)
+g_{\text{radiation}} = 
+\frac{F_{\nu_0}}{c} 
+\frac{\kappa_0 R_* v_{\infty}^2}{\lambda_0 r^2 v} 
+\frac{4 \pi r^2 v}{\dot{M}}  
+\frac{r^2 v \left | \frac{dv_l}{dl} \right| }{\kappa_0} \left( 1- e^{-\tau_S} \right)
 \end{equation}
 \begin{equation}
-\boxed{g_{\text{radiation}} = \frac{F_{\nu_0} \nu_0 }{\dot{M} c^2} \frac{dv_l}{dl} \left(1-e^{- \tau_s} \right)}
+\boxed{g_{\text{radiation}} = 
+\frac{F_{\nu_0}}{c \lambda_0} 
+\frac{4 \pi R_* v_{\infty}^2}{ \dot{M}} 
+r^2 v \left | \frac{dv_l}{dl} \right|  \left( 1- e^{-\tau_S} \right)}
+\end{equation}
+Now since we are assuming spherical symmetry
+\begin{equation}
+\boxed{g_{\text{radiation}} = 
+\frac{F_{\nu_0}}{c \lambda_0} 
+\frac{4 \pi R_* v_{\infty}^2} {\dot{M}} 
+v \left | \frac{dv_l}{dl} \right|  \left( 1- e^{-\tau_S} \right)}
+\end{equation}
+\begin{equation}
+\boxed{g_{\text{radiation}} = 
+\frac{F_{\nu_0} \nu_0}{c^2} 
+\frac{4 \pi R_* v_{\infty}^2} {\dot{M}} 
+v \left | \frac{dv_l}{dl} \right|  \left( 1- e^{-\tau_S} \right)}
+\end{equation}
+We have that, since for $\beta = 1$ we have $\frac{dv_l}{dl} = \mathcal{O}(r^{-2})$ and $v = \mathcal{O}(r^{-1})$
+\begin{equation}
+\frac{g_{\text{rad}}}{\dot{M}} = \mathcal{O}(r^{-3})
 \end{equation}
 
-\subsubsection{From numerical computations}
+\paragraph{From numerical computations}
 On the other hand we have
 \begin{equation}
 \boxed{g_{\text{radiation}} = - \frac{1}{\dot{M}}\frac{dL}{dr}}
 \end{equation}
 
-\subsubsection{These quantities should equal}
+\paragraph{These quantities should equal} and also accounting for spherical symmetry. Also taking the limit $\tau_S \gg 1$ and assuming the $\beta$-velocity law, wet get
+\begin{equation}
+\frac{dL}{dr} = -\frac{C^{te}}{4 \pi r^2} r^2 v 
+\left| \frac{dv_l}{dl} \right|
+\end{equation}
+\begin{equation}
+\frac{dL}{dr} = \mathcal{O}(r^{-2})
+\label{scaling_relation}
+\end{equation}
+
+
+\newpage
+\subsubsection{The same quantities in dimensionless units}
+\paragraph{Theoretical}
+The dimensionless units (those used in the computer code) for the wind velocity and for the radius are  $v' = \frac{v}{v_{\infty}}$
+and $r' = \frac{r}{R_*}$. Thus $v = v' v_{\infty}$ and $r = r'R_*$. 
+
+\begin{itemize}
+\item for Sobolev optical depth
+\begin{equation}
+\tau_S' = \frac{\kappa_0}{r'^2 v' \left| \frac{dv_l'}{dl'} \right| } = R_*^2 v_{\infty} \tau_S
+\end{equation}
+\begin{equation}
+\frac{dv_l'}{dl'} = \frac{v_{\infty}}{R_*}\frac{dv_l}{dl}
+\end{equation}
+
+\item extinction coefficient 
+\begin{equation}
+k_L' 
+= \frac{\kappa_0 v_{\infty}}{\lambda_0 R_* r'^2 v'} 
+= R_*^2 v_{\infty} k_L
+\end{equation}
+
+\item density versus mass-loss rate
+\begin{equation}
+\rho' = \frac{\dot{M}}{R_*^2 v_{\infty} 4 \pi r'^2 v'}
+\end{equation}
+\end{itemize}
+Putting these together
+\begin{equation}
+g_{\text{radiation}} = \frac{F_{\nu_0}}{c}  k_L' \frac{1}{\rho'}\frac{1- e^{-\tau_S'}}{\tau_S'}  
+\end{equation}
+\begin{equation}
+g_{\text{radiation}}' =   
+\frac{F_{\nu_0}}{c} 
+\frac{\kappa_0 v_{\infty}}{\lambda_0 R_* r'^2 v'} 
+\frac{R_*^2 v_{\infty} 4 \pi r'^2 v'}{\dot{M}}  
+\frac{r'^2 v' \left | \frac{dv_l'}{dl'} \right| }{R_*^2 v_{\infty}\kappa_0} \left( 1- e^{-\tau_S} \right)
+\end{equation}
+\begin{equation}
+\boxed{
+g_{\text{radiation}}' =   
+\frac{1}{R_*}
+\frac{F_{\nu_0}}{c} 
+\frac{\kappa_0}{\lambda_0 r'^2 v'} 
+\frac{4 \pi r'^2 v'}{\dot{M}}  
+\frac{r'^2 v' \left | \frac{dv_l'}{dl'} \right| }{\kappa_0} \left( 1- e^{-\tau_S} \right)}
+\end{equation}
+
+
+\paragraph{From numerical computations}
+\begin{equation}
+g_{\text{radiation}}' = - \frac{R_*}{\dot{M}}\frac{dL}{dr'}
+\end{equation}
+
+\paragraph{These quantities should equal}
+
+\newpage
+\subsubsection{These quantities should equal (dimensionless units?)}
 For optically thick lines ($\tau_S \gg 1$)
 \begin{equation}
 \begin{aligned}
@@ -1505,6 +1713,48 @@ and for $\beta = 1$
 \end{equation}
 
 \newpage
+\subsubsection{From random notes, global mass-loss rates}
+\begin{itemize}
+\item definition of luminosity 
+\begin{equation}
+g_{\text{rad}} = - \frac{1}{\dot{M}} \frac{dL}{dr}
+\label{g_rad_def}
+\end{equation}
+
+\item steady-state equation of motion
+\begin{equation}
+v \frac{dv}{dr} = - \frac{GM}{r^2} + g_{\text{rad}}(r)
+\end{equation}
+using Equation (\ref{g_rad_def})
+
+
+\begin{itemize}
+\item assuming that $\dot{M}(r) \equiv \dot{M}$
+\begin{equation}
+\int_{R_*}^{\infty} v \frac{dv}{dr} dr = - \int_{R_*}^{\infty} \frac{GM}{r^2}dr - \frac{1}{\dot{M}} \int_{R_*}^{\infty} \frac{dL}{dr}dr
+\end{equation}
+we then get
+\begin{equation}
+\frac{v^2}{2} \Big|_{R_*}^{\infty} = - \frac{GM}{r}\Big|_{R_*}^{\infty}  - \frac{1}{\dot{M}} L \Big|_{R_*}^{\infty}
+\end{equation}
+with $v(R_*) = 0$ 
+\begin{equation}
+\frac{v(\infty)^2}{2} - \frac{GM}{R_*} = \frac{L(R_*) - L(\infty)}{\dot{M}}
+\end{equation}
+
+\item in general
+\begin{equation}
+\int_{R_*}^{\infty} v \frac{dv}{dr} dr = - \int_{R_*}^{\infty} \frac{GM}{r^2}dr - \frac{1}{4 \pi \rho} \int_{R_*}^{\infty} \frac{1}{r^2v}\frac{dL}{dr}dr
+\end{equation}
+
+
+\end{itemize}
+
+\end{itemize}
+
+
+
+\newpage
 \subsection{With high \texttt{xk0}}
 TO BE UPDATED
 
@@ -1512,9 +1762,39 @@ TO BE UPDATED
 \section{Backup from theory}
 Transport step and collision step. There is no absorption.
 
+\subsection{Moments of the intensity}
+\begin{table}[!htp]
+\centering
+{\tabulinesep=1.5mm
+\begin{tabu}{|c|c|c|}
+\hline 
+definition & numerical estimation \\ \hline
+$I_{\nu}$ & tally the number of photons \\ 
+ & (spherical symmetry) \\ \hline
+$J_{\nu} = \frac{1}{4 \pi} \int I_{\nu} d\Omega$ 
+	& $J(r) = \frac{1}{16 \pi^2 r^2} \frac{\epsilon_0}{\Delta t} \sum_i \frac{\epsilon_i}{\epsilon_0} \frac{1}{|\mu_i(r)|}$ \\ \hline
+$H_{\nu} = \frac{1}{4 \pi} \int \mu I_{\nu} d\Omega$ 
+	& $H(r) = \frac{1}{16 \pi^2 r^2} \frac{\epsilon_0}{\Delta t} \sum_i \frac{\epsilon_i}{\epsilon_0} \text{sign}(\mu_i(r))$ \\ \hline
+$K_{\nu} = \frac{1}{4 \pi} \int \mu^2 I_{\nu} d\Omega$ 
+	& $K(r) = \frac{1}{16 \pi^2 r^2} \frac{\epsilon_0}{\Delta t} \sum_i \frac{\epsilon_i}{\epsilon_0} |\mu_i(r)|$ \\ \hline
+\end{tabu}}
+\caption{Moments of intensity}
+\label{compu_moments_intensity}
+\end{table}
+
+We are interested 
+\begin{itemize}
+\item in $F \propto H$ which is an average of $I$ over $d \Omega$ (but only at 'shell of release')
+\item in $L$, which is then both an average of $I$ over $d\Omega$ and over $d\nu$
+\end{itemize}
+
+\subsection{Computing total photon distance and time that it has travelled}
+See figure \ref{1D_Geometry_scattering}.
+
 \newpage
 \section{Extension to higher dimensions}
-TO BE DONE
+add angle $\phi$
+
 
 \newpage
 \section{Closer look at Monte Carlo simulations}

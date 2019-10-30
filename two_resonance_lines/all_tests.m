@@ -1,3 +1,19 @@
+%% run code with physical line list
+clc, clear all, close all
+
+resonance_lambda  = [100,200];
+c = 10^8;
+
+
+
+%% make stupid plot
+N = 100;
+a = linspace(1,10,N)
+b = 1./a.^2.*(1-1./a)
+
+figure()
+plot(a,b)
+
 %% test if multiple scatterings from one line are possible
 clc,  clear all
 

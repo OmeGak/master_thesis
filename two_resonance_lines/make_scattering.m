@@ -1,7 +1,7 @@
-function [xnew,rnew,nin,last_scatter,xmueou,nsc,one_photon_path,forget_photon,luminosity,nsc_real,tau_decides_no_scatter_x] ...
+function [xnew,rnew,nin,last_scatter,xmueou,nsc,one_photon_path,forget_photon,luminosity,nsc_real,tau_decides_no_scatter_x,luminosity_min] ...
             =  make_scattering(xstart,xmuestart,r_init,...
                 beta,alpha,b,rmax,nin,resonance_x,resonance_tau,all_radial,isotropic_scattering,nsc,...
-                one_photon_path,vmin,vmax,xstart_Fortran,luminosity,nrbins,nsc_real,tau_decides_no_scatter_x,phot,only_positive_xmueou)
+                one_photon_path,vmin,vmax,xstart_Fortran,luminosity,nrbins,nsc_real,tau_decides_no_scatter_x,phot,only_positive_xmueou,luminosity_min)
     
     % initialize parameters        
     forget_photon = 0;
@@ -98,7 +98,7 @@ function [xnew,rnew,nin,last_scatter,xmueou,nsc,one_photon_path,forget_photon,lu
         nsc = nsc + 1;
         % voila !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
           
-        luminosity = update_luminosity_scatter(xmuestart,rnew,luminosity,r_init,rmax,nrbins,forget_photon);
+        [luminosity,luminosity_min] = update_luminosity_scatter(xmuestart,rnew,luminosity,r_init,rmax,nrbins,forget_photon,phot,luminosity_min);
         one_photon_path = [one_photon_path; rnew; xmueou; xnew; x_selected];    
         
     else

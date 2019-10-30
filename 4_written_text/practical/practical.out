@@ -15,47 +15,50 @@
 \BOOKMARK [2][-]{subsection.10.2}{Solving the \(integro-differential\) radiative transfer equation}{section.10}% 15
 \BOOKMARK [2][-]{subsection.10.3}{Eddington-Barbier approximation}{section.10}% 16
 \BOOKMARK [2][-]{subsection.10.4}{2D Case}{section.10}% 17
-\BOOKMARK [2][-]{subsection.10.5}{3D Case}{section.10}% 18
-\BOOKMARK [1][-]{section.11}{Spectral line formation: pcyg.f90}{}% 19
-\BOOKMARK [2][-]{subsection.11.1}{First adaptation: what if all photons are released radially from photosphere?}{section.11}% 20
-\BOOKMARK [2][-]{subsection.11.2}{Second adaptation: isotropic scattering}{section.11}% 21
-\BOOKMARK [2][-]{subsection.11.3}{Third adaptation: introduction of Eddington limb-darkening}{section.11}% 22
-\BOOKMARK [2][-]{subsection.11.4}{Fourth adaptaion: photospheric line-profile}{section.11}% 23
-\BOOKMARK [2][-]{subsection.11.5}{Convergence analysis}{section.11}% 24
-\BOOKMARK [2][-]{subsection.11.6}{Variance reduction experiment}{section.11}% 25
-\BOOKMARK [2][-]{subsection.11.7}{Mathematical description of the problem \046 Looking at literature}{section.11}% 26
-\BOOKMARK [1][-]{section.12}{Transferring the code to Matlab}{}% 27
-\BOOKMARK [2][-]{subsection.12.1}{Limit variables}{section.12}% 28
-\BOOKMARK [2][-]{subsection.12.2}{Comparison}{section.12}% 29
-\BOOKMARK [2][-]{subsection.12.3}{Optimizations}{section.12}% 30
-\BOOKMARK [1][-]{section.13}{Theoretical background}{}% 31
-\BOOKMARK [2][-]{subsection.13.1}{General things}{section.13}% 32
-\BOOKMARK [2][-]{subsection.13.2}{Geometry}{section.13}% 33
-\BOOKMARK [2][-]{subsection.13.3}{Sobolev approximation}{section.13}% 34
-\BOOKMARK [2][-]{subsection.13.4}{Can resonance in the same resonance line happen twice?}{section.13}% 35
-\BOOKMARK [2][-]{subsection.13.5}{Meaning of the parameters}{section.13}% 36
-\BOOKMARK [2][-]{subsection.13.6}{Special case: xmuestart = 1}{section.13}% 37
-\BOOKMARK [1][-]{section.14}{Development of computer code \(in Matlab\)}{}% 38
-\BOOKMARK [2][-]{subsection.14.1}{Implementation in Matlab: user's manual}{section.14}% 39
-\BOOKMARK [2][-]{subsection.14.2}{Keeping track of the photon path}{section.14}% 40
-\BOOKMARK [1][-]{section.15}{Experiments and results}{}% 41
-\BOOKMARK [2][-]{subsection.15.1}{About the scattering probability distribution}{section.15}% 42
-\BOOKMARK [2][-]{subsection.15.2}{Single resonance line}{section.15}% 43
-\BOOKMARK [2][-]{subsection.15.3}{Multiple line formation}{section.15}% 44
-\BOOKMARK [2][-]{subsection.15.4}{Effect of the opacity}{section.15}% 45
-\BOOKMARK [2][-]{subsection.15.5}{Observations}{section.15}% 46
-\BOOKMARK [2][-]{subsection.15.6}{Convergence behaviour}{section.15}% 47
-\BOOKMARK [2][-]{subsection.15.7}{Some theoretical observations}{section.15}% 48
-\BOOKMARK [1][-]{section.16}{Computing the radiation force \046 luminosity L\(r\)}{}% 49
-\BOOKMARK [2][-]{subsection.16.1}{Theoretical formulas}{section.16}% 50
-\BOOKMARK [2][-]{subsection.16.2}{Solution strategy}{section.16}% 51
-\BOOKMARK [2][-]{subsection.16.3}{Checking the correctness of the program}{section.16}% 52
-\BOOKMARK [2][-]{subsection.16.4}{Computing the radiation force for one line}{section.16}% 53
-\BOOKMARK [2][-]{subsection.16.5}{Multiple lines}{section.16}% 54
-\BOOKMARK [2][-]{subsection.16.6}{Theoretical considerations}{section.16}% 55
-\BOOKMARK [2][-]{subsection.16.7}{With high xk0}{section.16}% 56
-\BOOKMARK [1][-]{section.17}{Backup from theory}{}% 57
-\BOOKMARK [1][-]{section.18}{Extension to higher dimensions}{}% 58
-\BOOKMARK [1][-]{section.19}{Closer look at Monte Carlo simulations}{}% 59
-\BOOKMARK [2][-]{subsection.19.1}{Random walk \(diffusion equation\)}{section.19}% 60
-\BOOKMARK [2][-]{subsection.19.2}{Limb darkening}{section.19}% 61
+\BOOKMARK [2][-]{subsection.10.5}{Calculating the moments of intensity: study}{section.10}% 18
+\BOOKMARK [2][-]{subsection.10.6}{3D Case}{section.10}% 19
+\BOOKMARK [1][-]{section.11}{Spectral line formation: pcyg.f90}{}% 20
+\BOOKMARK [2][-]{subsection.11.1}{First adaptation: what if all photons are released radially from photosphere?}{section.11}% 21
+\BOOKMARK [2][-]{subsection.11.2}{Second adaptation: isotropic scattering}{section.11}% 22
+\BOOKMARK [2][-]{subsection.11.3}{Third adaptation: introduction of Eddington limb-darkening}{section.11}% 23
+\BOOKMARK [2][-]{subsection.11.4}{Fourth adaptaion: photospheric line-profile}{section.11}% 24
+\BOOKMARK [2][-]{subsection.11.5}{Convergence analysis}{section.11}% 25
+\BOOKMARK [2][-]{subsection.11.6}{Variance reduction experiment}{section.11}% 26
+\BOOKMARK [2][-]{subsection.11.7}{Mathematical description of the problem \046 Looking at literature}{section.11}% 27
+\BOOKMARK [1][-]{section.12}{Transferring the code to Matlab}{}% 28
+\BOOKMARK [2][-]{subsection.12.1}{Limit variables}{section.12}% 29
+\BOOKMARK [2][-]{subsection.12.2}{Comparison}{section.12}% 30
+\BOOKMARK [2][-]{subsection.12.3}{Optimizations}{section.12}% 31
+\BOOKMARK [1][-]{section.13}{Theoretical background}{}% 32
+\BOOKMARK [2][-]{subsection.13.1}{General things}{section.13}% 33
+\BOOKMARK [2][-]{subsection.13.2}{Geometry}{section.13}% 34
+\BOOKMARK [2][-]{subsection.13.3}{Sobolev approximation}{section.13}% 35
+\BOOKMARK [2][-]{subsection.13.4}{Can resonance in the same resonance line happen twice?}{section.13}% 36
+\BOOKMARK [2][-]{subsection.13.5}{Meaning of the parameters}{section.13}% 37
+\BOOKMARK [2][-]{subsection.13.6}{Special case: xmuestart = 1}{section.13}% 38
+\BOOKMARK [1][-]{section.14}{Development of computer code \(in Matlab\)}{}% 39
+\BOOKMARK [2][-]{subsection.14.1}{Implementation in Matlab: user's manual}{section.14}% 40
+\BOOKMARK [2][-]{subsection.14.2}{Keeping track of the photon path}{section.14}% 41
+\BOOKMARK [1][-]{section.15}{Experiments and results}{}% 42
+\BOOKMARK [2][-]{subsection.15.1}{About the scattering probability distribution}{section.15}% 43
+\BOOKMARK [2][-]{subsection.15.2}{Single resonance line}{section.15}% 44
+\BOOKMARK [2][-]{subsection.15.3}{Multiple line formation}{section.15}% 45
+\BOOKMARK [2][-]{subsection.15.4}{Effect of the opacity}{section.15}% 46
+\BOOKMARK [2][-]{subsection.15.5}{Observations}{section.15}% 47
+\BOOKMARK [2][-]{subsection.15.6}{Convergence behaviour}{section.15}% 48
+\BOOKMARK [2][-]{subsection.15.7}{Some theoretical observations}{section.15}% 49
+\BOOKMARK [1][-]{section.16}{Computing the radiation force \046 luminosity L\(r\)}{}% 50
+\BOOKMARK [2][-]{subsection.16.1}{Theoretical formulas}{section.16}% 51
+\BOOKMARK [2][-]{subsection.16.2}{Solution strategy}{section.16}% 52
+\BOOKMARK [2][-]{subsection.16.3}{Checking the correctness of the program}{section.16}% 53
+\BOOKMARK [2][-]{subsection.16.4}{Computing the radiation force for one line}{section.16}% 54
+\BOOKMARK [2][-]{subsection.16.5}{Multiple lines}{section.16}% 55
+\BOOKMARK [2][-]{subsection.16.6}{Theoretical considerations}{section.16}% 56
+\BOOKMARK [2][-]{subsection.16.7}{With high xk0}{section.16}% 57
+\BOOKMARK [1][-]{section.17}{Backup from theory}{}% 58
+\BOOKMARK [2][-]{subsection.17.1}{Moments of the intensity}{section.17}% 59
+\BOOKMARK [2][-]{subsection.17.2}{Computing total photon distance and time that it has travelled}{section.17}% 60
+\BOOKMARK [1][-]{section.18}{Extension to higher dimensions}{}% 61
+\BOOKMARK [1][-]{section.19}{Closer look at Monte Carlo simulations}{}% 62
+\BOOKMARK [2][-]{subsection.19.1}{Random walk \(diffusion equation\)}{section.19}% 63
+\BOOKMARK [2][-]{subsection.19.2}{Limb darkening}{section.19}% 64
